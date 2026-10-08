@@ -42,9 +42,9 @@
 | 平台目标 | 项目配置 | 当前构建及运行证据 | 缺失条件 |
 | --- | --- | --- | --- |
 | Windows 11 x64 | 原生 runner，1280×720 初始窗口 | Debug 原生引擎集成测试通过；Release 构建通过，启动后创建全新默认图库 | 系统文件选择窗口、普通窗口退出中的对话框与键盘/读屏仍需人工平台验收 |
-| macOS 12+ arm64 | 原生 runner，用户选择文件读写 entitlement；可用标准 `macos-26` arm64 CI | 云端完整软件测试1396通过/4跳过、独立进程恢复/锁、三个真实原生用例及正常入口Release `ImageHub.app`构建通过；[运行记录](github-publication.md) | 最低macOS12、人工选择器/沙盒授权、备份取得等剩余接入与设备验收、正式签名/公证 |
+| macOS 12+ arm64 | 原生 runner，用户选择文件读写 entitlement；可用标准 `macos-26` arm64 CI | 当前源a6d0640的CI整体成功，Mac软件测试1396通过/4跳过、独立进程恢复/锁、三个真实原生用例及正常入口Release `ImageHub.app`构建通过；[运行记录](github-publication.md) | 最低macOS12、人工选择器/沙盒授权、备份取得等剩余接入与设备验收、正式签名/公证 |
 | Android API29+ arm64 | minSdk29、M1；有界 SAF/MediaStore、Pigeon 与私有 NDK 独占发布 | Debug 与 ARM64/x86_64 Release APK 已构建；API36 x86_64 原生子流程及正常 Release 应用导入/重开/预览/处理/照片保存/ZIP合并恢复/诊断导出通过，见[Android完成记录](milestone-28-android-completion.md) | ARM64 实机、API29 最低系统、物理设备 PT/PERF 与正式发行未验收；APK沿用本地debug签名 |
-| iOS 15+ arm64 | 原生 runner，中文照片用途说明；明确选定云端预装iOS26.2/iPhone17并创建独立模拟器 | 第三轮iOS Simulator三个真实原生用例及正常入口未签名Debug应用构建通过；第七轮iOS26.2已真实启动完成，随后设备状态查询超时，专用期限修正待复验；失败/取消明细见[运行记录](github-publication.md) | 原生保存/导出尚未接入；真实iPhone及最低iOS15、设备签名与其余PT验收 |
+| iOS 15+ arm64 | 原生 runner，中文照片用途说明；明确选定云端预装iOS26.2/iPhone17并创建独立模拟器 | 当前源a6d0640的iOS作业成功：真实启动/Booted/SpringBoard确认，三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过；[运行记录](github-publication.md) | 原生保存/导出尚未接入；真实iPhone及最低iOS15、设备签名与其余PT验收 |
 
 Android 安装和本地 APK 构建已获得授权；用户随后授权公开 GitHub 仓库并运行标准 Apple CI，已有真实 Mac 主机及 iOS Simulator 核心验证与应用构建证据。本机仍无 Mac/Xcode，Apple 工具只在 CI 临时 runner 使用，没有本机额外安装或正式签名/商店发布。模拟器应用不能作为真实 iPhone 安装包，核心原生用例不能代替四端全部功能验收。
 

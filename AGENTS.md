@@ -4,11 +4,11 @@
 
 - 用户于2026-10-08明确正式名称为 ImageHub，并授权创建公共仓库 `panlijun/ImageHub`、提交推送和运行标准 Apple CI。原资源包及历史记录沿用当时的 ImageHost 名称，保持原件。Dart package、应用 bundle/application ID、平台通道、Windows CompanyName/ProductName 技术存储身份、永久库与秘密命名空间保留，避免品牌更新改变本项目自身的数据位置；用户可见名称与新导出前缀统一 ImageHub。
 
-- 2026-10-08标准 Apple CI 已真实验证 Mac 核心能力：源提交 `c39dccd`、run `37778807585` 的 macOS 作业成功，1396软件测试通过/4平台分支跳过、独立进程恢复/重开/锁、三个原生用例及Release `ImageHub.app`构建通过。iOS Simulator 在前一源提交 `7fe7645` 已有三个原生用例和正常入口构建成功记录；c39首轮iOS在编译后长期等待，主动中止以取日志，不计通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、签名发行或设备PT完成；详见 `docs/github-publication.md`。
+- 2026-10-08标准 Apple CI 同源整体通过：源提交 `a6d0640`、run `37795607653` 的 macOS 与 iOS 作业均 success。Mac 1396软件测试通过/4平台分支跳过、六个独立进程恢复边界/重开/锁、三个原生用例及Release `ImageHub.app`构建通过；iOS26.2/iPhone17 Simulator三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、最低系统兼容、签名发行或设备PT完成；早期失败/取消保留，详见 `docs/github-publication.md`。
 
 - 用户于2026-10-08要求持续推进 Android 软件开发至完成；复用现有 Flutter/Dart 工程与已选 M1，保留 Windows 完成基线。新增工具统一放 `D:\Workspace\DevelopmentTools`；C 盘已有工具保留并复用，不迁移、不重复安装。用户已明确同意下载和安装 JDK 21、官方 Android SDK/API36/Build Tools/NDK、模拟器/系统镜像及 Gradle 依赖，并接受相应标准许可；新增缓存和模拟器数据也放该 D 盘目录，先不改系统 PATH。实机/硬件和真实账号联调的既有排除范围继续保留，不以模拟器证明实机 PT 通过。
 
-- 2026-10-08 Android 软件实现与本轮适用验证完成，见 `docs/milestone-28-android-completion.md`：1399软件测试通过/1非Windows分支跳过，API36 x86_64原生闭环及SAF/MediaStore桥、五个外部保存字节独立核验、正常Release应用导入/重开/处理/照片保存/ZIP合并恢复/诊断导出通过。ARM64和x86_64 APK均实际构建，沿用本地debug签名；ARM64实机/API29/PT/PERF/正式签名及真实服务仍不计通过。受影响的四个Windows原生流程和Release启动退出回归通过；无新增Git提交。
+- 2026-10-08 Android 软件实现与本轮适用验证完成，见 `docs/milestone-28-android-completion.md`：1399软件测试通过/1非Windows分支跳过，API36 x86_64原生闭环及SAF/MediaStore桥、五个外部保存字节独立核验、正常Release应用导入/重开/处理/照片保存/ZIP合并恢复/诊断导出通过。ARM64和x86_64 APK均实际构建，沿用本地debug签名；ARM64实机/API29/PT/PERF/正式签名及真实服务仍不计通过。受影响的四个Windows原生流程和Release启动退出回归通过；该完成阶段未新增Git提交，后续公开与Apple CI见上述最新记录。
 
 - 用户于2026-10-08明确不需要Catbox匿名上传，产品范围覆盖ACC-001/ACC-002/ACC-004的匿名目标：仅提供Catbox userhash账号和ImgBB APIKey。新配置、默认选择、入队、派发授权和适配器均拒绝匿名；本项目自身已有匿名身份仅保留普通历史/备份读取，不删除数据或转换UUID，禁止重新启用。资源包原件不变。
 - 用户于2026-10-07取消Catbox匿名真实联调；已准备的五张合成图不得发送。当前目标排除需要真实账号的测试，没有授权真实上传/删除/探测，不以合成凭据和受控HTTP称真实服务通过。

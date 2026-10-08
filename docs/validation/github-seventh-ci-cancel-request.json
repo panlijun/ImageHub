@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-10-08T14:52:15.2749113Z",
+  "run_id": 37794103833,
+  "head_sha": "6a8a9661fb9089dfe698bd21042772e3e892446c",
+  "prior_status": "in_progress",
+  "prior_conclusion": null,
+  "requested": true,
+  "http_status": 202,
+  "reason": "Superseded by a6d0640 after the iOS post-boot status query timeout; preserve the failed iOS log and do not count the incomplete Mac job as passed."
+}

@@ -1,10 +1,10 @@
 {
-  "observed_at": "2026-10-08T14:44:21.7999700Z",
+  "observed_at": "2026-10-08T14:55:21.8992452Z",
   "id": 37794103833,
   "head_sha": "6a8a9661fb9089dfe698bd21042772e3e892446c",
   "run_attempt": 1,
-  "status": "queued",
-  "conclusion": null,
+  "status": "completed",
+  "conclusion": "cancelled",
   "html_url": "https://github.com/panlijun/ImageHub/actions/runs/37794103833",
   "jobs": [
     {
@@ -121,14 +121,127 @@
       "id": 113368915769,
       "name": "macOS arm64 build and verification",
       "run_attempt": 1,
-      "status": "queued",
-      "conclusion": null,
-      "started_at": "2026-10-08T14:38:21Z",
-      "completed_at": null,
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-10-08T14:48:32Z",
+      "completed_at": "2026-10-08T14:54:21Z",
       "labels": [
         "macos-26"
       ],
-      "steps": []
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-08T14:48:33Z",
+          "completed_at": "2026-10-08T14:48:34Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-08T14:48:34Z",
+          "completed_at": "2026-10-08T14:48:38Z"
+        },
+        {
+          "name": "Use the runner temporary root for host tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-08T14:48:38Z",
+          "completed_at": "2026-10-08T14:48:38Z"
+        },
+        {
+          "name": "Verify the unchanged input kit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-08T14:48:38Z",
+          "completed_at": "2026-10-08T14:48:38Z"
+        },
+        {
+          "name": "Install the exact official Flutter SDK",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-08T14:48:38Z",
+          "completed_at": "2026-10-08T14:49:21Z"
+        },
+        {
+          "name": "Inspect Apple tooling",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-08T14:49:21Z",
+          "completed_at": "2026-10-08T14:51:05Z"
+        },
+        {
+          "name": "Resolve locked application dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-08T14:51:05Z",
+          "completed_at": "2026-10-08T14:51:18Z"
+        },
+        {
+          "name": "Analyze and verify formatting",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-08T14:51:18Z",
+          "completed_at": "2026-10-08T14:52:10Z"
+        },
+        {
+          "name": "Run all software tests on the Mac host",
+          "status": "in_progress",
+          "conclusion": null,
+          "number": 9,
+          "started_at": "2026-10-08T14:52:10Z",
+          "completed_at": null
+        },
+        {
+          "name": "Verify independent process recovery and locking",
+          "status": "pending",
+          "conclusion": null,
+          "number": 10,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "name": "Run Apple native integration verification",
+          "status": "pending",
+          "conclusion": null,
+          "number": 11,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "name": "Build the macOS Release application",
+          "status": "pending",
+          "conclusion": null,
+          "number": 12,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "name": "Retain bounded build and verification evidence",
+          "status": "pending",
+          "conclusion": null,
+          "number": 13,
+          "started_at": null,
+          "completed_at": null
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "pending",
+          "conclusion": null,
+          "number": 26,
+          "started_at": null,
+          "completed_at": null
+        }
+      ]
     }
   ],
   "artifacts": [

@@ -6,7 +6,7 @@ ImageHub 是用 Flutter 从零实现的本地个人图片工具。应用源码�
 
 Windows 和 Android 在用户确认范围内的软件开发及适用验证已完成，包括本地图库和永久副本、图片处理与结果保存、账号安全存储、持久上传队列、按网络类型控制派发、链接管理与主动检测、独立远端删除审计，以及备份恢复、诊断和设置。Android 采用 M1，已接入真实系统文件/照片取得、SAF 文件保存及 MediaStore 相册保存；API36 x86_64 模拟器上的正常 Release 应用闭环已验证。ARM64 APK 已构建，物理手机、最低 API29 和硬件验收仍未执行。
 
-Apple 云端验证使用标准 macOS arm64 runner。macOS 已通过完整软件测试、独立进程恢复与锁、三个真实原生用例及正常应用入口 Release 构建；iOS Simulator 的三个原生用例和正常应用入口构建已有通过记录。后续 iOS CI 的准备故障按真实日志修正：明确固定预装 iOS26.2/iPhone17 后已真实完成启动，但状态查询超时，专用查询期限已调整并待复验；历史失败和取消均保留。原生用例覆盖永久副本、SQLite、图库、像素解码、实际 IO 保护、Keychain 和被动网络桥接。具体提交、运行和边界见[GitHub 与 Apple 验证记录](docs/github-publication.md)。iOS 原生导出仍未接入，Mac 备份取得及其余平台功能按真实接入记录验收，不能把核心用例通过等同四端产品完成。
+Apple 云端验证使用标准 macOS arm64 runner，[当前源的 CI 已整体通过](https://github.com/panlijun/ImageHub/actions/runs/37795607653)。macOS 完整软件测试 1396 通过/4 跳过，独立进程恢复与锁、三个真实原生用例及正常应用入口 Release 构建通过；iOS26.2/iPhone17 Simulator 三个原生用例、正常应用入口未签名构建及自有设备清理通过。原生用例覆盖永久副本、SQLite、图库、像素解码、实际 IO 保护、Keychain 和被动网络桥接。具体源提交、产物与历史失败/取消见[GitHub 与 Apple 验证记录](docs/github-publication.md)。iOS 原生导出和 Mac 备份取得仍未接入，最低系统、物理设备与正式签名发行仍未验收；核心用例通过不等同四端产品完成。
 
 图床账号仅支持 Catbox userhash 和 ImgBB APIKey。Catbox 匿名上传已从产品中移除；本项目已有匿名身份只供读取普通历史和备份，不能创建、选择、入队或派发。真实图床上传、删除、探测没有获得联调授权；服务的精确大小与格式限制仍未知，因此生产能力守卫继续阻止未确认能力的派发。受控测试不代表真实服务可用。
 

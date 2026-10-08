@@ -12,7 +12,7 @@ Catbox 匿名上传已从产品范围移除，覆盖 ACC-001/ACC-002/ACC-004 中
 
 Windows 当前已接入的业务覆盖真实本地导入与持久图库、处理/永久保存/桌面导出、账号安全存储与健康观察、账号停用和移除影响确认、持久上传队列及处理依赖、网络类型派发策略、普通链接本地能力、明确主动检测、独立远端删除审计、备份合并与替换、诊断、设置及空间缓存管理。此清单描述当前软件范围，不是最终验收结论；本轮运行结果与未完成项另记于 `milestone-27-windows-completion.md`。
 
-M1 已选定为手机方向，不再比较 M2。Android 已接真实有界 SAF 图片/文件/ZIP 取得、文件/目录导出、MediaStore 相册保存及备份/诊断接线；API36 x86_64 模拟器已验证原生子流程和正常 Release 应用。ARM64 与 x86_64 APK 均实际构建，ARM64 物理手机和最低 API29 尚未验证。用户已授权公开 `panlijun/ImageHub` 并运行标准 Apple CI，真实 Mac 主机和 iOS Simulator 核心原生用例及应用构建已有通过证据，具体源提交与最新状态见[GitHub记录](github-publication.md)。iOS 原生导出仍是软件缺口，不能归为设备验收排除。
+M1 已选定为手机方向，不再比较 M2。Android 已接真实有界 SAF 图片/文件/ZIP 取得、文件/目录导出、MediaStore 相册保存及备份/诊断接线；API36 x86_64 模拟器已验证原生子流程和正常 Release 应用。ARM64 与 x86_64 APK 均实际构建，ARM64 物理手机和最低 API29 尚未验证。用户已授权公开 `panlijun/ImageHub` 并运行标准 Apple CI；当前源a6d0640的CI整体通过，真实Mac主机和iOS26.2/iPhone17 Simulator各三个核心原生用例及应用构建成功，Mac完整软件测试/独立进程恢复/锁亦通过，具体状态与产物见[GitHub记录](github-publication.md)。iOS 原生导出和Mac备份文件取得仍是软件缺口，不能归为设备验收排除。
 
 范围分为三类：物理设备 PT/真实硬件性能/断电排除且不计通过；真实账号服务联调未授权且不计通过；生产守卫、Windows 主机、已授权 Android 模拟器和 Apple CI 的软件验证仍执行。Windows/Android 完成记录及 GitHub/Apple 验证记录分别承载实际运行数字和状态，模拟器结果不升级为物理设备验收，Apple 核心检查通过不表示全部平台业务接入完成。
 

@@ -15,4 +15,4 @@ http.createServer(async (req,res) => {
     res.writeHead(200, {'Content-Type':types[path.extname(target)]||'application/octet-stream','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});
     res.end(req.method === 'HEAD' ? undefined : bytes);
   } catch { res.writeHead(404); res.end('Not found'); }
-}).listen(8775,'127.0.0.1',()=>console.log('ImageHost M1 refined preview: http://127.0.0.1:8775/mobile-m1/index.html'));
+}).listen(8775,'127.0.0.1',()=>console.log('ImageHub M1 refined preview: http://127.0.0.1:8775/mobile-m1/index.html'));

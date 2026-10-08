@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第六轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第七轮明确固定 iOS26.2/iPhone17 后已真实启动完成，随后设备状态查询超时；专用查询期限修正待新一轮真实验证，历史失败与取消均保留。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。当前应用源提交 `a6d0640` 的[第八轮 Apple CI](https://github.com/panlijun/ImageHub/actions/runs/37795607653)整体 **success**，macOS 与 iOS 作业均成功，应用验证产物已生成。历史失败与取消均保留，不改记通过；核心CI通过不等于Apple全部产品接入或正式发行完成。
 
 ## 已公开内容
 
@@ -107,8 +107,25 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 
 ## 第七轮真实启动完成与状态查询超时
 
-[第七轮 run 37794103833](https://github.com/panlijun/ImageHub/actions/runs/37794103833) 对应 `6a8a9661fb9089dfe698bd21042772e3e892446c`。iOS 作业 `113368915742` 终态 failure；macOS 当时仍排队，不计本轮通过，新源提交将按既有并发规则取消该排队作业。[触发](validation/github-seventh-ci-dispatch.json)、[实际状态](validation/github-seventh-ci-state.json)和[iOS 原始日志](validation/github-ios-6a8a966-job.log)保留实际阶段。
+[第七轮 run 37794103833](https://github.com/panlijun/ImageHub/actions/runs/37794103833) 对应 `6a8a9661fb9089dfe698bd21042772e3e892446c`，整体终态 **cancelled**。iOS 作业 `113368915742` failure；macOS 起初排队，后来开始软件测试，在新版触发后正常取消，没有完整测试/原生/构建成功结果，不计本轮通过。[触发](validation/github-seventh-ci-dispatch.json)、[正常取消请求](validation/github-seventh-ci-cancel-request.json)、[官方终态](validation/github-seventh-ci-state.json)和[iOS 原始日志](validation/github-ios-6a8a966-job.log)保留实际阶段。被取消的 Mac 作业日志接口返回 404，未取得其完整日志，不伪造记录。
 
 - 本轮已核对明确配置并新建 iOS26.2/iPhone17，自有 UUID `6fbb7dad-5977-43e0-a239-ffba8d687c73`。`bootstatus` 完成真实迁移、System App 等待及 `Status=4294967295, isTerminal=YES` / `Finished`，没有本轮迁移失败证据。后续 `simctl list devices --json` 在默认 60 秒期限内未返回，脚本拒绝就绪；原生与正常应用构建均跳过，不能把启动完成计为用例通过。
 - 自有设备在 `always()` 清理中读回 Booted，再关闭、读回 Shutdown、删除及读回缺席均成功。1,693 字节 artifact `11558341718` 只有准备/清理日志，没有应用包。
 - 只将启动完成后的该次状态读取期限改为 **120 秒**；保持真实所有权、Booted、30 秒 SpringBoard 正 PID 和失败拒绝，不重试未知查询，不降低原生测试要求。**5 项控制检查通过**，包括健康读取、超时、未 Booted、身份变化和无 PID；[记录](validation/github-ios-post-boot-query-logic.json)。脚本语法与实际 diff 检查通过，真实长查询及后续应用结果仍待新 runner。
+
+## 第八轮当前源的真实 Apple 验证
+
+[第八轮 run 37795607653](https://github.com/panlijun/ImageHub/actions/runs/37795607653) 的源提交为 `a6d0640298de4ebbf4126bacec138dd656f18a97`，整体终态 **success**。iOS 作业 `113376555917` 与 macOS 作业 `113376556025` 均 success；[逐步骤终态及产物](validation/github-eighth-ci-state.json)、[触发记录](validation/github-eighth-ci-dispatch.json)保留当前源与执行身份。
+
+- macOS 分析无问题（40.7 秒），`lib/test/integration_test` **266 文件格式 0 改动**；完整软件测试 **1396 通过、4 平台分支跳过，8 分 19 秒**，六导入提交边界的独立进程退出恢复、正常关闭重开及跨进程排他锁全部通过。**三个真实原生用例全部通过，执行 10 秒**，正常入口 Release `ImageHub.app` **63.2 MB** 构建成功；[Mac 原始完整日志](validation/github-macos-a6d0640-job.log)。这些验证共享当前应用源，数字不与之前重跑相加。
+- [Mac 开发验证产物 11559873041](https://github.com/panlijun/ImageHub/actions/runs/37795607653/artifacts/11559873041) 为 25,272,201 字节，SHA-256 `89a6825aaa4d5cd8c6aeeb33e2dcff899568aa74b8cd750cff2cc327453c6488`，包含正常 Release 应用 ZIP 与四份软件/进程/原生/构建日志，保留 7 天，2026-10-15 到期；没有正式 Developer ID 签名、公证或发布。
+- 本轮真实确认预装 iOS26.2/iPhone17，新建自有 UUID `81949823-b988-41fa-95ca-5dc6b6e83964`。启动完成后读回同一登记设备的 Booted，`launchctl list` 返回 SpringBoard 正 PID `2984`，严格检查通过后才授予测试设备标识。状态查询在本轮成功，不据此断言前一轮超时的唯一原因；清理关闭、读回 Shutdown、删除和读回缺席全部通过。
+- **iOS 三个真实原生用例全部通过，执行 16 秒**；首次原生 Xcode 编译另计 234.3 秒。正常应用入口的未签名 Simulator Debug `Runner.app` 构建成功，Xcode 编译 144.7 秒；[iOS 原始完整日志](validation/github-ios-a6d0640-job.log)保留实际 install/launch/VM 服务及用例输出。用例覆盖永久副本/SQLite/缩略图/SDK 预览/M1 图库/关闭重开/实际 IO 保护、独立 UUID 的 Keychain 写读删和被动网络；同进程 Keychain 新实例读取仍不是跨进程或物理设备验收。
+- [iOS 开发验证产物 11558902790](https://github.com/panlijun/ImageHub/actions/runs/37795607653/artifacts/11558902790) 为 70,326,995 字节，SHA-256 `dea253aea1e33b0340c847415f6f3742a50ffc9fee604f44d97542c23fb7ab5a`，包含正常应用 ZIP 及启动/原生/构建/清理日志，保留 7 天，2026-10-15 到期。它是 Simulator 包，不能当作真实 iPhone 的 IPA 或正式签名发行。
+
+## 交付与下一阶段
+
+- 正式名称、原生应用标签/窗口、新导出名称和当前设计原型已统一 ImageHub；本轮补齐预览服务器启动提示并通过 `node --check design/serve.mjs`。稳定包 ID、存储身份和资源包原件保留。
+- Windows Release `imagehub.exe` 的实际启动/正常退出、改名后的 ARM64/x86_64 APK 构建与系统标签已验证，见前述本机证据；本轮 Apple CI 修正未改变对应生产代码。Android 的正常应用闭环仍以 API36 模拟器记录为准。
+- 剩余软件工作：iOS 原生图片/文件/备份/诊断导出，以及 Mac 备份文件取得与相关沙盒授权接入。最低系统、物理设备 PT/性能/断电、四端人工闭环及正式签名/公证/发行未计通过。真实图床契约与账号联调仍未授权且单列，不因本轮 CI 成功开启未知服务能力派发。
+- 最后的记录提交仅更新记录、范围说明和预览服务器名称提示；交付前按 Git tree 核对 `app/`、`.github/workflows/apple.yml` 与资源包均与成功 CI 的源提交一致，再确认远端 `main` 和公共状态。
