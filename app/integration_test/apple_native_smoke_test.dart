@@ -39,6 +39,7 @@ void main() {
     (tester) async {
       _requireAppleEngine();
       final temporary = await getTemporaryDirectory();
+      await temporary.create(recursive: true);
       final canonicalTemporary = await temporary.resolveSymbolicLinks();
       final prefix = 'imagehost-apple-native-${const Uuid().v4()}-';
       final sandbox = await Directory(canonicalTemporary).createTemp(prefix);

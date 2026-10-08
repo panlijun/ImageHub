@@ -1,0 +1,17 @@
+{
+  "verification": "compiled constants only; no native export operation performed",
+  "results": [
+    {
+      "apk": "app-arm64-v8a-release.apk",
+      "sha256": "ee8476679f881da344ab8e7773583930f80268625d07d4498afe93450c8f9bb2",
+      "compiledImageHubPhotoFolder": true,
+      "compiledPreviousPhotoFolder": false
+    },
+    {
+      "apk": "app-x86_64-release.apk",
+      "sha256": "1af397e5a688016d183231e0e85576e6a4990b78c8901d952bbafae7334e0aa6",
+      "compiledImageHubPhotoFolder": true,
+      "compiledPreviousPhotoFolder": false
+    }
+  ]
+}

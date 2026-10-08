@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第二轮 CI 已执行真实 Mac 软件/进程检查，Apple 原生编译发现同名函数解析问题，修复后继续实际验证。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第三轮 iOS Simulator 原生验证及应用构建通过；Mac 软件/进程检查通过，图库 smoke 的目录准备问题正在修复并继续验证。
 
 ## 已公开内容
 
@@ -58,3 +58,12 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - [第二轮 run 37773260834](https://github.com/panlijun/ImageHub/actions/runs/37773260834) 对应 `5f666e04a3aee775c73a8826ec769acc2fc0de0d`，两个作业实际使用标准 `macos-26` arm64，整体终态 failure；[终态及逐步骤证据](validation/github-second-ci-state.json)。macOS 26.6.2 / Xcode 26.6 主机的完整软件测试 **1396 通过、4 跳过，8 分 2 秒**，独立进程恢复六个边界、正常重开及跨进程锁全部通过；[原始 Mac 日志](validation/github-macos-5f666e0-job.log)。平台跳过不计通过，测试时长不代表应用性能。
 - 该轮 macOS 和 iOS Simulator 的原生编译都在 `Darwin.statfs(path, &statistics)` 失败，Swift 将模块限定的同名引用解析为结构体；[原始 iOS 日志](validation/github-ios-5f666e0-job.log)。改为 `statfs(path, &statistics)`，与 [Swift 官方 Foundation 的 Darwin 实现](https://github.com/swiftlang/swift-corelibs-foundation/blob/main/Sources/Foundation/FileManager%2BPOSIX.swift)一致，继续使用真实 `f_bavail × f_bsize` 及溢出保护，不改未知空间时停止写入的规则。该轮 Apple 原生测试及应用包构建均不计通过。
 - 只读复核同时发现进程验证工具的失败清理缺口：现已登记自己创建的两个锁进程，失败也请求其正常关闭并等待真实退出，无法确认时保留临时目录。工具改动的主机检查见[分析](validation/github-apple-fix-analyze.log)和[独立进程重验](validation/github-process-recovery-cleanup.log)。正常成功路径的既有结果不替代失败路径保护审查。
+
+## 第三轮真实 Apple 结果
+
+[第三轮 run 37775981963](https://github.com/panlijun/ImageHub/actions/runs/37775981963) 对应 `7fe7645d9d0366437f990aed17f6fcf86cda36c3`，整体 failure；[逐步骤终态与产物元信息](validation/github-third-ci-state.json)保留 iOS 成功与 Mac 失败，不能把整体记绿。
+
+- iOS Simulator **3 项原生用例全部通过**（用例执行 34 秒；首次原生 Xcode 编译另计 267.7 秒），涵盖真实空间/独占发布、SQLite/永久副本/缩略图/SDK 解码/M1 图库/关闭重开/实际 IO 保护，以及独立 UUID 的 Keychain 写读删和被动网络桥接。正常应用入口的未签名 Simulator Debug 构建也通过；[iOS 原始日志](validation/github-ios-7fe7645-job.log)。已生成 artifact `11551031375`，70,211,378 字节，包含应用 ZIP 与验证记录，保留 7 天；不能作为真实 iPhone 安装包或发行签名证明。
+- macOS 完整软件测试 **1396 通过、4 跳过，9 分 26 秒**，修改后的独立进程恢复及锁全部通过；原生 Debug `ImageHub.app` 已编译成功，Keychain 和被动网络两项用例通过。图库用例在测试自身准备阶段失败：系统返回的本应用 Caches 子目录尚不存在，`resolveSymbolicLinks` 抛 `PathNotFoundException`，此轮没有验证 Mac 图库闭环，Release 步骤跳过；[Mac 原始日志](validation/github-macos-7fe7645-job.log)。38,400 字节的 Mac artifact 只有三份日志，没有 Release 应用包。
+- 已补齐 smoke 在解析系统临时根前创建目录，与生产 `locateLibrary` / `mobileTemporaryParent` 的既有准备顺序一致；保留随后自有目录及链接保护，不改变生产持久化规则。修复后的主机静态检查见[分析记录](validation/github-apple-temp-fix-analyze.log)，下一轮真实 Mac 运行仍须通过。
+- 名称改动的最终 APK 同时核对了 DEX 中的新相册目录常量及完整 APK 摘要；[记录](validation/imagehub-android-folder-compiled.json)。该项只证明实际编译内容，不称新执行了 MediaStore 保存或手机实机验收。
