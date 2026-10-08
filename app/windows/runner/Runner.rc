@@ -90,11 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "io.imagehost" "\0"
-            VALUE "FileDescription", "ImageHost" "\0"
+            VALUE "FileDescription", "ImageHub" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "imagehost" "\0"
+            VALUE "InternalName", "imagehub" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 io.imagehost. All rights reserved." "\0"
-            VALUE "OriginalFilename", "imagehost.exe" "\0"
+            VALUE "OriginalFilename", "imagehub.exe" "\0"
+            // path_provider_windows uses this stable technical storage identity.
             VALUE "ProductName", "imagehost" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END

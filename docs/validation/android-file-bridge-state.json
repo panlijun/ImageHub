@@ -1,0 +1,103 @@
+{
+  "phase": "complete",
+  "runId": "9e7e5091-9591-4a59-810c-cfd6c65ae968",
+  "fixtureSha": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+  "byteCount": 280502,
+  "uri": "content://media/external_primary/images/media/42",
+  "name": "BridgePhoto (5).png",
+  "results": {
+    "exportPhotos": [
+      {
+        "status": "saved",
+        "uri": "content://media/external_primary/images/media/42",
+        "name": "BridgePhoto (5).png"
+      }
+    ],
+    "nativeExportCodes": [
+      "ok"
+    ],
+    "exportPhotosDuplicate": [
+      {
+        "status": "saved",
+        "uri": "content://media/external_primary/images/media/43",
+        "name": "BridgePhoto (6).png"
+      }
+    ],
+    "importFile": [
+      {
+        "sourceType": "file",
+        "byteCount": 280502,
+        "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+        "chunks": 5
+      }
+    ],
+    "importPhoto": [
+      {
+        "sourceType": "photo",
+        "byteCount": 280502,
+        "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+        "chunks": 5
+      }
+    ],
+    "cancelledImport": [],
+    "exportDocument": [
+      {
+        "status": "saved",
+        "uri": "content://com.android.externalstorage.documents/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeDocument%20(5).png",
+        "name": "BridgeDocument (5).png"
+      }
+    ],
+    "exportTree": [
+      {
+        "status": "saved",
+        "uri": "content://com.android.externalstorage.documents/tree/primary%3ADownload%2FImageHostBridgeFixture/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeExport.png",
+        "name": "BridgeExport.png"
+      },
+      {
+        "status": "saved",
+        "uri": "content://com.android.externalstorage.documents/tree/primary%3ADownload%2FImageHostBridgeFixture/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeExport%20(1).png",
+        "name": "BridgeExport (1).png"
+      }
+    ],
+    "sourceFdRegression": {
+      "before": 164,
+      "after": 164,
+      "wrongSha": [
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged",
+        "inputChanged"
+      ],
+      "externalSource": "invalidInput",
+      "nonImage": "invalidInput"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # 环境与构建条件
 
-检查日期：2026-10-04；主机：Windows 11 25H2 x64，10.0.26200.9457。
+初始检查：2026-10-04；最新 Android 工具与构建检查：2026-10-08。主机：Windows 11 25H2 x64，10.0.26200.9457。下方历次记录保留各阶段形成时的结论，当前平台状态以四端现状和最新里程碑为准。
 
 ## SDK 安装
 
@@ -19,7 +19,23 @@
 
 安装依据：[Flutter 官方手动安装说明](https://docs.flutter.dev/install/manual)、[官方 Windows 发布元数据](https://storage.googleapis.com/flutter_infra_release/releases/releases_windows.json)。下载后 SHA-256 与官方发布值一致；SDK 自报版本与 framework 一致。安装档案 ZIP 保留于通用 development 目录，没有改动资源包。
 
-`flutter doctor -v`：Flutter、Windows、Visual Studio、网络均通过；Android toolchain 失败，原因是无 Android SDK。doctor 整体 exit0 不代表 Android 通过。已有 Chrome/Edge 不改变本项目范围，不生成 Web/Linux 应用。
+初始 `flutter doctor -v` 中 Android toolchain 因缺 SDK 失败；用户于 2026-10-08 授权后已补装 Android 工具，最终 doctor 无问题、许可全部接受，JDK/SDK 实际路径均指向 D 盘，见[最终 doctor](validation/android-doctor-final.log)。Debug/Release APK、API36 模拟器原生子流程及正常应用闭环分别已有真实证据；doctor 整体 exit0 本身不代表平台通过。已有 Chrome/Edge 不改变本项目范围，不生成 Web/Linux 应用。
+
+## Android 工具（2026-10-08）
+
+新增工具统一位于 `D:\Workspace\DevelopmentTools`，不迁移或重复安装 C 盘 Flutter，不修改系统 PATH。JDK、Android 用户目录、AVD 和 Gradle 缓存通过 `app/tool/android_environment.ps1` 只设置当前 PowerShell 进程。配置写于该工具目录的 `android-environment.json`。
+
+| 项目 | 实际安装值与位置 |
+| --- | --- |
+| JDK | Temurin 21.0.12.1+1，`Jdk21/jdk-21.0.12.1+1`，官方档案 SHA 核对通过 |
+| SDK | `AndroidSdk`；API36 rev2，构建插件另需 API35 rev2 |
+| Build Tools / NDK / CMake | 36.0.0 / 28.2.13676358 / 3.22.1 |
+| 平台工具 / 模拟器 | platform-tools 37.0.1 / emulator 37.2.12 |
+| 系统镜像 | Android36 Google APIs x86_64 rev7；自有 AVD `ImageHost_API36`，`emulator-5558` |
+| 缓存 | `AndroidUser`、`Avd`、`Gradle` 均在上述 D 盘工具目录；既有 Flutter 与 Dart 依赖缓存继续复用 |
+| 构建配置 | Gradle9.3.1、AGP9.1.0、Kotlin2.4.0；应用 minSdk29、target/compile36 |
+
+已接受用户批准范围的标准工具许可。WHPX 原本可用，未安装或修改虚拟化组件；自有模拟器采用 SwiftShader、2 CPU、2 GiB 内存，不使用该配置声称参考设备性能通过。[安装日志](validation/android-tools-install-final.log)、[环境与模拟器原生验证](validation/android-native-smoke-final.log)。
 
 ## 四端现状
 
@@ -27,12 +43,12 @@
 | --- | --- | --- | --- |
 | Windows 11 x64 | 原生 runner，1280×720 初始窗口 | Debug 原生引擎集成测试通过；Release 构建通过，启动后创建全新默认图库 | 系统文件选择窗口、普通窗口退出中的对话框与键盘/读屏仍需人工平台验收 |
 | macOS 12+ arm64 | 已生成 runner，用户选择文件读写 entitlement（支持已选桌面导出方案） | 未构建、未运行；源配置不代表沙盒实际授权通过 | Mac、Xcode、Apple 构建工具与目标设备 |
-| Android API29+ arm64 | 已生成 runner，minSdk29，文件/照片薄适配器 | 未构建、未运行 | Android SDK、Java/Gradle 所需工具链、模拟器或实机 |
+| Android API29+ arm64 | minSdk29、M1；有界 SAF/MediaStore、Pigeon 与私有 NDK 独占发布 | Debug 与 ARM64/x86_64 Release APK 已构建；API36 x86_64 原生子流程及正常 Release 应用导入/重开/预览/处理/照片保存/ZIP合并恢复/诊断导出通过，见[Android完成记录](milestone-28-android-completion.md) | ARM64 实机、API29 最低系统、物理设备 PT/PERF 与正式发行未验收；APK沿用本地debug签名 |
 | iOS 15+ arm64 | 已生成 runner，中文照片用途说明 | 未构建、未运行；plist XML 检查通过 | Mac、Xcode、设备/模拟器及签名条件 |
 
-本轮没有安装 Android SDK、开通外部服务、生成安装包或做发布。Apple/Android 源配置不作为平台能力通过证据。
+Android 安装和本地 APK 构建已获得授权；未开通外部服务、制作正式签名或发布。Apple 两端仍只有源配置，不能据此报告可运行。
 
-M1 接入阶段补充：Windows 主机已验证 320/390/430 Android 主题 widget 和 Windows 引擎中的 M1 布局闭环；这些只证明主机布局与共同业务。Android/iOS 的 SDK、权限、系统资源选择、安全区、键盘与设备生命周期仍无通过证据，详见 [M1 验收](milestone-02-m1.md)。
+早期 M1 阶段只验证 Windows 中的移动布局；当前新增 Android API36 模拟器证据单列，不改写早期 [M1 记录](milestone-02-m1.md)，也不代替 iOS 或物理设备验收。
 
 ## 依赖与数据位置
 
@@ -42,7 +58,7 @@ M1 接入阶段补充：Windows 主机已验证 320/390/430 Android 主题 widge
 
 新 Windows 生产路径实测：`%APPDATA%\io.imagehost\imagehost\imagehost_library_v1\`。只创建并检查此新命名空间；不扫描、导入或兼容旧应用数据。Release 启动检查留下此路径下的新空库，没有注入测试图片。集成/进程测试均使用单独临时库并清理。
 
-工作区没有现存 Git 仓库，因此本轮无可用 `git diff`；以实际新增文件与调用链审查。没有 `git init`、提交、推送或 PR。
+初始准备时没有 Git 仓库；用户随后授权建立 `main` 并提交“首次完成 PC 端”（`d642ebc`）。当前 Android 修改使用实际 `git diff` 审查，没有新增提交、推送或 PR。
 
 处理输出阶段未增加依赖或系统安装。共同处理/持久输出、桌面导出和 schema 1/2→3 已有 Windows 证据，详见 [输出里程碑](milestone-04-processing-outputs.md)；原生系统选择器及 Apple/Android 设备证据仍单列缺失。
 

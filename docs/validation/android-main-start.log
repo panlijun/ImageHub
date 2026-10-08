@@ -1,0 +1,7 @@
+Starting: Intent { cmp=io.imagehost.imagehost/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: io.imagehost.imagehost/.MainActivity
+TotalTime: 2438
+WaitTime: 2450
+Complete

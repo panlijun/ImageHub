@@ -1,0 +1,91 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-071 / SEC native transfer mapping SDK clipboard writes exact text and only confirms after platform success
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-071 / SEC native transfer mapping SDK clipboard refusal and missing backend return safe failure states
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-071 / SEC native transfer mapping share success uses ordinary text and safe anchor
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-070/071 repository-owned local transfer empty plans do not invoke clipboard or share
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-070/071 repository-owned local transfer foreign owner and close/reopen plans are stale before system access
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart:319:23)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +25: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +26: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +27: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +28: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +29: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +30: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +31: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +32: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +33: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +34: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +35: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +36: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:03 +37: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:04 +38: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:04 +39: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:04 +40: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:04 +41: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:04 +42: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 Android diagnostic confirmation dispatches system file save with safe document first (variant: TargetPlatform.windows)
+00:05 +43: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 Android diagnostic confirmation dispatches system file save with safe document first (variant: TargetPlatform.windows)
+00:06 +44: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/074 partial mobile real full ZIP precedes user save and preserves active/recycled UUIDs and bytes (variant: TargetPlatform.windows)
+00:06 +45: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/074 partial mobile real full ZIP precedes user save and preserves active/recycled UUIDs and bytes (variant: TargetPlatform.windows)
+00:07 +46: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +47: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +48: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +49: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +50: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +51: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +52: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +53: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +54: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-100 partial disposing mobile backup requests cancellation without early private ZIP deletion (variant: TargetPlatform.windows)
+00:13 +55: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:13 +56: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:15 +57: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:15 +58: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:17 +59: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:18 +60: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:19 +61: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:21 +62: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:21 +63: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-019/020/021 partial desktop recycle identity and separate purge confirmations (variant: TargetPlatform.windows)
+00:22 +64: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI content name false (variant: TargetPlatform.windows)
+00:22 +65: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:24 +66: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:25 +67: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:34 +68: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:36 +69: All tests passed!

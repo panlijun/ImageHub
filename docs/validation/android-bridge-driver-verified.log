@@ -1,0 +1,8 @@
+Native phase: exportPhotos
+Native phase: importFile
+Native phase: importPhoto
+Native phase: cancelledImport
+Native phase: exportDocument
+Native phase: exportTree
+Native phase: complete
+Native selector driver completed; verify the Flutter test result separately.

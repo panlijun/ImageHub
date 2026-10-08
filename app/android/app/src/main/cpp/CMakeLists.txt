@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.1)
+project(imagehost_storage LANGUAGES CXX)
+add_library(imagehost_storage SHARED exclusive_publication.cpp)
+target_compile_features(imagehost_storage PRIVATE cxx_std_17)
+target_compile_options(imagehost_storage PRIVATE -Wall -Wextra -Werror)

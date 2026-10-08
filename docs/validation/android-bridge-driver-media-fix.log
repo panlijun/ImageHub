@@ -1,0 +1,6 @@
+Native phase: exportPhotos
+Native phase: importFile
+Native phase: importPhoto
+Native phase: cancelledImport
+Native phase: exportDocument
+Native phase: exportTree

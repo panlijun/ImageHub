@@ -20,6 +20,22 @@ class DiagnosticExporter {
     Directory destination, {
     CancellationToken? cancellation,
     ExportFaultHook? faultHook,
+  }) => exportUsing(
+    document,
+    (inputs) => fileExporter.exportToDirectory(
+      inputs,
+      destination,
+      cancellation: cancellation,
+      faultHook: faultHook,
+    ),
+    cancellation: cancellation,
+  );
+
+  Future<ExportItemResult> exportUsing(
+    DiagnosticExportDocument document,
+    Future<List<ExportItemResult>> Function(List<ExportInput>) transfer, {
+    CancellationToken? cancellation,
+    Directory? temporaryParent,
   }) async {
     Directory? temporary;
     File? source;
@@ -28,25 +44,44 @@ class DiagnosticExporter {
     ExportItemResult? result;
     Object? failure;
     var cleanupPending = false;
+    var writerClosed = true;
+    var writerCloseUncertain = false;
     final id = const Uuid().v4();
     try {
       cancellation?.throwIfCancelled();
-      temporary = await Directory.systemTemp.createTemp(
-        'imagehost-diagnostics-',
-      );
+      final parent = temporaryParent ?? Directory.systemTemp;
+      await _checkPath(parent.path);
+      temporary = await parent.createTemp('imagehost-diagnostics-');
       await _checkPath(temporary.path);
-      final name = 'ImageHost-diagnostics-$id.json';
+      final name = 'ImageHub-diagnostics-$id.json';
       source = File(p.join(temporary.path, name));
       await source.create(exclusive: true);
       digest = sha256.convert(document.bytes).toString();
       writer = await source.open(mode: FileMode.writeOnly);
+      writerClosed = false;
       await writer.writeFrom(document.bytes);
       await writer.flush();
-      await writer.close();
+      try {
+        await writer.close();
+      } catch (_) {
+        writerCloseUncertain = true;
+        rethrow;
+      }
+      writerClosed = true;
       writer = null;
+      await _checkPath(source.path);
+      if (await FileSystemEntity.type(source.path, followLinks: false) !=
+              FileSystemEntityType.file ||
+          await source.length() != document.bytes.length ||
+          (await sha256.bind(source.openRead()).first).toString() != digest) {
+        throw const ExportFailure(
+          ExportFailureKind.inputChanged,
+          '诊断临时内容校验未通过。',
+        );
+      }
       cancellation?.throwIfCancelled();
-      final results = await fileExporter.exportToDirectory(
-        [
+      final results = await transfer(
+        List<ExportInput>.unmodifiable([
           ExportInput(
             id: id,
             source: source,
@@ -54,25 +89,32 @@ class DiagnosticExporter {
             expectedSha256: digest,
             expectedByteCount: document.bytes.length,
           ),
-        ],
-        destination,
-        cancellation: cancellation,
-        faultHook: faultHook,
+        ]),
       );
       result = results.single;
+      if (result.id != id) {
+        result = null;
+        throw const ExportFailure(
+          ExportFailureKind.invalidInput,
+          '诊断导出回执与本次内容不一致。',
+        );
+      }
     } catch (error) {
       failure = error;
     } finally {
       // Never release ownership by deleting an unknown child recursively.
       try {
         await writer?.close();
+        writerClosed = !writerCloseUncertain;
       } catch (_) {
         cleanupPending = true;
       }
       try {
         if (temporary != null) {
           await _checkPath(temporary.path);
-          if (source != null && digest != null) {
+          if (!writerClosed) {
+            cleanupPending = true;
+          } else if (source != null && digest != null) {
             await _checkPath(source.path);
             if (await FileSystemEntity.type(source.path, followLinks: false) ==
                 FileSystemEntityType.file) {
@@ -94,7 +136,8 @@ class DiagnosticExporter {
             // A failed write has no complete content evidence. Preserve it.
             cleanupPending = true;
           }
-          if (await temporary.list(followLinks: false).isEmpty) {
+          if (writerClosed &&
+              await temporary.list(followLinks: false).isEmpty) {
             await temporary.delete();
           } else {
             cleanupPending = true;
@@ -114,8 +157,11 @@ class DiagnosticExporter {
             : result.status,
         fileName: result.fileName,
         destinationPath: result.destinationPath,
+        destinationUri: result.destinationUri,
         failureKind: result.failureKind,
-        reason: cleanupPending ? '诊断临时内容清理未确认，现场已保留，请检查后重试。' : result.reason,
+        reason: cleanupPending
+            ? '${result.reason == null ? '' : '${result.reason} '}诊断临时内容清理未确认，现场已保留，请检查后重试。'
+            : result.reason,
       );
     }
     final cancelled =

@@ -530,7 +530,7 @@ class _RestorePicker extends BackupImportGateway {
   @override
   Future<File?> pickBackup() async => (await exports.list().toList())
       .whereType<File>()
-      .firstWhere((f) => f.path.contains('ImageHost-full-'));
+      .firstWhere((f) => f.path.contains('ImageHub-full-'));
   @override
   Future<Directory> temporaryParent() async => temporary;
 }

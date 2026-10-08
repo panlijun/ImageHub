@@ -1,0 +1,39 @@
+[√] Flutter (Channel stable, 3.47.6, on Microsoft Windows [版本 10.0.26200.9457], locale zh-CN) [373ms]
+    • Flutter version 3.47.6 on channel stable at C:\Users\PAN\development\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 5fc346839b (7 days ago), 2026-09-30 15:02:49 -0700
+    • Engine revision 692136cb65
+    • Dart version 3.13.5
+    • DevTools version 2.60.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-record-use, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[√] Windows Version (Windows 11 or higher, 25H2, 2009) [1,379ms]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.0.0) [1,905ms]
+    • Android SDK at D:\Workspace\DevelopmentTools\AndroidSdk
+    • Emulator version 37.2.12.0 (build_id 16428233) (CL:N/A)
+    • Platform android-36, build-tools 36.0.0
+    • ANDROID_HOME = D:\Workspace\DevelopmentTools\AndroidSdk
+    • Java binary at: D:\Workspace\DevelopmentTools\Jdk21\jdk-21.0.12.1+1\bin\java
+      This JDK is specified by the JAVA_HOME environment variable.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[√] Chrome - develop for the web [160ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[√] Visual Studio - develop Windows apps (Visual Studio 生成工具 2022 17.14.40) [160ms]
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools
+    • Visual Studio 生成工具 2022 version 17.14.37628.2
+    • Windows 10 SDK version 10.0.26100.0
+
+[√] Connected device (3 available) [2.9s]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [版本 10.0.26200.9457]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 154.0.8037.98
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 154.0.4258.62
+
+[√] Network resources [1,137ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.

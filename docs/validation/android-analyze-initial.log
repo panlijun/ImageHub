@@ -1,0 +1,18 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\diagnostics\presentation\diagnostics_screen.dart:259:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\diagnostics\presentation\diagnostics_screen.dart:351:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:242:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:250:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:256:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:293:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:299:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:319:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:409:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:1637:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\platform\android_export_gateway.dart:39:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\presentation\mobile_diagnostic_export_test.dart:235:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\presentation\mobile_diagnostic_export_test.dart:237:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\presentation\mobile_diagnostic_export_test.dart:437:5 - curly_braces_in_flow_control_structures
+
+14 issues found. (ran in 92.3s)

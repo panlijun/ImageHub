@@ -1,0 +1,45 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart
+Running Gradle task 'assembleDebug'...                             44.3s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,458ms
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart [E]
+  streamListen: (-32602) Invalid params
+  streamListen: invalid 'streamId' parameter: integration_test.VmServiceProxyGoldenFileComparator
+  package:vm_service/src/vm_service.dart 278:34                new _OutstandingRequest
+  package:vm_service/src/vm_service.dart 1960:25               VmService._call.<fn>
+  package:vm_service/src/vm_service.dart 1972:8                VmService._call
+  package:vm_service/src/vm_service.dart 1888:7                VmService.streamListen
+  package:flutter_tools/src/test/flutter_platform.dart 530:29  FlutterPlatform._listenToVmServiceForGoldens
+  
+00:00 +0 -1: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: ExportStatus:<ExportStatus.saved>
+  Actual: ExportStatus:<ExportStatus.failed>
+
+When the exception was thrown, this was the stack:
+#4      _assertSaved (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart:346:3)
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart:173:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart line 346
+The test description was:
+  IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+════════════════════════════════════════════════════════════════════════════════════════════════════
+01:30 +0 -2: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression [E]
+  Test failed. See exception logs above.
+  The test description was: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+  
+01:30 +0 -2: (tearDownAll)
+01:31 +0 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart

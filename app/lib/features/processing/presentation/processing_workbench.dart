@@ -11,7 +11,6 @@ import '../../gallery/data/library_repository.dart';
 import '../../gallery/domain/library_models.dart';
 import '../../gallery/presentation/asset_widgets.dart';
 import '../../gallery/presentation/gallery_providers.dart';
-import '../application/file_exporter.dart';
 import '../application/processing_coordinator.dart';
 import '../domain/export_models.dart';
 import '../domain/output_models.dart';
@@ -458,71 +457,132 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
     });
   }
 
-  void _export(List<String> ids) {
+  void _export(List<String> ids, {bool photos = false}) {
     final repository = _repository!;
+    final selected = List<String>.unmodifiable(ids);
+    final names = {
+      for (final output in _outputs) output.id: output.displayName,
+    };
+    final gateway = ref.read(exportGatewayProvider);
     _run((token) async {
-      final directory = await ref.read(exportGatewayProvider).pickDirectory();
-      if (directory == null) {
-        if (mounted) setState(() => _feedback = '已取消目录选择。');
-        return;
-      }
-      final results = <ExportItemResult>[];
-      // Each result owns a lease until its real export IO has completed.
-      for (final id in List<String>.unmodifiable(ids)) {
-        if (token.isCancelled) {
-          results.add(
-            ExportItemResult(
+      final results = <String, ExportItemResult>{};
+      final inputs = <ExportInput>[];
+      final leases = <OutputFileLease>[];
+      var releaseFailed = false;
+      try {
+        for (final id in selected) {
+          if (token.isCancelled) {
+            results[id] = ExportItemResult(
               id: id,
               status: ExportStatus.cancelled,
               reason: '未开始，已取消',
-            ),
-          );
-          continue;
-        }
-        OutputFileLease? lease;
-        try {
-          lease = await repository.acquireOutputLease(id);
-          final output = lease.output;
-          results.addAll(
-            await const FileExporter().exportToDirectory(
-              [
-                ExportInput(
-                  id: id,
-                  source: output.file!,
-                  displayName: output.displayName,
-                  expectedSha256: output.version!.sha256,
-                  expectedByteCount: output.version!.byteCount,
-                ),
-              ],
-              directory,
-              cancellation: token,
-            ),
-          );
-        } catch (error) {
-          results.add(
-            ExportItemResult(
+            );
+            continue;
+          }
+          try {
+            final lease = await repository.acquireOutputLease(id);
+            leases.add(lease);
+            final output = lease.output;
+            inputs.add(
+              ExportInput(
+                id: id,
+                source: output.file!,
+                displayName: output.displayName,
+                expectedSha256: output.version!.sha256,
+                expectedByteCount: output.version!.byteCount,
+              ),
+            );
+          } catch (error) {
+            results[id] = ExportItemResult(
               id: id,
-              status: ExportStatus.failed,
-              reason: '$error',
-            ),
-          );
-        } finally {
-          await lease?.release();
+              status:
+                  error is ResourceFailure &&
+                      error.kind == FailureKind.cancelled
+                  ? ExportStatus.cancelled
+                  : ExportStatus.failed,
+              reason: switch (error) {
+                ResourceFailure() => error.message,
+                ProcessingFailure() => error.message,
+                _ => '无法取得已确认的处理结果，未开始保存。',
+              },
+            );
+          }
+        }
+        if (inputs.isNotEmpty) {
+          try {
+            final exported = await gateway.exportFiles(
+              List<ExportInput>.unmodifiable(inputs),
+              cancellation: token,
+              photos: photos,
+            );
+            for (final input in inputs) {
+              final matches = exported
+                  .where((result) => result.id == input.id)
+                  .toList();
+              results[input.id] = matches.length == 1
+                  ? matches.single
+                  : ExportItemResult(
+                      id: input.id,
+                      status: ExportStatus.failed,
+                      reason: '系统保存结果未确认，请检查所选位置后重试。',
+                    );
+            }
+          } catch (error) {
+            for (final input in inputs) {
+              results[input.id] = ExportItemResult(
+                id: input.id,
+                status:
+                    error is ResourceFailure &&
+                        error.kind == FailureKind.cancelled
+                    ? ExportStatus.cancelled
+                    : ExportStatus.failed,
+                reason: switch (error) {
+                  ExportFailure() => error.message,
+                  ResourceFailure() => error.message,
+                  _ => '系统保存未确认，请检查所选位置后重试。',
+                },
+              );
+            }
+          }
+        }
+      } finally {
+        // The gateway drains its selector and actual IO before returning. A
+        // cancellation request alone never releases these file protections.
+        for (final lease in leases) {
+          try {
+            await lease.release();
+          } catch (_) {
+            releaseFailed = true;
+          }
         }
       }
       if (mounted) {
-        setState(
-          () => _feedback = results
-              .map(
-                (result) =>
-                    '${_outputs.where((output) => output.id == result.id).firstOrNull?.displayName ?? result.id}：${switch (result.status) {
-                      ExportStatus.saved => '已导出 ${result.fileName}',
-                      ExportStatus.failed => '失败 ${result.reason}',
-                      ExportStatus.cancelled => '已取消 ${result.reason ?? ''}',
-                    }}',
-              )
-              .join('\n'),
-        );
+        setState(() {
+          if (releaseFailed) {
+            _error = '文件使用保护收尾未确认，保护记录保留；已确认保存的文件保留。';
+          }
+          _feedback =
+              !photos &&
+                  gateway.supportsDirectoryExport &&
+                  results.isNotEmpty &&
+                  results.values.every(
+                    (result) =>
+                        result.status == ExportStatus.cancelled &&
+                        result.reason == '已取消目录选择。',
+                  )
+              ? '已取消目录选择。'
+              : selected
+                    .map((id) => results[id]!)
+                    .map(
+                      (result) =>
+                          '${names[result.id] ?? result.id}：${switch (result.status) {
+                            ExportStatus.saved => '${photos ? '已保存到相册' : '已导出'} ${result.fileName ?? names[result.id] ?? ''}${result.reason == null ? '' : '；${result.reason}'}',
+                            ExportStatus.failed => '失败 ${result.reason ?? '系统保存未确认，请检查所选位置。'}',
+                            ExportStatus.cancelled => '已取消 ${result.reason ?? ''}',
+                          }}',
+                    )
+                    .join('\n');
+        });
       }
     });
   }
@@ -1065,9 +1125,10 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
           child: const Text('清理到期且无保护的结果'),
         ),
         TextButton(
+          key: const Key('processing-export-all'),
           onPressed:
               _busy ||
-                  !ref.watch(exportGatewayProvider).supportsDirectoryExport ||
+                  !ref.watch(exportGatewayProvider).supportsFileExport ||
                   !_outputs.any((output) => output.usable)
               ? null
               : () => _export(
@@ -1078,9 +1139,24 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
                 ),
           child: const Text('导出全部可用结果'),
         ),
+        if (ref.watch(exportGatewayProvider).supportsPhotos)
+          TextButton.icon(
+            key: const Key('processing-export-photos-all'),
+            onPressed: _busy || !_outputs.any((output) => output.usable)
+                ? null
+                : () => _export(
+                    _outputs
+                        .where((output) => output.usable)
+                        .map((output) => output.id)
+                        .toList(),
+                    photos: true,
+                  ),
+            icon: const Icon(Icons.photo_library_outlined),
+            label: const Text('全部保存到相册'),
+          ),
       ],
     ),
-    if (!ref.watch(exportGatewayProvider).supportsDirectoryExport)
+    if (!ref.watch(exportGatewayProvider).supportsFileExport)
       const Text('此平台的原生文件导出尚未接入，导出已禁用。'),
     if (_outputs.isEmpty) const Text('还没有处理输出。临时输出只有完成文件校验和提交后才可使用。'),
     for (final output in _outputs)
@@ -1134,16 +1210,24 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
                     child: const Text('永久保存到图库'),
                   ),
                   TextButton(
+                    key: Key('processing-export-${output.id}'),
                     onPressed:
                         _busy ||
                             !output.usable ||
-                            !ref
-                                .watch(exportGatewayProvider)
-                                .supportsDirectoryExport
+                            !ref.watch(exportGatewayProvider).supportsFileExport
                         ? null
                         : () => _export([output.id]),
                     child: const Text('导出此结果'),
                   ),
+                  if (ref.watch(exportGatewayProvider).supportsPhotos)
+                    TextButton.icon(
+                      key: Key('processing-export-photos-${output.id}'),
+                      onPressed: _busy || !output.usable
+                          ? null
+                          : () => _export([output.id], photos: true),
+                      icon: const Icon(Icons.photo_library_outlined),
+                      label: const Text('保存到相册'),
+                    ),
                   TextButton.icon(
                     onPressed: _busy || !output.usable
                         ? null

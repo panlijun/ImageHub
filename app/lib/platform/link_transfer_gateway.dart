@@ -57,7 +57,7 @@ final class SystemLinkTransferGateway implements LinkTransferGateway {
       final result = await _share(
         ShareParams(
           text: text,
-          title: 'ImageHost 普通链接',
+          title: 'ImageHub 普通链接',
           sharePositionOrigin: anchor == null
               ? null
               : Rect.fromLTWH(

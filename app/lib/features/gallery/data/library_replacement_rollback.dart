@@ -123,7 +123,13 @@ extension LibraryReplacementRecovery on LibraryRepository {
       }
       await _replacementVerifyBytes(snapshot.id, payload);
       _restoreNotCancelled(cancellation);
-      final directory = await Directory.systemTemp.createTemp(
+      // The runtime's platform temporary root may use an Android system alias.
+      // Resolve that trusted root before adding our private namespace; all
+      // subsequently created children still undergo the strict no-link checks.
+      final temporaryRoot = Directory(
+        await Directory.systemTemp.resolveSymbolicLinks(),
+      );
+      final directory = await temporaryRoot.createTemp(
         'imagehost-recovery-proof-',
       );
       scratch = _ReplacementRecoveryScratch(directory);

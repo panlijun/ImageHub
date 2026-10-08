@@ -19,7 +19,7 @@ class ImageHostApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
-    title: 'ImageHost',
+    title: 'ImageHub',
     debugShowCheckedModeBanner: false,
     routerConfig: _router,
     locale: const Locale('zh', 'CN'),

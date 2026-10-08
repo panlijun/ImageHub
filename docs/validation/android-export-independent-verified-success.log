@@ -1,0 +1,10 @@
+
+name                   byteCount sha256                                                           published
+----                   --------- ------                                                           ---------
+BridgePhoto (5).png       280502 ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1      True
+BridgePhoto (6).png       280502 ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1      True
+BridgeDocument (5).png    280502 ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1      True
+BridgeExport.png          280502 ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1      True
+BridgeExport (1).png      280502 ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1      True
+
+PASS five real native export destinations: actual names, lengths, SHA-256 and published media; no rejected photo inserted.

@@ -7,6 +7,7 @@ import 'package:material_ui/material_ui.dart' hide DiagnosticLevel;
 
 import '../../../core/platform_resource.dart';
 import '../../../platform/export_gateway.dart';
+import '../../../platform/mobile_file_workspace.dart';
 import '../../gallery/data/library_repository.dart';
 import '../../gallery/presentation/gallery_providers.dart';
 import '../../processing/domain/export_models.dart';
@@ -19,6 +20,9 @@ final diagnosticExportGatewayProvider = Provider(
 );
 final diagnosticExporterProvider = Provider(
   (ref) => const DiagnosticExporter(),
+);
+final diagnosticTemporaryParentProvider = Provider(
+  (ref) => mobileTemporaryParent,
 );
 
 /// Shared by desktop settings and the M1 settings entry.
@@ -250,6 +254,11 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
     final scope = _scope(_query);
     try {
       token.throwIfCancelled();
+      final gateway = export ? ref.read(diagnosticExportGatewayProvider) : null;
+      if (export && !gateway!.supportsFileExport) {
+        throw const DiagnosticFailure();
+      }
+      final directoryExport = gateway?.supportsDirectoryExport ?? false;
       final plan = await session.repository.prepareDiagnosticSelection(
         query: _query,
       );
@@ -270,7 +279,7 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
             child: Text(
               '范围：$scope\n已冻结 ${plan.count} 条，UTF-8 内容 ${plan.contentBytes} 字节。'
               '涵盖当前筛选的全部匹配记录，不限于本页；后来新增记录不会加入。\n'
-              '${export ? '仅导出本机脱敏 JSON；排除图片、凭据、管理秘密、完整来源路径和原始响应。保存到你选择的本机目录，不自动外发。' : '只清理这些诊断日志，不删除图片、任务、普通结果或远端历史。'}',
+              '${export ? '仅导出本机脱敏 JSON；排除图片、凭据、管理秘密、完整来源路径和原始响应。${directoryExport ? '保存到你选择的本机目录' : '通过系统选择保存位置'}，不自动外发。' : '只清理这些诊断日志，不删除图片、任务、普通结果或远端历史。'}',
             ),
           ),
           actions: [
@@ -281,7 +290,13 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
             FilledButton(
               key: const Key('diagnostics-confirm'),
               onPressed: () => _resolveConfirmation(true),
-              child: Text(export ? '选择目录并导出' : '仅清理这些日志'),
+              child: Text(
+                export
+                    ? directoryExport
+                          ? '选择目录并导出'
+                          : '选择保存位置并导出'
+                    : '仅清理这些日志',
+              ),
             ),
           ],
         ),
@@ -295,13 +310,14 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
         return;
       }
       if (export) {
-        final gateway = ref.read(diagnosticExportGatewayProvider);
-        if (!gateway.supportsDirectoryExport) throw const DiagnosticFailure();
-        final destination = await gateway.pickDirectory();
+        final exportGateway = gateway!;
+        final destination = directoryExport
+            ? await exportGateway.pickDirectory()
+            : null;
         // Native directory choosers have no cancellation bridge. Wait for the
         // real callback, then reject further work when exit/dispose cancelled.
         token.throwIfCancelled();
-        if (destination == null) {
+        if (directoryExport && destination == null) {
           if (mounted) setState(() => _feedback = '已取消目录选择。');
           return;
         }
@@ -318,11 +334,30 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
             epoch != session.repository.executionEpoch) {
           return;
         }
-        final result = await exporter.export(
-          document,
-          destination,
-          cancellation: token,
-        );
+        final ExportItemResult result;
+        if (directoryExport) {
+          result = await exporter.export(
+            document,
+            destination!,
+            cancellation: token,
+          );
+        } else {
+          final temporaryParent = await ref.read(
+            diagnosticTemporaryParentProvider,
+          )();
+          token.throwIfCancelled();
+          if (!mounted ||
+              revision != _revision ||
+              epoch != session.repository.executionEpoch) {
+            return;
+          }
+          result = await exporter.exportUsing(
+            document,
+            (inputs) => exportGateway.exportFiles(inputs, cancellation: token),
+            cancellation: token,
+            temporaryParent: temporaryParent,
+          );
+        }
         if (!mounted ||
             revision != _revision ||
             epoch != session.repository.executionEpoch) {
@@ -333,7 +368,7 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
             ExportStatus.saved =>
               '已导出 ${document.count} 条：${result.fileName}${result.reason == null ? '' : '。${result.reason}'}',
             ExportStatus.cancelled => '已取消导出，实际文件 IO 已收尾。',
-            ExportStatus.failed => '诊断导出未完成，请检查目录和空间后重试。',
+            ExportStatus.failed => result.reason ?? '诊断导出未完成，请检查所选位置和空间后重试。',
           },
         );
       } else {
@@ -371,7 +406,7 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
   Widget build(BuildContext context) {
     final supported = ref
         .watch(diagnosticExportGatewayProvider)
-        .supportsDirectoryExport;
+        .supportsFileExport;
     final enabled = !_busy && !_loading && _error == null && _page != null;
     final page = _page;
     return PopScope(
@@ -500,7 +535,7 @@ class _DiagnosticsScreenState extends ConsumerState<DiagnosticsScreen> {
             ),
             if (!supported)
               const Text(
-                'Android / iOS 原生诊断文件导出尚未接入，导出不可用。',
+                '此平台的原生诊断文件导出尚未接入，导出不可用。',
                 key: Key('diagnostics-mobile-disabled'),
               ),
             if (_busy) const Text('正在处理确认范围，请等待实际 IO 完成。'),

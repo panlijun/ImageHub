@@ -1,10 +1,12 @@
 package io.imagehost.imagehost
 
 import android.os.StatFs
+import android.content.Intent
+import android.system.OsConstants
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
-import java.nio.file.FileAlreadyExistsException
+import java.nio.file.FileSystemException
 import java.nio.file.Files
 import java.nio.file.LinkOption
 import java.nio.file.Path
@@ -13,9 +15,17 @@ import java.nio.file.attribute.BasicFileAttributes
 
 class MainActivity : FlutterActivity() {
     private var networkBridge: NetworkTypeBridge? = null
+    private var resourceBridge: AndroidResourceBridge? = null
+    private var exportBridge: AndroidExportBridge? = null
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        resourceBridge?.dispose()
+        exportBridge?.dispose()
+        resourceBridge = AndroidResourceBridge(this)
+        exportBridge = AndroidExportBridge(this)
+        AndroidResourceHost.setUp(flutterEngine.dartExecutor.binaryMessenger, resourceBridge)
+        AndroidExportHost.setUp(flutterEngine.dartExecutor.binaryMessenger, exportBridge)
         networkBridge?.dispose()
         networkBridge = NetworkTypeBridge(this, flutterEngine.dartExecutor.binaryMessenger)
         MethodChannel(
@@ -35,6 +45,7 @@ class MainActivity : FlutterActivity() {
                     }
                 }
                 "publishExclusive" -> {
+                    var step = "validate"
                     try {
                         val arguments = call.arguments as? Map<*, *>
                             ?: throw IllegalArgumentException()
@@ -47,20 +58,32 @@ class MainActivity : FlutterActivity() {
                         checkDirectories(source.parent ?: throw IllegalArgumentException())
                         checkDirectories(destination.parent ?: throw IllegalArgumentException())
 
-                        // createLink is exclusive and cannot copy across volumes or replace a
-                        // racing destination. The upper layer owns the closed, immutable stage.
-                        Files.createLink(destination, source)
-                        try {
-                            Files.delete(source)
-                        } catch (_: Exception) {
-                            // The destination is already committed. Keep its evidence and let
-                            // the owned-stage cleanup/recovery retry removal of the source.
+                        step = "publish"
+                        val errno = AndroidPublication.renameExclusive(
+                            source.toString().toByteArray(Charsets.UTF_8),
+                            destination.toString().toByteArray(Charsets.UTF_8),
+                        )
+                        if (errno == 0 || errno == OsConstants.EEXIST) {
+                            result.success(errno == 0)
+                        } else {
+                            result.error("publish_error", "Unable to publish the backup file.",
+                                mapOf("step" to step, "kind" to "syscall", "errno" to errno))
                         }
-                        result.success(true)
-                    } catch (_: FileAlreadyExistsException) {
-                        result.success(false)
-                    } catch (_: Exception) {
-                        result.error("publish_error", "Unable to publish the backup file.", null)
+                    } catch (_: LinkageError) {
+                        result.error("publish_error", "Unable to publish the backup file.",
+                            mapOf("step" to step, "kind" to "unavailable"))
+                    } catch (failure: Exception) {
+                        // Only fixed classifications cross the channel. Paths and SDK
+                        // exception messages must never become ordinary diagnostics.
+                        val kind = when (failure) {
+                            is UnsupportedOperationException -> "unsupported"
+                            is SecurityException -> "permission"
+                            is FileSystemException -> "filesystem"
+                            is IllegalArgumentException, is IllegalStateException -> "validation"
+                            else -> "unavailable"
+                        }
+                        result.error("publish_error", "Unable to publish the backup file.",
+                            mapOf("step" to step, "kind" to kind))
                     }
                 }
                 else -> result.notImplemented()
@@ -69,15 +92,29 @@ class MainActivity : FlutterActivity() {
     }
 
     override fun cleanUpFlutterEngine(flutterEngine: FlutterEngine) {
+        AndroidResourceHost.setUp(flutterEngine.dartExecutor.binaryMessenger, null)
+        AndroidExportHost.setUp(flutterEngine.dartExecutor.binaryMessenger, null)
+        resourceBridge?.dispose()
+        exportBridge?.dispose()
+        resourceBridge = null
+        exportBridge = null
         networkBridge?.dispose()
         networkBridge = null
         super.cleanUpFlutterEngine(flutterEngine)
     }
 
     override fun onDestroy() {
+        resourceBridge?.dispose()
+        exportBridge?.dispose()
         networkBridge?.dispose()
         networkBridge = null
         super.onDestroy()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resourceBridge?.onActivityResult(requestCode, resultCode, data) == true ||
+            exportBridge?.onActivityResult(requestCode, resultCode, data) == true) return
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     private fun absolutePath(value: Any?): Path {

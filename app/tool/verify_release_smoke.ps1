@@ -1,7 +1,7 @@
 param([string]$Executable = '')
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($Executable)) {
-  $Executable = Join-Path $PSScriptRoot '../build/windows/x64/runner/Release/imagehost.exe'
+  $Executable = Join-Path $PSScriptRoot '../build/windows/x64/runner/Release/imagehub.exe'
 }
 $Executable = (Resolve-Path -LiteralPath $Executable).Path
 

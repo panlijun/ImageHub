@@ -1,0 +1,39 @@
+Running Gradle task 'assembleDebug'...                          
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Checking the license for package Android SDK Platform 35 in D:\Workspace\DevelopmentTools\AndroidSdk\licenses
+License for package Android SDK Platform 35 accepted.
+Preparing "Install Android SDK Platform 35 (revision 2)".
+"Install Android SDK Platform 35 (revision 2)" ready.
+Installing Android SDK Platform 35 in D:\Workspace\DevelopmentTools\AndroidSdk\platforms\android-35
+"Install Android SDK Platform 35 (revision 2)" complete.
+"Install Android SDK Platform 35 (revision 2)" finished.
+lib/platform/mobile_file_workspace.dart:8:8: Error: Error when reading 'lib/features/backup/application/backup_temporary_workspace.dart': 系统找不到指定的文件。
+import '../features/backup/application/backup_temporary_workspace.dart';
+       ^
+lib/platform/mobile_file_workspace.dart:17:9: Error: Type 'BackupTemporaryWorkspace' not found.
+  final BackupTemporaryWorkspace _ownership;
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+lib/platform/mobile_file_workspace.dart:15:20: Error: Method not found: 'BackupTemporaryWorkspace'.
+    : _ownership = BackupTemporaryWorkspace(directory);
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+lib/platform/mobile_file_workspace.dart:17:9: Error: 'BackupTemporaryWorkspace' isn't a type.
+  final BackupTemporaryWorkspace _ownership;
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\Users\PAN\development\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6m 9s
+Running Gradle task 'assembleDebug'...                            370.1s
+Gradle task assembleDebug failed with exit code 1

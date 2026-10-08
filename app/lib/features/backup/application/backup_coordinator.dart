@@ -106,7 +106,7 @@ final class BackupCoordinator {
           throw BackupSnapshotFailure('备份暂存文件不可用，未提交备份。');
         }
         final suffix = attempt == 0 ? view.packageId : const Uuid().v4();
-        final name = 'ImageHost-${mode.name}-$suffix.zip';
+        final name = 'ImageHub-${mode.name}-$suffix.zip';
         final target = File(p.join(destination.path, name));
         if (await publishExclusive(staged, target)) {
           published = target;

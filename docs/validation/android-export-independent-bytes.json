@@ -1,0 +1,42 @@
+[
+  {
+    "uri": "content://media/external_primary/images/media/42",
+    "name": "BridgePhoto (5).png",
+    "byteCount": 280502,
+    "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+    "published": true,
+    "route": "MediaStore content"
+  },
+  {
+    "uri": "content://media/external_primary/images/media/43",
+    "name": "BridgePhoto (6).png",
+    "byteCount": 280502,
+    "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+    "published": true,
+    "route": "MediaStore content"
+  },
+  {
+    "uri": "content://com.android.externalstorage.documents/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeDocument%20(5).png",
+    "name": "BridgeDocument (5).png",
+    "byteCount": 280502,
+    "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+    "published": true,
+    "route": "Owned ordinary external file"
+  },
+  {
+    "uri": "content://com.android.externalstorage.documents/tree/primary%3ADownload%2FImageHostBridgeFixture/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeExport.png",
+    "name": "BridgeExport.png",
+    "byteCount": 280502,
+    "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+    "published": true,
+    "route": "Owned ordinary external file"
+  },
+  {
+    "uri": "content://com.android.externalstorage.documents/tree/primary%3ADownload%2FImageHostBridgeFixture/document/primary%3ADownload%2FImageHostBridgeFixture%2FBridgeExport%20(1).png",
+    "name": "BridgeExport (1).png",
+    "byteCount": 280502,
+    "sha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+    "published": true,
+    "route": "Owned ordinary external file"
+  }
+]

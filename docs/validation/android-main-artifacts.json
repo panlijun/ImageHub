@@ -1,0 +1,51 @@
+{
+  "installedApk": "normal main.dart x86_64 Release local-debug signing",
+  "processedOutput": "ready PNG 320x256, 280502 bytes; actual preview",
+  "photo": {
+    "uri": "content://media/external/images/media/47",
+    "name": "BridgeFixture.png_compress.png",
+    "byteCount": 280502,
+    "sha256": "EC97FD77A2753CC22CD90B8DF3A79A13A40E7F5AA6A713F6010E011F72B57AB1",
+    "pending": 0
+  },
+  "backup": {
+    "name": "ImageHost-full-0f00b87e-7a60-4168-888e-dd928ef7fd71.zip",
+    "byteCount": 282532,
+    "sha256": "0880965F0023995A1BAB121FA82BF9C8E8C9398518815FF1AFD596B40356FF81",
+    "formatVersion": 2,
+    "entries": [
+      {
+        "name": "manifest.json",
+        "byteCount": 1736
+      },
+      {
+        "name": "images/40b12b13-c085-4193-8be0-55539d532a17.png",
+        "byteCount": 280502
+      }
+    ],
+    "permanentBytesSha256": "EC97FD77A2753CC22CD90B8DF3A79A13A40E7F5AA6A713F6010E011F72B57AB1"
+  },
+  "restore": "real SAF ZIP selection, strict preflight, explicit merge confirmation, committed, 0 duplicate assets added",
+  "diagnostics": {
+    "name": "ImageHost-diagnostics-e88ae784-8a29-429d-80a9-b3e3d367978e.json",
+    "byteCount": 1813,
+    "sha256": "50BB1A5A07BCAA1261C95B71EF119467EA75078007DB4B8234EFD636AD42AEE4",
+    "formatVersion": 1,
+    "eventCount": 4,
+    "codes": [
+      "restore.merge.completed",
+      "backup.export.completed",
+      "processing.ready.completed",
+      "import.saved.completed"
+    ],
+    "excluded": [
+      "images",
+      "credentials",
+      "managementSecrets",
+      "sourcePaths",
+      "rawResponses"
+    ]
+  },
+  "normalBackToLauncher": true,
+  "finalReopen": "actual M1 shows the original asset after processing, photo export, backup, merge restore and diagnostic export"
+}

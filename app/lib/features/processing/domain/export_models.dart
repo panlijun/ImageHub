@@ -45,6 +45,7 @@ class ExportItemResult {
     required this.status,
     this.fileName,
     this.destinationPath,
+    this.destinationUri,
     this.failureKind,
     this.reason,
   });
@@ -53,6 +54,9 @@ class ExportItemResult {
   final ExportStatus status;
   final String? fileName;
   final String? destinationPath;
+
+  /// A confirmed native document/media URI, never a desktop filesystem path.
+  final String? destinationUri;
   final ExportFailureKind? failureKind;
   final String? reason;
 }

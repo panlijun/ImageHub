@@ -1,0 +1,12 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "B038D7ADC2105B3EB9BBF595E6ABFDFBADE25EB609F859A4CABF5A38587BFF22",
+    "Path": "C:\\Users\\PAN\\workspace\\ImageHub\\app\\build\\app\\outputs\\flutter-apk\\app-arm64-v8a-release.apk"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "FCE2EF42064DF724AB1F28D733051520DD3428FCC58DAE6F8375FBA4817B65DA",
+    "Path": "C:\\Users\\PAN\\workspace\\ImageHub\\app\\build\\app\\outputs\\flutter-apk\\app-x86_64-release.apk"
+  }
+]

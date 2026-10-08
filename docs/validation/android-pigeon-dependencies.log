@@ -1,0 +1,16 @@
+Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 108.0.0 (109.0.0 available)
+  analyzer 14.4.0 (14.5.0 available)
++ code_builder 4.12.0
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
++ pigeon 29.0.7
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Changed 2 dependencies!
+9 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.

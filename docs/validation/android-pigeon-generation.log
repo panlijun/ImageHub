@@ -1,0 +1,1 @@
+Error: pigeons/android_files.dart:1: Unsupported import 'dart:typed_data', only imports of 'package:pigeon/pigeon.dart' are supported.

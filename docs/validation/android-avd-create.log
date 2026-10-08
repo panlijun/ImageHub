@@ -1,0 +1,3 @@
+Auto-selecting single ABI x86_64
+Error: Could not load devices from D:\Workspace\DevelopmentTools\AndroidSdk\system-images\android-36\google_apis\x86_64\devices.xml
+Error: D:\Workspace\DevelopmentTools\AndroidSdk\system-images\android-36\google_apis\x86_64\devices.xml

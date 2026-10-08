@@ -4,10 +4,12 @@ import 'dart:ui' show AppExitResponse;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:path/path.dart' as p;
+import 'package:uuid/uuid.dart';
 
 import '../../../core/platform_resource.dart';
 import '../../../platform/export_gateway.dart';
 import '../../../platform/backup_import_gateway.dart';
+import '../../../platform/mobile_file_workspace.dart';
 import '../../../platform/storage_capacity.dart';
 import '../../gallery/data/library_repository.dart';
 import '../../diagnostics/domain/diagnostic_models.dart';
@@ -34,6 +36,11 @@ final backupStorageCapacityProvider = Provider<StorageCapacity>(
 final backupImportGatewayProvider = Provider<BackupImportGateway>(
   (ref) => const BackupImportGateway(),
 );
+final backupTransferWorkspaceProvider =
+    Provider<Future<MobileFileWorkspace> Function()>(
+      (_) =>
+          () => MobileFileWorkspace.create(),
+    );
 
 // Count committed assets without capturing/validating the image byte snapshot.
 // This ignores the gallery's current search and includes the recycle area.
@@ -71,6 +78,16 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
   String? _feedback;
   List<String> _affectedVersions = const [];
   BackupExportReport? _report;
+  ({
+    BackupMode mode,
+    int assets,
+    int versions,
+    int byteCount,
+    String name,
+    String uri,
+    String? warning,
+  })?
+  _mobileReport;
   RestoreOutcome? _restoreReport;
 
   @override
@@ -166,7 +183,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     if (!session.hasValue ||
         session.isLoading ||
         session.hasError ||
-        !gateway.supportsDirectoryExport ||
+        !gateway.supportsFileExport ||
         !capacity.supportsPlatform) {
       return;
     }
@@ -175,9 +192,10 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     setState(() {
       _busy = true;
       _restoring = false;
-      _progress = '等待选择备份目录';
+      _progress = gateway.supportsDirectoryExport ? '等待选择备份目录' : '正在准备备份';
       _feedback = null;
       _report = null;
+      _mobileReport = null;
       _restoreReport = null;
       _affectedVersions = const [];
     });
@@ -260,6 +278,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
       _progress = '等待选择备份文件';
       _feedback = null;
       _report = null;
+      _mobileReport = null;
       _restoreReport = null;
       _affectedVersions = const [];
     });
@@ -275,10 +294,11 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     required bool replacement,
   }) async {
     final container = ProviderScope.containerOf(context, listen: false);
+    BackupSource? selected;
     try {
       final gateway = ref.read(backupImportGatewayProvider);
-      final source = await gateway.pickBackup();
-      if (source == null) {
+      selected = await gateway.acquireBackup(cancellation: token);
+      if (selected == null) {
         if (mounted) setState(() => _feedback = '已取消选择备份，当前资料库没有变化。');
         return;
       }
@@ -308,14 +328,14 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
 
       final outcome = replacement
           ? await coordinator.replace(
-              source,
+              selected.file,
               parent,
               confirm: _confirmReplacement,
               cancellation: token,
               onProgress: progress,
             )
           : await coordinator.merge(
-              source,
+              selected.file,
               parent,
               confirm: (manifest, plan) => _confirmRestore(
                 manifest,
@@ -362,10 +382,29 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
       if (mounted) setState(() => _feedback = error.message);
     } on BackupFailure catch (error) {
       if (mounted) setState(() => _feedback = error.message);
+    } on ResourceFailure catch (error) {
+      if (mounted) {
+        setState(
+          () => _feedback = error.kind == FailureKind.cancelled
+              ? '已取消读取备份，当前资料库没有变化。'
+              : '无法完整取得备份文件；请检查文件授权、本机空间和来源是否已下载。当前资料库保留。',
+        );
+      }
     } catch (_) {
       if (mounted) setState(() => _feedback = '恢复未确认提交，当前资料库保留。请检查备份文件后重试。');
     } finally {
       _closeConfirmation();
+      try {
+        await selected?.release?.call();
+      } catch (_) {
+        if (mounted) {
+          setState(
+            () => _feedback =
+                '${_feedback == null ? '' : '${_feedback!}\n'}'
+                '备份读取暂存或授权收尾未确认，现场已保留；已提交的恢复结果保留。',
+          );
+        }
+      }
       if (mounted) {
         setState(() {
           _busy = false;
@@ -376,10 +415,14 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
   }
 
   Future<void> _performExport(BackupMode mode, CancellationToken token) async {
+    MobileFileWorkspace? workspace;
     try {
-      final directory = await ref
-          .read(backupExportGatewayProvider)
-          .pickDirectory();
+      final gateway = ref.read(backupExportGatewayProvider);
+      final directory = gateway.supportsDirectoryExport
+          ? await gateway.pickDirectory()
+          : (workspace = await ref.read(
+              backupTransferWorkspaceProvider,
+            )()).directory;
       if (directory == null) {
         if (mounted) setState(() => _feedback = '已取消选择目录，没有生成备份文件。');
         return;
@@ -392,13 +435,15 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
           .repository;
       final capacity = ref.read(backupStorageCapacityProvider);
       final coordinator = BackupCoordinator(
-        recordCompletion: (completed) => repository.recordOperation(
-          kind: DiagnosticKind.backup,
-          code: 'backup.export',
-          summary: '用户明确选择的备份已写入并独占发布。',
-          recoveryAction: '导出未确认时检查目标空间和权限；原有资料与备份保留。',
-          failed: !completed,
-        ),
+        recordCompletion: workspace == null
+            ? (completed) => repository.recordOperation(
+                kind: DiagnosticKind.backup,
+                code: 'backup.export',
+                summary: '用户明确选择的备份已写入并独占发布。',
+                recoveryAction: '导出未确认时检查目标空间和权限；原有资料与备份保留。',
+                failed: !completed,
+              )
+            : null,
         capture: (mode, token, progress) => repository.captureBackupSnapshot(
           mode: mode,
           cancellation: token,
@@ -418,13 +463,72 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
                 '预计所需空间' => '预计所需空间约 ${formatBytes(total)}',
                 '写入备份' =>
                   '$phase · ${formatBytes(done)} / ${formatBytes(total)}',
+                '提交备份' when workspace != null => '正在校验备份暂存',
                 _ => '$phase · $done/$total',
               },
             );
           }
         },
       );
-      if (mounted) setState(() => _report = report);
+      if (workspace == null) {
+        if (mounted) setState(() => _report = report);
+      } else {
+        await workspace.registerClosed(report.file);
+        token.throwIfCancelled();
+        if (!mounted) return;
+        setState(() => _progress = '等待选择保存位置并完成写入');
+        final results = await gateway.exportFiles([
+          ExportInput(
+            id: const Uuid().v4(),
+            source: report.file,
+            displayName: p.basename(report.file.path),
+            expectedSha256: await fileSha256(report.file),
+            expectedByteCount: report.byteCount,
+          ),
+        ], cancellation: token);
+        final result = results.single;
+        final uri = Uri.tryParse(result.destinationUri ?? '');
+        final saved =
+            result.status == ExportStatus.saved &&
+            uri?.scheme == 'content' &&
+            uri!.authority.isNotEmpty &&
+            result.fileName != null &&
+            result.fileName!.isNotEmpty;
+        // The private closed ZIP is preparation only. User-export completion
+        // is recorded only after the real destination has been confirmed.
+        try {
+          await repository.recordOperation(
+            kind: DiagnosticKind.backup,
+            code: 'backup.export',
+            summary: saved ? '用户选择的系统位置已确认保存备份。' : '系统备份保存尚未确认完成。',
+            recoveryAction: '未确认时核查保存位置、权限和空间；原资料库与已有备份保留。',
+            failed: !saved,
+          );
+        } catch (_) {
+          // A diagnostic failure never changes a confirmed user publication.
+        }
+        if (mounted) {
+          setState(() {
+            if (saved) {
+              _mobileReport = (
+                mode: report.mode,
+                assets: report.assets,
+                versions: report.versions,
+                byteCount: report.byteCount,
+                name: result.fileName!,
+                uri: result.destinationUri!,
+                warning: report.cleanupMessage == null
+                    ? result.reason
+                    : '${report.cleanupMessage!}${result.reason == null ? '' : '\n${result.reason!}'}',
+              );
+            } else {
+              _feedback = result.status == ExportStatus.cancelled
+                  ? '已取消系统保存，没有确认新的用户备份。'
+                  : result.reason ?? '系统尚未确认备份保存，请核查目标位置后重试。';
+            }
+          });
+        }
+      }
     } on BackupSnapshotFailure catch (error) {
       if (mounted) {
         setState(() {
@@ -436,11 +540,30 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
       if (mounted) setState(() => _feedback = error.message);
     } on ExportFailure catch (error) {
       if (mounted) setState(() => _feedback = error.message);
+    } on ResourceFailure catch (error) {
+      if (mounted) {
+        setState(
+          () => _feedback = error.kind == FailureKind.cancelled
+              ? '已取消备份，实际文件 IO 已结束。'
+              : '备份写入未确认，请检查本机空间与保存权限后重试。',
+        );
+      }
     } catch (_) {
       if (mounted) {
         setState(() => _feedback = '备份未确认提交，原资料库和已有备份保留。请检查目标目录后重试。');
       }
     } finally {
+      try {
+        await workspace?.close();
+      } catch (_) {
+        if (mounted) {
+          setState(
+            () => _feedback =
+                '${_feedback == null ? '' : '${_feedback!}\n'}'
+                '备份私有暂存清理未确认，现场已保留；已确认保存的备份保留。',
+          );
+        }
+      }
       if (mounted) {
         setState(() {
           _busy = false;
@@ -455,7 +578,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     final session = ref.watch(librarySessionProvider);
     final count = ref.watch(backupAssetCountProvider);
     final supported =
-        ref.watch(backupExportGatewayProvider).supportsDirectoryExport &&
+        ref.watch(backupExportGatewayProvider).supportsFileExport &&
         ref.watch(backupStorageCapacityProvider).supportsPlatform;
     final loaded =
         session.hasValue &&
@@ -470,6 +593,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
         ref.watch(backupStorageCapacityProvider).supportsPlatform;
     final restoreEnabled = loaded && restoreSupported && !_busy;
     final report = _report;
+    final mobileReport = _mobileReport;
     final restored = _restoreReport;
     return PopScope(
       canPop: !_busy,
@@ -588,6 +712,22 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
                             report.cleanupMessage ??
                                 '备份已提交，但暂存或保护记录清理尚未完成。请保留资料库并重开核查。',
                           ),
+                      ]),
+                    ],
+                    if (mobileReport != null) ...[
+                      const SizedBox(height: 16),
+                      _panel('备份已保存', [
+                        Text(
+                          mobileReport.mode == BackupMode.full
+                              ? '完整备份'
+                              : '元数据备份（不能恢复图片内容）',
+                        ),
+                        Text(
+                          '${mobileReport.assets} 个资产 · ${mobileReport.versions} 个内容版本 · ${formatBytes(mobileReport.byteCount)}',
+                        ),
+                        SelectableText(mobileReport.name),
+                        if (mobileReport.warning != null)
+                          Text(mobileReport.warning!),
                       ]),
                     ],
                     const SizedBox(height: 20),

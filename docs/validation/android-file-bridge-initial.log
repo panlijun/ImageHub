@@ -1,0 +1,13 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart
+Running Gradle task 'assembleDebug'...                             40.7s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,027ms
+00:00 +0: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+05:47 +0: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression - did not complete [E]
+05:47 +0: (tearDownAll) - did not complete [E]
+05:47 +0: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: (tearDownAll) (did not complete)
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression (did not complete)
+No tests were found.

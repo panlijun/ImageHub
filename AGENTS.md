@@ -1,6 +1,12 @@
-# ImageHost 新项目工作区约定
+# ImageHub 新项目工作区约定
 
 ## 输入与范围
+
+- 用户于2026-10-08明确正式名称为 ImageHub，并授权创建公共仓库 `panlijun/ImageHub`、提交推送和运行标准 Apple CI。原资源包及历史记录沿用当时的 ImageHost 名称，保持原件。Dart package、应用 bundle/application ID、平台通道、Windows CompanyName/ProductName 技术存储身份、永久库与秘密命名空间保留，避免品牌更新改变本项目自身的数据位置；用户可见名称与新导出前缀统一 ImageHub。
+
+- 用户于2026-10-08要求持续推进 Android 软件开发至完成；复用现有 Flutter/Dart 工程与已选 M1，保留 Windows 完成基线。新增工具统一放 `D:\Workspace\DevelopmentTools`；C 盘已有工具保留并复用，不迁移、不重复安装。用户已明确同意下载和安装 JDK 21、官方 Android SDK/API36/Build Tools/NDK、模拟器/系统镜像及 Gradle 依赖，并接受相应标准许可；新增缓存和模拟器数据也放该 D 盘目录，先不改系统 PATH。实机/硬件和真实账号联调的既有排除范围继续保留，不以模拟器证明实机 PT 通过。
+
+- 2026-10-08 Android 软件实现与本轮适用验证完成，见 `docs/milestone-28-android-completion.md`：1399软件测试通过/1非Windows分支跳过，API36 x86_64原生闭环及SAF/MediaStore桥、五个外部保存字节独立核验、正常Release应用导入/重开/处理/照片保存/ZIP合并恢复/诊断导出通过。ARM64和x86_64 APK均实际构建，沿用本地debug签名；ARM64实机/API29/PT/PERF/正式签名及真实服务仍不计通过。受影响的四个Windows原生流程和Release启动退出回归通过；无新增Git提交。
 
 - 用户于2026-10-08明确不需要Catbox匿名上传，产品范围覆盖ACC-001/ACC-002/ACC-004的匿名目标：仅提供Catbox userhash账号和ImgBB APIKey。新配置、默认选择、入队、派发授权和适配器均拒绝匿名；本项目自身已有匿名身份仅保留普通历史/备份读取，不删除数据或转换UUID，禁止重新启用。资源包原件不变。
 - 用户于2026-10-07取消Catbox匿名真实联调；已准备的五张合成图不得发送。当前目标排除需要真实账号的测试，没有授权真实上传/删除/探测，不以合成凭据和受控HTTP称真实服务通过。
@@ -61,7 +67,7 @@
 - 文件使用租约释放必须晚于实际 IO 结束，取消状态不等于工作线程结束；资料库关闭先排空租约取得，再等待租约释放，等待期间不占据写入协调门。重开拿到排他锁后可清除前进程临时租约，不能清除持久保护引用。
 - 租约释放的数据库清理失败时保留保护记录并反馈失败，但必须在 finally 排空已结束 IO 的进程内等待，避免退出死锁。不得提前释放仍在实际读写的保护。
 - ImageProcessor 是共享 isolate 像素引擎；ProcessingCoordinator 持有输入租约到实际线程退出。schema 3 保存 writing/prepared/ready/failed/cancelled/deleting 输出、独立文件、来源及参数快照。默认 24 小时，可选 1 小时/7 天；启动和可运行期间每分钟尝试仅清到期且无保护的结果，失败保留记录重试。
-- 永久保存复用原导入日志与事务，并在同一关联提交中保留 SavedOutputOrigins；其生命周期独立于临时结果。导出由共同流式复制/关闭/摘要校验服务完成，桌面选择目录，同名独占创建新名称，不覆盖旧文件。Android/iOS 原生导出尚未接入，必须禁用，不以分享成功冒充保存。
+- 永久保存复用原导入日志与事务，并在同一关联提交中保留 SavedOutputOrigins；其生命周期独立于临时结果。导出由共同流式复制/关闭/摘要校验服务完成，桌面选择目录，同名独占创建新名称，不覆盖旧文件。Android已接Pigeon SAF单文件/目录及MediaStore照片保存；iOS原生导出尚未接入，必须禁用，不以分享成功冒充保存。
 - 桌面与 M1 工具入口复用 ProcessingWorkbench；系统退出只有当前可见工作页监听，取消等待 actual IO 后才释放租约/关闭库。动画裁剪缩略图必须来自确认的同一帧，不能用第 0 帧冒充其他帧。
 - Catbox/ImgBB 适配器采用已选 Dio 5.11.1，固定 HTTPS 接口、禁重定向/日志、按需 multipart、新尝试新流、响应原始源流限 64 KiB。适配器不重试、不写历史、不把取消完成等同于网络刚返回；等待真实 fetch、输入及响应流收尾。有效远端确认与取消意图分开，后续队列须保留独立晚到证据。
 - 默认服务精确字节/格式限制未知时拒绝派发；测试注入限制不是服务契约证据。秘密管理链接只放运行时受保护包装，尚未接入持久结果时不得落到普通 SQL/UI/日志。畸形成功、发送后无确认及 5xx 保留 unknown，不猜测自动重传安全。
@@ -99,11 +105,11 @@
 - 设置页的编辑分区有稳定身份，加载/错误/反馈槽位固定，防止保存期间销毁 EditableText 生命周期观察者。系统退出等待真实保存与库关闭；不可用/未接入的缓存或网络全局策略不得做假控制。
 - schema 8 的 DiagnosticRecords 独立无业务外键，严格白名单事件及实际 UTF-8 大小按30天/10,000,000字节先到清最旧。业务事务完成后写日志，日志故障不能回滚业务；损坏或未来格式保留并拒绝安全读取/导出。私有回滚包含日志，成功替换保留本机日志，可携带包不包含。
 - 诊断复用 SecretRedactor，先遮蔽真实秘密再截断，排除完整来源路径、图片、秘密引用、URL查询/片段及原始正文。读取/导出只核对本库秘密引用，不能确认安全视图则拒绝。新秘密注册后持久重新遮蔽；SDK异常只记录固定分类，不调用未知对象 toString 或保存原始堆栈。
-- 诊断清理/导出绑定 owner/epoch 和全部已确认行，后来事件不增入；仅当前脱敏引起的变化允许计划继续。任务批次/真实尝试入口复用共同页面。确认取消、退出、替换及 dispose 只处理自有窗口；导出等待实际 IO 结束，已确认用户文件与私有暂存清理问题分别反馈。移动原生导出未接入必须禁用。
+- 诊断清理/导出绑定 owner/epoch 和全部已确认行，后来事件不增入；仅当前脱敏引起的变化允许计划继续。任务批次/真实尝试入口复用共同页面。确认取消、退出、替换及 dispose 只处理自有窗口；导出等待实际 IO 结束，已确认用户文件与私有暂存清理问题分别反馈。Android复用共同文件保存；iOS原生导出未接入必须禁用。
 
 - DeviceSettings 自身格式2增加缓存整数64–2048 MiB/默认256及临时输出1小时/24小时/7天默认保留；当前自身格式3增加网络类型策略。严格读取自身格式1/2并应用新增默认值，不自动改写原记录。已有输出与草稿不改到期/参数；可携带设置使用独立严格格式1 envelope，只接受当前八项完整值和明确平台名单。
 - 可再生缩略图在LibraryMetadata的thumbnail_cache_v1/登记UUID、内容/帧及SHA；writing/prepared/published/ready/deleting控制独占暂存及真实发布归属。prepared已存在目标即使同摘要也不接管/删除，暂停新增缓存。持久使用序号控制LRU，保护/未登记/变化文件保留；确认清理绑定owner/epoch及冻结行，后来新增不增清。只统计实际普通文件长度，链接不跟随，诊断内容不重复计入数据库文件。
-- 生产注入四平台可用空间与独占发布接口；Windows真实原生证据与其他三端配置分列。32MiB余量/处理估算/Flutter解码缓存为候选预算，未知空间停止相关新增写入；Android StatFs和Apple statfs/link源码尚待构建/实机。Application Support系统别名先解析再追加本应用命名空间。
+- 生产注入四平台可用空间与独占发布接口；Windows真实主机证据、Android模拟器证据与Apple两端配置分列。32MiB余量/处理估算/Flutter解码缓存为候选预算，未知空间停止相关新增写入；Android StatFs已在API36模拟器验证，私有发布使用NDK renameat2/RENAME_NOREPLACE，硬链接方案在模拟器被errno13拒绝，不用覆盖式rename后备。Apple statfs/link尚待构建/实机。Application Support与恢复证明系统临时根别名先解析再追加本应用命名空间，子项仍禁止链接。
 - 图库缩略图使用权等实际读取结束后释放，再以Image.memory显示；处理结果预览也必须取得真实OutputFileLease和共同像素预算，在isolate校验摘要/生成480px单帧PNG。页面销毁/取消只请求停止，实际worker结束后才释放租约和预算，显示内存小图不依赖临时文件继续存在。image第0帧可能包含动画容器，先分离准确帧再编码单帧，不以APNG或错误帧冒充静态预览。
 
 ## 操作与验证
@@ -117,12 +123,17 @@
 
 - schema9 的 UploadPublications.user_paused 与整批暂停独立持久。仅 queued/waiting/paused/interrupted 可单项暂停/继续，running/unknown/终态拒绝且不取消实际请求；整批继续不清独立标记，整批仍暂停时单项继续仅解除本项意图。重复意图幂等，等待/重试期限与冻结输入保持，调度与写入门都核对。自身1–8升级至9，6/7/8有恢复日志时改动前拒绝；私有快照/回滚包含新列，可携带备份不携带活动控制。
 
-- 修改前检查真实实现和当前文件，保护任务外文件。用户于2026-10-08要求首次本地 Git 提交，工作区已建立 `main` 分支，以“首次完成 PC 端”记录当前 Windows 软件完成基线。后续未经用户要求，不提交、推送、PR 或发布。
-- 用户已授权安装全 Windows 用户环境可用的 Flutter SDK（通用目录及用户 PATH）并获取本项目依赖。Android SDK、其他软件、大型额外下载、签名、外部资源开通仍先征得同意。
+- 修改前检查真实实现和当前文件，保护任务外文件。工作区 `main` 的“首次完成 PC 端”提交 `d642ebc` 保留。用户本轮已授权提交推送至 `panlijun/ImageHub` 公共仓库并运行 CI；不重写首次历史，不做正式签名发行或另行付费服务开通。其他范围仍未经要求不提交、推送、PR 或发布。
+- 用户已授权安装全 Windows 用户环境可用的 Flutter SDK（通用目录及用户 PATH）并获取本项目依赖；本轮Android工具安装范围见开头用户决定。该范围之外的软件、大型额外下载、签名、外部资源开通仍先征得同意。
 - 在 `app/` 运行：`flutter pub get`；数据库生成 `dart run build_runner build`；格式 `dart format lib test integration_test`；检查 `flutter analyze`；测试 `flutter test`；Windows 构建 `flutter build windows --release`。
 - 资源包完整性：工作区根目录 `node imagehost-new-project-kit/verify-kit.mjs`。此检查不是软件测试。
+- Apple CI 在 `.github/workflows/apple.yml` 使用标准 `macos-26` arm64 runner、官方固定 SDK/SHA-256 与 `flutter pub get --enforce-lockfile`，无长期缓存或收费大型 runner。完整软件测试与真实 Apple engine 原生 smoke 分开，iOS 只用预装模拟器、不下载额外运行时，不签名发行。工作流存在不能记通过，远端证据见 `docs/github-publication.md`。系统临时根先解析别名，再创建自有目录；不放宽管理子项的符号链接保护。
 - 测试依据 `imagehost-new-project-kit/documents/unit-test-design.md`，用例名称保留 UT/IT 编号及覆盖边界；实际结果单列 UT、IT、widget、构建、PT/AT。未执行、部分覆盖、缺环境必须直说。
 - 文件提交与正常重启用真实临时数据库及文件验证；故障注入不冒充硬件断电或实机强制退出。一个平台通过不能替代其他平台验证。不存在测试时不得报告通过。
 - 子代理遵循用户 Sol/Luna 分工，显式模型 ID 和 high；任务写入范围不重叠，子代理不得继续委派。主线程必须阅读实际变更并完成验收。
 - 同一个 app/ 下 Flutter test、Windows 集成测试、build 及涉及 native assets 的 Dart run 串行执行，避免 Windows SQLite DLL 锁冲突。widget 测试须交替排空原生 IO 与 fake zone，不能将卡住的测试包装成通过。
+- Android工具环境在app/中点载 `. ./tool/android_environment.ps1`；只设置本进程，JDK、SDK、Gradle/AVD缓存均在D盘，复用C盘Flutter。Pigeon生成 `dart run pigeon --input pigeons/android_files.dart` 后执行Dart格式化。Android源码边界与选型8.1的具体差异见 `docs/android-native-files.md`，不改资源包。
+- Android图片/文件/ZIP取得走原生有界SAF桥，不走插件的预先整批缓存。私有AtomicFile只保存来源URI和授权恢复证据，不进入业务SQL/诊断/备份；Dart只持UUID句柄，未开始选择可提示恢复，consumed来源不重新打开。取消及未读取项release等待实际IO/授权退休，关闭不确定保留登记；Activity旧实例仍在工作时新实例不能接管。
+- Android导出只写应用私有闭合源和本次创建的外部目标，真实关闭/读回摘要确认后才报告content URI及名称。媒体先pending后发布，未知不冒充成功；迟到saved独立保留。JNI路径以普通UTF-8字节传递，NDK按ABI选择系统调用，不依赖API30才有的renameat2公共wrapper。不支持的内核/文件系统拒绝发布，不降级为覆盖或复制。
+- MobileFileWorkspace只清登记、实际关闭、长度/摘要未变的普通文件；备份先得到真实闭合ZIP，系统确认保存后才显示用户备份成功。备份来源复制后须等原生所有授权release完成才交付，归属/关闭不确定保留现场。M1直接刷新按钮捕获固定反馈，受跟踪整理/回收操作仍接收刷新失败，保留最后有效列表。
 

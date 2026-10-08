@@ -3,17 +3,25 @@ import 'dart:io';
 import 'package:file_selector/file_selector.dart';
 
 import '../features/backup/application/backup_snapshot.dart';
+import '../core/platform_resource.dart';
+import 'mobile_file_workspace.dart';
 
 class BackupImportGateway {
   const BackupImportGateway();
-  // Publication/capacity are currently verified only on Windows. Other
-  // platforms keep the shared restore service but cannot start native IO.
-  bool get supportsPlatform => Platform.isWindows;
+  // Android uses an owned, closed stream copy rather than a URI as a file path.
+  bool get supportsPlatform => Platform.isWindows || Platform.isAndroid;
+
+  Future<BackupSource?> acquireBackup({CancellationToken? cancellation}) async {
+    if (Platform.isAndroid) return acquireAndroidBackup(cancellation);
+    final file = await pickBackup();
+    return file == null ? null : BackupSource(file);
+  }
+
   Future<File?> pickBackup() async {
     try {
       final selected = await openFile(
         acceptedTypeGroups: const [
-          XTypeGroup(label: 'ImageHost 备份', extensions: ['zip']),
+          XTypeGroup(label: 'ImageHub 备份', extensions: ['zip']),
         ],
       );
       return selected == null ? null : File(selected.path);
@@ -22,5 +30,6 @@ class BackupImportGateway {
     }
   }
 
-  Future<Directory> temporaryParent() async => Directory.systemTemp;
+  Future<Directory> temporaryParent() async =>
+      Platform.isAndroid ? mobileTemporaryParent() : Directory.systemTemp;
 }

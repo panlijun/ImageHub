@@ -1,0 +1,49 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart
+test/presentation/mobile_backup_export_test.dart:388:29: Error: The method 'removeAssets' isn't defined for the type 'LibraryRepository'.
+ - 'LibraryRepository' is from 'package:imagehost/features/gallery/data/library_repository.dart' ('lib/features/gallery/data/library_repository.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'removeAssets'.
+      () => base.repository.removeAssets([base.assets.last.id]),
+                            ^^^^^^^^^^^^
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart":
+  Compilation failed for testPath=C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: test/presentation/mobile_backup_export_test.dart:388:29: Error: The method 'removeAssets' isn't defined for the type 'LibraryRepository'.
+   - 'LibraryRepository' is from 'package:imagehost/features/gallery/data/library_repository.dart' ('lib/features/gallery/data/library_repository.dart').
+  Try correcting the name to the name of an existing method, or defining a method named 'removeAssets'.
+        () => base.repository.removeAssets([base.assets.last.id]),
+                              ^^^^^^^^^^^^
+  .
+  Error: The Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 34:3  throwToolExit
+  package:flutter_tools/src/compile.dart 1024:11   DefaultResidentCompiler._compile.<fn>
+  dart:async/zone_root.dart 48:47                  _rootRunUnary
+  dart:async/zone.dart 816:35                      _CustomZone.runUnary
+  dart:async/future_impl.dart 948:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 977:13               Future._propagateToListeners
+  dart:async/future_impl.dart 862:9                Future._propagateToListeners
+  dart:async/future_impl.dart 720:5                Future._completeWithValue
+  dart:async/future_impl.dart 804:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone_root.dart 35:13                  _rootRun
+  dart:async/zone.dart 810:35                      _CustomZone.run
+  dart:async/zone.dart 702:7                       _CustomZone.runGuarded
+  dart:async/zone.dart 743:23                      _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:35         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 127:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 193:5      _RawReceivePort._handleMessage
+  
+00:00 +0 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: LIB-001 M1 direct refresh failure tools menu is caught without formatting unknown errors (variant: TargetPlatform.windows)
+00:02 +1 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: LIB-001 M1 direct refresh failure retained list retry is caught without formatting unknown errors (variant: TargetPlatform.windows)
+00:03 +2 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 root back awaits one exit callback and refuses a concurrent duplicate (variant: TargetPlatform.windows)
+00:04 +3 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 import busy still delegates root back to parent stop confirmation (variant: TargetPlatform.windows)
+00:04 +4 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 back cancels selection then returns recycle to gallery before requesting exit (variant: TargetPlatform.windows)
+00:06 +5 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 links section back returns gallery without issuing an exit request (variant: TargetPlatform.windows)
+00:07 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 absent exit capability does not remove its root page (variant: TargetPlatform.windows)
+00:07 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: UT-100 M1 an unsettled link operation blocks root exit until the child reports drain (variant: TargetPlatform.windows)
+00:07 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: PLT-004 partial M1 import source at Size(320.0, 700.0) large text remains scrollable and selectable (variant: TargetPlatform.windows)
+00:08 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: PLT-004 partial M1 import source at Size(640.0, 320.0) large text remains scrollable and selectable (variant: TargetPlatform.windows)
+00:08 +10 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: PLT-004 partial M1 source cancellation closes only its sheet without acquiring images (variant: TargetPlatform.windows)
+00:08 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_exit_test.dart: LIB-001 M1 query read failure retains a real previous list and disables mutation (variant: TargetPlatform.windows)
+00:09 +12 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart

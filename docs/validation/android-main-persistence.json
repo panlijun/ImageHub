@@ -1,0 +1,12 @@
+{
+  "app": "io.imagehost.imagehost",
+  "entry": "lib/main.dart",
+  "mode": "Release x86_64",
+  "fixtureSha256": "ec97fd77a2753cc22cd90b8df3a79a13a40e7f5aa6a713f6010e011f72b57ab1",
+  "fixtureBytes": 280502,
+  "sourceRemovedAfterHashCheck": true,
+  "normalBackReturnedToLauncher": true,
+  "reopenedGalleryCount": 1,
+  "reopenedCard": "BridgeFixture.png",
+  "originalPreviewOpened": true
+}

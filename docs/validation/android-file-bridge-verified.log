@@ -1,0 +1,7 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart
+Running Gradle task 'assembleDebug'...                             46.3s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...        1,049ms
+00:00 +0: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+01:17 +1: (tearDownAll)
+01:18 +1: All tests passed!

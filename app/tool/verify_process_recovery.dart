@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:image/image.dart' as img;
 import 'package:crypto/crypto.dart';
+import 'package:path/path.dart' as p;
 import 'package:imagehost/core/managed_file_store.dart';
 import 'package:imagehost/core/platform_resource.dart';
 import 'package:imagehost/features/gallery/data/library_repository.dart';
@@ -72,7 +73,10 @@ Future<void> main(List<String> args) async {
     await repository.close();
     return;
   }
-  final sandbox = await Directory.systemTemp.createTemp('imagehost_process_');
+  final temporaryRoot = await Directory.systemTemp.resolveSymbolicLinks();
+  final sandbox = await Directory(temporaryRoot)
+      .createTemp('imagehost_process_');
+  final sandboxPath = await sandbox.resolveSymbolicLinks();
   final script = Platform.script.toFilePath();
   Future<ProcessResult> child(List<String> arguments) => Process.run(
     Platform.resolvedExecutable,
@@ -174,9 +178,15 @@ Future<void> main(List<String> args) async {
     await reopenedLock.stdin.flush();
     require(await reopenedLock.exitCode == 0, 'Reopened lock did not close');
     stdout.writeln(
-      'PASS Windows cross-process exclusive library lock and release',
+      'PASS ${Platform.operatingSystem} cross-process exclusive library lock and release',
     );
   } finally {
-    await sandbox.delete(recursive: true);
+    final target = await sandbox.resolveSymbolicLinks();
+    if (target != sandboxPath ||
+        p.dirname(target) != temporaryRoot ||
+        !p.basename(target).startsWith('imagehost_process_')) {
+      throw StateError('Process verification cleanup ownership is uncertain');
+    }
+    await Directory(target).delete(recursive: true);
   }
 }

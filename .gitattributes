@@ -2,4 +2,4 @@
 /imagehost-new-project-kit/** -text
 
 # Keep captured validation output unchanged.
-/docs/validation/*.log -text
+/docs/validation/*.log -text -whitespace

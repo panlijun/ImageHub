@@ -90,7 +90,7 @@ void main() {
             entry.value,
           );
           expect(captured!.text, 'ordinary');
-          expect(captured!.title, 'ImageHost 普通链接');
+          expect(captured!.title, 'ImageHub 普通链接');
           expect(captured!.uri, isNull);
           expect(captured!.files, isNull);
           expect(captured!.previewThumbnail, isNull);

@@ -1,0 +1,3 @@
+List of devices attached
+
+PASS task-owned emulator-5558 no longer present after its confirmed kill request; SDK, AVD data and local APK retained

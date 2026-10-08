@@ -1027,13 +1027,13 @@ class _DesktopSidebar extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 4),
               child: Text(
-                'ImageHost',
+                'ImageHub',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
               ),
             )
           else
             const Tooltip(
-              message: 'ImageHost',
+              message: 'ImageHub',
               child: Icon(Icons.photo_library_outlined),
             ),
           const SizedBox(height: 24),

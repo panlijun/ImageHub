@@ -1,0 +1,16 @@
+Computing fixes in app...
+Applying fixes...
+
+lib\features\diagnostics\presentation\diagnostics_screen.dart
+  curly_braces_in_flow_control_structures - 2 fixes
+
+lib\features\gallery\presentation\mobile_gallery.dart
+  curly_braces_in_flow_control_structures - 8 fixes
+
+lib\platform\android_export_gateway.dart
+  curly_braces_in_flow_control_structures - 1 fix
+
+test\presentation\mobile_diagnostic_export_test.dart
+  curly_braces_in_flow_control_structures - 3 fixes
+
+14 fixes made in 4 files.

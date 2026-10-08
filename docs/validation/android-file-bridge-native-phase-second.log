@@ -1,0 +1,36 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart
+Running Gradle task 'assembleDebug'...                             38.6s
+√ Built build\app\outputs\flutter-apk\app-debug.apk
+Installing build\app\outputs\flutter-apk\app-debug.apk...          709ms
+00:00 +0: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: ExportStatus:<ExportStatus.saved>
+  Actual: ExportStatus:<ExportStatus.failed>
+Native code: cleanupPending; safe feedback: 写入或清理结果无法确认，请核查目标文件；现场保留。
+
+When the exception was thrown, this was the stack:
+#4      _assertSaved (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart:350:3)
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart:113:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart line 350
+The test description was:
+  IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -1: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression [E]
+  Test failed. See exception logs above.
+  The test description was: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression
+  
+00:02 +0 -1: (tearDownAll)
+00:03 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: IT partial Android emulator native SAF MediaStore streaming and owned source fd regression

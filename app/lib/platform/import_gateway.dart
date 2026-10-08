@@ -6,6 +6,7 @@ import 'package:image_picker/image_picker.dart';
 
 import '../core/platform_resource.dart';
 import 'source_readiness.dart';
+import 'android_resource_gateway.dart';
 
 /// Adapts native file and photo selection into read-only import resources.
 class ImportGateway {
@@ -19,6 +20,7 @@ class ImportGateway {
 
   Future<List<PlatformResource>> pickFiles() async {
     try {
+      if (Platform.isAndroid) return await AndroidResourceGateway().pick();
       final files = await openFiles();
       return files.map((file) => _resource(file, sourceType: 'file')).toList();
     } on Object catch (error) {
@@ -33,6 +35,9 @@ class ImportGateway {
     }
 
     try {
+      if (Platform.isAndroid) {
+        return await AndroidResourceGateway().pick(photos: true);
+      }
       final files = await _picker.pickMultiImage();
       return files.map((file) => _resource(file, sourceType: 'photo')).toList();
     } on Object catch (error) {
@@ -45,16 +50,7 @@ class ImportGateway {
     if (!Platform.isAndroid) return const [];
 
     try {
-      final response = await _picker.retrieveLostData();
-      if (response.isEmpty) return const [];
-      final exception = response.exception;
-      if (exception != null) {
-        if (_isCancellation(exception)) return const [];
-        throw _mapFailure(exception);
-      }
-      final files = response.files;
-      if (files == null || files.isEmpty) return const [];
-      return files.map((file) => _resource(file, sourceType: 'photo')).toList();
+      return await AndroidResourceGateway().recover();
     } on ResourceFailure {
       rethrow;
     } on Object catch (error) {

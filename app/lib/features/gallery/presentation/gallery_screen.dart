@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:ui' show AppExitResponse;
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../core/platform_resource.dart';
@@ -38,6 +39,19 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
   bool _linksVisible = false;
   String? _feedback;
   String _progress = '';
+  bool _androidExiting = false;
+
+  Future<void> _requestAndroidExit() async {
+    if (_androidExiting || !Platform.isAndroid) return;
+    _androidExiting = true;
+    try {
+      if (await _exitRequested() == AppExitResponse.exit) {
+        await SystemNavigator.pop();
+      }
+    } finally {
+      _androidExiting = false;
+    }
+  }
 
   @override
   void initState() {
@@ -131,8 +145,9 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
     CancellationToken token, {
     required bool recovered,
   }) async {
+    List<PlatformResource> resources = const [];
     try {
-      final resources = await acquire();
+      resources = await acquire();
       if (!mounted) return;
       _awaitingSelection = false;
       if (token.isCancelled) {
@@ -156,6 +171,15 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
         );
       }
     } finally {
+      for (final resource in resources) {
+        try {
+          await resource.release?.call();
+        } catch (_) {
+          if (mounted) {
+            setState(() => _feedback = '来源授权或读取收尾未确认，请保留现场并重开核查。已保存图片保留。');
+          }
+        }
+      }
       _activeImport = null;
       if (mounted) {
         setState(() {
@@ -314,6 +338,7 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
     final platform = Theme.of(context).platform;
     if (platform == TargetPlatform.android || platform == TargetPlatform.iOS) {
       return MobileGallery(
+        onRequestExit: Platform.isAndroid ? _requestAndroidExit : null,
         onAssetLinks: (ids) => unawaited(_openLinks(ids)),
         onLinksVisibility: _linksVisibility,
         onProcessing: () => unawaited(_openProcessing()),
@@ -337,6 +362,7 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
             ref.invalidate(assetPreviewProvider);
           } catch (_) {
             if (mounted) setState(() => _feedback = '刷新失败，已载入记录仍保留，请重试。');
+            rethrow;
           }
         },
         onLoadMore: () async {

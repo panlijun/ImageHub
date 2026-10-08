@@ -1,0 +1,21 @@
+warning: in the working copy of 'AGENTS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/core/platform_resource.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/backup/presentation/backup_screen.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/diagnostics/application/diagnostic_exporter.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/diagnostics/presentation/diagnostics_screen.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/gallery/data/library_replacement_rollback.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/gallery/presentation/gallery_screen.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/gallery/presentation/mobile_gallery.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/processing/domain/export_models.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/features/processing/presentation/processing_workbench.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/platform/backup_import_gateway.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/platform/export_gateway.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/lib/platform/import_gateway.dart', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/pubspec.lock', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'app/pubspec.yaml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/environment.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/software-completion-scope.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/windows-v1-coverage.md', LF will be replaced by CRLF the next time Git touches it
+PASS git diff --check

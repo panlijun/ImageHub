@@ -1,0 +1,15 @@
+Formatted lib\features\diagnostics\application\diagnostic_exporter.dart
+Formatted lib\features\diagnostics\presentation\diagnostics_screen.dart
+Formatted lib\features\gallery\presentation\mobile_gallery.dart
+Formatted lib\features\processing\domain\export_models.dart
+Formatted lib\features\processing\presentation\processing_workbench.dart
+Formatted lib\platform\export_gateway.dart
+Formatted lib\platform\generated\android_files.g.dart
+Formatted test\platform\android_export_gateway_test.dart
+Formatted test\platform\android_resource_gateway_test.dart
+Formatted test\presentation\mobile_diagnostic_export_test.dart
+Formatted test\presentation\mobile_exit_test.dart
+Formatted test\presentation\mobile_processing_export_test.dart
+Formatted test\presentation\mobile_recycle_test.dart
+Formatted pigeons\android_files.dart
+Formatted 246 files (14 changed) in 2.18 seconds.

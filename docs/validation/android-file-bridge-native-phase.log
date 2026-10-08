@@ -1,0 +1,38 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart
+Running Gradle task 'assembleDebug'...                          
+e: file:///C:/Users/PAN/workspace/ImageHub/app/android/app/src/main/kotlin/io/imagehost/imagehost/AndroidExportBridge.kt:389:17 Unresolved reference 'BuildConfig'.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 38s
+Running Gradle task 'assembleDebug'...                             38.3s
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart": Gradle task assembleDebug failed with exit code 1
+  package:flutter_tools/src/base/common.dart 34:3                    throwToolExit
+  package:flutter_tools/src/android/gradle.dart 653:7                AndroidGradleBuilder.buildGradleApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/android/gradle.dart 246:5                AndroidGradleBuilder.buildApk
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/android/android_device.dart 571:7        AndroidDevice.startApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/integration_test_device.dart 59:39  IntegrationTestTestDevice.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_platform.dart 679:51        FlutterPlatform._startTest.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/base/async_guard.dart 108:24             asyncGuard.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/android_file_bridge_test.dart

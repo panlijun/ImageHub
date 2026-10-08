@@ -1,0 +1,3 @@
+macos: macos-26, 11 steps
+ios: macos-26, 7 steps
+PASS YAML parse and workflow shape

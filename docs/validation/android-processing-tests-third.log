@@ -1,0 +1,12 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart
+00:00 +0: mobile export capability false gates files independently of directories (variant: TargetPlatform.windows)
+00:02 +1: mobile export capability true gates files independently of directories (variant: TargetPlatform.windows)
+00:04 +2: mobile file support alone keeps the photos action unavailable (variant: TargetPlatform.windows)
+00:07 +3: mobile file and photos buttons dispatch distinct modes with frozen output identities (variant: TargetPlatform.windows)
+00:11 +4: UT-102 mobile batch keeps every actual output lease through selector/IO and cancellation drain (variant: TargetPlatform.windows)
+00:15 +5: UT-100/102 mobile return waits for the actual export future after stop confirmation (variant: TargetPlatform.windows)
+00:19 +6: mobile cancellation retains a late confirmed saved item beside cancelled items (variant: TargetPlatform.windows)
+00:22 +7: mobile batch skips a preparation failure and reports saved and unconfirmed results separately (variant: TargetPlatform.windows)
+00:27 +8: mobile unknown export exception uses fixed feedback and never stringifies the object (variant: TargetPlatform.windows)
+00:30 +9: UT-102 mobile lease cleanup failure retains protection and continues other releases (variant: TargetPlatform.windows)
+00:34 +10: All tests passed!

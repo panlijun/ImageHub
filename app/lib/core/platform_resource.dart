@@ -7,11 +7,16 @@ class PlatformResource {
     required this.displayName,
     required this.openRead,
     this.openReadWithCancellation,
+    this.release,
     this.sourceType = 'file',
   });
 
   final String displayName;
   final String sourceType;
+
+  /// Releases a granted source only after its actual reads have drained.
+  /// Callers also release selected resources that were never opened.
+  final Future<void> Function()? release;
 
   /// Subscription cancellation must finish only after actual source IO drains.
   /// Import retains its writer protection until this cleanup future completes;

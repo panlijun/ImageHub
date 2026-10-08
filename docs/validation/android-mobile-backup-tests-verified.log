@@ -1,0 +1,14 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart
+00:00 +0: mobile backup file false capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:01 +1: mobile backup file true capacity false gate independently of directories (variant: TargetPlatform.windows)
+00:01 +2: mobile backup file true capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:02 +3: UT-073/074 partial mobile real full ZIP precedes user save and preserves active/recycled UUIDs and bytes (variant: TargetPlatform.windows)
+00:05 +4: UT-100 partial mobile backup cancellation retains private ZIP until actual transfer and keeps late saved evidence (variant: TargetPlatform.windows)
+00:07 +5: UT-100 partial disposing mobile backup requests cancellation without early private ZIP deletion (variant: TargetPlatform.windows)
+00:10 +6: mobile backup controlled ExportStatus.failed result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:12 +7: mobile backup controlled ExportStatus.cancelled result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:14 +8: mobile backup rejects incomplete saved evidence URI missing name true (variant: TargetPlatform.windows)
+00:16 +9: mobile backup rejects incomplete saved evidence URI file name true (variant: TargetPlatform.windows)
+00:18 +10: mobile backup rejects incomplete saved evidence URI content name false (variant: TargetPlatform.windows)
+00:20 +11: UT-074/100 partial changed closed mobile ZIP refuses cleanup while preserving confirmed user save (variant: TargetPlatform.windows)
+00:22 +12: All tests passed!
