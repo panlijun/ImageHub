@@ -1,0 +1,26 @@
+[
+  {
+    "name": "app-arm64-v8a-release.apk",
+    "bytes": 27334390,
+    "sha256": "EE8476679F881DA344AB8E7773583930F80268625D07D4498AFE93450C8F9BB2",
+    "badging": [
+      "package: name='io.imagehost.imagehost' versionCode='2001' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sdkVersion:'29'",
+      "targetSdkVersion:'36'",
+      "application-label:'ImageHub'",
+      "native-code: 'arm64-v8a'"
+    ]
+  },
+  {
+    "name": "app-x86_64-release.apk",
+    "bytes": 29375943,
+    "sha256": "1AF397E5A688016D183231E0E85576E6A4990B78C8901D952BBAFAE7334E0AA6",
+    "badging": [
+      "package: name='io.imagehost.imagehost' versionCode='4001' versionName='0.1.0' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'",
+      "sdkVersion:'29'",
+      "targetSdkVersion:'36'",
+      "application-label:'ImageHub'",
+      "native-code: 'x86_64'"
+    ]
+  }
+]

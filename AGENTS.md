@@ -128,6 +128,8 @@
 - 在 `app/` 运行：`flutter pub get`；数据库生成 `dart run build_runner build`；格式 `dart format lib test integration_test`；检查 `flutter analyze`；测试 `flutter test`；Windows 构建 `flutter build windows --release`。
 - 资源包完整性：工作区根目录 `node imagehost-new-project-kit/verify-kit.mjs`。此检查不是软件测试。
 - Apple CI 在 `.github/workflows/apple.yml` 使用标准 `macos-26` arm64 runner、官方固定 SDK/SHA-256 与 `flutter pub get --enforce-lockfile`，无长期缓存或收费大型 runner。完整软件测试与真实 Apple engine 原生 smoke 分开，iOS 只用预装模拟器、不下载额外运行时，不签名发行。工作流存在不能记通过，远端证据见 `docs/github-publication.md`。系统临时根先解析别名，再创建自有目录；不放宽管理子项的符号链接保护。
+- Flutter 测试后构建 Release 使用正常 `flutter build` 入口，让 SDK 按实际模式重新生成插件注册器；`--no-pub` 会跳过该步骤，不能沿用含开发插件的登记文件。禁止手改生成注册器或删除必要测试依赖来消除构建失败。Android 新相册保存目录采用 `Pictures/ImageHub`，先前导出文件不迁移、不删除。
+- 独立进程验证工具清理自有目录前必须确认所有自建锁进程实际退出；异常也请求关闭并等待，无法确认则保留目录。不因断言/超时提前删除仍在使用的文件。
 - 测试依据 `imagehost-new-project-kit/documents/unit-test-design.md`，用例名称保留 UT/IT 编号及覆盖边界；实际结果单列 UT、IT、widget、构建、PT/AT。未执行、部分覆盖、缺环境必须直说。
 - 文件提交与正常重启用真实临时数据库及文件验证；故障注入不冒充硬件断电或实机强制退出。一个平台通过不能替代其他平台验证。不存在测试时不得报告通过。
 - 子代理遵循用户 Sol/Luna 分工，显式模型 ID 和 high；任务写入范围不重叠，子代理不得继续委派。主线程必须阅读实际变更并完成验收。

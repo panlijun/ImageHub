@@ -1,8 +1,8 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送 `e10e4c0`；首轮 CI 配置检查失败，正在修正并继续实际验证。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第二轮 CI 已执行真实 Mac 软件/进程检查，Apple 原生编译发现同名函数解析问题，修复后继续实际验证。
 
-## 待公开内容
+## 已公开内容
 
 - 用户于 2026-10-08 确认正式名称 **ImageHub**，授权公开 `panlijun/ImageHub`、提交推送及运行 CI。新建空公共仓库成功，未接管旧项目；[创建元数据](validation/github-repository-created.json)记录仓库 ID、public 状态及创建时间。
 - 保留首次 PC 提交 `d642ebc`；纳入当前 Android 已完成改动、实施记录及 Apple CI。原资源包不改写，不加入旧项目源码或应用数据。
@@ -50,3 +50,11 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 [首轮 run 37772582915](https://github.com/panlijun/ImageHub/actions/runs/37772582915) 终态 failure、零 jobs，不能计 Apple 测试或构建通过；[实际状态](validation/github-first-ci-failure.json)。工作流在 job.env 使用了未允许的 runner context；[官方上下文范围](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability)确认该限制，改为运行步骤从 RUNNER_TEMP 写入 GITHUB_ENV，再验证新提交。
 
 本机改名后的 Windows 第一次构建也失败：[日志](validation/imagehub-windows-release.log)。CMakeCache 的旧自动 CMAKE_INSTALL_PREFIX 为 `$<TARGET_FILE_DIR:imagehost>`，当前 target 已改 imagehub，来源是本项目已有构建缓存。只对该已确认缓存项重新配置，不更改资料库或依赖源码；修正后的实际结果另记。
+
+## ImageHub 名称构建与第二轮 CI
+
+- Windows 只刷新已确认的旧 `CMAKE_INSTALL_PREFIX` 缓存后，Release 构建通过（61.3 秒），`imagehub.exe` 原生启动并正常关闭、退出码 0；[构建](validation/imagehub-windows-release-verified.log)、[启动](validation/imagehub-windows-release-smoke.log)、[名称与摘要](validation/imagehub-windows-release-metadata.json)。exe 的摘要不等于包含 DLL 和 data 的完整程序目录摘要。
+- Android 第一次 `--no-pub` 构建使用了之前测试流程留下的 `integration_test` 注册器，Release Gradle 不包含该开发插件，Java 编译失败；[原始输出](validation/imagehub-android-release.log)。Flutter SDK 的正常构建入口会按 Release 模式重新生成并排除开发插件，未手改生成文件或删除测试依赖。正常构建的 ARM64/x86_64 APK 已通过，系统标签为 ImageHub，应用 ID 保持 `io.imagehost.imagehost`；本轮最终 APK 记录见[构建](validation/imagehub-android-release-verified.log)和[元信息](validation/imagehub-android-release-metadata.json)。新相册保存目录采用 `Pictures/ImageHub`，先前文件不迁移、不删除；此名称修改的编译检查与此前真实系统保存验证分开。
+- [第二轮 run 37773260834](https://github.com/panlijun/ImageHub/actions/runs/37773260834) 对应 `5f666e04a3aee775c73a8826ec769acc2fc0de0d`，两个作业实际使用标准 `macos-26` arm64，整体终态 failure；[终态及逐步骤证据](validation/github-second-ci-state.json)。macOS 26.6.2 / Xcode 26.6 主机的完整软件测试 **1396 通过、4 跳过，8 分 2 秒**，独立进程恢复六个边界、正常重开及跨进程锁全部通过；[原始 Mac 日志](validation/github-macos-5f666e0-job.log)。平台跳过不计通过，测试时长不代表应用性能。
+- 该轮 macOS 和 iOS Simulator 的原生编译都在 `Darwin.statfs(path, &statistics)` 失败，Swift 将模块限定的同名引用解析为结构体；[原始 iOS 日志](validation/github-ios-5f666e0-job.log)。改为 `statfs(path, &statistics)`，与 [Swift 官方 Foundation 的 Darwin 实现](https://github.com/swiftlang/swift-corelibs-foundation/blob/main/Sources/Foundation/FileManager%2BPOSIX.swift)一致，继续使用真实 `f_bavail × f_bsize` 及溢出保护，不改未知空间时停止写入的规则。该轮 Apple 原生测试及应用包构建均不计通过。
+- 只读复核同时发现进程验证工具的失败清理缺口：现已登记自己创建的两个锁进程，失败也请求其正常关闭并等待真实退出，无法确认时保留临时目录。工具改动的主机检查见[分析](validation/github-apple-fix-analyze.log)和[独立进程重验](validation/github-process-recovery-cleanup.log)。正常成功路径的既有结果不替代失败路径保护审查。

@@ -417,7 +417,7 @@ class AndroidExportBridge(private val activity: Activity) : AndroidExportHost {
                 val values = ContentValues().apply {
                     put(MediaStore.Images.Media.DISPLAY_NAME, request.displayName)
                     put(MediaStore.Images.Media.MIME_TYPE, request.mimeType)
-                    put(MediaStore.Images.Media.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/ImageHost")
+                    put(MediaStore.Images.Media.RELATIVE_PATH, "${Environment.DIRECTORY_PICTURES}/ImageHub")
                     put(MediaStore.Images.Media.IS_PENDING, 1)
                 }
                 val uri = resolver.insert(MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY), values)

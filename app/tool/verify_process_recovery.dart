@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
@@ -78,6 +79,7 @@ Future<void> main(List<String> args) async {
       .createTemp('imagehost_process_');
   final sandboxPath = await sandbox.resolveSymbolicLinks();
   final script = Platform.script.toFilePath();
+  final lockProcesses = <Process>[];
   Future<ProcessResult> child(List<String> arguments) => Process.run(
     Platform.resolvedExecutable,
     ['run', script, ...arguments],
@@ -142,6 +144,8 @@ Future<void> main(List<String> args) async {
       'lock',
       lockRoot,
     ]);
+    lockProcesses.add(holder);
+    unawaited(holder.stderr.drain<void>().catchError((Object _) {}));
     final holderLine = await holder.stdout
         .transform(utf8.decoder)
         .transform(const LineSplitter())
@@ -165,6 +169,8 @@ Future<void> main(List<String> args) async {
       'lock',
       lockRoot,
     ]);
+    lockProcesses.add(reopenedLock);
+    unawaited(reopenedLock.stderr.drain<void>().catchError((Object _) {}));
     require(
       await reopenedLock.stdout
               .transform(utf8.decoder)
@@ -181,6 +187,27 @@ Future<void> main(List<String> args) async {
       'PASS ${Platform.operatingSystem} cross-process exclusive library lock and release',
     );
   } finally {
+    var allLockProcessesStopped = true;
+    for (final process in lockProcesses) {
+      try {
+        process.stdin.writeln('close');
+        await process.stdin.flush().timeout(const Duration(seconds: 10));
+        await process.stdin.close().timeout(const Duration(seconds: 10));
+      } catch (_) {
+        // A process that already exited can have a closed input pipe. Its
+        // actual exit still must be confirmed before deleting the test files.
+      }
+      try {
+        await process.exitCode.timeout(const Duration(seconds: 10));
+      } catch (_) {
+        allLockProcessesStopped = false;
+      }
+    }
+    if (!allLockProcessesStopped) {
+      throw StateError(
+        'Lock process shutdown is uncertain; verification files are preserved',
+      );
+    }
     final target = await sandbox.resolveSymbolicLinks();
     if (target != sandboxPath ||
         p.dirname(target) != temporaryRoot ||

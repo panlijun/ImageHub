@@ -1,0 +1,26 @@
+Running Gradle task 'assembleRelease'...                        
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+Expected to find fonts for (packages/cupertino_icons/CupertinoIcons, MaterialIcons), but found (MaterialIcons). This usually means you are referring to font families in an IconData class but not including them in the assets section of your pubspec.yaml, are missing the package that would include them, or are missing "uses-material-design: true".
+Font asset "MaterialIcons-Regular.otf" was tree-shaken, reducing it from 1645184 to 8072 bytes (99.5% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.
+C:\Users\PAN\workspace\ImageHub\app\android\app\src\main\java\io\flutter\plugins\GeneratedPluginRegistrant.java:39: 错误: 程序包dev.flutter.plugins.integration_test不存在
+      flutterEngine.getPlugins().add(new dev.flutter.plugins.integration_test.IntegrationTestPlugin());
+                                                                             ^
+1 个错误
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileReleaseJavaWithJavac'.
+> Compilation failed; see the compiler output below.
+  C:\Users\PAN\workspace\ImageHub\app\android\app\src\main\java\io\flutter\plugins\GeneratedPluginRegistrant.java:39: 错误: 程序包dev.flutter.plugins.integration_test不存在
+        flutterEngine.getPlugins().add(new dev.flutter.plugins.integration_test.IntegrationTestPlugin());
+                                                                               ^
+  1 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 1m 40s
+Running Gradle task 'assembleRelease'...                          100.6s
+Gradle task assembleRelease failed with exit code 1

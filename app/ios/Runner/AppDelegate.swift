@@ -171,7 +171,7 @@ private enum StorageCapacityBridge {
         return
       }
       var statistics = statfs()
-      guard path.withCString({ Darwin.statfs($0, &statistics) }) == 0,
+      guard path.withCString({ statfs($0, &statistics) }) == 0,
             statistics.f_bsize > 0 else {
         result(FlutterError(code: "read_error", message: "Unable to read available storage.", details: nil))
         return
