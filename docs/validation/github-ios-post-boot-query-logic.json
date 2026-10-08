@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": 5,
+  "cases": [
+    "post-boot 120s read healthy preserves readiness boundary",
+    "post-boot 120s read timeout preserves readiness boundary",
+    "post-boot 120s read not-booted preserves readiness boundary",
+    "post-boot 120s read foreign preserves readiness boundary",
+    "post-boot 120s read missing-pid preserves readiness boundary"
+  ],
+  "scope": "Controlled dedicated post-boot query deadline and authorization only. No real Apple command executed; actual 120s read and native/build results remain pending."
+}

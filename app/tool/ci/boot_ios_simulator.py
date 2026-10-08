@@ -182,7 +182,8 @@ def prepare(runtime, device_type):
                 raise
             print("First owned boot reported migration failure; no readiness granted. Restart this same owned UUID once.", flush=True)
             shutdown_owned(record)
-    current = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    # The real iOS 26.2 runner completed boot, then exceeded 60s on this read.
+    current = owned_device(record, json.loads(simctl("list", "devices", "--json", timeout=120)))
     if current.get("state") != "Booted":
         raise SystemExit("The owned simulator is not booted.")
     verify_springboard(simctl("spawn", identifier, "launchctl", "list", timeout=30))

@@ -1,0 +1,152 @@
+{
+  "observed_at": "2026-10-08T14:44:21.7999700Z",
+  "id": 37794103833,
+  "head_sha": "6a8a9661fb9089dfe698bd21042772e3e892446c",
+  "run_attempt": 1,
+  "status": "queued",
+  "conclusion": null,
+  "html_url": "https://github.com/panlijun/ImageHub/actions/runs/37794103833",
+  "jobs": [
+    {
+      "id": 113368915742,
+      "name": "iOS Simulator build and verification",
+      "run_attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-08T14:38:27Z",
+      "completed_at": "2026-10-08T14:43:06Z",
+      "labels": [
+        "macos-26"
+      ],
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-08T14:38:27Z",
+          "completed_at": "2026-10-08T14:38:29Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-08T14:38:29Z",
+          "completed_at": "2026-10-08T14:38:32Z"
+        },
+        {
+          "name": "Use the runner temporary root for host tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-08T14:38:32Z",
+          "completed_at": "2026-10-08T14:38:32Z"
+        },
+        {
+          "name": "Install the exact official Flutter SDK",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-08T14:38:32Z",
+          "completed_at": "2026-10-08T14:39:26Z"
+        },
+        {
+          "name": "Resolve locked application dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-08T14:39:26Z",
+          "completed_at": "2026-10-08T14:39:46Z"
+        },
+        {
+          "name": "Create and verify an owned iPhone simulator",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 6,
+          "started_at": "2026-10-08T14:39:46Z",
+          "completed_at": "2026-10-08T14:42:34Z"
+        },
+        {
+          "name": "Run Apple native integration verification",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-10-08T14:42:35Z",
+          "completed_at": "2026-10-08T14:42:35Z"
+        },
+        {
+          "name": "Build the iOS Simulator application",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-08T14:42:35Z",
+          "completed_at": "2026-10-08T14:42:35Z"
+        },
+        {
+          "name": "Clean up only the confirmed owned simulator",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-08T14:42:35Z",
+          "completed_at": "2026-10-08T14:42:53Z"
+        },
+        {
+          "name": "Retain bounded build and verification evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-08T14:42:53Z",
+          "completed_at": "2026-10-08T14:42:55Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-08T14:42:55Z",
+          "completed_at": "2026-10-08T14:42:56Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-08T14:42:56Z",
+          "completed_at": "2026-10-08T14:42:58Z"
+        }
+      ]
+    },
+    {
+      "id": 113368915769,
+      "name": "macOS arm64 build and verification",
+      "run_attempt": 1,
+      "status": "queued",
+      "conclusion": null,
+      "started_at": "2026-10-08T14:38:21Z",
+      "completed_at": null,
+      "labels": [
+        "macos-26"
+      ],
+      "steps": []
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11558341718,
+      "name": "ios-simulator-6a8a9661fb9089dfe698bd21042772e3e892446c-attempt-1",
+      "size_in_bytes": 1693,
+      "digest": "sha256:c9b877a48fea025ff26acdb43a3a2654613d9819a72a8221436765fb73d4446a",
+      "expired": false,
+      "created_at": "2026-10-08T14:42:56Z",
+      "expires_at": "2026-10-15T14:42:54Z",
+      "workflow_run": {
+        "id": 37794103833,
+        "repository_id": 1410225848,
+        "head_repository_id": 1410225848,
+        "head_branch": "main",
+        "head_sha": "6a8a9661fb9089dfe698bd21042772e3e892446c"
+      }
+    }
+  ]
+}

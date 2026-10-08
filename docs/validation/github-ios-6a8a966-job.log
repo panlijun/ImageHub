@@ -1,0 +1,592 @@
+﻿2026-10-08T14:38:27.6188950Z Current runner version: '2.337.0'
+2026-10-08T14:38:27.6206550Z ##[group]Runner Image Provisioner
+2026-10-08T14:38:27.6207110Z Hosted Compute Agent
+2026-10-08T14:38:27.6207540Z Version: 20260828.587
+2026-10-08T14:38:27.6207970Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-10-08T14:38:27.6208460Z Build Date: 2026-08-28T16:44:25Z
+2026-10-08T14:38:27.6209780Z Worker ID: {d6be00e8-8726-4e53-9841-f2340420838a}
+2026-10-08T14:38:27.6211350Z Azure Region: westus
+2026-10-08T14:38:27.6212340Z ##[endgroup]
+2026-10-08T14:38:27.6215340Z ##[group]Operating System
+2026-10-08T14:38:27.6216440Z macOS
+2026-10-08T14:38:27.6217290Z 26.6.2
+2026-10-08T14:38:27.6218290Z 25G83
+2026-10-08T14:38:27.6219140Z ##[endgroup]
+2026-10-08T14:38:27.6220070Z ##[group]Runner Image
+2026-10-08T14:38:27.6221110Z Image: macos-26-arm64
+2026-10-08T14:38:27.6222120Z Version: 20260907.0351.1
+2026-10-08T14:38:27.6224440Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20260907.0351/images/macos/macos-26-arm64-Readme.md
+2026-10-08T14:38:27.6227350Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20260907.0351
+2026-10-08T14:38:27.6229260Z ##[endgroup]
+2026-10-08T14:38:27.6231200Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T14:38:27.6234880Z Contents: read
+2026-10-08T14:38:27.6235290Z Metadata: read
+2026-10-08T14:38:27.6235680Z ##[endgroup]
+2026-10-08T14:38:27.6237820Z Secret source: Actions
+2026-10-08T14:38:27.6238540Z Cache mode: write
+2026-10-08T14:38:27.6239010Z Prepare workflow directory
+2026-10-08T14:38:27.6640690Z Prepare all required actions
+2026-10-08T14:38:27.6682060Z Getting action download info
+2026-10-08T14:38:27.9283710Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-08T14:38:28.3693180Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+2026-10-08T14:38:29.2331230Z Complete job name: iOS Simulator build and verification
+2026-10-08T14:38:29.3033890Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-08T14:38:29.3034900Z with:
+2026-10-08T14:38:29.3035320Z   persist-credentials: false
+2026-10-08T14:38:29.3037340Z   repository: panlijun/ImageHub
+2026-10-08T14:38:29.3041610Z   token: ***
+2026-10-08T14:38:29.3042040Z   ssh-strict: true
+2026-10-08T14:38:29.3042420Z   ssh-user: git
+2026-10-08T14:38:29.3042810Z   clean: true
+2026-10-08T14:38:29.3043200Z   sparse-checkout-cone-mode: true
+2026-10-08T14:38:29.3043630Z   fetch-depth: 1
+2026-10-08T14:38:29.3044020Z   fetch-tags: false
+2026-10-08T14:38:29.3044390Z   show-progress: true
+2026-10-08T14:38:29.3044780Z   lfs: false
+2026-10-08T14:38:29.3045190Z   submodules: false
+2026-10-08T14:38:29.3045630Z   set-safe-directory: true
+2026-10-08T14:38:29.3046050Z   allow-unsafe-pr-checkout: false
+2026-10-08T14:38:29.3047460Z env:
+2026-10-08T14:38:29.3048410Z   CI: true
+2026-10-08T14:38:29.3049570Z ##[endgroup]
+2026-10-08T14:38:29.8700060Z Syncing repository: panlijun/ImageHub
+2026-10-08T14:38:29.8702190Z ##[group]Getting Git version info
+2026-10-08T14:38:29.8702760Z Working directory is '/Users/runner/work/ImageHub/ImageHub'
+2026-10-08T14:38:29.8703780Z [command]/opt/homebrew/bin/git version
+2026-10-08T14:38:29.9279930Z git version 2.55.0
+2026-10-08T14:38:29.9301330Z ##[endgroup]
+2026-10-08T14:38:29.9313250Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/1c8f64fb-1322-4846-a2a4-d2f6f4c1c0fc/.gitconfig'
+2026-10-08T14:38:29.9325240Z Temporarily overriding HOME='/Users/runner/work/_temp/1c8f64fb-1322-4846-a2a4-d2f6f4c1c0fc' before making global git config changes
+2026-10-08T14:38:29.9326610Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T14:38:29.9335980Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/ImageHub/ImageHub
+2026-10-08T14:38:29.9535120Z Deleting the contents of '/Users/runner/work/ImageHub/ImageHub'
+2026-10-08T14:38:29.9543020Z ##[group]Determining repository object format
+2026-10-08T14:38:29.9545160Z ##[endgroup]
+2026-10-08T14:38:29.9546830Z ##[group]Initializing the repository
+2026-10-08T14:38:29.9551810Z [command]/opt/homebrew/bin/git init /Users/runner/work/ImageHub/ImageHub
+2026-10-08T14:38:29.9930060Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T14:38:29.9936600Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T14:38:29.9939350Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T14:38:29.9944520Z hint: call:
+2026-10-08T14:38:29.9945210Z hint:
+2026-10-08T14:38:29.9945830Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T14:38:29.9946450Z hint:
+2026-10-08T14:38:29.9947440Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T14:38:29.9948520Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T14:38:29.9949280Z hint:
+2026-10-08T14:38:29.9950750Z hint: 	git branch -m <name>
+2026-10-08T14:38:29.9951310Z hint:
+2026-10-08T14:38:29.9952160Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T14:38:29.9953230Z Initialized empty Git repository in /Users/runner/work/ImageHub/ImageHub/.git/
+2026-10-08T14:38:29.9956210Z [command]/opt/homebrew/bin/git remote add origin https://github.com/panlijun/ImageHub
+2026-10-08T14:38:30.0092360Z ##[endgroup]
+2026-10-08T14:38:30.0095210Z ##[group]Disabling automatic garbage collection
+2026-10-08T14:38:30.0097050Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-10-08T14:38:30.0225760Z ##[endgroup]
+2026-10-08T14:38:30.0226540Z ##[group]Setting up auth
+2026-10-08T14:38:30.0227160Z Removing SSH command configuration
+2026-10-08T14:38:30.0232050Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T14:38:30.0369410Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T14:38:30.1961300Z Removing HTTP extra header
+2026-10-08T14:38:30.1974420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T14:38:30.2070330Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T14:38:30.3462530Z Removing includeIf entries pointing to credentials config files
+2026-10-08T14:38:30.3465280Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T14:38:30.3596350Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T14:38:30.4873130Z [command]/opt/homebrew/bin/git config --file /Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T14:38:30.4962660Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/ImageHub/ImageHub/.git.path /Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:30.5153030Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/ImageHub/ImageHub/.git/worktrees/*.path /Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:30.5192130Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:30.5279160Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:30.5375170Z ##[endgroup]
+2026-10-08T14:38:30.5376370Z ##[group]Fetching the repository
+2026-10-08T14:38:30.5377530Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6a8a9661fb9089dfe698bd21042772e3e892446c:refs/remotes/origin/main
+2026-10-08T14:38:31.6580840Z From https://github.com/panlijun/ImageHub
+2026-10-08T14:38:31.6586440Z  * [new ref]         6a8a9661fb9089dfe698bd21042772e3e892446c -> origin/main
+2026-10-08T14:38:31.6591160Z [command]/opt/homebrew/bin/git branch --list --remote origin/main
+2026-10-08T14:38:31.6692030Z   origin/main
+2026-10-08T14:38:31.6747660Z [command]/opt/homebrew/bin/git rev-parse refs/remotes/origin/main
+2026-10-08T14:38:31.6799230Z 6a8a9661fb9089dfe698bd21042772e3e892446c
+2026-10-08T14:38:31.6810980Z ##[endgroup]
+2026-10-08T14:38:31.6811770Z ##[group]Determining the checkout info
+2026-10-08T14:38:31.6816360Z ##[endgroup]
+2026-10-08T14:38:31.6817900Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-10-08T14:38:31.6911220Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T14:38:31.6985290Z ##[group]Checking out the ref
+2026-10-08T14:38:31.6987860Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-08T14:38:32.1636430Z Switched to a new branch 'main'
+2026-10-08T14:38:32.1646100Z branch 'main' set up to track 'origin/main'.
+2026-10-08T14:38:32.1676650Z ##[endgroup]
+2026-10-08T14:38:32.1797550Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-10-08T14:38:32.1892280Z 6a8a9661fb9089dfe698bd21042772e3e892446c
+2026-10-08T14:38:32.1899730Z ##[group]Removing auth
+2026-10-08T14:38:32.1900490Z Removing SSH command configuration
+2026-10-08T14:38:32.1903220Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T14:38:32.2004680Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T14:38:32.3411750Z Removing HTTP extra header
+2026-10-08T14:38:32.3414530Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T14:38:32.3482620Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T14:38:32.5016890Z Removing includeIf entries pointing to credentials config files
+2026-10-08T14:38:32.5055190Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T14:38:32.5077510Z includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git.path
+2026-10-08T14:38:32.5092030Z includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git/worktrees/*.path
+2026-10-08T14:38:32.5114280Z includeif.gitdir:/github/workspace/.git.path
+2026-10-08T14:38:32.5114980Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T14:38:32.5116180Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git.path
+2026-10-08T14:38:32.5169520Z /Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:32.5180160Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git.path \/Users\/runner\/work\/_temp\/git\-credentials\-31f64e28\-937d\-470b\-8710\-80256ab16697\.config
+2026-10-08T14:38:32.5431000Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git/worktrees/*.path
+2026-10-08T14:38:32.5495760Z /Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:32.5515220Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/ImageHub/ImageHub/.git/worktrees/*.path \/Users\/runner\/work\/_temp\/git\-credentials\-31f64e28\-937d\-470b\-8710\-80256ab16697\.config
+2026-10-08T14:38:32.5709520Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-08T14:38:32.5836680Z /github/runner_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:32.5850250Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-31f64e28\-937d\-470b\-8710\-80256ab16697\.config
+2026-10-08T14:38:32.6035220Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-08T14:38:32.6297600Z /github/runner_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config
+2026-10-08T14:38:32.6443380Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-31f64e28\-937d\-470b\-8710\-80256ab16697\.config
+2026-10-08T14:38:32.7464690Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T14:38:32.8997360Z Removing credentials config '/Users/runner/work/_temp/git-credentials-31f64e28-937d-470b-8710-80256ab16697.config'
+2026-10-08T14:38:32.8998730Z ##[endgroup]
+2026-10-08T14:38:32.9288690Z ##[group]Run printf 'TMPDIR=%s\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
+2026-10-08T14:38:32.9289210Z [36;1mprintf 'TMPDIR=%s\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"[0m
+2026-10-08T14:38:32.9347160Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-08T14:38:32.9347610Z env:
+2026-10-08T14:38:32.9347850Z   CI: true
+2026-10-08T14:38:32.9348100Z ##[endgroup]
+2026-10-08T14:38:32.9890740Z ##[group]Run python3 tool/ci/install_flutter.py
+2026-10-08T14:38:32.9891070Z [36;1mpython3 tool/ci/install_flutter.py[0m
+2026-10-08T14:38:32.9924860Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-08T14:38:32.9925130Z env:
+2026-10-08T14:38:32.9925380Z   CI: true
+2026-10-08T14:38:32.9925580Z   TMPDIR: /Users/runner/work/_temp
+2026-10-08T14:38:32.9925860Z ##[endgroup]
+2026-10-08T14:39:26.6687430Z Analytics reporting disabled.
+2026-10-08T14:39:26.6689220Z 
+2026-10-08T14:39:26.6690120Z You may need to restart any open editors for them to read new settings.
+2026-10-08T14:39:26.8555680Z Flutter 3.47.6 • channel stable • https://github.com/flutter/flutter.git
+2026-10-08T14:39:26.8556390Z Framework • revision 5fc346839b (8 days ago) • 2026-09-30 15:02:49 -0700
+2026-10-08T14:39:26.8557050Z Engine • hash b8c8d3d8d5d0095127057f8a29ca8cc53da2167c (revision 692136cb65) (8 days ago) • 2026-09-30 00:56:59.000Z
+2026-10-08T14:39:26.8557820Z Tools • Dart 3.13.5 • DevTools 2.60.0
+2026-10-08T14:39:26.8920680Z ##[group]Run flutter pub get --enforce-lockfile
+2026-10-08T14:39:26.8921170Z [36;1mflutter pub get --enforce-lockfile[0m
+2026-10-08T14:39:26.9089690Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-08T14:39:26.9090010Z env:
+2026-10-08T14:39:26.9091190Z   CI: true
+2026-10-08T14:39:26.9091580Z   TMPDIR: /Users/runner/work/_temp
+2026-10-08T14:39:26.9091870Z ##[endgroup]
+2026-10-08T14:39:40.6463190Z Resolving dependencies...
+2026-10-08T14:39:41.2169940Z Downloading packages...
+2026-10-08T14:39:46.0468560Z   _fe_analyzer_shared 108.0.0 (109.0.0 available)
+2026-10-08T14:39:46.0469450Z   analyzer 14.4.0 (14.5.0 available)
+2026-10-08T14:39:46.0470010Z   build_runner 2.16.1 (2.16.2 available)
+2026-10-08T14:39:46.0470940Z   cross_file 0.3.5+5 (0.4.0 available)
+2026-10-08T14:39:46.0471530Z   cupertino_ui 1.1.1 (1.1.2 available)
+2026-10-08T14:39:46.0472090Z   drift 2.35.1 (2.35.2 available)
+2026-10-08T14:39:46.0608110Z   image_picker 1.2.3 (1.2.4 available)
+2026-10-08T14:39:46.0608850Z   image_picker_platform_interface 2.11.1 (2.11.2 available)
+2026-10-08T14:39:46.0609290Z   jni_flutter 1.0.3 (1.0.4+1 available)
+2026-10-08T14:39:46.0609670Z   material_color_utilities 0.13.0 (0.13.1 available)
+2026-10-08T14:39:46.0609920Z   material_ui 1.5.0 (1.6.0 available)
+2026-10-08T14:39:46.0621460Z   test_api 0.7.12 (0.7.14 available)
+2026-10-08T14:39:46.0622150Z   unorm_dart 0.3.2 (0.3.3 available)
+2026-10-08T14:39:46.0623310Z   vector_math 2.4.0 (2.4.3 available)
+2026-10-08T14:39:46.0624500Z Got dependencies!
+2026-10-08T14:39:46.0625460Z 14 packages have newer versions incompatible with dependency constraints.
+2026-10-08T14:39:46.0626470Z Try `flutter pub outdated` for more information.
+2026-10-08T14:39:46.7836290Z ##[group]Run set -euo pipefail
+2026-10-08T14:39:46.7836720Z [36;1mset -euo pipefail[0m
+2026-10-08T14:39:46.7836990Z [36;1mmkdir -p build/ci-evidence[0m
+2026-10-08T14:39:46.7837790Z [36;1mpython3 tool/ci/boot_ios_simulator.py --runtime com.apple.CoreSimulator.SimRuntime.iOS-26-2 --device-type com.apple.CoreSimulator.SimDeviceType.iPhone-17 2>&1 | tee build/ci-evidence/ios-simulator-boot.log[0m
+2026-10-08T14:39:46.7882740Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-08T14:39:46.7883120Z env:
+2026-10-08T14:39:46.7883330Z   CI: true
+2026-10-08T14:39:46.7883620Z   TMPDIR: /Users/runner/work/_temp
+2026-10-08T14:39:46.7883870Z ##[endgroup]
+2026-10-08T14:39:46.9596780Z simctl list devices available --json
+2026-10-08T14:39:52.1326990Z Explicit installed simulator configuration: com.apple.CoreSimulator.SimRuntime.iOS-26-2, com.apple.CoreSimulator.SimDeviceType.iPhone-17.
+2026-10-08T14:39:52.1331420Z simctl create ImageHub-CI-37794103833-1-47238d73 com.apple.CoreSimulator.SimDeviceType.iPhone-17 com.apple.CoreSimulator.SimRuntime.iOS-26-2
+2026-10-08T14:39:52.5869950Z 6FBB7DAD-5977-43E0-A239-FFBA8D687C73
+2026-10-08T14:39:52.5881500Z simctl list devices --json
+2026-10-08T14:39:52.7838720Z Confirmed owned simulator 6fbb7dad-5977-43e0-a239-ffba8d687c73 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+2026-10-08T14:39:52.7839630Z simctl bootstatus 6fbb7dad-5977-43e0-a239-ffba8d687c73 -b
+2026-10-08T14:41:29.0672410Z Monitoring boot status for ImageHub-CI-37794103833-1-47238d73 (6FBB7DAD-5977-43E0-A239-FFBA8D687C73).
+2026-10-08T14:41:29.0771770Z Booting device...
+2026-10-08T14:41:29.1899990Z [2026-10-08 14:39:54 +0000] Status=0, isTerminal=NO, Elapsed=00:00.
+2026-10-08T14:41:29.2089810Z 	Booting
+2026-10-08T14:41:29.2975540Z 
+2026-10-08T14:41:29.4694690Z [2026-10-08 14:39:59 +0000] Status=1, isTerminal=NO, Elapsed=00:05.
+2026-10-08T14:41:29.4697220Z 	Waiting on BackBoard
+2026-10-08T14:41:29.7185840Z 
+2026-10-08T14:41:29.8860060Z [2026-10-08 14:40:04 +0000] Status=2, isTerminal=NO, Elapsed=00:10.
+2026-10-08T14:41:30.0146600Z 	Waiting on Data Migration
+2026-10-08T14:41:30.2957630Z 		Reason:(null)
+2026-10-08T14:41:30.7517440Z 		Migration Elapsed:00:03 seconds
+2026-10-08T14:41:30.7520180Z 
+2026-10-08T14:41:30.8356290Z [2026-10-08 14:40:05 +0000] Status=2, isTerminal=NO, Elapsed=00:11.
+2026-10-08T14:41:30.9148280Z 	Waiting on Data Migration
+2026-10-08T14:41:30.9953630Z 		Reason:Gathering plugins
+2026-10-08T14:41:31.0768650Z 		Migration Elapsed:00:05 seconds
+2026-10-08T14:41:31.1586370Z 
+2026-10-08T14:41:31.2427490Z [2026-10-08 14:40:06 +0000] Status=2, isTerminal=NO, Elapsed=00:12.
+2026-10-08T14:41:31.3242230Z 	Waiting on Data Migration
+2026-10-08T14:41:31.4078210Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:31.5968520Z 		Migration Elapsed:00:05 seconds
+2026-10-08T14:41:31.7572690Z 
+2026-10-08T14:41:31.8411720Z [2026-10-08 14:40:07 +0000] Status=2, isTerminal=NO, Elapsed=00:13.
+2026-10-08T14:41:31.9486140Z 	Waiting on Data Migration
+2026-10-08T14:41:32.1264920Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:32.5675010Z 		Migration Elapsed:00:06 seconds
+2026-10-08T14:41:32.5675570Z 
+2026-10-08T14:41:32.6149750Z [2026-10-08 14:40:08 +0000] Status=2, isTerminal=NO, Elapsed=00:14.
+2026-10-08T14:41:32.7399810Z 	Waiting on Data Migration
+2026-10-08T14:41:33.0064360Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:33.4049540Z 		Migration Elapsed:00:07 seconds
+2026-10-08T14:41:33.8150780Z 
+2026-10-08T14:41:34.0553430Z [2026-10-08 14:40:09 +0000] Status=2, isTerminal=NO, Elapsed=00:15.
+2026-10-08T14:41:34.3553660Z 	Waiting on Data Migration
+2026-10-08T14:41:34.4041030Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:34.4369300Z 		Migration Elapsed:00:08 seconds
+2026-10-08T14:41:34.6125170Z 
+2026-10-08T14:41:34.6699020Z [2026-10-08 14:40:10 +0000] Status=2, isTerminal=NO, Elapsed=00:16.
+2026-10-08T14:41:34.6949560Z 	Waiting on Data Migration
+2026-10-08T14:41:34.9420670Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:35.2813650Z 		Migration Elapsed:00:09 seconds
+2026-10-08T14:41:35.5085630Z 
+2026-10-08T14:41:35.5234280Z [2026-10-08 14:40:12 +0000] Status=2, isTerminal=NO, Elapsed=00:18.
+2026-10-08T14:41:35.5396800Z 	Waiting on Data Migration
+2026-10-08T14:41:35.6261350Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:35.6500820Z 		Migration Elapsed:00:11 seconds
+2026-10-08T14:41:35.6645310Z 
+2026-10-08T14:41:35.6807630Z [2026-10-08 14:40:12 +0000] Status=2, isTerminal=NO, Elapsed=00:18.
+2026-10-08T14:41:35.6990900Z 	Waiting on Data Migration
+2026-10-08T14:41:35.7554950Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:35.8310270Z 		Migration Elapsed:00:12 seconds
+2026-10-08T14:41:35.8470540Z 
+2026-10-08T14:41:35.8829880Z [2026-10-08 14:40:13 +0000] Status=2, isTerminal=NO, Elapsed=00:19.
+2026-10-08T14:41:35.9048010Z 	Waiting on Data Migration
+2026-10-08T14:41:35.9217500Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:35.9560800Z 		Migration Elapsed:00:12 seconds
+2026-10-08T14:41:35.9758800Z 
+2026-10-08T14:41:36.3951060Z [2026-10-08 14:40:14 +0000] Status=2, isTerminal=NO, Elapsed=00:20.
+2026-10-08T14:41:36.6420870Z 	Waiting on Data Migration
+2026-10-08T14:41:36.8209590Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:36.8400140Z 		Migration Elapsed:00:13 seconds
+2026-10-08T14:41:36.8674100Z 
+2026-10-08T14:41:36.9078900Z [2026-10-08 14:40:15 +0000] Status=2, isTerminal=NO, Elapsed=00:21.
+2026-10-08T14:41:36.9214780Z 	Waiting on Data Migration
+2026-10-08T14:41:36.9378980Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:36.9492700Z 		Migration Elapsed:00:14 seconds
+2026-10-08T14:41:36.9641600Z 
+2026-10-08T14:41:36.9867210Z [2026-10-08 14:40:17 +0000] Status=2, isTerminal=NO, Elapsed=00:23.
+2026-10-08T14:41:37.2069230Z 	Waiting on Data Migration
+2026-10-08T14:41:37.2897830Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:37.3763400Z 		Migration Elapsed:00:15 seconds
+2026-10-08T14:41:37.4601280Z 
+2026-10-08T14:41:37.6478840Z [2026-10-08 14:40:18 +0000] Status=2, isTerminal=NO, Elapsed=00:24.
+2026-10-08T14:41:37.8264520Z 	Waiting on Data Migration
+2026-10-08T14:41:37.8449640Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:37.8645850Z 		Migration Elapsed:00:17 seconds
+2026-10-08T14:41:37.9643180Z 
+2026-10-08T14:41:38.0269810Z [2026-10-08 14:40:18 +0000] Status=2, isTerminal=NO, Elapsed=00:24.
+2026-10-08T14:41:38.0403730Z 	Waiting on Data Migration
+2026-10-08T14:41:38.0571150Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:38.0705570Z 		Migration Elapsed:00:18 seconds
+2026-10-08T14:41:38.0819680Z 
+2026-10-08T14:41:38.1042680Z [2026-10-08 14:40:20 +0000] Status=2, isTerminal=NO, Elapsed=00:26.
+2026-10-08T14:41:38.1245160Z 	Waiting on Data Migration
+2026-10-08T14:41:38.1391240Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:38.1518170Z 		Migration Elapsed:00:18 seconds
+2026-10-08T14:41:38.1788170Z 
+2026-10-08T14:41:38.1906020Z [2026-10-08 14:40:21 +0000] Status=2, isTerminal=NO, Elapsed=00:27.
+2026-10-08T14:41:38.1926400Z 	Waiting on Data Migration
+2026-10-08T14:41:38.2206630Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:38.2380780Z 		Migration Elapsed:00:20 seconds
+2026-10-08T14:41:38.2935430Z 
+2026-10-08T14:41:38.3278900Z [2026-10-08 14:40:21 +0000] Status=2, isTerminal=NO, Elapsed=00:27.
+2026-10-08T14:41:38.3424700Z 	Waiting on Data Migration
+2026-10-08T14:41:38.3560060Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:38.3689980Z 		Migration Elapsed:00:21 seconds
+2026-10-08T14:41:38.3879240Z 
+2026-10-08T14:41:38.4150570Z [2026-10-08 14:40:22 +0000] Status=2, isTerminal=NO, Elapsed=00:28.
+2026-10-08T14:41:38.6183840Z 	Waiting on Data Migration
+2026-10-08T14:41:38.9586910Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:39.1613010Z 		Migration Elapsed:00:21 seconds
+2026-10-08T14:41:39.3115810Z 
+2026-10-08T14:41:39.3241280Z [2026-10-08 14:40:23 +0000] Status=2, isTerminal=NO, Elapsed=00:29.
+2026-10-08T14:41:39.3430000Z 	Waiting on Data Migration
+2026-10-08T14:41:39.4417940Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:39.4730620Z 		Migration Elapsed:00:22 seconds
+2026-10-08T14:41:39.5256080Z 
+2026-10-08T14:41:39.5461890Z [2026-10-08 14:40:24 +0000] Status=2, isTerminal=NO, Elapsed=00:30.
+2026-10-08T14:41:39.7056130Z 	Waiting on Data Migration
+2026-10-08T14:41:39.7554630Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:39.7799530Z 		Migration Elapsed:00:23 seconds
+2026-10-08T14:41:39.7970490Z 
+2026-10-08T14:41:39.9255000Z [2026-10-08 14:40:25 +0000] Status=2, isTerminal=NO, Elapsed=00:31.
+2026-10-08T14:41:39.9568040Z 	Waiting on Data Migration
+2026-10-08T14:41:40.4182900Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:40.7971030Z 		Migration Elapsed:00:24 seconds
+2026-10-08T14:41:40.9378320Z 
+2026-10-08T14:41:41.1077170Z [2026-10-08 14:40:26 +0000] Status=2, isTerminal=NO, Elapsed=00:32.
+2026-10-08T14:41:45.7230370Z 	Waiting on Data Migration
+2026-10-08T14:41:45.7234820Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:46.3230460Z 		Migration Elapsed:00:25 seconds
+2026-10-08T14:41:46.3238560Z 
+2026-10-08T14:41:46.4047300Z [2026-10-08 14:40:27 +0000] Status=2, isTerminal=NO, Elapsed=00:33.
+2026-10-08T14:41:46.5684810Z 	Waiting on Data Migration
+2026-10-08T14:41:46.5688310Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:46.6488450Z 		Migration Elapsed:00:26 seconds
+2026-10-08T14:41:46.7312730Z 
+2026-10-08T14:41:46.8351350Z [2026-10-08 14:40:28 +0000] Status=2, isTerminal=NO, Elapsed=00:34.
+2026-10-08T14:41:46.8962080Z 	Waiting on Data Migration
+2026-10-08T14:41:46.9114190Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:46.9230720Z 		Migration Elapsed:00:27 seconds
+2026-10-08T14:41:46.9335680Z 
+2026-10-08T14:41:46.9471980Z [2026-10-08 14:40:29 +0000] Status=2, isTerminal=NO, Elapsed=00:35.
+2026-10-08T14:41:46.9622690Z 	Waiting on Data Migration
+2026-10-08T14:41:47.0094920Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.0207670Z 		Migration Elapsed:00:28 seconds
+2026-10-08T14:41:47.0323670Z 
+2026-10-08T14:41:47.0426770Z [2026-10-08 14:40:30 +0000] Status=2, isTerminal=NO, Elapsed=00:36.
+2026-10-08T14:41:47.2219550Z 	Waiting on Data Migration
+2026-10-08T14:41:47.2220050Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.2220900Z 		Migration Elapsed:00:29 seconds
+2026-10-08T14:41:47.2221080Z 
+2026-10-08T14:41:47.3074290Z [2026-10-08 14:40:31 +0000] Status=2, isTerminal=NO, Elapsed=00:37.
+2026-10-08T14:41:47.3076030Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3078860Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3079660Z 		Migration Elapsed:00:30 seconds
+2026-10-08T14:41:47.3079840Z 
+2026-10-08T14:41:47.3080010Z [2026-10-08 14:40:32 +0000] Status=2, isTerminal=NO, Elapsed=00:38.
+2026-10-08T14:41:47.3080660Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3081160Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3081730Z 		Migration Elapsed:00:31 seconds
+2026-10-08T14:41:47.3081900Z 
+2026-10-08T14:41:47.3082100Z [2026-10-08 14:40:33 +0000] Status=2, isTerminal=NO, Elapsed=00:39.
+2026-10-08T14:41:47.3082520Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3084440Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3084940Z 		Migration Elapsed:00:32 seconds
+2026-10-08T14:41:47.3085130Z 
+2026-10-08T14:41:47.3085260Z [2026-10-08 14:40:34 +0000] Status=2, isTerminal=NO, Elapsed=00:40.
+2026-10-08T14:41:47.3086040Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3086740Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3121020Z 		Migration Elapsed:00:33 seconds
+2026-10-08T14:41:47.3121170Z 
+2026-10-08T14:41:47.3121340Z [2026-10-08 14:40:35 +0000] Status=2, isTerminal=NO, Elapsed=00:41.
+2026-10-08T14:41:47.3121880Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3122460Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3123250Z 		Migration Elapsed:00:34 seconds
+2026-10-08T14:41:47.3123380Z 
+2026-10-08T14:41:47.3123500Z [2026-10-08 14:40:36 +0000] Status=2, isTerminal=NO, Elapsed=00:42.
+2026-10-08T14:41:47.3124350Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3125020Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3125610Z 		Migration Elapsed:00:35 seconds
+2026-10-08T14:41:47.3125940Z 
+2026-10-08T14:41:47.3130910Z [2026-10-08 14:40:37 +0000] Status=2, isTerminal=NO, Elapsed=00:43.
+2026-10-08T14:41:47.3131500Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3132190Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3132860Z 		Migration Elapsed:00:36 seconds
+2026-10-08T14:41:47.3133230Z 
+2026-10-08T14:41:47.3133470Z [2026-10-08 14:40:38 +0000] Status=2, isTerminal=NO, Elapsed=00:44.
+2026-10-08T14:41:47.3136170Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3136840Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3137670Z 		Migration Elapsed:00:37 seconds
+2026-10-08T14:41:47.3137810Z 
+2026-10-08T14:41:47.3138150Z [2026-10-08 14:40:39 +0000] Status=2, isTerminal=NO, Elapsed=00:45.
+2026-10-08T14:41:47.3185940Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3369820Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3370840Z 		Migration Elapsed:00:38 seconds
+2026-10-08T14:41:47.3371040Z 
+2026-10-08T14:41:47.3371180Z [2026-10-08 14:40:40 +0000] Status=2, isTerminal=NO, Elapsed=00:46.
+2026-10-08T14:41:47.3371720Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3372120Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3374620Z 		Migration Elapsed:00:39 seconds
+2026-10-08T14:41:47.3374940Z 
+2026-10-08T14:41:47.3392670Z [2026-10-08 14:40:41 +0000] Status=2, isTerminal=NO, Elapsed=00:47.
+2026-10-08T14:41:47.3393320Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3399970Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3401110Z 		Migration Elapsed:00:40 seconds
+2026-10-08T14:41:47.3401500Z 
+2026-10-08T14:41:47.3401680Z [2026-10-08 14:40:42 +0000] Status=2, isTerminal=NO, Elapsed=00:48.
+2026-10-08T14:41:47.3402070Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3402570Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3403050Z 		Migration Elapsed:00:41 seconds
+2026-10-08T14:41:47.3403360Z 
+2026-10-08T14:41:47.3403720Z [2026-10-08 14:40:43 +0000] Status=2, isTerminal=NO, Elapsed=00:49.
+2026-10-08T14:41:47.3405630Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3406420Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3407010Z 		Migration Elapsed:00:42 seconds
+2026-10-08T14:41:47.3407190Z 
+2026-10-08T14:41:47.3407350Z [2026-10-08 14:40:44 +0000] Status=2, isTerminal=NO, Elapsed=00:50.
+2026-10-08T14:41:47.3407670Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3410800Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3411590Z 		Migration Elapsed:00:43 seconds
+2026-10-08T14:41:47.3411720Z 
+2026-10-08T14:41:47.3411910Z [2026-10-08 14:40:45 +0000] Status=2, isTerminal=NO, Elapsed=00:51.
+2026-10-08T14:41:47.3412310Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3412770Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3413270Z 		Migration Elapsed:00:44 seconds
+2026-10-08T14:41:47.3413410Z 
+2026-10-08T14:41:47.3413560Z [2026-10-08 14:40:46 +0000] Status=2, isTerminal=NO, Elapsed=00:52.
+2026-10-08T14:41:47.3414010Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3414450Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3415430Z 		Migration Elapsed:00:45 seconds
+2026-10-08T14:41:47.3416080Z 
+2026-10-08T14:41:47.3416460Z [2026-10-08 14:40:47 +0000] Status=2, isTerminal=NO, Elapsed=00:53.
+2026-10-08T14:41:47.3417770Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3419260Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3419920Z 		Migration Elapsed:00:46 seconds
+2026-10-08T14:41:47.3420230Z 
+2026-10-08T14:41:47.3420540Z [2026-10-08 14:40:48 +0000] Status=2, isTerminal=NO, Elapsed=00:54.
+2026-10-08T14:41:47.3421240Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3421930Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3422580Z 		Migration Elapsed:00:47 seconds
+2026-10-08T14:41:47.3422740Z 
+2026-10-08T14:41:47.3424000Z [2026-10-08 14:40:49 +0000] Status=2, isTerminal=NO, Elapsed=00:55.
+2026-10-08T14:41:47.3425790Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3426620Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3427300Z 		Migration Elapsed:00:48 seconds
+2026-10-08T14:41:47.3427620Z 
+2026-10-08T14:41:47.3427760Z [2026-10-08 14:40:50 +0000] Status=2, isTerminal=NO, Elapsed=00:56.
+2026-10-08T14:41:47.3428070Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3428770Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3429360Z 		Migration Elapsed:00:49 seconds
+2026-10-08T14:41:47.3430280Z 
+2026-10-08T14:41:47.3430560Z [2026-10-08 14:40:51 +0000] Status=2, isTerminal=NO, Elapsed=00:57.
+2026-10-08T14:41:47.3431360Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3432890Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3433550Z 		Migration Elapsed:00:50 seconds
+2026-10-08T14:41:47.3433840Z 
+2026-10-08T14:41:47.3434190Z [2026-10-08 14:40:52 +0000] Status=2, isTerminal=NO, Elapsed=00:58.
+2026-10-08T14:41:47.3434620Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3435600Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3436240Z 		Migration Elapsed:00:51 seconds
+2026-10-08T14:41:47.3436380Z 
+2026-10-08T14:41:47.3436540Z [2026-10-08 14:40:53 +0000] Status=2, isTerminal=NO, Elapsed=00:59.
+2026-10-08T14:41:47.3437070Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3437650Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3438350Z 		Migration Elapsed:00:52 seconds
+2026-10-08T14:41:47.3438640Z 
+2026-10-08T14:41:47.3438760Z [2026-10-08 14:40:54 +0000] Status=2, isTerminal=NO, Elapsed=01:00.
+2026-10-08T14:41:47.3439020Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3439590Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3440150Z 		Migration Elapsed:00:53 seconds
+2026-10-08T14:41:47.3440400Z 
+2026-10-08T14:41:47.3440590Z [2026-10-08 14:40:55 +0000] Status=2, isTerminal=NO, Elapsed=01:01.
+2026-10-08T14:41:47.3441030Z 	Waiting on Data Migration
+2026-10-08T14:41:47.3441500Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.3442020Z 		Migration Elapsed:00:54 seconds
+2026-10-08T14:41:47.3442210Z 
+2026-10-08T14:41:47.3442350Z [2026-10-08 14:40:56 +0000] Status=2, isTerminal=NO, Elapsed=01:02.
+2026-10-08T14:41:47.4706390Z 	Waiting on Data Migration
+2026-10-08T14:41:47.4719220Z 		Reason:Running plugin com.apple.-0LaunchServicesMigrator (00LaunchServicesMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.4721430Z 		Migration Elapsed:00:55 seconds
+2026-10-08T14:41:47.4722090Z 
+2026-10-08T14:41:47.4722520Z [2026-10-08 14:41:03 +0000] Status=2, isTerminal=NO, Elapsed=01:09.
+2026-10-08T14:41:47.4724610Z 	Waiting on Data Migration
+2026-10-08T14:41:47.4726370Z 		Reason:Running plugin com.apple.securityd.KeychainMigrator (KeychainMigrator.migrator, user-agnostic)
+2026-10-08T14:41:47.6114870Z 		Migration Elapsed:00:57 seconds
+2026-10-08T14:41:47.6115150Z 
+2026-10-08T14:41:47.6115320Z [2026-10-08 14:41:05 +0000] Status=2, isTerminal=NO, Elapsed=01:11.
+2026-10-08T14:41:47.6115660Z 	Waiting on Data Migration
+2026-10-08T14:41:47.6116310Z 		Reason:Running plugin com.apple.WebBookmarks.migrator (WebBookmarks.migrator)
+2026-10-08T14:41:47.6116770Z 		Migration Elapsed:01:03 seconds
+2026-10-08T14:41:47.6117090Z 
+2026-10-08T14:41:47.6117270Z [2026-10-08 14:41:08 +0000] Status=2, isTerminal=NO, Elapsed=01:13.
+2026-10-08T14:41:47.6117630Z 	Waiting on Data Migration
+2026-10-08T14:41:47.6118200Z 		Reason:Running plugin com.apple.message.LegacyAccountsMigrator (LegacyMessageAccountsMigrator.migrator)
+2026-10-08T14:41:47.6118780Z 		Migration Elapsed:01:05 seconds
+2026-10-08T14:41:47.6118900Z 
+2026-10-08T14:41:47.6119200Z [2026-10-08 14:41:09 +0000] Status=4, isTerminal=NO, Elapsed=01:15.
+2026-10-08T14:41:47.6119650Z 	Waiting on System App
+2026-10-08T14:41:47.6119800Z 
+2026-10-08T14:41:47.6119950Z [2026-10-08 14:41:11 +0000] Status=4, isTerminal=NO, Elapsed=01:17.
+2026-10-08T14:41:47.6127670Z 	Waiting on System App
+2026-10-08T14:41:47.6127840Z 
+2026-10-08T14:41:47.6129010Z [2026-10-08 14:41:13 +0000] Status=4, isTerminal=NO, Elapsed=01:19.
+2026-10-08T14:41:47.6130490Z 	Waiting on System App
+2026-10-08T14:41:47.6130890Z 
+2026-10-08T14:41:47.6131590Z [2026-10-08 14:41:13 +0000] Status=4, isTerminal=NO, Elapsed=01:19.
+2026-10-08T14:41:47.6936940Z 	Waiting on System App
+2026-10-08T14:41:47.6937170Z 
+2026-10-08T14:41:47.6937410Z [2026-10-08 14:41:14 +0000] Status=4, isTerminal=NO, Elapsed=01:20.
+2026-10-08T14:41:47.6937740Z 	Waiting on System App
+2026-10-08T14:41:47.6938610Z 
+2026-10-08T14:41:47.6938800Z [2026-10-08 14:41:15 +0000] Status=4, isTerminal=NO, Elapsed=01:21.
+2026-10-08T14:41:47.6939160Z 	Waiting on System App
+2026-10-08T14:41:47.6939320Z 
+2026-10-08T14:41:47.6939510Z [2026-10-08 14:41:16 +0000] Status=4, isTerminal=NO, Elapsed=01:22.
+2026-10-08T14:41:47.6939920Z 	Waiting on System App
+2026-10-08T14:41:47.6940020Z 
+2026-10-08T14:41:47.6940550Z [2026-10-08 14:41:17 +0000] Status=4, isTerminal=NO, Elapsed=01:23.
+2026-10-08T14:41:47.6940980Z 	Waiting on System App
+2026-10-08T14:41:47.6941080Z 
+2026-10-08T14:41:47.6941490Z [2026-10-08 14:41:19 +0000] Status=4, isTerminal=NO, Elapsed=01:25.
+2026-10-08T14:41:47.6941860Z 	Waiting on System App
+2026-10-08T14:41:47.6942110Z 
+2026-10-08T14:41:47.6942290Z [2026-10-08 14:41:24 +0000] Status=4294967295, isTerminal=YES, Elapsed=01:30.
+2026-10-08T14:41:47.6942750Z 	Finished
+2026-10-08T14:41:47.6942910Z 
+2026-10-08T14:41:47.6942970Z simctl list devices --json
+2026-10-08T14:42:33.6236520Z Simulator command exceeded its bounded deadline.
+2026-10-08T14:42:34.5740200Z ##[error]Process completed with exit code 1.
+2026-10-08T14:42:36.4690670Z ##[group]Run set -euo pipefail
+2026-10-08T14:42:36.4693300Z [36;1mset -euo pipefail[0m
+2026-10-08T14:42:36.4693550Z [36;1mmkdir -p build/ci-evidence[0m
+2026-10-08T14:42:36.4694030Z [36;1mpython3 tool/ci/boot_ios_simulator.py --cleanup 2>&1 | tee build/ci-evidence/ios-simulator-cleanup.log[0m
+2026-10-08T14:42:40.1667530Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-08T14:42:40.1668440Z env:
+2026-10-08T14:42:40.1668740Z   CI: true
+2026-10-08T14:42:40.1669090Z   TMPDIR: /Users/runner/work/_temp
+2026-10-08T14:42:40.1669400Z ##[endgroup]
+2026-10-08T14:42:41.1511180Z simctl list devices --json
+2026-10-08T14:42:46.9378880Z Confirmed owned simulator 6fbb7dad-5977-43e0-a239-ffba8d687c73 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+2026-10-08T14:42:46.9494570Z simctl shutdown 6fbb7dad-5977-43e0-a239-ffba8d687c73
+2026-10-08T14:42:51.4781160Z simctl list devices --json
+2026-10-08T14:42:51.9262930Z Confirmed owned simulator 6fbb7dad-5977-43e0-a239-ffba8d687c73 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+2026-10-08T14:42:51.9264290Z simctl delete 6fbb7dad-5977-43e0-a239-ffba8d687c73
+2026-10-08T14:42:52.8197810Z simctl list devices --json
+2026-10-08T14:42:53.2290540Z The confirmed owned simulator was deleted.
+2026-10-08T14:42:53.3200690Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+2026-10-08T14:42:53.3201500Z with:
+2026-10-08T14:42:53.3201880Z   name: ios-simulator-6a8a9661fb9089dfe698bd21042772e3e892446c-attempt-1
+2026-10-08T14:42:53.3202670Z   path: app/build/ci-evidence/
+2026-10-08T14:42:53.3203020Z   if-no-files-found: warn
+2026-10-08T14:42:53.3203880Z   retention-days: 7
+2026-10-08T14:42:53.3204390Z   compression-level: 6
+2026-10-08T14:42:53.3205330Z   overwrite: false
+2026-10-08T14:42:53.3205960Z   include-hidden-files: false
+2026-10-08T14:42:53.3206440Z   archive: true
+2026-10-08T14:42:53.3207070Z env:
+2026-10-08T14:42:53.3207400Z   CI: true
+2026-10-08T14:42:53.3208140Z   TMPDIR: /Users/runner/work/_temp
+2026-10-08T14:42:53.3208540Z ##[endgroup]
+2026-10-08T14:42:54.2366080Z With the provided path, there will be 2 files uploaded
+2026-10-08T14:42:54.2387050Z Artifact name is valid!
+2026-10-08T14:42:54.2391930Z Root directory input is valid!
+2026-10-08T14:42:54.6806330Z Uploading artifact: ios-simulator-6a8a9661fb9089dfe698bd21042772e3e892446c-attempt-1.zip
+2026-10-08T14:42:54.6878510Z Beginning upload of artifact content to blob storage
+2026-10-08T14:42:54.8613400Z Uploaded bytes 1693
+2026-10-08T14:42:54.9000750Z Finished uploading artifact content to blob storage!
+2026-10-08T14:42:54.9009680Z SHA256 digest of uploaded artifact is c9b877a48fea025ff26acdb43a3a2654613d9819a72a8221436765fb73d4446a
+2026-10-08T14:42:54.9011290Z Finalizing artifact upload
+2026-10-08T14:42:55.2429570Z Artifact ios-simulator-6a8a9661fb9089dfe698bd21042772e3e892446c-attempt-1 successfully finalized. Artifact ID 11558341718
+2026-10-08T14:42:55.2641210Z Artifact ios-simulator-6a8a9661fb9089dfe698bd21042772e3e892446c-attempt-1 has been successfully uploaded! Final size is 1693 bytes. Artifact ID is 11558341718
+2026-10-08T14:42:55.2642340Z Artifact download URL: https://github.com/panlijun/ImageHub/actions/runs/37794103833/artifacts/11558341718
+2026-10-08T14:42:55.3079640Z Post job cleanup.
+2026-10-08T14:42:55.4957440Z [command]/opt/homebrew/bin/git version
+2026-10-08T14:42:55.5910010Z git version 2.55.0
+2026-10-08T14:42:55.5968320Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/bee66bb3-bd6d-407f-bc0b-8bf692d8de26/.gitconfig'
+2026-10-08T14:42:55.5985650Z Temporarily overriding HOME='/Users/runner/work/_temp/bee66bb3-bd6d-407f-bc0b-8bf692d8de26' before making global git config changes
+2026-10-08T14:42:55.5987660Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T14:42:55.5992470Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/ImageHub/ImageHub
+2026-10-08T14:42:55.6259060Z Removing SSH command configuration
+2026-10-08T14:42:55.6268170Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T14:42:55.6523070Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T14:42:55.9427080Z Removing HTTP extra header
+2026-10-08T14:42:55.9446340Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T14:42:55.9608100Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T14:42:56.1593010Z Removing includeIf entries pointing to credentials config files
+2026-10-08T14:42:56.1593830Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T14:42:56.1688840Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T14:42:56.3689490Z Cleaning up orphan processes

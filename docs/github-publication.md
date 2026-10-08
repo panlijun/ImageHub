@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第六轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第六轮 iOS26.5 自建模拟器一次有界重启仍迁移失败，明确拒绝进入测试且自有设备清理通过；现明确固定已预装的 iOS26.2/iPhone17，待新一轮真实运行。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第六轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第七轮明确固定 iOS26.2/iPhone17 后已真实启动完成，随后设备状态查询超时；专用查询期限修正待新一轮真实验证，历史失败与取消均保留。
 
 ## 已公开内容
 
@@ -104,3 +104,11 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - 第五轮的真实完整 simctl JSON 同时登记可用的 iOS26.2、26.4、26.5 与各自兼容的 iPhone 类型；[提取证据](validation/github-ios-preinstalled-runtime-evidence.json)保留源 run/job/SHA 及原始日志摘要。下一轮从这些已安装配置中明确选定 **iOS26.2 / iPhone17**，不再自动选最高版本；CLI 必须给出完整运行时/类型，实际缺失或不可用就失败，无 fallback 或下载。选择依据证明已安装，不证明这个运行时已健康或已经通过原生测试。
 - **21 项控制检查通过**，覆盖精确运行时/类型选择、缺失和不可用拒绝、无真实 PID 不授予许可、同 UUID 一次重启与失败保留、CLI 选择和 marker-only 清理；[记录](validation/github-ios-runtime-selection-logic.json)。工作流 YAML 的真实解析与两个标准作业、只读权限、有界准备/原生/清理及 7 天证据保留检查通过；[记录](validation/github-ios-runtime-workflow-verified.log)。Sol（`gpt-6.1-sol`，`high`）只读审查未发现阻断问题，主线程另审实际 diff；这些不计 Apple 原生通过。
 - 第二次明确迁移失败增加严格本轮设备的只读状态及 30 秒进程探针诊断；即使正 PID 已出现仍拒绝就绪，诊断异常也保留原迁移失败。**8 项诊断控制检查通过**，包含身份变化、未 Booted、无 PID、未知命令、非法 JSON 和原失败传播；[记录](validation/github-ios-failed-boot-diagnostic-logic.json)。Sol 补充审查与主线程实际 diff 核对均未发现阻断问题；实际诊断仍待 runner 执行。
+
+## 第七轮真实启动完成与状态查询超时
+
+[第七轮 run 37794103833](https://github.com/panlijun/ImageHub/actions/runs/37794103833) 对应 `6a8a9661fb9089dfe698bd21042772e3e892446c`。iOS 作业 `113368915742` 终态 failure；macOS 当时仍排队，不计本轮通过，新源提交将按既有并发规则取消该排队作业。[触发](validation/github-seventh-ci-dispatch.json)、[实际状态](validation/github-seventh-ci-state.json)和[iOS 原始日志](validation/github-ios-6a8a966-job.log)保留实际阶段。
+
+- 本轮已核对明确配置并新建 iOS26.2/iPhone17，自有 UUID `6fbb7dad-5977-43e0-a239-ffba8d687c73`。`bootstatus` 完成真实迁移、System App 等待及 `Status=4294967295, isTerminal=YES` / `Finished`，没有本轮迁移失败证据。后续 `simctl list devices --json` 在默认 60 秒期限内未返回，脚本拒绝就绪；原生与正常应用构建均跳过，不能把启动完成计为用例通过。
+- 自有设备在 `always()` 清理中读回 Booted，再关闭、读回 Shutdown、删除及读回缺席均成功。1,693 字节 artifact `11558341718` 只有准备/清理日志，没有应用包。
+- 只将启动完成后的该次状态读取期限改为 **120 秒**；保持真实所有权、Booted、30 秒 SpringBoard 正 PID 和失败拒绝，不重试未知查询，不降低原生测试要求。**5 项控制检查通过**，包括健康读取、超时、未 Booted、身份变化和无 PID；[记录](validation/github-ios-post-boot-query-logic.json)。脚本语法与实际 diff 检查通过，真实长查询及后续应用结果仍待新 runner。

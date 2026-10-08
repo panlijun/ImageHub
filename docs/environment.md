@@ -44,7 +44,7 @@
 | Windows 11 x64 | 原生 runner，1280×720 初始窗口 | Debug 原生引擎集成测试通过；Release 构建通过，启动后创建全新默认图库 | 系统文件选择窗口、普通窗口退出中的对话框与键盘/读屏仍需人工平台验收 |
 | macOS 12+ arm64 | 原生 runner，用户选择文件读写 entitlement；可用标准 `macos-26` arm64 CI | 云端完整软件测试1396通过/4跳过、独立进程恢复/锁、三个真实原生用例及正常入口Release `ImageHub.app`构建通过；[运行记录](github-publication.md) | 最低macOS12、人工选择器/沙盒授权、备份取得等剩余接入与设备验收、正式签名/公证 |
 | Android API29+ arm64 | minSdk29、M1；有界 SAF/MediaStore、Pigeon 与私有 NDK 独占发布 | Debug 与 ARM64/x86_64 Release APK 已构建；API36 x86_64 原生子流程及正常 Release 应用导入/重开/预览/处理/照片保存/ZIP合并恢复/诊断导出通过，见[Android完成记录](milestone-28-android-completion.md) | ARM64 实机、API29 最低系统、物理设备 PT/PERF 与正式发行未验收；APK沿用本地debug签名 |
-| iOS 15+ arm64 | 原生 runner，中文照片用途说明；复用云端预装运行时创建独立iPhone模拟器 | 第三轮iOS Simulator三个真实原生用例及正常入口未签名Debug应用构建通过；第四轮在编译后长期等待，已中止并保留日志，CI准备修正待验证；[运行记录](github-publication.md) | 原生保存/导出尚未接入；真实iPhone及最低iOS15、设备签名与其余PT验收 |
+| iOS 15+ arm64 | 原生 runner，中文照片用途说明；明确选定云端预装iOS26.2/iPhone17并创建独立模拟器 | 第三轮iOS Simulator三个真实原生用例及正常入口未签名Debug应用构建通过；第七轮iOS26.2已真实启动完成，随后设备状态查询超时，专用期限修正待复验；失败/取消明细见[运行记录](github-publication.md) | 原生保存/导出尚未接入；真实iPhone及最低iOS15、设备签名与其余PT验收 |
 
 Android 安装和本地 APK 构建已获得授权；用户随后授权公开 GitHub 仓库并运行标准 Apple CI，已有真实 Mac 主机及 iOS Simulator 核心验证与应用构建证据。本机仍无 Mac/Xcode，Apple 工具只在 CI 临时 runner 使用，没有本机额外安装或正式签名/商店发布。模拟器应用不能作为真实 iPhone 安装包，核心原生用例不能代替四端全部功能验收。
 
@@ -58,7 +58,7 @@ Android 安装和本地 APK 构建已获得授权；用户随后授权公开 Git
 
 新 Windows 生产路径实测：`%APPDATA%\io.imagehost\imagehost\imagehost_library_v1\`。只创建并检查此新命名空间；不扫描、导入或兼容旧应用数据。Release 启动检查留下此路径下的新空库，没有注入测试图片。集成/进程测试均使用单独临时库并清理。
 
-初始准备时没有 Git 仓库；用户随后授权建立 `main` 并提交“首次完成 PC 端”（`d642ebc`）。当前 Android 修改使用实际 `git diff` 审查，没有新增提交、推送或 PR。
+初始准备时没有 Git 仓库；用户随后授权建立 `main` 并提交“首次完成 PC 端”（`d642ebc`）。Android 软件完成阶段的修改经实际 `git diff` 审查，当阶段未新增 Git 提交。用户之后明确授权创建公共 `panlijun/ImageHub`、提交推送并运行 Apple CI；当前提交与真实运行记录见[公开及验证记录](github-publication.md)，首次历史保留，没有创建 PR 或重写历史。
 
 处理输出阶段未增加依赖或系统安装。共同处理/持久输出、桌面导出和 schema 1/2→3 已有 Windows 证据，详见 [输出里程碑](milestone-04-processing-outputs.md)；原生系统选择器及 Apple/Android 设备证据仍单列缺失。
 
