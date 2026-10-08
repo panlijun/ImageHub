@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-08T13:20:31.8971240Z",
+  "run_id": 37778807585,
+  "head_sha": "c39dccda51d78bc80630289ca65a4d78a54774fc",
+  "request": "normal cancel",
+  "http_status": 202,
+  "reason": "iOS native step remained in progress for over 30 minutes; retrieve exit logs for diagnosis; preserve completed Mac verification."
+}

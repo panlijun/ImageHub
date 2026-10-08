@@ -1,9 +1,102 @@
-"""Boot one installed iPhone simulator without downloading additional runtimes."""
+"""Create and verify one owned CI simulator using only installed runtimes."""
 
+import argparse
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
+import sys
+import uuid
+
+
+MARKER_NAME = "imagehub-owned-ios-simulator.json"
+
+
+def simctl(*arguments, timeout=60, include_stderr=False):
+    print("simctl " + " ".join(arguments), flush=True)
+    try:
+        result = subprocess.run(
+            ["xcrun", "simctl", *arguments],
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+        )
+    except subprocess.TimeoutExpired as error:
+        for value in (error.stdout, error.stderr):
+            if value:
+                print(value.decode(errors="replace") if isinstance(value, bytes) else value, flush=True)
+        raise SystemExit("Simulator command exceeded its bounded deadline.") from None
+    if result.stdout:
+        print(result.stdout, end="", flush=True)
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr, flush=True)
+    if result.returncode:
+        raise SystemExit(f"Simulator command failed with exit code {result.returncode}.")
+    return result.stdout + "\n" + result.stderr if include_stderr else result.stdout
+
+
+def run_identity():
+    run_id = os.environ["GITHUB_RUN_ID"]
+    attempt = os.environ["GITHUB_RUN_ATTEMPT"]
+    if not re.fullmatch(r"[1-9][0-9]*", run_id) or not re.fullmatch(r"[1-9][0-9]*", attempt):
+        raise SystemExit("Invalid CI run identity.")
+    return run_id, attempt
+
+
+def marker_path():
+    root = Path(os.environ["RUNNER_TEMP"])
+    if not root.is_absolute() or not root.is_dir():
+        raise SystemExit("The CI temporary root is unavailable.")
+    marker = root / MARKER_NAME
+    if marker.is_symlink():
+        raise SystemExit("The simulator ownership marker must not be a link.")
+    return marker
+
+
+def validate_record(record):
+    run_id, attempt = run_identity()
+    expected = {"formatVersion", "runId", "runAttempt", "udid", "name", "runtime", "deviceType"}
+    if not isinstance(record, dict) or set(record) != expected or type(record["formatVersion"]) is not int or record["formatVersion"] != 1:
+        raise SystemExit("Invalid simulator ownership format.")
+    if record["runId"] != run_id or record["runAttempt"] != attempt:
+        raise SystemExit("Simulator ownership belongs to another CI attempt.")
+    if not isinstance(record["udid"], str) or str(uuid.UUID(record["udid"])) != record["udid"]:
+        raise SystemExit("Invalid owned simulator UUID.")
+    if not isinstance(record["name"], str) or not re.fullmatch(rf"ImageHub-CI-{run_id}-{attempt}-[0-9a-f]{{8}}", record["name"]):
+        raise SystemExit("Invalid owned simulator name.")
+    if not isinstance(record["runtime"], str) or not re.fullmatch(r"com\.apple\.CoreSimulator\.SimRuntime\.iOS-[0-9]+(?:-[0-9]+)*", record["runtime"]):
+        raise SystemExit("Invalid owned simulator runtime.")
+    if not isinstance(record["deviceType"], str) or not re.fullmatch(r"com\.apple\.CoreSimulator\.SimDeviceType\.iPhone-[A-Za-z0-9.-]+", record["deviceType"]):
+        raise SystemExit("Invalid owned iPhone type.")
+    return record
+
+
+def owned_device(record, listing):
+    validate_record(record)
+    matches = [
+        (runtime, device)
+        for runtime, group in listing["devices"].items()
+        for device in group
+        if device.get("udid", "").lower() == record["udid"]
+    ]
+    if len(matches) != 1:
+        raise SystemExit("The owned simulator identity could not be confirmed.")
+    runtime, device = matches[0]
+    if runtime != record["runtime"] or device.get("name") != record["name"] or device.get("deviceTypeIdentifier") != record["deviceType"]:
+        raise SystemExit("The simulator ownership fields have changed.")
+    return device
+
+
+def verify_boot_output(output):
+    # A real runner returned exit 0 together with this terminal failure.
+    if re.search(r"Data Migration Failed|Status=3,\s*isTerminal=YES", output, re.IGNORECASE):
+        raise SystemExit("Simulator data migration failed; readiness was not granted.")
+
+
+def verify_springboard(output):
+    if not any(re.fullmatch(r"[1-9][0-9]*\s+-?[0-9]+\s+com\.apple\.SpringBoard", line.strip()) for line in output.splitlines()):
+        raise SystemExit("A running SpringBoard process could not be confirmed.")
 
 
 def version_key(runtime):
@@ -11,14 +104,12 @@ def version_key(runtime):
     return tuple(int(part) for part in suffix.split("-") if part.isdigit())
 
 
-def main():
-    result = subprocess.run(
-        ["xcrun", "simctl", "list", "devices", "available", "--json"],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    devices = json.loads(result.stdout)["devices"]
+def prepare():
+    run_id, attempt = run_identity()
+    marker = marker_path()
+    if marker.exists():
+        raise SystemExit("An existing simulator ownership marker must be resolved first.")
+    devices = json.loads(simctl("list", "devices", "available", "--json"))["devices"]
     candidates = [
         (runtime, device)
         for runtime, group in devices.items()
@@ -29,13 +120,60 @@ def main():
     if not candidates:
         raise SystemExit("No installed compatible iPhone simulator is available; no runtime was downloaded.")
     runtime, device = sorted(candidates, key=lambda item: (version_key(item[0]), item[1]["name"]))[-1]
-    if device["state"] != "Booted":
-        subprocess.run(["xcrun", "simctl", "boot", device["udid"]], check=True)
-    subprocess.run(["xcrun", "simctl", "bootstatus", device["udid"], "-b"], check=True)
+    device_type = device["deviceTypeIdentifier"]
+    name = f"ImageHub-CI-{run_id}-{attempt}-{uuid.uuid4().hex[:8]}"
+    identifier = str(uuid.UUID(simctl("create", name, device_type, runtime).strip()))
+    record = validate_record({
+        "formatVersion": 1,
+        "runId": run_id,
+        "runAttempt": attempt,
+        "udid": identifier,
+        "name": name,
+        "runtime": runtime,
+        "deviceType": device_type,
+    })
+    with marker.open("x", encoding="utf-8") as output:
+        json.dump(record, output, ensure_ascii=True)
+    owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    verify_boot_output(simctl("bootstatus", identifier, "-b", timeout=420, include_stderr=True))
+    current = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if current.get("state") != "Booted":
+        raise SystemExit("The owned simulator is not booted.")
+    verify_springboard(simctl("spawn", identifier, "launchctl", "list", timeout=30))
     with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as output:
-        output.write(f"IMAGEHOST_IOS_SIMULATOR={device['udid']}\n")
+        output.write(f"IMAGEHOST_IOS_SIMULATOR={identifier}\n")
     with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as output:
-        output.write(f"iOS Simulator: {device['name']}, `{runtime}`. No physical-device evidence.\n")
+        output.write(f"Owned iOS Simulator: {device['name']}, `{runtime}`, `{identifier}`; verified boot and running SpringBoard. No physical-device evidence.\n")
+
+
+def cleanup():
+    marker = marker_path()
+    if not marker.exists():
+        print("No owned simulator marker; no device was changed.")
+        return
+    record = validate_record(json.loads(marker.read_text(encoding="utf-8")))
+    device = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if device.get("state") != "Shutdown":
+        simctl("shutdown", record["udid"])
+    stopped = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if stopped.get("state") != "Shutdown":
+        raise SystemExit("The owned simulator shutdown could not be confirmed.")
+    simctl("delete", record["udid"])
+    remaining = json.loads(simctl("list", "devices", "--json"))["devices"]
+    if any(device.get("udid", "").lower() == record["udid"] for group in remaining.values() for device in group):
+        raise SystemExit("The owned simulator deletion could not be confirmed.")
+    marker.unlink()
+    print("The confirmed owned simulator was deleted.")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cleanup", action="store_true")
+    arguments = parser.parse_args()
+    if arguments.cleanup:
+        cleanup()
+    else:
+        prepare()
 
 
 if __name__ == "__main__":

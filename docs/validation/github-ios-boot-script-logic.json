@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "checks": 15,
+  "cases": [
+    "reject real migration failure: github-ios-7fe7645-job.log",
+    "reject real migration failure: github-ios-c39dccd-attempt1-cancelled-job.log",
+    "exit zero with failure on stderr cannot grant readiness",
+    "command timeout fails without continuing",
+    "positive SpringBoard PID recognized",
+    "reject absent or unrelated SpringBoard: - 0 com.apple.SpringBoard",
+    "reject absent or unrelated SpringBoard: 0 0 com.apple.SpringBoard",
+    "reject absent or unrelated SpringBoard: 42 0 com.apple.SpringBoard.extra",
+    "reject absent or unrelated SpringBoard: 42 0 another.service",
+    "foreign CI marker is retained with no system command",
+    "UUID match with changed ownership cannot shutdown or delete",
+    "failed prepare grants no environment permission; owned cleanup completes",
+    "controlled ready flow and read-back cleanup touch only self-created UUID",
+    "delete failure retains ownership evidence",
+    "exit-zero delete without disappearance retains ownership evidence"
+  ],
+  "scope": "Controlled Python helper logic and real captured failure text; no Mac or iOS native execution on this Windows host."
+}

@@ -4,6 +4,8 @@
 
 - 用户于2026-10-08明确正式名称为 ImageHub，并授权创建公共仓库 `panlijun/ImageHub`、提交推送和运行标准 Apple CI。原资源包及历史记录沿用当时的 ImageHost 名称，保持原件。Dart package、应用 bundle/application ID、平台通道、Windows CompanyName/ProductName 技术存储身份、永久库与秘密命名空间保留，避免品牌更新改变本项目自身的数据位置；用户可见名称与新导出前缀统一 ImageHub。
 
+- 2026-10-08标准 Apple CI 已真实验证 Mac 核心能力：源提交 `c39dccd`、run `37778807585` 的 macOS 作业成功，1396软件测试通过/4平台分支跳过、独立进程恢复/重开/锁、三个原生用例及Release `ImageHub.app`构建通过。iOS Simulator 在前一源提交 `7fe7645` 已有三个原生用例和正常入口构建成功记录；c39首轮iOS在编译后长期等待，主动中止以取日志，不计通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、签名发行或设备PT完成；详见 `docs/github-publication.md`。
+
 - 用户于2026-10-08要求持续推进 Android 软件开发至完成；复用现有 Flutter/Dart 工程与已选 M1，保留 Windows 完成基线。新增工具统一放 `D:\Workspace\DevelopmentTools`；C 盘已有工具保留并复用，不迁移、不重复安装。用户已明确同意下载和安装 JDK 21、官方 Android SDK/API36/Build Tools/NDK、模拟器/系统镜像及 Gradle 依赖，并接受相应标准许可；新增缓存和模拟器数据也放该 D 盘目录，先不改系统 PATH。实机/硬件和真实账号联调的既有排除范围继续保留，不以模拟器证明实机 PT 通过。
 
 - 2026-10-08 Android 软件实现与本轮适用验证完成，见 `docs/milestone-28-android-completion.md`：1399软件测试通过/1非Windows分支跳过，API36 x86_64原生闭环及SAF/MediaStore桥、五个外部保存字节独立核验、正常Release应用导入/重开/处理/照片保存/ZIP合并恢复/诊断导出通过。ARM64和x86_64 APK均实际构建，沿用本地debug签名；ARM64实机/API29/PT/PERF/正式签名及真实服务仍不计通过。受影响的四个Windows原生流程和Release启动退出回归通过；无新增Git提交。
@@ -55,7 +57,7 @@
 - 无网络遥测或自动外发。凭据与删除秘密未来仅进入系统受保护存储，普通数据不保存秘密。图床响应、任务和 UI 分离；用户未授权不做真实上传测试。
 - 账号配置使用 schema 4 的 ProviderTargets/CredentialOperations，稳定 UUID 与重复别名独立，删除先阻止派发再以日志清理秘密并核对。更新使用新引用，确认安全写入后关联，旧引用删除失败可重试。配置不等于健康，没有验证端点不能试上传验证。
 - SecretStore 是纯 Dart 接口，SystemSecretStore 放 platform/ 并由生产 provider 注入；无系统后端时拒绝凭据操作，不采用明文后备。明确会话凭据仅在内存，关闭清空；替换已保存凭据后不能在重开复活旧密钥。
-- flutter_secure_storage 11.2 使用新 imagehost.credentials.v1 命名空间、UUID 引用、逐项操作与写删读回确认。Android storageNamespace/resetOnError=false/禁迁移配合旧新备份及设备迁移排除三项 sharedpref；Apple synchronizable=false、unlocked_this_device；macOS 独立 legacy Keychain。用户于 2026-10-05 授权补装现有 VS 2022 Build Tools 的 ATL；已安装成功，Windows 原生合成凭据写/重开/删流程通过，其他三端后端仍待实测。
+- flutter_secure_storage 11.2 使用新 imagehost.credentials.v1 命名空间、UUID 引用、逐项操作与写删读回确认。Android storageNamespace/resetOnError=false/禁迁移配合旧新备份及设备迁移排除三项 sharedpref；Apple synchronizable=false、unlocked_this_device；macOS 独立 legacy Keychain。用户于 2026-10-05 授权补装现有 VS 2022 Build Tools 的 ATL；已安装成功，Windows 原生合成凭据写/重开/删流程通过。Android 与 Apple 主机/模拟器新增安全存储结果见对应完成记录及 `docs/github-publication.md`；Apple 的同进程新实例读取不等于跨进程重开或物理设备验收。
 - SecretRedactor 注册真实值后再产生普通显示/事件，历史注册值持续遮蔽。未知异常或对象不调用 toString 兜底；当前账号别名和安全接口已接线，不能声称未来网络/诊断/备份等全部出口已脱敏。
 - HTML 只参考布局，严禁复制模拟内存模型、固定样本、假处理/假网络/假成功逻辑到生产应用。
 - 名称搜索与收藏筛选在数据库分页前执行；同一查询用于计数、分页和全部匹配 UUID。选择集按 UUID 保留，筛选不自动增选；查询变化拒绝旧分页结果，总数变化重新取得首批。未实现的处理、上传和成功链接筛选必须禁用或明确未接入。
@@ -109,7 +111,7 @@
 
 - DeviceSettings 自身格式2增加缓存整数64–2048 MiB/默认256及临时输出1小时/24小时/7天默认保留；当前自身格式3增加网络类型策略。严格读取自身格式1/2并应用新增默认值，不自动改写原记录。已有输出与草稿不改到期/参数；可携带设置使用独立严格格式1 envelope，只接受当前八项完整值和明确平台名单。
 - 可再生缩略图在LibraryMetadata的thumbnail_cache_v1/登记UUID、内容/帧及SHA；writing/prepared/published/ready/deleting控制独占暂存及真实发布归属。prepared已存在目标即使同摘要也不接管/删除，暂停新增缓存。持久使用序号控制LRU，保护/未登记/变化文件保留；确认清理绑定owner/epoch及冻结行，后来新增不增清。只统计实际普通文件长度，链接不跟随，诊断内容不重复计入数据库文件。
-- 生产注入四平台可用空间与独占发布接口；Windows真实主机证据、Android模拟器证据与Apple两端配置分列。32MiB余量/处理估算/Flutter解码缓存为候选预算，未知空间停止相关新增写入；Android StatFs已在API36模拟器验证，私有发布使用NDK renameat2/RENAME_NOREPLACE，硬链接方案在模拟器被errno13拒绝，不用覆盖式rename后备。Apple statfs/link尚待构建/实机。Application Support与恢复证明系统临时根别名先解析再追加本应用命名空间，子项仍禁止链接。
+- 生产注入四平台可用空间与独占发布接口；Windows主机、Android模拟器和Apple主机/模拟器的真实证据分列。32MiB余量/处理估算/Flutter解码缓存为候选预算，未知空间停止相关新增写入；Android StatFs已在API36模拟器验证，私有发布使用NDK renameat2/RENAME_NOREPLACE，硬链接方案在模拟器被errno13拒绝，不用覆盖式rename后备。Apple statfs/link已在Mac主机与iOS Simulator原生用例验证，物理设备及其他文件系统仍待验收。Application Support与恢复证明系统临时根别名先解析再追加本应用命名空间，子项仍禁止链接。
 - 图库缩略图使用权等实际读取结束后释放，再以Image.memory显示；处理结果预览也必须取得真实OutputFileLease和共同像素预算，在isolate校验摘要/生成480px单帧PNG。页面销毁/取消只请求停止，实际worker结束后才释放租约和预算，显示内存小图不依赖临时文件继续存在。image第0帧可能包含动画容器，先分离准确帧再编码单帧，不以APNG或错误帧冒充静态预览。
 
 ## 操作与验证
@@ -128,6 +130,7 @@
 - 在 `app/` 运行：`flutter pub get`；数据库生成 `dart run build_runner build`；格式 `dart format lib test integration_test`；检查 `flutter analyze`；测试 `flutter test`；Windows 构建 `flutter build windows --release`。
 - 资源包完整性：工作区根目录 `node imagehost-new-project-kit/verify-kit.mjs`。此检查不是软件测试。
 - Apple CI 在 `.github/workflows/apple.yml` 使用标准 `macos-26` arm64 runner、官方固定 SDK/SHA-256 与 `flutter pub get --enforce-lockfile`，无长期缓存或收费大型 runner。完整软件测试与真实 Apple engine 原生 smoke 分开，iOS 只用预装模拟器、不下载额外运行时，不签名发行。工作流存在不能记通过，远端证据见 `docs/github-publication.md`。系统临时根先解析别名，再创建自有目录；不放宽管理子项的符号链接保护。
+- iOS CI仅复用已安装运行时及兼容iPhone类型，每轮create自有UUID，RUNNER_TEMP登记严格run/attempt/name/runtime/type所有权。bootstatus两流的明确迁移失败拒绝就绪，Booted与真实SpringBoard正PID仍不是应用测试通过；实际Flutter install/launch/VM服务阶段保留verbose且20分钟有界。关闭/删除前重核自有身份，删除后读回缺席才退休marker，未知保留，不使用all/booted/unavailable擦除或清理别的设备。artifact以SHA+run_attempt命名，保留原失败/取消证据。
 - Flutter 测试后构建 Release 使用正常 `flutter build` 入口，让 SDK 按实际模式重新生成插件注册器；`--no-pub` 会跳过该步骤，不能沿用含开发插件的登记文件。禁止手改生成注册器或删除必要测试依赖来消除构建失败。Android 新相册保存目录采用 `Pictures/ImageHub`，先前导出文件不迁移、不删除。
 - 独立进程验证工具清理自有目录前必须确认所有自建锁进程实际退出；异常也请求关闭并等待，无法确认则保留目录。不因断言/超时提前删除仍在使用的文件。
 - 测试依据 `imagehost-new-project-kit/documents/unit-test-design.md`，用例名称保留 UT/IT 编号及覆盖边界；实际结果单列 UT、IT、widget、构建、PT/AT。未执行、部分覆盖、缺环境必须直说。

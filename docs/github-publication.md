@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第三轮 iOS Simulator 原生验证及应用构建通过；Mac 软件/进程检查通过，图库 smoke 的目录准备问题正在修复并继续验证。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第四轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第四轮 iOS 在编译后长期等待，已主动中止并保存日志；模拟器准备与有界诊断修正待新一轮真实运行。
 
 ## 已公开内容
 
@@ -17,7 +17,7 @@
 
 每个任务从项目声明读取 Flutter 3.47.6 基线，在[官方 macOS 发布元数据](https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json)中查找唯一 stable arm64 档案并验证 SHA-256。2026-10-08 只读核实的档案 SHA-256 为 `a1946d3b6b3de15ce247dc89649df9035ce29e6b4e7ebe91919a25890ea2e79a`，HEAD 返回 200、2,263,212,963 字节；本机没有下载此档案。SDK 只安装在该任务的临时目录；依赖按提交的锁文件解析。没有设置长期付费缓存。
 
-macOS 任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实 Apple engine 集成验证和 Release 构建。iOS 任务选择预装且可用的 iPhone 模拟器，执行同一原生验证，再构建未签名模拟器应用；缺运行时明确失败，不自动大型下载。命令失败通过 `pipefail` 保留，不能因 `tee` 把失败记成功。
+macOS 任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实 Apple engine 集成验证和 Release 构建。iOS 任务复用预装且可用的运行时与兼容 iPhone 类型，创建本轮自有模拟器，执行同一原生验证，再构建未签名模拟器应用；缺运行时明确失败，不自动大型下载。命令失败通过 `pipefail` 保留，不能因 `tee` 把失败记成功。
 
 证据及压缩应用产物只保留 7 天；应用产物供开发验证，不声称已签名、公证、可在真实 iPhone 安装或正式发行。CI 任务之间不存在永久图库；重开测试使用测试自有暂存及合成图，在同一任务中完成。
 
@@ -67,3 +67,20 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - macOS 完整软件测试 **1396 通过、4 跳过，9 分 26 秒**，修改后的独立进程恢复及锁全部通过；原生 Debug `ImageHub.app` 已编译成功，Keychain 和被动网络两项用例通过。图库用例在测试自身准备阶段失败：系统返回的本应用 Caches 子目录尚不存在，`resolveSymbolicLinks` 抛 `PathNotFoundException`，此轮没有验证 Mac 图库闭环，Release 步骤跳过；[Mac 原始日志](validation/github-macos-7fe7645-job.log)。38,400 字节的 Mac artifact 只有三份日志，没有 Release 应用包。
 - 已补齐 smoke 在解析系统临时根前创建目录，与生产 `locateLibrary` / `mobileTemporaryParent` 的既有准备顺序一致；保留随后自有目录及链接保护，不改变生产持久化规则。修复后的主机静态检查见[分析记录](validation/github-apple-temp-fix-analyze.log)，下一轮真实 Mac 运行仍须通过。
 - 名称改动的最终 APK 同时核对了 DEX 中的新相册目录常量及完整 APK 摘要；[记录](validation/imagehub-android-folder-compiled.json)。该项只证明实际编译内容，不称新执行了 MediaStore 保存或手机实机验收。
+
+## 第四轮 Mac 核心验证与应用构建
+
+[第四轮 run 37778807585](https://github.com/panlijun/ImageHub/actions/runs/37778807585) 的源提交为 `c39dccda51d78bc80630289ca65a4d78a54774fc`。macOS 作业 `113316386036` 终态 success，iOS 原生步骤在超过 30 分钟后由本轮代理正常中止以取得退出日志，整体终态 **cancelled**；[终态及产物证据](validation/github-fourth-ci-attempt1-state.json)、[中止请求](validation/github-fourth-ci-cancel-request.json)。这不是用例断言失败，也不计 iOS 通过。
+
+- 标准 `macos-26` arm64 主机分析无问题，CI 检查的 `lib/test/integration_test` 共 266 个 Dart 文件格式 0 改动；完整软件测试 **1396 通过、4 个平台分支跳过，8 分 41 秒**。本机 269 文件检查另含工具范围，计数不同不代表遗漏失败。[Mac 原始日志](validation/github-macos-c39dccd-job.log)保留实际命令、输出和时间。
+- 六个导入提交边界的独立进程退出恢复、UUID/字节核对、正常关闭重开及跨进程资料库排他锁全部通过。
+- **三个真实 Mac 原生用例全部通过**（用例执行 8 秒，Debug 原生编译另计），包含真实空间/独占发布、SQLite/永久副本/缩略图/SDK 解码/桌面 A 图库/关闭重开/实际 IO 保护、Keychain 写读删及被动网络桥接。日志仍有 CI 无法前置窗口的提示；它不阻止真实 engine 用例执行，也不能当作人工窗口/设备验收。
+- 正常应用入口的 `flutter build macos --release` 成功，生成 **63.2 MB `ImageHub.app`**。已上传[开发验证产物 11552630764](https://github.com/panlijun/ImageHub/actions/runs/37778807585/artifacts/11552630764)，包含应用 ZIP 与四份日志；artifact 共 25,272,998 字节，SHA-256 为 `fada61ef98f750d3179e48f142980e2c453d3900774b4509558b1fa28a7a41ae`，2026-10-15 到期。artifact 摘要不是未压缩应用目录摘要；没有正式 Developer ID 签名、公证或发布。
+
+## iOS 等待日志与 CI 准备修正
+
+- 第四轮 iOS 的 Xcode 原生编译 **431.2 秒完成**，随后约 22 分钟没有进入第一条用例。它的 `bootstatus` 已输出 `Status=3, isTerminal=YES` 与 `Data Migration Failed`，退出码仍被脚本视为成功；[原始退出日志](validation/github-ios-c39dccd-attempt1-cancelled-job.log)。645 字节的 iOS artifact 只有等待日志，没有正常入口应用包。
+- 进一步对比发现，成功的第三轮也有同一系统迁移提示。因此不能断言迁移失败是本次等待的唯一原因。当前 Flutter SDK 的真实调用链在 Xcode 完成后还包含 `simctl install → launch → VM Service` 等待，原普通日志不足以定位具体一段。
+- CI 改为从现有兼容类型/运行时创建独立模拟器并登记本轮 UUID 所有权；按 [Apple 官方命令说明](https://developer.apple.com/documentation/xcode/xcode-command-line-tool-reference)与 [Simulator 自动化说明](https://developer.apple.com/videos/play/wwdc2019/418/)使用完整标识和 JSON 状态。两流的明确迁移失败拒绝就绪，随后核对 Booted 及 SpringBoard 正 PID；当前运行时的具体探针行为仍须下一轮实际验证。
+- 所有命令有界；原生步骤 20 分钟、正常构建 15 分钟，并保存 verbose 启动证据。清理只针对严格匹配本轮登记 UUID/name/runtime/type 的设备，关闭及删除后读回核对，未知保留。每个 artifact 增加 run_attempt，避免同源补跑与旧失败日志冲突。
+- 主机的 **15 项控制逻辑验证通过**，包含两份真实失败文本、退出 0 的 stderr 失败、超时、假 PID、外来 marker 与身份变化拒绝清理、保存就绪许可时机及删除失败/未确认保留；[验证范围](validation/github-ios-boot-script-logic.json)。Dart yaml 真实解析和工作流结构检查通过；[记录](validation/github-ios-boot-workflow-verified.log)。这些不是 Windows 上执行的 Apple 原生测试。
