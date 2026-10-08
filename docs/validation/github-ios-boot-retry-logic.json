@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": 7,
+  "cases": [
+    "initial healthy boot does not restart",
+    "one explicit migration failure then genuine ready checks",
+    "second explicit migration failure refuses readiness",
+    "unknown first command failure does not restart",
+    "unknown second command failure has no extra restart",
+    "ownership change blocks shutdown and restart",
+    "restarted device without positive PID has no permission"
+  ],
+  "scope": "Controlled startup retry logic only; actual iOS reboot recovery and native tests remain pending."
+}

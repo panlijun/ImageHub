@@ -13,6 +13,10 @@ import uuid
 MARKER_NAME = "imagehub-owned-ios-simulator.json"
 
 
+class SimulatorMigrationFailure(SystemExit):
+    """An explicit terminal migration failure, rather than unknown readiness."""
+
+
 def simctl(*arguments, timeout=60, include_stderr=False):
     print("simctl " + " ".join(arguments), flush=True)
     try:
@@ -27,7 +31,7 @@ def simctl(*arguments, timeout=60, include_stderr=False):
             if value:
                 print(value.decode(errors="replace") if isinstance(value, bytes) else value, flush=True)
         raise SystemExit("Simulator command exceeded its bounded deadline.") from None
-    if result.stdout:
+    if result.stdout and (arguments[0] != "list" or result.returncode):
         print(result.stdout, end="", flush=True)
     if result.stderr:
         print(result.stderr, end="", file=sys.stderr, flush=True)
@@ -85,13 +89,25 @@ def owned_device(record, listing):
     runtime, device = matches[0]
     if runtime != record["runtime"] or device.get("name") != record["name"] or device.get("deviceTypeIdentifier") != record["deviceType"]:
         raise SystemExit("The simulator ownership fields have changed.")
+    state = device.get("state")
+    displayed_state = state if state in ("Booted", "Shutdown", "Booting", "Shutting Down", "Creating") else "unknown"
+    print(f"Confirmed owned simulator {record['udid']} on {runtime}: {displayed_state}.", flush=True)
     return device
+
+
+def shutdown_owned(record):
+    device = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if device.get("state") != "Shutdown":
+        simctl("shutdown", record["udid"])
+    stopped = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if stopped.get("state") != "Shutdown":
+        raise SystemExit("The owned simulator shutdown could not be confirmed.")
 
 
 def verify_boot_output(output):
     # A real runner returned exit 0 together with this terminal failure.
     if re.search(r"Data Migration Failed|Status=3,\s*isTerminal=YES", output, re.IGNORECASE):
-        raise SystemExit("Simulator data migration failed; readiness was not granted.")
+        raise SimulatorMigrationFailure("Simulator data migration failed; readiness was not granted.")
 
 
 def verify_springboard(output):
@@ -135,7 +151,15 @@ def prepare():
     with marker.open("x", encoding="utf-8") as output:
         json.dump(record, output, ensure_ascii=True)
     owned_device(record, json.loads(simctl("list", "devices", "--json")))
-    verify_boot_output(simctl("bootstatus", identifier, "-b", timeout=420, include_stderr=True))
+    for boot_attempt in range(2):
+        try:
+            verify_boot_output(simctl("bootstatus", identifier, "-b", timeout=180, include_stderr=True))
+            break
+        except SimulatorMigrationFailure:
+            if boot_attempt == 1:
+                raise
+            print("First owned boot reported migration failure; no readiness granted. Restart this same owned UUID once.", flush=True)
+            shutdown_owned(record)
     current = owned_device(record, json.loads(simctl("list", "devices", "--json")))
     if current.get("state") != "Booted":
         raise SystemExit("The owned simulator is not booted.")
@@ -152,12 +176,7 @@ def cleanup():
         print("No owned simulator marker; no device was changed.")
         return
     record = validate_record(json.loads(marker.read_text(encoding="utf-8")))
-    device = owned_device(record, json.loads(simctl("list", "devices", "--json")))
-    if device.get("state") != "Shutdown":
-        simctl("shutdown", record["udid"])
-    stopped = owned_device(record, json.loads(simctl("list", "devices", "--json")))
-    if stopped.get("state") != "Shutdown":
-        raise SystemExit("The owned simulator shutdown could not be confirmed.")
+    shutdown_owned(record)
     simctl("delete", record["udid"])
     remaining = json.loads(simctl("list", "devices", "--json"))["devices"]
     if any(device.get("udid", "").lower() == record["udid"] for group in remaining.values() for device in group):

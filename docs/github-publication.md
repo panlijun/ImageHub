@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第四轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第四轮 iOS 在编译后长期等待，已主动中止并保存日志；模拟器准备与有界诊断修正待新一轮真实运行。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第五轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第五轮 iOS 在自建模拟器首次迁移失败时明确拒绝进入测试，自有设备清理通过；一次有界重启修正待新一轮真实运行。
 
 ## 已公开内容
 
@@ -84,3 +84,13 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - CI 改为从现有兼容类型/运行时创建独立模拟器并登记本轮 UUID 所有权；按 [Apple 官方命令说明](https://developer.apple.com/documentation/xcode/xcode-command-line-tool-reference)与 [Simulator 自动化说明](https://developer.apple.com/videos/play/wwdc2019/418/)使用完整标识和 JSON 状态。两流的明确迁移失败拒绝就绪，随后核对 Booted 及 SpringBoard 正 PID；当前运行时的具体探针行为仍须下一轮实际验证。
 - 所有命令有界；原生步骤 20 分钟、正常构建 15 分钟，并保存 verbose 启动证据。清理只针对严格匹配本轮登记 UUID/name/runtime/type 的设备，关闭及删除后读回核对，未知保留。每个 artifact 增加 run_attempt，避免同源补跑与旧失败日志冲突。
 - 主机的 **15 项控制逻辑验证通过**，包含两份真实失败文本、退出 0 的 stderr 失败、超时、假 PID、外来 marker 与身份变化拒绝清理、保存就绪许可时机及删除失败/未确认保留；[验证范围](validation/github-ios-boot-script-logic.json)。Dart yaml 真实解析和工作流结构检查通过；[记录](validation/github-ios-boot-workflow-verified.log)。这些不是 Windows 上执行的 Apple 原生测试。
+
+## 第五轮自有模拟器启动与有界恢复
+
+[第五轮 run 37786875678](https://github.com/panlijun/ImageHub/actions/runs/37786875678) 对应 `aa165c4766acb8e4a64b77bc9165b1ce5a5772c2`，整体终态 failure。macOS 作业 `113343767834` success，iOS 作业 `113343768275` 的启动检查 failure；[逐步骤终态及产物](validation/github-fifth-ci-state.json)保留两者的真实结果。
+
+- macOS 完整软件测试再次 **1396 通过、4 跳过，9 分 11 秒**，独立进程六个导入边界、正常重开及跨进程锁通过，**三个原生用例通过**（执行 6 秒），正常入口 Release `ImageHub.app` **63.2 MB** 构建通过；[Mac 原始日志](validation/github-macos-aa165c4-job.log)。artifact `11555778329` 为 25,273,271 字节、SHA-256 `050ae79574ef5f054113e8fcc18042a0fadab481f65cf210ff2721e3fc5004a0`，包含应用 ZIP 和四份验证日志，保留 7 天；不是签名发行验收。
+- 已真实创建本轮独立模拟器 `ddebfa41-c60a-4702-8962-ab60d06ce4a4`，首次 `bootstatus` 仍报告 `Status=3, isTerminal=YES` / `Data Migration Failed`。检查拒绝就绪，原生用例和正常应用构建均跳过；[iOS 原始日志](validation/github-ios-aa165c4-job.log)。不能把这轮记为 iOS 应用失败或通过，也不能认定前轮等待的唯一原因。
+- 本轮登记身份核对、关闭、读回 Shutdown、删除及读回 UUID 缺席均在真实 runner 成功；只处理本轮设备，没有擦除预装设备。14,324 字节 artifact `11554144445` 只有启动/清理日志，没有应用包。
+- 修正只对明确的终态迁移失败增加一次同 UUID 重启：先重新核对所有权并确认关闭，第二次启动每次最多 180 秒；第二次失败、超时、未知命令错误或身份变化均停止。只有最终 Booted 和 SpringBoard 正 PID 均确认才写入测试设备标识。不改变运行时，不下载镜像，不擦除其他设备。
+- **7 项有界重启控制检查通过**，覆盖健康首次启动、明确失败后仅重启一次、再次失败拒绝、两次未知错误不追加重试、身份变化及无真实 PID 拒绝；[检查记录](validation/github-ios-boot-retry-logic.json)。这些只验证脚本逻辑，实际重启恢复、原生用例和应用构建仍须下一轮 runner 结果。
