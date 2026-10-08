@@ -1,0 +1,86 @@
+{
+  "parsed_at": "2026-10-08T14:32:01.179914+00:00",
+  "sourceRun": 37786875678,
+  "sourceJob": 113343768275,
+  "sourceSha": "aa165c4766acb8e4a64b77bc9165b1ce5a5772c2",
+  "sourceLog": "github-ios-aa165c4-job.log",
+  "sourceLogSha256": "f7081993f8158efffe7e13ddb0bc344b77f41d276ad7675f49f38b099a9cc2c9",
+  "runtimes": [
+    {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-4",
+      "availableIPhones": [
+        {
+          "name": "iPhone 17 Pro",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro"
+        },
+        {
+          "name": "iPhone 17 Pro Max",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max"
+        },
+        {
+          "name": "iPhone 17e",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e"
+        },
+        {
+          "name": "iPhone Air",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air"
+        },
+        {
+          "name": "iPhone 17",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17"
+        }
+      ]
+    },
+    {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "availableIPhones": [
+        {
+          "name": "iPhone 17 Pro",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro"
+        },
+        {
+          "name": "iPhone 17 Pro Max",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max"
+        },
+        {
+          "name": "iPhone 17e",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17e"
+        },
+        {
+          "name": "iPhone Air",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air"
+        },
+        {
+          "name": "iPhone 17",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17"
+        }
+      ]
+    },
+    {
+      "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+      "availableIPhones": [
+        {
+          "name": "iPhone 17 Pro",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro"
+        },
+        {
+          "name": "iPhone 17 Pro Max",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro-Max"
+        },
+        {
+          "name": "iPhone Air",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-Air"
+        },
+        {
+          "name": "iPhone 17",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17"
+        },
+        {
+          "name": "iPhone 16e",
+          "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16e"
+        }
+      ]
+    }
+  ],
+  "scope": "Actual prior-run available device listing only; not proof of runtime health or future availability. Each new runner must verify the exact installed selection."
+}

@@ -115,28 +115,49 @@ def verify_springboard(output):
         raise SystemExit("A running SpringBoard process could not be confirmed.")
 
 
+def report_failed_boot(record):
+    print("Startup remains failed; capture bounded read-only owned-device diagnostics.", flush=True)
+    try:
+        current = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+        if current.get("state") != "Booted":
+            print("The failed owned simulator is not Booted; no process probe was issued.", flush=True)
+            return
+        verify_springboard(simctl("spawn", record["udid"], "launchctl", "list", timeout=30))
+        print("A running SpringBoard was observed, but the migration failure still blocks readiness.", flush=True)
+    except (Exception, SystemExit):
+        print("Read-only failed-boot diagnostics could not be confirmed; startup remains failed.", flush=True)
+
+
 def version_key(runtime):
     suffix = runtime.rsplit(".iOS-", 1)[1]
-    return tuple(int(part) for part in suffix.split("-") if part.isdigit())
+    return tuple(int(part) for part in suffix.split("-"))
 
 
-def prepare():
+def select_installed_device(devices, runtime, device_type):
+    if not isinstance(runtime, str) or not re.fullmatch(r"com\.apple\.CoreSimulator\.SimRuntime\.iOS-[0-9]+(?:-[0-9]+)*", runtime) or version_key(runtime) < (15,):
+        raise SystemExit("The configured iOS runtime is invalid or below the supported minimum.")
+    if not isinstance(device_type, str) or not re.fullmatch(r"com\.apple\.CoreSimulator\.SimDeviceType\.iPhone-[A-Za-z0-9.-]+", device_type):
+        raise SystemExit("The configured iPhone type is invalid.")
+    candidates = [
+        device
+        for device in devices.get(runtime, [])
+        if device.get("isAvailable") is True
+        and device.get("name", "").startswith("iPhone")
+        and device.get("deviceTypeIdentifier") == device_type
+    ]
+    if not candidates:
+        raise SystemExit("The exact configured iOS runtime and iPhone type are not installed and available; no fallback or download was attempted.")
+    return candidates[0]
+
+
+def prepare(runtime, device_type):
     run_id, attempt = run_identity()
     marker = marker_path()
     if marker.exists():
         raise SystemExit("An existing simulator ownership marker must be resolved first.")
     devices = json.loads(simctl("list", "devices", "available", "--json"))["devices"]
-    candidates = [
-        (runtime, device)
-        for runtime, group in devices.items()
-        if ".iOS-" in runtime and version_key(runtime) >= (15,)
-        for device in group
-        if device.get("isAvailable") and device["name"].startswith("iPhone")
-    ]
-    if not candidates:
-        raise SystemExit("No installed compatible iPhone simulator is available; no runtime was downloaded.")
-    runtime, device = sorted(candidates, key=lambda item: (version_key(item[0]), item[1]["name"]))[-1]
-    device_type = device["deviceTypeIdentifier"]
+    device = select_installed_device(devices, runtime, device_type)
+    print(f"Explicit installed simulator configuration: {runtime}, {device_type}.", flush=True)
     name = f"ImageHub-CI-{run_id}-{attempt}-{uuid.uuid4().hex[:8]}"
     identifier = str(uuid.UUID(simctl("create", name, device_type, runtime).strip()))
     record = validate_record({
@@ -157,6 +178,7 @@ def prepare():
             break
         except SimulatorMigrationFailure:
             if boot_attempt == 1:
+                report_failed_boot(record)
                 raise
             print("First owned boot reported migration failure; no readiness granted. Restart this same owned UUID once.", flush=True)
             shutdown_owned(record)
@@ -167,7 +189,7 @@ def prepare():
     with Path(os.environ["GITHUB_ENV"]).open("a", encoding="utf-8") as output:
         output.write(f"IMAGEHOST_IOS_SIMULATOR={identifier}\n")
     with Path(os.environ["GITHUB_STEP_SUMMARY"]).open("a", encoding="utf-8") as output:
-        output.write(f"Owned iOS Simulator: {device['name']}, `{runtime}`, `{identifier}`; verified boot and running SpringBoard. No physical-device evidence.\n")
+        output.write(f"Owned iOS Simulator: {device['name']}, `{runtime}`, `{identifier}`; explicit installed configuration, verified boot and running SpringBoard. No physical-device evidence.\n")
 
 
 def cleanup():
@@ -188,11 +210,17 @@ def cleanup():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cleanup", action="store_true")
+    parser.add_argument("--runtime", help="Exact installed iOS runtime identifier; no fallback or download.")
+    parser.add_argument("--device-type", help="Exact installed compatible iPhone type identifier.")
     arguments = parser.parse_args()
     if arguments.cleanup:
+        if arguments.runtime is not None or arguments.device_type is not None:
+            parser.error("Cleanup uses only the owned marker; selection arguments are not allowed.")
         cleanup()
     else:
-        prepare()
+        if arguments.runtime is None or arguments.device_type is None:
+            parser.error("Startup requires both --runtime and --device-type.")
+        prepare(arguments.runtime, arguments.device_type)
 
 
 if __name__ == "__main__":

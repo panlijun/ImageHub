@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "checks": 8,
+  "cases": [
+    "read-only diagnostic positive keeps startup failed",
+    "read-only diagnostic missing-pid keeps startup failed",
+    "read-only diagnostic foreign keeps startup failed",
+    "read-only diagnostic shutdown keeps startup failed",
+    "read-only diagnostic unknown keeps startup failed",
+    "read-only diagnostic invalid-json keeps startup failed",
+    "second migration failure survives positive diagnostic without permission",
+    "second migration failure survives failed diagnostic without permission"
+  ],
+  "scope": "Controlled read-only diagnostic and original-failure propagation only; no real Apple command executed."
+}

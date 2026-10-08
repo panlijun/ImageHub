@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": 21,
+  "cases": [
+    "exact configured runtime despite a newer available runtime",
+    "exact configured type despite another iPhone type",
+    "missing configured runtime has no fallback",
+    "unavailable configured device is rejected",
+    "non-iPhone name is rejected",
+    "missing configured type is rejected",
+    "non-boolean availability is rejected",
+    "malformed runtime is rejected before selection",
+    "below-minimum runtime is rejected",
+    "malformed type is rejected before selection",
+    "healthy pinned startup grants readiness without restart",
+    "one explicit migration failure restarts the same pinned owned UUID once",
+    "second explicit migration failure refuses readiness",
+    "unknown first failure refuses readiness without restart",
+    "unknown second failure does not add a retry",
+    "ownership change prevents shutdown and restart",
+    "missing positive SpringBoard PID refuses readiness",
+    "missing pinned runtime creates no simulator or marker",
+    "startup CLI requires explicit selection",
+    "cleanup CLI refuses unrelated selection arguments",
+    "cleanup CLI remains marker-only"
+  ],
+  "scope": "Controlled exact-runtime selection, startup authorization/retry, and CLI boundaries only. No real Apple command executed; iOS 26.2 startup/native/build results remain pending."
+}

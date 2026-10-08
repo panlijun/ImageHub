@@ -1,0 +1,3 @@
+YAML parsing and explicit iOS 26.2 / iPhone 17 selection: passed
+Standard two jobs, read permissions, bounded startup/native/cleanup and seven-day evidence: passed
+This is host workflow validation, not an Apple native run.

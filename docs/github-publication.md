@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第五轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第五轮 iOS 在自建模拟器首次迁移失败时明确拒绝进入测试，自有设备清理通过；一次有界重启修正待新一轮真实运行。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。第六轮 macOS 全部检查及 Release 构建成功；第三轮 iOS Simulator 原生验证及应用构建通过。第六轮 iOS26.5 自建模拟器一次有界重启仍迁移失败，明确拒绝进入测试且自有设备清理通过；现明确固定已预装的 iOS26.2/iPhone17，待新一轮真实运行。
 
 ## 已公开内容
 
@@ -94,3 +94,13 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - 本轮登记身份核对、关闭、读回 Shutdown、删除及读回 UUID 缺席均在真实 runner 成功；只处理本轮设备，没有擦除预装设备。14,324 字节 artifact `11554144445` 只有启动/清理日志，没有应用包。
 - 修正只对明确的终态迁移失败增加一次同 UUID 重启：先重新核对所有权并确认关闭，第二次启动每次最多 180 秒；第二次失败、超时、未知命令错误或身份变化均停止。只有最终 Booted 和 SpringBoard 正 PID 均确认才写入测试设备标识。不改变运行时，不下载镜像，不擦除其他设备。
 - **7 项有界重启控制检查通过**，覆盖健康首次启动、明确失败后仅重启一次、再次失败拒绝、两次未知错误不追加重试、身份变化及无真实 PID 拒绝；[检查记录](validation/github-ios-boot-retry-logic.json)。这些只验证脚本逻辑，实际重启恢复、原生用例和应用构建仍须下一轮 runner 结果。
+
+## 第六轮重启失败与明确运行时选择
+
+[第六轮 run 37790708848](https://github.com/panlijun/ImageHub/actions/runs/37790708848) 对应 `61bc5662e6eedf11247400c8cf8ef456c263c6bd`，整体终态 failure。iOS 作业 `113357043856` failure，macOS 作业 `113357044240` success；[逐步骤终态与产物](validation/github-sixth-ci-state.json)保留两者。同 SHA 另一次 push run `37790706939` 终态 cancelled，不计通过；[触发快照](validation/github-sixth-ci-dispatch.json)保留两条实际记录。
+
+- macOS 完整软件测试 **1396 通过、4 跳过，9 分 41 秒**，独立进程恢复/重开/锁及 **三个原生用例**（执行 7 秒）再次通过，正常入口 Release `ImageHub.app` **63.2 MB** 构建成功；[Mac 原始日志](validation/github-macos-61bc566-job.log)。artifact `11557361945` 为 25,273,135 字节、SHA-256 `5ba3968b84033081599ce4a0857a63cf71baff15052535844207d79f96ce57ae`，保留 7 天。重复验证数不与此前相加。
+- 真实 iOS26.5 自有模拟器 `b304a5c8-e30e-4f45-8198-b05c2a4b1759` 首次迁移失败，核对同 UUID/运行时/类型/名称后关闭并读回 Shutdown；唯一重启仍在 6 秒的迁移阶段报告 `Status=3, isTerminal=YES` / `Data Migration Failed`。脚本拒绝就绪，原生与应用构建均跳过；关闭、删除及读回缺席成功。[原始日志](validation/github-ios-61bc566-job.log)保留两次输出；2,330 字节 artifact `11556652634` 只有准备/清理日志。
+- 第五轮的真实完整 simctl JSON 同时登记可用的 iOS26.2、26.4、26.5 与各自兼容的 iPhone 类型；[提取证据](validation/github-ios-preinstalled-runtime-evidence.json)保留源 run/job/SHA 及原始日志摘要。下一轮从这些已安装配置中明确选定 **iOS26.2 / iPhone17**，不再自动选最高版本；CLI 必须给出完整运行时/类型，实际缺失或不可用就失败，无 fallback 或下载。选择依据证明已安装，不证明这个运行时已健康或已经通过原生测试。
+- **21 项控制检查通过**，覆盖精确运行时/类型选择、缺失和不可用拒绝、无真实 PID 不授予许可、同 UUID 一次重启与失败保留、CLI 选择和 marker-only 清理；[记录](validation/github-ios-runtime-selection-logic.json)。工作流 YAML 的真实解析与两个标准作业、只读权限、有界准备/原生/清理及 7 天证据保留检查通过；[记录](validation/github-ios-runtime-workflow-verified.log)。Sol（`gpt-6.1-sol`，`high`）只读审查未发现阻断问题，主线程另审实际 diff；这些不计 Apple 原生通过。
+- 第二次明确迁移失败增加严格本轮设备的只读状态及 30 秒进程探针诊断；即使正 PID 已出现仍拒绝就绪，诊断异常也保留原迁移失败。**8 项诊断控制检查通过**，包含身份变化、未 Booted、无 PID、未知命令、非法 JSON 和原失败传播；[记录](validation/github-ios-failed-boot-diagnostic-logic.json)。Sol 补充审查与主线程实际 diff 核对均未发现阻断问题；实际诊断仍待 runner 执行。
