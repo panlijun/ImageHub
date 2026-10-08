@@ -1,0 +1,20 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart
+00:00 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+01:30 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) - did not complete [E]
+01:30 +0: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) (did not complete)
+No tests were found.

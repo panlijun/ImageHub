@@ -1,0 +1,39 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 cleanup freezes selection and preserves later cache and unregistered files
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 visible lease protects cache and requires reconfirmation after touch
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 one changed digest produces partial failure without deleting changed bytes
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 cleanup plan owner and reopen epoch cannot authorize another session
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable intent cache boundary recovers after normal close and reopen
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable stageOwned cache boundary recovers after normal close and reopen
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable prepared cache boundary recovers after normal close and reopen
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable published cache boundary recovers after normal close and reopen
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable ready cache boundary recovers after normal close and reopen
+00:02 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 deletion journal resumes only the confirmed digest after reopen
+00:02 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 prepared changed hash is preserved by restart recovery
+00:02 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 published changed hash is preserved by restart recovery
+00:02 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 ready changed hash is preserved by restart recovery
+00:02 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 unacknowledged stage ownership is never reclaimed on reopen
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 before-delete rechecks same-length changed bytes and preserves journal
+00:03 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 corrupt cache registration cannot overwrite index or files
+00:03 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 future cache registration cannot overwrite index or files
+00:03 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 persisted use order survives backwards UTC and drives actual LRU deletion
+00:03 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 capacity enforcement preserves display-held cache and charges unknown bytes
+00:03 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 low space at intent creates no fake asset and retry stays singular
+00:03 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 low space at chunk 1 creates no fake asset and retry stays singular
+00:04 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 low space at chunk 2 creates no fake asset and retry stays singular
+00:04 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 throws free-space probe gives fixed failure and unknown report
+00:04 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 negative free-space probe gives fixed failure and unknown report
+00:04 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 processing checks required bytes before pixel output intent and releases input lease
+00:04 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 exclusive cache publisher collision keeps existing target and prepared evidence
+00:04 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 equal-digest publication collision does not prove ownership on reopen
+00:04 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 actual file read blocks release and close until chunk hook finishes
+00:04 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 actual file read blocks release and restore drain until chunk hook finishes
+00:05 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 display-only thumbnail hold does not obstruct library close
+00:05 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 linked cache target is refused without following or deleting external bytes
+00:05 +37: All tests passed!

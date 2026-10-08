@@ -1,0 +1,13 @@
+Formatted lib\features\diagnostics\application\diagnostic_exporter.dart
+Formatted lib\features\diagnostics\application\diagnostic_runtime.dart
+Formatted lib\features\diagnostics\presentation\diagnostics_screen.dart
+Formatted lib/features/gallery/data/library_repository.dart
+Formatted lib/features/gallery/data/library_diagnostics.dart
+Formatted lib/features/gallery/data/library_settings.dart
+Formatted lib/features/gallery/data/library_outputs.dart
+Formatted lib/features/gallery/data/library_accounts.dart
+Formatted lib/features/gallery/data/library_recycle.dart
+Formatted lib/features/gallery/data/library_uploads.dart
+Formatted lib/features/gallery/presentation/gallery_providers.dart
+Formatted test/core/diagnostic_schema_migration_test.dart
+Formatted 19 files (12 changed) in 0.38 seconds.

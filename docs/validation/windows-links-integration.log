@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/links_flow_test.dart
+Building Windows application...                                    30.1s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-004/007 partial Windows ordinary link query, local transfer retry, protected removal and reopen
+00:01 +1: (tearDownAll)
+00:01 +1: All tests passed!

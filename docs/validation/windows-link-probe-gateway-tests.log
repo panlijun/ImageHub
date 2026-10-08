@@ -1,0 +1,85 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_gateway_test.dart
+00:00 +0: UT-072 passive construction never fetches and each explicit check owns one isolated HEAD without credentials or retry
+00:00 +1: UT-072 unsupported URLs and pre-cancellation dispatch zero requests and create no transport
+00:00 +1 -1: UT-072 unsupported URLs and pre-cancellation dispatch zero requests and create no transport [E]
+  Expected: LinkAvailability:<LinkAvailability.unknown>
+    Actual: LinkAvailability:<LinkAvailability.accessible>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\link_probe_gateway_test.dart 104:5        main.expectOutcome
+  test\core\link_probe_gateway_test.dart 187:7        main.<fn>
+  
+00:00 +1 -1: UT-072 HEAD 200 image metadata is accessible without consuming the image representation length
+00:00 +2 -1: UT-072 empty 410 records service Gone evidence only and performs no delete or GET
+00:00 +3 -1: UT-072 HTTP 404 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +4 -1: UT-072 HTTP 403 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +5 -1: UT-072 HTTP 405 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +6 -1: UT-072 HTTP 429 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +7 -1: UT-072 HTTP 500 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +8 -1: UT-072 HTTP 502 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +9 -1: UT-072 HTTP 503 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +10 -1: UT-072 HTTP 301 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +11 -1: UT-072 HTTP 302 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +12 -1: UT-072 HTTP 307 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +13 -1: UT-072 HTTP 308 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +14 -1: UT-072 HTTP 204 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +15 -1: UT-072 HTTP 201 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +16 -1: UT-072 malformed statuses content types duplicated headers or redirect evidence cannot become accessible
+00:00 +17 -1: UT-072 nonempty HEAD body 1 bytes stops the original source and never reports accessible
+00:00 +18 -1: UT-072 nonempty HEAD body 1024 bytes stops the original source and never reports accessible
+00:00 +19 -1: UT-072 nonempty HEAD body 1025 bytes stops the original source and never reports accessible
+00:00 +20 -1: UT-072 a body-bearing 410 is malformed and cannot report service Gone
+00:00 +21 -1: UT-072 malformed body waits for real source cancellation gate before returning
+00:00 +22 -1: UT-072 cancellation waits for actual delegate fetch and late response source shutdown
+00:00 +23 -1: UT-072 deadline signals cancellation yet waits for real late fetch and raw source completion
+00:00 +24 -1: UT-072 cancelling an already-returned stalled response waits for its original onCancel
+00:00 +25 -1: UT-072 DioExceptionType.connectionTimeout maps to safe unknown timeout without retry
+00:00 +26 -1: UT-072 DioExceptionType.sendTimeout maps to safe unknown timeout without retry
+00:00 +27 -1: UT-072 DioExceptionType.receiveTimeout maps to safe unknown timeout without retry
+00:00 +28 -1: UT-072 offline fetch synchronous throw and raw stream exceptions are safe unconfirmed without stringify
+00:00 +29 -1: UT-072 factory exceptions never dispatch or stringify and invalid deadline is rejected before work
+00:00 +30 -1: UT-072 source cancel failure raises fixed cleanup failure instead of reporting settled IO
+00:00 +31 -1: UT-072 delegate close failure still waits for a late actual fetch before fixed cleanup failure
+00:00 +32 -1: UT-072 failed raw source subscription cannot claim IO cleanup and exposes only a fixed failure
+00:00 +33 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_gateway_test.dart: UT-072 unsupported URLs and pre-cancellation dispatch zero requests and create no transport
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_gateway_test.dart
+00:00 +0: UT-072 passive construction never fetches and each explicit check owns one isolated HEAD without credentials or retry
+00:00 +1: UT-072 unsupported URLs and pre-cancellation dispatch zero requests and create no transport
+00:00 +2: UT-072 Uri-normalized dot segments retain only the canonical whitelisted host and path
+00:00 +3: UT-072 HEAD 200 image metadata is accessible without consuming the image representation length
+00:00 +4: UT-072 empty 410 records service Gone evidence only and performs no delete or GET
+00:00 +5: UT-072 HTTP 404 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +6: UT-072 HTTP 403 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +7: UT-072 HTTP 405 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +8: UT-072 HTTP 429 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +9: UT-072 HTTP 500 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +10: UT-072 HTTP 502 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +11: UT-072 HTTP 503 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +12: UT-072 HTTP 301 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +13: UT-072 HTTP 302 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +14: UT-072 HTTP 307 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +15: UT-072 HTTP 308 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +16: UT-072 HTTP 204 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +17: UT-072 HTTP 201 is unconfirmed without redirects retries GET fallback or provider prose
+00:00 +18: UT-072 malformed statuses content types duplicated headers or redirect evidence cannot become accessible
+00:00 +19: UT-072 nonempty HEAD body 1 bytes stops the original source and never reports accessible
+00:00 +20: UT-072 nonempty HEAD body 1024 bytes stops the original source and never reports accessible
+00:00 +21: UT-072 nonempty HEAD body 1025 bytes stops the original source and never reports accessible
+00:00 +22: UT-072 a body-bearing 410 is malformed and cannot report service Gone
+00:00 +23: UT-072 malformed body waits for real source cancellation gate before returning
+00:00 +24: UT-072 cancellation waits for actual delegate fetch and late response source shutdown
+00:00 +25: UT-072 deadline signals cancellation yet waits for real late fetch and raw source completion
+00:00 +26: UT-072 cancelling an already-returned stalled response waits for its original onCancel
+00:00 +27: UT-072 DioExceptionType.connectionTimeout maps to safe unknown timeout without retry
+00:00 +28: UT-072 DioExceptionType.sendTimeout maps to safe unknown timeout without retry
+00:00 +29: UT-072 DioExceptionType.receiveTimeout maps to safe unknown timeout without retry
+00:00 +30: UT-072 offline fetch synchronous throw and raw stream exceptions are safe unconfirmed without stringify
+00:00 +31: UT-072 factory exceptions never dispatch or stringify and invalid deadline is rejected before work
+00:00 +32: UT-072 source cancel failure raises fixed cleanup failure instead of reporting settled IO
+00:00 +33: UT-072 delegate close failure still waits for a late actual fetch before fixed cleanup failure
+00:00 +34: UT-072 failed raw source subscription cannot claim IO cleanup and exposes only a fixed failure
+00:00 +35: All tests passed!

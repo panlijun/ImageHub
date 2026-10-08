@@ -1,0 +1,211 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+00:02 +2: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:03 +3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+00:03 +4: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 1280.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:04 +5: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:07 +6: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:12 +7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+设置页或真实 IO 未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:60:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:324:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:14 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:14 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+  
+00:15 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextContainingWidgetFinder:<Found 0 widgets with text containing 默认值已填入草稿: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:399:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 399
+The test description was:
+  UT-083 default reset is only draft and target UUIDs distinguish aliases
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:15 +7 -2: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:15 +7 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 default reset is only draft and target UUIDs distinguish aliases
+  
+00:15 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:17 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+设置页或真实 IO 未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:60:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:499:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-083 unselected pending target cannot become default or block reset
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:22 +9 -3: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:22 +9 -3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 unselected pending target cannot become default or block reset
+  
+00:22 +10 -3: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:22 +11 -3: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:23 +12 -3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+00:26 +13 -3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+设置页或真实 IO 未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:60:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:598:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-087 external settings revision and replacement reset reject old draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:29 +13 -4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 external settings revision and replacement reset reject old draft
+  
+00:29 +13 -4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+00:29 +14 -4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for
+WidgetsBindingObserver.didRequestAppExit:
+A AppLifecycleListener was used after being disposed.
+Once you have called dispose() on a AppLifecycleListener, it can no longer be used.
+
+When the exception was thrown, this was the stack:
+#0      AppLifecycleListener._debugAssertNotDisposed.<anonymous closure> (package:flutter/src/widgets/app_lifecycle_listener.dart:192:9)
+#1      AppLifecycleListener._debugAssertNotDisposed (package:flutter/src/widgets/app_lifecycle_listener.dart:199:6)
+#2      AppLifecycleListener.didRequestAppExit (package:flutter/src/widgets/app_lifecycle_listener.dart:205:12)
+#3      WidgetsBinding.handleRequestAppExit (package:flutter/src/widgets/binding.dart:899:29)
+<asynchronous suspension>
+#4      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:30:9)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for
+WidgetsBindingObserver.didRequestAppExit:
+A AppLifecycleListener was used after being disposed.
+Once you have called dispose() on a AppLifecycleListener, it can no longer be used.
+
+When the exception was thrown, this was the stack:
+#0      AppLifecycleListener._debugAssertNotDisposed.<anonymous closure> (package:flutter/src/widgets/app_lifecycle_listener.dart:192:9)
+#1      AppLifecycleListener._debugAssertNotDisposed (package:flutter/src/widgets/app_lifecycle_listener.dart:199:6)
+#2      AppLifecycleListener.didRequestAppExit (package:flutter/src/widgets/app_lifecycle_listener.dart:205:12)
+#3      WidgetsBinding.handleRequestAppExit (package:flutter/src/widgets/binding.dart:899:29)
+<asynchronous suspension>
+#4      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:30:9)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for
+WidgetsBindingObserver.didRequestAppExit:
+A AppLifecycleListener was used after being disposed.
+Once you have called dispose() on a AppLifecycleListener, it can no longer be used.
+
+When the exception was thrown, this was the stack:
+#0      AppLifecycleListener._debugAssertNotDisposed.<anonymous closure> (package:flutter/src/widgets/app_lifecycle_listener.dart:192:9)
+#1      AppLifecycleListener._debugAssertNotDisposed (package:flutter/src/widgets/app_lifecycle_listener.dart:199:6)
+#2      AppLifecycleListener.didRequestAppExit (package:flutter/src/widgets/app_lifecycle_listener.dart:205:12)
+#3      WidgetsBinding.handleRequestAppExit (package:flutter/src/widgets/binding.dart:899:29)
+<asynchronous suspension>
+#4      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:30:9)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following assertion was thrown while dispatching notifications for
+WidgetsBindingObserver.didRequestAppExit:
+A AppLifecycleListener was used after being disposed.
+Once you have called dispose() on a AppLifecycleListener, it can no longer be used.
+
+When the exception was thrown, this was the stack:
+#0      AppLifecycleListener._debugAssertNotDisposed.<anonymous closure> (package:flutter/src/widgets/app_lifecycle_listener.dart:192:9)
+#1      AppLifecycleListener._debugAssertNotDisposed (package:flutter/src/widgets/app_lifecycle_listener.dart:199:6)
+#2      AppLifecycleListener.didRequestAppExit (package:flutter/src/widgets/app_lifecycle_listener.dart:205:12)
+#3      WidgetsBinding.handleRequestAppExit (package:flutter/src/widgets/binding.dart:899:29)
+<asynchronous suspension>
+#4      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:30:9)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: 'Multiple exceptions (4) were detected during the running of the current test, and at
+least one was unexpected.'
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:708:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 708
+The test description was:
+  UT-087 system exit waits for real queued settings commit
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:30 +14 -5: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 system exit waits for real queued settings commit
+  
+00:30 +14 -5: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit

@@ -1,0 +1,48 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: QUE-010 AT-003 partial history 320.0 large text empty and no network
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: QUE-010 AT-003 partial history 390.0 large text empty and no network
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial clear confirmation cancels then removes selected terminal only
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial clear confirmation cancels then removes selected terminal only
+00:04 +7: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:07 +8: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:09 +9: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:09 +10: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial transaction failure preserves records and explicit retry succeeds
+00:10 +11: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial transaction failure preserves records and explicit retry succeeds
+00:11 +12: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial disposing review resolves cancellation without deleting history
+00:12 +13: All tests passed!
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: QUE-010 AT-003 partial history 320.0 large text empty and no network
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: QUE-010 AT-003 partial history 390.0 large text empty and no network
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial clear confirmation cancels then removes selected terminal only
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial clear confirmation cancels then removes selected terminal only
+00:04 +7: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:07 +8: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:09 +9: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:09 +10: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial transaction failure preserves records and explicit retry succeeds
+00:09 +11: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial transaction failure preserves records and explicit retry succeeds
+00:12 +12: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial disposing review resolves cancellation without deleting history
+00:13 +13: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-038/066 partial cancelled history remains protected until actual lease release
+00:15 +14: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial system exit cancels review and drains before reopening unchanged history
+00:16 +15: C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart: UT-066 partial actual metadata restore history shown with attempts then cleared independently
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:124:12)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart:522:28)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/upload_history_screen_test.dart:34:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:17 +16: All tests passed!

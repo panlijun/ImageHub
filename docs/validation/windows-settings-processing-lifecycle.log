@@ -1,0 +1,20 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart
+00:00 +0: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:00 +1: UT-034 missing/damaged output cannot preview save or acquire reading lease
+00:00 +2: UT-035 permanent save independently survives exact expiry and preserves ordered provenance
+00:00 +3: UT-035 duplicate content save preserves organization and stores provenance once
+00:00 +4: UT-035 rejected permanent commit creates no usable asset and durable retry restores source relation
+00:00 +5: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+00:00 +6: UT-038 protection contract persists all six nonterminal task owners until explicit safe release
+00:01 +7: UT-102 source reader DB release failure keeps row but does not deadlock shutdown
+00:01 +8: UT-102 output reader DB release failure keeps row but does not deadlock shutdown
+00:01 +9: UT-034 journal recovery after prepared preserves confirmed identity and bytes
+00:01 +10: UT-034 journal recovery after published preserves confirmed identity and bytes
+00:01 +11: UT-034 journal recovery after committed preserves confirmed identity and bytes
+00:01 +12: UT-034 cancellation waits for intent owner and leaves no usable or permanent result
+00:01 +13: UT-053/087 real coordinators share frozen budget and cancelled waiting work releases only its lease
+00:01 +14: UT-102 real closing drains active coordinator and refuses waiting output before pixel work
+00:01 +15: UT-037 / UT-102 close waits for actual output reader and refuses new readers
+00:02 +16: IMG-004 animation crop preview reads the explicitly selected frame
+00:02 +17: UT-034 owned-output source protection lasts until independent output expiry
+00:02 +18: All tests passed!

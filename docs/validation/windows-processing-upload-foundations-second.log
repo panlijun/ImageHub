@@ -1,0 +1,189 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 processing recipe matches request defaults without inputs
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 selection freezes identity order and frame map
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 selection rejects empty duplicate invalid and wrong counts
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 canonical excludes runtime paths and matches legacy policy
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 frozen plan and returned JSON are deeply immutable
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 bind uses actual paths and frozen frames and parameters
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 bind rejects count order and every version field change
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 malformed plans reject unknown fields and invalid types safely
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 crop parameters and output retention remain frozen
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-046 pending publication marks frozen source until confirmed output
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 QUE-005 schema10 fresh creates 28 tables and enforces shared processing dependency identities
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to current preserves IDs organization and bytes
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to current preserves IDs organization and bytes
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +29 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:01 +29 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema6 unfinished restore refuses upgrade before schema or evidence changes [E]
+  Expected: throws <Instance of 'DriftRemoteException'> with `cause`: '升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。'
+    Actual: <Instance of 'Future<void>'>
+     Which: threw DriftRemoteException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。>
+            stack package:imagehost/features/gallery/data/library_database.dart 478:15               new LibraryDatabase.<fn>
+                  package:drift/src/sqlite3/database.dart 111:13                                     Sqlite3Delegate._initializeDatabase
+                  package:drift/src/sqlite3/database.dart 88:9                                       Sqlite3Delegate.open
+                  package:drift/src/runtime/executor/helpers/engines.dart 515:7                      DelegatedDatabase.ensureOpen.<fn>
+                  package:drift/src/utils/synchronized.dart 18:46                                    Lock.synchronized.callBlockAndComplete.<fn>
+                  package:drift/src/remote/server_impl.dart 163:9                                    ServerImplementation._handleEnsureOpen.<fn>
+                  package:drift/src/remote/communication.dart 172:20                                 DriftCommunication.setRequestHandler.<fn>
+                  ===== asynchronous gap ===========================
+                  package:drift/src/remote/communication.dart 118:66                                 DriftCommunication.request
+                  package:drift/src/remote/client_impl.dart 188:10                                   _RemoteQueryExecutor.ensureOpen
+                  package:drift/src/utils/lazy_database.dart 78:49                                   LazyDatabase.ensureOpen.<fn>
+                  dart:async                                                                         _CustomZone.runUnary
+                  package:drift/src/runtime/api/connection_user.dart 170:55                          DatabaseConnectionUser.doWhenOpened.<fn>
+                  package:drift/src/runtime/query_builder/statements/select/custom_select.dart 54:3  CustomSelectStatement._mapDbResponse
+                  test\core\upload_processing_schema_test.dart 43:7                                  main.openDatabase
+                  package:stack_trace                                                                StackZoneSpecification._registerCallback.<fn>
+                  package:flutter_test/src/widget_tester.dart 508:19                                 expectLater.<fn>
+                  test\core\upload_processing_schema_test.dart 314:9                                 main.<fn>
+                  
+            which has `cause` with value LibraryOpenException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。> which not an <Instance of 'String'>
+  
+  package:matcher                                      expectLater
+  package:flutter_test/src/widget_tester.dart 507:8    expectLater
+  test\core\upload_processing_schema_test.dart 314:15  main.<fn>
+  ===== asynchronous gap ===========================
+  dart:async                                           _CustomZone.registerUnaryCallback
+  test\core\upload_processing_schema_test.dart 307:9   main.<fn>
+  
+00:01 +30 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +31 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/diagnostic_schema_migration_test.dart: UT-093 schema7 failed diagnostic index creation rolls back all new DDL and preserves original evidence
+00:01 +32 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema7 unfinished restore refuses upgrade before schema or evidence changes
+00:01 +32 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item then batch pause preserves independent intent through both resume orders
+00:01 +32 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema7 unfinished restore refuses upgrade before schema or evidence changes [E]
+  Expected: throws <Instance of 'DriftRemoteException'> with `cause`: '升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。'
+    Actual: <Instance of 'Future<void>'>
+     Which: threw DriftRemoteException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。>
+            stack package:imagehost/features/gallery/data/library_database.dart 478:15               new LibraryDatabase.<fn>
+                  package:drift/src/sqlite3/database.dart 111:13                                     Sqlite3Delegate._initializeDatabase
+                  package:drift/src/sqlite3/database.dart 88:9                                       Sqlite3Delegate.open
+                  package:drift/src/runtime/executor/helpers/engines.dart 515:7                      DelegatedDatabase.ensureOpen.<fn>
+                  package:drift/src/utils/synchronized.dart 18:46                                    Lock.synchronized.callBlockAndComplete.<fn>
+                  package:drift/src/remote/server_impl.dart 163:9                                    ServerImplementation._handleEnsureOpen.<fn>
+                  package:drift/src/remote/communication.dart 172:20                                 DriftCommunication.setRequestHandler.<fn>
+                  ===== asynchronous gap ===========================
+                  package:drift/src/remote/communication.dart 118:66                                 DriftCommunication.request
+                  package:drift/src/remote/client_impl.dart 188:10                                   _RemoteQueryExecutor.ensureOpen
+                  package:drift/src/utils/lazy_database.dart 78:49                                   LazyDatabase.ensureOpen.<fn>
+                  dart:async                                                                         _CustomZone.runUnary
+                  package:drift/src/runtime/api/connection_user.dart 170:55                          DatabaseConnectionUser.doWhenOpened.<fn>
+                  package:drift/src/runtime/query_builder/statements/select/custom_select.dart 54:3  CustomSelectStatement._mapDbResponse
+                  test\core\upload_processing_schema_test.dart 43:7                                  main.openDatabase
+                  package:stack_trace                                                                StackZoneSpecification._registerCallback.<fn>
+                  package:flutter_test/src/widget_tester.dart 508:19                                 expectLater.<fn>
+                  test\core\upload_processing_schema_test.dart 314:9                                 main.<fn>
+                  
+            which has `cause` with value LibraryOpenException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。> which not an <Instance of 'String'>
+  
+  package:matcher                                      expectLater
+  package:flutter_test/src/widget_tester.dart 507:8    expectLater
+  test\core\upload_processing_schema_test.dart 314:15  main.<fn>
+  ===== asynchronous gap ===========================
+  dart:async                                           _CustomZone.registerUnaryCallback
+  test\core\upload_processing_schema_test.dart 307:9   main.<fn>
+  
+00:01 +33 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial queued reopen retains source UUID version parameters retention and frozen targets
+00:01 +33 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial queued reopen retains source UUID version parameters retention and frozen targets
+00:01 +33 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema8 unfinished restore refuses upgrade before schema or evidence changes [E]
+  Expected: throws <Instance of 'DriftRemoteException'> with `cause`: '升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。'
+    Actual: <Instance of 'Future<void>'>
+     Which: threw DriftRemoteException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。>
+            stack package:imagehost/features/gallery/data/library_database.dart 478:15               new LibraryDatabase.<fn>
+                  package:drift/src/sqlite3/database.dart 111:13                                     Sqlite3Delegate._initializeDatabase
+                  package:drift/src/sqlite3/database.dart 88:9                                       Sqlite3Delegate.open
+                  package:drift/src/runtime/executor/helpers/engines.dart 515:7                      DelegatedDatabase.ensureOpen.<fn>
+                  package:drift/src/utils/synchronized.dart 18:46                                    Lock.synchronized.callBlockAndComplete.<fn>
+                  package:drift/src/remote/server_impl.dart 163:9                                    ServerImplementation._handleEnsureOpen.<fn>
+                  package:drift/src/remote/communication.dart 172:20                                 DriftCommunication.setRequestHandler.<fn>
+                  ===== asynchronous gap ===========================
+                  package:drift/src/remote/communication.dart 118:66                                 DriftCommunication.request
+                  package:drift/src/remote/client_impl.dart 188:10                                   _RemoteQueryExecutor.ensureOpen
+                  package:drift/src/utils/lazy_database.dart 78:49                                   LazyDatabase.ensureOpen.<fn>
+                  dart:async                                                                         _CustomZone.runUnary
+                  package:drift/src/runtime/api/connection_user.dart 170:55                          DatabaseConnectionUser.doWhenOpened.<fn>
+                  package:drift/src/runtime/query_builder/statements/select/custom_select.dart 54:3  CustomSelectStatement._mapDbResponse
+                  test\core\upload_processing_schema_test.dart 43:7                                  main.openDatabase
+                  package:stack_trace                                                                StackZoneSpecification._registerCallback.<fn>
+                  package:flutter_test/src/widget_tester.dart 508:19                                 expectLater.<fn>
+                  test\core\upload_processing_schema_test.dart 314:9                                 main.<fn>
+                  
+            which has `cause` with value LibraryOpenException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。> which not an <Instance of 'String'>
+  
+  package:matcher                                      expectLater
+  package:flutter_test/src/widget_tester.dart 507:8    expectLater
+  test\core\upload_processing_schema_test.dart 314:15  main.<fn>
+  ===== asynchronous gap ===========================
+  dart:async                                           _CustomZone.registerUnaryCallback
+  test\core\upload_processing_schema_test.dart 307:9   main.<fn>
+  
+00:01 +33 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial queued reopen retains source UUID version parameters retention and frozen targets
+00:01 +33 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema9 unfinished restore refuses upgrade before schema or evidence changes [E]
+  Expected: throws <Instance of 'DriftRemoteException'> with `cause`: '升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。'
+    Actual: <Instance of 'Future<void>'>
+     Which: threw DriftRemoteException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。>
+            stack package:imagehost/features/gallery/data/library_database.dart 478:15               new LibraryDatabase.<fn>
+                  package:drift/src/sqlite3/database.dart 111:13                                     Sqlite3Delegate._initializeDatabase
+                  package:drift/src/sqlite3/database.dart 88:9                                       Sqlite3Delegate.open
+                  package:drift/src/runtime/executor/helpers/engines.dart 515:7                      DelegatedDatabase.ensureOpen.<fn>
+                  package:drift/src/utils/synchronized.dart 18:46                                    Lock.synchronized.callBlockAndComplete.<fn>
+                  package:drift/src/remote/server_impl.dart 163:9                                    ServerImplementation._handleEnsureOpen.<fn>
+                  package:drift/src/remote/communication.dart 172:20                                 DriftCommunication.setRequestHandler.<fn>
+                  ===== asynchronous gap ===========================
+                  package:drift/src/remote/communication.dart 118:66                                 DriftCommunication.request
+                  package:drift/src/remote/client_impl.dart 188:10                                   _RemoteQueryExecutor.ensureOpen
+                  package:drift/src/utils/lazy_database.dart 78:49                                   LazyDatabase.ensureOpen.<fn>
+                  dart:async                                                                         _CustomZone.runUnary
+                  package:drift/src/runtime/api/connection_user.dart 170:55                          DatabaseConnectionUser.doWhenOpened.<fn>
+                  package:drift/src/runtime/query_builder/statements/select/custom_select.dart 54:3  CustomSelectStatement._mapDbResponse
+                  test\core\upload_processing_schema_test.dart 43:7                                  main.openDatabase
+                  package:stack_trace                                                                StackZoneSpecification._registerCallback.<fn>
+                  package:flutter_test/src/widget_tester.dart 508:19                                 expectLater.<fn>
+                  test\core\upload_processing_schema_test.dart 314:9                                 main.<fn>
+                  
+            which has `cause` with value LibraryOpenException:<升级前须先用兼容版本完成恢复操作；原数据与恢复证据已保留。> which not an <Instance of 'String'>
+  
+  package:matcher                                      expectLater
+  package:flutter_test/src/widget_tester.dart 507:8    expectLater
+  test\core\upload_processing_schema_test.dart 314:15  main.<fn>
+  ===== asynchronous gap ===========================
+  dart:async                                           _CustomZone.registerUnaryCallback
+  test\core\upload_processing_schema_test.dart 307:9   main.<fn>
+  
+00:01 +34 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 batch then item pause preserves independent intent through both resume orders
+00:01 +35 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready output with unfinished running log recovers same UUID without pixel rerun
+00:01 +36 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready output with unfinished running log recovers same UUID without pixel rerun
+00:01 +37 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-062 QUE-003 interrupted item uses legal atomic transitions for batchPause=false without allocating a new attempt
+00:02 +38 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial missing frozen bytes wait explicitly and require exact repair plus processing retry
+00:02 +39 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-062 QUE-003 interrupted item uses legal atomic transitions for batchPause=true without allocating a new attempt
+00:02 +40 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial cancelling every queued dependent releases durable job references and history clear keeps original bytes
+00:02 +41 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.running rejects pause and resume without data or evidence changes
+00:02 +42 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial cancelled intent cannot clear or export completed history while real processing leases remain
+00:02 +43 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial cancelled intent cannot clear or export completed history while real processing leases remain
+00:02 +44 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.succeeded rejects pause and resume without data or evidence changes
+00:02 +45 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.failed rejects pause and resume without data or evidence changes
+00:02 +46 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.cancelled rejects pause and resume without data or evidence changes
+00:02 +47 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-093 IT-006 QUE-003 own schema8 migrates to current with stable identities protection secrets and original bytes
+00:03 +48 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-093 QUE-003 schema8 pending restore refuses before any structure data or file mutation
+00:03 +49 -4: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema6 unfinished restore refuses upgrade before schema or evidence changes
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema7 unfinished restore refuses upgrade before schema or evidence changes
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema8 unfinished restore refuses upgrade before schema or evidence changes
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 BAK-006 own schema9 unfinished restore refuses upgrade before schema or evidence changes

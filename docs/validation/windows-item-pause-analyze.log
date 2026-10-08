@@ -1,0 +1,6 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\core\upload_coordinator_test.dart:751:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\core\upload_coordinator_test.dart:775:7 - curly_braces_in_flow_control_structures
+
+2 issues found. (ran in 78.8s)

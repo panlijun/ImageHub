@@ -1,0 +1,12 @@
+# New application tooling and build output; keep the input kit intact.
+app/.dart_tool/
+app/build/
+app/.flutter-plugins-dependencies
+app/android/.gradle/
+app/android/local.properties
+app/ios/Pods/
+app/macos/Pods/
+app/windows/flutter/ephemeral/
+app/macos/Flutter/ephemeral/
+app/ios/Flutter/ephemeral/
+app/**/xcuserdata/

@@ -1,0 +1,14 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart
+test/core/network_session_test.dart:108:9: Error: Undefined name 'QueueWaitReason'.
+        QueueWaitReason.network,
+        ^^^^^^^^^^^^^^^
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart":
+  Compilation failed for testPath=C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: test/core/network_session_test.dart:108:9: Error: Undefined name 'QueueWaitReason'.
+          QueueWaitReason.network,
+          ^^^^^^^^^^^^^^^
+  .
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart

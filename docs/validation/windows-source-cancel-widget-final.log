@@ -1,0 +1,3 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart
+00:00 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +1: All tests passed!

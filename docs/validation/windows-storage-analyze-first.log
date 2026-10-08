@@ -1,0 +1,26 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:201:7 - curly_braces_in_flow_control_structures
+  error - The method 'startsWith' isn't defined for the type 'GeneratedColumn'. Try correcting the name to the name of an existing method, or defining a method named 'startsWith' - lib\features\gallery\data\library_storage.dart:210:27 - undefined_method
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:239:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:266:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:280:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:283:15 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:399:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:529:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:537:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:541:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:556:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:568:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_storage.dart:597:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\settings\presentation\settings_screen.dart:504:23 - curly_braces_in_flow_control_structures
+  error - The method 'loadStorageReport' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'loadStorageReport' - lib\features\storage\presentation\storage_screen.dart:92:47 - undefined_method
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\storage\presentation\storage_screen.dart:96:9 - curly_braces_in_flow_control_structures
+  error - The method 'prepareThumbnailCleanup' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'prepareThumbnailCleanup' - lib\features\storage\presentation\storage_screen.dart:195:47 - undefined_method
+  error - The method 'clearThumbnails' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'clearThumbnails' - lib\features\storage\presentation\storage_screen.dart:212:49 - undefined_method
+  error - The method 'cleanupOutputs' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'cleanupOutputs' - lib\features\storage\presentation\storage_screen.dart:228:49 - undefined_method
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\storage\presentation\storage_screen.dart:238:9 - curly_braces_in_flow_control_structures
+   info - Use an initializing formal to assign a parameter to a field. Try using an initialing formal ('this._operatingSystem') to initialize the field - lib\platform\storage_capacity.dart:13:8 - prefer_initializing_formals
+   info - Use 'isNotEmpty' rather than negating the result of 'isEmpty'. Try rewriting the expression to use 'isNotEmpty' - test\storage_screen_test.dart:309:15 - prefer_is_not_empty
+
+22 issues found. (ran in 9.1s)

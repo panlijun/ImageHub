@@ -1,0 +1,105 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart: UT-088 LRU uses persisted order then stable id regardless of input order
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart: UT-088 protected and unknown bytes remain charged and cannot be evicted
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart: UT-088 incoming image must fit after eviction including exact boundary
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart: UT-088 already within limit neither evicts nor expands supplied scope
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/cache_policy_test.dart: UT-088 invalid accounting and duplicate identities reject without a plan
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 SQL relationships classify disjoint real bytes and logical diagnostics separately
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083/087 complete settings and same alias target identity atomically persist and reopen
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 stale foreign and reopened settings plans cannot overwrite later valid changes
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13225:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:433:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:172:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart:204:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +34: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +35: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +36: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +37: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +38: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:02 +39: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:03 +40: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:03 +41: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:03 +42: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 320.0 large type physical report and independent diagnostics
+00:03 +43: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:03 +44: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:03 +45: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:03 +46: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:03 +47: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:04 +48: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:04 +49: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:04 +50: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:04 +51: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 390.0 large type physical report and independent diagnostics
+00:04 +52: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:04 +53: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +54: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +55: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +56: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +57: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +58: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:05 +59: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:05 +60: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:05 +61: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:06 +62: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:06 +63: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:06 +64: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 AT-005 partial storage 1280.0 large type physical report and independent diagnostics
+00:06 +65: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 390.0 large type actual save and reopen
+00:06 +66: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 390.0 large type actual save and reopen
+00:07 +67: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 frozen thumbnail cleanup excludes later files protected reads and unknown files
+00:09 +68: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 frozen thumbnail cleanup excludes later files protected reads and unknown files
+00:12 +69: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:14 +70: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:17 +71: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:18 +72: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086 system exit closes pending owned confirmation without clearing thumbnails
+00:20 +73: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086 system exit closes pending owned confirmation without clearing thumbnails
+00:20 +74: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+00:22 +75: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 system exit waits for actual expired output deletion and preserves other outputs
+00:22 +76: C:/Users/PAN/workspace/ImageHub/app/test/storage_screen_test.dart: UT-086/088 system exit waits for actual expired output deletion and preserves other outputs
+00:23 +77: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+00:23 +78: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 loading failure disables saving without revealing unknown exception
+00:23 +79: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread
+00:24 +80: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+00:25 +81: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+00:26 +82: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+00:27 +83: All tests passed!

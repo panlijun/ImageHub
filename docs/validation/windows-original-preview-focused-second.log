@@ -1,0 +1,59 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_reader_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_reader_test.dart: UT-026/IT-002 original encoded animation and fresh asset survive without thumbnail substitution
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +6: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +7: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +8: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:02 +12: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+00:02 +13: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-099 retention guidance and real backup route preserve draft 390.0
+00:02 +14: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 desktop original viewer 390.0 uses independent bytes and drains before return (variant: TargetPlatform.windows)
+00:03 +15: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 desktop original viewer 390.0 uses independent bytes and drains before return (variant: TargetPlatform.windows)
+00:03 +16: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 desktop original viewer 390.0 uses independent bytes and drains before return (variant: TargetPlatform.windows)
+00:03 +17: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026 pause preserves displayed pixels and resumes the already decoded pending frame
+00:03 +18: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:04 +19: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:05 +20: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 desktop original viewer 1280.0 uses independent bytes and drains before return (variant: TargetPlatform.windows)
+00:05 +21: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 desktop original viewer 1280.0 uses independent bytes and drains before return (variant: TargetPlatform.windows)
+00:05 +22: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:05 +23: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:05 +24: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:06 +25: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:06 +26: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:06 +27: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:06 +28: C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026 initial codec failures use safe copy without stringifying unknown errors
+00:06 +29: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:07 +30: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+00:07 +31: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+00:07 +32: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:07 +33: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:07 +34: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:08 +35: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +36: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +37: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:12 +38: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:12 +39: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:13 +40: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:16 +41: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:16 +42: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:19 +43: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:21 +44: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:21 +45: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:22 +46: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:23 +47: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:24 +48: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:24 +49: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+00:24 +50: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:24 +51: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:25 +52: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:26 +53: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:27 +54: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:28 +55: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:39 +56: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:41 +57: All tests passed!

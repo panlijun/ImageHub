@@ -1,0 +1,9 @@
+  compiling builders/aot
+  39s compiling builders/aot
+  0s drift_dev on 252 inputs; integration_test/gallery_flow_test.dart
+  15s drift_dev on 252 inputs: 1 output; spent 12s analyzing, 2s resolving, 1s reading; integration_test/mobile_gallery_flow_test.dart
+  17s drift_dev on 252 inputs: 73 output, 5 no-op; spent 14s analyzing, 2s resolving, 1s reading; lib/features/gallery/data/library_organization.dart
+  18s drift_dev on 252 inputs: 63 skipped, 117 output, 72 no-op; spent 14s analyzing, 2s resolving, 1s reading
+  0s source_gen:combining_builder on 126 inputs; integration_test/gallery_flow_test.dart
+  0s source_gen:combining_builder on 126 inputs: 63 skipped, 1 output, 62 no-op
+  Built with build_runner/aot in 61s; wrote 118 outputs.

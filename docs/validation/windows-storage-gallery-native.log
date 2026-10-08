@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/gallery_remote_flow_test.dart
+Building Windows application...                                    28.7s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-003/004 partial Windows gallery remote intersection, local evidence refresh, result removal and reopen
+00:02 +1: (tearDownAll)
+00:02 +1: All tests passed!

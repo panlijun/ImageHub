@@ -1,0 +1,21 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_recycle.dart:143:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_recycle.dart:153:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_upload_processing.dart:77:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_upload_processing.dart:95:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_upload_processing.dart:273:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_upload_processing.dart:284:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_upload_processing.dart:373:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\application\upload_processing_coordinator.dart:87:13 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\application\upload_processing_coordinator.dart:90:13 - curly_braces_in_flow_control_structures
+  error - The property 'state' can't be unconditionally accessed because the receiver can be 'null'. Try making the access conditional (using '?.') or adding a null check to the target ('!') - lib\features\upload\application\upload_processing_coordinator.dart:140:26 - unchecked_use_of_nullable_value
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\application\upload_processing_coordinator.dart:217:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\domain\upload_processing_models.dart:182:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\domain\upload_processing_models.dart:291:5 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\domain\upload_processing_models.dart:301:5 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\upload\domain\upload_processing_models.dart:312:7 - curly_braces_in_flow_control_structures
+  error - The getter 'lossyQuality' isn't defined for the type 'DeviceSettings'. Try importing the library that defines 'lossyQuality', correcting the name to the name of an existing getter, or defining a getter or field named 'lossyQuality' - lib\features\upload\presentation\upload_tasks_screen.dart:216:65 - undefined_getter
+  error - The getter 'sizeFirstLongestSide' isn't defined for the type 'DeviceSettings'. Try importing the library that defines 'sizeFirstLongestSide', correcting the name to the name of an existing getter, or defining a getter or field named 'sizeFirstLongestSide' - lib\features\upload\presentation\upload_tasks_screen.dart:217:69 - undefined_getter
+
+17 issues found. (ran in 6.3s)

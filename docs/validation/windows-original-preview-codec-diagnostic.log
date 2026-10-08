@@ -1,0 +1,31 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart
+00:00 +0: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: '无法安全读取或解码本机副本，请检查副本后重试。'
+png; first-frame
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart:56:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart line 56
+The test description was:
+  UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +0 -1: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes [E]
+  Test failed. See exception logs above.
+  The test description was: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/gallery/original_preview_controller_test.dart: UT-026/IT-002 SDK previews real PNG JPEG WebP GIF BMP permanent bytes

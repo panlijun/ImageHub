@@ -1,0 +1,36 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/processing_coordinator_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/processing_coordinator_test.dart": Does not exist.
+00:00 +0 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/core/output_repository_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/output_repository_test.dart": Does not exist.
+00:00 +0 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 default one candidate budget with honest reason
+00:00 +1 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (67108864, 4, 1)
+00:00 +2 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (134217728, 4, 1)
+00:00 +3 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (267386880, 4, 1)
+00:00 +4 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (268435456, 4, 2)
+00:00 +5 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (402653184, 4, 3)
+00:00 +6 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (536870912, 4, 4)
+00:00 +7 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (1073741824, 4, 4)
+00:00 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (536870912, 2, 2)
+00:00 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 invalid concurrency and total budget reject without clamp
+00:00 +10 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 runtime floating values are rejected as non-integers
+00:00 +11 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 waiting grants stay FIFO without implicit extra work
+00:00 +12 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 decreasing concurrency preserves active frozen budgets
+00:00 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 increasing concurrency cannot overcommit old reservation
+00:00 +14 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 configure can dispatch against available frozen headroom
+00:00 +15 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 integer division does not exceed non-divisible total
+00:00 +16 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 large integer reservation cannot overflow into a grant
+00:00 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 queued cancellation removes middle item and preserves FIFO
+00:00 +18 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 synchronous cancellation wins before release dispatch callback
+00:00 +19 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation after grant never releases actual active budget
+00:00 +20 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 pre-cancelled token never receives a permit
+00:00 +21 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation future is stable idempotent synchronous flag
+00:00 +22 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation and scheduler create no polling timer
+00:00 +23 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 close rejects queue and waits for every active real release
+00:00 +24 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 release is idempotent and cannot release a successor
+00:00 +25 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 empty close drains and remains closed
+00:00 +26 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/output_repository_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/output_repository_test.dart
+  C:/Users/PAN/workspace/ImageHub/app/test/core/processing_coordinator_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/processing_coordinator_test.dart

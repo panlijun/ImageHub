@@ -1,0 +1,39 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart
+00:00 +0: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:00 +1: UT-080 partial missing original is explicit evidence and not copied success
+00:00 +2: UT-080 partial all output states and recorded partial bytes are retained without pixel reinterpretation
+00:01 +3: UT-080 partial a file appearing at a missing backup name is never deleted as an owned partial
+00:01 +4: UT-080 partial unknown trigger and incompatible text policy refuse any snapshot intent write
+00:01 +5: UT-080 partial ready internal snapshot blocks another merge prepare or commit under the same hold
+00:01 +6: UT-080 partial secret colliding with a managed UUID is rejected before ordinary journal writes
+00:01 +7: UT-080 partial hold waits actual leased IO and snapshot rejects a foreign or released hold
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:111:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart:376:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +8: UT-080 partial directory occupied after intent is never claimed or deleted during failure or restart
+00:02 +9: UT-080 partial failed durable directory ownership preserves the unclaimed empty directory
+00:02 +10: UT-080 partial startup drops an unclaimed intent without touching its ambiguous directory
+00:02 +11: UT-080 partial low capacity refuses snapshot before files and keeps current records
+00:02 +12: UT-080 partial cancellation after real copy cleans only journaled snapshot bytes
+00:02 +13: UT-080 partial future SQLite and unknown table schema cannot produce ready snapshot
+00:02 +14: UT-080 partial tampered SQLite or raw file never verifies
+00:02 +15: UT-080 partial unknown child and malformed later log entry preserve complete snapshot and current bytes
+00:02 +16: UT-080 partial linked source is refused without reading external bytes
+00:03 +17: UT-080 partial closing waits real snapshot IO and holds the root lock until completion
+00:03 +18: All tests passed!

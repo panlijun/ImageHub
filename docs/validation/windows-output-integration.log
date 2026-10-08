@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/processing_flow_test.dart
+Building Windows application...                                    30.8s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-003 Windows engine actual processing/save/export conflict/restart/expiry
+00:05 +1: (tearDownAll)
+00:05 +1: All tests passed!

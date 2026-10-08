@@ -1,0 +1,5 @@
+Official Dart formatter: format --output=none --set-exit-if-changed lib test integration_test
+Formatted 139 files (0 changed) in 1.22 seconds.
+Initial whole-app direct Dart analyze: No issues found!
+Subsequent provider revision selector and mobile name-wait helper: scoped format/analyze No issues found!
+Final whole-app validation is recorded separately after all changes.

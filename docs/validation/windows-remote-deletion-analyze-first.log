@@ -1,0 +1,8 @@
+Analyzing app...                                                
+
+  error - The getter 'targetId' isn't defined for the type 'TargetSnapshot'. Try importing the library that defines 'targetId', correcting the name to the name of an existing getter, or defining a getter or field named 'targetId' - lib\features\gallery\data\library_remote_deletions.dart:94:60 - undefined_getter
+  error - The getter 'targetId' isn't defined for the type 'TargetSnapshot'. Try importing the library that defines 'targetId', correcting the name to the name of an existing getter, or defining a getter or field named 'targetId' - lib\features\gallery\data\library_remote_deletions.dart:121:26 - undefined_getter
+  error - The getter 'targetId' isn't defined for the type 'TargetSnapshot'. Try importing the library that defines 'targetId', correcting the name to the name of an existing getter, or defining a getter or field named 'targetId' - lib\features\gallery\data\library_remote_deletions.dart:136:31 - undefined_getter
+  error - The getter 'targetId' isn't defined for the type 'TargetSnapshot'. Try importing the library that defines 'targetId', correcting the name to the name of an existing getter, or defining a getter or field named 'targetId' - lib\features\links\application\remote_deletion_coordinator.dart:56:36 - undefined_getter
+
+4 issues found. (ran in 9.0s)

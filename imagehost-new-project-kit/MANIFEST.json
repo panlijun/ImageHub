@@ -1,0 +1,215 @@
+{
+  "package": "ImageHost new-project implementation resources",
+  "assembledOn": "2026-10-04",
+  "requirementsRevision": "1.1",
+  "technologyRevision": "1.0",
+  "mobilePrototypeRevision": "2.1",
+  "selectedDesktop": "A",
+  "mobileCandidates": [
+    "M1",
+    "M2"
+  ],
+  "mobileFinalSelection": null,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2922,
+      "sha256": "425ba9cf7e1353bd7ef5853af7ab38a5759902ccc4b8f0162259f0a8441f8af1",
+      "role": "new-project handoff or portable utility"
+    },
+    {
+      "path": "IMPLEMENTATION.md",
+      "bytes": 4077,
+      "sha256": "b277a9c8d5400ded73380506b69d88922fb2054ba129ff37f393b1e13eff2ebb",
+      "role": "new-project handoff or portable utility"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5045,
+      "sha256": "92c452e32dcf13cef114cd248a0597dce79f2e1a907030155f37b74c8eea110c",
+      "role": "new-project handoff or portable utility"
+    },
+    {
+      "path": "design/assets/asset-source.md",
+      "bytes": 677,
+      "sha256": "f48572bdc2a9881e772e464101937dd2885e13c089afa440a244719148925a1a",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/assets/sample-atlas.png",
+      "bytes": 2494916,
+      "sha256": "6ee17ff2c47cc6abbb1eef271a2abfea715a065826e2a92ba3c7d590d332ebab",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/desktop/app.js",
+      "bytes": 76468,
+      "sha256": "a16e6a841359c2f1cda4f5bce836f2f6e6f6fb33435677cd9a78754704336473",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/desktop/design-spec.md",
+      "bytes": 2086,
+      "sha256": "fc9d571afead3cbdbeaefb311a7530d458a8aee7e559a9c0b49b504a6f8ae5b8",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/desktop/index.html",
+      "bytes": 349,
+      "sha256": "166cd6466e5b61cacbf91d04f00baddcb3266a62b0ac6c9fa8cbbaa548262bd9",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/desktop/styles.css",
+      "bytes": 22231,
+      "sha256": "151141698a4b545b6ee06c8e2ae759a39e9975ae4f60ec97cd06bd8c4d106ddf",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/implementation-notes.md",
+      "bytes": 3935,
+      "sha256": "82b743b5cf48ad9398591d1a01d89ca5622e0fad02ddc1b233b282f3cb65369a",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/index.html",
+      "bytes": 2410,
+      "sha256": "3036fe38402092f53e499b5f7089eb5c718ca4e9287df522614605ac06ce99da",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/mobile/design-spec.md",
+      "bytes": 7882,
+      "sha256": "dc5b3badb340a9572e2f19acf4b722fa08c239a8e0d65f34607210c115670c98",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/mobile/index.html",
+      "bytes": 2315,
+      "sha256": "64cf9385999e488a66b65d0c83cf2bbd9b4a08f3836a4ffa19ff3b9a6d3d9a1f",
+      "role": "current design reference"
+    },
+    {
+      "path": "design/mobile/mobile.css",
+      "bytes": 15825,
+      "sha256": "d1fed8209a0de70d6f7923c1762bbe54023236229806e2817cc418fbab0dbe0e",
+      "role": "unchanged UI 2.1 prototype core"
+    },
+    {
+      "path": "design/mobile/mobile.js",
+      "bytes": 57505,
+      "sha256": "42a94fc6b80ca6132213775e1302d7992a41a7de514b0bf8b4a1646dc69d0037",
+      "role": "unchanged UI 2.1 prototype core"
+    },
+    {
+      "path": "design/mobile/prototype.html",
+      "bytes": 399,
+      "sha256": "d2e74a2cd8a3cd98ab15da5a8ff284441787166a7500d47fbe7793b30d6b3986",
+      "role": "unchanged UI 2.1 prototype core"
+    },
+    {
+      "path": "documents/requirements-analysis.docx",
+      "bytes": 74790,
+      "sha256": "105c8a9ff62ebc30adb58ed4ed21323e1a43242461635dc5625615d0418d23d9",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/requirements-analysis.md",
+      "bytes": 77531,
+      "sha256": "b9492313ecb60fe293921e97f3ba58df40abf9327fef43383d80079a7f643895",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/requirements-review.docx",
+      "bytes": 51084,
+      "sha256": "9c6cd2e18201e269298dc70f1c5b97da4cc12e3d42bcabb03a18c2aaec1a4c8f",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/requirements-review.md",
+      "bytes": 18715,
+      "sha256": "5845c3773196907faefa1caab5bfd3b86e93be4b253b8b556b71d0b31f367e51",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/technology-selection-review.docx",
+      "bytes": 45954,
+      "sha256": "d6656012df88c16e5e7543b8e96b3c74d2ebd61a481bfe5e4ffa6ab3ff8c18ea",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/technology-selection-review.md",
+      "bytes": 11584,
+      "sha256": "74a0663546a493c8173fd3d782c35a9b01bc9d6665063d5d6129a8c071b3da35",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/technology-selection.docx",
+      "bytes": 70229,
+      "sha256": "79f6d51442158e7e27239689fe5161290f92ca06c5f1460992a6b2eff9e4fffe",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/technology-selection.md",
+      "bytes": 56178,
+      "sha256": "5776c6d0e140c60aa3647bf1902d27526e71710924362887824fd9f273021828",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/unit-test-design.docx",
+      "bytes": 79810,
+      "sha256": "8ef19c27f8aca1569188316cc078553e93f164549aaa04168750f2ee1b9b01f5",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "documents/unit-test-design.md",
+      "bytes": 108609,
+      "sha256": "bdc520729dc273db123132c0c5754536590735f6198999e9e597350d333877c9",
+      "role": "unchanged formal baseline"
+    },
+    {
+      "path": "providers/README.md",
+      "bytes": 2646,
+      "sha256": "cdc0b0f15c79ebc2c830b954b4fb9424f4b9c9b586b6983f2c71b54fe3f14ca6",
+      "role": "new-project provider handoff"
+    },
+    {
+      "path": "providers/catbox.md",
+      "bytes": 1725,
+      "sha256": "3fc620295e6e73894e70c4afa51154c3ac2a42c7e48baec09384dad5f8d82229",
+      "role": "new-project provider handoff"
+    },
+    {
+      "path": "providers/imgbb.md",
+      "bytes": 1489,
+      "sha256": "21bf8aaf068641efcdb1de4a57ca1c3c12f0ee0cb3da187490de30825f46137c",
+      "role": "new-project provider handoff"
+    },
+    {
+      "path": "serve.mjs",
+      "bytes": 1333,
+      "sha256": "e438fd92ffce1d88d7e7184a6ee75c07c3d46f81c2a3c5a7a99871548833a871",
+      "role": "new-project handoff or portable utility"
+    },
+    {
+      "path": "verify-kit.mjs",
+      "bytes": 2498,
+      "sha256": "cb5626e162cc21b090bf930513e297fb2dac417e6b9fc677c22b1a4af161814a",
+      "role": "new-project handoff or portable utility"
+    }
+  ],
+  "manifestExcludedFromOwnDigest": true,
+  "productionApplicationInitialized": false,
+  "formalApplicationTestsExecuted": false,
+  "wordPageVisualReviewPerformed": false,
+  "figmaLatestDesignSynchronized": false,
+  "excluded": [
+    "legacy application source and data",
+    "legacy framework configs/skills/lockfiles",
+    "unselected desktop B/C and rejected old mobile design",
+    "Cloudinary future candidate",
+    "historical screenshots/check logs/resume artifacts",
+    "unfinished Figma construction scripts"
+  ],
+  "portability": "All required local resources are in this directory. Historical source paths in formal appendices are provenance only."
+}

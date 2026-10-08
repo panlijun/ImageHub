@@ -1,0 +1,46 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/gallery_flow_test.dart
+Building Windows application...                                    42.0s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-001/002 Windows engine: import, original preview, independent copy, restart, failure
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following PathAccessException was thrown running a test:
+Deletion failed, path = 'C:\Users\PAN\AppData\Local\Temp\imagehost_engine_a221bcd8' (OS Error:
+另一个程序正在使用此文件，进程无法访问。, errno = 32)
+
+When the exception was thrown, this was the stack:
+#0      _checkForErrorResponse (dart:io/common.dart:58:9)
+#1      _Directory._delete.<anonymous closure> (dart:io/directory_impl.dart:208:7)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/gallery_flow_test.dart:138:9)
+<asynchronous suspension>
+#8      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#9      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 6 frames from dart:async and package:stack_trace)
+
+The test description was:
+  IT-001/002 Windows engine: import, original preview, independent copy, restart, failure
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -1: IT-001/002 Windows engine: import, original preview, independent copy, restart, failure [E]
+  Test failed. See exception logs above.
+  The test description was: IT-001/002 Windows engine: import, original preview, independent copy, restart, failure
+  
+00:02 +0 -1: (tearDownAll)
+00:02 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/gallery_flow_test.dart: IT-001/002 Windows engine: import, original preview, independent copy, restart, failure

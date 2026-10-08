@@ -1,0 +1,1980 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 full merge restores all eight frozen settings with assets and survives reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/083 actual replacement restores portable device policy and invalidates old settings snapshot
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074/075 IT-005 partial real full merge preserves organization provenance audit results and survives reopen and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 full merge restores all eight frozen settings with assets and survives reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:300:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/083 actual replacement restores portable device policy and invalidates old settings snapshot
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 merge metadata-written fault rolls SQL and runtime back without settings notification
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:352:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/083 actual replacement restores portable device policy and invalidates old settings snapshot
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074/075 IT-005 partial real full merge preserves organization provenance audit results and survives reopen and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:256:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 merge cancellation inside settings transaction leaves old policy durable
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/083 actual replacement restores portable device policy and invalidates old settings snapshot
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:290:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074/075 IT-005 partial real full merge preserves organization provenance audit results and survives reopen and rebackup
+00:02 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 partial replacement preserves distinct asset identities sharing one content version
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 merge cancellation inside settings transaction leaves old policy durable
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:389:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 partial replacement preserves distinct asset identities sharing one content version
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074 partial matching content with different UUIDs keeps current organization and copy identity
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real format-1 merge package retains local settings instead of default overwrite
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:420:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 partial replacement preserves distinct asset identities sharing one content version
+00:02 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 partial replacement preserves distinct asset identities sharing one content version
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:330:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074 partial redacted portable view never rewrites existing local names organization or account alias
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 metadata replacement restores all eight frozen settings with assets and survives reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement intent fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074 partial redacted portable view never rewrites existing local names organization or account alias
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:397:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 metadata replacement restores all eight frozen settings with assets and survives reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:300:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-073/074 partial redacted portable view never rewrites existing local names organization or account alias
+00:03 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement intent fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement intent fault preserves SQL bytes secrets and epoch
+00:03 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 replacement metadata-written fault rolls SQL and runtime back without settings notification
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 replacement metadata-written fault rolls SQL and runtime back without settings notification
+00:03 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial metadata creates missing copies then full repairs stable copy UUID across reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement intent cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial metadata creates missing copies then full repairs stable copy UUID across reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:455:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:458:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 replacement metadata-written fault rolls SQL and runtime back without settings notification
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:352:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 IT-005 partial BAK-005 replacement metadata-written fault rolls SQL and runtime back without settings notification
+00:04 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement intent cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected intent failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 replacement cancellation inside settings transaction leaves old policy durable
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:04 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected intent failure rolls back SQL and owned bytes without hardware power-loss claim
+00:05 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:05 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected intent failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:05 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 replacement cancellation inside settings transaction leaves old policy durable
+00:05 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected copied failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:05 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 replacement cancellation inside settings transaction leaves old policy durable
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:389:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:05 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied fault preserves SQL bytes secrets and epoch
+00:05 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real format-1 replacement package retains local settings instead of default overwrite
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected copied failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real format-1 replacement package retains local settings instead of default overwrite
+00:06 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected prepared failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real format-1 replacement package retains local settings instead of default overwrite
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:420:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied cancel preserves SQL bytes secrets and epoch
+00:06 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 preparation alone and discarded replacement never write settings
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected prepared failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:06 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied cancel preserves SQL bytes secrets and epoch
+00:07 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected published failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement copied cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 preparation alone and discarded replacement never write settings
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:454:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected published failure rolls back SQL and owned bytes without hardware power-loss claim
+00:07 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 settings changed after merge review reject commit and preserve latest durable value
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected published failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared fault preserves SQL bytes secrets and epoch
+00:07 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected beforeCommit failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 settings changed after merge review reject commit and preserve latest durable value
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:519:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared fault preserves SQL bytes secrets and epoch
+00:08 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 settings changed after replacement review reject commit and preserve latest durable value
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected beforeCommit failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected beforeCommit failure rolls back SQL and owned bytes without hardware power-loss claim
+00:08 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 settings changed after replacement review reject commit and preserve latest durable value
+00:08 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected metadataWritten failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 settings changed after replacement review reject commit and preserve latest durable value
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:519:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared cancel preserves SQL bytes secrets and epoch
+00:08 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real ZIP platform-unavailable settings are skipped and keep local values
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074/075 IT-005 partial injected metadataWritten failure rolls back SQL and owned bytes without hardware power-loss claim
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:523:9)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared cancel preserves SQL bytes secrets and epoch
+00:09 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083 BAK-005 real ZIP platform-unavailable settings are skipped and keep local values
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:551:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial post-commit hook failure retains reported success after reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement prepared cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-063/073/083 BAK-005 merge preserves frozen processing parameters default target UUID and session upload denial
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial post-commit hook failure retains reported success after reopen
+00:09 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial post-commit hook failure retains reported success after reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:553:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-063/073/083 BAK-005 merge preserves frozen processing parameters default target UUID and session upload denial
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:626:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-075 partial preflight file mutation low space and cancellation preserve old SQL and bytes
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:09 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published fault preserves SQL bytes secrets and epoch
+00:10 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/083/090 BAK-005 damaged and future stored settings cannot be defaulted during capture or prepare
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:159:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:670:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:10 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:10 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published fault preserves SQL bytes secrets and epoch
+00:10 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-075 partial preflight file mutation low space and cancellation preserve old SQL and bytes
+00:10 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/084 BAK-005 production snapshot excludes credentials references target defaults and upload authorization
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:10 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/084 BAK-005 production snapshot excludes credentials references target defaults and upload authorization
+00:10 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:10 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial close waits for real restore publication IO keeps root lock and rolls back before commit
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:11 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published cancel preserves SQL bytes secrets and epoch
+00:11 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/084 BAK-005 known credential colliding with settings enum rejects export without rewriting policy
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart:96:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:11 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial close waits for real restore publication IO keeps root lock and rolls back before commit
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:680:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:11 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published cancel preserves SQL bytes secrets and epoch
+00:11 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published cancel preserves SQL bytes secrets and epoch
+00:11 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/084 BAK-005 known credential colliding with settings enum rejects export without rewriting policy [E]
+  Expected: throws <Instance of 'BackupSnapshotFailure'>
+    Actual: <Instance of 'Future<BackupSnapshotLease>'>
+     Which: threw BackupFailure:<备份清单无效或关联不完整。>
+            stack package:imagehost/features/backup/domain/backup_manifest.dart 715:5   _invalid
+                  package:imagehost/features/backup/domain/backup_manifest.dart 710:5   _ensureSafeEncodedValues
+                  package:imagehost/features/backup/domain/backup_manifest.dart 698:7   _ensureSafeEncodedValues
+                  package:imagehost/features/backup/domain/backup_manifest.dart 698:7   _ensureSafeEncodedValues
+                  package:imagehost/features/backup/domain/backup_manifest.dart 698:7   _ensureSafeEncodedValues
+                  package:imagehost/features/backup/domain/backup_manifest.dart 304:5   BackupManifest.toJson
+                  package:imagehost/features/backup/domain/backup_manifest.dart 312:28  BackupManifest.encode
+                  package:imagehost/features/gallery/data/library_backups.dart 278:34   LibraryBackups._captureBackupSnapshot.<fn>.<fn>
+                  ===== asynchronous gap ===========================
+                  package:matcher                                                       expectLater
+                  package:flutter_test/src/widget_tester.dart 507:8                     expectLater
+                  test\core\backup_settings_repository_test.dart 746:11                 main.<fn>
+                  ===== asynchronous gap ===========================
+                  dart:async                                                            _CustomZone.registerUnaryCallback
+                  test\core\backup_settings_repository_test.dart 738:5                  main.<fn>
+                  
+            which is not an instance of 'BackupSnapshotFailure'
+  
+  package:matcher                                        expectLater
+  package:flutter_test/src/widget_tester.dart 507:8      expectLater
+  test\core\backup_settings_repository_test.dart 746:11  main.<fn>
+  ===== asynchronous gap ===========================
+  dart:async                                             _CustomZone.registerUnaryCallback
+  test\core\backup_settings_repository_test.dart 738:5   main.<fn>
+  
+00:11 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial hold blocks new writes drains real file lease without deadlock and preserves paused current queue
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:63:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:11 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement published cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:11 +38 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial hold blocks new writes drains real file lease without deadlock and preserves paused current queue
+00:11 +38 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement beforeCommit fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:12 +38 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart: UT-074 IT-005 partial hold blocks new writes drains real file lease without deadlock and preserves paused current queue
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:143:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_restore_repository_test.dart:745:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:12 +39 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement beforeCommit fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:12 +40 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement beforeCommit cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:13 +41 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement metadataWritten fault preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:14 +42 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial replacement metadataWritten cancel preserves SQL bytes secrets and epoch
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:366:11)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:15 +43 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 IT-005 partial real full replacement retains incoming identities and rejects old epoch after reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:426:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:16 +44 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-073/075 partial replacement metadata mode never reuses old bytes even matching incoming content
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:445:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:17 +45 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-075 partial committed callback fault preserves success
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:18 +46 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-075 partial committed late cancellation preserves success
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:19 +47 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-074/075 partial secret cleanup failure keeps committed library and retries after reopen
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:499:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:20 +48 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-074/075 partial exclusive collision preserves foreign target and restores original library
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:21 +49 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-074/075 partial insufficient commit capacity rolls back before publication
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:21 +50 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart: UT-075 partial confirmed cleaned marker tolerates already missing snapshot payload
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:172:19)
+<asynchronous suspension>
+#7      Future._kTrue (dart:async/future.dart:702:3)
+<asynchronous suspension>
+#8      _CustomZone.bindUnaryCallbackGuarded.<anonymous closure> (dart:async/zone.dart:748:12)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:176:12)
+<asynchronous suspension>
+#6      main.reopen (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:162:19)
+<asynchronous suspension>
+#7      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/backup_replace_restore_repository_test.dart:574:5)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#9      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#10     Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:22 +51 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_repository_test.dart: UT-073/084 BAK-005 known credential colliding with settings enum rejects export without rewriting policy

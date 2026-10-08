@@ -1,0 +1,7 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - integration_test\network_flow_test.dart:43:17 - curly_braces_in_flow_control_structures
+   info - Use an initializing formal to assign a parameter to a field. Try using an initialing formal ('this._networkPolicy') to initialize the field - lib\features\upload\application\upload_coordinator.dart:50:8 - prefer_initializing_formals
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\core\system_network_monitor_test.dart:359:11 - curly_braces_in_flow_control_structures
+
+3 issues found. (ran in 5.6s)

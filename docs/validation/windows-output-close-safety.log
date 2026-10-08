@@ -1,0 +1,39 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-019 exact 30-day prompt retains bytes, identity and organization
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 missing/damaged output cannot preview save or acquire reading lease
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 missing/damaged output cannot preview save or acquire reading lease
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 shared bytes block copy purge; record-only purge retains bytes
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 permanent save independently survives exact expiry and preserves ordered provenance
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 permanent save independently survives exact expiry and preserves ordered provenance
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 copy-only purge retains asset and organization; exact reimport repairs
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 duplicate content save preserves organization and stores provenance once
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 purge targets only managed copies and preserves external source
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 rejected permanent commit creates no usable asset and durable retry restores source relation
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 rejected permanent commit creates no usable asset and durable retry restores source relation
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent processing protection rejects permanent clear
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent task protection rejects permanent clear
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-038 protection contract persists all six nonterminal task owners until explicit safe release
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent export protection rejects permanent clear
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 source reader DB release failure keeps row but does not deadlock shutdown
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 source reader DB release failure keeps row but does not deadlock shutdown
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent restore protection rejects permanent clear
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 output reader DB release failure keeps row but does not deadlock shutdown
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 output reader DB release failure keeps row but does not deadlock shutdown
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 cancelled caller retains lease until actual IO ends; release idempotent
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after prepared preserves confirmed identity and bytes
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after prepared preserves confirmed identity and bytes
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 close drains lease acquisition before waiting for its IO release
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after published preserves confirmed identity and bytes
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after intent commit
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after committed preserves confirmed identity and bytes
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after committed preserves confirmed identity and bytes
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial malformed purge path retains intent, records and exact bytes
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 cancellation waits for intent owner and leaves no usable or permanent result
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial stale session lease cleared; durable reference blocks replay
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 / UT-102 close waits for actual output reader and refuses new readers
+00:02 +35: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: IMG-004 animation crop preview reads the explicitly selected frame
+00:02 +36: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 owned-output source protection lasts until independent output expiry
+00:02 +37: All tests passed!

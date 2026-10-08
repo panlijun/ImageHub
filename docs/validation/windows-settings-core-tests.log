@@ -1,0 +1,131 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 default one candidate budget with honest reason
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (67108864, 4, 1)
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (134217728, 4, 1)
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (267386880, 4, 1)
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (268435456, 4, 2)
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (402653184, 4, 3)
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (536870912, 4, 4)
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (1073741824, 4, 4)
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 effective concurrency budget (536870912, 2, 2)
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 invalid concurrency and total budget reject without clamp
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 runtime floating values are rejected as non-integers
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 waiting grants stay FIFO without implicit extra work
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 decreasing concurrency preserves active frozen budgets
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 increasing concurrency cannot overcommit old reservation
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 configure can dispatch against available frozen headroom
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-053 integer division does not exceed non-divisible total
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-102 large integer reservation cannot overflow into a grant
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 queued cancellation removes middle item and preserves FIFO
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 synchronous cancellation wins before release dispatch callback
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation after grant never releases actual active budget
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 pre-cancelled token never receives a permit
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation future is stable idempotent synchronous flag
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 cancellation and scheduler create no polling timer
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 close rejects queue and waits for every active real release
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 release is idempotent and cannot release a successor
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/processing_scheduler_test.dart: UT-087 empty close drains and remains closed
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +35 -1: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +35 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 uploadConcurrency rejects noninteger nonfinite and outside bounds without clamping [E]
+  type 'Null' is not a subtype of type 'Object' in type cast
+  dart:_internal                             CastMap.[]=
+  test\core\device_settings_test.dart 39:15  main.<fn>
+  
+00:01 +36 -1: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +37 -2: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +37 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 processingConcurrency rejects noninteger nonfinite and outside bounds without clamping [E]
+  type 'Null' is not a subtype of type 'Object' in type cast
+  dart:_internal                             CastMap.[]=
+  test\core\device_settings_test.dart 39:15  main.<fn>
+  
+00:01 +38 -2: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +39 -2: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +39 -3: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +39 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 quality rejects noninteger nonfinite and outside bounds without clamping [E]
+  type 'Null' is not a subtype of type 'Object' in type cast
+  dart:_internal                             CastMap.[]=
+  test\core\device_settings_test.dart 39:15  main.<fn>
+  
+00:01 +39 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +39 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 longestSide rejects noninteger nonfinite and outside bounds without clamping [E]
+  type 'Null' is not a subtype of type 'Object' in type cast
+  dart:_internal                             CastMap.[]=
+  test\core\device_settings_test.dart 39:15  main.<fn>
+  
+00:01 +40 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+00:01 +41 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 missing/damaged output cannot preview save or acquire reading lease
+00:02 +42 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:02 +43 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 permanent save independently survives exact expiry and preserves ordered provenance
+00:02 +44 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083/087 complete settings and same alias target identity atomically persist and reopen
+00:02 +45 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 duplicate content save preserves organization and stores provenance once
+00:02 +46 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 actual target trigger rollback retains both settings flags and runtime then retries
+00:02 +47 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 rejected permanent commit creates no usable asset and durable retry restores source relation
+00:02 +47 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 stale foreign and reopened settings plans cannot overwrite later valid changes
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:140:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart:204:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +48 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 stale foreign and reopened settings plans cannot overwrite later valid changes
+00:02 +49 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+00:02 +50 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+00:03 +51 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-090 malformed or future durable settings never fall back and overwrite valid data
+00:03 +52 -4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-038 protection contract persists all six nonterminal task owners until explicit safe release
+00:03 +52 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-038 protection contract persists all six nonterminal task owners until explicit safe release
+00:03 +52 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083/097 protected backend outage hides target prose while local settings remain usable [E]
+  Expected: '[无法安全显示]'
+    Actual: 'alias-[已隐藏]'
+     Which: is different.
+            Expected: [无法安全显示]
+              Actual: alias-[已隐藏 ...
+                      ^
+             Differ at offset 0
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\settings_repository_test.dart 310:5       main.<fn>
+  
+00:03 +53 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 new defaults never alter an existing output input snapshot or portable manifest
+00:03 +54 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 new defaults never alter an existing output input snapshot or portable manifest
+00:03 +55 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 output reader DB release failure keeps row but does not deadlock shutdown
+00:03 +56 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-053/083 settings default flag and lower concurrency do not revoke actual held upload
+00:03 +57 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-053/083 settings default flag and lower concurrency do not revoke actual held upload
+00:03 +58 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after published preserves confirmed identity and bytes
+00:03 +59 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after committed preserves confirmed identity and bytes
+00:03 +60 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 cancellation waits for intent owner and leaves no usable or permanent result
+00:03 +61 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 / UT-102 close waits for actual output reader and refuses new readers
+00:03 +62 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: IMG-004 animation crop preview reads the explicitly selected frame
+00:03 +63 -5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 owned-output source protection lasts until independent output expiry
+00:04 +64 -5: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 longestSide rejects noninteger nonfinite and outside bounds without clamping
+  C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 processingConcurrency rejects noninteger nonfinite and outside bounds without clamping
+  C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 quality rejects noninteger nonfinite and outside bounds without clamping
+  C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 uploadConcurrency rejects noninteger nonfinite and outside bounds without clamping
+  C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083/097 protected backend outage hides target prose while local settings remain usable

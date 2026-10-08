@@ -1,0 +1,54 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:02 +2: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +3: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +4: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +5: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +6: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +7: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +8: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:03 +9: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:03 +10: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:04 +11: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:04 +12: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:04 +13: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:04 +14: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:04 +15: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:04 +16: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +17: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +18: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +19: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +20: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +21: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:05 +22: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +23: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +24: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +25: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +26: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +27: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +28: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:06 +29: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +30: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +31: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +32: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +33: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +34: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +35: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:07 +36: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:08 +37: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:08 +38: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:08 +39: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:08 +40: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:08 +41: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +42: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +43: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +44: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +45: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+00:12 +46: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:14 +47: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-019/020/021 partial desktop recycle identity and separate purge confirmations (variant: TargetPlatform.windows)
+00:16 +48: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:19 +49: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:22 +50: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:37 +51: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:39 +52: All tests passed!

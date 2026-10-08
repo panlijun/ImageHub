@@ -1,0 +1,245 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/network_state_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/network_state_test.dart: UT-063 strict local network protocol and deterministic display
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/network_state_test.dart: UT-063/SEC-005 malformed observations never become allowed networks
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/network_state_test.dart: UT-063 type allowlist rejects mixed cellular by default
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 local read, initial event, idempotent start and duplicate suppression
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 late read cannot overwrite a newer event
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen can deliver the initial snapshot before read
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 concurrent refresh keeps the newer read
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 timeout returns unknown and ignores the eventual read response
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 missing platform backends fail closed without FlutterError
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 unknown offline and cellular wait; repeated Wi-Fi wake keeps one intent and attempt
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 missing platform backends fail closed without FlutterError [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 165:22  main.<fn>
+  
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 missing event backend never grants a successful read eligibility
+00:00 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 transport policy affects future dispatch; running IO and consent remain independent
+00:00 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 missing event backend never grants a successful read eligibility [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 183:22  main.<fn>
+  
+00:00 +10 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +11 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +12 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +14 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +15 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 listen timeout rejects a buffered initial Wi-Fi event and read
+00:00 +16 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 single pause leaves active IO running and later ready items dispatch
+00:00 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 malformed reads and events fail closed
+00:00 +18 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 malformed reads and events fail closed
+00:00 +18 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 validated default values and immutable roundtrip
+00:00 +18 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 malformed reads and events fail closed [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 237:20  main.<fn>
+  
+00:00 +19 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 validated default values and immutable roundtrip
+00:00 +19 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 validated default values and immutable roundtrip
+00:00 +19 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 stream error clears state and refresh rebuilds listening [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 249:22  main.<fn>
+  
+00:00 +20 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 validated default values and immutable roundtrip
+00:00 +21 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 malformed encoded event terminates and allows a fresh subscription
+00:00 +22 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 malformed encoded event terminates and allows a fresh subscription
+00:00 +23 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 malformed encoded event terminates and allows a fresh subscription
+00:00 +23 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 repeated pause/resume and account wake do not dispatch paused items twice
+00:00 +23 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 malformed encoded event terminates and allows a fresh subscription [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 270:22  main.<fn>
+  
+00:00 +24 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 repeated pause/resume and account wake do not dispatch paused items twice
+00:00 +25 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 stream termination becomes unknown and refresh rebuilds listening
+00:00 +26 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 quality rejects noninteger nonfinite and outside bounds without clamping
+00:00 +27 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 running/unknown/terminal cannot be paused or resumed into queued
+00:00 +28 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 running/unknown/terminal cannot be paused or resumed into queued
+00:00 +29 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 running/unknown/terminal cannot be paused or resumed into queued
+00:00 +30 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 running/unknown/terminal cannot be paused or resumed into queued
+00:00 +31 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +32 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +33 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +34 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +35 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +36 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +37 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +38 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +39 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +40 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +41 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +42 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +43 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +44 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +45 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +46 -5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+00:00 +46 -6: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 336:22  main.<fn>
+  
+00:00 +46 -6: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 late expired listen cannot cancel a replacement subscription
+00:00 +47 -6: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:00 +47 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:00 +47 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 native exceptions are never stringified or reported [E]
+  'package:flutter_test/src/binding.dart': Failed assertion: line 1634 pos 12: 'inTest': is not true.
+  dart:core                                          _AssertionError._throwNew
+  package:flutter_test/src/binding.dart 1634:12      TestWidgetsFlutterBinding.takeException
+  test\core\system_network_monitor_test.dart 389:22  main.<fn>
+  
+00:00 +48 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:00 +49 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:00 +50 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-063/083/087 complete settings and same alias target identity atomically persist and reopen
+00:00 +51 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +52 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +52 -7: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 stale foreign and reopened settings plans cannot overwrite later valid changes
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13276:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:434:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:172:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart:206:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +53 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +54 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +55 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +56 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +57 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +58 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +59 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:02 +60 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "所有已识别网络（含移动网络）": [
+            Text("所有已识别网络（含移动网络）", dependencies: [DefaultSelectionStyle, DefaultTextStyle,
+MediaQuery]),
+            Text("所有已识别网络（含移动网络）", dependencies: [DefaultSelectionStyle, DefaultTextStyle,
+MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:238:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 238
+The test description was:
+  UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and
+  restores default draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +60 -8: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 new defaults never alter an existing output input snapshot or portable manifest
+00:02 +60 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+  
+00:02 +61 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:02 +62 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "所有已识别网络（含移动网络）": [
+            Text("所有已识别网络（含移动网络）", dependencies: [DefaultSelectionStyle, DefaultTextStyle,
+MediaQuery]),
+            Text("所有已识别网络（含移动网络）", dependencies: [DefaultSelectionStyle, DefaultTextStyle,
+MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:238:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 238
+The test description was:
+  UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and
+  restores default draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +62 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+  
+00:02 +62 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:04 +63 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:05 +64 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 390.0 large type actual save and reopen
+00:07 +65 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 1280.0 large type actual save and reopen
+00:08 +66 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:13 +67 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+00:14 +68 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+00:16 +69 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 pending credential default is fixed while numeric settings save
+00:16 +70 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+00:17 +71 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 loading failure disables saving without revealing unknown exception
+00:17 +72 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread
+00:18 +73 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <0>
+  Actual: <64.0>
+反馈检查必须在设置页实际顶部
+
+When the exception was thrown, this was the stack:
+#4      _top (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:90:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:730:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 90
+The test description was:
+  UT-087 external settings revision and replacement reset reject old draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +73 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 external settings revision and replacement reset reject old draft
+  
+00:19 +73 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+00:19 +74 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+00:20 +75 -10: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 malformed encoded event terminates and allows a fresh subscription
+  C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 missing event backend never grants a successful read eligibility
+  C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063 native listen and cancel timeout cannot block startup or close
+  C:/Users/PAN/workspace/ImageHub/app/test/core/system_network_monitor_test.dart: UT-063/SEC-005 malformed reads and events fail closed
+  ... and 6 more

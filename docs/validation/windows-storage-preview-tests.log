@@ -1,0 +1,14 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-034 bounded real output preview preserves pixels and source bytes
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-034 same-size changed bytes fail production decoder SHA validation
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-034 missing and unusable outputs never enter decoder or leak protection
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-037 cancellation during real chunk IO retains lease and expiry protection until return
+00:02 +4: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-102 close waits for actual preview file loop and decoder
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-102 restore drain waits for actual preview file loop and decoder
+00:03 +6: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-102 queued preview cancellation releases only its own lease and never takes running permit
+00:03 +7: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_reader_test.dart: UT-034 unknown decoder failure is safe and releases lease and budget for next read
+00:04 +8: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_test.dart: AT-002 actual output provider renders bounded in-memory image (variant: TargetPlatform.windows)
+00:05 +9: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_test.dart: AT-002 unknown preview error uses safe copy and explicit retry actually rereads (variant: TargetPlatform.windows)
+00:06 +10: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_test.dart: AT-002 disposal during real file chunk keeps lease and close pending until IO completes (variant: TargetPlatform.windows)
+00:07 +11: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_preview_test.dart: AT-002 replacement revision refuses late old preview completion (variant: TargetPlatform.windows)
+00:08 +12: All tests passed!

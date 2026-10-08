@@ -1,0 +1,6 @@
+Formatted lib\features\backup\domain\backup_restore_plan.dart
+Formatted lib\features\gallery\data\library_repository.dart
+Formatted test\core\png_backup_audit_test.dart
+Formatted test\core\png_metadata_reimport_test.dart
+Formatted test\core\thumbnail_cache_test.dart
+Formatted 255 files (5 changed) in 1.80 seconds.

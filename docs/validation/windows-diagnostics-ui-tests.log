@@ -1,0 +1,29 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 UT-089 loading failure exposes fixed retry feedback
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 UT-089 loading failure exposes fixed retry feedback
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 UT-089 loading failure exposes fixed retry feedback
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 UT-089 loading failure exposes fixed retry feedback
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 SQL kind level UUID filter validation and reset
+00:02 +7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+00:03 +8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+00:04 +9: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-084 pagination uses total and new events reset to first page
+00:05 +10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+00:05 +11: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-085 export scope excludes protected data requires confirm before picker
+00:05 +12: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:07 +13: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:08 +14: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:08 +15: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:09 +16: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:09 +17: C:/Users/PAN/workspace/ImageHub/app/test/diagnostics_screen_test.dart: UT-089 system exit resolves owned export confirmation without changing records
+00:09 +18: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+00:10 +19: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+00:11 +20: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 pending credential default is fixed while numeric settings save
+00:12 +21: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+00:13 +22: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 loading failure disables saving without revealing unknown exception
+00:13 +23: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread
+00:14 +24: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+00:15 +25: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+00:15 +26: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+00:16 +27: All tests passed!

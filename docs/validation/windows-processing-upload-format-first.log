@@ -1,0 +1,10 @@
+Formatted lib\features\gallery\data\library_recycle.dart
+Formatted lib\features\gallery\data\library_upload_history.dart
+Formatted lib\features\gallery\data\library_upload_processing.dart
+Formatted lib\features\gallery\data\library_uploads.dart
+Formatted lib\features\gallery\presentation\gallery_providers.dart
+Formatted lib\features\upload\application\upload_processing_coordinator.dart
+Formatted lib\features\upload\domain\upload_processing_models.dart
+Formatted test\core\diagnostic_schema_migration_test.dart
+Formatted test\core\upload_processing_models_test.dart
+Formatted 198 files (9 changed) in 1.87 seconds.

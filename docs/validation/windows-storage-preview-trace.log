@@ -1,0 +1,81 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart
+00:00 +0: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+CACHE_TRACE intent
+CACHE_TRACE stageOwned
+CACHE_TRACE prepared
+CACHE_TRACE published
+CACHE_TRACE ready
+CACHE_TRACE intent
+CACHE_TRACE stageOwned
+CACHE_TRACE prepared
+CACHE_TRACE published
+CACHE_TRACE ready
+CACHE_TRACE intent
+CACHE_TRACE stageOwned
+CACHE_TRACE prepared
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite and preview work must settle.
+
+When the exception was thrown, this was the stack:
+#4      _flush (file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart:474:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart:194:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart line 474
+The test description was:
+  UT-013/017 partial desktop selection survives combined query and loads real names (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:07 +0 -1: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+CACHE_TRACE published
+CACHE_TRACE ready
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+00:07 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)

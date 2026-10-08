@@ -1,0 +1,232 @@
+Replacement UI validation (Windows host, 2026-10-06)
+SDK: C:\Users\PAN\development\flutter\bin\cache\dart-sdk\bin\dart.exe
+
+Direct dart format of the assigned implementation and test files: exit 0.
+Direct dart analyze:
+  lib/features/backup/application/restore_coordinator.dart
+  lib/features/backup/presentation/backup_screen.dart
+  lib/features/gallery/presentation/gallery_providers.dart
+  lib/features/gallery/presentation/desktop_gallery.dart
+  lib/features/gallery/presentation/mobile_gallery.dart
+  lib/features/accounts/presentation/accounts_screen.dart
+  lib/features/upload/presentation/upload_tasks_screen.dart
+  test/backup_replacement_screen_test.dart
+Result: No issues found! exit 0.
+
+Native widget/SQLite/archive tests not yet executed; await exclusive app native-test slot.
+New cases are UT-080/AT-005 partial application/widget coverage, not manual Windows PT/AT or phone device acceptance.00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart
+00:00 +0: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+pumpAndSettle timed out
+
+When the exception was thrown, this was the stack:
+#0      WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:717:11)
+<asynchronous suspension>
+#1      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:380:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets
+  (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:03 +0 -1: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows)
+  
+00:03 +0 -1: UT-080 partial orchestrator precommit fault preserves old library and releases maintenance (variant: TargetPlatform.windows)
+00:04 +1 -1: UT-080 partial committed replacement survives postcommit session callback failure (variant: TargetPlatform.windows)
+00:04 +2 -1: UT-080 partial desktop replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+00:05 +3 -1: UT-080 partial M1 replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+00:05 +4 -1: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+备份页面的真实 IO 与 widget 状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:82:3)
+<asynchronous suspension>
+#2      main.begin (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:594:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:630:7)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves
+  real library (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:09 +4 -2: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows)
+  
+00:10 +4 -2: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+备份页面的真实 IO 与 widget 状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:82:3)
+<asynchronous suspension>
+#2      main.begin (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:594:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:678:7)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen
+  (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:14 +4 -3: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+  
+00:14 +4 -3: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+备份页面的真实 IO 与 widget 状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:82:3)
+<asynchronous suspension>
+#2      main.begin (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:594:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:724:7)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes
+  (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:18 +4 -4: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows)
+  
+00:21 +4 -4: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+备份页面的真实 IO 与 widget 状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:82:3)
+<asynchronous suspension>
+#2      main.begin (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:594:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:751:7)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:25 +4 -5: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows)
+  
+00:25 +4 -5: UT-080 partial replacement cancellation waits outstanding capacity IO before releasing holds (variant: TargetPlatform.windows)
+00:27 +5 -5: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows)
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart
+00:00 +0: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+备份页面的真实 IO 与 widget 状态未完成：资料库已载入：1 个资产（包含回收区）。 | 导出备份 |
+完整备份包含永久图片副本与资料库记录。导出前会校验副本；缺失或损坏时停止，不自动跳过或改为元数据备份。 |
+元数据备份只包含整理信息、图床账号的去敏标识和已确认的普通链接等记录，不含图片字节，不能恢复图片内容。仅保留去敏终态历史，待执行任务不进入备份。两种备份均不包含凭据、秘密管理链接、来源路径、缩略图或临时处理结果。
+| 导出完整备份 | 导出元数据备份 | 正在保管内部快照 · 1/1 | 取消恢复 | 恢复备份 | 默认合并到当前资料库。选择 ZIP
+后先校验备份并展示合并提议，确认后才提交。当前整理和回收状态保留。 | 选择备份并合并恢复 | 选择备份并替换恢复 | 备份与恢复
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:82:3)
+<asynchronous suspension>
+#2      main.begin (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:596:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart:680:7)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen
+  (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:05 +0 -1: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+  
+00:05 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart
+00:00 +0: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+00:12 +1: All tests passed!
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart
+00:00 +0: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows)
+00:13 +1: UT-080 partial orchestrator precommit fault preserves old library and releases maintenance (variant: TargetPlatform.windows)
+00:14 +2: UT-080 partial committed replacement survives postcommit session callback failure (variant: TargetPlatform.windows)
+00:14 +3: UT-080 partial desktop replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+00:15 +4: UT-080 partial M1 replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+00:15 +5: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows)
+00:23 +6: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+00:35 +7: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows)
+00:45 +8: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows)
+00:53 +9: UT-080 partial replacement cancellation waits outstanding capacity IO before releasing holds (variant: TargetPlatform.windows)
+00:55 +10: All tests passed!
+
+Final replacement UI validation:
+Formal command: C:\Users\PAN\development\flutter\bin\flutter.bat test test/backup_replacement_screen_test.dart --reporter expanded
+Exclusive native execution slot granted by root; no other app native command ran concurrently.
+Initial run: 5 passed, 5 failed (exit 1). One test incorrectly used pumpAndSettle while native IO was pending; four confirmation waits exhausted the copied 300-round native/fake-zone window.
+Correction: removed pumpAndSettle and alternated actual native IO with fake-zone pumping for a finite 1200-round window. Snapshot final verification was observed still running after the former approximately 3-second native window; a targeted full replacement completed in 12 seconds.
+Final complete run: 10 tests passed in 55 seconds, exit 0. The failure and targeted diagnostic outputs above are retained.
+Final direct dart format: 8 files, 0 changed, exit 0.
+Final direct dart analyze of those same files: No issues found!, exit 0.
+Coverage: UT-080/AT-005 partial application/widget tests with actual temporary SQLite, ZIP, PNG bytes and normal close/reopen. SecretStore and file publication are controlled test substitutes. 390-pixel large-text layout is Windows-host widget evidence; not Android/iOS device evidence or manual Windows PT/AT acceptance.
+No real upload, SDK installation, deployment, or publishing performed.

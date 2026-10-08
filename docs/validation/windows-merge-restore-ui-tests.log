@@ -1,0 +1,16 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart
+00:00 +0: UT-075/AT-003 partial real ZIP confirmation precedes permanent PNG commit at 390 large text (variant: TargetPlatform.windows)
+00:05 +1: UT-075 partial confirmation cancellation writes no assets and closes maintenance (variant: TargetPlatform.windows)
+00:09 +2: UT-075 partial metadata restore explicitly keeps new copy missing (variant: TargetPlatform.windows)
+00:12 +3: UT-075 partial blocking description conflict disables confirmation without changing current library (variant: TargetPlatform.windows)
+00:16 +4: UT-075 partial disposing during confirmation resolves pending restore without writing (variant: TargetPlatform.windows)
+00:19 +5: UT-073 partial entering backup again reads current asset count
+00:19 +6: UT-073 partial backup loading and library failure never enable export or expose exceptions
+00:20 +7: AT-003 partial backup 320.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:20 +8: AT-003 partial backup 390.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:20 +9: AT-003 partial backup 1280.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:20 +10: UT-073 partial backup directory picker cancellation creates no package and retains library (variant: TargetPlatform.windows)
+00:21 +11: UT-073/082 partial backup real SQLite metadata export omits image bytes and source paths (variant: TargetPlatform.windows)
+00:23 +12: UT-073/082 partial corrupt full backup lists UUID and never silently switches to metadata (variant: TargetPlatform.windows)
+00:26 +13: UT-082 partial backup cancellation waits real work and publishes no package (variant: TargetPlatform.windows)
+00:27 +14: All tests passed!

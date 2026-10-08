@@ -1,0 +1,20 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart
+00:00 +0: UT-074 partial: ZIP preserves exact manifest, canonical stored PNGs
+00:00 +1: UT-074 partial: metadata ZIP contains only manifest
+00:00 +2: UT-082 partial: existing destination is never overwritten or deleted
+00:00 +3: UT-082 partial: cancellation joins worker and removes owned stage
+00:00 +4: UT-082 partial: changed source fails digest and cleans only stage
+00:00 +5: UT-082 partial: released snapshot and precancellation create nothing
+00:00 +6: All tests passed!

@@ -1,0 +1,43 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart
+00:00 +0: UT-071 / SEC native transfer mapping SDK clipboard writes exact text and only confirms after platform success
+00:00 +1: UT-071 / SEC native transfer mapping SDK clipboard refusal and missing backend return safe failure states
+00:00 +1 -1: UT-071 / SEC native transfer mapping SDK clipboard refusal and missing backend return safe failure states [E]
+  Expected: LinkTransferStatus:<LinkTransferStatus.unsupported>
+    Actual: LinkTransferStatus:<LinkTransferStatus.copied>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\link_transfer_test.dart 58:9              main.<fn>.<fn>
+  
+00:00 +1 -1: UT-071 / SEC native transfer mapping share success uses ordinary text and safe anchor
+00:00 +2 -1: UT-071 / SEC native transfer mapping share dismissed uses ordinary text and safe anchor
+00:00 +3 -1: UT-071 / SEC native transfer mapping share unavailable uses ordinary text and safe anchor
+00:00 +4 -1: UT-071 / SEC native transfer mapping share rejects invalid anchors without system calls and conceals exceptions
+00:00 +5 -1: UT-071 / SEC unknown backend errors never stringify or use a fallback
+00:00 +6 -1: UT-070/071 repository-owned local transfer copy and all share outcomes preserve SQL; retry creates no upload
+00:00 +7 -1: UT-070/071 repository-owned local transfer empty plans do not invoke clipboard or share
+00:00 +8 -1: UT-070/071 repository-owned local transfer foreign owner and close/reopen plans are stale before system access
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      main.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart:317:23)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:00 +9 -1: UT-070/071 repository-owned local transfer real replacement invalidates old plan despite retained ordinary result identity
+00:00 +10 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/link_transfer_test.dart: UT-071 / SEC native transfer mapping SDK clipboard refusal and missing backend return safe failure states

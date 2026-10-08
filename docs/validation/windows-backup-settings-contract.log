@@ -1,0 +1,40 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: four platform policies round trip all eight settings
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: platform unavailable values retain each current field
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly [E]
+  Expected: throws <Instance of 'BackupFailure'> with `kind`: BackupFailureKind:<BackupFailureKind.invalidManifest>
+    Actual: <Closure: () => BackupManifest>
+     Which: returned <Instance of 'BackupManifest'>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\backup_manifest_test.dart 197:5           main.<fn>
+  
+00:00 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: settings structural secret conflicts refuse export without rewriting policies
+00:00 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: every permanent version has exactly one full image
+00:00 +10 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: all ordinary display outlets mask registered K/D
+00:00 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: unknown and secret fields rejected at each boundary
+00:00 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: only ended attempts of three terminal states
+00:00 +13 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: same URL retains independent confirmation identities
+00:00 +14 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: unsupported envelope fields and damaged JSON fail safely
+00:00 +15 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: injected manifest/count/image budgets reject overflow
+00:00 +16 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: UUID, digest, dimensions, finite integers are strict
+00:00 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: exact package image names reject path attacks
+00:00 +18 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: asset relations, duplicate identities and version conflicts
+00:00 +19 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: TextPolicy canonical names, full folding and 50 tag limit
+00:00 +20 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: redaction never truncates invalid names or merges names
+00:00 +21 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: structural secret matches refuse encoding without rewriting identity
+00:00 +22 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: valid large whitelist is not truncated at redactor node limit
+00:00 +23 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: ordinary URLs cannot carry management/registered secrets
+00:00 +24 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-081 partial: processing and accounts contain no device resources/runtime
+00:00 +25 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly

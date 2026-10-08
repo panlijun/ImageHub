@@ -1,0 +1,92 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart
+test/core/account_health_observation_test.dart:146:42: Error: Required named parameter 'anonymous' must be provided.
+      await fixture.repository.saveTarget(
+                                         ^
+test/core/account_health_observation_test.dart:169:58: Error: Required named parameter 'anonymous' must be provided.
+    final newTarget = await fixture.repository.saveTarget(
+                                                         ^
+test/core/account_health_observation_test.dart:297:62: Error: Required named parameter 'anonymous' must be provided.
+    final sessionTarget = await fixture.repository.saveTarget(
+                                                             ^
+test/core/account_health_observation_test.dart:321:55: Error: Required named parameter 'anonymous' must be provided.
+    final target = await fixture.repository.saveTarget(
+                                                      ^
+test/core/account_health_observation_test.dart:413:68: Error: Required named parameter 'importedHistoryIds' must be provided.
+    final plan = await fixture.repository.prepareUploadHistoryClear(
+                                                                   ^
+test/core/account_health_observation_test.dart:452:42: Error: Required named parameter 'anonymous' must be provided.
+      await fixture.repository.saveTarget(
+                                         ^
+test/core/account_health_observation_test.dart:570:68: Error: Required named parameter 'importedHistoryIds' must be provided.
+    final plan = await fixture.repository.prepareUploadHistoryClear(
+                                                                   ^
+test/core/account_health_observation_test.dart:778:47: Error: Required named parameter 'anonymous' must be provided.
+    final target = await repository.saveTarget(
+                                              ^
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart":
+  Compilation failed for testPath=C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: test/core/account_health_observation_test.dart:146:42: Error: Required named parameter 'anonymous' must be provided.
+        await fixture.repository.saveTarget(
+                                           ^
+  test/core/account_health_observation_test.dart:169:58: Error: Required named parameter 'anonymous' must be provided.
+      final newTarget = await fixture.repository.saveTarget(
+                                                           ^
+  test/core/account_health_observation_test.dart:297:62: Error: Required named parameter 'anonymous' must be provided.
+      final sessionTarget = await fixture.repository.saveTarget(
+                                                               ^
+  test/core/account_health_observation_test.dart:321:55: Error: Required named parameter 'anonymous' must be provided.
+      final target = await fixture.repository.saveTarget(
+                                                        ^
+  test/core/account_health_observation_test.dart:413:68: Error: Required named parameter 'importedHistoryIds' must be provided.
+      final plan = await fixture.repository.prepareUploadHistoryClear(
+                                                                     ^
+  test/core/account_health_observation_test.dart:452:42: Error: Required named parameter 'anonymous' must be provided.
+        await fixture.repository.saveTarget(
+                                           ^
+  test/core/account_health_observation_test.dart:570:68: Error: Required named parameter 'importedHistoryIds' must be provided.
+      final plan = await fixture.repository.prepareUploadHistoryClear(
+                                                                     ^
+  test/core/account_health_observation_test.dart:778:47: Error: Required named parameter 'anonymous' must be provided.
+      final target = await repository.saveTarget(
+                                                ^
+  .
+  Error: The Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 34:3  throwToolExit
+  package:flutter_tools/src/compile.dart 1024:11   DefaultResidentCompiler._compile.<fn>
+  dart:async/zone_root.dart 48:47                  _rootRunUnary
+  dart:async/zone.dart 816:35                      _CustomZone.runUnary
+  dart:async/future_impl.dart 948:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 977:13               Future._propagateToListeners
+  dart:async/future_impl.dart 862:9                Future._propagateToListeners
+  dart:async/future_impl.dart 720:5                Future._completeWithValue
+  dart:async/future_impl.dart 804:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone_root.dart 35:13                  _rootRun
+  dart:async/zone.dart 810:35                      _CustomZone.run
+  dart:async/zone.dart 702:7                       _CustomZone.runGuarded
+  dart:async/zone.dart 743:23                      _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:35         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 127:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 193:5      _RawReceivePort._handleMessage
+  
+00:00 +0 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-008/UT-010/IT-001 explicit cloud pending first source does not block two real PNG commits
+00:00 +1 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-011 cloud skip and stop preserve committed item without checking later source
+00:00 +2 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 unknown readiness preserves real read and missing source classification
+00:00 +3 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 cloud acquisition failure leaves existing name favorite tags and bytes intact
+00:00 +4 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 only exact provider cloud codes classify pending; message text never guesses
+00:01 +5 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart

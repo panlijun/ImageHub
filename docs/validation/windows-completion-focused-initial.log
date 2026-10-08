@@ -1,0 +1,301 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+test/core/original_preview_orientation_test.dart:67:47: Error: Property 'getNextFrame' cannot be accessed on 'Codec?' because it is potentially null.
+ - 'Codec' is from 'dart:ui'.
+Try accessing using ?. instead.
+    final frame = await _native(tester, codec.getNextFrame);
+                                              ^^^^^^^^^^^^
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart":
+  Compilation failed for testPath=C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: test/core/original_preview_orientation_test.dart:67:47: Error: Property 'getNextFrame' cannot be accessed on 'Codec?' because it is potentially null.
+   - 'Codec' is from 'dart:ui'.
+  Try accessing using ?. instead.
+      final frame = await _native(tester, codec.getNextFrame);
+                                                ^^^^^^^^^^^^
+  .
+00:00 +0 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart [E]
+  Error: The Dart compiler exited unexpectedly.
+  package:flutter_tools/src/base/common.dart 34:3  throwToolExit
+  package:flutter_tools/src/compile.dart 1024:11   DefaultResidentCompiler._compile.<fn>
+  dart:async/zone_root.dart 48:47                  _rootRunUnary
+  dart:async/zone.dart 816:35                      _CustomZone.runUnary
+  dart:async/future_impl.dart 948:45               Future._propagateToListeners.handleValueCallback
+  dart:async/future_impl.dart 977:13               Future._propagateToListeners
+  dart:async/future_impl.dart 862:9                Future._propagateToListeners
+  dart:async/future_impl.dart 720:5                Future._completeWithValue
+  dart:async/future_impl.dart 804:7                Future._asyncCompleteWithValue.<fn>
+  dart:async/zone_root.dart 35:13                  _rootRun
+  dart:async/zone.dart 810:35                      _CustomZone.run
+  dart:async/zone.dart 702:7                       _CustomZone.runGuarded
+  dart:async/zone.dart 743:23                      _CustomZone.bindCallbackGuarded.<fn>
+  dart:async/schedule_microtask.dart 40:35         _microtaskLoop
+  dart:async/schedule_microtask.dart 49:5          _startMicrotaskLoop
+  dart:isolate-patch/isolate_patch.dart 127:13     _runPendingImmediateCallback
+  dart:isolate-patch/isolate_patch.dart 193:5      _RawReceivePort._handleMessage
+  
+00:00 +1 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +2 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +3 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +4 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +5 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +6 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +7 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +10 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +11 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +12 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +14 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +15 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +16 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +18 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +19 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +20 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +21 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +22 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +23 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +24 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +25 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +26 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +27 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +28 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +29 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +30 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +31 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +32 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +33 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +34 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +35 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +36 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +37 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +38 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +39 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +40 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +41 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +42 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +43 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +44 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +45 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +46 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +47 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +48 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +49 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +50 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +51 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +52 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +53 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +54 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +55 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +56 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +57 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +58 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +59 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +60 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +61 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +62 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +63 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +64 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +65 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +66 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +67 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +68 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +69 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +70 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +71 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +72 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +73 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +74 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +75 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +76 -2: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +76 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:00 +76 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/png_orientation_test.dart: UT-028/IT-002 actual PNG 3 import, thumbnail, compression, crop and stitch agree exactly [E]
+  Expected: [110, 95, 180, 255]
+    Actual: [80, 75, 200, 255]
+     Which: at location [0] is <80> instead of <110>
+  pixel 2
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\png_orientation_test.dart 390:5           _expectPixels
+  test\core\png_orientation_test.dart 140:11          main.<fn>
+  
+00:01 +77 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +78 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +79 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +80 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +81 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +82 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +83 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +84 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:01 +85 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:02 +86 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:02 +87 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:02 +88 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker stop rejects late sources and permits a fresh selection (variant: TargetPlatform.windows)
+00:02 +89 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +90 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +91 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +92 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +93 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +94 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +95 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +96 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +97 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +98 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +99 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +100 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +101 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +102 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +103 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +104 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +105 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +106 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +107 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +108 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +109 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +110 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +111 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +112 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +113 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +114 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +115 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:02 +116 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows)
+00:02 +117 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows)
+00:02 +118 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows)
+00:03 +119 -3: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+pumpAndSettle timed out
+
+When the exception was thrown, this was the stack:
+#0      WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:717:11)
+<asynchronous suspension>
+#1      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#2      _Harness.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:244:5)
+<asynchronous suspension>
+#3      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:65:17)
+<asynchronous suspension>
+#4      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#5      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:06 +119 -4: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-011/IT-002 exit waits for picker and retains the existing library on reopen (variant: TargetPlatform.windows)
+  
+00:06 +119 -4: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 declined exit leaves pending selection able to import (variant: TargetPlatform.windows)
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      _AsyncCompleter.complete (dart:async/future_impl.dart:96:3)
+<asynchronous suspension>
+#7      _Harness.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:213:25)
+<asynchronous suspension>
+#8      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:117:15)
+<asynchronous suspension>
+#9      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#10     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#11     StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+pumpAndSettle timed out
+
+When the exception was thrown, this was the stack:
+#0      WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:717:11)
+<asynchronous suspension>
+#1      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:125:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-011 declined exit leaves pending selection able to import (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:08 +119 -5: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 declined exit leaves pending selection able to import (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-011 declined exit leaves pending selection able to import (variant: TargetPlatform.windows)
+  
+00:08 +119 -5: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker failure after confirmed exit is handled before closing (variant: TargetPlatform.windows)
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      _AsyncCompleter.complete (dart:async/future_impl.dart:96:3)
+<asynchronous suspension>
+#7      _Harness.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:213:25)
+<asynchronous suspension>
+#8      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:148:17)
+<asynchronous suspension>
+#9      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#10     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#11     StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following assertion was thrown running a test:
+pumpAndSettle timed out
+
+When the exception was thrown, this was the stack:
+#0      WidgetTester.pumpAndSettle.<anonymous closure> (package:flutter_test/src/widget_tester.dart:717:11)
+<asynchronous suspension>
+#1      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart:158:9)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-011 picker failure after confirmed exit is handled before closing (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:10 +119 -6: C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker failure after confirmed exit is handled before closing (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-011 picker failure after confirmed exit is handled before closing (variant: TargetPlatform.windows)
+  
+00:10 +119 -6: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart
+  C:/Users/PAN/workspace/ImageHub/app/test/core/png_orientation_test.dart: UT-028/IT-002 actual PNG 3 import, thumbnail, compression, crop and stitch agree exactly
+  C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 declined exit leaves pending selection able to import (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/gallery_import_exit_test.dart: UT-011 picker failure after confirmed exit is handled before closing (variant: TargetPlatform.windows)
+  ... and 2 more

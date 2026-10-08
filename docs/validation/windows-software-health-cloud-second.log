@@ -1,0 +1,65 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 valid confirmation commits available and persists only health without authorization event
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 valid confirmation commits available and persists only health without authorization event
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:02 +18: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:02 +19: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 old credential generation cannot rewrite replacement status
+00:02 +21: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:02 +22: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:03 +25: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:03 +26: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:03 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 stale execution epoch rejects ordinary and health writes
+00:03 +28: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:03 +29: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:03 +30: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:04 +31: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:04 +32: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:04 +33: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:04 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 json observation record refuses writes and open without resetting bytes
+00:04 +35: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:05 +36: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:05 +37: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:05 +38: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:05 +39: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:05 +40: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:06 +41: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:06 +42: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:06 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 attempt started record refuses writes and open without resetting bytes
+00:06 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 key started record refuses writes and open without resetting bytes
+00:06 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 extra started record refuses writes and open without resetting bytes
+00:06 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 writer start marker rejects late older completion despite wall-clock rollback
+00:07 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 start marker survives latest history cleanup and failed marker write rolls back attempt and lease
+00:07 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/073 portable backup excludes observation namespace and merge preserves local watermark
+00:07 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement commit clears local observation watermark
+00:08 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement rollback restores local observation watermark
+00:09 +51: All tests passed!

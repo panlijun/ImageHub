@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/upload_processing_screen_test.dart
+00:00 +0: UT-046 UT-062 AT-003 partial 390.0 textScale2 automatic UI freezes UUID source recipe and applies defaults once without requests (variant: TargetPlatform.windows)
+00:08 +1: UT-046 UT-062 AT-003 partial 1280.0 textScale2 automatic UI freezes UUID source recipe and applies defaults once without requests (variant: TargetPlatform.windows)
+00:15 +2: UT-023 UT-026 UT-046 UT-062 AT-003 partial automatic transparent JPEG failure never falls back to original (variant: TargetPlatform.windows)
+00:19 +3: UT-023 UT-026 UT-046 UT-062 AT-003 partial automatic animation failure never falls back to original (variant: TargetPlatform.windows)
+00:22 +4: All tests passed!

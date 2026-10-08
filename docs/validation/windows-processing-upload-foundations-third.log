@@ -1,0 +1,23 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 QUE-005 schema10 fresh creates 28 tables and enforces shared processing dependency identities
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 QUE-005 own schema1 upgrade preserves source identities and creates upload processing dependencies
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 QUE-005 own schema2 upgrade preserves frozen inputs and independent pause, adds empty dependencies
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_schema_test.dart: UT-093 QUE-005 own schema9 upgrade preserves frozen inputs and independent pause, adds empty dependencies
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial queued reopen retains source UUID version parameters retention and frozen targets
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial ready output with unfinished running log recovers same UUID without pixel rerun
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial missing frozen bytes wait explicitly and require exact repair plus processing retry
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial cancelling every queued dependent releases durable job references and history clear keeps original bytes
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial cancelled intent cannot clear or export completed history while real processing leases remain
+00:02 +21: All tests passed!

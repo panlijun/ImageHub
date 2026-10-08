@@ -1,0 +1,15 @@
+Formatted lib\features\backup\application\backup_coordinator.dart
+Formatted lib\features\backup\application\restore_coordinator.dart
+Formatted lib\features\backup\presentation\backup_screen.dart
+Formatted lib\features\diagnostics\presentation\diagnostics_screen.dart
+Formatted lib\features\gallery\data\library_diagnostics.dart
+Formatted lib\features\gallery\data\library_repository.dart
+Formatted lib\features\settings\presentation\settings_screen.dart
+Formatted test\core\backup_replace_restore_repository_test.dart
+Formatted test\core\diagnostic_exporter_test.dart
+Formatted test\core\diagnostic_repository_test.dart
+Formatted test\core\diagnostic_runtime_test.dart
+Formatted test\core\internal_replacement_snapshot_test.dart
+Formatted test\core\replacement_rollback_test.dart
+Formatted test\diagnostics_screen_test.dart
+Formatted 172 files (14 changed) in 1.88 seconds.

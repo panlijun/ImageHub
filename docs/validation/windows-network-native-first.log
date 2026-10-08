@@ -1,0 +1,30 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart
+Building Windows application...                                 
+integration_test/network_flow_test.dart(96,24): error G7C168647: Property 'uploads' cannot be accessed on 'LibrarySession?' because it is potentially null. [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+integration_test/network_flow_test.dart(97,24): error G7C168647: Property 'uploads' cannot be accessed on 'LibrarySession?' because it is potentially null. [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+integration_test/network_flow_test.dart(98,30): error G7C168647: Property 'repository' cannot be accessed on 'LibrarySession?' because it is potentially null. [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+integration_test/network_flow_test.dart(98,41): error GE5CFE876: The method 'listUploadBatches' isn't defined for the type 'LibraryRepository'. [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+integration_test/network_flow_test.dart(102,46): error G7C168647: Property 'uploads' cannot be accessed on 'LibrarySession?' because it is potentially null. [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(254,5): error MSB8066: “C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\CMakeFiles\945d417f0dbef83034eefb2e3ff76b44\flutter_windows.dll.rule;C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\CMakeFiles\789b0750b97ae7d7834749986365a628\flutter_assemble.rule”的自定义生成已退出，代码为 1。 [C:\Users\PAN\workspace\ImageHub\app\build\windows\x64\flutter\flutter_assemble.vcxproj]
+Building Windows application...                                    20.1s
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart": Build process failed.
+  package:flutter_tools/src/base/common.dart 34:3                    throwToolExit
+  package:flutter_tools/src/windows/build_windows.dart 262:5         _runBuild
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/windows/build_windows.dart 118:5         buildWindows
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/windows/windows_device.dart 60:5         WindowsDevice.buildForDevice
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/desktop_device.dart 108:7                DesktopDevice.startApp
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/integration_test_device.dart 59:39  IntegrationTestTestDevice.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_platform.dart 679:51        FlutterPlatform._startTest.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/base/async_guard.dart 108:24             asyncGuard.<fn>
+  
+00:00 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart

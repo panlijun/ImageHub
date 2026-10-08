@@ -1,0 +1,371 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _enter (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:87:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:186:15)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+  
+00:01 +0 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _enter (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:87:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:186:15)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+  
+00:01 +0 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _enter (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:87:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:186:15)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+  
+00:02 +0 -3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:79:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:249:17)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 invalid numeric drafts never clamp or persist all bounds
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:02 +0 -4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 invalid numeric drafts never clamp or persist all bounds
+  
+00:03 +0 -4: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _enter (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:87:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:290:13)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:03 +0 -5: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+  
+00:03 +0 -5: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:358:13)
+<asynchronous suspension>
+#9      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#10     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 default reset is only draft and target UUIDs distinguish aliases
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +0 -6: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 default reset is only draft and target UUIDs distinguish aliases
+  
+00:04 +0 -6: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 pending credential target cannot be toggled
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:427:11)
+<asynchronous suspension>
+#9      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#10     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-083 pending credential target cannot be toggled
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:04 +0 -7: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:04 +0 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 pending credential target cannot be toggled [E]
+  Test failed. See exception logs above.
+  The test description was: UT-083 pending credential target cannot be toggled
+  
+00:05 +1 -7: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:05 +1 -7: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:79:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:487:13)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-087 reload failure keeps last view and draft until explicit reread
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:05 +1 -8: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:05 +1 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 reload failure keeps last view and draft until explicit reread
+  
+00:06 +2 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+00:06 +3 -8: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+设置页或真实 IO 未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:60:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:528:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-087 external settings revision and replacement reset reject old draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +3 -9: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:13 +3 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 external settings revision and replacement reset reject old draft
+  
+00:13 +3 -9: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:79:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:580:15)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-087 dispose waits for real queued settings commit
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +3 -10: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:13 +3 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 dispose waits for real queued settings commit
+  
+00:16 +4 -10: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:19 +4 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit [E]
+  Expected: true
+    Actual: <false>
+  真实 IO 必须收尾
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\settings_screen_test.dart 47:3                 _native
+  ===== asynchronous gap ===========================
+  dart:async                                          _CustomZone.registerBinaryCallback
+  test\settings_screen_test.dart 172:5                _fixture.<fn>
+  
+00:19 +4 -10: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:140:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:109:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:30:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: Too many elements
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:696:24)
+#1      WidgetController.widget (package:flutter_test/src/controller.dart:828:30)
+#2      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2429:15)
+#5      TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#6      WidgetController.scrollUntilVisible (package:flutter_test/src/controller.dart:2427:27)
+#7      _reveal (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:71:18)
+#8      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:79:9)
+#9      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:580:15)
+<asynchronous suspension>
+#10     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#11     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 3 frames from dart:async and package:stack_trace)
+
+The test description was:
+  UT-087 system exit waits for real queued settings commit
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:20 +4 -11: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:20 +4 -11: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 system exit waits for real queued settings commit
+  
+00:21 +5 -11: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:25 +5 -11: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit [E]
+  Expected: true
+    Actual: <false>
+  真实 IO 必须收尾
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\settings_screen_test.dart 47:3                 _native
+  ===== asynchronous gap ===========================
+  dart:async                                          _CustomZone.registerBinaryCallback
+  test\settings_screen_test.dart 172:5                _fixture.<fn>
+  
+00:27 +6 -11: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: OUT-005 failed actual write intention never enables permanent-save action (variant: TargetPlatform.windows)
+00:30 +7 -11: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 1280.0 large type actual save and reopen
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+  ... and 7 more

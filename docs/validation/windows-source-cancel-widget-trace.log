@@ -1,0 +1,14 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart
+00:00 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+stop-test: read gallery
+stop-test: mount
+stop-test: tap import
+stop-test: source listened
+stop-test: source cancelling
+stop-test: cleanup
+00:44 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) - did not complete [E]
+00:44 +0: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) (did not complete)
+No tests were found.

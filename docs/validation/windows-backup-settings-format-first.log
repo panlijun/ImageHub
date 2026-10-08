@@ -1,0 +1,8 @@
+Formatted lib/features/backup/domain/backup_settings.dart
+Formatted lib/features/backup/presentation/backup_screen.dart
+Formatted lib/features/gallery/data/library_settings.dart
+Formatted lib/features/gallery/data/library_restores.dart
+Formatted lib/features/gallery/data/library_replacement_restores.dart
+Formatted test/core/backup_settings_test.dart
+Formatted test/core/backup_manifest_test.dart
+Formatted 11 files (7 changed) in 0.20 seconds.

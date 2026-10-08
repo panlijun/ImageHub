@@ -1,0 +1,38 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart
+00:00 +0: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+stop-test: read gallery
+stop-test: mount
+stop-test: tap import
+stop-test: source listened
+stop-test: source cancelling
+stop-test: cleanup
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "正在停止，等待来源读取和本机写入结束…": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart:71:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart line 71
+The test description was:
+  UT-011 Windows stop feedback remains pending until actual source cleanup (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:01 +0 -1: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+  
+00:01 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)

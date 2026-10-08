@@ -1,0 +1,68 @@
+User authorized: 2026-10-05
+Installer: Microsoft signed setup.exe
+Operation: modify existing VS 2022 BuildTools; add Microsoft.VisualStudio.Component.VC.ATL only; quiet/norestart
+Installer exit: 0
+[
+  {
+    "instanceId": "de59c61e",
+    "installDate": "2026-06-17T05:09:03Z",
+    "installationName": "VisualStudio/17.14.40+37628.2",
+    "installationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+    "installationVersion": "17.14.37628.2",
+    "productId": "Microsoft.VisualStudio.Product.BuildTools",
+    "productPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\Common7\\Tools\\LaunchDevCmd.bat",
+    "state": 4294967295,
+    "isComplete": true,
+    "isLaunchable": true,
+    "isPrerelease": false,
+    "isRebootRequired": false,
+    "displayName": "Visual Studio ���ɹ��� 2022",
+    "description": "Visual Studio ���ɹ����������ɱ����ͻ��� MSBuild ���й� .NET Ӧ�ó��򣬶�����Ҫ Visual Studio IDE��������ѡ��װ Visual C++ �������Ϳ⡢MFC��ALT �� C++/CLI ֧�֡�",
+    "channelId": "VisualStudio.17.Release",
+    "channelUri": "https://aka.ms/vs/17/release/channel",
+    "enginePath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\resources\\app\\ServiceHub\\Services\\Microsoft.VisualStudio.Setup.Service",
+    "installedChannelId": "VisualStudio.17.Release",
+    "installedChannelUri": "https://aka.ms/vs/17/release/channel",
+    "releaseNotes": "https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes-v17.14#17.14.40",
+    "resolvedInstallationPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools",
+    "thirdPartyNotices": "https://go.microsoft.com/fwlink/?LinkId=661288",
+    "updateDate": "2026-09-09T14:16:30.2036399Z",
+    "catalog": {
+      "buildBranch": "d17.14",
+      "buildVersion": "17.14.37628.2",
+      "id": "VisualStudio/17.14.40+37628.2",
+      "localBuild": "build-lab",
+      "manifestName": "VisualStudio",
+      "manifestType": "installer",
+      "productDisplayVersion": "17.14.40",
+      "productLine": "Dev17",
+      "productLineVersion": "2022",
+      "productMilestone": "RTW",
+      "productMilestoneIsPreRelease": "False",
+      "productName": "Visual Studio",
+      "productPatchVersion": "40",
+      "productPreReleaseMilestoneSuffix": "1.0",
+      "productSemanticVersion": "17.14.40+37628.2",
+      "requiredEngineVersion": "3.14.2094.42856"
+    },
+    "properties": {
+      "campaignId": "",
+      "channelManifestId": "VisualStudio.17.Release/17.14.40+37628.2",
+      "includeRecommended": "0",
+      "nickname": "",
+      "setupEngineFilePath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\setup.exe"
+    }
+  }
+]
+
+FullName                                                                                                         Length
+--------                                                                                                         ------
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.44.35207\atlmfc\include\atlstr.h  34708
+
+
+
+Hash
+----
+0C13F0173D4417E69CDE99A1854702BDC494C0DD1A68BA8A3A4EA7D5DFE9AF2C
+
+

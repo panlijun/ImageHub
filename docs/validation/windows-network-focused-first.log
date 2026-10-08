@@ -1,0 +1,125 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 unknown offline and cellular wait; repeated Wi-Fi wake keeps one intent and attempt
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 transport policy affects future dispatch; running IO and consent remain independent
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 observation and settings cannot grant consent or override item pause and unknown
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network wake preserves monotonic Retry-After instead of shortening or restarting it
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 validated default values and immutable roundtrip
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/087 longestSide rejects noninteger nonfinite and outside bounds without clamping
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request [E]
+  Expected: QueueWaitReason:<QueueWaitReason.network>
+    Actual: <null>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\upload_coordinator_test.dart 198:5        main.<fn>
+  
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-088 cacheLimitMiB rejects noninteger nonfinite and outside bounds without clamping
+00:00 +10 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-052/053 construction is idle; dispatch bounded; lowering does not kill active IO
+00:00 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-083/093 malformed future extra or missing fields refuse safe decode
+00:00 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/057 pause blocks later dispatch; cancelled intent waits for actual adapter settlement
+00:00 +13 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/057 pause blocks later dispatch; cancelled intent waits for actual adapter settlement
+00:00 +14 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-063/087 format 2 adds default network policy without rewriting input
+00:00 +15 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 single pause leaves active IO running and later ready items dispatch
+00:00 +16 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 single pause leaves active IO running and later ready items dispatch
+00:00 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/device_settings_test.dart: UT-088 retention policies and cache limit participate in identity
+00:00 +18 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 batch and single pause stay independent; itemFirst=true
+00:00 +19 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 batch and single pause stay independent; itemFirst=false
+00:00 +20 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/061 paused retry preserves Retry-After deadline; resumeAt=9
+00:00 +21 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/061 paused retry preserves Retry-After deadline; resumeAt=12
+00:00 +22 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 repeated pause/resume and account wake do not dispatch paused items twice
+00:00 +23 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054 running/unknown/terminal cannot be paused or resumed into queued
+00:00 +24 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-059/061/067 retry waits monotonic 2/4/8; UTC jumps and repeated wake do not accelerate
+00:00 +25 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-060/062 unknown never wakes into another request
+00:00 +26 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-047/063 unverified service limit blocks before any attempt or file lease
+00:00 +27 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-043/063 account mutation stops old authorization; last gate prevents request
+00:00 +28 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +29 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-102 graceful close waits for real IO, preserves unknown rather than cancelled
+00:00 +30 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: restore hold waits for actual IO and result commit before release
+00:00 +31 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: dispatch being prepared cannot send after restore barrier
+00:00 +32 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: pause persistence failure stays blocked and can be retried
+00:00 +33 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: unconfirmed cleanup cannot produce a restore hold
+00:00 +34 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 reading defaults never creates durable empty overwrite or actors
+00:00 +35 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-063/083/087 complete settings and same alias target identity atomically persist and reopen
+00:00 +36 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart: UT-083 stale foreign and reopened settings plans cannot overwrite later valid changes
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13276:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:434:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:172:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/settings_repository_test.dart:206:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +38 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +39 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +40 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +41 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +42 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +43 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:01 +44 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:02 +45 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:02 +46 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:02 +47 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 390.0 double text saves only after confirmation and restores default draft
+00:02 +48 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-063/087 AT-005 partial network policy 1280.0 double text saves only after confirmation and restores default draft
+00:04 +49 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-086 shared settings entry opens real storage without authorizing uploads
+00:06 +50 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 320.0 large type actual save and reopen
+00:07 +51 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 390.0 large type actual save and reopen
+00:09 +52 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-088 AT-005 partial settings 1280.0 large type actual save and reopen
+00:10 +53 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 invalid numeric drafts never clamp or persist all bounds
+00:17 +54 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 UT-087 failed SQL commit preserves complete draft and old values retry
+00:19 +55 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 default reset is only draft and target UUIDs distinguish aliases
+00:20 +56 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 pending credential default is fixed while numeric settings save
+00:21 +57 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 unselected pending target cannot become default or block reset
+00:23 +58 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 loading failure disables saving without revealing unknown exception
+00:23 +59 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 reload failure keeps last view and draft until explicit reread
+00:24 +60 -1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <0>
+  Actual: <64.0>
+反馈检查必须在设置页实际顶部
+
+When the exception was thrown, this was the stack:
+#4      _top (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:88:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart:722:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart line 88
+The test description was:
+  UT-087 external settings revision and replacement reset reject old draft
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:24 +60 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft [E]
+  Test failed. See exception logs above.
+  The test description was: UT-087 external settings revision and replacement reset reject old draft
+  
+00:24 +60 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 dispose waits for real queued settings commit
+00:25 +61 -2: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 system exit waits for real queued settings commit
+00:26 +62 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-063 network loss after durable authorize prevents any adapter input read or request
+  C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft

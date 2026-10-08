@@ -1,0 +1,66 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: four platform policies round trip all eight settings
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: platform unavailable values retain each current field
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: empty availability and absent settings preserve policies
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: source and exposed availability and plans are deeply immutable
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: strict envelope and current device format reject malformed or future data
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_settings_test.dart: UT-078 BAK-005: unknown device paths credentials defaults and permission are refused
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: current format two settings and project format one read strictly
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal permanent collision with current audit preserves historical description
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: settings structural secret conflicts refuse export without rewriting policies
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-078 BAK-005: settings structural secret conflicts refuse export without rewriting policies
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same content incompatible descriptions block complete proposal
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal matching account identity keeps configuration alias; absent audit target creates no account
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: every permanent version has exactly one full image
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: all ordinary display outlets mask registered K/D
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: unknown and secret fields rejected at each boundary
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: only ended attempts of three terminal states
+00:00 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: same URL retains independent confirmation identities
+00:00 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: unsupported envelope fields and damaged JSON fail safely
+00:00 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: injected manifest/count/image budgets reject overflow
+00:00 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: UUID, digest, dimensions, finite integers are strict
+00:00 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: exact package image names reject path attacks
+00:00 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: asset relations, duplicate identities and version conflicts
+00:00 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: TextPolicy canonical names, full folding and 50 tag limit
+00:00 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: redaction never truncates invalid names or merges names
+00:00 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: structural secret matches refuse encoding without rewriting identity
+00:00 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: valid large whitelist is not truncated at redactor node limit
+00:00 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: ordinary URLs cannot carry management/registered secrets
+00:00 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-081 partial: processing and accounts contain no device resources/runtime
+00:01 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +51: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +52: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +53: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:02 +54: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: compression, encryption, links and local mismatch reject
+00:02 +55: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:02 +57: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:03 +58: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:03 +59: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:03 +60: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial missing permanent bytes reject full with affected identities and allow only explicit metadata
+00:03 +61: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:03 +62: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial unavailable secret backend fails closed before export and does not change library
+00:03 +63: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-082 partial cancellation waits for current pixel/hash IO and releases all real protection
+00:04 +64: All tests passed!

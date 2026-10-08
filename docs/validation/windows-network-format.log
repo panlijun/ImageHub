@@ -1,0 +1,8 @@
+Formatted lib\features\upload\application\upload_coordinator.dart
+Formatted lib\platform\system_network_monitor.dart
+Formatted test\core\network_state_test.dart
+Formatted test\core\system_network_monitor_test.dart
+Formatted test\core\upload_pipeline_test.dart
+Formatted integration_test\network_flow_test.dart
+Formatted integration_test\upload_flow_test.dart
+Formatted 192 files (7 changed) in 1.84 seconds.

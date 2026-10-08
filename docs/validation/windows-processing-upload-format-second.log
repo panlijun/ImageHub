@@ -1,0 +1,8 @@
+Formatted lib\features\gallery\data\library_uploads.dart
+Formatted lib\features\upload\presentation\upload_tasks_screen.dart
+Formatted test\core\upload_processing_coordinator_test.dart
+Formatted test\core\upload_processing_repository_test.dart
+Formatted test\core\upload_processing_schema_test.dart
+Formatted test\upload_processing_screen_test.dart
+Formatted integration_test\upload_processing_flow_test.dart
+Formatted 202 files (7 changed) in 1.90 seconds.

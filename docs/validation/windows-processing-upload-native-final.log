@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/upload_processing_flow_test.dart
+Building Windows application...                                    44.8s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: UT-046 UT-062 IT-004 partial Windows real automatic processing UI without network authorization and same identities after reopen
+00:03 +1: (tearDownAll)
+00:03 +1: All tests passed!

@@ -1,0 +1,22 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_repository_test.dart
+00:00 +0: UT-069 partial NFC casefold name direct URL and frozen alias queries intersect stable target service and kind
+00:00 +1: UT-069 SEC secret values are absent from search and percent wildcard stays literal
+00:00 +2: UT-069 partial removed same-alias account never merges historical UUID with a new account
+00:00 +3: UT-069 partial count uses the same filters as stable pagination and all sort ties use result UUID
+00:01 +4: UT-070 partial visible copy uses only explicit ordered IDs and reports missing and duplicate URLs
+00:01 +5: UT-070 partial asset plan obeys B A C order then explicit target order and does not add processed versions
+00:01 +6: UT-070 partial asset selection matches exact current digest and bytes and preserves missing asset skips
+00:01 +7: UT-070 SEC changed confirmation or a newly registered secret invalidates an already reviewed copy plan
+00:01 +8: UT-069/070 SEC later registered credential masks frozen name and alias before SQL keyword count and invalidates old plan
+00:01 +9: UT-070 SEC unconfirmed or intent-fault local removal keeps ordinary rows secrets and all histories
+00:01 +10: UT-070 SEC removal is local only and unlinks publication while keeping pixels assets attempts and events
+00:02 +11: UT-070 SEC secret read failure occurs before ordinary deletion or journal creation
+00:02 +12: UT-070 SEC recordsRemoved fault keeps durable cleanup evidence and reopen completes idempotently
+00:02 +13: UT-070 SEC secretDeleted fault keeps durable cleanup evidence and reopen completes idempotently
+00:02 +14: UT-070 SEC delete failure preserves secret and pending journal then reopen retries without touching other credentials
+00:02 +15: UT-070 SEC changed management hash protects the altered value and journal on every restart
+00:02 +16: UT-070 SEC shared secret reference blocks management deletion and retains the other ordinary result
+00:02 +17: UT-070 SEC tampered cleanup payload preserves its secret and journal without affecting account credentials
+00:03 +18: UT-070 SEC a tampered removal reference and matching hash never grant ownership of account credentials
+00:03 +19: UT-070 SEC pending local removal blocks restore until cleanup; clean snapshot recovery preserves ordinary deletion and unrelated secret association
+00:03 +20: All tests passed!

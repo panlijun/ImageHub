@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/network_flow_test.dart
+Building Windows application...                                    25.0s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: PT-002/UT-063 partial Windows native default path observation and production task feedback without external requests
+00:01 +1: (tearDownAll)
+00:01 +1: All tests passed!

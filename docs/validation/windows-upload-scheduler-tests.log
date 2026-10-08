@@ -1,0 +1,29 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-052/053 construction is idle; dispatch bounded; lowering does not kill active IO
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/057 pause blocks later dispatch; cancelled intent waits for actual adapter settlement
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-059/061/067 retry waits monotonic 2/4/8; UTC jumps and repeated wake do not accelerate
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets [E]
+  Expected: '/%E5%9B%BE%E7%89%87/a%20b(1).png'
+    Actual: '/%E5%9B%BE%E7%89%87/a%20b%281%29.png'
+     Which: is different.
+            Expected: ... 9%87/a%20b(1).png
+              Actual: ... 9%87/a%20b%281%29.pn ...
+                                    ^
+             Differ at offset 25
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\link_format_test.dart 31:7                main.<fn>
+  
+00:00 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-102 graceful close waits for real IO, preserves unknown rather than cancelled
+00:00 +10 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets

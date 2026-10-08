@@ -1,0 +1,7 @@
+Formatted lib\features\gallery\data\library_uploads.dart
+Formatted lib\features\upload\application\upload_coordinator.dart
+Formatted lib\features\upload\application\upload_queue_store.dart
+Formatted lib\features\upload\data\library_upload_queue_store.dart
+Formatted test\core\network_session_test.dart
+Formatted test\core\upload_coordinator_test.dart
+Formatted 193 files (6 changed) in 1.78 seconds.

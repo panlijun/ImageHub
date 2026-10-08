@@ -1,0 +1,38 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial missing permanent bytes reject full with affected identities and allow only explicit metadata
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial unavailable secret backend fails closed before export and does not change library
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-082 partial cancellation waits for current pixel/hash IO and releases all real protection
+00:01 +24: All tests passed!

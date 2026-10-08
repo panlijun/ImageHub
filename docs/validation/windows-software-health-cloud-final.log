@@ -1,0 +1,132 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 valid confirmation commits available and persists only health without authorization event
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 valid confirmation commits available and persists only health without authorization event
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-011 cloud skip and stop preserve committed item without checking later source
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 typed authorization observes authorizationInvalid
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 typed authorization observes authorizationInvalid
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 cloud acquisition failure leaves existing name favorite tags and bytes intact
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 cloud acquisition failure leaves existing name favorite tags and bytes intact
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 typed rateLimited observes temporarilyUnavailable
+00:01 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-010 only exact provider cloud codes classify pending; message text never guesses
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 typed timeout observes temporarilyUnavailable
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 typed targetUnavailable observes temporarilyUnavailable
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadUnknown  leaves observation unchanged
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadFailure authorization leaves observation unchanged
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadFailure fileUnavailable leaves observation unchanged
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadFailure capabilityUnknown leaves observation unchanged
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadFailure protocol leaves observation unchanged
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadFailure formatUnsupported leaves observation unchanged
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 non-health evidence ProviderUploadCancelled  leaves observation unchanged
+00:02 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 invalid success cannot fabricate available
+00:02 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 old credential generation cannot rewrite replacement status
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 removed target and same-name new target do not inherit late confirmation
+00:02 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 pending credential operation prevents observing current target
+00:02 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 newer running attempt blocks older late health evidence
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 newer completed attempt blocks older late health evidence
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 equal UTC uses greatest UUID as latest started even across completion order
+00:03 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 stale execution epoch rejects ordinary and health writes
+00:03 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 session health displays current observation but reopen without session becomes unconfigured
+00:03 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 valid ordinary success survives management storage failure and result journal recovery observes health
+00:03 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 health update is atomic with failure outcome and emits no rolled-back event
+00:03 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 persisted watermark rejects older late evidence after newer completed history is cleared
+00:04 +29 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 persisted watermark rejects older late evidence after newer completed history is cleared [E]
+  Expected: <1>
+    Actual: <0>
+  
+  package:matcher                                       expect
+  package:flutter_test/src/widget_tester.dart 473:18    expect
+  test\core\account_health_observation_test.dart 421:5  main.<fn>
+  
+00:04 +29 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 a new credential generation supersedes the old ordinary watermark
+00:04 +30 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 json observation record refuses writes and open without resetting bytes
+00:04 +31 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 future observation record refuses writes and open without resetting bytes
+00:04 +32 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:04 +33 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +34 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +35 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +36 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +37 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +38 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:05 +39 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:06 +40 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-041 account result event refreshes health while preserving open edit draft (variant: TargetPlatform.windows)
+00:06 +41 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 extra started record refuses writes and open without resetting bytes
+00:06 +42 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:06 +43 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:06 +44 -1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:07 +44 -2: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:07 +44 -2: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/073 portable backup excludes observation namespace and merge preserves local watermark [E]
+  备份清单无效或关联不完整。
+  package:imagehost/features/backup/domain/backup_manifest.dart 715:5   _invalid
+  package:imagehost/features/backup/domain/backup_manifest.dart 527:11  BackupManifest._validate.<fn>
+  package:imagehost/features/backup/domain/backup_manifest.dart 720:20  _safe
+  package:imagehost/features/backup/domain/backup_manifest.dart 392:23  BackupManifest._validate
+  package:imagehost/features/backup/domain/backup_manifest.dart 274:5   new BackupManifest
+  package:imagehost/features/gallery/data/library_backups.dart 209:28   LibraryBackups._captureBackupSnapshot.<fn>.<fn>
+  
+00:07 +44 -3: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:07 +44 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement commit clears local observation watermark [E]
+  备份清单无效或关联不完整。
+  package:imagehost/features/backup/domain/backup_manifest.dart 715:5   _invalid
+  package:imagehost/features/backup/domain/backup_manifest.dart 527:11  BackupManifest._validate.<fn>
+  package:imagehost/features/backup/domain/backup_manifest.dart 720:20  _safe
+  package:imagehost/features/backup/domain/backup_manifest.dart 392:23  BackupManifest._validate
+  package:imagehost/features/backup/domain/backup_manifest.dart 274:5   new BackupManifest
+  package:imagehost/features/gallery/data/library_backups.dart 209:28   LibraryBackups._captureBackupSnapshot.<fn>.<fn>
+  
+00:07 +45 -3: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement rollback restores local observation watermark
+00:07 +45 -4: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:07 +45 -4: C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement rollback restores local observation watermark [E]
+  备份清单无效或关联不完整。
+  package:imagehost/features/backup/domain/backup_manifest.dart 715:5   _invalid
+  package:imagehost/features/backup/domain/backup_manifest.dart 527:11  BackupManifest._validate.<fn>
+  package:imagehost/features/backup/domain/backup_manifest.dart 720:20  _safe
+  package:imagehost/features/backup/domain/backup_manifest.dart 392:23  BackupManifest._validate
+  package:imagehost/features/backup/domain/backup_manifest.dart 274:5   new BackupManifest
+  package:imagehost/features/gallery/data/library_backups.dart 209:28   LibraryBackups._captureBackupSnapshot.<fn>.<fn>
+  
+00:08 +46 -4: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+真实账号 IO 与 widget 状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart:55:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart:305:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-095 account secure write failure keeps explicit input and never displays healthy success
+  (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +46 -5: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+  
+00:13 +46 -5: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041 persisted watermark rejects older late evidence after newer completed history is cleared
+  C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/073 portable backup excludes observation namespace and merge preserves local watermark
+  C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement commit clears local observation watermark
+  C:/Users/PAN/workspace/ImageHub/app/test/core/account_health_observation_test.dart: UT-041/080 replacement rollback restores local observation watermark

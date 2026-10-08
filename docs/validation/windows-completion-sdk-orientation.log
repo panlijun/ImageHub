@@ -1,0 +1,208 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart
+00:00 +0: UT-028/IT-002 actual SDK PNG eXIf orientation 1 displays expected complete pixel matrix
+00:00 +1: UT-028/IT-002 actual SDK PNG eXIf orientation 2 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: be in range from 50 (inclusive) to 50 (inclusive)
+  Actual: <20>
+orientation 2 pixel (0,0) channel 0
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:87:11)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 87
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 2 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -1: UT-028/IT-002 actual SDK PNG eXIf orientation 2 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 2 displays expected complete pixel matrix
+  
+00:00 +1 -1: UT-028/IT-002 actual SDK PNG eXIf orientation 3 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: be in range from 170 (inclusive) to 170 (inclusive)
+  Actual: <20>
+orientation 3 pixel (0,0) channel 0
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:87:11)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 87
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 3 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -2: UT-028/IT-002 actual SDK PNG eXIf orientation 3 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 3 displays expected complete pixel matrix
+  
+00:00 +1 -2: UT-028/IT-002 actual SDK PNG eXIf orientation 4 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: be in range from 140 (inclusive) to 140 (inclusive)
+  Actual: <20>
+orientation 4 pixel (0,0) channel 0
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:87:11)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 87
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 4 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -3: UT-028/IT-002 actual SDK PNG eXIf orientation 4 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 4 displays expected complete pixel matrix
+  
+00:00 +1 -3: UT-028/IT-002 actual SDK PNG eXIf orientation 5 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: [3, 2]
+  Actual: [2, 3]
+   Which: at location [0] is <2> instead of <3>
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:72:5)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 72
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 5 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -4: UT-028/IT-002 actual SDK PNG eXIf orientation 5 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 5 displays expected complete pixel matrix
+  
+00:00 +1 -4: UT-028/IT-002 actual SDK PNG eXIf orientation 6 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: [3, 2]
+  Actual: [2, 3]
+   Which: at location [0] is <2> instead of <3>
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:72:5)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 72
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 6 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -5: UT-028/IT-002 actual SDK PNG eXIf orientation 6 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 6 displays expected complete pixel matrix
+  
+00:00 +1 -5: UT-028/IT-002 actual SDK PNG eXIf orientation 7 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: [3, 2]
+  Actual: [2, 3]
+   Which: at location [0] is <2> instead of <3>
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:72:5)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 72
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 7 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -6: UT-028/IT-002 actual SDK PNG eXIf orientation 7 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 7 displays expected complete pixel matrix
+  
+00:00 +1 -6: UT-028/IT-002 actual SDK PNG eXIf orientation 8 displays expected complete pixel matrix
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: [3, 2]
+  Actual: [2, 3]
+   Which: at location [0] is <2> instead of <3>
+
+When the exception was thrown, this was the stack:
+#4      _expectSdkOrientation (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:72:5)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart:20:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart line 72
+The test description was:
+  UT-028/IT-002 actual SDK PNG eXIf orientation 8 displays expected complete pixel matrix
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:00 +1 -7: UT-028/IT-002 actual SDK PNG eXIf orientation 8 displays expected complete pixel matrix [E]
+  Test failed. See exception logs above.
+  The test description was: UT-028/IT-002 actual SDK PNG eXIf orientation 8 displays expected complete pixel matrix
+  
+00:00 +1 -7: UT-028/IT-002 actual SDK JPEG orientation 6 agrees with visual crop coordinates
+00:00 +2 -7: UT-028/IT-002 actual SDK WebP orientation 6 agrees with visual crop coordinates
+00:00 +3 -7: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: UT-028/IT-002 actual SDK PNG eXIf orientation 2 displays expected complete pixel matrix
+  C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: UT-028/IT-002 actual SDK PNG eXIf orientation 3 displays expected complete pixel matrix
+  C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: UT-028/IT-002 actual SDK PNG eXIf orientation 4 displays expected complete pixel matrix
+  C:/Users/PAN/workspace/ImageHub/app/test/core/original_preview_orientation_test.dart: UT-028/IT-002 actual SDK PNG eXIf orientation 5 displays expected complete pixel matrix
+  ... and 3 more

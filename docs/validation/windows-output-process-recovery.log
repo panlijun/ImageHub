@@ -1,0 +1,7 @@
+PASS abrupt output intent: 0 usable, permanent input verified, stable identity, no partial
+PASS abrupt output prepared: 1 usable, permanent input verified, stable identity, no partial
+PASS abrupt output published: 1 usable, permanent input verified, stable identity, no partial
+PASS abrupt output committed: 1 usable, permanent input verified, stable identity, no partial
+PASS abrupt output beforeDelete: 0 usable, permanent input verified, stable identity, no partial
+PASS abrupt permanent save before DB commit: independent bytes and source relationship recovered
+Running build hooks...Running build hooks...

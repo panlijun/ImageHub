@@ -1,0 +1,48 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/windows_memory_pressure_signal_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/windows_memory_pressure_signal_test.dart: NFR-003 UT-101 Windows create zero never adopts or closes an absent handle
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/windows_memory_pressure_signal_test.dart: NFR-003 UT-101 Win32 query BOOL result and output BOOL have independent meaning
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/windows_memory_pressure_signal_test.dart: NFR-003 UT-101 CloseHandle zero retains ownership for explicit retry and success is idempotent
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/windows_memory_pressure_signal_test.dart: NFR-003 Windows host kernel32 nonblocking read and CloseHandle sub-contract without inducing pressure
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 Windows immediate read, native edges and repeated states preserve binding events
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 initial true emits once after subscription; close isolates late timer and binding callbacks
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 factory failure has fixed feedback and cannot invent native pressure
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 failed immediate query closes its handle and reports no pressure
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 timer creation failure releases an already-created native handle
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 close failure still completes stream and detaches timer/binding; explicit retry retains handle
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 timer factory callback failure cancels returned timer and retains failed close for retry
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/system_memory_pressure_monitor_test.dart: NFR-003 UT-101 periodic query failure stops late polling and closes native handle
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session subscribes before start and actual replacement cannot reset pressure or persisted settings
+00:00 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 session closing ignores delayed start and late monitor events before permit drain
+00:00 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 actual Flutter binding pressure requires active observation and detaches on close
+00:00 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 binding pressure refreshes settings budget without replacing focused numeric draft or saving it
+00:01 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/memory_pressure_session_test.dart: NFR-003 UT-101 observer cleanup failure preserves actual lease drain and records only a fixed diagnostic
+00:02 +46: All tests passed!

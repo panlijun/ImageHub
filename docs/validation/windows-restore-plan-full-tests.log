@@ -1,0 +1,433 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 320.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:02 +1: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: AT-003 partial account 1280.0 empty loading failure and actual form save (variant: TargetPlatform.windows)
+00:02 +2: C:/Users/PAN/workspace/ImageHub/app/test/accounts_screen_test.dart: UT-095 account secure write failure keeps explicit input and never displays healthy success (variant: TargetPlatform.windows)
+00:03 +3: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart
+00:04 +3: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial entering backup again reads current asset count
+00:05 +4: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial backup loading and library failure never enable export or expose exceptions
+00:05 +5: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 320.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:05 +6: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 390.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:06 +7: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 1280.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:06 +8: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial backup directory picker cancellation creates no package and retains library (variant: TargetPlatform.windows)
+00:06 +9: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073/082 partial backup real SQLite metadata export omits image bytes and source paths (variant: TargetPlatform.windows)
+00:08 +10: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073/082 partial corrupt full backup lists UUID and never silently switches to metadata (variant: TargetPlatform.windows)
+00:10 +11: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-082 partial backup cancellation waits real work and publishes no package (variant: TargetPlatform.windows)
+00:10 +12: loading C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart
+00:11 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:11 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-040 same names anonymous and services retain distinct target identity and credentials on reopen
+00:11 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-041 blank credentials and unsupported anonymous mode reject before persistent target creation
+00:11 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-042 new enabled targets do not mutate a previously captured explicit selection
+00:11 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 rename preserves old snapshot while dispatch reads replacement credential and disabled state
+00:11 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-095 removal tombstone blocks dispatch immediately and retries secret cleanup without identity reuse
+00:11 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-095 inaccessible secure backend leaves local library available and permits explicit separate session target
+00:12 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-095 replacing protected credential with explicit session cannot resurrect old key after restart
+00:12 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-095 native partial write is recovered using safe journal and confirmed secure read
+00:12 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-041 invalid secure value fails dispatch locally while unrelated target remains available
+00:12 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at intent preserves stable target and safe ownership
+00:12 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at secretWritten preserves stable target and safe ownership
+00:12 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at associated preserves stable target and safe ownership
+00:12 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at secretDeleted preserves stable target and safe ownership
+00:12 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-097 ordinary SQLite target and operation records never contain raw registered or session secrets
+00:12 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-093 own schema 3 to 5 preserves library state without importing any prior application format
+00:12 +28: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart
+00:13 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:13 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073 partial explicit metadata export cannot restore image bytes
+00:14 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial capacity failure or precommit cancellation publishes nothing
+00:14 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial exclusive publication collision retains existing file and retries new identity
+00:14 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial publication is commit point late cancellation retains completed backup
+00:14 +33: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart
+00:14 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:15 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:15 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: every permanent version has exactly one full image
+00:15 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: all ordinary display outlets mask registered K/D
+00:15 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: unknown and secret fields rejected at each boundary
+00:15 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: only ended attempts of three terminal states
+00:15 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: same URL retains independent confirmation identities
+00:15 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: unsupported envelope fields and damaged JSON fail safely
+00:15 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: injected manifest/count/image budgets reject overflow
+00:15 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: UUID, digest, dimensions, finite integers are strict
+00:15 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: exact package image names reject path attacks
+00:15 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: asset relations, duplicate identities and version conflicts
+00:15 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: TextPolicy canonical names, full folding and 50 tag limit
+00:15 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: redaction never truncates invalid names or merges names
+00:15 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: structural secret matches refuse encoding without rewriting identity
+00:15 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: valid large whitelist is not truncated at redactor node limit
+00:15 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: ordinary URLs cannot carry management/registered secrets
+00:15 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-081 partial: processing and accounts contain no device resources/runtime
+00:15 +51: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart
+00:15 +51: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge keeps current name/category/timestamps/source/recycle; tags union and favorite OR
+00:15 +52: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge empty current name/category accepts incoming without inventing time
+00:15 +53: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same content different UUID maps both version and asset to current
+00:15 +54: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same UUID same content takes priority over smallest other asset
+00:15 +55: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple current candidates use UUID order independent of input order
+00:15 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple incoming same-content assets aggregate in UUID order
+00:15 +57: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge new recycled asset preserves all backup metadata
+00:15 +58: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:15 +59: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge 50 union accepted; 51 blocks without truncating current labels
+00:15 +60: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge later aggregate overflow restores original current tags and stays blocked
+00:15 +61: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge accepts metadata manifest as pure metadata plan
+00:15 +62: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge accepts full manifest as pure metadata plan
+00:15 +63: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling UUID content collisions preserve current and allocate stable IDs; replay is idempotent
+00:15 +64: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling asset identity collision remains distinct even if another current asset shares content
+00:15 +65: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling derived UUID avoids all current and incoming identifiers via stable salt
+00:15 +66: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory identity conflicts preserve names and references across replay
+00:15 +67: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory name identity takes priority over conflicting source ID
+00:15 +68: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling all unused current and incoming directory entries are preserved
+00:16 +69: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling orphan permanent versions retained and incoming content reuses them
+00:16 +70: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description JPEG/10/20/1/1
+00:16 +71: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/11/20/1/1
+00:16 +72: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/21/1/1
+00:16 +73: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/20/2/1
+00:16 +74: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/20/1/8
+00:16 +75: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA different size is a distinct content version
+00:16 +76: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling all result collections and nested collections are immutable
+00:16 +77: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_gate_test.dart
+00:16 +77: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_gate_test.dart: UT-079 partial: real SQLite pauses pending intent, retains lease until actual attempt settles, and survives reopen
+00:16 +78: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart
+00:17 +78: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: same URL with independent confirmations is retained
+00:17 +79: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: same result and confirmation replay is idempotent
+00:17 +80: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: a duplicate confirmation maps to preserved result
+00:17 +81: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: conflicting content cannot overwrite result identity
+00:17 +82: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: confirmation conflict checks content, target and URL
+00:17 +83: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: conflicting result and attempt cannot fuse two histories
+00:17 +84: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_result_merge_test.dart: UT-078 partial: immutable plan and invalid duplicate input boundaries
+00:17 +85: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart
+00:17 +85: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:18 +86: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:18 +87: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial missing permanent bytes reject full with affected identities and allow only explicit metadata
+00:18 +88: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:18 +89: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial unavailable secret backend fails closed before export and does not change library
+00:18 +90: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-082 partial cancellation waits for current pixel/hash IO and releases all real protection
+00:18 +91: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart
+00:19 +91: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: store ZIP and ZIP64 actual pixels and metadata validate
+00:19 +92: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: metadata preflight owns no permanent image files
+00:19 +93: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: archive 4.3 ZIP64 sentinels and full central extra validate
+00:19 +94: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: duplicates, traversal, directories and wrong entry set reject
+00:19 +95: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: CRC, SHA256, actual dimensions and manifest version reject
+00:20 +96: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: compression, encryption, links and local mismatch reject
+00:20 +97: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: truncation, EOCD trailing bytes, central junk and orphan prefix reject
+00:20 +98: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: early count, declared expansion and aggregate budgets reject
+00:20 +99: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-082 partial: unknown/insufficient injected capacity and cancellation leave current untouched
+00:20 +100: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: ZIP64 inconsistent pointer and unsafe integer reject
+00:20 +101: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart
+00:20 +101: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-074 partial: ZIP preserves exact manifest, canonical stored PNGs
+00:20 +102: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-074 partial: metadata ZIP contains only manifest
+00:20 +103: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: existing destination is never overwritten or deleted
+00:21 +104: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: cancellation joins worker and removes owned stage
+00:21 +105: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: changed source fails digest and cleans only stage
+00:21 +106: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: released snapshot and precancellation create nothing
+00:21 +107: loading C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart
+00:21 +107: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: GalleryQuery immutable values, normalization and unfiltered state
+00:21 +108: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-016 partial favorite changes preserve metadata and bytes across reopen
+00:22 +109: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-016 partial serial favorite updates reject missing and recycled identities
+00:22 +110: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:22 +111: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:24 +112: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: Gallery page bounds remain enforced with filtered queries
+00:24 +113: loading C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart
+00:24 +113: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: Immutable asset tag snapshot cannot drift after creation
+00:24 +114: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-005 / LIB-008 retained orphan bytes reuse a new asset identity
+00:25 +115: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-006 / LIB-008 orphan missing copy repaired without duplicate version
+00:25 +116: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-006 / LIB-008 orphan damaged copy repaired without duplicate version
+00:25 +117: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-005 shared content chooses active asset before recycled duplicate
+00:25 +118: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-028 / LIB-008 repair cannot replace a leased source path
+00:25 +119: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-010 reused-commit cleanup journal is validated and recovered
+00:25 +120: loading C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart
+00:26 +120: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:26 +121: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 failed schema upgrade invalid category blank leaves original schema/data intact
+00:26 +122: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 failed schema upgrade invalid category 65 scalars leaves original schema/data intact
+00:26 +123: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 future schema rejects without resetting or mutating database/file bytes
+00:26 +124: loading C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart
+00:27 +124: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 category NFC/full folding reuse preserves first display and UUID
+00:27 +125: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:27 +126: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-014 first global tag display reuse and normalized remove are persisted
+00:27 +127: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-015 50 succeeds, 51 in one batch member rolls back catalog and all assets
+00:28 +128: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-015 Unicode scalar boundaries and blank names reject without partial writes
+00:28 +129: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 absent/recycled asset and missing category reject whole mutation
+00:28 +130: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-017 partial AND category/tags/source/format/availability/favorite query shares count, pages, UUIDs
+00:28 +131: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-017 partial NFC/fullfold searches name, category, tag, source, and actual format
+00:28 +132: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-018 name/size sort direction uses UUID tie-break across pages and restart
+00:29 +133: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-012 partial / IT-001 real missing/damaged bytes refresh and persist after restart
+00:29 +134: loading C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart
+00:29 +134: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-019 exact 30-day prompt retains bytes, identity and organization
+00:29 +135: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 distinct confirmations and all-ID validation precede mutation
+00:30 +136: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 shared bytes block copy purge; record-only purge retains bytes
+00:30 +137: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 record-only purge retains independent orphan bytes and version
+00:30 +138: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 copy-only purge retains asset and organization; exact reimport repairs
+00:30 +139: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 purge targets only managed copies and preserves external source
+00:30 +140: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 batch lease validates every real copy before acquiring any lease
+00:30 +141: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent processing protection rejects permanent clear
+00:30 +142: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent output protection rejects permanent clear
+00:30 +143: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent task protection rejects permanent clear
+00:30 +144: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent export protection rejects permanent clear
+00:30 +145: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent backup protection rejects permanent clear
+00:31 +146: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: persistent restore protection rejects permanent clear
+00:31 +147: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-038 partial: protection registration validates all versions atomically
+00:31 +148: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 cancelled caller retains lease until actual IO ends; release idempotent
+00:31 +149: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 close waits for lease release and rejects new file leases
+00:31 +150: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-102 close drains lease acquisition before waiting for its IO release
+00:31 +151: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after intent commit
+00:31 +152: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after file deletion
+00:31 +153: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial malformed purge path retains intent, records and exact bytes
+00:31 +154: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial stale session lease cleared; durable reference blocks replay
+00:31 +155: loading C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart
+00:32 +155: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual PNG bytes with wrong extension
+00:32 +156: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual JPEG bytes with wrong extension
+00:32 +157: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual GIF bytes with wrong extension
+00:32 +158: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual BMP bytes with wrong extension
+00:32 +159: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual WebP bytes with wrong extension
+00:32 +160: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 text masquerading as jpg and known unsupported bytes rejected
+00:32 +161: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-004 / UT-090 / IT-001 independent original survives source removal and reopen
+00:33 +162: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-005 / UT-006 same bytes reuse identity and retain organization
+00:33 +163: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-006 same size but different bytes get distinct content identities
+00:33 +164: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-007 recycled duplicate requests restore without revival
+00:33 +165: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-008 batch partial success equals per-item counts
+00:33 +166: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-011 stop skips unopened sources and preserves saved items
+00:33 +167: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at copy preserves valid recovery state
+00:33 +168: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at verified preserves valid recovery state
+00:33 +169: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at ready preserves valid recovery state
+00:33 +170: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at published preserves valid recovery state
+00:34 +171: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at beforeDbCommit preserves valid recovery state
+00:34 +172: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at afterDbCommit preserves valid recovery state
+00:34 +173: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-011 cancellation at ready cannot later recover as saved
+00:34 +174: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-011 cancellation at published cannot later recover as saved
+00:34 +175: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 source stream failure leaves previous committed bytes intact
+00:34 +176: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-021 matching reimport repairs missing copy without changing logical identities
+00:34 +177: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 future version refused with bytes preserved
+00:34 +178: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 damaged database is not overwritten or treated as empty
+00:34 +179: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 management lock blocks another coordinator and releases on close
+00:34 +180: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: Close is idempotent for window exit and provider disposal
+00:34 +181: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-009 actual metadata uses UTC and stable import-time order
+00:34 +182: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal stage_path preserves unrelated files and journal
+00:34 +183: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal final_path preserves unrelated files and journal
+00:34 +184: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal id preserves unrelated files and journal
+00:34 +185: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 path traversal and absolute paths cannot escape managed root
+00:34 +186: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 candidate resource budget rejects before committing
+00:34 +187: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: LIB-001 thumbnail regenerates after cache removal and does not replace original
+00:35 +188: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart
+00:35 +188: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:35 +189: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 dangerous/control/management URLs cannot enter ordinary templates
+00:35 +190: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-070 confirms caller scope/order, exact formatting dedupe and partial feedback
+00:35 +191: loading C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart
+00:35 +191: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 5 preserves IDs organization and bytes
+00:36 +192: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 5 invalid policy rolls back before upgrade
+00:36 +193: loading C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart
+00:36 +193: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 upload capability format snapshot cannot change after construction
+00:36 +194: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 unknown exact capabilities fail closed, not unlimited MB guesses
+00:36 +195: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 actual size, format, missing file and credential reject before request
+00:36 +196: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/045 Catbox anonymous and same-alias accounts keep body secrets isolated
+00:36 +197: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/048 ImgBB key is multipart body and viewer/management stay separate
+00:36 +198: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-060 each explicit new attempt creates fresh multipart and file stream
+00:36 +199: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041 multipart byte length includes exact UTF8 credential encoding
+00:36 +200: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 stream changed after length check is unknown fileUnavailable
+00:36 +201: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 input source exception becomes safe unknown fileUnavailable
+00:36 +202: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/096 Catbox malformed, HTML, userinfo and unsafe URLs remain unknown
+00:36 +203: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048 ImgBB malformed and inconsistent success evidence is not success
+00:36 +204: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048 ImgBB accepts data.url fallback without image; HTTP is explicitly marked
+00:36 +205: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/059 explicit refusals and Retry-After retain safe classification
+00:36 +206: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-059 Retry-After supports absolute HTTP date and flags malformed evidence
+00:36 +207: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/061 408, 5xx and redirects have uncertain side effects and no retry
+00:36 +208: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/097 transport timeout/error never exposes Dio payload or object
+00:36 +209: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 connectionTimeout after request consumption is unknown despite exception type
+00:36 +210: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055 pre-cancel does not read a missing file or dispatch
+00:36 +211: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-056 cancellation at final receive activity retains complete success evidence
+00:36 +212: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-056 syntactically valid partial URL cannot turn cancellation into success
+00:36 +213: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055 cancellation after length check prevents stream open and dispatch
+00:36 +214: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 untrusted connectionTimeout before consumption lacks notSent evidence
+00:36 +215: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancelled request waits for actual input source cancellation
+00:36 +216: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancellation waits for underlying fetch completion before IO release
+00:36 +217: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/096 response over 64KiB is stopped at source without success
+00:37 +218: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/102 64KiB budget waits for delayed underlying response shutdown
+00:37 +219: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 response arriving after cancelled fetch still awaits source shutdown
+00:37 +220: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancellation while response stalls closes source before return
+00:37 +221: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-097 transport factory errors never escape as raw objects
+00:37 +222: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-097 close errors are fixed failures after actual transport settles
+00:37 +223: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 progress reports actual transport bytes including multipart framing
+00:37 +224: loading C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart
+00:37 +224: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-065 six batch priorities and fixed item counts
+00:37 +225: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-045/065 all 729 ordered triples aggregate independently of order
+00:37 +226: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-055/056 terminal states cannot be changed by cancellation or late events
+00:37 +227: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-054/057 no running pause and cancellation always stops later dispatch
+00:37 +228: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-059/060 initial plus three retries; uncertainty and permanent errors refuse
+00:37 +229: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-061 every unmet condition blocks, server retry delay never shortened
+00:37 +230: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-062 reopen never pretends an old running item is live
+00:37 +231: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-067 actual execution excludes waiting and wall clock jumps
+00:37 +232: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-068 inactivity uses real activity, boundary 119/120 seconds
+00:37 +233: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-068 total actual 30 minutes spans attempts; waits do not trigger watchdog
+00:37 +234: loading C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart
+00:37 +234: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 primitive type conversion cannot reveal registered values
+00:37 +235: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 nested sensitive fields ignore spelling and casing
+00:37 +236: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 registered values, URL encodings and retired history
+00:37 +237: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 short secrets and overlapping values are masked
+00:37 +238: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 URL query values and user info are masked
+00:37 +239: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 assignments, headers and truncated quoted exceptions
+00:37 +240: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 unknown objects and collection failures never stringify
+00:37 +241: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_redactor_test.dart: UT-097 / SEC-004 cycles and depth/node budgets are safe
+00:37 +242: loading C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart
+00:38 +242: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 scoped UUID read/write/delete and platform policy
+00:38 +243: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 invalid references never address the backend
+00:38 +244: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 write failure has no raw error or fallback
+00:38 +245: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 read failure has no raw error or fallback
+00:38 +246: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 delete failure has no raw error or fallback
+00:38 +247: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 successful native return requires exact read-back
+00:38 +248: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 / SEC-002 pending native IO cannot report success or race verification
+00:38 +249: C:/Users/PAN/workspace/ImageHub/app/test/core/secret_store_test.dart: UT-095 test-only memory fixture can be injected and explicitly deleted
+00:38 +250: loading C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart
+00:38 +250: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart: Windows capacity contract rejects missing invalid and unsafe backend errors
+00:38 +251: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart: Windows capacity and exclusive publication adapt normalized paths and collision result
+00:38 +252: loading C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart
+00:39 +252: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-014 标签连续输入与规范化 trim/NFC 去重且保留首次显示名与输入顺序
+00:39 +253: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-014 标签连续输入与规范化 默认完整折叠包含 Σ/σ/ς 和 ß/SS，并排除 Turkic T
+00:39 +254: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-014 标签连续输入与规范化 只在提交时解析逗号/分号/换行且不改变编辑草稿
+00:39 +255: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-014 标签连续输入与规范化 固定官方全部 C/F 数据与纯 Dart 映射一致，折叠后再 NFC
+00:39 +256: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-015 标签数量与名称边界 1/64 Unicode scalar 合法，空白和65拒绝且原因具体
+00:39 +257: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-015 标签数量与名称边界 组合 emoji 按 scalar 计数而非 UTF16 或 grapheme
+00:39 +258: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-015 标签数量与名称边界 去重后50合法，51拒绝，不修改原集合或截断输入
+00:39 +259: C:/Users/PAN/workspace/ImageHub/app/test/core/text_policy_test.dart: UT-015 标签数量与名称边界 分类调用共同名字校验与完整折叠身份键
+00:39 +260: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart
+00:39 +260: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-052/053 construction is idle; dispatch bounded; lowering does not kill active IO
+00:39 +261: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/057 pause blocks later dispatch; cancelled intent waits for actual adapter settlement
+00:39 +262: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-059/061/067 retry waits monotonic 2/4/8; UTC jumps and repeated wake do not accelerate
+00:39 +263: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-060/062 unknown never wakes into another request
+00:39 +264: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-047/063 unverified service limit blocks before any attempt or file lease
+00:39 +265: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-043/063 account mutation stops old authorization; last gate prevents request
+00:39 +266: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:39 +267: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-102 graceful close waits for real IO, preserves unknown rather than cancelled
+00:39 +268: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: restore hold waits for actual IO and result commit before release
+00:40 +269: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: dispatch being prepared cannot send after restore barrier
+00:40 +270: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: pause persistence failure stays blocked and can be retried
+00:40 +271: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-079 partial: unconfirmed cleanup cannot produce a restore hold
+00:40 +272: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_pipeline_test.dart
+00:40 +272: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_pipeline_test.dart: IT-004 controlled subflow real file multipart queue two confirmations and secure management survives reopen
+00:41 +273: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_pipeline_test.dart: IT-004 controlled subflow real file multipart queue isolated authorization rejection survives reopen
+00:41 +274: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart
+00:41 +274: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:42 +275: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 UT-049 intent idempotence success reuse and explicit force again retain independent history
+00:42 +276: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-043 UT-057 current account generation rejects stale credential before request
+00:42 +277: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 missing frozen bytes creates input wait without a fabricated attempt
+00:42 +278: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-054 pause blocks only unstarted items and retains wait conditions
+00:42 +279: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-055 success committed before cancellation remains succeeded
+00:42 +280: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-056 UT-057 cancelled running input stays protected until actual IO ends and late success is independent
+00:43 +281: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-049 UT-060 unknown protects input and duplicate intents never quietly resend
+00:43 +282: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-051 UT-062 reopen unsent running becomes interrupted
+00:43 +283: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-051 UT-062 reopen request marker becomes unknown
+00:43 +284: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-058 UT-060 uncertain evidence cannot be converted into retry by supplied delay
+00:43 +285: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-067 retry duration persists independently from UTC and pause
+00:43 +286: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-067 UT-068 monotonic checkpoints only increase current running duration and survive recovery
+00:43 +287: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-046 UT-066 upload task protects real processed output from expiry cleanup
+00:43 +288: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-046 processing policy uses canonical digest while audit summary redacts credential collisions
+00:44 +289: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-068 durable four attempt limit blocks another execution
+00:44 +290: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-068 durable thirty minute running budget blocks another execution
+00:44 +291: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 protected management write fault preserves ordinary success without plaintext
+00:44 +292: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 protected management readback fault recovers secure reference
+00:44 +293: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 unsafe provider success never creates ordinary history
+00:44 +294: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 mismatched management readback preserves ordinary result and never marks corrupt secret available
+00:44 +295: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 newly known management token masks all existing task and result snapshots durably on reopen
+00:44 +296: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-093 own schema4 upgrades to schema5 preserving stable library and account IDs; future refuses without rewrite
+00:45 +297: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart
+00:45 +297: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-060 every permanent or unknown transport result refuses automatic retry
+00:45 +298: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-059/061 safe rejection honors seconds/date and retry exhaustion
+00:45 +299: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-061 malformed/overflow waits never fall back to shorter automatic delay
+00:45 +300: loading C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart
+00:46 +300: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:47 +301: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:48 +302: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:49 +303: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-014/015/016 partial desktop continuous tag draft and atomic invalid rejection (variant: TargetPlatform.windows)
+00:55 +304: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+01:00 +305: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-019/020/021 partial desktop recycle identity and separate purge confirmations (variant: TargetPlatform.windows)
+01:06 +306: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-017 partial desktop actual PNG dropdown and removed category safety (variant: TargetPlatform.windows)
+01:10 +307: loading C:/Users/PAN/workspace/ImageHub/app/test/gallery_controller_test.dart
+01:11 +307: C:/Users/PAN/workspace/ImageHub/app/test/gallery_controller_test.dart: UT-013 partial controller ignores old pagination after new filter; concurrent pagination guarded
+01:13 +308: loading C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart
+01:13 +308: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+01:15 +309: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+01:15 +310: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+01:15 +311: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+01:22 +312: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+01:25 +313: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+01:32 +314: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+01:50 +315: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+01:53 +316: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart
+01:54 +316: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 成功必须关闭写入并独立核对目标字节
+01:54 +317: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 同名旧文件与目录保留并生成实际新名
+01:54 +318: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 源文件在目标目录且同名仍不覆盖源
+01:54 +319: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 并发名称竞争通过exclusive create保留两份
+01:54 +320: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 批次逐项成功拒权和取消 保留旧文件及源
+01:54 +321: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 已取消批次不创建目标 结果数量保持准确
+01:54 +322: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 输入预先变更拒绝且不创建输出
+01:54 +323: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 源变更清除本次字节 目标变化保守保留并反馈残留
+01:54 +324: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 关闭边界失败关闭真实句柄后清除独占输出
+01:54 +325: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 缺失目录与缺失源逐项失败不创建目录
+01:54 +326: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 清理不递归删除被替换的目录及无关旧内容
+01:54 +327: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 主动替换普通目标文件后失败清理保留替换内容
+01:54 +328: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 清理路径片段非法名称保留默认扩展
+01:54 +329: C:/Users/PAN/workspace/ImageHub/app/test/processing/file_exporter_test.dart: UT-036 拒绝源目标和祖先符号链接
+01:54 +330: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart
+01:55 +330: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-022 real compression/crop/stitch never change input bytes
+01:55 +331: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-022 failures, pre-cancel and worker cancellation leave no result or input mutation
+01:55 +332: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-023 fidelity preserves dimensions/alpha and cannot silently staticize animation
+01:55 +333: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-024 longest side bounds, rounding and no enlargement
+01:55 +334: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-025 quality defaults/bounds match PNG JPEG WebP
+01:55 +335: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-024 real average downsampling includes palette GIF rather than nearest neighbour
+01:55 +336: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-028 verified PNG cICP is retained and unsupported output colours are rejected
+01:55 +337: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-026 real five static input formats and three actual output formats
+01:55 +338: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-026 animation requires selected frame AND explicit conversion, records feature loss
+01:55 +339: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-027 JPEG transparent backgrounds require confirmation and use chosen colour
+01:55 +340: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-028 real JPEG orientation6 crop rotates exactly once and drops EXIF/text
+01:55 +341: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-028 RGB ICC sanitization preserves colour tags and clears identifying bytes
+01:55 +342: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-028 RGB ICC survives actual PNG JPEG WebP output via standard containers
+01:55 +343: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-028 large RGB ICC uses ordered standard JPEG APP2 fragments
+01:56 +344: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-029 crop full/minimal/invalid integer pixel boundaries
+01:56 +345: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-030 horizontal/vertical dimensions and floor centering preserve order
+01:56 +346: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-031 3-image grid leaves empty background cell; swapped order and transparent canvas
+01:56 +347: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-032 resource plan rejects huge decoded pixels before file or canvas allocation
+01:56 +348: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-033 snapshots freeze list/order/quality and separate item failure
+01:56 +349: C:/Users/PAN/workspace/ImageHub/app/test/processing/image_processor_test.dart: UT-022 altered content identity is rejected and existing destination is preserved
+01:56 +350: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart
+01:56 +350: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 / IT-003 real output metadata, digest, relative snapshot and restart identity
+01:57 +351: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 missing/damaged output cannot preview save or acquire reading lease
+01:57 +352: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 permanent save independently survives exact expiry and preserves ordered provenance
+01:57 +353: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 duplicate content save preserves organization and stores provenance once
+01:57 +354: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-035 rejected permanent commit creates no usable asset and durable retry restores source relation
+01:57 +355: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 exact expiry, permanent reference, active lease and retryable delete failure
+01:57 +356: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-038 protection contract persists all six nonterminal task owners until explicit safe release
+01:58 +357: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 source reader DB release failure keeps row but does not deadlock shutdown
+01:58 +358: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-102 output reader DB release failure keeps row but does not deadlock shutdown
+01:58 +359: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after prepared preserves confirmed identity and bytes
+01:58 +360: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after published preserves confirmed identity and bytes
+01:58 +361: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 journal recovery after committed preserves confirmed identity and bytes
+01:58 +362: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 cancellation waits for intent owner and leaves no usable or permanent result
+01:58 +363: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-037 / UT-102 close waits for actual output reader and refuses new readers
+01:59 +364: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: IMG-004 animation crop preview reads the explicitly selected frame
+01:59 +365: C:/Users/PAN/workspace/ImageHub/app/test/processing/output_lifecycle_test.dart: UT-034 owned-output source protection lasts until independent output expiry
+01:59 +366: loading C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart
+01:59 +366: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+02:01 +367: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 1280.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+02:02 +368: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+02:11 +369: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+02:16 +370: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+02:23 +371: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: OUT-005 failed actual write intention never enables permanent-save action (variant: TargetPlatform.windows)
+02:26 +372: loading C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart
+02:27 +372: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+02:28 +373: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+02:28 +374: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+02:28 +375: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+02:34 +376: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload initial load error gives retry and no fake data (variant: TargetPlatform.windows)
+02:34 +377: loading C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart
+02:34 +377: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 loading disables import without creating empty data (variant: TargetPlatform.windows)
+02:35 +378: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: DAT-001 load failure remains failure and provides retry (variant: TargetPlatform.windows)
+02:35 +379: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: AT-001 partial: real empty library at 1280.0 width (variant: TargetPlatform.windows)
+02:36 +380: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: AT-001 partial: real empty library at 390.0 width (variant: TargetPlatform.windows)
+02:36 +381: C:/Users/PAN/workspace/ImageHub/app/test/widget_test.dart: AT-001 partial: real empty library at 760.0 width (variant: TargetPlatform.windows)
+02:36 +382: All tests passed!

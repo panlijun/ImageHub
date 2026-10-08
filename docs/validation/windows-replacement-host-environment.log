@@ -1,0 +1,38 @@
+Persistent Windows User PATH Flutter entries: 1
+[√] Flutter (Channel stable, 3.47.6, on Microsoft Windows [版本 10.0.26200.9457], locale zh-CN) [332ms]
+    • Flutter version 3.47.6 on channel stable at C:\Users\PAN\development\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 5fc346839b (6 days ago), 2026-09-30 15:02:49 -0700
+    • Engine revision 692136cb65
+    • Dart version 3.13.5
+    • DevTools version 2.60.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-record-use, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+
+[√] Windows Version (Windows 11 or higher, 25H2, 2009) [791ms]
+
+[X] Android toolchain - develop for Android devices [136ms]
+    X Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[√] Chrome - develop for the web [122ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[√] Visual Studio - develop Windows apps (Visual Studio 生成工具 2022 17.14.40) [121ms]
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools
+    • Visual Studio 生成工具 2022 version 17.14.37628.2
+    • Windows 10 SDK version 10.0.26100.0
+
+[√] Connected device (3 available) [87ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [版本 10.0.26200.9457]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 154.0.8037.98
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 154.0.4258.53
+
+[√] Network resources [1,312ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.

@@ -1,0 +1,66 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: full/metadata immutable contract round trips
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: actual image format labels remain unchanged with lowercase package suffixes
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-073 partial: every permanent version has exactly one full image
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: all ordinary display outlets mask registered K/D
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: unknown and secret fields rejected at each boundary
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: only ended attempts of three terminal states
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: same URL retains independent confirmation identities
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: unsupported envelope fields and damaged JSON fail safely
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: injected manifest/count/image budgets reject overflow
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: UUID, digest, dimensions, finite integers are strict
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: exact package image names reject path attacks
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: asset relations, duplicate identities and version conflicts
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-075 partial: TextPolicy canonical names, full folding and 50 tag limit
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: redaction never truncates invalid names or merges names
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: structural secret matches refuse encoding without rewriting identity
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: valid large whitelist is not truncated at redactor node limit
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-074 partial: ordinary URLs cannot carry management/registered secrets
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: UT-081 partial: processing and accounts contain no device resources/runtime
+00:00 +18: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial full snapshot protects recycled and independent permanent versions until actual IO ends
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial missing permanent bytes reject full with affected identities and allow only explicit metadata
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:02 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial unavailable secret backend fails closed before export and does not change library
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-082 partial cancellation waits for current pixel/hash IO and releases all real protection
+00:02 +24: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-074 partial: ZIP preserves exact manifest, canonical stored PNGs
+00:02 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-074 partial: metadata ZIP contains only manifest
+00:02 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: existing destination is never overwritten or deleted
+00:02 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: cancellation joins worker and removes owned stage
+00:02 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: changed source fails digest and cleans only stage
+00:02 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_writer_test.dart: UT-082 partial: released snapshot and precancellation create nothing
+00:02 +30: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart
+00:03 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: store ZIP and ZIP64 actual pixels and metadata validate
+00:03 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: metadata preflight owns no permanent image files
+00:03 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-075 partial: archive 4.3 ZIP64 sentinels and full central extra validate
+00:03 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: duplicates, traversal, directories and wrong entry set reject
+00:03 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: CRC, SHA256, actual dimensions and manifest version reject
+00:03 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: compression, encryption, links and local mismatch reject
+00:03 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: truncation, EOCD trailing bytes, central junk and orphan prefix reject
+00:03 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: early count, declared expansion and aggregate budgets reject
+00:03 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-082 partial: unknown/insufficient injected capacity and cancellation leave current untouched
+00:03 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: ZIP64 inconsistent pointer and unsafe integer reject
+00:03 +40: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart
+00:04 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:04 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073 partial explicit metadata export cannot restore image bytes
+00:04 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial capacity failure or precommit cancellation publishes nothing
+00:04 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial exclusive publication collision retains existing file and retries new identity
+00:05 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial publication is commit point late cancellation retains completed backup
+00:05 +45: loading C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart
+00:05 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart: Windows capacity contract rejects missing invalid and unsafe backend errors
+00:05 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_capacity_test.dart: Windows capacity and exclusive publication adapt normalized paths and collision result
+00:05 +47: All tests passed!

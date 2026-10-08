@@ -1,0 +1,11 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:08 +2: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 390.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:14 +3: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-084 OPS-002 failed task batch and real attempt navigate exact diagnostic scope without network (variant: TargetPlatform.windows)
+00:16 +4: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:17 +5: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:17 +6: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:18 +7: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:24 +8: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload initial load error gives retry and no fake data (variant: TargetPlatform.windows)
+00:24 +9: All tests passed!

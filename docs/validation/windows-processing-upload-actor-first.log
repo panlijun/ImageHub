@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart
+00:00 +0: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:00 +1: UT-046 UT-062 IT-004 partial actor and library close wait after cancellation until actual pixel process and finalizers exit
+00:00 +2: UT-046 UT-062 IT-004 partial restore hold waits for actual process keeps leases and requires explicit batch continuation
+00:01 +3: UT-046 UT-062 IT-004 partial old execution epoch actor cannot write to reopened library or claim its later intent
+00:01 +4: All tests passed!

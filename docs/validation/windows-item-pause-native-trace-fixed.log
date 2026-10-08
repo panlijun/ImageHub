@@ -1,0 +1,33 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/item_pause_flow_test.dart
+Building Windows application...                                    48.7s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-004 partial Windows item pause persists across batch resume and reopen while real input IO completes
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+受控派发未出现：network=true, active=0, failure=本次上传未确认，请核查远端结果。, batchPaused=false,
+items=0:succeeded:false:null:1,1:paused:true:null:0,2:unknown:false:null:1
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/integration_test/item_pause_flow_test.dart:224:11)
+<asynchronous suspension>
+#2      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#3      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  IT-004 partial Windows item pause persists across batch resume and reopen while real input IO
+  completes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:24 +0 -1: IT-004 partial Windows item pause persists across batch resume and reopen while real input IO completes [E]
+  Test failed. See exception logs above.
+  The test description was: IT-004 partial Windows item pause persists across batch resume and reopen while real input IO completes
+  
+00:24 +0 -1: (tearDownAll)
+00:24 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/integration_test/item_pause_flow_test.dart: IT-004 partial Windows item pause persists across batch resume and reopen while real input IO completes

@@ -1,0 +1,42 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_gate_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_gate_test.dart: UT-079 partial: real SQLite pauses pending intent, retains lease until actual attempt settles, and survives reopen
+00:00 +1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge keeps current name/category/timestamps/source/recycle; tags union and favorite OR
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge empty current name/category accepts incoming without inventing time
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same content different UUID maps both version and asset to current
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same UUID same content takes priority over smallest other asset
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple current candidates use UUID order independent of input order
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple incoming same-content assets aggregate in UUID order
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge new recycled asset preserves all backup metadata
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge 50 union accepted; 51 blocks without truncating current labels
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge later aggregate overflow restores original current tags and stays blocked
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge accepts metadata manifest as pure metadata plan
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge accepts full manifest as pure metadata plan
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling UUID content collisions preserve current and allocate stable IDs; replay is idempotent
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling asset identity collision remains distinct even if another current asset shares content
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling derived UUID avoids all current and incoming identifiers via stable salt
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory identity conflicts preserve names and references across replay
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory name identity takes priority over conflicting source ID
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling all unused current and incoming directory entries are preserved
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling orphan permanent versions retained and incoming content reuses them
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description JPEG/10/20/1/1
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/11/20/1/1
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/21/1/1
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/20/2/1
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/20/1/8
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA different size is a distinct content version
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling all result collections and nested collections are immutable
+00:01 +27: All tests passed!

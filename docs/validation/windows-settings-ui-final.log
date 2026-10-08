@@ -1,0 +1,21 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 320.0 large type actual save and reopen
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 1280.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:02 +3: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-083 AT-005 partial settings 390.0 large type actual save and reopen
+00:02 +4: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:03 +5: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:06 +6: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:07 +7: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:08 +8: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:09 +9: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:09 +10: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:09 +11: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:10 +12: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:10 +13: C:/Users/PAN/workspace/ImageHub/app/test/settings_screen_test.dart: UT-087 external settings revision and replacement reset reject old draft
+00:11 +14: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:11 +15: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:12 +16: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:15 +17: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:23 +18: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: OUT-005 failed actual write intention never enables permanent-save action (variant: TargetPlatform.windows)
+00:27 +19: All tests passed!

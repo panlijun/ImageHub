@@ -1,0 +1,46 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 upload capability format snapshot cannot change after construction
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 unknown exact capabilities fail closed, not unlimited MB guesses
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 actual size, format, missing file and credential reject before request
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/045 Catbox anonymous and same-alias accounts keep body secrets isolated
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/045 Catbox anonymous and same-alias accounts keep body secrets isolated
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/045 Catbox anonymous and same-alias accounts keep body secrets isolated
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/045 Catbox anonymous and same-alias accounts keep body secrets isolated
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-054/057 no running pause and cancellation always stops later dispatch
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/048 ImgBB key is multipart body and viewer/management stay separate
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/048 ImgBB key is multipart body and viewer/management stay separate
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/048 ImgBB key is multipart body and viewer/management stay separate
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041/048 ImgBB key is multipart body and viewer/management stay separate
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/queue_policy_test.dart: UT-067 actual execution excludes waiting and wall clock jumps
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-060 each explicit new attempt creates fresh multipart and file stream
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-060 each explicit new attempt creates fresh multipart and file stream
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-060 each explicit new attempt creates fresh multipart and file stream
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-041 multipart byte length includes exact UTF8 credential encoding
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-060 every permanent or unknown transport result refuses automatic retry
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-060 every permanent or unknown transport result refuses automatic retry
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-047 input source exception becomes safe unknown fileUnavailable
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_retry_policy_test.dart: UT-059/061 safe rejection honors seconds/date and retry exhaustion
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/096 Catbox malformed, HTML, userinfo and unsafe URLs remain unknown
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/096 Catbox malformed, HTML, userinfo and unsafe URLs remain unknown
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048 ImgBB malformed and inconsistent success evidence is not success
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048 ImgBB accepts data.url fallback without image; HTTP is explicitly marked
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/059 explicit refusals and Retry-After retain safe classification
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-059 Retry-After supports absolute HTTP date and flags malformed evidence
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/061 408, 5xx and redirects have uncertain side effects and no retry
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058/097 transport timeout/error never exposes Dio payload or object
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 connectionTimeout after request consumption is unknown despite exception type
+00:00 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055 pre-cancel does not read a missing file or dispatch
+00:00 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-056 cancellation at final receive activity retains complete success evidence
+00:00 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-056 syntactically valid partial URL cannot turn cancellation into success
+00:00 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055 cancellation after length check prevents stream open and dispatch
+00:00 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 untrusted connectionTimeout before consumption lacks notSent evidence
+00:00 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancelled request waits for actual input source cancellation
+00:00 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancellation waits for underlying fetch completion before IO release
+00:00 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/096 response over 64KiB is stopped at source without success
+00:00 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-048/102 64KiB budget waits for delayed underlying response shutdown
+00:00 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 response arriving after cancelled fetch still awaits source shutdown
+00:00 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-055/102 cancellation while response stalls closes source before return
+00:00 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-097 transport factory errors never escape as raw objects
+00:00 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-097 close errors are fixed failures after actual transport settles
+00:00 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/provider_adapters_test.dart: UT-058 progress reports actual transport bytes including multipart framing
+00:00 +44: All tests passed!

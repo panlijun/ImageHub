@@ -1,0 +1,28 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart
+00:00 +0: UT-046 UT-062 IT-004 partial shared ready output preserves mixed target unknown frozen evidence and its output protection
+00:00 +1: UT-046 UT-062 IT-004 partial shared failure preserves mixed target unknown frozen evidence and its output protection
+00:01 +2: UT-046 UT-062 IT-004 partial exact frozen plan and target reuse persisted processed receipt without another pixel job or attempt
+00:01 +3: UT-046 UT-062 IT-004 partial deleted receipt creates a new frozen pending processing dependency
+00:02 +3 -1: UT-046 UT-062 IT-004 partial deleted receipt creates a new frozen pending processing dependency [E]
+  链接检测证据无法安全读取，历史已保留。
+  package:imagehost/features/gallery/data/library_link_probes.dart 93:7  LibraryLinkProbes._linkAvailability
+  package:imagehost/features/gallery/data/library_links.dart 142:23      LibraryLinks._linkResult
+  package:imagehost/features/gallery/data/library_links.dart 125:3       LibraryLinks._linkResult.<fn>
+  dart:core                                                              new List.unmodifiable
+  package:imagehost/features/gallery/data/library_uploads.dart 149:17    LibraryUploads.listUploadResults.<fn>
+  
+00:02 +3 -1: UT-046 UT-062 IT-004 partial explicit forceAgain creates a new frozen pending processing dependency
+00:02 +4 -1: UT-046 UT-062 IT-004 partial unknown matching frozen plan blocks new processing and upload while forceAgain freezes a fresh intent
+00:02 +5 -1: UT-046 UT-062 IT-004 partial exact policy rejects changed recipe and same alias new target UUID receipts
+00:03 +6 -1: UT-046 UT-062 IT-004 partial reopening unfinished running job with cancelled dependents retires source protection without pixels
+00:03 +7 -1: UT-046 UT-062 IT-004 partial duplicate selections and targets share one real output without original fallback
+00:03 +8 -1: UT-046 UT-062 IT-004 partial ready B dispatches independently while A waits or fails and paused A resumes legally
+00:04 +9 -1: UT-046 UT-062 IT-004 partial queued reopen retains source UUID version parameters retention and frozen targets
+00:04 +10 -1: UT-046 UT-062 IT-004 partial ready output with unfinished running log recovers same UUID without pixel rerun
+00:05 +11 -1: UT-046 UT-062 IT-004 partial missing frozen bytes wait explicitly and require exact repair plus processing retry
+00:05 +12 -1: UT-046 UT-062 IT-004 partial cancelling every queued dependent releases durable job references and history clear keeps original bytes
+00:05 +13 -1: UT-046 UT-062 IT-004 partial cancelled intent cannot clear or export completed history while real processing leases remain
+00:06 +14 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_repository_test.dart: UT-046 UT-062 IT-004 partial deleted receipt creates a new frozen pending processing dependency

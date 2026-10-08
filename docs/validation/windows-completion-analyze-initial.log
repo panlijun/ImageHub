@@ -1,0 +1,7 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\accounts\presentation\accounts_screen.dart:236:7 - curly_braces_in_flow_control_structures
+warning - Unused import: '../../../core/platform_resource.dart'. Try removing the import directive - lib\features\gallery\presentation\desktop_gallery.dart:7:8 - unused_import
+warning - Unused import: '../../../core/platform_resource.dart'. Try removing the import directive - lib\features\gallery\presentation\mobile_gallery.dart:7:8 - unused_import
+
+3 issues found. (ran in 4.2s)

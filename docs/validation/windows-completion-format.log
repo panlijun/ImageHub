@@ -1,0 +1,23 @@
+Formatted lib\platform\image_preview_codec.dart
+Formatted test\core\accounts_repository_test.dart
+Formatted test\core\backup_restore_gate_test.dart
+Formatted test\core\link_transfer_test.dart
+Formatted test\core\network_session_test.dart
+Formatted test\core\original_preview_orientation_test.dart
+Formatted test\core\settings_repository_test.dart
+Formatted test\core\upload_pipeline_test.dart
+Formatted test\core\upload_processing_repository_test.dart
+Formatted test\core\upload_repository_test.dart
+Formatted test\gallery_remote_filter_screen_test.dart
+Formatted test\link_results_screen_test.dart
+Formatted test\settings_screen_test.dart
+Formatted test\upload_history_screen_test.dart
+Formatted test\upload_processing_screen_test.dart
+Formatted test\upload_tasks_screen_test.dart
+Formatted integration_test\accounts_flow_test.dart
+Formatted integration_test\gallery_remote_flow_test.dart
+Formatted integration_test\item_pause_flow_test.dart
+Formatted integration_test\settings_flow_test.dart
+Formatted integration_test\upload_flow_test.dart
+Formatted integration_test\upload_processing_flow_test.dart
+Formatted 246 files (22 changed) in 1.64 seconds.

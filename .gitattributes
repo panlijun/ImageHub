@@ -1,0 +1,5 @@
+# Keep the read-only input kit byte-for-byte on every checkout.
+/imagehost-new-project-kit/** -text
+
+# Keep captured validation output unchanged.
+/docs/validation/*.log -text

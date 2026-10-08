@@ -1,0 +1,119 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 construction is passive and one explicit deletion sends one fixed multipart POST without retry or redirects
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 200 empty or text body is unknown without service deletion confirmation
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 204 empty or text body is unknown without service deletion confirmation
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 301 empty or text body is unknown without service deletion confirmation
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 302 empty or text body is unknown without service deletion confirmation
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 307 empty or text body is unknown without service deletion confirmation
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 308 empty or text body is unknown without service deletion confirmation
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 400 empty or text body is unknown without service deletion confirmation
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 403 empty or text body is unknown without service deletion confirmation
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 404 empty or text body is unknown without service deletion confirmation
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 410 empty or text body is unknown without service deletion confirmation
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 429 empty or text body is unknown without service deletion confirmation
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 500 empty or text body is unknown without service deletion confirmation
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 503 empty or text body is unknown without service deletion confirmation
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 0 empty or text body is unknown without service deletion confirmation
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 HTTP 999 empty or text body is unknown without service deletion confirmation
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 pre-cancellation creates no transport and no fetch
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 cancellation between factory and fetch does not dispatch
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 cancellation waits for actual delegate fetch and late response cancellation
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 deadline cancels once but waits for actual fetch and late response IO
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 dispatch input consumption remains protected until the real adapter completes
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 response remains pending until original source ends even when POST fetch already returned
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 cancelling stalled response waits for original source cancellation future
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 cumulative raw response budget cancels source and waits for its real IO cleanup
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 DioExceptionType.connectionTimeout remains unknown after dispatch and sanitizes raw errors
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 DioExceptionType.sendTimeout remains unknown after dispatch and sanitizes raw errors
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 DioExceptionType.receiveTimeout remains unknown after dispatch and sanitizes raw errors
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 synchronous asynchronous and original stream failures never stringify unsafe objects
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 transport factory failure is notSent without stringification and invalid deadline rejects before work
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 raw response cancellation failure preserves protection using fixed cleanup exception
+00:00 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 delegate close failure still waits for late fetch and never stringifies native errors
+00:00 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_gateway_test.dart: UT-050 original source subscription failure cannot claim confirmed cleanup
+00:00 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_repository_test.dart: UT-050 missing independent confirmations (false, true) create no audit
+00:00 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_coordinator_test.dart: UT-050 construction preparation read cancel and reopen never dispatch automatically
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_coordinator_test.dart: UT-050 construction preparation read cancel and reopen never dispatch automatically
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_restore_test.dart: UT-050/073 merge preserves local deletion audit while portable package carries none
+00:01 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_restore_test.dart: UT-050/073 merge preserves local deletion audit while portable package carries none
+00:01 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_restore_test.dart: UT-050/073 merge preserves local deletion audit while portable package carries none
+00:01 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_restore_test.dart: UT-050/073 merge preserves local deletion audit while portable package carries none
+00:01 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_restore_test.dart: UT-050/073 merge preserves local deletion audit while portable package carries none
+00:01 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_repository_test.dart: UT-050 foreign repository and reopened owner reject plan before creating audit
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:181:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_repository_test.dart:202:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +40: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:01 +41: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:01 +42: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:01 +43: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:01 +44: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +45: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +46: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +47: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +48: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_coordinator_test.dart: UT-050 foreign plan and expired actor owner reject before gateway
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:181:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_coordinator_test.dart:268:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +50: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +51: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +52: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +53: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +54: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +55: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:02 +57: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:03 +58: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:03 +59: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:03 +60: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:03 +61: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:04 +62: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:04 +63: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:04 +64: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:04 +65: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:05 +66: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/1.0
+00:05 +67: C:/Users/PAN/workspace/ImageHub/app/test/core/remote_deletion_repository_test.dart: UT-050 invalidIdentity durable audit rejects reopen and preserves exact SQLite evidence
+00:05 +68: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 1280.0/1.0
+00:05 +69: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 1280.0/1.0
+00:08 +70: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 remote deletion independent confirmation 390.0/2.0
+00:10 +71: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 unsupported ImageHostService.catbox local removal and copy have zero remote requests
+00:11 +72: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 unsupported ImageHostService.imgbb local removal and copy have zero remote requests
+00:12 +73: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 missing credential or removed current UUID refused before HTTP removed=false
+00:13 +74: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 missing credential or removed current UUID refused before HTTP removed=true
+00:14 +75: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 unsafe Catbox filename disabled and failed read retains valid list
+00:15 +76: C:/Users/PAN/workspace/ImageHub/app/test/remote_deletion_screen_test.dart: UT-050 cancel and leave wait for actual late fetch before safe library close
+00:16 +77: All tests passed!

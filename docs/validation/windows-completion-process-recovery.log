@@ -1,0 +1,9 @@
+PASS abrupt process exit copy: 0 assets, stable IDs, verified bytes
+PASS abrupt process exit verified: 0 assets, stable IDs, verified bytes
+PASS abrupt process exit ready: 1 assets, stable IDs, verified bytes
+PASS abrupt process exit published: 1 assets, stable IDs, verified bytes
+PASS abrupt process exit beforeDbCommit: 1 assets, stable IDs, verified bytes
+PASS abrupt process exit afterDbCommit: 1 assets, stable IDs, verified bytes
+PASS separate-process normal close/reopen: independent bytes and stable identity
+PASS Windows cross-process exclusive library lock and release
+Running build hooks...Running build hooks...

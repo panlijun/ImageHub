@@ -1,0 +1,23 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart: UT-003 / UT-010 / UT-011 / UT-091 cancel stalled source before first chunk waits for actual cleanup and retains root lock and stage
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart: UT-003 / UT-010 / UT-011 / UT-091 cancel stalled source before first chunk waits for actual cleanup and retains root lock and stage
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-008/UT-010/IT-001 explicit cloud pending first source does not block two real PNG commits
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart: UT-003 / UT-010 / UT-011 / UT-091 cancel stalled source after first chunk waits for actual cleanup and retains root lock and stage
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/cloud_import_batch_test.dart: UT-011 cloud skip and stop preserve committed item without checking later source
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart: UT-003 / UT-011 / UT-091 source cleanup error after actual IO ends is storage failure with retained journal, recovered without committing
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/import_source_cancellation_test.dart: UT-003 / UT-011 / UT-091 source cleanup error after actual IO ends is storage failure with retained journal, recovered without committing
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +21: All tests passed!

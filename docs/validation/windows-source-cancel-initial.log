@@ -1,0 +1,57 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +18: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +19: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +21: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +22: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +25: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +26: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +27: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:02 +28: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +29: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +30: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +31: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +32: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +33: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +34: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +35: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +36: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +37: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+00:03 +38: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows)
+01:33 +38: C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) - did not complete [E]
+01:33 +38: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/import_stop_feedback_test.dart: UT-011 Windows stop feedback remains pending until actual source cleanup (variant: TargetPlatform.windows) (did not complete)

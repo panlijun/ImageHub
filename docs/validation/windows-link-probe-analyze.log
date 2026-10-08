@@ -1,0 +1,10 @@
+Analyzing app...
+
+   info - lib\features\gallery\data\library_link_probes.dart:100:11 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\gallery\data\library_link_probes.dart:106:11 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\gallery\data\library_link_probes.dart:170:11 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\gallery\data\library_link_probes.dart:190:11 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+
+4 issues found.
+Analyzing app...
+No issues found!

@@ -1,0 +1,9 @@
+Formatted lib\core\platform_resource.dart
+Formatted lib\features\gallery\data\library_storage.dart
+Formatted lib\features\gallery\presentation\asset_widgets.dart
+Formatted lib\features\gallery\presentation\gallery_providers.dart
+Formatted lib\features\processing\application\processing_coordinator.dart
+Formatted lib\features\storage\domain\storage_models.dart
+Formatted lib\platform\storage_capacity.dart
+Formatted test\platform\storage_capacity_test.dart
+Formatted 178 files (8 changed) in 2.07 seconds.

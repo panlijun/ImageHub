@@ -1,0 +1,8 @@
+Analyzing app...                                                
+
+warning - The operand can't be 'null', so the condition is always 'true'. Remove the condition - lib\features\backup\domain\backup_restore_plan.dart:208:24 - unnecessary_null_comparison
+warning - The receiver can't be null, so the null-aware operator '?.' is unnecessary. Try replacing the operator '?.' with '.' - lib\features\backup\domain\backup_restore_plan.dart:213:14 - invalid_null_aware_operator
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\core\png_backup_audit_test.dart:675:11 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - test\core\png_metadata_reimport_test.dart:484:15 - curly_braces_in_flow_control_structures
+
+4 issues found. (ran in 6.3s)

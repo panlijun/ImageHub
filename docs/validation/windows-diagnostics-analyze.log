@@ -1,0 +1,8 @@
+Analyzing app...
+
+   info - lib\features\diagnostics\application\diagnostic_runtime.dart:2:8 - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/foundation.dart'. Try removing the import directive. - unnecessary_import
+   info - lib\features\gallery\data\library_diagnostics.dart:252:7 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\gallery\data\library_diagnostics.dart:273:7 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - test\core\diagnostic_runtime_test.dart:3:8 - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/foundation.dart'. Try removing the import directive. - unnecessary_import
+
+4 issues found.

@@ -1,0 +1,241 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:01 +6: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:01 +7: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:02 +9: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:02 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-086 one changed digest produces partial failure without deleting changed bytes
+00:02 +11: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:02 +12: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +13: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +14: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +15: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 760.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:03 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/storage_repository_test.dart: UT-088 / IT-001 durable prepared cache boundary recovers after normal close and reopen
+00:03 +17: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+00:04 +18: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+00:04 +19: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 430.0 loading/failure/real empty layouts
+00:04 +20: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:05 +21: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:05 +22: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:05 +23: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:05 +24: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:06 +25: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:06 +26: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:06 +27: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:07 +28: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:07 +29: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +30: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +31: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +32: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +33: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +34: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +35: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +36: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:10 +37: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +38: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +39: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:11 +40: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:12 +41: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:12 +42: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:12 +43: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:20 +44: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:23 +45: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite and preview work must settle.
+
+When the exception was thrown, this was the stack:
+#4      _flush (file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart:473:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart:193:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart line 473
+The test description was:
+  UT-013/017 partial desktop selection survives combined query and loads real names (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:29 +45 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:29 +45 -1: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  
+00:32 +46 -1: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-019/020/021 partial desktop recycle identity and separate purge confirmations (variant: TargetPlatform.windows)
+00:42 +47 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real library/preview work should finish.
+
+When the exception was thrown, this was the stack:
+#4      _flush (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:417:3)
+<asynchronous suspension>
+#5      _mount (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:390:3)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:202:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 417
+The test description was:
+  UT-013 partial M1 select matching includes all 65 identities beyond page
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:43 +47 -2: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-017 partial desktop actual PNG dropdown and removed category safety (variant: TargetPlatform.windows)
+00:43 +47 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page [E]
+  Test failed. See exception logs above.
+  The test description was: UT-013 partial M1 select matching includes all 65 identities beyond page
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013 partial M1 select matching includes all 65 identities beyond page
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: UT-013 partial M1 select matching includes all 65 identities beyond page
+  
+00:54 +48 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real library/preview work should finish.
+
+When the exception was thrown, this was the stack:
+#4      _flush (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:417:3)
+<asynchronous suspension>
+#5      _mount (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:390:3)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:239:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 417
+The test description was:
+  AT-001 partial M1 density, shared upload destination and scroll/query retention
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:54 +48 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention [E]
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StorageFailure was thrown running a test (but after the test had completed):
+预览会话已失效，请重新读取。
+
+When the exception was thrown, this was the stack:
+#0      LibraryStorage._readThumbnail.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:624:9)
+#1      LibraryRepository._serial.<anonymous closure> (package:imagehost/features/gallery/data/library_repository.dart:265:38)
+<asynchronous suspension>
+#2      LibraryStorage._readThumbnail (package:imagehost/features/gallery/data/library_storage.dart:620:18)
+<asynchronous suspension>
+#3      ThumbnailLease.release.<anonymous closure> (package:imagehost/features/gallery/data/library_storage.dart:20:7)
+<asynchronous suspension>
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+00:56 +48 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+01:02 +49 -3: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page

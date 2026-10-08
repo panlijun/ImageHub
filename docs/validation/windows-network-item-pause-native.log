@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/item_pause_flow_test.dart
+Building Windows application...                                    24.8s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-004 partial Windows item pause persists across batch resume and reopen while real input IO completes
+00:09 +1: (tearDownAll)
+00:09 +1: All tests passed!

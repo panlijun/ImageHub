@@ -1,0 +1,146 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005/IMP-006 PNG 1 explicit reimport retains identities and organization and enables real processing/full backup
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart:579:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart:579:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart:618:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart:618:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:184:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart:656:27)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/png_backup_audit_test.dart: IT-005 BAK-004 real PNG correction preserves SQL audits through full metadata merge replacement and rebackup
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 retained orphan version is corrected atomically with a new asset without changing permanent identity/path
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 missing legacy PNG repairs copy and metadata in one association
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 damaged legacy PNG repairs copy and metadata in one association
+00:02 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 recycled duplicate retains wrong frozen description until explicit restore and reimport
+00:02 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unknown PNG version disagreement width=7 is rejected without mutation or another identity
+00:02 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unknown PNG version disagreement height=7 is rejected without mutation or another identity
+00:02 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unknown PNG version disagreement frame_count=2 is rejected without mutation or another identity
+00:02 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unknown PNG version disagreement orientation=3 is rejected without mutation or another identity
+00:02 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unknown PNG version disagreement format='JPEG' is rejected without mutation or another identity
+00:02 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 actual file lease prevents metadata repair through its real read and release
+00:03 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 real queued frozen upload remains unchanged until explicit cancel/history confirmation then new reimport
+00:03 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 persistent version reference protects legacy PNG until explicit release
+00:03 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 unchanged metadata retains ordinary duplicate behavior even with an actual input lease
+00:03 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 repair retains an actual ordinary confirmation and frozen successful history bytes
+00:03 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 available metadata correction recovers an existing ready journal after precommit interruption
+00:04 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 orphan metadata correction recovers an existing ready journal after precommit interruption
+00:04 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 committed reuse with removed stage recovers after failed journal deletion
+00:04 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/png_metadata_reimport_test.dart: IMG-005 committed reuse with removed stage preserves a corrupt relation instead of guessing
+00:05 +49: All tests passed!

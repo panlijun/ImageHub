@@ -1,0 +1,5 @@
+2026-10-06 readonly host verification (no installation or system configuration change):
+Get-Command flutter.Source = C:\Users\PAN\development\flutter\bin\flutter.bat
+Flutter 3.47.6 stable; framework 5fc346839b; Dart 3.13.5; DevTools 2.60.0
+Persistent User PATH Flutter entries: C:\Users\PAN\development\flutter\bin (1 entry)
+Official SDK --version exit_code = 0.

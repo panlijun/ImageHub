@@ -1,0 +1,50 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge keeps current name/category/timestamps/source/recycle; tags union and favorite OR
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge empty current name/category accepts incoming without inventing time
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same content different UUID maps both version and asset to current
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge same UUID same content takes priority over smallest other asset
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple current candidates use UUID order independent of input order
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge multiple incoming same-content assets aggregate in UUID order
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge new recycled asset preserves all backup metadata
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge Unicode full folding reuses current spelling and directory ID
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same content different IDs remap origin and result accurately
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-076 partial permanent metadata merge 50 union accepted; 51 blocks without truncating current labels
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal conflicting origin gets stable identity; replay preserves all associations
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal conflicting origin gets stable identity; replay preserves all associations
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal conflicting origin gets stable identity; replay preserves all associations
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal conflicting origin gets stable identity; replay preserves all associations
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal historical-only versions remain audit-only and choose current permanent first
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling UUID content collisions preserve current and allocate stable IDs; replay is idempotent
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling UUID content collisions preserve current and allocate stable IDs; replay is idempotent
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal permanent collision with current audit preserves historical description
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling asset identity collision remains distinct even if another current asset shares content
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal blocking frame conflict remains a typed proposal when origins collide
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal blocking frame conflict remains a typed proposal when origins collide
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory identity conflicts preserve names and references across replay
+00:00 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same content incompatible descriptions block complete proposal
+00:00 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling directory name identity takes priority over conflicting source ID
+00:00 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same-name accounts stay independent and collision preserves historical aliases
+00:00 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same-name accounts stay independent and collision preserves historical aliases
+00:00 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling orphan permanent versions retained and incoming content reuses them
+00:00 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal matching account identity keeps configuration alias; absent audit target creates no account
+00:00 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description JPEG/10/20/1/1
+00:00 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same URL independent confirmations retained; conflicting identity refused
+00:00 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal same URL independent confirmations retained; conflicting identity refused
+00:00 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/21/1/1
+00:00 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal terminal histories replay with unchanged task, batch and attempt identities
+00:00 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA+bytes rejects inconsistent description PNG/10/20/2/1
+00:00 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal N-way typed history issues preserve current and reject conflicting incoming payload
+00:00 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal N-way typed history issues preserve current and reject conflicting incoming payload
+00:00 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling same SHA different size is a distinct content version
+00:00 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_plan_test.dart: UT-076/077/078/081 partial + DAT-003 relation restore proposal immutable proposals and stable IDs avoid every imported UUID domain
+00:00 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_merge_plan_test.dart: UT-077 partial identity and contradiction handling all result collections and nested collections are immutable
+00:00 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_restore_gate_test.dart: UT-079 partial: real SQLite pauses pending intent, retains lease until actual attempt settles, and survives reopen
+00:01 +48: All tests passed!

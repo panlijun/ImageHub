@@ -1,0 +1,38 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-039 configuration never implies harmless health verification or unknown capability support
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-040 same names anonymous and services retain distinct target identity and credentials on reopen
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 4 preserves IDs organization and bytes
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 4 preserves IDs organization and bytes
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 4 preserves IDs organization and bytes
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 4 preserves IDs organization and bytes
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at intent preserves stable target and safe ownership
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 failed schema upgrade invalid category blank leaves original schema/data intact
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at secretWritten preserves stable target and safe ownership
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 failed schema upgrade invalid category 65 scalars leaves original schema/data intact
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at associated preserves stable target and safe ownership
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at associated preserves stable target and safe ownership
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-043 / UT-091 credential replacement recovery at secretDeleted preserves stable target and safe ownership
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-097 ordinary SQLite target and operation records never contain raw registered or session secrets
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/accounts_repository_test.dart: UT-093 own schema 3 to 4 preserves library state without importing any prior application format
+00:01 +36: All tests passed!

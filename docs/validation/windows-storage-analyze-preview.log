@@ -1,0 +1,7 @@
+Analyzing app...                                                
+
+warning - The '!' will have no effect because the receiver can't be null. Try removing the '!' operator - integration_test\storage_flow_test.dart:116:70 - unnecessary_non_null_assertion
+warning - The '!' will have no effect because the receiver can't be null. Try removing the '!' operator - integration_test\storage_flow_test.dart:365:29 - unnecessary_non_null_assertion
+warning - The '!' will have no effect because the receiver can't be null. Try removing the '!' operator - integration_test\storage_flow_test.dart:391:27 - unnecessary_non_null_assertion
+
+3 issues found. (ran in 10.1s)

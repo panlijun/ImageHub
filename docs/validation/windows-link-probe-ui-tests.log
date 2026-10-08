@@ -1,0 +1,316 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: UT-072 passive page and cancelled confirmation never authorize IO
+00:01 +1: UT-072 explicit reachable then offline and Gone retain ordinary result and prior evidence
+00:03 +2: UT-072 batch confirms selected visible frozen scope without later arrivals
+00:04 +3: UT-072 cancellation waits actual IO and never dispatches remaining selected links
+00:05 +4: UT-072 removed reviewed result rejects network and disposed confirmation resolves
+00:06 +5: UT-072 system exit cancels pending confirmation before safe library close
+00:06 +6: UT-072 state intersection refresh excludes newly unknown without implicit probes
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成：仅显示已确认的普通链接。链接存在 ≠ 当前可达；只有明确确认才主动检测。Catbox 匿名链接不由应用保证永久。 | 名称、普通 URL、历史目标 | 全部历史目标 | 明确目标 ·
+Catbox · ca022004 · 匿名 | 历史目标身份 | 全部服务 | Catbox | ImgBB | 图床服务 | 原图与处理结果 | 原图 | 处理结果 | 上传输入 | 确认时间 |
+结果名称 | 历史目标 | 排序 | 全部检测状态 | 链接已记录，尚未主动检测 | 可访问（检测时） | 远端已删除（服务报告） | 未能确认 | 链接检测状态 | 降序 ↓ | URL |
+Markdown | HTML | BBCode | 复制 / 分享格式 | 已展示 0 / 0 项；选择 0 项，其中当前展示 0 项。筛选和翻页不会自动增加选择。 | 选择已展示结果 | 清空选择
+| 复制已展示结果 | 复制当前展示的选中项 | 分享当前展示的选中项 | 移除当前展示的选中项 | 检测当前展示的选中项 | 检测结束：更新 1 项，跳过 0 项。普通结果与图片保留。 |
+没有匹配的已确认链接。 | 成功链接
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:62:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:538:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-072 state intersection refresh excludes newly unknown without implicit probes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +6 -1: UT-072 state intersection refresh excludes newly unknown without implicit probes [E]
+  Test failed. See exception logs above.
+  The test description was: UT-072 state intersection refresh excludes newly unknown without implicit probes
+  
+00:13 +6 -1: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:575:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +6 -2: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+  
+00:13 +6 -2: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:575:9)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:14 +6 -3: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+  
+00:14 +6 -3: AT-004 partial links 320.0 empty and large text layout
+00:14 +7 -3: AT-004 partial links 390.0 empty and large text layout
+00:15 +8 -3: AT-004 partial links 1280.0 empty and large text layout
+00:15 +9 -3: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:16 +10 -3: UT-070 first page scope cancel and confirmation never add hidden results
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.ensureVisible (package:flutter_test/src/controller.dart:2389:32)
+#3      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:226:16)
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:731:13)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-070 first page scope cancel and confirmation never add hidden results
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:19 +10 -4: UT-070 first page scope cancel and confirmation never add hidden results [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 first page scope cancel and confirmation never add hidden results
+  
+00:19 +10 -4: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:20 +11 -4: UT-070 asset target ordered scope reports skipped and deduplicates
+00:21 +12 -4: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-072 state intersection refresh excludes newly unknown without implicit probes
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: UT-072 passive page and cancelled confirmation never authorize IO
+00:01 +1: UT-072 explicit reachable then offline and Gone retain ordinary result and prior evidence
+00:03 +2: UT-072 batch confirms selected visible frozen scope without later arrivals
+00:04 +3: UT-072 cancellation waits actual IO and never dispatches remaining selected links
+00:05 +4: UT-072 removed reviewed result rejects network and disposed confirmation resolves
+00:05 +5: UT-072 system exit cancels pending confirmation before safe library close
+00:06 +6: UT-072 state intersection refresh excludes newly unknown without implicit probes
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 2 widgets with text "未能确认": [
+            Text("未能确认", dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+            Text-[<'links-state-fd80c2a8-fee9-4a37-a3ed-5d3a898a5ff9'>]("未能确认", dependencies:
+[DefaultSelectionStyle, DefaultTextStyle, MediaQuery]),
+          ]>
+   Which: is too many
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:551:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart line 551
+The test description was:
+  UT-072 state intersection refresh excludes newly unknown without implicit probes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:07 +6 -1: UT-072 state intersection refresh excludes newly unknown without implicit probes [E]
+  Test failed. See exception logs above.
+  The test description was: UT-072 state intersection refresh excludes newly unknown without implicit probes
+  
+00:07 +6 -1: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+
+Warning: A call to tap() with finder "Found 1 widget with key [<'links-probe-873559fc-11a8-459b-bcbb-6ef3ca36781b'>]: [
+  TextButton-[<'links-probe-873559fc-11a8-459b-bcbb-6ef3ca36781b'>](dependencies: [IconTheme, InheritedCupertinoTheme, MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#97aa5], _ScrollableScope], state: _ButtonStyleState#da204),
+]" derived an Offset (Offset(84.2, 1528.1)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+Indeed, Offset(84.2, 1528.1) is outside the bounds of the root of the render tree, Size(320.0, 1000.0).
+The finder corresponds to this RenderBox: RenderSemanticsAnnotations#8212a relayoutBoundary=up14
+The hit test result at that offset is: HitTestResult(HitTestEntry<HitTestTarget>#beb6b(_ReusableRenderView#a3445), HitTestEntry<HitTestTarget>#fdb65(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:227:16)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:593:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#7      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成：全部历史目标 | 明确目标 · Catbox · 536d5c61 · 匿名 | 历史目标身份 | 全部服务 | Catbox | ImgBB | 图床服务 | 原图与处理结果 |
+原图 | 处理结果 | 上传输入 | 确认时间 | 结果名称 | 历史目标 | 排序 | 全部检测状态 | 链接已记录，尚未主动检测 | 可访问（检测时） | 远端已删除（服务报告） | 未能确认 |
+链接检测状态 | 降序 ↓ | URL | Markdown | HTML | BBCode | 复制 / 分享格式 | 已展示 1 / 1 项；选择 0 项，其中当前展示 0
+项。筛选和翻页不会自动增加选择。 | 选择已展示结果 | 清空选择 | 复制已展示结果 | 复制当前展示的选中项 | 分享当前展示的选中项 | 移除当前展示的选中项 | 检测当前展示的选中项 |
+长名称图片与明确历史目标.png | 原图 · 明确目标 · Catbox · 536d5c61 · 匿名 | 确认于 2026-10-06 20:42:36.714 | 链接已记录，尚未主动检测 |
+复制URL | 系统分享 | 移除本地记录 | 主动检测 | 成功链接
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:62:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:594:9)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +6 -2: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+  
+00:13 +6 -2: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+
+Warning: A call to tap() with finder "Found 1 widget with key [<'links-probe-e2cc182d-6f9f-4ed5-aee4-28a6d78a68f9'>]: [
+  TextButton-[<'links-probe-e2cc182d-6f9f-4ed5-aee4-28a6d78a68f9'>](dependencies: [IconTheme, InheritedCupertinoTheme, MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#81e44], _ScrollableScope], state: _ButtonStyleState#9bce4),
+]" derived an Offset (Offset(238.8, 1389.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+Indeed, Offset(238.8, 1389.0) is outside the bounds of the root of the render tree, Size(390.0, 1000.0).
+The finder corresponds to this RenderBox: RenderSemanticsAnnotations#baf22 relayoutBoundary=up14
+The hit test result at that offset is: HitTestResult(HitTestEntry<HitTestTarget>#4dc56(_ReusableRenderView#a3445), HitTestEntry<HitTestTarget>#c60de(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:227:16)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:593:9)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#7      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成：全部历史目标 | 明确目标 · Catbox · fb41efa0 · 匿名 | 历史目标身份 | 全部服务 | Catbox | ImgBB | 图床服务 | 原图与处理结果 |
+原图 | 处理结果 | 上传输入 | 确认时间 | 结果名称 | 历史目标 | 排序 | 全部检测状态 | 链接已记录，尚未主动检测 | 可访问（检测时） | 远端已删除（服务报告） | 未能确认 |
+链接检测状态 | 降序 ↓ | URL | Markdown | HTML | BBCode | 复制 / 分享格式 | 已展示 1 / 1 项；选择 0 项，其中当前展示 0
+项。筛选和翻页不会自动增加选择。 | 选择已展示结果 | 清空选择 | 复制已展示结果 | 复制当前展示的选中项 | 分享当前展示的选中项 | 移除当前展示的选中项 | 检测当前展示的选中项 |
+长名称图片与明确历史目标.png | 原图 · 明确目标 · Catbox · fb41efa0 · 匿名 | 确认于 2026-10-06 20:42:43.116 | 链接已记录，尚未主动检测 |
+复制URL | 系统分享 | 移除本地记录 | 主动检测 | 成功链接
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:62:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:594:9)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:20 +6 -3: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+  
+00:20 +6 -3: AT-004 partial links 320.0 empty and large text layout
+00:20 +7 -3: AT-004 partial links 390.0 empty and large text layout
+00:20 +8 -3: AT-004 partial links 1280.0 empty and large text layout
+00:21 +9 -3: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:22 +10 -3: UT-070 first page scope cancel and confirmation never add hidden results
+00:26 +11 -3: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:27 +12 -3: UT-070 asset target ordered scope reports skipped and deduplicates
+00:28 +13 -3: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-072 state intersection refresh excludes newly unknown without implicit probes
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: UT-072 passive page and cancelled confirmation never authorize IO
+00:01 +1: UT-072 explicit reachable then offline and Gone retain ordinary result and prior evidence
+00:03 +2: UT-072 batch confirms selected visible frozen scope without later arrivals
+00:04 +3: UT-072 cancellation waits actual IO and never dispatches remaining selected links
+00:05 +4: UT-072 removed reviewed result rejects network and disposed confirmation resolves
+00:06 +5: UT-072 system exit cancels pending confirmation before safe library close
+00:06 +6: UT-072 state intersection refresh excludes newly unknown without implicit probes
+00:07 +7: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+00:07 +8: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+00:07 +9: AT-004 partial links 320.0 empty and large text layout
+00:08 +10: AT-004 partial links 390.0 empty and large text layout
+00:08 +11: AT-004 partial links 1280.0 empty and large text layout
+00:09 +12: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:09 +13: UT-070 first page scope cancel and confirmation never add hidden results
+00:14 +14: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:15 +15: UT-070 asset target ordered scope reports skipped and deduplicates
+00:16 +16: All tests passed!

@@ -1,0 +1,24 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/source_readiness_test.dart
+00:00 +0: UT-010 Windows explicit offline and recall flags identify cloud pending
+00:00 +1: UT-010 attribute failure, directory and reparse target remain unknown
+00:00 +2: UT-010 confirmed plain file attributes without cloud flags are ready
+00:00 +3: UT-010 malformed Windows path never reaches attribute acquisition
+00:00 +4: UT-010 UNC device relative and traversal paths invoke no native metadata
+00:00 +5: UT-010 remote and unknown drive types never query target or ancestor attributes
+00:00 +6: UT-010 reparse ancestor stops before querying any following source path
+00:00 +7: UT-010 allowed local drives walk ordinary ancestors and preserve final recall evidence
+00:00 +8: UT-010 Windows actual ordinary file is ready; absent file and directory are unknown
+00:00 +9: UT-010 unimplemented source platform remains unknown
+00:00 +9 ~1: All tests passed!

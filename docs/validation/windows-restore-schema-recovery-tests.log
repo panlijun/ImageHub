@@ -1,0 +1,4 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/restore_schema_recovery_test.dart
+00:00 +0: UT-093 IT-006 partial own schema 5 to 6 adds audit/log tables without changing stable data credentials or paused intents
+00:00 +1: UT-075/079 partial malformed restore log validates all entries before cleaning any owned stage and preserves external bytes
+00:00 +2: All tests passed!

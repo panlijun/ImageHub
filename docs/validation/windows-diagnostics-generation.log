@@ -1,0 +1,7 @@
+  0s drift_dev on 668 inputs; integration_test/accounts_flow_test.dart
+  11s drift_dev on 668 inputs: 1 same; spent 10s analyzing, 2s resolving; integration_test/backup_flow_test.dart
+  15s drift_dev on 668 inputs: 45 skipped, 29 output, 129 same, 2 no-op; spent 12s analyzing, 2s resolving; lib/features/gallery/data/library_diagnostics.dart
+  16s drift_dev on 668 inputs: 284 skipped, 48 output, 204 same, 132 no-op; spent 13s analyzing, 2s resolving, 1s building
+  0s source_gen:combining_builder on 334 inputs; integration_test/accounts_flow_test.dart
+  0s source_gen:combining_builder on 334 inputs: 316 skipped, 1 output, 17 no-op
+  Built with build_runner/aot in 51s; wrote 253 outputs.

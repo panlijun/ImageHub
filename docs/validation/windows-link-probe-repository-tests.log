@@ -1,0 +1,278 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/restore_schema_recovery_test.dart: UT-093 IT-006 partial own schema 5 to 7 adds audit/log and link evidence without changing stable data credentials or paused intents
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/restore_schema_recovery_test.dart: UT-093 IT-006 partial own schema 5 to 7 adds audit/log and link evidence without changing stable data credentials or paused intents
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/restore_schema_recovery_test.dart: UT-093 IT-006 partial own schema 5 to 7 adds audit/log and link evidence without changing stable data credentials or paused intents
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/restore_schema_recovery_test.dart: UT-093 IT-006 partial own schema 5 to 7 adds audit/log and link evidence without changing stable data credentials or paused intents
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080/IT-005 partial internal SQLite preserves identities, recycle, output references, protected UUID and paused queue with real bytes
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080 partial proof refuses changed journal, foreign owner and released hold
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart:355:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:02 +51: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-046 processing policy uses canonical digest while audit summary redacts credential collisions
+00:02 +52: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial a file appearing at a missing backup name is never deleted as an owned partial
+00:02 +53: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:02 +54: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:02 +55: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:352:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +57: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+00:02 +58: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+00:02 +59: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial ready internal snapshot blocks another merge prepare or commit under the same hold
+00:02 +60: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial ready internal snapshot blocks another merge prepare or commit under the same hold
+00:02 +61: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial ready internal snapshot blocks another merge prepare or commit under the same hold
+00:02 +62: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:03 +63: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:03 +64: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:03 +65: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:03 +66: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 unsafe provider success never creates ordinary history
+00:03 +67: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 actual probe finish settles behind a maintenance barrier and unblocks safe restore
+00:03 +68: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial hold waits actual leased IO and snapshot rejects a foreign or released hold
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart:376:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +69: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial hold waits actual leased IO and snapshot rejects a foreign or released hold
+00:03 +70: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080 partial committed replacement is never rolled back to old metadata
+00:03 +71: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080 partial committed replacement is never rolled back to old metadata
+00:03 +72: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 newly known management token masks all existing task and result snapshots durably on reopen
+00:03 +73: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 newly known management token masks all existing task and result snapshots durably on reopen
+00:03 +74: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 newly known management token masks all existing task and result snapshots durably on reopen
+00:03 +75: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080 partial old bytes changed after snapshot block rollback and preserve all evidence
+00:03 +76: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial failed durable directory ownership preserves the unclaimed empty directory
+00:03 +77: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 session close cancels its actor and waits real gateway while library remains protected
+00:03 +78: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-093 own schema4 upgrades to current schema6 preserving stable library and account IDs; future refuses without rewrite
+00:03 +79: C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080 partial missing old location appearing after snapshot blocks rollback
+00:03 +80: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial startup drops an unclaimed intent without touching its ambiguous directory
+00:03 +81: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial startup drops an unclaimed intent without touching its ambiguous directory
+00:03 +82: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-093 own schema6 pending recovery journal refuses mutation and preserves all old evidence
+00:03 +83: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-093 own schema6 pending recovery journal refuses mutation and preserves all old evidence
+00:03 +84: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial cancellation after real copy cleans only journaled snapshot bytes
+00:03 +85: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 future or inconsistent observation refuses display without rewriting confirmation
+00:03 +86: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial future SQLite and unknown table schema cannot produce ready snapshot
+00:03 +87: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial tampered SQLite or raw file never verifies
+00:04 +88: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial unknown child and malformed later log entry preserve complete snapshot and current bytes
+00:04 +89: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial linked source is refused without reading external bytes
+00:04 +90: C:/Users/PAN/workspace/ImageHub/app/test/core/internal_replacement_snapshot_test.dart: UT-080 partial closing waits real snapshot IO and holds the root lock until completion
+00:04 +91: All tests passed!
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart
+00:00 +0: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:00 +1: UT-072 reachable then failed evidence retains past accessibility confirmation bytes organization and copy
+00:00 +2: UT-072 service Gone persists deleted evidence without removing any ordinary result or source
+00:00 +3: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +4: UT-072 newest generation wins while a late older probe only releases its own guard
+00:01 +5: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:356:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +6: UT-072 reopening refuses an old owner plan before another request
+00:02 +7: UT-072 actual transport return rather than cancel state drains repository close
+00:02 +8: UT-072 actual probe finish settles behind a maintenance barrier and unblocks safe restore
+00:02 +9: UT-072 unsafe cleanup failure retains guard and wakes close to fail instead of deadlock
+00:02 +10: UT-072 status transaction failure leaves interrupted evidence and drains ended IO
+00:02 +11: UT-072 session close cancels its actor and waits real gateway while library remains protected
+00:02 +12: UT-093 own schema6 actual migration preserves ordinary identity credentials and original bytes
+00:02 +13: UT-093 own schema6 pending recovery journal refuses mutation and preserves all old evidence
+00:02 +14: UT-072/073 BackupMode.metadata portable restore retains ordinary confirmation without importing local reachability
+00:02 +14 -1: UT-072/073 BackupMode.metadata portable restore retains ordinary confirmation without importing local reachability [E]
+  备份来源或临时目录不安全或不可用。
+  package:imagehost/features/backup/data/backup_zip_reader.dart 236:7  _noLinks
+  
+00:02 +14 -1: UT-072/073 BackupMode.full portable restore retains ordinary confirmation without importing local reachability
+00:02 +14 -2: UT-072/073 BackupMode.full portable restore retains ordinary confirmation without importing local reachability [E]
+  备份来源或临时目录不安全或不可用。
+  package:imagehost/features/backup/data/backup_zip_reader.dart 236:7  _noLinks
+  
+00:02 +14 -2: UT-072 future or inconsistent observation refuses display without rewriting confirmation
+00:03 +15 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072/073 BackupMode.full portable restore retains ordinary confirmation without importing local reachability
+  C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072/073 BackupMode.metadata portable restore retains ordinary confirmation without importing local reachability
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart
+00:00 +0: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:00 +1: UT-072 reachable then failed evidence retains past accessibility confirmation bytes organization and copy
+00:00 +2: UT-072 service Gone persists deleted evidence without removing any ordinary result or source
+00:00 +3: UT-017/072 availability is intersected before SQL count and paging across fifty results
+00:01 +4: UT-072 newest generation wins while a late older probe only releases its own guard
+00:01 +5: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:356:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +6: UT-072 reopening refuses an old owner plan before another request
+00:02 +7: UT-072 actual transport return rather than cancel state drains repository close
+00:02 +8: UT-072 actual probe finish settles behind a maintenance barrier and unblocks safe restore
+00:02 +9: UT-072 unsafe cleanup failure retains guard and wakes close to fail instead of deadlock
+00:02 +10: UT-072 status transaction failure leaves interrupted evidence and drains ended IO
+00:02 +11: UT-072 session close cancels its actor and waits real gateway while library remains protected
+00:02 +12: UT-093 own schema6 actual migration preserves ordinary identity credentials and original bytes
+00:02 +13: UT-093 own schema6 pending recovery journal refuses mutation and preserves all old evidence
+00:02 +14: UT-072/073 BackupMode.metadata portable restore retains ordinary confirmation without importing local reachability
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:600:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:02 +15: UT-072/073 BackupMode.full portable restore retains ordinary confirmation without importing local reachability
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12605:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:415:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:129:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:600:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:03 +16: UT-072 future or inconsistent observation refuses display without rewriting confirmation
+00:03 +17: All tests passed!

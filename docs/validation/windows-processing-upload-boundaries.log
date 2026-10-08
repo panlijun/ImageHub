@@ -1,0 +1,118 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 processing recipe matches request defaults without inputs
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 selection freezes identity order and frame map
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 selection rejects empty duplicate invalid and wrong counts
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 canonical excludes runtime paths and matches legacy policy
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 frozen plan and returned JSON are deeply immutable
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 batch sharing ignores source asset alias but retains frames versions and pixel parameters
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 batch sharing retains ordered version and selected frame tuples
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 bind uses actual paths and frozen frames and parameters
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 bind rejects count order and every version field change
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 malformed plans reject unknown fields and invalid types safely
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-033/046 crop parameters and output retention remain frozen
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_models_test.dart: UT-046 pending publication marks frozen source until confirmed output
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial real actor starts two jobs and ready B can dispatch while A retains actual input IO
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 recorded presence and preparing a plan never request network or change confirmation history
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial restore hold waits for actual process keeps leases and requires explicit batch continuation
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial restore hold waits for actual process keeps leases and requires explicit batch continuation
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial restore hold waits for actual process keeps leases and requires explicit batch continuation
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_processing_coordinator_test.dart: UT-046 UT-062 IT-004 partial restore hold waits for actual process keeps leases and requires explicit batch continuation
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 reachable then failed evidence retains past accessibility confirmation bytes organization and copy
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:02 +34: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:05 +35: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:05 +36: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:05 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072 stale and foreign plans fail before gateway without implicit replacement or upload
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:175:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:362:19)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:05 +37: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:05 +38: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:05 +39: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:06 +40: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:06 +41: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:06 +42: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:06 +43: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:06 +44: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:07 +45: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:07 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072/073 BackupMode.metadata portable restore retains ordinary confirmation without importing local reachability
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:175:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:606:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +46: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:07 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart: UT-072/073 BackupMode.full portable restore retains ordinary confirmation without importing local reachability
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:13913:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:458:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:175:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/link_probe_repository_test.dart:606:29)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:07 +47: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:07 +48: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 1280.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:11 +49: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-054 AT-003 partial 390.0 real SQL item pause survives batch resume and item resume respects batch pause
+00:20 +50: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-084 OPS-002 failed task batch and real attempt navigate exact diagnostic scope without network (variant: TargetPlatform.windows)
+00:23 +51: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:24 +52: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:25 +53: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:26 +54: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:36 +55: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload initial load error gives retry and no fake data (variant: TargetPlatform.windows)
+00:36 +56: All tests passed!

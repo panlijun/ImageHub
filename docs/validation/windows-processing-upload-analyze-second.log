@@ -1,0 +1,6 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\data\library_uploads.dart:423:70 - curly_braces_in_flow_control_structures
+warning - 'package:drift/remote.dart' is experimental and could be removed or changed at any time - test\core\upload_processing_schema_test.dart:2:1 - experimental_member_use
+
+2 issues found. (ran in 8.9s)

@@ -1,0 +1,63 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/network_session_test.dart: UT-063/087 IT-004 partial session observation and persisted policy resume one real intent without granting new-session permission
+00:00 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item pause persists real SQLite and files, isolates peers and batches, repeated intent has no new event attempt or lease
+00:00 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 UT-049 intent idempotence success reuse and explicit force again retain independent history
+00:00 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 item then batch pause preserves independent intent through both resume orders
+00:00 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-043 UT-057 current account generation rejects stale credential before request
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 batch then item pause preserves independent intent through both resume orders
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 missing frozen bytes creates input wait without a fabricated attempt
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-061 QUE-003 real retry waiting reason and delay survive item pause reopen and batch resume
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-054 pause blocks only unstarted items and retains wait conditions
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-062 QUE-003 interrupted item uses legal atomic transitions for batchPause=false without allocating a new attempt
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-062 QUE-003 interrupted item uses legal atomic transitions for batchPause=false without allocating a new attempt
+00:01 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-056 UT-057 cancelled running input stays protected until actual IO ends and late success is independent
+00:01 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 UT-062 QUE-003 interrupted item uses legal atomic transitions for batchPause=true without allocating a new attempt
+00:01 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-049 UT-060 unknown protects input and duplicate intents never quietly resend
+00:01 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.running rejects pause and resume without data or evidence changes
+00:01 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-051 UT-062 reopen unsent running becomes interrupted
+00:01 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.unknown rejects pause and resume without data or evidence changes
+00:01 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-051 UT-062 reopen request marker becomes unknown
+00:01 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.succeeded rejects pause and resume without data or evidence changes
+00:01 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-058 UT-060 uncertain evidence cannot be converted into retry by supplied delay
+00:02 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.failed rejects pause and resume without data or evidence changes
+00:02 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-067 retry duration persists independently from UTC and pause
+00:02 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-054 QUE-003 PublishState.cancelled rejects pause and resume without data or evidence changes
+00:02 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-067 UT-068 monotonic checkpoints only increase current running duration and survive recovery
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-093 IT-006 QUE-003 own schema8 migrates to9 with stable identities protection secrets and original bytes
+00:02 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-046 UT-066 upload task protects real processed output from expiry cleanup
+00:02 +51: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_item_pause_repository_test.dart: UT-093 QUE-003 schema8 pending restore refuses before any structure data or file mutation
+00:02 +52: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-046 processing policy uses canonical digest while audit summary redacts credential collisions
+00:02 +53: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-068 durable four attempt limit blocks another execution
+00:02 +54: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-068 durable thirty minute running budget blocks another execution
+00:02 +55: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 protected management write fault preserves ordinary success without plaintext
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 protected management readback fault recovers secure reference
+00:03 +57: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 unsafe provider success never creates ordinary history
+00:03 +58: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 mismatched management readback preserves ordinary result and never marks corrupt secret available
+00:03 +59: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 newly known management token masks all existing task and result snapshots durably on reopen
+00:03 +60: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-093 own schema4 upgrades to current schema preserving stable library and account IDs; future refuses without rewrite
+00:03 +61: All tests passed!

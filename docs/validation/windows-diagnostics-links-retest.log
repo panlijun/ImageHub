@@ -1,0 +1,42 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: UT-072 passive page and cancelled confirmation never authorize IO
+00:02 +1: UT-072 explicit reachable then offline and Gone retain ordinary result and prior evidence
+00:04 +2: UT-072 batch confirms selected visible frozen scope without later arrivals
+00:06 +3: UT-072 cancellation waits actual IO and never dispatches remaining selected links
+00:07 +4: UT-072 removed reviewed result rejects network and disposed confirmation resolves
+00:09 +5: UT-072 system exit cancels pending confirmation before safe library close
+00:09 +6: UT-072 state intersection refresh excludes newly unknown without implicit probes
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following _TypeError was thrown running a test:
+Null check operator used on a null value
+
+When the exception was thrown, this was the stack:
+#0      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:547:21)
+<asynchronous suspension>
+#1      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#2      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-072 state intersection refresh excludes newly unknown without implicit probes
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:10 +6 -1: UT-072 state intersection refresh excludes newly unknown without implicit probes [E]
+  Test failed. See exception logs above.
+  The test description was: UT-072 state intersection refresh excludes newly unknown without implicit probes
+  
+00:11 +6 -1: AT-004 partial UT-072 populated probe confirmation at 320.0 with large text
+00:11 +7 -1: AT-004 partial UT-072 populated probe confirmation at 390.0 with large text
+00:12 +8 -1: AT-004 partial links 320.0 empty and large text layout
+00:12 +9 -1: AT-004 partial links 390.0 empty and large text layout
+00:13 +10 -1: AT-004 partial links 1280.0 empty and large text layout
+00:13 +11 -1: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:14 +12 -1: UT-070 first page scope cancel and confirmation never add hidden results
+00:21 +13 -1: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:23 +14 -1: UT-070 asset target ordered scope reports skipped and deduplicates
+00:24 +15 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-072 state intersection refresh excludes newly unknown without implicit probes

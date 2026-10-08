@@ -1,0 +1,17 @@
+Formatted lib\features\gallery\data\library_database.dart
+Formatted lib\features\gallery\data\library_uploads.dart
+Formatted lib\features\upload\domain\upload_queue_models.dart
+Formatted test\core\accounts_repository_test.dart
+Formatted test\core\diagnostic_schema_migration_test.dart
+Formatted test\core\internal_replacement_snapshot_test.dart
+Formatted test\core\library_migration_test.dart
+Formatted test\core\link_probe_repository_test.dart
+Formatted test\core\output_schema_migration_test.dart
+Formatted test\core\replacement_rollback_test.dart
+Formatted test\core\restore_schema_recovery_test.dart
+Formatted test\core\upload_coordinator_test.dart
+Formatted test\core\upload_item_pause_repository_test.dart
+Formatted test\core\upload_repository_test.dart
+Formatted test\upload_tasks_screen_test.dart
+Formatted integration_test\item_pause_flow_test.dart
+Formatted 187 files (16 changed) in 1.56 seconds.

@@ -1,0 +1,62 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart
+00:00 +0 -1: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart [E]
+  Failed to load "C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart": Failed to create server socket (OS Error: 由于系统缓冲区空间不足或队列已满，不能执行套接字上的操作。, errno = 10055), address = 127.0.0.1, port = 0
+  dart:io-patch/socket_patch.dart 1248:7                           _NativeSocket.bind
+  ===== asynchronous gap ===========================
+  dart:io-patch/socket_patch.dart 2195:12                          _RawServerSocket.bind.<fn>
+  ===== asynchronous gap ===========================
+  dart:io-patch/socket_patch.dart 2515:12                          _ServerSocket.bind.<fn>
+  ===== asynchronous gap ===========================
+  dart:_http/http_impl.dart 3479:24                                _HttpServer.bind.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_tester_device.dart 89:15  FlutterTesterTestDevice.start
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/test/flutter_platform.dart 679:51      FlutterPlatform._startTest.<fn>
+  ===== asynchronous gap ===========================
+  package:flutter_tools/src/base/async_guard.dart 108:24           asyncGuard.<fn>
+  
+00:00 +0 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +1 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +2 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +3 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +4 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +5 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +10 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial real committed metadata snapshot preserves organization and permanent provenance without paths
+00:00 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +13 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +14 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +15 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073/082 partial actual full export passes independent preflight and releases sources
+00:00 +16 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-073/074 partial missing permanent bytes reject full with affected identities and allow only explicit metadata
+00:00 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_zip_reader_test.dart: UT-077 partial: compression, encryption, links and local mismatch reject
+00:00 +18 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-073 partial explicit metadata export cannot restore image bytes
+00:00 +19 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:00 +20 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:01 +21 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:01 +22 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:01 +23 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074/081 partial owned protected secrets mask portable names after reopen and active intent is excluded
+00:01 +24 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial exclusive publication collision retains existing file and retries new identity
+00:01 +25 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial exclusive publication collision retains existing file and retries new identity
+00:01 +26 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-074 partial unavailable secret backend fails closed before export and does not change library
+00:01 +27 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_coordinator_test.dart: UT-082 partial publication is commit point late cancellation retains completed backup
+00:01 +28 -1: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_snapshot_test.dart: UT-082 partial cancellation waits for current pixel/hash IO and releases all real protection
+00:01 +29 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart: loading C:/Users/PAN/workspace/ImageHub/app/test/core/backup_manifest_test.dart

@@ -1,0 +1,43 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-052/053 construction is idle; dispatch bounded; lowering does not kill active IO
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-054/057 pause blocks later dispatch; cancelled intent waits for actual adapter settlement
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-059/061/067 retry waits monotonic 2/4/8; UTC jumps and repeated wake do not accelerate
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-060/062 unknown never wakes into another request
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/link_format_test.dart: UT-069 four ordinary templates preserve escaped query and Unicode targets
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-068 real watchdog ignores duplicate bytes, stops at 120 seconds without activity
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_coordinator_test.dart: UT-102 graceful close waits for real IO, preserves unknown rather than cancelled
+00:00 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-044 UT-051 frozen input target snapshot survives reopen and dispatch resolves current credential
+00:00 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_pipeline_test.dart: IT-004 controlled subflow real file multipart queue two confirmations and secure management survives reopen
+00:00 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_pipeline_test.dart: IT-004 controlled subflow real file multipart queue two confirmations and secure management survives reopen
+00:00 +14: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:00 +15: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:00 +16: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 320.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-067 UT-068 monotonic checkpoints only increase current running duration and survive recovery
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-059 UT-068 durable four attempt limit blocks another execution
+00:02 +31: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:02 +32: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:02 +33: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 1280.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:02 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/upload_repository_test.dart: UT-048 protected management readback fault recovers secure reference
+00:02 +35: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:02 +36: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:02 +37: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:02 +38: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:02 +39: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:06 +40: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload initial load error gives retry and no fake data (variant: TargetPlatform.windows)
+00:06 +41: All tests passed!

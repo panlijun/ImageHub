@@ -1,0 +1,615 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:02 +4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:03 +6: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:05 +6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "图床尚未接入，当前没有远程结果。": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:97:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 97
+The test description was:
+  UT-004 / IT-001 partial M1 independent copy, real search and favorite
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:05 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:05 +6 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite [E]
+  Test failed. See exception logs above.
+  The test description was: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+  
+00:06 +7 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:06 +8 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:199:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial links 320.0 empty and large text layout
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:07 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:07 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial links 320.0 empty and large text layout
+  
+00:07 +8 -2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 390.0 empty and large text layout
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:08 +9 -2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 390.0 empty and large text layout
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:199:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-004 partial links 390.0 empty and large text layout
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:13 +9 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:13 +9 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 390.0 empty and large text layout [E]
+  Test failed. See exception logs above.
+  The test description was: AT-004 partial links 390.0 empty and large text layout
+  
+00:13 +9 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 1280.0 empty and large text layout
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:13 +10 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:13 +10 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:15 +11 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:229:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:20 +11 -4: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:20 +11 -4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset [E]
+  Test failed. See exception logs above.
+  The test description was: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+  
+00:20 +11 -4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:300:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-070 first page scope cancel and confirmation never add hidden results
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +11 -5: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:27 +11 -5: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 first page scope cancel and confirmation never add hidden results
+  
+00:27 +11 -5: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:28 +11 -5: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextWidgetFinder:<Found 0 widgets with text "暂无已确认普通链接。": []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:264:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 264
+The test description was:
+  AT-001 partial M1 density, shared upload destination and scroll/query retention
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:28 +11 -6: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:28 +11 -6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention [E]
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+00:30 +12 -6: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:350:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:33 +12 -7: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation [E]
+  Test failed. See exception logs above.
+  The test description was: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+  
+00:33 +12 -7: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:117:12)
+<asynchronous suspension>
+#6      _Fixture.open (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:101:24)
+<asynchronous suspension>
+#7      _native.<anonymous closure>.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:28:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:450:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-070 asset target ordered scope reports skipped and deduplicates
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:39 +12 -8: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 asset target ordered scope reports skipped and deduplicates
+  
+00:39 +12 -8: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 390.0 empty and large text layout
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates
+  ... and 4 more
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 1280.0 empty and large text layout
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +7: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:02 +9: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:06 +10: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:06 +11: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:253:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:08 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:08 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset [E]
+  Test failed. See exception logs above.
+  The test description was: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+  
+00:09 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+00:11 +13 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:324:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-070 first page scope cancel and confirmation never add hidden results
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:15 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:15 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 first page scope cancel and confirmation never add hidden results
+  
+00:18 +14 -2: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:374:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:21 +14 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:21 +14 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation [E]
+  Test failed. See exception logs above.
+  The test description was: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+  
+00:27 +14 -3: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:474:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-070 asset target ordered scope reports skipped and deduplicates
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:27 +14 -4: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:27 +14 -4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 asset target ordered scope reports skipped and deduplicates
+  
+00:31 +14 -4: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:264:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-001 partial M1 density, shared upload destination and scroll/query retention
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:31 +14 -5: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention [E]
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+00:31 +14 -5: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:34 +15 -5: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+链接页状态未完成：仅显示已确认的普通链接。链接存在 ≠ 当前可达；未自动探测。Catbox 匿名链接不由应用保证永久。 | 名称、普通 URL、历史目标 | 全部历史目标 | 历史目标身份 |
+全部服务 | Catbox | ImgBB | 图床服务 | 原图与处理结果 | 原图 | 处理结果 | 上传输入 | 确认时间 | 结果名称 | 历史目标 | 排序 | 降序 ↓ | URL |
+Markdown | HTML | BBCode | 复制 / 分享格式 | 已展示 0 / 0 项；选择 0 项，其中当前展示 0 项。筛选和翻页不会自动增加选择。 | 选择已展示结果 | 清空选择
+| 复制已展示结果 | 复制当前展示的选中项 | 分享当前展示的选中项 | 移除当前展示的选中项 | 暂无已确认普通链接。 | 成功链接
+
+When the exception was thrown, this was the stack:
+#0      fail (package:matcher/src/expect/expect.dart:187:31)
+#1      _until (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:58:3)
+<asynchronous suspension>
+#2      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:253:7)
+<asynchronous suspension>
+#3      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#4      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:07 +0 -1: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset [E]
+  Test failed. See exception logs above.
+  The test description was: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+  
+00:07 +0 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 1280.0 empty and large text layout
+00:02 +5: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +7: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:03 +9: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:03 +10: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:07 +11: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+00:07 +12: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly one matching candidate
+  Actual: _TextContainingWidgetFinder:<Found 0 widgets with text containing 已展示 50 / 51 项: []>
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart:355:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart line 355
+The test description was:
+  UT-070 first page scope cancel and confirmation never add hidden results
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:09 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results [E]
+  Test failed. See exception logs above.
+  The test description was: UT-070 first page scope cancel and confirmation never add hidden results
+  
+00:10 +13 -1: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-071 copy failure retains result retries locally share cancellation and removal confirmation
+00:10 +14 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:11 +15 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:12 +16 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:19 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following StateError was thrown running a test:
+Bad state: No element
+
+When the exception was thrown, this was the stack:
+#0      Iterable.single (dart:core/iterable.dart:694:25)
+#1      WidgetController.element (package:flutter_test/src/controller.dart:888:30)
+#2      WidgetController.dragUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2489:38)
+<asynchronous suspension>
+#3      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#4      WidgetController.scrollUntilVisible.<anonymous closure> (package:flutter_test/src/controller.dart:2439:7)
+<asynchronous suspension>
+#5      TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:264:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  AT-001 partial M1 density, shared upload destination and scroll/query retention
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:32 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention [E]
+  Test failed. See exception logs above.
+  The test description was: AT-001 partial M1 density, shared upload destination and scroll/query retention
+  
+00:32 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:35 +18 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 320.0 empty and large text layout
+00:01 +1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: AT-003 partial upload 390.0 empty large text and no implicit network permission (variant: TargetPlatform.windows)
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: AT-004 partial links 1280.0 empty and large text layout
+00:02 +6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +7: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 390.0 loading/failure/real empty layouts
+00:02 +8: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-017 AT-004 partial keyword intersection historical removed target and replacement reset
+00:03 +9: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:03 +10: C:/Users/PAN/workspace/ImageHub/app/test/upload_tasks_screen_test.dart: UT-094 AT-003 partial original privacy guard UUID multi-target capability wait and durable reopen (variant: TargetPlatform.windows)
+00:06 +11: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+00:07 +12: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 first page scope cancel and confirmation never add hidden results
+00:08 +13: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +14: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:09 +15: C:/Users/PAN/workspace/ImageHub/app/test/link_results_screen_test.dart: UT-070 asset target ordered scope reports skipped and deduplicates
+00:10 +16: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:12 +17: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:19 +18: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:36 +19: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:39 +20: All tests passed!

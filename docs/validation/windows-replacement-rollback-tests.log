@@ -1,0 +1,364 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart
+00:00 +0: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:00 +1: UT-080 partial proof checks system temporary volume capacity and cancellation without changing source
+00:00 +2: UT-080 partial tampered snapshot bytes and unknown snapshot files block proof
+00:00 +3: UT-080 partial proof refuses changed journal, foreign owner and released hold
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:114:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart:355:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +4: UT-080 partial proof cleanup inspects unknown contents before deleting any known byte
+00:01 +5: UT-080 partial linked snapshot byte is refused without reading external bytes
+00:01 +6: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:01 +7: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:01 +7 -1: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived [E]
+  Expected: {
+              'upload_batches': [
+                {
+                  'id': 'b69bbefc-11de-43e2-b1d4-2dbca91a46e7',
+                  'intent_id': '9a92b007-b6ae-4c50-9c86-bc6a05d9deec',
+                  'created_utc': 1791281311660,
+                  'paused': 1
+                }
+              ],
+              'upload_publications': [
+                {
+                  'id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'batch_id': 'b69bbefc-11de-43e2-b1d4-2dbca91a46e7',
+                  'position': 0,
+                  'input_json': '{"kind":"original","referenceId":"0f46374e-24f6-4d14-b28a-a2f176a8e20e","displayName":"原始整理.png","version":{"id":"1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd","sha256":"a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64","byteCount":72,"format":"PNG","width":8,"height":6,"frameCount":1,"orientation":1},"policyKey":"original-confirmed-v1","processingSummary":null}',
+                  'target_json': '{"id":"b2376212-caaf-489c-8769-0077c9f60824","service":"imgbb","alias":"保留账号","anonymous":false}',
+                  'target_id': 'b2376212-caaf-489c-8769-0077c9f60824',
+                  'version_digest': 'a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64',
+                  'byte_count': 72,
+                  'policy_key': 'original-confirmed-v1',
+                  'state': 'paused',
+                  'attempt_count': 0,
+                  'generation': 0,
+                  'wait_reason': null,
+                  'retry_delay_micros': null,
+                  'accumulated_running_micros': 0,
+                  'current_attempt_id': null,
+                  'result_id': null,
+                  'message': null,
+                  'created_utc': 1791281311660,
+                  'updated_utc': 1791281311664
+                }
+              ],
+              'upload_attempts': [],
+              'remote_upload_results': [],
+              'upload_result_operations': [],
+              'upload_events': [
+                {
+                  'id': '427405e1-3329-4913-8213-8aafe6dccd6f',
+                  'item_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'attempt_id': null,
+                  'state': 'paused',
+                  'reason': 'paused',
+                  'created_utc': 1791281311665
+                },
+                {
+                  'id': '8b654418-4083-4d70-921b-abc6a38bb960',
+                  'item_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'attempt_id': null,
+                  'state': 'queued',
+                  'reason': 'enqueue',
+                  'created_utc': 1791281311661
+                }
+              ],
+              'provider_targets': [
+                {
+                  'id': 'b2376212-caaf-489c-8769-0077c9f60824',
+                  'service': 'imgbb',
+                  'alias': '保留账号',
+                  'enabled': 1,
+                  'selected_by_default': 0,
+                  'anonymous': 0,
+                  'health': 'unverified',
+                  'secret_reference': '824346ca-ee3a-4ffd-be7e-ec21eec71ddb',
+                  'removed': 0,
+                  'generation': 2,
+                  'created_utc': 1791281311654,
+                  'modified_utc': 1791281311655
+                }
+              ],
+              'credential_operations': [],
+              'versions': [
+                {
+                  'id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'digest': 'a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64',
+                  'byte_count': 72,
+                  'format': 'PNG',
+                  'width': 8,
+                  'height': 6,
+                  'frame_count': 1,
+                  'orientation': 1
+                }
+              ],
+              'categories': [],
+              'assets': [
+                {
+                  'id': '0f46374e-24f6-4d14-b28a-a2f176a8e20e',
+                  'display_name': '原始整理.png',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'imported_utc': 1791281311643,
+                  'updated_utc': 1791281311653,
+                  'source_type': 'file',
+                  'favorite': 1,
+                  'category': null,
+                  'recycled': 0,
+                  'recycled_utc': null
+                }
+              ],
+              'device_copies': [
+                {
+                  'id': 'e1f3e234-db38-4d40-bcad-1f8171a5e085',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'relative_path': 'originals/b3cce597-395c-4c68-aeab-1af3092ad745.original',
+                  'availability': 'available',
+                  'verified_utc': 1791281311650
+                }
+              ],
+              'processed_outputs': [],
+              'import_operations': [],
+              'tags': [
+                {
+                  'id': '2f680457-b739-4d50-8e6e-efaa67f618b1',
+                  'name': '保留标签',
+                  'name_key': '保留标签'
+                }
+              ],
+              'asset_tags': [
+                {
+                  'asset_id': '0f46374e-24f6-4d14-b28a-a2f176a8e20e',
+                  'tag_id': '2f680457-b739-4d50-8e6e-efaa67f618b1',
+                  'position': 0
+                }
+              ],
+              'file_leases': [],
+              'version_references': [
+                {
+                  'id': '0d4fd3f3-9306-4339-b018-9e0eb3f3db40',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'owner_type': 'task',
+                  'owner_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404'
+                }
+              ],
+              'purge_operations': [],
+              'library_metadata': [{'key': 'text_policy', 'value': 'unicode-17-nfc-full-cf-v1'}],
+              'output_references': [],
+              'output_leases': [],
+              'saved_output_origins': [],
+              'restored_output_origins': [],
+              'imported_upload_histories': []
+            }
+    Actual: {
+              'upload_batches': [
+                {
+                  'id': 'b69bbefc-11de-43e2-b1d4-2dbca91a46e7',
+                  'intent_id': '9a92b007-b6ae-4c50-9c86-bc6a05d9deec',
+                  'created_utc': 1791281311660,
+                  'paused': 0
+                }
+              ],
+              'upload_publications': [
+                {
+                  'id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'batch_id': 'b69bbefc-11de-43e2-b1d4-2dbca91a46e7',
+                  'position': 0,
+                  'input_json': '{"kind":"original","referenceId":"0f46374e-24f6-4d14-b28a-a2f176a8e20e","displayName":"原始整理.png","version":{"id":"1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd","sha256":"a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64","byteCount":72,"format":"PNG","width":8,"height":6,"frameCount":1,"orientation":1},"policyKey":"original-confirmed-v1","processingSummary":null}',
+                  'target_json': '{"id":"b2376212-caaf-489c-8769-0077c9f60824","service":"imgbb","alias":"保留账号","anonymous":false}',
+                  'target_id': 'b2376212-caaf-489c-8769-0077c9f60824',
+                  'version_digest': 'a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64',
+                  'byte_count': 72,
+                  'policy_key': 'original-confirmed-v1',
+                  'state': 'queued',
+                  'attempt_count': 0,
+                  'generation': 0,
+                  'wait_reason': null,
+                  'retry_delay_micros': null,
+                  'accumulated_running_micros': 0,
+                  'current_attempt_id': null,
+                  'result_id': null,
+                  'message': null,
+                  'created_utc': 1791281311660,
+                  'updated_utc': 1791281311664
+                }
+              ],
+              'upload_attempts': [],
+              'remote_upload_results': [],
+              'upload_result_operations': [],
+              'upload_events': [
+                {
+                  'id': '427405e1-3329-4913-8213-8aafe6dccd6f',
+                  'item_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'attempt_id': null,
+                  'state': 'paused',
+                  'reason': 'paused',
+                  'created_utc': 1791281311665
+                },
+                {
+                  'id': '8b654418-4083-4d70-921b-abc6a38bb960',
+                  'item_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404',
+                  'attempt_id': null,
+                  'state': 'queued',
+                  'reason': 'enqueue',
+                  'created_utc': 1791281311661
+                }
+              ],
+              'provider_targets': [
+                {
+                  'id': 'b2376212-caaf-489c-8769-0077c9f60824',
+                  'service': 'imgbb',
+                  'alias': '故障账号',
+                  'enabled': 0,
+                  'selected_by_default': 0,
+                  'anonymous': 0,
+                  'health': 'unverified',
+                  'secret_reference': '824346ca-ee3a-4ffd-be7e-ec21eec71ddb',
+                  'removed': 0,
+                  'generation': 2,
+                  'created_utc': 1791281311654,
+                  'modified_utc': 1791281311655
+                }
+              ],
+              'credential_operations': [],
+              'versions': [
+                {
+                  'id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'digest': 'a0ea54333c472bc772ed2b53747268a101b2eccc37a7a9abfa4b97709da18b64',
+                  'byte_count': 72,
+                  'format': 'PNG',
+                  'width': 8,
+                  'height': 6,
+                  'frame_count': 1,
+                  'orientation': 1
+                }
+              ],
+              'categories': [],
+              'assets': [
+                {
+                  'id': '0f46374e-24f6-4d14-b28a-a2f176a8e20e',
+                  'display_name': '故障半成品',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'imported_utc': 1791281311643,
+                  'updated_utc': 1791281311653,
+                  'source_type': 'file',
+                  'favorite': 0,
+                  'category': null,
+                  'recycled': 0,
+                  'recycled_utc': null
+                }
+              ],
+              'device_copies': [
+                {
+                  'id': 'e1f3e234-db38-4d40-bcad-1f8171a5e085',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'relative_path': 'originals/b3cce597-395c-4c68-aeab-1af3092ad745.original',
+                  'availability': 'available',
+                  'verified_utc': 1791281311650
+                }
+              ],
+              'processed_outputs': [],
+              'import_operations': [],
+              'tags': [
+                {
+                  'id': '2f680457-b739-4d50-8e6e-efaa67f618b1',
+                  'name': '保留标签',
+                  'name_key': '保留标签'
+                }
+              ],
+              'asset_tags': [
+                {
+                  'asset_id': '0f46374e-24f6-4d14-b28a-a2f176a8e20e',
+                  'tag_id': '2f680457-b739-4d50-8e6e-efaa67f618b1',
+                  'position': 0
+                }
+              ],
+              'file_leases': [],
+              'version_references': [
+                {
+                  'id': '0d4fd3f3-9306-4339-b018-9e0eb3f3db40',
+                  'version_id': '1b78d4e4-b413-4a3c-a9cb-fd7ce1c690dd',
+                  'owner_type': 'task',
+                  'owner_id': 'e9ff0463-d11c-4cdd-ad01-50c811a68404'
+                }
+              ],
+              'purge_operations': [],
+              'library_metadata': [{'key': 'text_policy', 'value': 'unicode-17-nfc-full-cf-v1'}],
+              'output_references': [],
+              'output_leases': [],
+              'saved_output_origins': [],
+              'restored_output_origins': [],
+              'imported_upload_histories': []
+            }
+     Which: at location ['upload_batches'][0]['paused'] is <0> instead of <1>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\core\replacement_rollback_test.dart 495:5      main.<fn>
+  
+00:01 +7 -1: UT-080 partial committed replacement is never rolled back to old metadata
+00:01 +8 -1: UT-080 partial old bytes changed after snapshot block rollback and preserve all evidence
+00:02 +9 -1: UT-080 partial missing old location appearing after snapshot blocks rollback
+00:02 +10 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart
+00:00 +0: UT-080/IT-005 partial recovery proof rebuilds all 26 tables, raw output and part bytes, missing paths and protected UUID without backend access
+00:00 +1: UT-080 partial proof checks system temporary volume capacity and cancellation without changing source
+00:00 +2: UT-080 partial tampered snapshot bytes and unknown snapshot files block proof
+00:00 +3: UT-080 partial proof refuses changed journal, foreign owner and released hold
+WARNING (drift): It looks like you've created the database class LibraryDatabase multiple times. When these two databases use the same QueryExecutor, race conditions will occur and might corrupt the database. 
+Try to follow the advice at https://drift.simonbinder.eu/faq/#using-the-database or, if you know what you're doing, set driftRuntimeOptions.dontWarnAboutMultipleDatabases = true
+Here is the stacktrace from when the database was opened a second time:
+#0      GeneratedDatabase._handleInstantiated (package:drift/src/runtime/api/db_base.dart:96:30)
+#1      GeneratedDatabase._whenConstructed (package:drift/src/runtime/api/db_base.dart:73:12)
+#2      new GeneratedDatabase (package:drift/src/runtime/api/db_base.dart:64:5)
+#3      new _$LibraryDatabase (package:imagehost/features/gallery/data/library_database.g.dart:12289:40)
+#4      new LibraryDatabase (package:imagehost/features/gallery/data/library_database.dart:407:7)
+#5      LibraryRepository.open (package:imagehost/features/gallery/data/library_repository.dart:114:12)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/core/replacement_rollback_test.dart:355:21)
+<asynchronous suspension>
+#7      Declarer.test.<anonymous closure>.<anonymous closure> (package:test_api/src/backend/declarer.dart:253:15)
+<asynchronous suspension>
+#8      Declarer.test.<anonymous closure> (package:test_api/src/backend/declarer.dart:250:11)
+<asynchronous suspension>
+#9      Invoker._waitForOutstandingCallbacks.<anonymous closure> (package:test_api/src/backend/invoker.dart:318:9)
+<asynchronous suspension>
+This warning will only appear on debug builds.
+00:01 +4: UT-080 partial proof cleanup inspects unknown contents before deleting any known byte
+00:01 +5: UT-080 partial linked snapshot byte is refused without reading external bytes
+00:01 +6: UT-080/IT-005 partial close waits actual proof IO and holds root lock until scratch cleanup
+00:01 +7: UT-080/IT-005 partial startup rollback restores real metadata, paused intent and secret reference; snapshot-writing row is not revived
+00:01 +8: UT-080 partial committed replacement is never rolled back to old metadata
+00:01 +9: UT-080 partial old bytes changed after snapshot block rollback and preserve all evidence
+00:01 +10: UT-080 partial missing old location appearing after snapshot blocks rollback
+00:02 +11: All tests passed!
+
+Validation summary (2026-10-06)
+- Final command: absolute Flutter SDK flutter.bat test test/core/replacement_rollback_test.dart --reporter expanded, require_escalated.
+- Final result: 11 tests passed, exit 0. UT-080 / IT-005 partial, real Windows temporary SQLite databases and files. Symbolic-link test executed, no skips.
+- Targeted source/test dart analyze: No issues found.
+- First sandbox launcher was cancelled before Dart/test execution: SDK cache lock could not be written under restricted sandbox. No test result is attributed to that launch.
+- First actual run: 10 passed, 1 failed. Drift NativeDatabase opens without URI support, so ATTACH mode=ro failed before a transaction; current metadata was retained. Root approved a scoped independent sqlite3 readWrite + uri:true connection inside the existing writer/maintenance/drain boundary. Fixed-stage diagnostics were removed before final run.
+- Final rollback: existing managed database only, foreign_keys ON / WAL / synchronous FULL verified, BEGIN IMMEDIATE / deferred FK, read-only snapshot ATTACH, bounded synchronous hashes and same-transaction operation removal, finally detach/close.
+- Drift multiple-instance warning originates from foreign-owner rejection test using two distinct managed roots and separate executors; it is not a shared-connection test.
+- SecretStore is a controlled synthetic test double. This does not verify OS secure storage, real hardware process termination/power loss, other platforms, large-library performance, or complete V1 acceptance.

@@ -1,0 +1,23 @@
+Resolving dependencies...
+Downloading packages...
+  cross_file 0.3.5+5 (0.4.0 available)
+  image_picker 1.2.3 (1.2.4 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+  unorm_dart 0.3.2 (0.3.3 available)
+  vector_math 2.4.0 (2.4.3 available)
+Got dependencies!
+7 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart
+00:00 +0: UT-073 partial entering backup again reads current asset count
+00:01 +1: UT-073 partial backup loading and library failure never enable export or expose exceptions
+00:01 +2: AT-003 partial backup 320.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:01 +3: AT-003 partial backup 390.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:01 +4: AT-003 partial backup 1280.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+00:01 +5: UT-073 partial backup directory picker cancellation creates no package and retains library (variant: TargetPlatform.windows)
+00:02 +6: UT-073/082 partial backup real SQLite metadata export omits image bytes and source paths (variant: TargetPlatform.windows)
+00:03 +7: UT-073/082 partial corrupt full backup lists UUID and never silently switches to metadata (variant: TargetPlatform.windows)
+00:06 +8: UT-082 partial backup cancellation waits real work and publishes no package (variant: TargetPlatform.windows)
+00:06 +9: All tests passed!

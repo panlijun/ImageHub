@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/upload_flow_test.dart
+Building Windows application...                                    20.3s
+√ Built build\windows\x64\runner\Debug\imagehost.exe
+00:00 +0: IT-004 partial Windows engine enqueue actual file transport fixture secure result and reopen
+00:03 +1: (tearDownAll)
+00:03 +1: All tests passed!

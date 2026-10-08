@@ -1,0 +1,170 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: GalleryQuery immutable values, normalization and unfiltered state
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: GalleryQuery immutable values, normalization and unfiltered state
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/library_migration_test.dart: UT-093 / IT-006 partial own schema 1 to 2 keeps assets/content/copies and merges normalized category UUIDs
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 category NFC/full folding reuse preserves first display and UUID
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-019 exact 30-day prompt retains bytes, identity and organization
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-019 exact 30-day prompt retains bytes, identity and organization
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-019 exact 30-day prompt retains bytes, identity and organization
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual PNG bytes with wrong extension
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual PNG bytes with wrong extension
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-002 / IT-001 actual PNG bytes with wrong extension
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +16: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +17: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +18: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-016 rename collision rolls back and remove keeps bytes, identities, tags, favorite
+00:01 +19: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +20: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +21: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +22: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +23: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +24: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 preserves IDs organization and bytes
+00:01 +25: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +26: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +27: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +28: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +29: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +30: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial Unicode name substring, literal percent/underscore and favorite intersection
+00:01 +31: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-014 first global tag display reuse and normalized remove are persisted
+00:01 +32: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: UT-020 record-only purge retains independent orphan bytes and version
+00:01 +33: C:/Users/PAN/workspace/ImageHub/app/test/core/import_recycle_boundary_test.dart: UT-010 reused-commit cleanup journal is validated and recovered
+00:01 +34: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 invalid policy rolls back before upgrade
+00:01 +35: C:/Users/PAN/workspace/ImageHub/app/test/core/output_schema_migration_test.dart: UT-093 own schema 2 to 3 invalid policy rolls back before upgrade
+00:01 +36: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +37: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +38: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +39: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +40: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +41: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +42: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +43: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +44: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +45: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +46: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:01 +47: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +48: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +49: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +50: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +51: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +52: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +53: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +54: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +55: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +56: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +57: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +58: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +59: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +60: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +61: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +62: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +63: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +64: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +65: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +66: C:/Users/PAN/workspace/ImageHub/app/test/core/gallery_query_test.dart: UT-017 partial database filtering before paging returns all 65 matching UUIDs in stable order
+00:02 +67: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-012 partial / IT-001 real missing/damaged bytes refresh and persist after restart
+00:02 +68: C:/Users/PAN/workspace/ImageHub/app/test/core/library_organization_test.dart: UT-012 partial / IT-001 real missing/damaged bytes refresh and persist after restart
+00:02 +69: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after intent commit
+00:02 +70: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after intent commit
+00:02 +71: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at beforeDbCommit preserves valid recovery state
+00:02 +72: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial real journal replay after file deletion
+00:03 +73: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 / UT-091 interruption at afterDbCommit preserves valid recovery state
+00:03 +74: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial malformed purge path retains intent, records and exact bytes
+00:03 +75: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial malformed purge path retains intent, records and exact bytes
+00:03 +76: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-011 cancellation at published cannot later recover as saved
+00:03 +77: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial stale session lease cleared; durable reference blocks replay
+00:03 +78: C:/Users/PAN/workspace/ImageHub/app/test/core/library_recycle_test.dart: IT-010 partial stale session lease cleared; durable reference blocks replay
+00:03 +79: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-021 matching reimport repairs missing copy without changing logical identities
+00:03 +80: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 future version refused with bytes preserved
+00:03 +81: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 damaged database is not overwritten or treated as empty
+00:03 +82: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 management lock blocks another coordinator and releases on close
+00:03 +83: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: Close is idempotent for window exit and provider disposal
+00:03 +84: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-009 actual metadata uses UTC and stable import-time order
+00:03 +85: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal stage_path preserves unrelated files and journal
+00:03 +86: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal final_path preserves unrelated files and journal
+00:03 +87: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-091 / UT-093 tampered journal id preserves unrelated files and journal
+00:03 +88: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-093 path traversal and absolute paths cannot escape managed root
+00:03 +89: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: UT-003 candidate resource budget rejects before committing
+00:03 +90: C:/Users/PAN/workspace/ImageHub/app/test/core/library_repository_test.dart: LIB-001 thumbnail regenerates after cache removal and does not replace original
+00:06 +91: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:07 +92: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:07 +93: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:07 +94: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:07 +95: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +96: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +97: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +98: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +99: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +100: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +101: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +102: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +103: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +104: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +105: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +106: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +107: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +108: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +109: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +110: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +111: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +112: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +113: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +114: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +115: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +116: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +117: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +118: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +119: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +120: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +121: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 390.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:08 +122: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +123: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +124: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +125: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +126: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +127: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +128: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +129: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +130: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +131: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:09 +132: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +133: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +134: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +135: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +136: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +137: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +138: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:09 +139: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +140: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +141: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +142: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +143: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +144: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +145: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 partial shared workbench 320.0 loading empty/error without overflow (variant: TargetPlatform.windows)
+00:10 +146: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +147: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +148: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +149: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +150: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +151: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:10 +152: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:11 +153: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:11 +154: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: AT-001 partial desktop A 1280.0 empty/loading/failure (variant: TargetPlatform.windows)
+00:11 +155: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+00:18 +156: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:19 +157: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 real size-first compression -> durable output -> permanent save (variant: TargetPlatform.windows)
+00:21 +158: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+00:22 +159: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-013/017 partial desktop selection survives combined query and loads real names (variant: TargetPlatform.windows)
+00:24 +160: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 crop rejects decimal pixels then confirms real integer result (variant: TargetPlatform.windows)
+00:27 +161: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:31 +162: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: UT-019/020/021 partial desktop recycle identity and separate purge confirmations (variant: TargetPlatform.windows)
+00:32 +163: C:/Users/PAN/workspace/ImageHub/app/test/processing/processing_workbench_test.dart: AT-002 stitching uses user-confirmed reversed order and actual geometry (variant: TargetPlatform.windows)
+00:35 +164: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, pending destinations and scroll/query retention
+00:38 +165: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, pending destinations and scroll/query retention
+00:38 +166: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, pending destinations and scroll/query retention
+00:47 +167: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-014/016 partial M1 real shared category/tag editing
+00:50 +168: All tests passed!
