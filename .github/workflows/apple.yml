@@ -32,11 +32,12 @@ jobs:
         shell: bash
     env:
       CI: 'true'
-      TMPDIR: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+      - name: Use the runner temporary root for host tools
+        run: printf 'TMPDIR=%s\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
       - name: Verify the unchanged input kit
         working-directory: .
         run: node imagehost-new-project-kit/verify-kit.mjs
@@ -92,11 +93,12 @@ jobs:
         shell: bash
     env:
       CI: 'true'
-      TMPDIR: ${{ runner.temp }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           persist-credentials: false
+      - name: Use the runner temporary root for host tools
+        run: printf 'TMPDIR=%s\n' "$RUNNER_TEMP" >> "$GITHUB_ENV"
       - name: Install the exact official Flutter SDK
         run: python3 tool/ci/install_flutter.py
       - name: Resolve locked application dependencies

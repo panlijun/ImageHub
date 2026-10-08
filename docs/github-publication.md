@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建；正在提交和推送，尚未获得 Apple 构建结果。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送 `e10e4c0`；首轮 CI 配置检查失败，正在修正并继续实际验证。
 
 ## 待公开内容
 
@@ -42,3 +42,11 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 ## 发布授权
 
 先前自动审批未将目标状态识别为直接公开发布授权，已在用户本轮明确确认后解除。现有 Git Credential Manager 登录与 GitHub 连接器均确认账号 `panlijun`；通过官方 GitHub API 创建公共 `ImageHub` 仓库成功。没有在聊天、日志、文件或远端 URL 中保存令牌。
+
+## 首次发布与实际失败
+
+`e10e4c09a2cc4b555e1828503e303cf4f57bb1fd` 已推送 `main` 并设置 `origin/main`。无凭据 `git ls-remote` 取得同一 SHA，公共 API visibility 为 public；[远端证据](validation/github-first-remote-state.json)。原 `d642ebc` 历史保留。
+
+[首轮 run 37772582915](https://github.com/panlijun/ImageHub/actions/runs/37772582915) 终态 failure、零 jobs，不能计 Apple 测试或构建通过；[实际状态](validation/github-first-ci-failure.json)。工作流在 job.env 使用了未允许的 runner context；[官方上下文范围](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability)确认该限制，改为运行步骤从 RUNNER_TEMP 写入 GITHUB_ENV，再验证新提交。
+
+本机改名后的 Windows 第一次构建也失败：[日志](validation/imagehub-windows-release.log)。CMakeCache 的旧自动 CMAKE_INSTALL_PREFIX 为 `$<TARGET_FILE_DIR:imagehost>`，当前 target 已改 imagehub，来源是本项目已有构建缓存。只对该已确认缓存项重新配置，不更改资料库或依赖源码；修正后的实际结果另记。

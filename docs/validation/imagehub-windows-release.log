@@ -1,0 +1,188 @@
+Building Windows application...                                 
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Error:
+  Error evaluating generator expression:
+
+    $<TARGET_FILE_DIR:imagehost>
+
+  No target "imagehost"
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+Building Windows application...                                  2,026ms
+Unable to generate build files

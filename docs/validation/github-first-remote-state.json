@@ -1,0 +1,18 @@
+{
+  "repository": "panlijun/ImageHub",
+  "visibility": "public",
+  "remoteSha": "e10e4c09a2cc4b555e1828503e303cf4f57bb1fd",
+  "runs": [
+    {
+      "id": 37772582915,
+      "name": ".github/workflows/apple.yml",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "failure",
+      "head_sha": "e10e4c09a2cc4b555e1828503e303cf4f57bb1fd",
+      "html_url": "https://github.com/panlijun/ImageHub/actions/runs/37772582915",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T11:49:11Z"
+    }
+  ]
+}
