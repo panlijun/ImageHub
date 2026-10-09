@@ -669,9 +669,14 @@ def run_suite(suite):
         # Killing a host is never evidence that the simulator app has stopped.
         if attempted and not (failure and str(failure) == "xcode-dart-close-unconfirmed"):
             try:
-                host.terminate_owned_app(record, None)
+                host.terminate_owned_app(record, None, diagnostic=True)
                 host.emit("stage", "ownedappstopped")
+            except Failure as error:
+                host.emit("owned-app-stop-failure", str(error))
+                failure = failure or Failure("owned-app-stop-unconfirmed")
+                host.emit("failure", "owned-app-stop-unconfirmed")
             except (Exception, SystemExit):
+                host.emit("owned-app-stop-failure", "owned-app-stop-unexpected")
                 failure = failure or Failure("owned-app-stop-unconfirmed")
                 host.emit("failure", "owned-app-stop-unconfirmed")
     if failure:

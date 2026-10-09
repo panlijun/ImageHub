@@ -577,15 +577,66 @@ class ControllerTests(OwnedTemp):
 
     def test_stop_unknown_rejects_summary(self):
         self.stop_code = 1
-        self.stop_output = b"unknown simulator error\n"
+        self.stop_output = b"unknown simulator error http://127.0.0.1:54321/OnlySyntheticAuth=/\n"
         with self.assertRaisesRegex(runner.Failure, "owned-app-stop-unconfirmed"):
             runner.run_suite("native")
         self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
+        text = self.output.getvalue()
+        self.assertIn("[owned-app-stop] unknown simulator error <loopback-vm-uri>", text)
+        self.assertIn("[owned-app-stop-exit] exitCode=1; hostAndReaderClosed=true", text)
+        self.assertIn("[owned-app-stop-failure] owned-app-stop-exit-nonzero", text)
+        self.assertIn("[failure] owned-app-stop-unconfirmed", text)
+        self.assertNotIn("SyntheticAuth", text)
+        self.assertNotIn("ownedappstopped", text)
 
     def test_exact_esrch_is_confirmed_already_stopped(self):
         self.stop_code = 3
         self.stop_output = NOT_RUNNING.encode()
         self.assertTrue(runner.run_suite("native")["ownedAppStopped"])
+        self.assertIn("[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true", self.output.getvalue())
+        self.assertIn("Underlying error (domain=NSPOSIXErrorDomain, code=3):", self.output.getvalue())
+
+    def test_stop_failure_preserves_earlier_xcode_failure(self):
+        self.xcode_code = 65
+        self.stop_code = 1
+        self.stop_output = b"unknown simulator error\n"
+        with self.assertRaisesRegex(runner.Failure, "xcode-dart-exit-nonzero"):
+            runner.run_suite("native")
+        self.assertIn("[owned-app-stop-failure] owned-app-stop-exit-nonzero", self.output.getvalue())
+        self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
+
+    def test_stop_unknown_exception_uses_fixed_classification_without_stringifying(self):
+        class UnsafeException(Exception):
+            def __str__(self):
+                raise AssertionError("Unknown exception must never be stringified.")
+
+        with mock.patch.object(runner.host, "terminate_owned_app", side_effect=UnsafeException()), \
+                self.assertRaisesRegex(runner.Failure, "owned-app-stop-unconfirmed"):
+            runner.run_suite("native")
+        self.assertIn("[owned-app-stop-failure] owned-app-stop-unexpected", self.output.getvalue())
+        self.assertNotIn("ownedappstopped", self.output.getvalue())
+        self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
+
+    def test_stop_guard_failure_is_visible_and_never_sends_terminate(self):
+        calls = []
+
+        def guard(record, **kwargs):
+            calls.append(1)
+            if len(calls) >= 4:
+                raise runner.Failure("ownership-changed")
+
+        self.guard.side_effect = guard
+        with self.assertRaisesRegex(runner.Failure, "owned-app-stop-unconfirmed"):
+            runner.run_suite("native")
+        self.assertEqual(len(calls), 4)
+        self.assertFalse(self.stops())
+        text = self.output.getvalue()
+        self.assertIn("[owned-app-stop-phase] guard-started", text)
+        self.assertIn("[owned-app-stop-failure] ownership-changed", text)
+        self.assertNotIn("guard-confirmed", text)
+        self.assertNotIn("terminate-started", text)
+        self.assertNotIn("[owned-app-stop-exit]", text)
+        self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
 
     def test_ownership_change_never_sends_stop_to_unknown_device(self):
         calls = []

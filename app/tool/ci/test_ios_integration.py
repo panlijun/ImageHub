@@ -387,6 +387,50 @@ class Harness(unittest.TestCase):
         self.assertNotIn("ownedappstopped", self.output.getvalue())
         self.assertIn("consoleended", self.output.getvalue())
 
+    def test_default_stop_diagnostics_do_not_change_console_flow(self):
+        self.terminate_bytes = f"Synthetic stop output {URI}\n".encode()
+        runner.run_suite("native")
+        text = self.output.getvalue()
+        self.assertIn("ownedappstopped", text)
+        self.assertNotIn("Synthetic stop output", text)
+        self.assertNotIn("[owned-app-stop-phase]", text)
+        self.assertNotIn("[owned-app-stop-exit]", text)
+
+    def test_diagnostic_unknown_stop_publishes_redacted_output_and_real_exit(self):
+        self.console = Process(running=True)
+        self.terminate_code = 1
+        self.terminate_bytes = f"Unknown service failed: No such process {URI}\n".encode()
+        with self.assertRaisesRegex(runner.Failure, "owned-app-stop-exit-nonzero"):
+            runner.terminate_owned_app(self.record, None, diagnostic=True)
+        text = self.output.getvalue()
+        self.assertIn("guard-started", text)
+        self.assertIn("guard-confirmed", text)
+        self.assertIn("terminate-started", text)
+        self.assertIn("Unknown service failed: No such process <loopback-vm-uri>", text)
+        self.assertIn("exitCode=1; hostAndReaderClosed=true", text)
+        self.assertNotIn("SyntheticAuth", text)
+        self.assertTrue(all(command.closed() for command in self.controllers))
+
+    def test_diagnostic_exact_esrch_preserves_full_matching_input(self):
+        self.console = Process(running=True)
+        self.terminate_code = 3
+        self.terminate_bytes = NOT_RUNNING.encode()
+        output = runner.terminate_owned_app(self.record, None, diagnostic=True)
+        self.assertTrue(runner.known_not_running(3, output))
+        self.assertIn("Underlying error (domain=NSPOSIXErrorDomain, code=3):", self.output.getvalue())
+        self.assertIn("exitCode=3; hostAndReaderClosed=true", self.output.getvalue())
+
+    def test_diagnostic_failed_guard_never_sends_terminate(self):
+        self.state = "Shutdown"
+        with self.assertRaises(runner.Failure):
+            runner.terminate_owned_app(self.record, None, diagnostic=True)
+        self.assertFalse(any(call[:3] == ["xcrun", "simctl", "terminate"] for call in self.calls))
+        text = self.output.getvalue()
+        self.assertIn("guard-started", text)
+        self.assertNotIn("guard-confirmed", text)
+        self.assertNotIn("terminate-started", text)
+        self.assertNotIn("[owned-app-stop-exit]", text)
+
     def test_driver_log_uri_auth_is_redacted_even_on_failure(self):
         self.driver_code = 1
         self.driver_bytes += f"http://localhost:12345/AnotherSyntheticAuth=/\n".encode()
@@ -450,6 +494,78 @@ class ParsingTests(unittest.TestCase):
                 runner.end_console(console)
         self.assertFalse(console.reader.thread.is_alive())
         self.assertTrue(process.stdout.closed and process.waited)
+
+    def test_exit_diagnostic_waits_for_actual_reader_end(self):
+        process = Process()
+        gate = threading.Event()
+        process.stdout = Pipe(b"", gate)
+        started = threading.Event()
+        commands = []
+        messages = []
+        failures = []
+        real_running = runner.Running
+
+        def create(*arguments, **options):
+            command = real_running(*arguments, **options)
+            commands.append(command)
+            started.set()
+            return command
+
+        def emit(stage, value):
+            if stage.endswith("-exit"):
+                self.assertTrue(commands[0].closed())
+                self.assertTrue(process.stdout.closed and process.waited)
+            messages.append((stage, value))
+
+        def execute():
+            try:
+                runner.run_command(["synthetic"], "synthetic", 1,
+                                   publish=False, report_exit=True)
+            except BaseException as error:
+                failures.append(error)
+
+        with mock.patch.object(runner.subprocess, "Popen", return_value=process), \
+                mock.patch.object(runner, "Running", side_effect=create), \
+                mock.patch.object(runner, "emit", side_effect=emit):
+            worker = threading.Thread(target=execute)
+            worker.start()
+            try:
+                self.assertTrue(started.wait(1))
+                self.assertFalse(commands[0].closed())
+                self.assertFalse(messages)
+            finally:
+                gate.set()
+                worker.join(timeout=2)
+            self.assertFalse(worker.is_alive())
+        self.assertEqual(failures, [])
+        self.assertEqual(messages, [("synthetic-exit", "exitCode=0; hostAndReaderClosed=true")])
+
+    def test_unconfirmed_reader_cannot_print_exit_proof(self):
+        process = Process()
+        gate = threading.Event()
+        process.stdout = Pipe(b"", gate)
+        commands = []
+        real_running = runner.Running
+
+        def create(*arguments, **options):
+            command = real_running(*arguments, **options)
+            commands.append(command)
+            return command
+
+        with mock.patch.object(runner.subprocess, "Popen", return_value=process), \
+                mock.patch.object(runner, "Running", side_effect=create), \
+                mock.patch.object(runner, "CLOSE_TIMEOUT", 0.02), \
+                mock.patch.object(runner, "emit") as emit:
+            try:
+                with self.assertRaisesRegex(runner.Failure, "synthetic-close-unconfirmed"):
+                    runner.run_command(["synthetic"], "synthetic", 0.01,
+                                       publish=False, report_exit=True)
+                self.assertFalse(emit.called)
+                self.assertTrue(commands[0].reader.thread.is_alive())
+            finally:
+                gate.set()
+                commands[0].reader.thread.join(timeout=1)
+                runner.close_host(commands[0])
 
 
 if __name__ == "__main__":

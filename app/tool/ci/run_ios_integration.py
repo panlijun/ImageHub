@@ -174,7 +174,7 @@ def close_host(command, companion=None):
 
 
 def run_command(arguments, stage, timeout, *, publish=True, companion=None,
-                accept_nonzero=None, companion_errors=True):
+                accept_nonzero=None, companion_errors=True, report_exit=False):
     command = Running(arguments, stage, publish=publish)
     collected = [] if not publish or accept_nonzero is not None else None
     deadline = time.monotonic() + timeout
@@ -202,6 +202,10 @@ def run_command(arguments, stage, timeout, *, publish=True, companion=None,
         return output
     finally:
         close_host(command, companion=companion)
+        if report_exit:
+            # close_host returning confirms the actual child AND its reader.
+            # A reported nonzero/forced exit is diagnostic, never app-stop proof.
+            emit(stage + "-exit", f"exitCode={command.process.poll()}; hostAndReaderClosed=true")
 
 
 def read_owned_record():
@@ -318,12 +322,17 @@ def known_not_running(code, output):
     return code != 0 and re.fullmatch(pattern, output.strip()) is not None
 
 
-def terminate_owned_app(record, console):
+def terminate_owned_app(record, console, *, diagnostic=False):
+    if diagnostic:
+        emit("owned-app-stop-phase", "guard-started")
     guard_owned(record, companion=console)
+    if diagnostic:
+        emit("owned-app-stop-phase", "guard-confirmed")
+        emit("owned-app-stop-phase", "terminate-started")
     return run_command(["xcrun", "simctl", "terminate", record["udid"], BUNDLE_ID],
-                       "owned-app-stop", 60, publish=False,
+                       "owned-app-stop", 60, publish=diagnostic,
                        accept_nonzero=known_not_running, companion=console,
-                       companion_errors=False)
+                       companion_errors=False, report_exit=diagnostic)
 
 
 def end_console(console):

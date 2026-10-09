@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。2026-10-09应用源`9715ce9`的[Apple文件能力CI](https://github.com/panlijun/ImageHub/actions/runs/37879708343)整体 **success**，macOS与iOS作业均成功；iOS原生文件/照片/备份/诊断保存及Apple备份取得的软件实现与本轮适用验证完成，见[里程碑29](milestone-29-apple-files.md)。历史失败与取消均保留，不改记通过；物理设备、最低系统、真实服务与正式发行仍单列。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。最近一次整体成功仍是应用源`9715ce9`的[Apple文件能力CI](https://github.com/panlijun/ImageHub/actions/runs/37879708343)；macOS与iOS作业均成功，iOS原生文件/照片/备份/诊断保存及Apple备份取得已接入，适用验证见[里程碑29](milestone-29-apple-files.md)。第五轮源`1e5a5bd`/run`37925642129`及第六轮源`5326d527962daad1de23f3340dda40b55aec6e78`/[run37929517038](https://github.com/panlijun/ImageHub/actions/runs/37929517038)均整体failure。第六轮Mac成功；iOS四项Dart业务和四项SDK回调、一个XCTest、ad-hoc签名及实际Keychain用例通过，但因`owned-app-stop-unconfirmed`整体失败，且底层停止原因未知。自有模拟器Shutdown/delete/缺席确认成功；备份、新Photos与正常入口未执行。下一轮诊断只补查停止阶段分类、真实退出结果和有界输出，严格ESRCH/所有权/成功条件不放宽。历史失败与取消保留；Windows/Android本地正式包见[里程碑30](milestone-30-versioned-delivery.md)，物理设备、最低系统、真实服务与Apple正式发行仍单列。
 
 ## 已公开内容
 
@@ -17,7 +17,7 @@
 
 每个任务从项目声明读取 Flutter 3.47.6 基线，在[官方 macOS 发布元数据](https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json)中查找唯一 stable arm64 档案并验证 SHA-256。2026-10-08 只读核实的档案 SHA-256 为 `a1946d3b6b3de15ce247dc89649df9035ce29e6b4e7ebe91919a25890ea2e79a`，HEAD 返回 200、2,263,212,963 字节；本机没有下载此档案。SDK 只安装在该任务的临时目录；依赖按提交的锁文件解析。没有设置长期付费缓存。
 
-macOS任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实Apple engine集成验证、文件IO/窗口所有权XCTest与Release构建。iOS任务固定预装iOS26.2/iPhone17并创建本轮自有模拟器，执行同一Flutter原生验证及正常入口未签名Simulator构建，再运行共享文件IO/选择器和真实Photos addOnly保存XCTest；缺运行时明确失败，不自动大型下载。xcresult摘要严格要求Mac23/iOS20项全部通过、零失败零跳过。命令失败通过pipefail保留，不能因tee把失败记成功。
+macOS任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实Apple engine集成验证、文件IO/窗口所有权XCTest与Release构建；Mac文件用例摘要严格要求23项通过、零失败零跳过。iOS任务固定预装iOS26.2/iPhone17并创建本轮自有模拟器，原生与备份两个suite分别通过官方同进程Dart-XCTest传输核对固定四个Dart用例和一个XCTest传输用例；随后构建正常入口未签名Simulator应用，再分别运行Photos addOnly单项事务（严格预期1项）和read-write原生IO/Photos资源独立读回（严格预期27项），摘要均要求精确计数、零失败零跳过。第六轮实际运行通过了native suite及应用签名/Keychain相关检查，但在owned-app-stop阶段失败，因此后续backup suite、Photos addOnly/read-write和正常入口步骤未执行；read-write 27项仍未取得实际通过证据。历史green源`9715ce9`的iOS XCTest 20项通过属于旧验证路径，不能代替当前27项结果或记作新增27项通过。第六轮实际状态与下一步严格诊断边界见上文和[本轮记录](validation/release-apple-sixth-ci.json)。
 
 证据及压缩应用产物只保留 7 天；应用产物供开发验证，不声称已签名、公证、可在真实 iPhone 安装或正式发行。CI 任务之间不存在永久图库；重开测试使用测试自有暂存及合成图，在同一任务中完成。
 

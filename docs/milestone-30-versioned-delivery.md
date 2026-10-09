@@ -49,7 +49,19 @@ Android receipt 确认 application ID `io.imagehost.imagehost`、最低 API 29�
 
 第五轮 `37925642129`（源 `1e5a5bd`）整体 failure，Mac 仍完整通过上述软件、进程、原生、互读、23 项 XCTest、Release 和版本验证。iOS 的 destination 已匹配，正常测试入口 Xcode 构建 151.8 秒，新 XCTest 实际编译并收到了四个 Dart 业务用例的完成结果；存储/图库/像素/IO 保护与被动网络两项通过，首项 Pigeon 用例结束时的 `SemanticsHandle` 不变量和 Keychain 初始/清理读取 `OSStatus=-34018` 两项失败。严格 XCTest 正确拒绝成功，实际执行 1 项/失败 1 项，退出码 65，host/reader 已结束。`tearDownAll` 不计业务通过；应用停止未确认，后续仅本轮自有模拟器的 Shutdown、删除、缺席核对通过。备份、新 Photos 和正常业务入口步骤未执行。[第五轮记录](validation/release-apple-fifth-ci.json)、[Xcode 原始诊断](validation/release-ci-fifth-ios-xcode.log)、[原生入口](validation/release-ci-fifth-ios-native.log)、[设备收尾](validation/release-ci-fifth-ios-simulator-cleanup.log)保留，两 artifact 大小和 SHA-256 已与真实流式下载核对。
 
-下一轮修正仅用于测试入口与 CI。iOS XCTest 在 `setUpAll` 等待真实 Simulator 平台语义启用后再建立各用例的基线，保持回调和泄漏检查；最终固定 Debug Simulator 宿主恢复本机 ad-hoc 签名及基础 entitlement 注入，检查同次全新 derivedData 的真实宿主签名、身份、生成 entitlement，仍以原真实 Keychain 读写删流程验收。无生产凭据命名空间或应用身份变更，不要求 Apple 团队/profile。具体依据及边界见[启动与签名审查](validation/release-ios-xctest-startup-review.md)。80 项本机控制检查通过（2.568 秒），[日志](validation/release-xctest-ci-controls-05.log)保留；Dart 三文件分析 No issues（3.4 秒），[复验](validation/release-xctest-dart-analysis-02.log)保留。首次分析只有一个多余 import 提示，移除后复验，原[提示日志](validation/release-xctest-dart-analysis-01.log)保留。这些本机控制和分析不能替代下一轮实际 Apple CI。
+当时的下一轮修正仅作用于测试入口与 CI。iOS XCTest 在 `setUpAll` 等待真实 Simulator 平台语义启用后再建立各用例基线，保持回调和泄漏检查；Debug Simulator 宿主使用本机 ad-hoc 签名及基础 entitlement 注入，在同次全新 derivedData 严格核对实际宿主签名、身份和生成 entitlement，真实 Keychain 读写删流程仍是验收门槛。未改生产凭据命名空间或应用身份，也不要求 Apple 团队/profile。具体依据及边界见[启动与签名审查](validation/release-ios-xctest-startup-review.md)。80 项本机控制检查通过（2.568 秒），[日志](validation/release-xctest-ci-controls-05.log)保留；Dart 三文件分析 No issues（3.4 秒），[复验](validation/release-xctest-dart-analysis-02.log)保留。首次分析的多余 import 提示及复验日志均保留。这些本机控制和分析不替代实际 Apple CI。
+
+## 第六轮 Apple CI
+
+源 `5326d527962daad1de23f3340dda40b55aec6e78` 的 [run37929517038](https://github.com/panlijun/ImageHub/actions/runs/37929517038) 已整体结束为 failure。Mac job success：1,456 项软件测试通过/4 个 Windows 分支跳过、八项独立进程恢复与锁边界、四项 Flutter 原生、Windows/Android 两外部来源各自完整与元数据恢复重开、23 项 XCTest 零失败零跳过、64.5 MB Release 构建及原生版本核验通过。
+
+iOS 正常测试应用构建耗时 199.0 秒。真实平台与框架 semantics 在测试基线前已启用，基线 outstanding handle 为 1；四项命名 Dart 业务用例和四项 SDK 回调均完成，1 项 XCTest 零失败零跳过，Xcode exit 0，host/reader 真实关闭。本轮同次全新 derivedData 的宿主 ad-hoc 签名严格核验通过；真实 Keychain 写入、新实例读取、删除及清理断言通过。`signing.json` 中 `keychainPermissionConfirmed=false` 仅表示该记录不能证明 Keychain 权限；独立的 `runtimeKeychainFlowPassed=true` 来自实际运行用例，不能混为一项证据。
+
+整体失败原因是 `owned-app-stop-unconfirmed`。现有记录未暴露 guard、停止命令或关闭阶段的具体失败分类，不能推断应用已经停止。自有模拟器的 Shutdown、delete 和缺席核对成功。备份矩阵、新 Photos 27 项独立资源读回及正常业务入口本轮均未执行；`setUpAll`/`tearDownAll` 计入的框架总数不能增加业务通过数。Mac/iOS artifacts 已对照 GitHub 记录核验大小和 SHA-256：[本轮结果](validation/release-apple-sixth-ci.json)、[Mac Release 日志](validation/release-ci-sixth-macos-release-build.log)、[Mac 进程恢复日志](validation/release-ci-sixth-macos-process-recovery.log)、[Mac 原生版本摘要](validation/release-ci-sixth-macos-native-versions.json)、[Mac XCTest 摘要](validation/release-ci-sixth-macos-file-test-summary.json)、[iOS XCTest 摘要](validation/release-ci-sixth-ios-xctest-summary.json)、[iOS Xcode 日志](validation/release-ci-sixth-ios-xcode.log)、[iOS 原生入口日志](validation/release-ci-sixth-ios-native.log)、[iOS 签名证据](validation/release-ci-sixth-ios-signing.json)及[模拟器清理日志](validation/release-ci-sixth-ios-simulator-cleanup.log)。
+
+停止阶段诊断已完成边界明确的本机控制测试：89 项三模块控制测试通过（2.600 秒），[日志](validation/release-xctest-stop-controls-01.log)SHA-256 为 `b560645c10e1606c079f4ad219da505c3f0912cb00eac23ba53d9bc5e1d0b5aa`。这只验证 XCTest 路径的控制逻辑，不代表 Apple 实际运行或第六轮停止问题已解决。诊断仅在 XCTest 启用，默认直接控制台路径不变；实际退出信息须等 `close_host` 真实返回后才发出，强制结束退出码仍仅用于诊断且保持失败；guard/command 的可知失败使用固定分类，未知异常不调用 `toString`。`run_command` 的 close 异常仍可能覆盖主失败语义，若发生仍严格失败。
+
+后续只补查停止阶段的具体分类、取得真实进程退出结果和有界输出；不放宽严格 `ESRCH`、owned 身份和停止成功条件，不用 XCTest 响应或 host/reader 退出代替应用停止确认。底层原因仍未知，下一次 Apple CI 尚待实际执行；未启动的新 run 不预报状态。
 
 ## 保留边界与待完成事项
 
