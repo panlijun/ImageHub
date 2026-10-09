@@ -80,6 +80,10 @@ void runBackupInteropExport() {
         Directory(p.join(scene.directory.path, 'exports')),
       );
       await scene.removeAfterSuccess();
+      await _writeIosXctestEvidence('export.json', {
+        'fixtureVersion': 1,
+        'encoded': encoded,
+      }, createRoot: true);
       binding.reportData ??= <String, dynamic>{};
       (binding.reportData!.putIfAbsent(
         'imageHubBackupExports',
@@ -127,6 +131,10 @@ void _registerConsumer(BackupInteropPayload payload) {
         );
       }
       await scene.removeAfterSuccess();
+      await _writeIosXctestEvidence('${payload.originPlatform}.json', {
+        'fixtureVersion': 1,
+        'results': results,
+      });
       binding.reportData ??= <String, dynamic>{};
       (binding.reportData!.putIfAbsent(
         'imageHubBackupInteropResults',
@@ -137,4 +145,47 @@ void _registerConsumer(BackupInteropPayload payload) {
     },
     timeout: const Timeout(Duration(minutes: 5)),
   );
+}
+
+/// Closed synthetic evidence for the dedicated native XCTest CI entry only.
+/// A fresh owned simulator is required; existing/unknown files are preserved.
+Future<void> _writeIosXctestEvidence(
+  String name,
+  Map<String, Object?> value, {
+  bool createRoot = false,
+}) async {
+  if (!const bool.fromEnvironment('IMAGEHUB_XCTEST_EVIDENCE')) return;
+  interopRequire(Platform.isIOS, 'xctest-ios-only');
+  interopRequire(
+    {
+      'export.json',
+      'windows.json',
+      'android.json',
+      'macos.json',
+    }.contains(name),
+    'xctest-evidence-name',
+  );
+  final parent = Directory(
+    await (await getTemporaryDirectory()).resolveSymbolicLinks(),
+  );
+  final root = Directory(
+    p.join(parent.path, 'imagehub-ios-xctest-evidence-v1'),
+  );
+  final type = await FileSystemEntity.type(root.path, followLinks: false);
+  if (createRoot) {
+    interopRequire(type == FileSystemEntityType.notFound, 'xctest-fresh-root');
+    await root.create();
+  } else {
+    interopRequire(type == FileSystemEntityType.directory, 'xctest-owned-root');
+  }
+  interopRequire(
+    await root.resolveSymbolicLinks() == root.path &&
+        p.dirname(root.path) == parent.path,
+    'xctest-root-containment',
+  );
+  final bytes = utf8.encode(jsonEncode(value));
+  interopRequire(bytes.length <= 256 * 1024, 'xctest-evidence-budget');
+  final file = File(p.join(root.path, name));
+  await file.create(exclusive: true);
+  await file.writeAsBytes(bytes, flush: true);
 }

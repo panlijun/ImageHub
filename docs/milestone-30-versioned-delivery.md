@@ -33,6 +33,12 @@ Android receipt 确认 application ID `io.imagehost.imagehost`、最低 API 29�
 
 后续 CI 验证采用自有模拟器的直接控制台采集，并通过 Flutter 的 [integrationDriver](https://api.flutter.dev/flutter/package-integration_test_integration_test_driver/integrationDriver.html) 连接已启动测试应用。该驱动仍须取得实际测试完成响应、真实 hostdriver 退出和控制台收尾，不能用启动 PID 或 VM 地址代替测试通过；本地控制检查也不代替后续 Apple CI。
 
+第三轮 `37918498083`（源 `17a7df2`）已结束，Mac 再次通过上述软件、四项原生、23 项 XCTest、互读、版本和 Release 核验；iOS 正常构建成功（Xcode 189.8 秒）并核验版本，但直接控制台路径在 120 秒内没有 VM 服务地址，PID 19538 直到自有应用停止后才输出，host driver 未开始。应用停止、控制台实际退出码 0、自有模拟器关闭和删除均确认；后续备份与 Photos 未执行。两份原始 artifact 均按实际大小和 SHA-256 核对，[第三轮记录](validation/release-apple-third-ci.json)、[原生入口日志](validation/release-ci-third-ios-native.log)和[清理日志](validation/release-ci-third-ios-simulator-cleanup.log)保留。
+
+新的验证入口限定于测试 target 和 CI：正常编译固定 Dart 入口，由 XCTest 读取主机同进程官方 `IntegrationTestPlugin`/`FLTIntegrationTestRunner` 的完成结果，严格核对四个实际用例及回调，拒绝空结果或缺少用例；仅集成测试开启的备份证据使用独占新文件、真实 flush/close 和固定白名单读回。普通业务与两份既有交付包不变。Dart 证据钩子格式化及分析 No issues（68.3 秒）通过，见[分析日志](validation/release-xctest-entry-analyze.log)；原生编译和实际 Apple 运行仍待验证，不将控制检查记作 iOS 通过。
+
+新增 XCTest 控制检查合并后共 68 项通过（2.448 秒），见[复验日志](validation/release-xctest-ci-controls-03.log)。原 67 项运行的 1 失败/2 错误保留于[首次日志](validation/release-xctest-ci-controls-02.log)：本机 Python 对同一重写文件的 `lstat` 创建时间与 `fstat` 变更时间存在实际差异，另有故障注入同时改变比较双方而未触发失败。根据[实际状态诊断](validation/release-xctest-stat-diagnostic.log)修正 Windows 控制分支与注入；Darwin 保留完整 dev/ino/mode/size/mtime/ctime 比对，未放宽 Apple 文件保护。首次尝试系统 Python 别名未产生 unittest 输出，此后使用已存在的 Codex Python 3.12 运行时，没有安装新工具。
+
 主线程审查驱动后，本机 CI 控制测试 40 项通过（新增 iOS 驱动 29 项及已有版本/权限守卫 11 项），见[复验日志](validation/release-console-ci-controls-02.log)。首次默认沙盒运行因目录权限发生 setup/cleanup 错误，失败日志保留于[原运行](validation/release-console-ci-controls.log)；复验使用已有 Python 和工作区自有临时目录，仅设置并恢复当前进程环境，没有系统配置改动。Dart 驱动格式 2 文件/0 修改、五组独立版本/5 输出检查、`flutter analyze` No issues（105.8 秒）通过；[分析日志](validation/release-console-driver-analyze.log)与[资源包校验](validation/release-final-kit.log)留存。资源包 31 文件/56 本地引用完整性通过，不计为软件测试。
 
 ## 保留边界与待完成事项

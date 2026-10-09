@@ -2,6 +2,8 @@
 
 ## 输入与范围
 
+- 2026-10-09第三轮源17a7df2/run37918498083已结束：Mac1456软件测试/4平台跳过、四项Flutter原生、23XCTest及Release/独立版本再次成功；iOS正常构建和版本核验成功，直接控制台120秒内未取得VM，PID19538仅在自有应用停止后出现，Dart用例/hostdriver未开始。应用停止、真实console exit0及自有模拟器关闭删除确认，两artifact大小/SHA已核对；见docs/validation/release-apple-third-ci.json，不猜测底层原因或计作业务失败。后续仅测试target/CI采用run_ios_xctest_integration.py正常编译固定Dart入口和官方同进程IntegrationTestPlugin/FLTIntegrationTestRunner：明确单suite宏、仅CI -ObjC、不再静态链接另一份plugin；单调有界等待、精确四个Dart名称/成功/回调、一项XCTest零失败零跳过及真实host/app收尾全部确认才交付。备份仅测试编译flag允许写Library/Caches下新普通闭合白名单证据，owned容器双读/摘要/来源/全设置验证后复制，不覆盖或猜删。原控制台路径与失败记录保留。68本机控制测试通过，不代替Apple原生运行；Windows Python ctime诊断及原67项失败保留，Darwin仍比对完整六字段，见里程碑30。
+
 - 2026-10-09用户设定持续目标：完成现有环境可继续的软件任务，再完成Windows与Android正式本地打包，并建立一个内核版本及四端独立版本。此授权包含本地Android长期release签名与打包，不含对外发布、商店开通或付费证书。Windows沿用选型13.1/13.2的完整Release目录ZIP，不引入额外安装器；Android为arm64签名Release APK。版本单一源为app/versions.json，内核与四端各自维护，数据schema/备份格式不随产品版本重置；app/tool/versioning.dart生成并检查Dart与四端原生元信息。签名私钥与密码仅放忽略的本机.local/受保护资料，不进Git、诊断、CI或交付包；默认release禁止debug签名降级。真实图床和实机排除继续遵循既有范围。
 
 - 2026-10-09本轮收尾进行中：Windows1459软件测试通过/1平台跳过、M1快捷入口20项、五项Windows原生及正常Release启动退出已通过；真实4,328,697,800字节ZIP64默认预检/合并/重开全部字节、62冷缩略图实际读完后租约为0已验证。Windows正式ZIP与Android专用签名ARM64 APK已实际生成并核验，内核/平台0.1.0+1；源base cfd55d0、dirty=true仅两张既有验证截图，不能称clean源构建。Windows完整34条目及解包正常启动退出，Android精确build1、API29、唯一ARM64、非debug和专用v2证书通过，见里程碑30及两份formal receipt。源95b94d3/run37908256215与源d5bb06d/run37913146736的Mac均1456通过/4跳过、四项Flutter原生、23XCTest及Release成功；前轮iOS四项原生通过后备份启动超时，本轮iOS构建和启动PID成功却未取得VM服务，20分钟超时，均清理自有模拟器成功，不能称整体CI成功或业务用例失败。Windows/Android/Mac六个软件互读方向已有完整/元数据恢复重开证据；iOS来源、完整四源矩阵和新增Photos独立读回仍待补。详见docs/validation/release-apple-first-ci.json、release-apple-second-ci.json及E36，不以这些证据替代物理设备/PT/PERF/最低系统或真实服务。

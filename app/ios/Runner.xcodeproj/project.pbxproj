@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C931BDE08765432100103001 /* ImageHubFlutterIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C931BDE08765432100103002 /* ImageHubFlutterIntegrationTests.m */; };
 		B931BDE08765432100102001 /* IOSFileBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931BDE08765432100102002 /* IOSFileBridge.swift */; };
 		B931BDE08765432100102003 /* AppleFiles.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931BDE08765432100102004 /* AppleFiles.g.swift */; };
 		B931BDE08765432100102005 /* AppleFileEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931BDE08765432100102006 /* AppleFileEngine.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C931BDE08765432100103002 /* ImageHubFlutterIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHubFlutterIntegrationTests.m; sourceTree = "<group>"; };
 		B931BDE08765432100102002 /* IOSFileBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFileBridge.swift; sourceTree = "<group>"; };
 		B931BDE08765432100102004 /* AppleFiles.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleFiles.g.swift; path = ../apple/generated/AppleFiles.g.swift; sourceTree = SOURCE_ROOT; };
 		B931BDE08765432100102006 /* AppleFileEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleFileEngine.swift; path = ../apple/AppleFileEngine.swift; sourceTree = SOURCE_ROOT; };
@@ -86,6 +88,7 @@
 		331C8082294A63A400263BE5 /* RunnerTests */ = {
 			isa = PBXGroup;
 			children = (
+				C931BDE08765432100103002 /* ImageHubFlutterIntegrationTests.m */,
 				331C807B294A618700263BE5 /* RunnerTests.swift */,
 				B931BDE08765432100102008 /* AppleFileEngineTests.swift */,
 			);
@@ -289,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C931BDE08765432100103001 /* ImageHubFlutterIntegrationTests.m in Sources */,
 				331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */,
 				B931BDE08765432100102007 /* AppleFileEngineTests.swift in Sources */,
 			);

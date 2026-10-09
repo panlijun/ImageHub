@@ -1,0 +1,42 @@
+{
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "99a45fd039fb7bb2b0952c07f643b86e1de731cd",
+        "deviceName": "My Mac",
+        "modelName": "Apple Virtual Machine 1",
+        "osBuildNumber": "25G83",
+        "osVersion": "26.6.2",
+        "platform": "macOS"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 23,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription": "Runner \u00b7 Built with macOS 26.6.2",
+  "expectedFailures": 0,
+  "failedTests": 0,
+  "finishTime": 1791543497.845,
+  "passedTests": 23,
+  "result": "Passed",
+  "skippedTests": 0,
+  "startTime": 1791543427.239,
+  "statistics": [],
+  "testFailures": [],
+  "title": "Test - Runner",
+  "topInsights": [
+    {
+      "category": "Longest Test Runs",
+      "impact": "29% of duration",
+      "text": "1 longest test run with outlier durations exceeding 1.10s (three standard deviations)"
+    }
+  ],
+  "totalTestCount": 23
+}

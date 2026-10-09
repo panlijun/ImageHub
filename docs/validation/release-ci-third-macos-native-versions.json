@@ -1,0 +1,11 @@
+{
+  "platform": "macos",
+  "verified": true,
+  "native": {
+    "CFBundleShortVersionString": "0.1.0",
+    "CFBundleVersion": "1",
+    "ImageHubKernelVersion": "0.1.0",
+    "ImageHubKernelRevision": "1"
+  },
+  "bundleIdentifier": "io.imagehost.imagehost"
+}

@@ -1,0 +1,39 @@
+Confirmed owned simulator fab48307-9991-4ce2-bd90-98c3172dcb02 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator fab48307-9991-4ce2-bd90-98c3172dcb02 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[build] Resolving dependencies...
+[build] Downloading packages...
+[build]   _fe_analyzer_shared 108.0.0 (109.0.0 available)
+[build]   analyzer 14.4.0 (14.5.0 available)
+[build]   build_runner 2.16.1 (2.16.2 available)
+[build]   cross_file 0.3.5+5 (0.4.0 available)
+[build]   cupertino_ui 1.1.1 (1.1.2 available)
+[build]   drift 2.35.1 (2.35.2 available)
+[build]   image_picker 1.2.3 (1.2.4 available)
+[build]   image_picker_ios 0.8.13+9 (0.8.13+10 available)
+[build]   image_picker_platform_interface 2.11.1 (2.11.2 available)
+[build]   jni_flutter 1.0.3 (1.0.4+1 available)
+[build]   material_color_utilities 0.13.0 (0.13.1 available)
+[build]   material_ui 1.5.0 (1.6.0 available)
+[build]   pigeon 29.0.7 (29.0.8 available)
+[build]   test_api 0.7.12 (0.7.15 available)
+[build]   unorm_dart 0.3.2 (0.3.3 available)
+[build]   vector_math 2.4.0 (2.4.3 available)
+[build] Got dependencies!
+[build] 16 packages have newer versions incompatible with dependency constraints.
+[build] Try `flutter pub outdated` for more information.
+[build] Building io.imagehost.imagehost for simulator (ios)...
+[build] Running Xcode build...                                          
+[build] Xcode build done.                                           189.8s
+[build] ✓ Built build/ios/iphonesimulator/Runner.app
+[stage] buildclosed
+[stage] versionverified
+Confirmed owned simulator fab48307-9991-4ce2-bd90-98c3172dcb02 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[stage] appinstall
+Confirmed owned simulator fab48307-9991-4ce2-bd90-98c3172dcb02 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[console] 2026-10-09 10:44:13.894 Runner[19538:63986] Warning: Unable to create restoration in progress marker file
+[failure] startup-timeout
+Confirmed owned simulator fab48307-9991-4ce2-bd90-98c3172dcb02 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[stage] ownedappstopped
+[console] io.imagehost.imagehost: 19538
+[stage] consoleended consoleExitCode=0
+[failure] startup-timeout
