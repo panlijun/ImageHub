@@ -1,0 +1,42 @@
+{
+  "verificationVersion": 1,
+  "sourceCommit": "95b94d3faec1687e9cf9e69df94d757f18c037bb",
+  "runId": 37908256215,
+  "runUrl": "https://github.com/panlijun/ImageHub/actions/runs/37908256215",
+  "overallConclusion": "failure",
+  "macos": {
+    "jobId": 113746884740,
+    "conclusion": "success",
+    "softwarePassed": 1456,
+    "platformBranchesSkipped": 4,
+    "flutterNativePassed": 4,
+    "xctestPassed": 23,
+    "xctestFailed": 0,
+    "xctestSkipped": 0,
+    "releaseBuilt": true,
+    "independentNativeVersionsVerified": true,
+    "backupExternalOrigins": [
+      "windows",
+      "android"
+    ],
+    "artifactId": 11606606051,
+    "artifactBytes": 26004874,
+    "artifactSha256": "24ebf9246abf0e80fc7dc33833fdf011587e41a84cb01acb6e96f29dc163db00"
+  },
+  "ios": {
+    "jobId": 113746884556,
+    "conclusion": "failure",
+    "flutterNativePassed": 4,
+    "failedStep": "Verify native iOS exports and cross-platform backup restores",
+    "backupTestsStarted": false,
+    "stepTimedOutMinutes": 15,
+    "debugConnectionFailureReportedOnStop": true,
+    "ownedSimulatorShutdownAndDeleted": true,
+    "newPhotosReadbackVerified": false,
+    "newNormalEntryBuildVerified": false,
+    "artifactId": 11606228632,
+    "artifactBytes": 115312,
+    "artifactSha256": "1160ba260f6cc7b17cb94e8d65ea7ac8eb29db3cd83dc44ad12b3b1be78b54b9"
+  },
+  "boundary": "Software host/simulator evidence only. The iOS application did not enter CT-006; startup/connection cause remains unproven. No physical-device PT, minimum-OS, hardware PERF, real service or formal release claim."
+}

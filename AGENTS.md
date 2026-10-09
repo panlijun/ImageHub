@@ -4,6 +4,8 @@
 
 - 2026-10-09用户设定持续目标：完成现有环境可继续的软件任务，再完成Windows与Android正式本地打包，并建立一个内核版本及四端独立版本。此授权包含本地Android长期release签名与打包，不含对外发布、商店开通或付费证书。Windows沿用选型13.1/13.2的完整Release目录ZIP，不引入额外安装器；Android为arm64签名Release APK。版本单一源为app/versions.json，内核与四端各自维护，数据schema/备份格式不随产品版本重置；app/tool/versioning.dart生成并检查Dart与四端原生元信息。签名私钥与密码仅放忽略的本机.local/受保护资料，不进Git、诊断、CI或交付包；默认release禁止debug签名降级。真实图床和实机排除继续遵循既有范围。
 
+- 2026-10-09本轮收尾进行中：Windows1459软件测试通过/1平台跳过、M1快捷入口20项、五项Windows原生及正常Release启动退出已通过；真实4,328,697,800字节ZIP64默认预检/合并/重开全部字节、62冷缩略图实际读完后租约为0已验证。Android专用签名ARM64 Release预构建已核验精确build1、内核/平台0.1.0+1、API29、非debug和专用v2证书；正式dist尚未生成。源95b94d3/run37908256215的Mac1456通过/4跳过、四项Flutter原生、23XCTest及Release成功；iOS四项原生通过，后续备份应用构建后未进入测试，步骤超时，清理自有模拟器成功，不能记作整体CI成功或业务用例失败。Windows/Android/Mac六个软件互读方向已有完整/元数据恢复重开证据；iOS来源、完整四源矩阵和新增Photos独立读回仍待补。详见docs/validation/release-apple-first-ci.json及E36，不以这些证据替代物理设备/PT/PERF/最低系统或真实服务。
+
 - 用户于2026-10-08明确正式名称为 ImageHub，并授权创建公共仓库 `panlijun/ImageHub`、提交推送和运行标准 Apple CI。原资源包及历史记录沿用当时的 ImageHost 名称，保持原件。Dart package、应用 bundle/application ID、平台通道、Windows CompanyName/ProductName 技术存储身份、永久库与秘密命名空间保留，避免品牌更新改变本项目自身的数据位置；用户可见名称与新导出前缀统一 ImageHub。
 
 - 2026-10-08标准 Apple CI 同源整体通过：源提交 `a6d0640`、run `37795607653` 的 macOS 与 iOS 作业均 success。Mac 1396软件测试通过/4平台分支跳过、六个独立进程恢复边界/重开/锁、三个原生用例及Release `ImageHub.app`构建通过；iOS26.2/iPhone17 Simulator三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、最低系统兼容、签名发行或设备PT完成；早期失败/取消保留，详见 `docs/github-publication.md`。
@@ -89,7 +91,7 @@
 - 备份采用自有 formatVersion 2 的白名单 Manifest，严格读取本项目自身 formatVersion 1；这不涉及旧应用数据。使用 archive 4.3.0 文件流 STORE ZIP/ZIP64。所有永久版本（含回收和仅清记录后独立字节）进入完整备份；元数据包无图片字节。格式名称保留领域的 PNG/JPEG/WebP/GIF/BMP，仅包内后缀小写。不直接复制活跃 SQLite，不导出来源路径、秘密引用、临时输出或活动意图。
 - 备份在同一写入协调器/事务取得已提交关系及副本租约，再离开协调门校验摘要与真实像素。所有本库拥有的凭据/管理秘密须先注册脱敏，无法确认安全视图时拒绝导出；结构身份或参数与秘密冲突时失败，不改身份。缺损永久副本列 UUID 并拒绝完整成功，只有用户明确选择才改用元数据。
 - ZIP 写入在 isolate 中使用有界文件流；预读及实际写出分别核对 SHA/字节，输出关闭并 flush 后才发布。取消哈希可按块，同步编码须等当前条目真实完成；等整个工作结束才释放租约。Windows 已接入 GetDiskFreeSpaceExW 和无 REPLACE/COPY 标记的 MoveFileExW，私有同卷暂存经独占原子发布，绝不以 File.rename 的覆盖行为代替该契约。
-- 恢复预检只操作新私有暂存；原始 ZIP/ZIP64 目录保留重名证据，检查中央/本地一致、范围连续、STORE、CRC/SHA/像素、数量/实际大小预算及可用空间，不调用会吞重复条目的通用解码/自动解压。预检成功不是已恢复；默认合并经确认后用持久恢复日志、独占永久副本发布与一笔元信息事务提交。替换先验证当前快照实际可重建，再独立确认风险；保持备份资产/版本身份并创建新本机副本，元数据替换不沿用旧字节。预算为候选值，大于 4 GiB 实包和其他三端仍待实际验证。
+- 恢复预检只操作新私有暂存；原始 ZIP/ZIP64 目录保留重名证据，检查中央/本地一致、范围连续、STORE、CRC/SHA/像素、数量/实际大小预算及可用空间，不调用会吞重复条目的通用解码/自动解压。预检成功不是已恢复；默认合并经确认后用持久恢复日志、独占永久副本发布与一笔元信息事务提交。替换先验证当前快照实际可重建，再独立确认风险；保持备份资产/版本身份并创建新本机副本，元数据替换不沿用旧字节。预算为候选值；Windows大于4GiB实包软件流程见docs/validation/release-large-backup-result.json，其他三端大包及硬件容量压力仍未验证。
 - BackupMergePlanner 仅输出四类永久元信息的纯合并提议及身份映射，按内容复用、保留当前回收/非空整理。同内容描述矛盾及 BAK-004/LIB-003 标签并集超 50 均阻止提交，不截断成功。BackupResultMergePlanner 接收已经完成身份重映射的普通确认，按结果/尝试身份去重；同 URL 不去重，冲突关联保留当前值并汇报。
 - UploadRestoreHold 立即禁止新派发、持久暂停当前任务批次，等待派发准备、实际尝试与结果提交/租约释放结束后才返回。收尾不能确认时继续阻止派发；释放不自动恢复批次或网络授权。这只是上传侧维护屏障，不能代替整个资料库写入保护、实际恢复提交或库执行代次隔离。
 - 内部 ReplacementSnapshot 仅放私有 staging/replacement-UUID；VACUUM INTO 后验证当前 librarySchemaVersion（schema 10）的全部 28 表、结构/关系及字节摘要，保留当前真实关系、秘密引用及登记永久/输出/.part 字节，missing 明确记录。它不是可携带备份，不导出、不新增凭据值；可能保留本机原始显示内容。目录归属 unclaimed/owned 持久确认，未归属目录或未知子文件绝不猜测删除。启动先处理有替换关联的恢复/清理，再清未使用快照；实际回滚见替换日志约定。
@@ -122,6 +124,8 @@
 
 ## 操作与验证
 
+- 修改前检查真实实现和当前文件，保护任务外文件。工作区`main`的“首次完成PC端”提交`d642ebc`保留。用户已授权提交推送至`panlijun/ImageHub`公共仓库并运行标准CI，Windows/Android本地正式打包与专用Android签名按2026-10-09持续目标执行；不重写首次历史、不对外发布、不做Apple正式签名发行或另行付费服务开通。其他范围仍未经要求不提交、推送、PR或发布。
+
 - 来源复制用StreamIterator并在等待数据时观察同一CancellationToken；仅取消交付，必须等源订阅实际清理及已开始的writer IO结束再清暂存/日志。PlatformResource取得令牌在来源就绪检查后、打开数据流前重验。清理错误保留writing证据并反馈storage，不冒充取消成功；无法确认内核读取结束继续等待，不用超时提前释放写入门/根锁。Gallery等待期间提示并禁用再次导入，迟到进度不能覆盖停止反馈。
 - ProviderUploadLimits支持formatMaximumBytes：大小写归一、冲突拒绝、不可变快照，格式与全局限额取小值；非法额外限额拒绝能力。官方网页配置不等于API服务器精确契约，生产Catbox/ImgBB默认unknown仍不派发；本次官方证据见docs/provider-contract-evidence.md，GIF独立上限与远端删除确认缺证分别保留。
 
@@ -131,7 +135,6 @@
 
 - schema9 的 UploadPublications.user_paused 与整批暂停独立持久。仅 queued/waiting/paused/interrupted 可单项暂停/继续，running/unknown/终态拒绝且不取消实际请求；整批继续不清独立标记，整批仍暂停时单项继续仅解除本项意图。重复意图幂等，等待/重试期限与冻结输入保持，调度与写入门都核对。自身1–8升级至9，6/7/8有恢复日志时改动前拒绝；私有快照/回滚包含新列，可携带备份不携带活动控制。
 
-- 修改前检查真实实现和当前文件，保护任务外文件。工作区 `main` 的“首次完成 PC 端”提交 `d642ebc` 保留。用户本轮已授权提交推送至 `panlijun/ImageHub` 公共仓库并运行 CI；不重写首次历史，不做正式签名发行或另行付费服务开通。其他范围仍未经要求不提交、推送、PR 或发布。
 - 用户已授权安装全 Windows 用户环境可用的 Flutter SDK（通用目录及用户 PATH）并获取本项目依赖；本轮Android工具安装范围见开头用户决定。该范围之外的软件、大型额外下载、签名、外部资源开通仍先征得同意。
 - 在 `app/` 运行：`flutter pub get`；数据库生成 `dart run build_runner build`；格式 `dart format lib test integration_test`；检查 `flutter analyze`；测试 `flutter test`；Windows 构建 `flutter build windows --release`。
 - 资源包完整性：工作区根目录 `node imagehost-new-project-kit/verify-kit.mjs`。此检查不是软件测试。

@@ -328,11 +328,11 @@ try {
     $null = Assert-ImageHubOrdinaryPath $buildTools[0].FullName -MustExist
     $signing = Invoke-ImageHubAndroidSigning -JavaHome $env:JAVA_HOME -Initialize:$InitializeAndroidSigning -Action {
       param($publicIdentity)
-      $null = Invoke-ReleaseCommand $flutter @('build', 'apk', '--release', '--target-platform', 'android-arm64') (Join-Path $stage 'build.log')
+      $null = Invoke-ReleaseCommand $flutter @('build', 'apk', '--release', '--target-platform', 'android-arm64', '--split-per-abi', '-P', 'force-version-code-ignoring-abi=true') (Join-Path $stage 'build.log')
       return $publicIdentity
     }
     $artifactPath = Join-Path $stage $artifactName
-    $null = Copy-ReleaseFile (Join-Path $application 'build/app/outputs/flutter-apk/app-release.apk') $artifactPath
+    $null = Copy-ReleaseFile (Join-Path $application 'build/app/outputs/flutter-apk/app-arm64-v8a-release.apk') $artifactPath
     $verification = Assert-AndroidRelease $artifactPath $buildTools[0].FullName $stage $versions $signing.certificateSha256
   }
   $after = Get-ReleaseSource

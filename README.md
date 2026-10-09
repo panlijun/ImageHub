@@ -10,7 +10,7 @@ Windows 和 Android 在用户确认范围内的软件开发及适用验证已完
 
 2026-10-09 已完成 iOS 文件/照片/备份/诊断原生保存与 macOS/iOS 备份取得，[源9715ce9的 Apple CI 两端成功](https://github.com/panlijun/ImageHub/actions/runs/37879708343)。macOS 完整软件测试1424通过/4平台分支跳过，独立进程恢复与锁、4项Flutter原生集成、23项XCTest及正常入口Release构建通过；iOS26.2/iPhone17 Simulator 4项Flutter原生、20项XCTest（含真实Photos合成PNG保存）、正常入口未签名构建与自有设备清理通过。Windows最终回归1427通过/1平台分支跳过，Release构建和正常启动退出通过，Android ARM64 Release也已构建。原生文件保护、实际范围和产物见[里程碑29](docs/milestone-29-apple-files.md)，历史失败/取消见[GitHub与Apple记录](docs/github-publication.md)。最低系统、物理设备、真实Files提供者/系统UI、四端人工互读及正式签名发行仍未验收。
 
-本轮新增的四端备份软件互读和 iOS Photos 保存后读回 CI 尚未运行，仍在本轮验证中；不改变上述里程碑29及其历史 CI 的结论。实机、最低系统兼容和真实图床服务仍按既定范围排除。
+本轮[源95b94d3的 Apple CI](https://github.com/panlijun/ImageHub/actions/runs/37908256215)已执行：macOS 1456项软件测试通过/4项平台分支跳过，4项Flutter原生、23项XCTest及Release通过；Windows/Android来源备份在Mac实际恢复重开通过。iOS的4项原生检查通过，但后续备份测试应用构建后未进入测试、步骤15分钟超时，新Photos读回尚未执行。Mac来源备份随后已在Windows与Android实际恢复重开通过；完整四来源矩阵仍在补证。原始失败和平台边界见[本轮CI记录](docs/validation/release-apple-first-ci.json)，不改变里程碑29及历史CI结论。实机、最低系统兼容和真实图床服务仍按既定范围排除。
 
 图床账号仅支持 Catbox userhash 和 ImgBB APIKey。Catbox 匿名上传已从产品中移除；本项目已有匿名身份只供读取普通历史和备份，不能创建、选择、入队或派发。真实图床上传、删除、探测没有获得联调授权；服务的精确大小与格式限制仍未知，因此生产能力守卫继续阻止未确认能力的派发。受控测试不代表真实服务可用。
 

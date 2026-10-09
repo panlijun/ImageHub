@@ -1,6 +1,6 @@
 # Windows 完整 V1 开发与动态验收基线
 
-审计日期：2026-10-04；最新收尾 2026-10-08。业务基线 IH-SRS-001 1.1；测试设计 IH-UTD-001 1.1；技术选型 IH-TS-001 1.0。本台账保留 Windows 软件基线；用户随后要求的 Android 软件开发与验证另记 E35，真实账号测试与物理设备/硬件验收继续排除且不计通过。**Windows结果见E34，Android增量及Windows回归见E35，均不能代替四端正式发行或全部验证方案验收。**
+审计日期：2026-10-04；最新收尾 2026-10-09。业务基线 IH-SRS-001 1.1；测试设计 IH-UTD-001 1.1；技术选型 IH-TS-001 1.0。本台账保留 Windows 软件基线；Android增量及Windows回归见E35，本轮Apple与当前Windows增量见E36，真实账号测试与物理设备/硬件验收继续排除且不计通过。**Windows结果见E34/E36，Android增量见E35，均不能代替四端正式发行或全部验证方案验收。**
 
 ## 范围与判定
 
@@ -13,7 +13,7 @@
 - 2026-10-07用户最新决定：不实现网络计费状态，只判断网络类型，并按允许的类型控制已确认上传任务自动派发/网络恢复继续。覆盖QUE-008及UT-063的计费判断与“仅非计费”策略；仍保留离线、移动网络需明确允许、条件恢复只派发一次等规则。以下权威原文不改，具体当前验收以此决定为准；不据“自动同步”新增应用云账户或图库云同步。
 
 - 最新用户决定优先，其次为需求 1.1、技术选型 1.0、当前设计规格、HTML 原型。本文是可更新的验收台账，不能自行改变业务规则。
-- Windows 11 x64 全部 V1 P0/P1 保留，四端共享业务从开始支持，平台适配分别补齐。Android已实际构建ARM64/x86_64 APK并完成API36 x86_64模拟器验证，物理设备/API29仍未验证；macOS 12+ arm64与iOS 15+ arm64缺Mac/Xcode。不得把源码配置或主机布局模拟写成平台可运行。
+- Windows 11 x64 全部 V1 P0/P1 保留，四端共享业务从开始支持，平台适配分别补齐。Android已实际构建ARM64/x86_64 APK并完成API36 x86_64模拟器验证，物理设备/API29仍未验证；macOS主机软件验证见E36，iOS模拟器文件流程见[里程碑29](milestone-29-apple-files.md)。Apple真实系统选择器UI、Files提供者/照片格式互操作与设备PT仍待验收。不得把源码配置或主机布局模拟写成平台可运行。
 - V2 的 SYN-001–008 和 V3 的 EXT-001–003 不进入 V1 功能完成数；REV-003 仍检查未来范围隔离。
 - 资源包只读。首次只读审计未运行软件测试；后续真实实现/验证按阶段登记。始终不读取旧项目源码、数据库、图库或凭据，不未经授权上传、删除远端或写Git；用户授权的首次本地PC提交为d642ebc，Android阶段未新增提交、推送或发布。
 - 本文逐条复制权威需求的属性、必需行为与验收条件，并关联权威测试矩阵；代码证据和里程碑运行记录分别标注。原始来源与验证类型均保留，避免摘要漏规则。
@@ -46,7 +46,7 @@
 | E5 | [独立进程工具](../app/tool/verify_process_recovery.dart)、[锁探针](../app/test/core/lock_probe.dart)；运行记录 E1/E2 | import 六边界 exit(73)、正常跨进程重开、排他锁释放；原图字节和身份核对 | 操作系统实际强退、硬件断电、队列/备份持久化通过 |
 | E6 | 本轮并行 TextPolicy、ImageProcessor、图库整理/回收；已观察 [text policy](../app/lib/core/text_policy.dart)、[folding data](../app/lib/core/unicode_case_folding.dart)、[policy test](../app/test/core/text_policy_test.dart) | 共同文本/组织/回收/像素引擎已由主线程审查并运行，具体范围见 E10 | 不把真实引擎验证写成 OUT/任务/图床或四端实机完整交付 |
 | E7 | [图床输入资料](../imagehost-new-project-kit/providers/README.md)、[Catbox](../imagehost-new-project-kit/providers/catbox.md)、[ImgBB](../imagehost-new-project-kit/providers/imgbb.md) | 只读官方资料与输入约束 | 生产适配器、凭据验证健康或真实服务联调 |
-| E8 | [环境/四端状态](environment.md)、新 app/windows/macos/android/ios 源工程 | Windows Release与Android API36 x86_64正常Release应用已有运行证据；ARM64 APK已构建，详见E35；Apple缺Mac/Xcode | ARM64物理手机/最低API29、Apple可运行、设备符合或签名发布 |
+| E8 | [环境/四端状态](environment.md)、新 app/windows/macos/android/ios 源工程 | Windows Release与Android API36 x86_64正常Release应用已有运行证据；ARM64专用Release构建及元信息/签名检查见E36；Apple软件验证见[里程碑29](milestone-29-apple-files.md)/E36 | ARM64物理手机/最低API29、Apple真实系统选择器/Files提供者及照片格式互操作、设备符合或正式发行 |
 | E9 | 本文件与 [需求](../imagehost-new-project-kit/documents/requirements-analysis.md)、[需求审查](../imagehost-new-project-kit/documents/requirements-review.md)、[测试设计](../imagehost-new-project-kit/documents/unit-test-design.md)、[选型审查](../imagehost-new-project-kit/documents/technology-selection-review.md) | 数量、业务规则、正反向验证关联与范围检查 | 文档闭合或技术选型闭合等于软件完成 |
 
 E10：[本轮主线程记录](milestone-03-gallery-processing.md)；130 项现有 tests、桌面/M1 各一项 Windows 原生引擎、独立进程工具、静态检查和构建分别以链接日志登记。不等于 130 个正式 UT 或 90 条正式需求通过。
@@ -101,6 +101,8 @@ E34：2026-10-08 [Windows 软件收尾](milestone-27-windows-completion.md)，�
 
 E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-completion.md)。Android M1接有界SAF照片/文件/ZIP来源、系统文件/目录及MediaStore保存、备份和诊断导出、回收和安全退出。1399软件测试通过/1非Windows分支跳过，API36 x86_64两项原生子流程、五个系统保存字节独立核对、正常Release入口闭环及ARM64/x86_64 APK构建有实际证据；四个受影响Windows原生流程和Release正常退出回归通过。来源/导出实现与选型8.1/8.3的具体关系见[原生边界说明](android-native-files.md)。本段不将模拟器证据记作整项PT、ARM64/API29或真实服务通过；以下Windows审查仍按其原范围读取。
 
+E36：2026-10-09 当前增量证据。Apple文件能力代码与模拟器证据仍以[里程碑29](milestone-29-apple-files.md)为准；源提交`95b94d3`的标准Apple CI run `37908256215`中，macOS作业success，1456项软件测试通过/4个Windows分支跳过、4项Flutter原生测试、23项XCTest零失败零跳过、独立进程恢复/锁及Release构建通过，实际日志与元信息在`app/build/validation/apple-first-37908256215/`。同源iOS作业已终止失败：第二次Flutter备份测试的Xcode构建耗时62.6秒，未进入CT-006测试步骤；该步骤运行15分钟后超时。停止后的`ios-backup-interop.log`记录`Error waiting for a debug connection: The log reader failed unexpectedly`和`Unable to start the app`；`ios-simulator-cleanup.log`记录自有模拟器Shutdown/delete清理成功。此结果不能推断备份业务测试失败，也不计为通过。Windows真实大包证据见[ZIP64运行日志](validation/release-large-backup-01.log)及[结果摘要](validation/release-large-backup-result.json)：172张真实BMP，ZIP64归档4,328,697,800字节，默认预检、合并提交、重开并核对全部永久字节通过；这是Windows软件流程，不是其他三端大包验证或硬件PERF。冷缩略图证据见[批次记录](validation/release-thumbnail-cold-batch.json)：62项真实读取全部结束、图库关闭且fileLeases为0；1904ms是本次观察值，不是参考设备性能验收。Android专用ARM64 Release预构建的元信息/签名证据见[验证摘要](validation/release-android-dedicated-verification.json)：versionCode 1、kernel/platform version 0.1.0+1、最低API 29、非debug V2签名；正式dist交付物尚未生成。版本单一源及内核/四端独立版本接线已专项核对，但不据此宣称正式发行。
+
 ## 优先阻断与矛盾处理
 
 1. 当前源码核对按E34覆盖90条适用Windows软件行为；旧阶段的“未实现”不再作为当前状态。软件保护缺陷必须修正并记录实际失败/复验，不能仅通过取消设备测试关闭。
@@ -108,7 +110,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 3. 真实账号/服务CT与IT-008没有执行，不计通过。检测/删除均须明确授权，删除发出后缺可靠确认保持unknown。设备PT、硬件压力/断电/PERF按本轮决定排除；完整人工AT亦未伪记通过。
 4. 备份导出、预检、实际合并/替换、快照回滚及旧epoch隔离已有当前调用链和测试。PNG重导入纠错只改已校验永久元信息；冻结审计保留历史描述，永久描述冲突仍严格拒绝。未知暂存/发布归属和不可信秘密视图阻止操作，不猜测删除或空库覆盖。
 5. Windows正式构建与原生子流程结果单独登记；系统选择窗口使用fixture的测试不是PT。主机原生秘密写/重开/删及低内存信号读取可以提供本机软件证据，不能代替真实账号有效性或硬件压力测量。
-6. Android工具已安装，API36 x86_64正常Release与原生文件导出已有证据，ARM64 APK已构建但物理设备/API29未验证。Apple两端缺Mac/Xcode，iOS原生导出仍禁用；正式签名/发布未执行，不把未验证的平台标成可运行。
+6. Android工具已安装，API36 x86_64正常Release与原生文件导出已有证据，ARM64专用Release预构建已核对元信息及非debug V2签名，但物理设备/API29与正式dist产物仍未完成。Apple文件保存接线及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；最新macOS主机验证见E36，iOS同源CI作业启动/测试步骤超时并终止失败，原因尚未确认。真实系统选择器UI、Files提供者/照片格式互操作及设备PT仍待验收，不能将平台子流程扩大为完整平台验收。
 
 已解决边界：BAK-004标签并集超LIB-003的50上限仍拒绝，并展示双方对象/数量及整理重导出指引；PNG永久纠错与DAT-003/UPL-001冻结身份的关系按E34严格区分。原型样本ID不得替代生产UUID。若后续真实服务或平台实测与IMG-004等要求不符，仍须报告具体编号和影响，不能用现有实现反改需求或测试。
 
@@ -1060,7 +1062,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`gallery/data/library_backups.dart` 在一致事务取得全部永久版本与租约。完整包包含永久字节，包括回收及仅清记录后的独立版本；元数据包没有图片。真实摘要和像素校验失败列明 UUID 并拒绝完整成功，用户须明确改选元数据。恢复元数据创建 missing 副本，不借用原设备路径。 测试入口：`core/backup_snapshot_test.dart`、`backup_merge_restore_repository_test.dart`、`backup_screen_test.dart`；真实小图 SQL/files，非大包性能证明。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-073；AT-005、CT-006、IT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1076,7 +1078,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：同一 writer 事务取得关系与实际文件租约，退出 writer 后校验/流式写 ZIP。Manifest 白名单排除秘密引用、路径、临时输出、活动意图及本机诊断/观察；终态取消但真实工作未结束的项不进入可携带历史。所有本库秘密引用必须可读取并注册脱敏，返回 null 同样拒绝导出。 测试入口：`core/backup_manifest_test.dart`、`backup_snapshot_test.dart`、`missing_owned_secret_test.dart`；故障拒绝后资产、字节、租约状态及原库可重开均有断言。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-073、UT-074；CT-006、IT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1090,9 +1092,9 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前状态：** Windows适用软件链已核对；最终运行与验收边界见E34，不代表正式四端条款全部验证通过。
 
-**当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`backup_zip_reader.dart` 手工检查 ZIP/ZIP64 原始目录、重复名字、中央/本地一致、范围、STORE、CRC/SHA/真实像素和预算；只写新私有暂存。恢复 prepare 与 commit 均校验空间、关系和当前 epoch，校验失败不改当前库。 测试入口：`core/backup_zip_reader_test.dart`、`backup_restore_plan_test.dart`、`backup_merge_restore_repository_test.dart`；大于 4 GiB 实包及硬件容量压力未验证。
+**当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`backup_zip_reader.dart` 手工检查 ZIP/ZIP64 原始目录、重复名字、中央/本地一致、范围、STORE、CRC/SHA/真实像素和预算；只写新私有暂存。恢复 prepare 与 commit 均校验空间、关系和当前 epoch，校验失败不改当前库。测试入口：`core/backup_zip_reader_test.dart`、`backup_restore_plan_test.dart`、`backup_merge_restore_repository_test.dart`；Windows>4GiB真实BMP ZIP64预检/合并/重开见E36，其他三端大包和硬件容量压力未验收。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-075；CT-006、IT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1110,7 +1112,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：纯计划按内容映射资产、版本、来源、结果与历史，UUID 碰撞分配新身份；标签并集超 50 拒绝，不截断。维护先阻止新派发并排空实际 IO；合并保持现有任务暂停，替换先建可重建私有快照，独立确认、关联提交、会话切换及旧 epoch 拒绝。失败按日志用快照单事务回滚，成功仅有证据清旧文件/秘密。 测试入口：`core/backup_merge_plan_test.dart`、`backup_result_merge_test.dart`、`backup_restore_plan_test.dart`、`backup_replace_restore_repository_test.dart`、`replacement_rollback_test.dart`；本轮 PNG 审计描述修复另列，冻结历史不能被永久描述改写。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-076、UT-077、UT-078、UT-079、UT-080；AT-005、IT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1126,7 +1128,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：自有 Manifest 2/1 只带相对包内资源标识；恢复通过当前平台目录/独占发布服务创建新副本。账号恢复禁用、没有秘密。八项设备设置独立严格 envelope，只恢复声明可用项，确认列出覆盖/跳过；默认目标、凭据、会话许可与旧冻结任务不恢复。 测试入口：`core/backup_settings_test.dart`、`backup_settings_repository_test.dart`、`backup_settings_screen_test.dart`；Windows 实际互读子流程可验证，四设备互读 PT 未执行。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-081；CT-006、IT-005、PT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1142,7 +1144,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`BackupCoordinator`/`RestoreCoordinator` 与共同页面有阶段进度、空间估算、取消及结果汇总。真实 writer/reader 完成、文件关闭后才收尾保护；独占发布是导出提交点，迟到取消不撤销用户文件。暂存按登记、关闭证据与摘要清理，未知子项、链接、变化字节或无法确认 IO 时保留现场；暂存清理与资料库保护清理分别反馈。 测试入口：`core/backup_coordinator_test.dart`、`backup_zip_reader_test.dart`、`backup_screen_test.dart`；系统目录窗口用 fixture，未计 PT/完整人工 AT。
 
-**缺失项/未验证：** Windows实际小图ZIP/SQL/文件恢复边界见E34；四设备互读、真实系统选框、大于4GiB实包及硬件PERF未验证。
+**缺失项/未验证：** Windows实际小图恢复边界见E34，Windows>4GiB ZIP64软件流程见E36；四设备互读、真实系统选框/提供者及照片格式互操作、其他三端>4GiB实包与硬件PERF/PT未验收。
 
 **必要验证：** UT-082；AT-005、IT-005、PT-003。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1160,7 +1162,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`library_settings.dart` 在绑定 owner/epoch/旧设置与目标指纹的事务校验并保存，成功后才更新共同调度策略。默认输入只作用于新工作台/任务；运行中的输入、预算及旧草稿不变。损坏/未来设置拒绝加载，不覆盖为默认值，恢复失败保留旧设置。 测试入口：`core/device_settings_test.dart`、`settings_repository_test.dart`、`backup_settings_repository_test.dart`、`settings_screen_test.dart`。
 
-**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，iOS原生导出仍禁用。
+**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，Apple文件能力及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器UI/Files提供者与格式互操作仍待验收。
 
 **必要验证：** UT-053、UT-083、UT-088；IT-006。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1176,7 +1178,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`library_diagnostics.dart` 白名单事件独立于业务外键，业务提交后记录，日志失败不回滚业务。按真实 UTF-8 字节和 30 天/10,000,000 字节先到清最旧；共同页支持筛选、任务/尝试关联与确认清理，绑定冻结行，不增清后来事件。 测试入口：`core/diagnostic_runtime_test.dart`、`diagnostic_repository_test.dart`、`diagnostics_screen_test.dart`；读/导出故障不串改业务记录。
 
-**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，iOS原生导出仍禁用。
+**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，Apple文件能力及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器UI/Files提供者与格式互操作仍待验收。
 
 **必要验证：** UT-084、UT-089；AT-005、IT-006。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1190,9 +1192,9 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前状态：** Windows适用软件链已核对；最终运行与验收边界见E34，不代表正式四端条款全部验证通过。
 
-**当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：诊断读取、确认和实际导出重新核对本库秘密引用；缺值拒绝安全视图，不枚举其他凭据。先遮蔽再截断，排除来源完整路径、秘密引用、图片、URL query/fragment、正文与不可信异常字符串。用户主动导出，实际 IO 收尾后反馈，清理只操作自有窗口和登记暂存。 测试入口：`core/diagnostic_sanitizer_test.dart`、`diagnostic_exporter_test.dart`、`missing_owned_secret_test.dart`；Android原生JSON导出证据见E35；iOS尚未接入且禁用，不计Windows缺口或iOS完成。
+**当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：诊断读取、确认和实际导出重新核对本库秘密引用；缺值拒绝安全视图，不枚举其他凭据。先遮蔽再截断，排除来源完整路径、秘密引用、图片、URL query/fragment、正文与不可信异常字符串。用户主动导出，实际 IO 收尾后反馈，清理只操作自有窗口和登记暂存。 测试入口：`core/diagnostic_sanitizer_test.dart`、`diagnostic_exporter_test.dart`、`missing_owned_secret_test.dart`；Android原生JSON导出见E35，Apple代码接线与iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器/Files提供者及完整PT仍待验收。
 
-**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，iOS原生导出仍禁用。
+**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，Apple文件能力及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器UI/Files提供者与格式互操作仍待验收。
 
 **必要验证：** UT-085、UT-089；IT-006、PT-003。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1208,7 +1210,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：`library_storage.dart`/`storage_screen.dart` 按实际文件长度展示永久/回收/缓存/输出/诊断占用。缩略图登记日志、使用序号 LRU 与冻结清理计划保留保护项、未知文件、链接和变化字节。原图、输出和缓存新写入先检查实际可用空间；不足时停相关新写入并解释，不自动牺牲永久副本。 测试入口：`core/storage_repository_test.dart`、`storage_capacity_test.dart`、`storage_screen_test.dart` 与 Windows 原生接口；空间余量与总体资源预算是候选值，未做硬件 PERF。
 
-**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，iOS原生导出仍禁用。
+**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，Apple文件能力及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器UI/Files提供者与格式互操作仍待验收。
 
 **必要验证：** UT-086；AT-004、IT-006。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1224,7 +1226,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-local-software-audit.md)：设置显示合法范围、单位、实际有效并发/预算及恢复默认草稿；须保存才生效。`ProcessingScheduler` FIFO 实际预算动态约束并发，内存压力后本会话降低到最多一个候选任务，不取消旧运行许可。Windows 原生低内存信号接入严格失败反馈；不可用的移动导出等能力不提供假控制。 测试入口：`core/settings_repository_test.dart`、`processing_scheduler_test.dart`、`processing_memory_pressure_test.dart`、`system_memory_pressure_monitor_test.dart`；实际低内存/四端预算校准未执行。
 
-**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，iOS原生导出仍禁用。
+**缺失项/未验证：** Windows系统能力及主机自动化见E34；真实内存/磁盘压力校准与系统窗口PT未执行，Android原生导出及模拟器证据见E35，Apple文件能力及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；真实系统选择器UI/Files提供者与格式互操作仍待验收。
 
 **必要验证：** UT-015、UT-025、UT-087、UT-088；AT-005。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1422,7 +1424,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows 桌面 A 路由使用实际 LibrarySession、共同账号/任务/链接工作流和 Drift/文件/系统能力；M1 与桌面共用业务入口。此审查范围的软件链路具备。 测试入口：四端 UC 全流程 PT/AT 不由共同 domain 证明；其他端尚未接入能力不改记 Windows 软件缺口，不声称四端支持通过。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** —；AT-006、PT-004、PT-005。四端实际功能一致性需设备与端到端证据，领域模拟无法证明交付。
 
@@ -1438,7 +1440,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows `ImportGateway` 文件选择、只读资源、source readiness、取消后真实 IO 收尾；来源丢失不影响已保存永久副本。软件具备。 测试入口：云 provider 未明确待获取的潜在内核阻塞不保证全部覆盖；外部设备/相册授权 PT 排除。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** UT-004、UT-010、UT-094；PT-001。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1454,7 +1456,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：`SystemNetworkMonitor` 可见 inactive 与 hidden 区分、前台重读；会话 close/restore gates 与 `upload_exit.dart` 实际网络/处理/文件收尾，持久队列恢复。软件具备且说明限制。 测试入口：PT-002 真切网、系统后台/强退、硬件断电与计时精度排除；不承诺桌面隐藏或移动后台持续执行。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** UT-062、UT-100；PT-002。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1470,7 +1472,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：账号、任务、链接使用可聚焦 Material controls，按钮 tooltip/动作文字、状态与原因文字，不仅颜色；公共 widget 有 Windows 尺寸测试，核心操作软件入口具备。 测试入口：人工全键盘/读屏/触摸/去颜色 AT/PT 未由源码或 widget 自动证明；不将“尚未做完整人工验收”直接判为软件未实现。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** —；AT-006、PT-004。实际键盘/触摸/读屏、去颜色可辨识需设备验收。
 
@@ -1486,7 +1488,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows 选择目录真实导出、严格 Clipboard 和系统分享映射；拒绝/取消/缺能力分别反馈，本机路径不写可携带输入身份。软件具备。 测试入口：设备系统分享接收方保存、其他端原生导出 PT 单列；已禁用的移动导出不是 Windows 缺口。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** UT-036、UT-071、UT-081；PT-003。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1502,7 +1504,7 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：`AGENTS.md` 与当前环境/平台文档分别记系统目标、Windows 构建证据及未实测平台；账号资料维护入口不宣称真实远端通过。 测试入口：正式发行安装方式/签名/完整四端支持矩阵和设备证据仍为发布/设备验收，不由本报告宣告正式四端交付。
 
-**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64 APK仅构建；Apple缺Mac/Xcode，iOS原生导出仍缺；物理设备/API29、正式签名发布与整项PT未完成。
+**缺失项/未验证：** Windows与Android API36 x86_64已有构建/运行证据，Android ARM64专用Release预构建及签名元信息见E36；Apple文件保存接线和iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)，macOS主机验证见E36。真实系统选择器UI/Files提供者/照片格式互操作、物理设备/API29、设备PT及正式dist交付物仍未完成。
 
 **必要验证：** —；PT-005、REV-001。支持系统版本/安装方式和实际设备证据由兼容性声明审查。
 

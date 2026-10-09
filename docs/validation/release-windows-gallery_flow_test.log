@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/gallery_flow_test.dart
+Building Windows application...                                    31.5s
+√ Built build\windows\x64\runner\Debug\imagehub.exe
+00:00 +0: IT-001/002 Windows engine: import, original preview, independent copy, restart, failure
+00:04 +1: (tearDownAll)
+00:04 +1: All tests passed!

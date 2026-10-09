@@ -136,7 +136,7 @@ jobs:
         timeout-minutes: 15
         run: |
           set -euo pipefail
-          flutter test integration_test/generated_backup_interop_matrix_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded 2>&1 | tee build/ci-evidence/ios-backup-interop.log
+          flutter test integration_test/generated_backup_interop_matrix_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded --verbose 2>&1 | tee build/ci-evidence/ios-backup-interop.log
       - name: Build the iOS Simulator application
         timeout-minutes: 15
         run: |

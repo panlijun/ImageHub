@@ -1,0 +1,17 @@
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): false
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=ImageHub Release, O=ImageHub, C=CN
+Signer #1 certificate SHA-256 digest: 457656fcb19a9873cc8c8036d74bbd4a1a8658b823f2de4febdd6bb5aa37749e
+Signer #1 certificate SHA-1 digest: 5c32d90d433ffc47a27b1462dd26343feba06678
+Signer #1 certificate MD5 digest: a5565ebb61c576117a58a79371da08f2
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 4096
+Signer #1 public key SHA-256 digest: 3f1b629c0b0a032b4544fdd875bf308c2eed2809a5d17148a1fa90fcbda81f9f
+Signer #1 public key SHA-1 digest: 8d2fbfcc735c325f99ccad52ced35f1c89b1075f
+Signer #1 public key MD5 digest: 1441d444169090d9feb2c6e228f3cb71

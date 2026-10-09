@@ -25,6 +25,8 @@ DPAPI `CurrentUser` 只保证当前 Windows 用户可解开口令；复制签名
 
 Android artifact 是 arm64 Release APK，固定 `io.imagehost.imagehost` application ID、最低 API 29，使用上述专用签名。脚本核验 APK 的 package、版本/build、ABI、debuggable 状态、内核元信息、签名证书及 v2 签名。
 
+构建同时指定 `--target-platform android-arm64 --split-per-abi`，只交付 `app-arm64-v8a-release.apk`；用 `-P force-version-code-ignoring-abi=true` 保留 `versions.json` 中的 Android build，不附加 Flutter 默认的 ABI 偏移。这是当前 SDK 源码和 [Flutter 官方 APK 指导](https://docs.flutter.dev/deployment/android#build-an-apk) 支持的选项，实际 APK 仍须通过上述核验。
+
 每次打包会在构建前后计算 Git 源状态与文件指纹，并复核 `versions.json` 摘要；构建期间源发生变化则保留失败阶段证据，不发布成功发行目录。成功清单记录实际源身份、版本清单摘要、artifact 大小与 SHA-256，以及平台核验结果。相同平台版本/build 的目标目录已存在时，脚本拒绝覆盖。
 
 macOS 与 iOS 通过已授权的 Apple CI 构建；截至本说明编写时，尚未完成这两端的正式签名发行。本说明描述打包流程与核验契约，不代表任何正式发行包或新 CI 已成功。物理设备/PT/PERF、最低系统实测和真实图床联调仍未计通过；服务能力为 unknown 时继续拒绝派发。

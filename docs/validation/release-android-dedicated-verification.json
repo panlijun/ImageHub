@@ -1,0 +1,9 @@
+{
+  "applicationId": "io.imagehost.imagehost",
+  "minimumSdk": 29,
+  "abi": "arm64-v8a",
+  "platformVersion": "0.1.0+1",
+  "kernelVersion": "0.1.0+1",
+  "certificateSha256": "457656fcb19a9873cc8c8036d74bbd4a1a8658b823f2de4febdd6bb5aa37749e",
+  "verifiedV2Signature": true
+}
