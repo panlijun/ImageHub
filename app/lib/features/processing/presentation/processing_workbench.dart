@@ -25,7 +25,15 @@ final exportGatewayProvider = Provider<ExportGateway>(
 
 /// One shared workbench. All byte writes are owned by application/data services.
 class ProcessingWorkbench extends ConsumerStatefulWidget {
-  const ProcessingWorkbench({super.key});
+  const ProcessingWorkbench({
+    super.key,
+    this.initialAssetIds = const [],
+    this.initialOperation = ProcessingOperation.compress,
+    this.initialLibraryRevision,
+  });
+  final List<String> initialAssetIds;
+  final ProcessingOperation initialOperation;
+  final int? initialLibraryRevision;
 
   @override
   ConsumerState<ProcessingWorkbench> createState() =>
@@ -35,6 +43,7 @@ class ProcessingWorkbench extends ConsumerStatefulWidget {
 class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   LibraryRepository? _repository;
   GalleryPage? _page;
+  final Map<String, ImageAsset> _selectedAssets = {};
   List<ProcessedOutput> _outputs = [];
   final List<String> _selected = [];
   final Map<String, TextEditingController> _frames = {};
@@ -55,6 +64,7 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   bool _backgroundConfirmed = false;
   bool _orderConfirmed = false;
   bool _defaultsApplied = false;
+  bool _initialSelectionApplied = false;
   bool _loading = true;
   bool _busy = false;
   bool _allowPop = false;
@@ -67,9 +77,29 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   Offset? _dragStart;
   AppLifecycleListener? _lifecycle;
 
+  List<ImageAsset> get _inputAssets {
+    final assets = {
+      for (final asset in _page?.items ?? <ImageAsset>[]) asset.id: asset,
+    };
+    assets.addAll(_selectedAssets);
+    return assets.values.toList();
+  }
+
+  Set<String> get _missingSelected =>
+      _selected.toSet().difference(_selectedAssets.keys.toSet());
+  bool get _entryRevisionCurrent =>
+      widget.initialLibraryRevision == null ||
+      widget.initialLibraryRevision ==
+          ref.read(libraryReplacementRevisionProvider);
+
   @override
   void initState() {
     super.initState();
+    _operation = widget.initialOperation;
+    if (!_entryRevisionCurrent) {
+      _initialSelectionApplied = true;
+      _feedback = '资料库已替换，请重新选择原图并确认处理参数。';
+    }
     _lifecycle = AppLifecycleListener(onExitRequested: _exitRequested);
     ref.listenManual(libraryReplacementRevisionProvider, (_, _) {
       unawaited(_afterReplacement());
@@ -84,6 +114,8 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
       _page = null;
       _outputs = [];
       _selected.clear();
+      _selectedAssets.clear();
+      _initialSelectionApplied = true;
       // Retain controller ownership until normal disposal. Replacing the
       // library must not dispose controllers still attached to EditableText.
       for (final controller in _frames.values) {
@@ -146,6 +178,14 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
         }
       }
       final outputs = await repository.listOutputs();
+      final applyingInitial = !_initialSelectionApplied;
+      final requested = (applyingInitial ? widget.initialAssetIds : _selected)
+          .toSet();
+      final selectedAssets = <String, ImageAsset>{};
+      for (final id in requested) {
+        final asset = await repository.getAsset(id);
+        if (asset != null) selectedAssets[id] = asset;
+      }
       if (!mounted || revision != _loadRevision) return;
       setState(() {
         if (!_defaultsApplied) {
@@ -159,6 +199,31 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
         _repository = repository;
         _page = page;
         _outputs = outputs;
+        _selectedAssets
+          ..clear()
+          ..addAll(selectedAssets);
+        if (applyingInitial) {
+          _initialSelectionApplied = true;
+          final missing = requested.length - selectedAssets.length;
+          if (!_entryRevisionCurrent) {
+            _selectedAssets.clear();
+            _feedback = '资料库已替换，请重新选择原图并确认处理参数。';
+          } else if (missing == 0) {
+            _selected.addAll(requested);
+            for (final asset in selectedAssets.values) {
+              if (asset.version.isAnimated) {
+                _frames.putIfAbsent(
+                  asset.id,
+                  () => TextEditingController(text: '0'),
+                );
+              }
+            }
+            if (_selected.length == 1) _resetCrop();
+          } else {
+            _selectedAssets.clear();
+            _feedback = '快捷入口中 $missing 张图片已移除或进入回收区，未预选任何图片，请重新选择。';
+          }
+        }
       });
     } catch (_) {
       if (mounted && revision == _loadRevision) {
@@ -198,6 +263,9 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   }
 
   Future<AppExitResponse> _exitRequested() async {
+    if (ModalRoute.of(context)?.isCurrent != true && !_busy) {
+      return AppExitResponse.exit;
+    }
     if (!await _confirmStop()) return AppExitResponse.cancel;
     if (!mounted) return AppExitResponse.cancel;
     final session = ref.read(librarySessionProvider).asData?.value;
@@ -321,7 +389,7 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
         '背景颜色必须是 8 位 ARGB 十六进制，例如 FFFFFFFF。',
       );
     }
-    final assets = {for (final asset in _page!.items) asset.id: asset};
+    final assets = {for (final asset in _inputAssets) asset.id: asset};
     final versions = <String, ImageVersion>{};
     final frames = <String, int>{};
     for (final id in ids) {
@@ -430,7 +498,7 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   }
 
   String _assetName(String id) =>
-      _page?.items.where((asset) => asset.id == id).firstOrNull?.displayName ??
+      _inputAssets.where((asset) => asset.id == id).firstOrNull?.displayName ??
       id;
 
   void _save(ProcessedOutput output) {
@@ -606,8 +674,10 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
     setState(() {
       if (_selected.contains(asset.id)) {
         _selected.remove(asset.id);
+        _selectedAssets.remove(asset.id);
       } else {
         _selected.add(asset.id);
+        _selectedAssets[asset.id] = asset;
         _frames.putIfAbsent(asset.id, () => TextEditingController(text: '0'));
       }
       _orderConfirmed = false;
@@ -616,7 +686,7 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   }
 
   void _resetCrop() {
-    final asset = _page?.items
+    final asset = _inputAssets
         .where((asset) => _selected.contains(asset.id))
         .firstOrNull;
     if (asset == null) return;
@@ -733,14 +803,27 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
     ),
     if (_page == null) Text(_loading ? '正在打开本机图库…' : '图库加载失败，请重试刷新。'),
     if (_page?.items.isEmpty ?? false) const Text('图库还是空的，请返回图库导入图片。'),
-    for (final asset in _page?.items ?? <ImageAsset>[])
+    if (_missingSelected.isNotEmpty) ...[
+      Text('已选 ${_missingSelected.length} 张图片已移除或进入回收区，处理已禁用；请清除失效选择。'),
+      TextButton(
+        onPressed: _busy || _loading
+            ? null
+            : () => setState(() {
+                final missing = _missingSelected;
+                _selected.removeWhere(missing.contains);
+                _orderConfirmed = false;
+              }),
+        child: const Text('清除失效选择'),
+      ),
+    ],
+    for (final asset in _inputAssets)
       Padding(
         padding: const EdgeInsets.only(bottom: 4),
         child: CheckboxListTile(
           key: Key('processing-asset-${asset.id}'),
           contentPadding: EdgeInsets.zero,
           value: _selected.contains(asset.id),
-          onChanged: _busy ? null : (_) => _toggle(asset),
+          onChanged: _busy || _loading ? null : (_) => _toggle(asset),
           title: Text(
             asset.displayName,
             maxLines: 2,
@@ -858,21 +941,17 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
           ? null
           : (value) => setState(() => _backgroundConfirmed = value!),
     ),
-    for (final asset
-        in _page?.items.where(
-              (asset) =>
-                  _selected.contains(asset.id) && asset.version.isAnimated,
-            ) ??
-            <ImageAsset>[])
+    for (final asset in _inputAssets.where(
+      (asset) => _selected.contains(asset.id) && asset.version.isAnimated,
+    ))
       _field(
         _frames[asset.id]!,
         '${asset.displayName} · 选帧（0–${asset.version.frameCount - 1}）',
         'processing-frame-${asset.id}',
       ),
-    if (_page?.items.any(
-          (asset) => _selected.contains(asset.id) && asset.version.isAnimated,
-        ) ??
-        false)
+    if (_inputAssets.any(
+      (asset) => _selected.contains(asset.id) && asset.version.isAnimated,
+    ))
       CheckboxListTile(
         contentPadding: EdgeInsets.zero,
         title: const Text('明确将所选动画帧转换为静态图片（丢弃动画）'),
@@ -898,7 +977,13 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
     const SizedBox(height: 12),
     FilledButton.icon(
       key: const Key('processing-start'),
-      onPressed: _busy || _loading || _repository == null ? null : _process,
+      onPressed:
+          _busy ||
+              _loading ||
+              _repository == null ||
+              _missingSelected.isNotEmpty
+          ? null
+          : _process,
       icon: const Icon(Icons.play_arrow),
       label: const Text('确认参数并开始处理'),
     ),
@@ -964,9 +1049,9 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
   );
 
   Widget _cropEditor() {
-    final selected =
-        _page?.items.where((asset) => _selected.contains(asset.id)).toList() ??
-        [];
+    final selected = _inputAssets
+        .where((asset) => _selected.contains(asset.id))
+        .toList();
     if (selected.length != 1) {
       return const Padding(
         padding: EdgeInsets.all(8),
@@ -1174,7 +1259,7 @@ class _ProcessingWorkbenchState extends ConsumerState<ProcessingWorkbench> {
               Text(_stateLabel(output)),
               if (output.failureMessage != null) Text(output.failureMessage!),
               Text(
-                '来源：${output.request.inputs.map((input) => '${_page?.items.where((asset) => asset.id == input.assetId).firstOrNull?.displayName ?? '已移除来源记录'} · ${input.version.format} ${input.version.width}×${input.version.height} · ${formatBytes(input.version.byteCount)}').join('；')}',
+                '来源：${output.request.inputs.map((input) => '${_inputAssets.where((asset) => asset.id == input.assetId).firstOrNull?.displayName ?? '已移除来源记录'} · ${input.version.format} ${input.version.width}×${input.version.height} · ${formatBytes(input.version.byteCount)}').join('；')}',
               ),
               if (output.version != null)
                 Text(

@@ -1,0 +1,16 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:169:7 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:192:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:216:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:389:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:392:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:449:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\library_organization_editor.dart:577:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - lib\features\gallery\presentation\mobile_gallery.dart:2050:35 - curly_braces_in_flow_control_structures
+   info - The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:material_ui/material_ui.dart'. Try removing the import directive - test\presentation\gallery_shortcuts_test.dart:5:8 - unnecessary_import
+   info - 'getNotifier' is deprecated and shouldn't be used. Use TickerMode.getValuesNotifier to get both enabled and forceFrames. This feature was deprecated after v3.35.0-0.0.pre. Try replacing the use of the deprecated member with the replacement - test\presentation\gallery_shortcuts_test.dart:886:30 - deprecated_member_use
+   info - 'getNotifier' is deprecated and shouldn't be used. Use TickerMode.getValuesNotifier to get both enabled and forceFrames. This feature was deprecated after v3.35.0-0.0.pre. Try replacing the use of the deprecated member with the replacement - test\presentation\gallery_shortcuts_test.dart:898:30 - deprecated_member_use
+   info - 'dispose' is deprecated and shouldn't be used. Call close() instead. Try replacing the use of the deprecated member with the replacement - tool\verify_thumbnail_batch.dart:89:16 - deprecated_member_use
+
+12 issues found. (ran in 23.1s)

@@ -1,0 +1,10 @@
+{
+  "format": "WebP",
+  "byteCount": 36,
+  "sha256": "845e8a65dad789987a73862d5cd6c2bdb51ea4ecf50827483a535f647930098a",
+  "base64": "UklGRhwAAABXRUJQVlA4TBAAAAAvAAAAAAfQqZa0sv+BiIgA",
+  "decodedWidth": 1,
+  "decodedHeight": 1,
+  "pixel": [37, 83, 149],
+  "validation": "Actual locked image 4.10.1 encodeWebP and decodeWebP, Dart 3.13.5, 2026-10-09. Not an Apple ImageIO or Photos result."
+}

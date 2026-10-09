@@ -199,6 +199,16 @@ def cleanup():
         print("No owned simulator marker; no device was changed.")
         return
     record = validate_record(json.loads(marker.read_text(encoding="utf-8")))
+    device = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if device.get("state") == "Booted":
+        # This device belongs solely to this CI attempt. Never revoke on a
+        # guessed UUID or on a user's simulator. Its deletion below also retires
+        # all of its synthetic assets and permissions.
+        for service in ("photos", "photos-add"):
+            try:
+                simctl("privacy", record["udid"], "revoke", service, "io.imagehost.imagehost")
+            except SystemExit:
+                print("Permission revocation was not confirmed; continue verified owned-device retirement.", flush=True)
     shutdown_owned(record)
     simctl("delete", record["udid"])
     remaining = json.loads(simctl("list", "devices", "--json"))["devices"]
@@ -208,16 +218,36 @@ def cleanup():
     print("The confirmed owned simulator was deleted.")
 
 
+def authorize_photos(mode):
+    marker = marker_path()
+    if not marker.is_file():
+        raise SystemExit("Photos authorization requires this attempt's owned simulator marker.")
+    record = validate_record(json.loads(marker.read_text(encoding="utf-8")))
+    expected = os.environ.get("IMAGEHOST_IOS_SIMULATOR")
+    if expected is None or str(uuid.UUID(expected)) != record["udid"]:
+        raise SystemExit("Photos authorization does not match the selected owned simulator.")
+    device = owned_device(record, json.loads(simctl("list", "devices", "--json")))
+    if device.get("state") != "Booted":
+        raise SystemExit("Photos authorization requires the confirmed owned simulator to be booted.")
+    service = {"add-only": "photos-add", "read-write": "photos"}[mode]
+    simctl("privacy", record["udid"], "grant", service, "io.imagehost.imagehost")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--cleanup", action="store_true")
+    parser.add_argument("--photos", choices=("add-only", "read-write"), help="Grant only the owned CI application a Photos test capability.")
     parser.add_argument("--runtime", help="Exact installed iOS runtime identifier; no fallback or download.")
     parser.add_argument("--device-type", help="Exact installed compatible iPhone type identifier.")
     arguments = parser.parse_args()
     if arguments.cleanup:
-        if arguments.runtime is not None or arguments.device_type is not None:
+        if arguments.runtime is not None or arguments.device_type is not None or arguments.photos is not None:
             parser.error("Cleanup uses only the owned marker; selection arguments are not allowed.")
         cleanup()
+    elif arguments.photos is not None:
+        if arguments.runtime is not None or arguments.device_type is not None:
+            parser.error("Photos authorization uses only this attempt's owned marker.")
+        authorize_photos(arguments.photos)
     else:
         if arguments.runtime is None or arguments.device_type is None:
             parser.error("Startup requires both --runtime and --device-type.")

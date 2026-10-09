@@ -2,6 +2,8 @@
 
 ## 输入与范围
 
+- 2026-10-09用户设定持续目标：完成现有环境可继续的软件任务，再完成Windows与Android正式本地打包，并建立一个内核版本及四端独立版本。此授权包含本地Android长期release签名与打包，不含对外发布、商店开通或付费证书。Windows沿用选型13.1/13.2的完整Release目录ZIP，不引入额外安装器；Android为arm64签名Release APK。版本单一源为app/versions.json，内核与四端各自维护，数据schema/备份格式不随产品版本重置；app/tool/versioning.dart生成并检查Dart与四端原生元信息。签名私钥与密码仅放忽略的本机.local/受保护资料，不进Git、诊断、CI或交付包；默认release禁止debug签名降级。真实图床和实机排除继续遵循既有范围。
+
 - 用户于2026-10-08明确正式名称为 ImageHub，并授权创建公共仓库 `panlijun/ImageHub`、提交推送和运行标准 Apple CI。原资源包及历史记录沿用当时的 ImageHost 名称，保持原件。Dart package、应用 bundle/application ID、平台通道、Windows CompanyName/ProductName 技术存储身份、永久库与秘密命名空间保留，避免品牌更新改变本项目自身的数据位置；用户可见名称与新导出前缀统一 ImageHub。
 
 - 2026-10-08标准 Apple CI 同源整体通过：源提交 `a6d0640`、run `37795607653` 的 macOS 与 iOS 作业均 success。Mac 1396软件测试通过/4平台分支跳过、六个独立进程恢复边界/重开/锁、三个原生用例及Release `ImageHub.app`构建通过；iOS26.2/iPhone17 Simulator三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、最低系统兼容、签名发行或设备PT完成；早期失败/取消保留，详见 `docs/github-publication.md`。

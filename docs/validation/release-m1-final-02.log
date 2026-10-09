@@ -1,0 +1,105 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart
+00:00 +0: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +1: original route freezes identity before builder starts (false) (variant: TargetPlatform.windows)
+00:01 +2: organization errors never format unknown objects
+00:01 +3: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +4: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+00:04 +5: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+00:06 +6: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+00:07 +7: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+
+Warning: A call to tap() with finder "Found 1 widget with type "TextButton" that are ancestors of widget with text "取消" (ignoring all but first): [
+  TextButton(dependencies: [IconTheme, InheritedCupertinoTheme, MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#7d395]], state: _ButtonStyleState#71512),
+]" derived an Offset (Offset(187.5, 751.0)) that would not hit test on the specified widget.
+Maybe the widget is actually off-screen, or another widget is obscuring it, or the widget cannot receive pointer events.
+The finder corresponds to this RenderBox: RenderSemanticsAnnotations#4602b relayoutBoundary=up10
+The hit test result at that offset is: HitTestResult(_RenderColoredBox#24408@Offset(187.5, 751.0), RenderConstrainedBox#4e915@Offset(187.5, 751.0), RenderMouseRegion#174fa@Offset(187.5, 751.0), RenderSemanticsAnnotations#4d065@Offset(187.5, 751.0), RenderPointerListener#d80fa@Offset(187.5, 751.0), RenderSemanticsGestureHandler#c2b90@Offset(187.5, 751.0), RenderExcludeSemantics#862e0@Offset(187.5, 751.0), RenderBlockSemantics#bf94e@Offset(187.5, 751.0), RenderIgnorePointer#08859@Offset(187.5, 751.0), RenderSemanticsAnnotations#171da@Offset(187.5, 751.0), _RenderTheater#e9182@Offset(187.5, 751.0), RenderAbsorbPointer#47256@Offset(187.5, 751.0), RenderPointerListener#06f9c@Offset(187.5, 751.0), RenderSemanticsAnnotations#b9f03@Offset(187.5, 751.0), RenderCustomPaint#8cbc5@Offset(187.5, 751.0), RenderSemanticsAnnotations#db4cf@Offset(187.5, 751.0), RenderSemanticsAnnotations#6dddc@Offset(187.5, 751.0), RenderSemanticsAnnotations#a8089@Offset(187.5, 751.0), RenderTapRegionSurface#17cd9@Offset(187.5, 751.0), RenderSemanticsAnnotations#7cdca@Offset(187.5, 751.0), RenderSemanticsAnnotations#80d0f@Offset(187.5, 751.0), HitTestEntry<HitTestTarget>#24334(_ReusableRenderView#8bd34), HitTestEntry<HitTestTarget>#8ca4f(<AutomatedTestWidgetsFlutterBinding>))
+#0      WidgetController._getElementPoint (package:flutter_test/src/controller.dart:2165:25)
+#1      WidgetController.getCenter (package:flutter_test/src/controller.dart:1947:12)
+#2      WidgetController.tap (package:flutter_test/src/controller.dart:1080:7)
+#3      _tap (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:736:16)
+<asynchronous suspension>
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:305:11)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#7      StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+To silence this warning, pass "warnIfMissed: false" to "tap()".
+To make this warning fatal, set WidgetController.hitTestWarningShouldBeFatal to true.
+
+00:09 +8: M1 selected ProcessingOperation.compress opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:10 +9: M1 selected ProcessingOperation.stitch opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:12 +10: M1 details crop and original upload return through gallery and retain confirmations (variant: TargetPlatform.windows)
+00:14 +11: M1 batch upload retains automatic processing draft without enqueue or authorization (variant: TargetPlatform.windows)
+00:15 +12: entry created before replacement cannot select the same UUID in the new revision (false) (variant: TargetPlatform.windows)
+00:15 +13: refresh preserves unavailable selection and requires explicit removal (false) (variant: TargetPlatform.windows)
+00:16 +14: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=36, IDs=68f5869a-a2f0-47bf-a308-caa3db3dde1c,6a90247a-18a5-4e08-859b-414378693dbf,6bcc9e13-5c72-4ec4-ae71-dbaab804436d,71c0a26a-687f-4373-8f8e-460794217fc7,7791dd37-bca0-441c-9758-750bdb6b1658, active pixels=0, gallery loading=false, pagination reading=0, elapsed=45010ms
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut indicator: CircularProgressIndicator, ticker=true, routeCurrent=true, ancestors=SizedBox > Center > AssetPreviewImage > SizedBox > DefaultTextStyle > AnimatedDefaultTextStyle > _ListTile > IconButtonTheme > IconTheme > Builder > MediaQuery > Padding
+Shortcut provider: asset=02863edc-551e-463b-99ad-3fa34af5cc6e, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=039a1a66-01c2-4b0c-9891-a37ab47d9f3d, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=0f02eed8-a9ae-4104-9369-f0ce2f01b644, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=133b1333-28cd-445d-b64d-1aef79e368d0, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=1995eedd-297d-4795-bf20-3471dec201dd, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=1a95fef4-5686-49a9-8f36-c74301a48bfe, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=1f001342-ff35-481e-93df-0c9f0276b1ae, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+Shortcut provider: asset=22ffc85f-5e61-492d-b463-9904b7b1acd6, frame=0, loading=false, hasData=true, hasError=false, ticker=true, routeCurrent=true
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:839:3)
+<asynchronous suspension>
+#5      _mount (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:758:3)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:607:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 839
+The test description was:
+  shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+01:03 +14 -1: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+  
+  Expected: <true>
+    Actual: <false>
+  Native and widget continuations must both finish.
+  
+  package:matcher                                      expect
+  package:flutter_test/src/widget_tester.dart 473:18   expect
+  test\presentation\mobile_recycle_test.dart 415:3     mobileNative
+  ===== asynchronous gap ===========================
+  dart:async                                           _CustomZone.registerBinaryCallback
+  test\presentation\gallery_shortcuts_test.dart 894:5  _create.<fn>
+  
+01:09 +14 -1: missing shortcut does not partially select; replacement never revives UUID (false) (variant: TargetPlatform.windows)
+01:10 +15 -1: entry created before replacement cannot select the same UUID in the new revision (true) (variant: TargetPlatform.windows)
+01:10 +16 -1: refresh preserves unavailable selection and requires explicit removal (true) (variant: TargetPlatform.windows)
+01:11 +17 -1: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+01:12 +18 -1: missing shortcut does not partially select; replacement never revives UUID (true) (variant: TargetPlatform.windows)
+01:13 +19 -1: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)

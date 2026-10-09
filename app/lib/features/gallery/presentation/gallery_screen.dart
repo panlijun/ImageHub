@@ -14,6 +14,7 @@ import 'asset_widgets.dart';
 import 'mobile_gallery.dart';
 import 'desktop_gallery.dart';
 import '../../processing/presentation/processing_workbench.dart';
+import '../../processing/domain/processing_models.dart';
 import '../../accounts/presentation/accounts_screen.dart';
 import '../../upload/presentation/upload_tasks_screen.dart';
 import '../../upload/presentation/upload_exit.dart';
@@ -195,6 +196,24 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
   Future<void> _openProcessing() => _openPage(const ProcessingWorkbench());
   Future<void> _openAccounts() => _openPage(const AccountsScreen());
   Future<void> _openTasks() => _openPage(const UploadTasksScreen());
+  Future<void> _openSelectedProcessing(
+    List<String> ids,
+    ProcessingOperation operation,
+  ) => _openPage(
+    ProcessingWorkbench(
+      initialAssetIds: List<String>.unmodifiable(ids),
+      initialOperation: operation,
+      initialLibraryRevision: ref.read(libraryReplacementRevisionProvider),
+    ),
+  );
+  Future<void> _openSelectedUpload(List<String> ids, bool original) =>
+      _openPage(
+        UploadTasksScreen(
+          initialAssetIds: List<String>.unmodifiable(ids),
+          initialOriginal: original,
+          initialLibraryRevision: ref.read(libraryReplacementRevisionProvider),
+        ),
+      );
   Future<void> _openBackup() => _openPage(const BackupScreen());
   Future<void> _openSettings() => _openPage(const SettingsScreen());
   Future<void> _openLinks([List<String> ids = const []]) =>
@@ -342,6 +361,10 @@ class _GalleryScreenState extends ConsumerState<GalleryScreen> {
         onAssetLinks: (ids) => unawaited(_openLinks(ids)),
         onLinksVisibility: _linksVisibility,
         onProcessing: () => unawaited(_openProcessing()),
+        onSelectedProcessing: (ids, operation) =>
+            unawaited(_openSelectedProcessing(ids, operation)),
+        onSelectedUpload: (ids, original) =>
+            unawaited(_openSelectedUpload(ids, original)),
         onAccounts: () => unawaited(_openAccounts()),
         onTasks: () => unawaited(_openTasks()),
         onBackup: () => unawaited(_openBackup()),

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../core/network_state.dart';
+import '../../../core/app_versions.dart';
 import '../../accounts/domain/account_models.dart';
 import '../../backup/presentation/backup_screen.dart';
 import '../../diagnostics/presentation/diagnostics_screen.dart';
@@ -615,6 +616,25 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           const Text(
             '系统保存的凭据需在账号管理中明确移除；本次会话凭据在关闭时清空，可携带备份不含凭据。卸载行为不保证系统删除凭据。卸载或清本机数据不会自动删除远端图片，远端保留与删除遵循服务规则，本机记录不能保证远端永久存在。',
           ),
+        ]),
+        _section('应用版本', [
+          Text(
+            '内核版本：${imageHubVersions.kernel.identity}',
+            key: const Key('kernel-version'),
+          ),
+          const SizedBox(height: 8),
+          if (AppPlatform.current case final platform?)
+            Text(
+              '${platform.label} 版本：${imageHubVersions.forPlatform(platform).identity}',
+              key: const Key('platform-version'),
+            ),
+          const SizedBox(height: 8),
+          const Text('内核与四端分别维护版本。版本号不改变资料库位置，也不替代数据格式兼容检查。'),
+          const SizedBox(height: 8),
+          for (final platform in AppPlatform.values)
+            Text(
+              '${platform.label}：${imageHubVersions.forPlatform(platform).identity}',
+            ),
         ]),
         _section('本机诊断', [
           const Text('查看本机脱敏事件、按范围清理或明确确认后导出 JSON。不会自动外发。'),

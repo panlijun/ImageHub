@@ -1,0 +1,241 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +7: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +8: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +9: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +10: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +11: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +12: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 320.0 loading/failure/real empty layouts
+00:01 +13: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:01 +14: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:01 +15: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +16: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +17: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +18: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +19: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +20: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +21: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +22: C:/Users/PAN/workspace/ImageHub/app/test/desktop_gallery_test.dart: IT-002 original viewer system exit drains codec budget and closes library before reopen (variant: TargetPlatform.windows)
+00:02 +23: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +24: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:03 +25: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:03 +26: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:03 +27: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:03 +28: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:04 +29: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:05 +30: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:05 +31: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:06 +32: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:06 +33: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:07 +34: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:08 +35: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:10 +36: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:13 +37: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:15 +38: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:16 +39: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:18 +40: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:25 +41: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:27 +42: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=0, IDs=, active pixels=0, gallery loading=false, pagination reading=0, elapsed=36038ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:140:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  old M1 details reject shortcuts and writes after same UUID replacement (false) (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:39 +42 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+  
+00:39 +42 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=0, IDs=, active pixels=0, gallery loading=false, pagination reading=0, elapsed=36449ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:140:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  old M1 details reject shortcuts and writes after same UUID replacement (true) (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+01:18 +42 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+  
+01:18 +42 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=0, IDs=, active pixels=0, gallery loading=false, pagination reading=0, elapsed=36310ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:195:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  organization draft keeps old content and cannot save or manage after replacement (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+01:56 +42 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+  
+01:56 +42 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=0, IDs=, active pixels=0, gallery loading=false, pagination reading=0, elapsed=36122ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:284:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+02:35 +42 -4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+  
+02:35 +42 -4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=0, IDs=, active pixels=0, gallery loading=false, pagination reading=0, elapsed=36043ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:284:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+03:13 +42 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+  
+03:13 +42 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 selected ProcessingOperation.compress opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+03:17 +43 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 selected ProcessingOperation.stitch opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+03:19 +44 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 details crop and original upload return through gallery and retain confirmations (variant: TargetPlatform.windows)
+03:23 +45 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 batch upload retains automatic processing draft without enqueue or authorization (variant: TargetPlatform.windows)
+03:25 +46 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: entry created before replacement cannot select the same UUID in the new revision (false) (variant: TargetPlatform.windows)
+03:27 +47 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: refresh preserves unavailable selection and requires explicit removal (false) (variant: TargetPlatform.windows)
+03:28 +48 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+Shortcut IO timeout: pending thumbnails=48, IDs=354d57de-d5a7-4f43-82e2-ea20acdd7f92,3d1e151d-709a-4a9b-a4f5-efaef1da7b03,3f6848c5-752e-479a-abf2-d5043c8947e3,45ed4d0b-202c-4301-a9e9-9c569e83037b,47bd6252-1519-42d4-ab0d-7172b5deaa38, active pixels=0, gallery loading=false, pagination reading=0, elapsed=45011ms
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Every real thumbnail, page read and widget continuation must finish.
+
+When the exception was thrown, this was the stack:
+#4      _flushShortcuts (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:814:3)
+<asynchronous suspension>
+#5      _mount (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:758:3)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:607:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 814
+The test description was:
+  shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+04:15 +48 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+  
+04:15 +48 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: missing shortcut does not partially select; replacement never revives UUID (false) (variant: TargetPlatform.windows)
+04:18 +49 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: entry created before replacement cannot select the same UUID in the new revision (true) (variant: TargetPlatform.windows)
+04:19 +50 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: refresh preserves unavailable selection and requires explicit removal (true) (variant: TargetPlatform.windows)
+04:20 +51 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+04:22 +52 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: missing shortcut does not partially select; replacement never revives UUID (true) (variant: TargetPlatform.windows)
+04:24 +53 -6: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+  ... and 2 more

@@ -1,0 +1,10 @@
+{
+  "formatVersion": 1,
+  "guardPassed": true,
+  "reason": "application_absent",
+  "applicationId": "io.imagehost.imagehost",
+  "candidateVersionCode": 1,
+  "candidateCertificateSha256": "63401c1c53bf457e40ebae65efb21460b27a539e9def002c7ff74c402806bb0d",
+  "installedVersionCode": null,
+  "installedCertificateSha256": null
+}

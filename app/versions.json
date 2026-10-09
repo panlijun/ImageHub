@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "kernel": {
+    "version": "0.1.0",
+    "revision": 1
+  },
+  "platforms": {
+    "windows": { "version": "0.1.0", "build": 1 },
+    "macos": { "version": "0.1.0", "build": 1 },
+    "android": { "version": "0.1.0", "build": 1 },
+    "ios": { "version": "0.1.0", "build": 1 }
+  }
+}

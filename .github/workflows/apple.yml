@@ -54,8 +54,10 @@ jobs:
       - name: Analyze and verify formatting
         run: |
           set -euo pipefail
+          dart tool/versioning.dart check
           flutter analyze
-          dart format --output=none --set-exit-if-changed lib test integration_test
+          dart format --output=none --set-exit-if-changed lib test integration_test test_driver tool
+          python3 -B -m unittest discover -s tool/ci -p 'test_*.py'
       - name: Run all software tests on the Mac host
         run: |
           set -euo pipefail
@@ -69,6 +71,11 @@ jobs:
         run: |
           set -euo pipefail
           flutter test integration_test/apple_native_smoke_test.dart -d macos --reporter=expanded 2>&1 | tee build/ci-evidence/macos-native-tests.log
+      - name: Verify native Mac exports and cross-platform backup restores
+        timeout-minutes: 15
+        run: |
+          set -euo pipefail
+          flutter test integration_test/generated_backup_interop_matrix_test.dart -d macos --reporter=expanded 2>&1 | tee build/ci-evidence/macos-backup-interop.log
       - name: Verify native file ownership and real IO with XCTest
         timeout-minutes: 20
         run: |
@@ -80,6 +87,7 @@ jobs:
         run: |
           set -euo pipefail
           flutter build macos --release 2>&1 | tee build/ci-evidence/macos-release-build.log
+          python3 tool/ci/verify_apple_versions.py macos build/macos/Build/Products/Release/ImageHub.app --summary build/ci-evidence/macos-native-versions.json
           ditto -c -k --sequesterRsrc --keepParent build/macos/Build/Products/Release/ImageHub.app build/ci-evidence/imagehub-macos-arm64.zip
       - name: Retain bounded build and verification evidence
         if: always()
@@ -110,6 +118,8 @@ jobs:
         run: python3 tool/ci/install_flutter.py
       - name: Resolve locked application dependencies
         run: flutter pub get --enforce-lockfile
+      - name: Check independent product versions
+        run: dart tool/versioning.dart check
       - name: Create and verify an owned iPhone simulator
         timeout-minutes: 10
         run: |
@@ -122,21 +132,35 @@ jobs:
           set -euo pipefail
           mkdir -p build/ci-evidence
           flutter test integration_test/apple_native_smoke_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded --verbose 2>&1 | tee build/ci-evidence/ios-simulator-native-tests.log
+      - name: Verify native iOS exports and cross-platform backup restores
+        timeout-minutes: 15
+        run: |
+          set -euo pipefail
+          flutter test integration_test/generated_backup_interop_matrix_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded 2>&1 | tee build/ci-evidence/ios-backup-interop.log
       - name: Build the iOS Simulator application
         timeout-minutes: 15
         run: |
           set -euo pipefail
           flutter build ios --simulator --debug --no-codesign 2>&1 | tee build/ci-evidence/ios-simulator-build.log
+          python3 tool/ci/verify_apple_versions.py ios build/ios/iphonesimulator/Runner.app --summary build/ci-evidence/ios-native-versions.json
           ditto -c -k --sequesterRsrc --keepParent build/ios/iphonesimulator/Runner.app build/ci-evidence/imagehub-ios-simulator.zip
-      - name: Verify native file IO and a real Photos add-only save
+      - name: Verify a real Photos save with only add permission
         timeout-minutes: 20
         run: |
           set -euo pipefail
           xcrun simctl install "$IMAGEHOST_IOS_SIMULATOR" build/ios/iphonesimulator/Runner.app
-          xcrun simctl privacy "$IMAGEHOST_IOS_SIMULATOR" grant photos-add io.imagehost.imagehost
+          python3 tool/ci/boot_ios_simulator.py --photos add-only
+          TEST_SIMULATOR=$(python3 -c 'import os, uuid; print(str(uuid.UUID(os.environ["IMAGEHOST_IOS_SIMULATOR"])).upper())')
+          xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=$TEST_SIMULATOR,arch=arm64" -derivedDataPath build/apple-tests-ios -only-testing:RunnerTests/RunnerTests/testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/ios-photos-add-only.xcresult CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/ci-evidence/ios-photos-add-only.log
+          python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/ios-photos-add-only.xcresult --expected 1 --summary build/ci-evidence/ios-photos-add-only-summary.json
+      - name: Verify native IO and exact synthetic Photos resource readback
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          python3 tool/ci/boot_ios_simulator.py --photos read-write
           TEST_SIMULATOR=$(python3 -c 'import os, uuid; print(str(uuid.UUID(os.environ["IMAGEHOST_IOS_SIMULATOR"])).upper())')
           xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=$TEST_SIMULATOR,arch=arm64" -derivedDataPath build/apple-tests-ios -only-testing:RunnerTests -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/ios-file-tests.xcresult CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/ci-evidence/ios-file-tests.log
-          python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/ios-file-tests.xcresult --expected 20 --summary build/ci-evidence/ios-file-test-summary.json
+          python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/ios-file-tests.xcresult --expected 27 --summary build/ci-evidence/ios-file-test-summary.json
       - name: Clean up only the confirmed owned simulator
         if: always()
         timeout-minutes: 5

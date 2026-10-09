@@ -1,0 +1,22 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart
+00:00 +0: original route freezes identity before builder starts (true) (variant: TargetPlatform.windows)
+00:00 +1: original route freezes identity before builder starts (false) (variant: TargetPlatform.windows)
+00:01 +2: organization errors never format unknown objects
+00:01 +3: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +4: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+00:04 +5: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+00:06 +6: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+00:07 +7: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+00:09 +8: M1 selected ProcessingOperation.compress opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:10 +9: M1 selected ProcessingOperation.stitch opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:12 +10: M1 details crop and original upload return through gallery and retain confirmations (variant: TargetPlatform.windows)
+00:14 +11: M1 batch upload retains automatic processing draft without enqueue or authorization (variant: TargetPlatform.windows)
+00:15 +12: entry created before replacement cannot select the same UUID in the new revision (false) (variant: TargetPlatform.windows)
+00:15 +13: refresh preserves unavailable selection and requires explicit removal (false) (variant: TargetPlatform.windows)
+00:16 +14: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+00:36 +15: missing shortcut does not partially select; replacement never revives UUID (false) (variant: TargetPlatform.windows)
+00:37 +16: entry created before replacement cannot select the same UUID in the new revision (true) (variant: TargetPlatform.windows)
+00:38 +17: refresh preserves unavailable selection and requires explicit removal (true) (variant: TargetPlatform.windows)
+00:38 +18: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+00:42 +19: missing shortcut does not partially select; replacement never revives UUID (true) (variant: TargetPlatform.windows)
+00:42 +20: All tests passed!

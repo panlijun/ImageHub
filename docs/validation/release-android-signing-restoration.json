@@ -1,0 +1,39 @@
+{
+  "verifiedActionFailure": true,
+  "environmentRestoration": [
+    {
+      "name": "IMAGEHUB_ANDROID_KEYSTORE_PATH",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "IMAGEHUB_ANDROID_KEY_ALIAS",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "IMAGEHUB_ANDROID_STORE_PASSWORD",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "IMAGEHUB_ANDROID_KEY_PASSWORD",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "GRADLE_OPTS",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "IMAGEHUB_KEYTOOL_STORE_PASSWORD",
+      "samePresenceAndValue": true
+    },
+    {
+      "name": "IMAGEHUB_KEYTOOL_KEY_PASSWORD",
+      "samePresenceAndValue": true
+    }
+  ],
+  "publicIdentity": {
+    "alias": "imagehubrelease",
+    "certificateSha256": "457656fcb19a9873cc8c8036d74bbd4a1a8658b823f2de4febdd6bb5aa37749e",
+    "subject": "CN=ImageHub Release, O=ImageHub, C=CN",
+    "expiresUtc": "2054-02-24T07:52:27.0000000Z"
+  }
+}

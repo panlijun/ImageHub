@@ -1,0 +1,14 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart: generation derives the package version without changing other text
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart: platform version changes do not change kernel or other platforms
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart: kernel revision changes do not change four platform identities
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart: native bounds and unknown or incomplete manifests are rejected
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/core/app_versions_test.dart: UI catalog matches the authoritative five-version source
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 fixture full includes four formats recycled and independent bytes and reopens
+00:01 +6: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 fixture metadata includes four formats recycled and independent bytes and reopens
+00:01 +7: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 fixture transport mismatch rejects before restore creation
+00:01 +8: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 payload rejects a changed archive hash
+00:02 +9: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 matrix rejects duplicate actual origins
+00:02 +10: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 capture accepts exactly one prefixed validated payload and rejects two
+00:02 +11: C:/Users/PAN/workspace/ImageHub/app/test/core/backup_interop_fixture_test.dart: CT-006 cleanup retains an unknown ordinary file and all registered bytes
+00:02 +12: All tests passed!

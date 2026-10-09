@@ -97,13 +97,13 @@ void main() {
         tester
             .widget<FilledButton>(find.widgetWithText(FilledButton, '上传原图'))
             .onPressed,
-        isNull,
+        isNotNull,
       );
       expect(
         tester
             .widget<OutlinedButton>(find.widgetWithText(OutlinedButton, '编辑副本'))
             .onPressed,
-        isNull,
+        isNotNull,
       );
       expect(find.text('已确认的普通远程结果请在链接页查看；链接存在不代表当前可达。'), findsOneWidget);
       await tester.tap(find.byKey(const Key('mobile-favorite')));
@@ -175,7 +175,7 @@ void main() {
         tester
             .widget<OutlinedButton>(find.widgetWithText(OutlinedButton, '压缩'))
             .onPressed,
-        isNull,
+        isNotNull,
       );
       expect(
         tester
@@ -187,7 +187,7 @@ void main() {
         tester
             .widget<FilledButton>(find.widgetWithText(FilledButton, '上传'))
             .onPressed,
-        isNull,
+        isNotNull,
       );
       await tester.tap(find.byKey(const Key('review-selection')));
       await _flush(tester, fixture);

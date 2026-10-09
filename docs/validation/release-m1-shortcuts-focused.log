@@ -1,0 +1,410 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization errors never format unknown objects
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:01 +8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +9: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +10: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +11: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +12: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +13: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +14: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:02 +15: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:03 +16: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:05 +17: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:05 +17: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: <Closure: () => void>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:96:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 96
+The test description was:
+  UT-004 / IT-001 partial M1 independent copy, real search and favorite
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:05 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:05 +17 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite [E]
+  Test failed. See exception logs above.
+  The test description was: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+  
+00:05 +18 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:06 +19 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:06 +20 -1: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:07 +20 -1: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: null
+  Actual: <Closure: () => void>
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart:174:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart line 174
+The test description was:
+  UT-013 partial M1 selection survives filtering and reviews real names
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:07 +20 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+00:07 +20 -2: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names [E]
+  Test failed. See exception logs above.
+  The test description was: UT-013 partial M1 selection survives filtering and reviews real names
+  
+00:09 +21 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite, file and widget queues must settle.
+
+When the exception was thrown, this was the stack:
+#4      flushMobileTest (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart:382:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:76:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart line 382
+The test description was:
+  old M1 details reject shortcuts and writes after same UUID replacement (false) (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:10 +21 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:10 +21 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: old M1 details reject shortcuts and writes after same UUID replacement (false) (variant: TargetPlatform.windows)
+  
+00:12 +22 -3: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 select matching includes all 65 identities beyond page
+00:13 +23 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+00:15 +24 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+00:18 +25 -3: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite, file and widget queues must settle.
+
+When the exception was thrown, this was the stack:
+#4      flushMobileTest (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart:382:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:76:9)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart line 382
+The test description was:
+  old M1 details reject shortcuts and writes after same UUID replacement (true) (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:19 +25 -4: C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: AT-001 partial M1 density, shared upload destination and scroll/query retention
+00:19 +25 -4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: old M1 details reject shortcuts and writes after same UUID replacement (true) (variant: TargetPlatform.windows)
+  
+00:25 +26 -4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+00:26 +27 -4: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite, file and widget queues must settle.
+
+When the exception was thrown, this was the stack:
+#4      flushMobileTest (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart:382:3)
+<asynchronous suspension>
+#5      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:119:7)
+<asynchronous suspension>
+#6      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#7      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart line 382
+The test description was:
+  organization draft keeps old content and cannot save or manage after replacement (variant:
+  TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:28 +27 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: organization draft keeps old content and cannot save or manage after replacement (variant: TargetPlatform.windows)
+  
+00:28 +27 -5: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following _TypeError was thrown running a test:
+type 'RawTooltip' is not a subtype of type 'IconButton' in type cast
+
+When the exception was thrown, this was the stack:
+#0      WidgetController.widget (package:flutter_test/src/controller.dart:828:44)
+#1      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:178:14)
+<asynchronous suspension>
+#2      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#3      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:29 +27 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+  
+00:29 +27 -6: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following _TypeError was thrown running a test:
+type 'RawTooltip' is not a subtype of type 'IconButton' in type cast
+
+When the exception was thrown, this was the stack:
+#0      WidgetController.widget (package:flutter_test/src/controller.dart:828:44)
+#1      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:178:14)
+<asynchronous suspension>
+#2      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#3      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+The test description was:
+  category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:31 +27 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+  
+00:31 +27 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 selected ProcessingOperation.compress opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:32 +28 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 selected ProcessingOperation.stitch opens review with exact UUIDs and no processing (variant: TargetPlatform.windows)
+00:34 +29 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 details crop and original upload return through gallery and retain confirmations (variant: TargetPlatform.windows)
+00:36 +30 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: M1 batch upload retains automatic processing draft without enqueue or authorization (variant: TargetPlatform.windows)
+00:37 +31 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: entry created before replacement cannot select the same UUID in the new revision (false) (variant: TargetPlatform.windows)
+00:38 +32 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: refresh preserves unavailable selection and requires explicit removal (false) (variant: TargetPlatform.windows)
+00:39 +33 -7: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: <5>
+  Actual: <0>
+Real SQLite, file and widget queues must settle.
+
+When the exception was thrown, this was the stack:
+#4      flushMobileTest (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart:382:3)
+<asynchronous suspension>
+#5      _mount (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:668:3)
+<asynchronous suspension>
+#6      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:519:7)
+<asynchronous suspension>
+#7      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#8      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_recycle_test.dart line 382
+The test description was:
+  shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:59 +33 -8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: shortcut beyond first 60 keeps pagination intact (false) (variant: TargetPlatform.windows)
+  
+01:03 +33 -8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: missing shortcut does not partially select; replacement never revives UUID (false) (variant: TargetPlatform.windows)
+01:04 +34 -8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: entry created before replacement cannot select the same UUID in the new revision (true) (variant: TargetPlatform.windows)
+01:05 +35 -8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: refresh preserves unavailable selection and requires explicit removal (true) (variant: TargetPlatform.windows)
+01:05 +36 -8: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+══╡ EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ╞════════════════════════════════════════════════════
+The following TestFailure was thrown running a test:
+Expected: exactly 62 matching candidates
+  Actual: _WidgetPredicateWidgetFinder:<Found 61 widgets with widget matching predicate: [
+            CheckboxListTile-[<'upload-source-083f284a-9958-48b4-8144-68424021714e'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-0a23a863-d852-44d6-9c67-064e1ec848f3'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-13108e17-03ad-4cb9-b9ed-e16f7d23659f'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-198c2176-7844-4c86-b832-f31b3c645fe4'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-1e8dc0c5-2039-4688-9b0d-77c8e97f44f7'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-21d5334d-0650-493a-9484-264c79959426'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-2200e5e1-1ec9-4895-b5df-b600440c7d68'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-2963a20c-d59a-4439-8b95-49fff3aa0395'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-297eeb2a-2f8d-40d6-a668-36e756a0afc3'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-2aaffe29-d6f2-4c28-89ea-e914d0da2976'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-327b55ea-5e98-4bd4-87fb-3e11506a2b4d'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-329b37fd-9434-4020-be4c-f9864a3539a0'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3304b390-e8c5-4dd1-8b8d-d13d97589f1c'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-373c365e-782b-475c-9c3e-8f8c18e2613a'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3aebe21f-b12d-4ec2-8f08-4f0756204d77'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3c540438-97ca-48de-a2da-49c37ec46126'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3d9aa57f-0b68-4503-9c69-98af884f8115'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3da09736-3b92-4ed1-89c9-086d41378498'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3f2138fa-ba49-4672-ad7d-0304c663ef57'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-3fff4e76-9bf0-4cd6-92fd-99f0e3dd0f63'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-4455c627-6658-4e27-9695-560790390aaa'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-46590611-1909-4bac-924e-25c078e464a4'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-4d02fae6-f49c-4200-bb39-63b5692f5f69'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-51186b13-6d7e-4590-9d83-b5015ec09e12'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-538271b3-be3c-41b3-bc88-7c1b8f08e9ba'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-549c3957-60a1-40c1-9935-2b95da6b87f8'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-5797bdec-ca34-4090-9ef0-940652ffa583'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-588a8324-bb48-4724-b8d2-c2a62b42e22e'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-5a70957d-b27d-45a8-a161-03468c50ee83'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-5afe5edb-39fb-4fa9-b7cf-50db0c15e3a5'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-5bc4fa63-f2d8-4efc-ad9f-c927f3720288'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-60b9ac4c-0803-4b22-a6d3-ba86958cfe36'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-621a8ae5-255e-45cd-9293-3232d52d2cff'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-63855af7-adbc-4d96-b3c4-099a49f73ed0'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-645edd9d-3cdb-4cc3-8285-7dbed9a78f46'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-65c88974-e419-4ef6-a8b7-3da52e24dde0'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-65eaa398-263a-4563-a1d7-a8f7e0084e32'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-6ea2215e-20cc-4835-a302-295c43d4e0fe'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-6fd47d85-3aed-45a0-920a-f89328d45930'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-70e46040-08c0-4eeb-9951-4db4d9cd4cac'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-74828047-9590-4735-a43e-1690c09f53ba'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-7a5b9799-36ff-49ab-a7e4-a2f68df3f25d'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-838d836e-3ed4-496d-8208-8aa26b18986b'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-8ad5e322-b63d-456d-b83e-600b7e469a46'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-8c28ea50-92f2-4365-9e71-85ded6ff5f1b'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-92750b2b-67e2-4690-9aa7-133ab8389da8'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-931d8214-e872-448a-b960-ad45097609be'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-97c2600f-3566-4c12-a239-06ccd771a8c5'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-98ee98e7-24b9-4dc8-adbc-3ff5ab284326'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-9b27d923-7295-494f-ace8-f721a5833e2f'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-a07fe307-ac73-435b-ad61-2791edeef6c2'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-a15dd41a-db59-4217-a7d0-a73a89309f72'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-a654dcb3-306e-42c4-b16e-e09350faf5c5'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-b394ef3a-6911-442f-9171-f6348b5287f7'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-c66405ab-d146-43f7-ade5-f4c763e077d9'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-c97878a3-8f4c-4f8a-b6b2-29ce0a481a90'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-cbdeaf15-ceed-442c-a413-41e335786c01'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-ce7a5a92-382b-490d-9b6c-e384f96dc52e'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-e14751bf-da2c-4d1a-adb9-4a755c3e1609'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-e78dc79d-b2e4-4d82-84ff-495918a1e1b0'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+            CheckboxListTile-[<'upload-source-f5b7bc26-5854-4705-b4ad-1cfffcd47b59'>](dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#fef3c]]),
+          ]>
+   Which: is not enough
+
+When the exception was thrown, this was the stack:
+#4      main.<anonymous closure> (file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart:536:7)
+<asynchronous suspension>
+#5      testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#6      TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart line 536
+The test description was:
+  shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+01:07 +36 -9: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows) [E]
+  Test failed. See exception logs above.
+  The test description was: shortcut beyond first 60 keeps pagination intact (true) (variant: TargetPlatform.windows)
+  
+01:07 +36 -9: C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: missing shortcut does not partially select; replacement never revives UUID (true) (variant: TargetPlatform.windows)
+01:08 +37 -9: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-004 / IT-001 partial M1 independent copy, real search and favorite
+  C:/Users/PAN/workspace/ImageHub/app/test/mobile_gallery_test.dart: UT-013 partial M1 selection survives filtering and reviews real names
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (false) (variant: TargetPlatform.windows)
+  C:/Users/PAN/workspace/ImageHub/app/test/presentation/gallery_shortcuts_test.dart: category dialog tree freezes identity before replacement (true) (variant: TargetPlatform.windows)
+  ... and 5 more

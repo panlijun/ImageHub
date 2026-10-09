@@ -10,3 +10,8 @@ app/windows/flutter/ephemeral/
 app/macos/Flutter/ephemeral/
 app/ios/Flutter/ephemeral/
 app/**/xcuserdata/
+.local/
+dist/
+app/android/key.properties
+app/android/**/*.jks
+app/android/**/*.keystore

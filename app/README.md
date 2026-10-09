@@ -1,6 +1,6 @@
 # ImageHub 应用
 
-ImageHub 是本地个人图片工具。Windows 与 Android 在用户确认范围内的软件开发及适用验证已完成，用户排除的实机/硬件与真实账号项目不计通过。Android 的实际运行证据来自 API36 x86_64 模拟器，ARM64 APK 已构建但未在物理手机验证。新库从空库开始；导入来源只读，永久副本、数据库、暂存文件和可再生缓存分别管理。完整范围和当前验收状态见[软件完成范围](../docs/software-completion-scope.md)、[Windows 完成记录](../docs/milestone-27-windows-completion.md)及[Android 完成记录](../docs/milestone-28-android-completion.md)。
+ImageHub 是本地个人图片工具。Windows 与 Android 在用户确认范围内的软件开发及适用验证已完成，用户排除的实机/硬件与真实账号项目不计通过。Android 的实际运行证据来自 API36 x86_64 模拟器，ARM64 APK 已构建但未在物理手机验证。本轮 Windows 软件测试 1459 项通过、1 项非 Windows 分支跳过，`flutter analyze` 为 No issues；M1 快捷入口专项 20 项通过。Windows 最终 ZIP 与 Android 正式专用签名 APK 正在核验，尚未报告为已生成或完成。新库从空库开始；导入来源只读，永久副本、数据库、暂存文件和可再生缓存分别管理。完整范围和当前验收状态见[软件完成范围](../docs/software-completion-scope.md)、[Windows 完成记录](../docs/milestone-27-windows-completion.md)、[Android 完成记录](../docs/milestone-28-android-completion.md)、[本地发行说明](../docs/distribution.md)及[版本管理](../docs/versioning.md)。
 
 正式名称统一为 ImageHub；Dart package `imagehost`、现有应用 ID、平台通道和存储命名空间保持稳定。Windows 版本资源的 CompanyName/ProductName 参与现有 Application Support 目录生成，因此保留技术身份，仅更新窗口/文件描述和可执行文件名。
 
@@ -17,7 +17,7 @@ flutter run -d windows
 
 当前 SDK 为 Flutter 3.47.6 / Dart 3.13.5，安装在 `C:\Users\PAN\development\flutter` 并已加入用户 PATH。已打开的终端需重新打开，也可调用 `C:\Users\PAN\development\flutter\bin\flutter.bat`。本机已配置 Visual Studio 2022 和 ATL。
 
-Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的可执行文件为 `imagehub.exe`，运行时须保留同目录 DLL、`data/` 与其他构建产物。此目录是本机构建输出；项目尚未制作安装包、签名或正式发行。当前构建、启动和验证结果以平台完成记录及 GitHub 验证记录为准。
+Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的可执行文件为 `imagehub.exe`，运行时须保留同目录 DLL、`data/` 与其他构建产物。此目录是本机构建输出；Windows 最终完整目录 ZIP 正按[本地发行说明](../docs/distribution.md)核验，完成前不视为正式交付。当前构建、启动和验证结果以平台完成记录及 GitHub 验证记录为准。
 
 ## 功能入口
 
@@ -29,7 +29,7 @@ Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的�
 
 链接页支持普通结果筛选、复制、文本分享、明确确认后的主动检测和单独确认的远端删除审计。主动检测不会自动执行；远端删除无法确认时保留本机记录且不自动重试。HTTP 成功不能被当作远端删除成功。普通结果的本地移除与远端删除是两项独立操作。
 
-备份页支持完整/元数据 ZIP、预检、合并及单独确认的替换恢复。备份不携带凭据、管理秘密、活动上传意图或来源路径；恢复的历史不会重新执行任务。Android 的 ZIP 取得/保存和诊断 JSON 保存均接入同一原生文件桥，新相册保存目录为 `Pictures/ImageHub`，不迁移或删除先前的导出文件。诊断和空间管理提供已接入的本机记录、脱敏导出、缓存清理和到期临时输出清理。M1 从右上“工具与设置”进入处理、账号、备份和设置，任务页创建上传批次；详情中的编辑/上传快捷按钮仍禁用。macOS/iOS 的实际云端构建、原生检查及未完成能力见[GitHub 与 Apple 验证记录](../docs/github-publication.md)，共享源码和工作流本身不代表平台验收通过。
+备份页支持完整/元数据 ZIP、预检、合并及单独确认的替换恢复。备份不携带凭据、管理秘密、活动上传意图或来源路径；恢复的历史不会重新执行任务。Android 的 ZIP 取得/保存和诊断 JSON 保存均接入同一原生文件桥，新相册保存目录为 `Pictures/ImageHub`，不迁移或删除先前的导出文件。诊断和空间管理提供已接入的本机记录、脱敏导出、缓存清理和到期临时输出清理。M1 从右上“工具与设置”进入处理、账号、备份和设置；详情编辑/上传快捷入口会打开共同工作台或任务草稿，用户仍需明确继续操作，不会立即处理、入队或授权网络。图库整理可用；资料库替换后旧页面拒绝继续操作。macOS/iOS 的实际云端构建、原生检查及未完成能力见[GitHub 与 Apple 验证记录](../docs/github-publication.md)，共享源码和工作流本身不代表平台验收通过。
 
 ## Android 运行
 
@@ -39,8 +39,15 @@ Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的�
 . ./tool/android_environment.ps1
 flutter doctor -v
 flutter run -d emulator-5558
-flutter build apk --release --split-per-abi --target-platform android-arm64,android-x64
 ```
+
+正式 arm64 签名 APK 必须从仓库根目录通过发行脚本构建和核验：
+
+```powershell
+app/tool/package_release.ps1 -Platform android
+```
+
+不要在未配置正式签名的环境直接运行 `flutter build apk --release` 作为正式发行流程。正式签名与历史 debug 签名测试包不同；若 debug 包已安装，签名冲突时不要自动卸载或清除资料库，先备份资料库，再由用户决定后续处理。模拟器后续安全测试先运行 `tool/android_test_install_guard.ps1` 只读预检，再使用 `adb install -r`；若安装失败即停止，并通过 `flutter drive --use-existing-app` 使用已安装应用。该预检不控制 Flutter 测试工具自身的安装行为，不能保证 Flutter 工具绝不卸载应用。
 
 `emulator-5558` 是本任务自有 API36 AVD；未启动时可用 `flutter emulators --launch ImageHost_API36`，实际设备 ID 以 `flutter devices` 为准。已有 ARM64 输出为 `build/app/outputs/flutter-apk/app-arm64-v8a-release.apk`，模拟器输出为 `app-x86_64-release.apk`。两者是 Release 优化的本地测试包，沿用模板 debug 签名，未制作正式发行签名或发布。
 
@@ -53,7 +60,7 @@ flutter test integration_test/android_native_smoke_test.dart -d emulator-5558 --
 flutter test integration_test/android_file_bridge_test.dart -d emulator-5558 --reporter expanded
 ```
 
-文件桥集成测试需要在另一 PowerShell 中运行 `./tool/drive_android_bridge.ps1` 操作自有模拟器的真实选择器；完成后执行 `./tool/verify_android_exports.ps1` 独立核对五个系统保存结果。驱动只允许 `ImageHost_API36` / `emulator-5558`，不能直接用于真实手机。上述命令共用本目录的 native assets，须与其他 Flutter 测试/构建串行；测试命令不等于执行结果。具体边界见[原生文件说明](../docs/android-native-files.md)。
+文件桥集成测试需要在另一 PowerShell 中运行 `./tool/drive_android_bridge.ps1` 操作自有模拟器的真实选择器；完成后执行 `./tool/verify_android_exports.ps1` 独立核对五个系统保存结果。驱动只允许 `ImageHost_API36` / `emulator-5558`，不能直接用于真实手机。上述命令共用本目录的 native assets，须与其他 Flutter 测试/构建串行；测试命令不等于执行结果。旧 `flutter test` 命令可能由 Flutter 测试设备管理器安装或替换应用，执行前先检查其安装行为；只读 guard 预检不能保证阻止 Flutter 自身卸载。具体边界见[原生文件说明](../docs/android-native-files.md)。
 
 ## 开发与验证
 
@@ -63,7 +70,7 @@ Apple 云端验证工作流位于 `../.github/workflows/apple.yml`：在标准 `
 
 ```powershell
 dart run build_runner build
-dart format lib test integration_test tool
+dart format lib test integration_test test_driver tool
 flutter analyze
 flutter test --reporter expanded
 ```
@@ -93,6 +100,6 @@ flutter build windows --release
 powershell -NoProfile -File tool/verify_release_smoke.ps1
 ```
 
-测试命令是开发入口，不表示本轮已执行或通过。受控图床传输不请求真实服务；设备 PT、真实硬件性能和断电验收排除在本轮之外，均不计通过。Android 工具已具备并已实际构建及验证模拟器闭环；macOS/iOS 仍需要 Mac/Xcode。实际软件回归为 1399 通过/1 非 Windows 分支跳过，原生子流程、构建、正常界面及剩余边界分别记录在最新平台完成记录中。
+测试命令是开发入口，不表示本轮已执行或通过。受控图床传输不请求真实服务；设备 PT、真实硬件性能和断电验收排除在本轮之外，均不计通过。Android 工具已具备并已实际构建及验证模拟器闭环；macOS/iOS 仍需要 Mac/Xcode。本轮 Windows 软件回归为 1459 通过/1 非 Windows 分支跳过，`flutter analyze` 为 No issues，M1 快捷入口专项 20 项通过；Windows 最终 ZIP 与 Android 正式签名 APK 仍在本地核验中。四端备份软件互读、iOS Photos 保存后读回的新 CI 尚未运行，仍属本轮验证中。里程碑29及历史 Apple CI 的实际证据仍见对应[里程碑](../docs/milestone-29-apple-files.md)和[CI 记录](../docs/github-publication.md)，不被上述待验证项替代。
 
 历史实现与验证记录：图库和处理见[图库里程碑](../docs/milestone-03-gallery-processing.md)、[处理输出](../docs/milestone-04-processing-outputs.md)；账号和队列见[账号安全](../docs/milestone-05-accounts.md)、[持久队列](../docs/milestone-07-durable-upload-queue.md)、[单项暂停](../docs/milestone-20-item-pause.md)和[上传前处理](../docs/milestone-22-upload-processing.md)；备份恢复见[合并恢复](../docs/milestone-10-merge-restore.md)、[替换恢复](../docs/milestone-12-replacement-restore.md)和[备份设置](../docs/milestone-23-backup-settings.md)；链接、系统管理和网络见[主动检测](../docs/milestone-16-link-availability.md)、[远端删除审计](../docs/milestone-24-remote-deletion.md)、[网络类型](../docs/milestone-21-network-types.md)、[诊断](../docs/milestone-18-diagnostics.md)、[设置与调度](../docs/milestone-17-settings-scheduling.md)及[缓存与空间管理](../docs/milestone-19-storage.md)。这些旧记录保留当时证据，不代替本轮完成记录。

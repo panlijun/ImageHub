@@ -1,0 +1,22 @@
+test_changed_application_identity_cannot_pass (test_release_ci_guards.NativeVersionTests.test_changed_application_identity_cannot_pass) ... ok
+test_kernel_version_cannot_replace_platform_version (test_release_ci_guards.NativeVersionTests.test_kernel_version_cannot_replace_platform_version) ... ok
+test_missing_kernel_revision_cannot_pass (test_release_ci_guards.NativeVersionTests.test_missing_kernel_revision_cannot_pass) ... ok
+test_two_platforms_keep_their_own_versions (test_release_ci_guards.NativeVersionTests.test_two_platforms_keep_their_own_versions) ... ok
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+test_add_permission_cannot_grant_read (test_release_ci_guards.PhotosOwnershipTests.test_add_permission_cannot_grant_read) ... ok
+test_another_attempt_marker_never_grants (test_release_ci_guards.PhotosOwnershipTests.test_another_attempt_marker_never_grants) ... ok
+test_another_selected_uuid_rejects_before_system_command (test_release_ci_guards.PhotosOwnershipTests.test_another_selected_uuid_rejects_before_system_command) ... ok
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+test_changed_device_or_shutdown_never_grants (test_release_ci_guards.PhotosOwnershipTests.test_changed_device_or_shutdown_never_grants) ... ok
+test_missing_marker_never_grants (test_release_ci_guards.PhotosOwnershipTests.test_missing_marker_never_grants) ... ok
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+test_read_permission_is_scoped_to_owned_app (test_release_ci_guards.PhotosOwnershipTests.test_read_permission_is_scoped_to_owned_app) ... ok
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Permission revocation was not confirmed; continue verified owned-device retirement.
+test_revoke_failure_still_retires_only_confirmed_owned_device (test_release_ci_guards.PhotosOwnershipTests.test_revoke_failure_still_retires_only_confirmed_owned_device) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.072s
+
+OK
+The confirmed owned simulator was deleted.

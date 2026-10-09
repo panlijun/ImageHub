@@ -28,8 +28,17 @@ import '../../links/presentation/link_results_screen.dart';
 
 /// A review screen. Opening it never grants permission to make a request.
 class UploadTasksScreen extends ConsumerStatefulWidget {
-  const UploadTasksScreen({super.key, this.initialOutputIds = const []});
+  const UploadTasksScreen({
+    super.key,
+    this.initialOutputIds = const [],
+    this.initialAssetIds = const [],
+    this.initialOriginal = false,
+    this.initialLibraryRevision,
+  });
   final List<String> initialOutputIds;
+  final List<String> initialAssetIds;
+  final bool initialOriginal;
+  final int? initialLibraryRevision;
 
   @override
   ConsumerState<UploadTasksScreen> createState() => _UploadTasksScreenState();
@@ -39,6 +48,7 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
   LibrarySession? _session;
   List<ProcessedOutput> _outputs = const [];
   List<ImageAsset> _assets = const [];
+  final Map<String, ImageAsset> _selectedAssets = {};
   List<ProviderTarget> _targets = const [];
   List<UploadBatch> _batches = const [];
   List<RemoteUploadResult> _results = const [];
@@ -64,17 +74,41 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
   int _processingQuality = 85, _processingLongestSide = 1600;
   bool _processingBackgroundConfirmed = false;
   bool _defaultsApplied = false;
+  bool _initialSelectionApplied = false;
   int _revision = 0, _assetTotal = 0;
   String? _loadError;
+  String? _shortcutFeedback;
   String _intentId = const Uuid().v4();
   _Submission? _submission;
   Future<void>? _activeMutation;
   late final AppLifecycleListener _lifecycle;
 
+  List<ImageAsset> get _inputAssets {
+    final assets = {for (final asset in _assets) asset.id: asset};
+    assets.addAll(_selectedAssets);
+    return assets.values.toList();
+  }
+
+  bool get _entryRevisionCurrent =>
+      widget.initialLibraryRevision == null ||
+      widget.initialLibraryRevision ==
+          ref.read(libraryReplacementRevisionProvider);
+
+  void _discardEntry() {
+    _initialSelectionApplied = true;
+    _selectedAssets.clear();
+    _original = false;
+    _automatic = true;
+    _metadataConfirmed = false;
+    _shortcutFeedback = '资料库已替换，请重新选择图片并确认上传参数。';
+  }
+
   @override
   void initState() {
     super.initState();
-    _automatic = widget.initialOutputIds.isEmpty;
+    _original = widget.initialOriginal;
+    _automatic = !widget.initialOriginal && widget.initialOutputIds.isEmpty;
+    if (!_entryRevisionCurrent) _discardEntry();
     _lifecycle = AppLifecycleListener(onExitRequested: _exitRequested);
     ref.listenManual(libraryReplacementRevisionProvider, (_, _) {
       // Force attachment to the newly created queue actor, even though the
@@ -93,6 +127,9 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
         _historySelection.clear();
         _outputIds.clear();
         _assetIds.clear();
+        _selectedAssets.clear();
+        _initialSelectionApplied = true;
+        _shortcutFeedback = '资料库已替换，请重新选择图片并确认上传参数。';
         _targetIds.clear();
         _submission = null;
         _intentId = const Uuid().v4();
@@ -194,6 +231,14 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
       final results = await repository.listUploadResults();
       final processingJobs = await repository.listUploadProcessingJobs();
       final importedHistory = await repository.listImportedUploadHistories();
+      final applyingInitial = !_initialSelectionApplied;
+      final requested = (applyingInitial ? widget.initialAssetIds : _assetIds)
+          .toSet();
+      final selectedAssets = <String, ImageAsset>{};
+      for (final id in requested) {
+        final asset = await repository.getAsset(id);
+        if (asset != null) selectedAssets[id] = asset;
+      }
       if (!mounted || revision != _revision) {
         return;
       }
@@ -205,6 +250,21 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
             .toList();
         _assets = assets.items;
         _assetTotal = assets.total;
+        _selectedAssets
+          ..clear()
+          ..addAll(selectedAssets);
+        if (applyingInitial) {
+          _initialSelectionApplied = true;
+          final missing = requested.length - selectedAssets.length;
+          if (!_entryRevisionCurrent) {
+            _discardEntry();
+          } else if (missing == 0) {
+            _assetIds.addAll(requested);
+          } else {
+            _selectedAssets.clear();
+            _shortcutFeedback = '快捷入口中 $missing 张图片已移除或进入回收区，未预选任何图片，请重新选择。';
+          }
+        }
         _targets = targets
             .where((t) => t.enabled && !t.removed && !t.pendingOperation)
             .toList();
@@ -219,11 +279,13 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
           _targetIds.addAll(
             _targets.where((t) => t.selectedByDefault).map((t) => t.id),
           );
-          _outputIds.addAll(
-            widget.initialOutputIds.where(
-              (id) => _outputs.any((o) => o.id == id),
-            ),
-          );
+          if (_entryRevisionCurrent) {
+            _outputIds.addAll(
+              widget.initialOutputIds.where(
+                (id) => _outputs.any((o) => o.id == id),
+              ),
+            );
+          }
           _defaultsApplied = true;
         }
         _loading = false;
@@ -347,7 +409,7 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
   Set<String> get _missingTargets =>
       _targetIds.difference(_targets.map((t) => t.id).toSet());
   Set<String> get _missingAssets =>
-      _assetIds.difference(_assets.map((a) => a.id).toSet());
+      _assetIds.difference(_selectedAssets.keys.toSet());
   Set<String> get _missingOutputs =>
       _outputIds.difference(_outputs.map((o) => o.id).toSet());
 
@@ -823,6 +885,7 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
                   const SizedBox(height: 12),
                   if (_loading) const LinearProgressIndicator(),
                   if (_loadError != null) _notice(_loadError!),
+                  if (_shortcutFeedback != null) _notice(_shortcutFeedback!),
                   if (_session?.uploads.failure case final String failure)
                     _notice(failure),
                   if (_session?.existingUploadProcessing?.failure
@@ -1001,13 +1064,13 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
         ),
       ],
       if (_assets.isEmpty) const Text('没有可选原图。'),
-      for (final asset in _assets)
+      for (final asset in _inputAssets)
         _sourceTile(
           asset.id,
           asset.displayName,
           asset.version,
           _assetIds,
-          editable,
+          editable && !_loading,
         ),
       Text('已加载 ${_assets.length} / $_assetTotal 张；已选 ${_assetIds.length} 张'),
       if (_assets.length < _assetTotal)
@@ -1036,7 +1099,9 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
     if ((_original || _automatic ? _missingAssets : _missingOutputs)
         .isNotEmpty) ...[
       _notice(
-        '当前输入列表之外还保留 ${(_original || _automatic ? _missingAssets : _missingOutputs).length} 个选择，请重新加载确认或明确移除后提交。',
+        _original || _automatic
+            ? '已选 ${_missingAssets.length} 张图片已移除或进入回收区，入队已禁用；请重新加载确认或明确移除。'
+            : '当前输入列表之外还保留 ${_missingOutputs.length} 个选择，请重新加载确认或明确移除后提交。',
       ),
       TextButton(
         onPressed: editable
@@ -1127,8 +1192,20 @@ class _UploadTasksScreenState extends ConsumerState<UploadTasksScreen> {
     ),
     value: selected.contains(id),
     onChanged: editable
-        ? (v) =>
-              setState(() => v == true ? selected.add(id) : selected.remove(id))
+        ? (v) => setState(() {
+            if (v == true) {
+              if (identical(selected, _assetIds)) {
+                final asset = _inputAssets
+                    .where((asset) => asset.id == id)
+                    .firstOrNull;
+                if (asset == null) return;
+                _selectedAssets[id] = asset;
+              }
+              selected.add(id);
+            } else {
+              selected.remove(id);
+            }
+          })
         : null,
   );
 

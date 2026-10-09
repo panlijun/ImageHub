@@ -14,6 +14,7 @@ import 'library_failure_view.dart';
 import 'gallery_filter_controls.dart';
 import 'original_preview_screen.dart';
 import '../../links/presentation/link_results_screen.dart';
+import '../../processing/domain/processing_models.dart';
 
 const _accent = Color(0xff3a5be0);
 const _muted = Color(0xff657184);
@@ -62,6 +63,8 @@ class MobileGallery extends ConsumerStatefulWidget {
     required this.onLoadMore,
     required this.notices,
     this.onProcessing,
+    this.onSelectedProcessing,
+    this.onSelectedUpload,
     this.onAccounts,
     this.onTasks,
     this.onBackup,
@@ -80,6 +83,8 @@ class MobileGallery extends ConsumerStatefulWidget {
   final Future<void> Function() onRefresh;
   final Future<void> Function() onLoadMore;
   final VoidCallback? onProcessing;
+  final void Function(List<String>, ProcessingOperation)? onSelectedProcessing;
+  final void Function(List<String>, bool)? onSelectedUpload;
   final VoidCallback? onAccounts;
   final VoidCallback? onTasks;
   final VoidCallback? onBackup;
@@ -711,19 +716,45 @@ class _MobileGalleryState extends ConsumerState<MobileGallery> {
     ),
   );
 
-  void _openDetail(ImageAsset asset) => Navigator.of(context).push<void>(
-    MaterialPageRoute(
-      builder: (_) => Theme(
-        data: _m1Theme(Theme.of(context)),
-        child: _MobileAssetDetails(
-          asset: asset,
-          onRemove: () => _remove([asset.id]),
-          onRestore: () => _restore([asset.id]),
-          onPurge: () => _purge([asset.id]),
+  void _openDetail(ImageAsset asset) {
+    final revision = ref.read(libraryReplacementRevisionProvider);
+    final repository = widget.session.requireValue.repository;
+    final epoch = repository.executionEpoch;
+    unawaited(
+      Navigator.of(context).push<void>(
+        MaterialPageRoute(
+          builder: (_) => Theme(
+            data: _m1Theme(Theme.of(context)),
+            child: _MobileAssetDetails(
+              asset: asset,
+              libraryRevision: revision,
+              executionEpoch: epoch,
+              onRemove: () => repository.runInExecutionEpoch(
+                epoch,
+                () => _remove([asset.id]),
+              ),
+              onRestore: () => repository.runInExecutionEpoch(
+                epoch,
+                () => _restore([asset.id]),
+              ),
+              onPurge: () => repository.runInExecutionEpoch(
+                epoch,
+                () => _purge([asset.id]),
+              ),
+              onEdit: widget.onSelectedProcessing == null
+                  ? null
+                  : () => widget.onSelectedProcessing!([
+                      asset.id,
+                    ], ProcessingOperation.crop),
+              onUpload: widget.onSelectedUpload == null
+                  ? null
+                  : () => widget.onSelectedUpload!([asset.id], true),
+            ),
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -1369,17 +1400,61 @@ class _MobileGalleryState extends ConsumerState<MobileGallery> {
             const SizedBox(height: 6),
             Row(
               children: [
-                const Expanded(
-                  child: OutlinedButton(onPressed: null, child: Text('压缩')),
-                ),
-                const SizedBox(width: 6),
-                const Expanded(
-                  child: OutlinedButton(onPressed: null, child: Text('拼接')),
-                ),
-                const SizedBox(width: 6),
-                const Expanded(
-                  child: FilledButton(onPressed: null, child: Text('上传')),
-                ),
+                if (!ref.watch(galleryQueryProvider).recycledOnly) ...[
+                  Expanded(
+                    child: OutlinedButton(
+                      key: const Key('mobile-compress-selection'),
+                      onPressed:
+                          _ready &&
+                              !_blocked &&
+                              !_selectingAll &&
+                              _selectedIds.isNotEmpty &&
+                              widget.onSelectedProcessing != null
+                          ? () => widget.onSelectedProcessing!(
+                              List<String>.unmodifiable(_selectedIds),
+                              ProcessingOperation.compress,
+                            )
+                          : null,
+                      child: const Text('压缩'),
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: OutlinedButton(
+                      key: const Key('mobile-stitch-selection'),
+                      onPressed:
+                          _ready &&
+                              !_blocked &&
+                              !_selectingAll &&
+                              _selectedIds.length >= 2 &&
+                              widget.onSelectedProcessing != null
+                          ? () => widget.onSelectedProcessing!(
+                              List<String>.unmodifiable(_selectedIds),
+                              ProcessingOperation.stitch,
+                            )
+                          : null,
+                      child: const Text('拼接'),
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: FilledButton(
+                      key: const Key('mobile-upload-selection'),
+                      onPressed:
+                          _ready &&
+                              !_blocked &&
+                              !_selectingAll &&
+                              _selectedIds.isNotEmpty &&
+                              widget.onSelectedUpload != null
+                          ? () => widget.onSelectedUpload!(
+                              List<String>.unmodifiable(_selectedIds),
+                              false,
+                            )
+                          : null,
+                      child: const Text('上传'),
+                    ),
+                  ),
+                ],
                 IconButton(
                   key: const Key('review-selection'),
                   tooltip: '核对选择集',
@@ -1625,12 +1700,19 @@ class _PendingDestination extends StatelessWidget {
 class _MobileAssetDetails extends ConsumerStatefulWidget {
   const _MobileAssetDetails({
     required this.asset,
+    required this.libraryRevision,
+    required this.executionEpoch,
     required this.onRemove,
     required this.onRestore,
     required this.onPurge,
+    this.onEdit,
+    this.onUpload,
   });
   final ImageAsset asset;
+  final int libraryRevision;
+  final String executionEpoch;
   final Future<bool> Function() onRemove, onRestore, onPurge;
+  final VoidCallback? onEdit, onUpload;
   @override
   ConsumerState<_MobileAssetDetails> createState() =>
       _MobileAssetDetailsState();
@@ -1638,13 +1720,22 @@ class _MobileAssetDetails extends ConsumerStatefulWidget {
 
 class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
   late ImageAsset _asset = widget.asset;
+  AssetPreview? _lastPreview;
   bool _savingFavorite = false;
   bool _organizing = false;
   bool _changingLifecycle = false;
   bool get _busy => _savingFavorite || _organizing || _changingLifecycle;
+  bool get _detailsCurrent =>
+      widget.libraryRevision == ref.read(libraryReplacementRevisionProvider);
+
+  void _shortcut(VoidCallback action) {
+    if (_busy || _asset.recycled || !_detailsCurrent) return;
+    Navigator.of(context).pop();
+    action();
+  }
 
   Future<void> _changeLifecycle(Future<bool> Function() action) async {
-    if (_busy) return;
+    if (_busy || !_detailsCurrent) return;
     setState(() => _changingLifecycle = true);
     var completed = false;
     try {
@@ -1658,19 +1749,23 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
     } finally {
       if (mounted) setState(() => _changingLifecycle = false);
     }
-    if (mounted && completed) Navigator.of(context).pop();
+    if (mounted && completed && _detailsCurrent) Navigator.of(context).pop();
   }
 
   Future<void> _organize() async {
-    if (_busy || _asset.recycled) return;
+    if (_busy || _asset.recycled || !_detailsCurrent) return;
     setState(() => _organizing = true);
     try {
       final saved = await showLibraryOrganizationEditor(context, [_asset.id]);
-      if (!saved || !mounted) return;
+      if (!saved || !mounted || !_detailsCurrent) return;
       final repository = (await ref.read(librarySessionProvider.future))
           .repository;
-      final updated = await repository.getAsset(_asset.id);
-      if (!mounted) return;
+      if (!mounted || !_detailsCurrent) return;
+      final updated = await repository.runInExecutionEpoch(
+        widget.executionEpoch,
+        () => repository.getAsset(_asset.id),
+      );
+      if (!mounted || !_detailsCurrent) return;
       if (updated != null) setState(() => _asset = updated);
       try {
         await ref.read(galleryProvider.notifier).reload();
@@ -1692,13 +1787,17 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
   }
 
   Future<void> _favorite() async {
-    if (_busy || _asset.recycled) return;
+    if (_busy || _asset.recycled || !_detailsCurrent) return;
     setState(() => _savingFavorite = true);
     try {
       final repository = (await ref.read(librarySessionProvider.future))
           .repository;
-      final saved = await repository.setFavorite(_asset.id, !_asset.favorite);
-      if (!mounted) return;
+      if (!mounted || !_detailsCurrent) return;
+      final saved = await repository.runInExecutionEpoch(
+        widget.executionEpoch,
+        () => repository.setFavorite(_asset.id, !_asset.favorite),
+      );
+      if (!mounted || !_detailsCurrent) return;
       setState(() => _asset = saved);
       try {
         await ref.read(galleryProvider.notifier).reload();
@@ -1721,8 +1820,17 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
 
   @override
   Widget build(BuildContext context) {
-    final preview = ref.watch(assetPreviewProvider(_asset));
+    final current =
+        ref.watch(libraryReplacementRevisionProvider) == widget.libraryRevision;
+    final preview = current
+        ? ref.watch(assetPreviewProvider(_asset))
+        : AsyncValue<AssetPreview>.data(
+            _lastPreview ??
+                const AssetPreview(CopyAvailability.inaccessible, null),
+          );
+    if (current && preview.asData != null) _lastPreview = preview.asData!.value;
     final available =
+        current &&
         preview.asData?.value.availability == CopyAvailability.available;
     return PopScope(
       canPop: !_busy,
@@ -1744,7 +1852,9 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
             IconButton(
               key: const Key('mobile-favorite'),
               tooltip: _asset.favorite ? '取消收藏' : '收藏',
-              onPressed: _busy || _asset.recycled ? null : _favorite,
+              onPressed: _busy || _asset.recycled || !current
+                  ? null
+                  : _favorite,
               icon: _savingFavorite
                   ? const SizedBox(
                       width: 20,
@@ -1763,6 +1873,11 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
           child: ListView(
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 28),
             children: [
+              if (!current)
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 16),
+                  child: Text('资料库已替换，此详情保留原信息；请返回图库重新打开，当前操作已禁用。'),
+                ),
               AspectRatio(
                 aspectRatio: 1,
                 child: DecoratedBox(
@@ -1774,20 +1889,39 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                     padding: const EdgeInsets.all(12),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: AssetPreviewImage(asset: _asset),
+                      child: current
+                          ? AssetPreviewImage(asset: _asset)
+                          : _lastPreview?.bytes == null
+                          ? const Center(child: Icon(Icons.image_outlined))
+                          : Image.memory(
+                              _lastPreview!.bytes!,
+                              semanticLabel: '替换前的图片预览',
+                              errorBuilder: (_, _, _) => const Center(
+                                child: Icon(Icons.image_outlined),
+                              ),
+                            ),
                     ),
                   ),
                 ),
               ),
               TextButton.icon(
                 key: const Key('mobile-original-preview'),
-                onPressed: _busy
+                onPressed: _busy || !current
                     ? null
-                    : () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (_) => OriginalPreviewScreen(asset: _asset),
-                        ),
-                      ),
+                    : () {
+                        if (!_detailsCurrent) return;
+                        final revision = widget.libraryRevision;
+                        final epoch = widget.executionEpoch;
+                        Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => OriginalPreviewScreen(
+                              asset: _asset,
+                              initialLibraryRevision: revision,
+                              initialExecutionEpoch: epoch,
+                            ),
+                          ),
+                        );
+                      },
                 icon: Icon(
                   _asset.version.isAnimated
                       ? Icons.play_circle_outline
@@ -1826,7 +1960,9 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
               const SizedBox(height: 8),
               OutlinedButton.icon(
                 key: const Key('mobile-organize'),
-                onPressed: _busy || _asset.recycled ? null : _organize,
+                onPressed: _busy || _asset.recycled || !current
+                    ? null
+                    : _organize,
                 icon: const Icon(Icons.sell_outlined, size: 18),
                 label: const Text('编辑分类与标签'),
               ),
@@ -1836,7 +1972,7 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                 const SizedBox(height: 10),
                 OutlinedButton.icon(
                   key: const Key('mobile-restore-asset'),
-                  onPressed: _busy
+                  onPressed: _busy || !current
                       ? null
                       : () => _changeLifecycle(widget.onRestore),
                   icon: const Icon(Icons.restore),
@@ -1844,7 +1980,7 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                 ),
                 OutlinedButton.icon(
                   key: const Key('mobile-purge-asset'),
-                  onPressed: _busy
+                  onPressed: _busy || !current
                       ? null
                       : () => _changeLifecycle(widget.onPurge),
                   icon: const Icon(Icons.delete_forever_outlined),
@@ -1853,7 +1989,7 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
               ] else
                 OutlinedButton.icon(
                   key: const Key('mobile-remove-asset'),
-                  onPressed: _busy
+                  onPressed: _busy || !current
                       ? null
                       : () => _changeLifecycle(widget.onRemove),
                   icon: const Icon(Icons.delete_outline),
@@ -1883,7 +2019,9 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            preview.isLoading
+                            !current
+                                ? '资料库已替换，副本校验已禁用。'
+                                : preview.isLoading
                                 ? '正在校验本机副本…'
                                 : preview.hasError
                                 ? '副本校验或预览失败'
@@ -1892,7 +2030,9 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            available
+                            !current
+                                ? '仅保留原详情信息与已有内存预览，请返回图库重新打开。'
+                                : available
                                 ? '来源被移除，也可以继续使用'
                                 : '已有图片信息保留；可重试校验或重新导入。',
                             style: const TextStyle(fontSize: 11, color: _muted),
@@ -1900,31 +2040,56 @@ class _MobileAssetDetailsState extends ConsumerState<_MobileAssetDetails> {
                         ],
                       ),
                     ),
-                    if (preview.hasError)
+                    if (current && preview.hasError)
                       IconButton(
                         tooltip: '重试校验',
-                        onPressed: () =>
-                            ref.invalidate(assetPreviewProvider(_asset)),
+                        onPressed: !current
+                            ? null
+                            : () {
+                                if (_detailsCurrent) {
+                                  ref.invalidate(assetPreviewProvider(_asset));
+                                }
+                              },
                         icon: const Icon(Icons.refresh),
                       ),
                   ],
                 ),
               ),
               const SizedBox(height: 20),
-              const Row(
+              Row(
                 children: [
                   Expanded(
-                    child: OutlinedButton(onPressed: null, child: Text('编辑副本')),
+                    child: OutlinedButton(
+                      key: const Key('mobile-edit-copy'),
+                      onPressed:
+                          _busy ||
+                              _asset.recycled ||
+                              !current ||
+                              widget.onEdit == null
+                          ? null
+                          : () => _shortcut(widget.onEdit!),
+                      child: const Text('编辑副本'),
+                    ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
-                    child: FilledButton(onPressed: null, child: Text('上传原图')),
+                    child: FilledButton(
+                      key: const Key('mobile-upload-original'),
+                      onPressed:
+                          _busy ||
+                              _asset.recycled ||
+                              !current ||
+                              widget.onUpload == null
+                          ? null
+                          : () => _shortcut(widget.onUpload!),
+                      child: const Text('上传原图'),
+                    ),
                   ),
                 ],
               ),
               const SizedBox(height: 8),
               const Text(
-                '请从“工具与设置”处理图片，或从“任务”创建上传。',
+                '快捷入口只带入当前图片；处理、入队与原图风险仍需明确确认。',
                 style: TextStyle(color: _muted, fontSize: 12),
               ),
               const SizedBox(height: 24),

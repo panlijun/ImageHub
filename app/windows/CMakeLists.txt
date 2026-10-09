@@ -72,6 +72,28 @@ endif()
 set(INSTALL_BUNDLE_DATA_DIR "${CMAKE_INSTALL_PREFIX}/data")
 set(INSTALL_BUNDLE_LIB_DIR "${CMAKE_INSTALL_PREFIX}")
 
+# Ship the installed release MSVC runtime beside the executable for the ZIP
+# distribution. Windows 11 supplies the UCRT; never redistribute debug DLLs.
+set(CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP TRUE)
+set(CMAKE_INSTALL_DEBUG_LIBRARIES FALSE)
+set(CMAKE_INSTALL_UCRT_LIBRARIES FALSE)
+include(InstallRequiredSystemLibraries)
+foreach(REQUIRED_CRT msvcp140.dll vcruntime140.dll vcruntime140_1.dll)
+  set(HAS_REQUIRED_CRT FALSE)
+  foreach(CRT_FILE IN LISTS CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS)
+    get_filename_component(CRT_NAME "${CRT_FILE}" NAME)
+    if(CRT_NAME STREQUAL REQUIRED_CRT AND EXISTS "${CRT_FILE}")
+      set(HAS_REQUIRED_CRT TRUE)
+    endif()
+  endforeach()
+  if(NOT HAS_REQUIRED_CRT)
+    message(FATAL_ERROR "Required release MSVC runtime is unavailable: ${REQUIRED_CRT}")
+  endif()
+endforeach()
+install(FILES ${CMAKE_INSTALL_SYSTEM_RUNTIME_LIBS}
+  DESTINATION "${INSTALL_BUNDLE_LIB_DIR}"
+  CONFIGURATIONS Profile;Release COMPONENT Runtime)
+
 install(TARGETS ${BINARY_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}"
   COMPONENT Runtime)
 

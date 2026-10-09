@@ -1,0 +1,12 @@
+Analyzing app...                                                
+
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - integration_test\support\backup_interop_harness.dart:26:5 - curly_braces_in_flow_control_structures
+  error - The method 'removeAssets' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'removeAssets' - test\presentation\gallery_shortcuts_test.dart:238:39 - undefined_method
+  error - The method 'removeAssets' isn't defined for the type 'LibraryRepository'. Try correcting the name to the name of an existing method, or defining a method named 'removeAssets' - test\presentation\gallery_shortcuts_test.dart:338:39 - undefined_method
+  error - The getter 'listOutputs' isn't defined for the type 'LibraryRepository'. Try importing the library that defines 'listOutputs', correcting the name to the name of an existing getter, or defining a getter or field named 'listOutputs' - test\presentation\gallery_shortcuts_test.dart:460:54 - undefined_getter
+  error - The getter 'listUploadBatches' isn't defined for the type 'LibraryRepository'. Try importing the library that defines 'listUploadBatches', correcting the name to the name of an existing getter, or defining a getter or field named 'listUploadBatches' - test\presentation\gallery_shortcuts_test.dart:464:54 - undefined_getter
+  error - The getter 'listUploadProcessingJobs' isn't defined for the type 'LibraryRepository'. Try importing the library that defines 'listUploadProcessingJobs', correcting the name to the name of an existing getter, or defining a getter or field named 'listUploadProcessingJobs' - test\presentation\gallery_shortcuts_test.dart:468:54 - undefined_getter
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - tool\backup_interop_fixture.dart:76:9 - curly_braces_in_flow_control_structures
+   info - Statements in an if should be enclosed in a block. Try wrapping the statement in a block - tool\verify_large_backup.dart:376:5 - curly_braces_in_flow_control_structures
+
+8 issues found. (ran in 106.0s)

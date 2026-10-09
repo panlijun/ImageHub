@@ -4,6 +4,8 @@ import 'dart:ui' as ui;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../core/platform_resource.dart';
+
 import '../application/original_preview_reader.dart';
 import '../domain/library_models.dart';
 import 'gallery_providers.dart';
@@ -12,8 +14,15 @@ import '../../upload/presentation/upload_exit.dart';
 
 /// One common viewer for desktop A and mobile M1; originals remain untouched.
 class OriginalPreviewScreen extends ConsumerStatefulWidget {
-  const OriginalPreviewScreen({super.key, required this.asset});
+  const OriginalPreviewScreen({
+    super.key,
+    required this.asset,
+    this.initialLibraryRevision,
+    this.initialExecutionEpoch,
+  });
   final ImageAsset asset;
+  final int? initialLibraryRevision;
+  final String? initialExecutionEpoch;
   @override
   ConsumerState<OriginalPreviewScreen> createState() =>
       _OriginalPreviewScreenState();
@@ -27,10 +36,26 @@ class _OriginalPreviewScreenState extends ConsumerState<OriginalPreviewScreen> {
   final _transform = TransformationController();
   bool _leaving = false;
   Future<void>? _leaveWork;
+  late final int _entryRevision;
+  String? _entryEpoch;
+  bool _entryInvalid = false;
+  static const _entryInvalidFeedback = '资料库已替换，原图入口已失效；请返回图库重新打开。';
+
+  void _requireEntry() {
+    if (!mounted ||
+        _entryRevision != ref.read(libraryReplacementRevisionProvider)) {
+      _entryInvalid = true;
+      throw const ResourceFailure(FailureKind.unavailable);
+    }
+  }
 
   @override
   void initState() {
     super.initState();
+    _entryRevision =
+        widget.initialLibraryRevision ??
+        ref.read(libraryReplacementRevisionProvider);
+    _entryEpoch = widget.initialExecutionEpoch;
     ref.listenManual(libraryReplacementRevisionProvider, (_, _) {
       unawaited(_leave());
     });
@@ -72,10 +97,32 @@ class _OriginalPreviewScreenState extends ConsumerState<OriginalPreviewScreen> {
   void _start() {
     final controller = OriginalPreviewController(
       loader: (cancellation) async {
+        _requireEntry();
         final session = await ref.read(librarySessionProvider.future);
+        _requireEntry();
+        // Parameterless callers bind once when a session first becomes ready.
+        // Production navigation always supplies the identity captured at tap.
+        final epoch = _entryEpoch ??= session.repository.executionEpoch;
+        if (epoch != session.repository.executionEpoch) {
+          _entryInvalid = true;
+          throw const ResourceFailure(FailureKind.unavailable);
+        }
         _session = session;
-        return OriginalPreviewReader(session.repository)
-            .read(widget.asset, cancellation: cancellation);
+        try {
+          return await session.repository.runInExecutionEpoch(
+            epoch,
+            () =>
+                OriginalPreviewReader(session.repository)
+                    .read(widget.asset, cancellation: cancellation),
+          );
+        } catch (_) {
+          if (!mounted ||
+              _entryRevision != ref.read(libraryReplacementRevisionProvider) ||
+              epoch != session.repository.executionEpoch) {
+            _entryInvalid = true;
+          }
+          rethrow;
+        }
       },
     );
     _controller = controller;
@@ -126,7 +173,7 @@ class _OriginalPreviewScreenState extends ConsumerState<OriginalPreviewScreen> {
   }
 
   Future<void> _retry() async {
-    if (_leaving) return;
+    if (_leaving || _entryInvalid) return;
     final old = _controller!;
     await _drain();
     old.removeListener(_changed);
@@ -154,6 +201,7 @@ class _OriginalPreviewScreenState extends ConsumerState<OriginalPreviewScreen> {
     final controller = _controller!;
     final image = _displayImage;
     final version = widget.asset.version;
+    final error = _entryInvalid ? _entryInvalidFeedback : controller.error;
     return PopScope(
       canPop: _leaving && controller.closed,
       onPopInvokedWithResult: (didPop, result) {
@@ -187,20 +235,17 @@ class _OriginalPreviewScreenState extends ConsumerState<OriginalPreviewScreen> {
             Expanded(
               child: _leaving
                   ? const Center(child: Text('正在结束预览…'))
-                  : controller.error != null
+                  : error != null
                   ? Center(
                       child: Padding(
                         padding: const EdgeInsets.all(24),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(
-                              controller.error!,
-                              textAlign: TextAlign.center,
-                            ),
+                            Text(error, textAlign: TextAlign.center),
                             const SizedBox(height: 12),
                             TextButton.icon(
-                              onPressed: _retry,
+                              onPressed: _entryInvalid ? null : _retry,
                               icon: const Icon(Icons.refresh),
                               label: const Text('重试预览'),
                             ),

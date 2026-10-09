@@ -1326,11 +1326,27 @@ class _AssetInspectorState extends ConsumerState<_AssetInspector> {
               key: const Key('desktop-original-preview'),
               onPressed: !enabled || asset.recycled
                   ? null
-                  : () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => OriginalPreviewScreen(asset: asset),
-                      ),
-                    ),
+                  : () {
+                      final revision = ref.read(
+                        libraryReplacementRevisionProvider,
+                      );
+                      final repository = ref
+                          .read(librarySessionProvider)
+                          .asData
+                          ?.value
+                          .repository;
+                      if (repository == null) return;
+                      final epoch = repository.executionEpoch;
+                      Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => OriginalPreviewScreen(
+                            asset: asset,
+                            initialLibraryRevision: revision,
+                            initialExecutionEpoch: epoch,
+                          ),
+                        ),
+                      );
+                    },
               icon: Icon(
                 asset.version.isAnimated
                     ? Icons.play_circle_outline

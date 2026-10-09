@@ -1,0 +1,11 @@
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 7a6b4f55-32e9-4c4e-96ef-2ac114643671 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Permission revocation was not confirmed; continue verified owned-device retirement.
+The confirmed owned simulator was deleted.
+...........
+----------------------------------------------------------------------
+Ran 11 tests in 0.080s
+
+OK
