@@ -252,7 +252,7 @@ function New-VerifiedWindowsZip {
   $null = Assert-WindowsReleaseVersion (Join-Path $extractRoot 'imagehub.exe') $Versions
   $smoke = & (Join-Path $PSScriptRoot 'verify_release_smoke.ps1') -Executable (Join-Path $extractRoot 'imagehub.exe')
   Write-ReleaseText (Join-Path $Stage 'windows-smoke.log') (($smoke -join "`n") + "`n")
-  return [ordered]@{ native = $native; files = @($records); verifiedCompleteZip = $true; extractedRunnerNormalExit = $true }
+  return [ordered]@{ native = $native; files = $records.ToArray(); verifiedCompleteZip = $true; extractedRunnerNormalExit = $true }
 }
 
 function Assert-AndroidRelease {
