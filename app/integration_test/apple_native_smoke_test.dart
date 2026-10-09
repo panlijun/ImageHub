@@ -19,6 +19,7 @@ import 'package:imagehost/features/gallery/presentation/desktop_gallery.dart';
 import 'package:imagehost/features/gallery/presentation/gallery_providers.dart';
 import 'package:imagehost/features/gallery/presentation/mobile_gallery.dart';
 import 'package:imagehost/platform/image_preview_codec.dart';
+import 'package:imagehost/platform/generated/apple_files.g.dart';
 import 'package:imagehost/platform/storage_capacity.dart';
 import 'package:imagehost/platform/system_network_monitor.dart';
 import 'package:imagehost/platform/system_secret_store.dart';
@@ -33,6 +34,61 @@ import 'package:uuid/uuid.dart';
 // checks, not Apple hardware PT, performance, signing or real provider tests.
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  testWidgets(
+    'IT-004 UT-036/075 partial Apple real Pigeon file bridge ownership rejection',
+    (tester) async {
+      _requireAppleEngine();
+      final host = AppleFileHost();
+      await expectLater(
+        host.pickBackup('invalid-selection'),
+        throwsA(
+          isA<PlatformException>().having(
+            (error) => error.code,
+            'safe code',
+            'invalidInput',
+          ),
+        ),
+      );
+      final unowned = const Uuid().v4();
+      final read = await host.readResource(unowned);
+      expect(read.code, AppleIoCode.invalidInput);
+      expect(read.bytes, isEmpty);
+      expect(read.eof, false);
+      await expectLater(
+        host.closeResource(unowned),
+        throwsA(
+          isA<PlatformException>().having(
+            (error) => error.code,
+            'safe code',
+            'invalidInput',
+          ),
+        ),
+      );
+      await host.cancelSelection(const Uuid().v4());
+      final operation = const Uuid().v4();
+      await host.cancelExport(operation);
+      final refused = await host.exportFile(
+        AppleExportRequest(
+          operationId: operation,
+          sourcePath: '/unowned-not-opened.png',
+          displayName: 'not-created.png',
+          mimeType: 'image/png',
+          sha256: 'a' * 64,
+          byteCount: 3,
+          kind: AppleDestinationKind.directory,
+          destinationHandle: unowned,
+        ),
+      );
+      expect(
+        refused.code,
+        Platform.isIOS ? AppleIoCode.invalidInput : AppleIoCode.unsupported,
+      );
+      expect(refused.uri, isNull);
+      expect(refused.cleanupPending, false);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets(
     'IT-001/002 UT-004/012/102 partial Apple native storage SQLite pixels gallery and IO protection',

@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		A90F1E000000000000000001 /* MacFileBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F1E000000000000000011 /* MacFileBridge.swift */; };
+		A90F1E000000000000000002 /* AppleFiles.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F1E000000000000000012 /* AppleFiles.g.swift */; };
+		A90F1E000000000000000003 /* AppleFileEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F1E000000000000000013 /* AppleFileEngine.swift */; };
+		A90F1E000000000000000004 /* AppleFileEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90F1E000000000000000014 /* AppleFileEngineTests.swift */; };
 		A631BDE08765432100201001 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A631BDE08765432100201002 /* PrivacyInfo.xcprivacy */; };
 		331C80D8294CF71000263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C80D7294CF71000263BE5 /* RunnerTests.swift */; };
 		335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */; };
@@ -62,6 +66,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A90F1E000000000000000011 /* MacFileBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFileBridge.swift; sourceTree = "<group>"; };
+		A90F1E000000000000000012 /* AppleFiles.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generated/AppleFiles.g.swift; sourceTree = "<group>"; };
+		A90F1E000000000000000013 /* AppleFileEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFileEngine.swift; sourceTree = "<group>"; };
+		A90F1E000000000000000014 /* AppleFileEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleFileEngineTests.swift; sourceTree = "<group>"; };
 		A631BDE08765432100201002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		331C80D5294CF71000263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C80D7294CF71000263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
@@ -103,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90F1E000000000000000015 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				A90F1E000000000000000012 /* AppleFiles.g.swift */,
+				A90F1E000000000000000013 /* AppleFileEngine.swift */,
+				A90F1E000000000000000014 /* AppleFileEngineTests.swift */,
+			);
+			name = Apple;
+			path = ../apple;
+			sourceTree = "<group>";
+		};
 		331C80D6294CF71000263BE5 /* RunnerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +144,7 @@
 		33CC10E42044A3C60003C045 = {
 			isa = PBXGroup;
 			children = (
+				A90F1E000000000000000015 /* Apple */,
 				33FAB671232836740065AC1E /* Runner */,
 				33CEB47122A05771004F2AC0 /* Flutter */,
 				331C80D6294CF71000263BE5 /* RunnerTests */,
@@ -168,6 +188,7 @@
 		33FAB671232836740065AC1E /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				A90F1E000000000000000011 /* MacFileBridge.swift */,
 				33CC10F02044A3C60003C045 /* AppDelegate.swift */,
 				33CC11122044BFA00003C045 /* MainFlutterWindow.swift */,
 				A631BDE08765432100201002 /* PrivacyInfo.xcprivacy */,
@@ -350,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F1E000000000000000004 /* AppleFileEngineTests.swift in Sources */,
 				331C80D8294CF71000263BE5 /* RunnerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +380,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90F1E000000000000000001 /* MacFileBridge.swift in Sources */,
+				A90F1E000000000000000002 /* AppleFiles.g.swift in Sources */,
+				A90F1E000000000000000003 /* AppleFileEngine.swift in Sources */,
 				33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */,
 				33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */,
 				335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */,

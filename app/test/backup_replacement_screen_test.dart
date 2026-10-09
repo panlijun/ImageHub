@@ -125,7 +125,8 @@ class _Picker extends ExportGateway {
 }
 
 class _ImportPicker extends BackupImportGateway {
-  _ImportPicker(this.file, {this.supported = true});
+  _ImportPicker(this.file, {this.supported = true})
+    : super(operatingSystem: 'windows');
   final File? file;
   final bool supported;
   int calls = 0;

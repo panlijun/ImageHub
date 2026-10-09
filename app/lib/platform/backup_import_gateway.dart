@@ -7,12 +7,19 @@ import '../core/platform_resource.dart';
 import 'mobile_file_workspace.dart';
 
 class BackupImportGateway {
-  const BackupImportGateway();
-  // Android uses an owned, closed stream copy rather than a URI as a file path.
-  bool get supportsPlatform => Platform.isWindows || Platform.isAndroid;
+  const BackupImportGateway({this.operatingSystem});
+  final String? operatingSystem;
+  String get _platform => operatingSystem ?? Platform.operatingSystem;
+  // Native granted sources are handed off only as owned, closed private copies.
+  bool get supportsPlatform =>
+      {'windows', 'android', 'ios', 'macos'}.contains(_platform);
 
   Future<BackupSource?> acquireBackup({CancellationToken? cancellation}) async {
-    if (Platform.isAndroid) return acquireAndroidBackup(cancellation);
+    if (_platform == 'android') return acquireAndroidBackup(cancellation);
+    if (_platform == 'ios' || _platform == 'macos') {
+      return acquireAppleBackup(cancellation);
+    }
+    if (!supportsPlatform) throw BackupSnapshotFailure('此平台尚未接入备份文件取得。');
     final file = await pickBackup();
     return file == null ? null : BackupSource(file);
   }
@@ -31,5 +38,5 @@ class BackupImportGateway {
   }
 
   Future<Directory> temporaryParent() async =>
-      Platform.isAndroid ? mobileTemporaryParent() : Directory.systemTemp;
+      _platform == 'windows' ? Directory.systemTemp : mobileTemporaryParent();
 }

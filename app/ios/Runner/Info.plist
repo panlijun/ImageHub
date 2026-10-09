@@ -68,6 +68,8 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>选择需要导入并在本机独立保管的图片。</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>将你明确选择保存的处理结果添加到系统照片图库。</string>
 </dict>
 </plist>
 

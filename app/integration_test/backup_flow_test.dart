@@ -525,7 +525,8 @@ class _BackupPicker extends ExportGateway {
 }
 
 class _RestorePicker extends BackupImportGateway {
-  const _RestorePicker(this.exports, this.temporary);
+  const _RestorePicker(this.exports, this.temporary)
+    : super(operatingSystem: 'windows');
   final Directory exports, temporary;
   @override
   Future<File?> pickBackup() async => (await exports.list().toList())

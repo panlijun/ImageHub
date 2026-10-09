@@ -1,0 +1,160 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 Apple backup bounded reads consume one source and retire once
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 malformed Apple selection retires only known unique handles
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 cancellation before picker does not start acquisition
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 selector cancellation waits both callbacks for the same UUID
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 late selected scope after cancellation retires before return
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 cancelled read still waits actual read even when scope close fails
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-075 nonempty malformed chunks and native failures never pass bytes
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_resource_gateway_test.dart: UT-089 Apple exception mapping ignores raw message and details
+00:00 +8: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 platform capabilities enable iOS native files and photos
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order [E]
+  Expected: every element(ExportStatus:<ExportStatus.saved>)
+    Actual: MappedListIterable<ExportItemResult, ExportStatus>:[
+              ExportStatus:ExportStatus.failed,
+              ExportStatus:ExportStatus.saved
+            ]
+     Which: has value ExportStatus:<ExportStatus.failed> which doesn't match ExportStatus:<ExportStatus.saved> at index 0
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\platform\apple_export_gateway_test.dart 43:7   main.<fn>
+  
+00:00 +9 -1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 late confirmed save survives cancellation and stops remaining items
+00:00 +10 -1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 actual scope retirement precedes releasing export ownership
+00:00 +11 -1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Photos confirmation and failed cleanup preserve saved evidence
+00:00 +12 -1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 malformed file or photo success never reports saved
+00:00 +12 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 malformed file or photo success never reports saved [E]
+  Expected: ExportStatus:<ExportStatus.failed>
+    Actual: ExportStatus:<ExportStatus.saved>
+  
+  package:matcher                                     expect
+  package:flutter_test/src/widget_tester.dart 473:18  expect
+  test\platform\apple_export_gateway_test.dart 162:7  main.<fn>
+  
+00:00 +12 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 cancellation during picker drains and never starts native writes
+00:00 +13 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 scope cleanup failure cannot erase successful save
+00:00 +14 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 per-item failures and permission denial remain fixed feedback
+00:00 +15 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 duplicate input identities do not acquire a directory
+00:00 +16 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart
+00:01 +16 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 copied backup survives original loss after all grants retire
+00:01 +17 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 handoff waits actual native scope retirement after writer closes
+00:01 +18 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 failed retirement refuses handoff and cleans confirmed private bytes
+00:01 +19 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 insufficient capacity stops private copy and still retires source
+00:01 +20 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 cancellation during source copying drains before private cleanup
+00:01 +21 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/managed_backup_acquisition_test.dart: UT-075 invalid acquired group releases each grant without opening data
+00:01 +22 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart
+00:01 +22 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android single document transports frozen source digest length and actual URI
+00:01 +23 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android batch chooses one tree with exact preallocated unique operations and continues failures
+00:01 +24 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android photos bypasses selectors and sends no document URI or handle
+00:01 +25 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android selector cancellation starts no writer while invalid cancelled handle is closed
+00:01 +26 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android invalid future destination handles never reach exportFile
+00:01 +27 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android successful reply requires real content authority and nonempty actual name
+00:01 +28 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android every unconfirmed native status remains failed and the next item proceeds
+00:01 +29 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android cancellation waits for actual export cancel request and destination close
+00:01 +30 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android late confirmed save survives cancellation and later frozen items stay unexecuted
+00:01 +31 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android late selector result after stop releases destination without export
+00:01 +32 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android cleanup failure gives fixed feedback without downgrading saved result
+00:01 +33 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android opaque host failures do not stringify and other frozen items still export
+00:01 +34 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android opaque selector failure creates no writer and never stringifies
+00:01 +35 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android cancellation acknowledgement failure cannot replace a late saved result
+00:01 +36 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android cancelled or empty batch never chooses a destination or writes
+00:01 +37 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android caller list changes after selector starts cannot change frozen inputs
+00:01 +38 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_export_gateway_test.dart: UT-036 Android MIME mapping is deterministic for images backup and diagnostic files
+00:01 +39 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart
+00:02 +39 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android bounded chunks preserve unknown source size and EOF closes
+00:02 +40 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android one source failure does not prevent a second selected source
+00:02 +41 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android rejects oversize empty non-EOF and unexpected read status
+00:02 +42 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android typed native read failures keep their fixed classifications
+00:02 +43 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android cancellation waits for both pending read and actual close
+00:02 +44 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android cancellation with failing close still drains the pending read
+00:02 +45 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android unopened resources release once and retired resource cannot reopen
+00:02 +46 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android late selector return can be released without opening cancelled sources
+00:02 +47 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android malformed handles duplicates and future source kinds fail closed
+00:02 +48 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android invalid later selection releases every valid granted handle
+00:02 +49 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android duplicate handle selection closes the granted handle only once
+00:02 +50 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android malformed typed read result becomes fixed unavailable failure
+00:02 +51 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android malformed selection waits for actual resource cleanup before returning failure
+00:02 +52 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android malformed cancelled selection releases its valid grants
+00:02 +53 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android empty cancelled selection and recovered source are separate outcomes
+00:02 +54 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android unknown selector and read exceptions never stringify or escape raw values
+00:02 +55 -2: C:/Users/PAN/workspace/ImageHub/app/test/platform/android_resource_gateway_test.dart: UT-010 Android unknown recovered-selection exception never escapes raw values
+00:02 +56 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart
+00:03 +56 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file false capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:04 +57 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file true capacity false gate independently of directories (variant: TargetPlatform.windows)
+00:04 +58 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file true capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:05 +59 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/074 partial mobile real full ZIP precedes user save and preserves active/recycled UUIDs and bytes (variant: TargetPlatform.windows)
+00:11 +60 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-100 partial mobile backup cancellation retains private ZIP until actual transfer and keeps late saved evidence (variant: TargetPlatform.windows)
+00:16 +61 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-100 partial disposing mobile backup requests cancellation without early private ZIP deletion (variant: TargetPlatform.windows)
+00:22 +62 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup controlled ExportStatus.failed result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:27 +63 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup controlled ExportStatus.cancelled result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:32 +64 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI missing name true (variant: TargetPlatform.windows)
+00:37 +65 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI file name true (variant: TargetPlatform.windows)
+00:42 +66 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI content name false (variant: TargetPlatform.windows)
+00:47 +67 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-074/100 partial changed closed mobile ZIP refuses cleanup while preserving confirmed user save (variant: TargetPlatform.windows)
+00:51 +68 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart
+00:52 +68 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile export capability false gates files independently of directories (variant: TargetPlatform.windows)
+00:54 +69 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile export capability true gates files independently of directories (variant: TargetPlatform.windows)
+00:57 +70 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile file support alone keeps the photos action unavailable (variant: TargetPlatform.windows)
+01:00 +71 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile file and photos buttons dispatch distinct modes with frozen output identities (variant: TargetPlatform.windows)
+01:06 +72 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: UT-102 mobile batch keeps every actual output lease through selector/IO and cancellation drain (variant: TargetPlatform.windows)
+01:10 +73 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: UT-100/102 mobile return waits for the actual export future after stop confirmation (variant: TargetPlatform.windows)
+01:13 +74 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile cancellation retains a late confirmed saved item beside cancelled items (variant: TargetPlatform.windows)
+01:17 +75 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile batch skips a preparation failure and reports saved and unconfirmed results separately (variant: TargetPlatform.windows)
+01:22 +76 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: mobile unknown export exception uses fixed feedback and never stringifies the object (variant: TargetPlatform.windows)
+01:24 +77 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_processing_export_test.dart: UT-102 mobile lease cleanup failure retains protection and continues other releases (variant: TargetPlatform.windows)
+01:27 +78 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart
+01:28 +78 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 mobile diagnostic transfer receives closed verified JSON and preserves native saved URI
+01:28 +79 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085/089 mobile diagnostic cancellation waits real transfer and retains late saved false
+01:28 +80 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085/089 mobile diagnostic cancellation waits real transfer and retains late saved true
+01:28 +81 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 confirmed native save survives changed-source cleanup failure and keeps separate feedback
+01:28 +82 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 mobile unknown transfer error never stringifies secrets or claims saved
+01:28 +83 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 cancelled before preparation creates no private JSON and invokes no native transfer
+01:28 +84 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-084 mobile diagnostic file capability false is independent of directory support (variant: TargetPlatform.windows)
+01:29 +85 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-084 mobile diagnostic file capability true is independent of directory support (variant: TargetPlatform.windows)
+01:29 +86 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-085 Android diagnostic confirmation dispatches system file save with safe document first (variant: TargetPlatform.windows)
+01:31 +87 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-089 mobile diagnostic cancel preserves source until real native future ends (variant: TargetPlatform.windows)
+01:34 +88 -2: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_diagnostic_export_test.dart: UT-089 mobile diagnostic dispose preserves source until real native future ends (variant: TargetPlatform.windows)
+01:36 +89 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart
+01:36 +89 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075 partial ZIP picker cancellation never starts restore maintenance or changes assets (variant: TargetPlatform.windows)
+01:37 +90 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075/AT-003 partial real ZIP confirmation precedes permanent PNG commit at 390 large text (variant: TargetPlatform.windows)
+01:46 +91 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075 partial confirmation cancellation writes no assets and closes maintenance (variant: TargetPlatform.windows)
+01:51 +92 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075 partial metadata restore explicitly keeps new copy missing (variant: TargetPlatform.windows)
+01:56 +93 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075 partial blocking description conflict disables confirmation without changing current library (variant: TargetPlatform.windows)
+02:01 +94 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-076/077 tag conflict explains both sides and action without truncation (variant: TargetPlatform.windows)
+02:06 +95 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-075 partial disposing during confirmation resolves pending restore without writing (variant: TargetPlatform.windows)
+02:11 +96 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial entering backup again reads current asset count
+02:12 +97 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial backup loading and library failure never enable export or expose exceptions
+02:12 +98 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 320.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+02:13 +99 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 390.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+02:14 +100 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: AT-003 partial backup 1280.0 empty library large text and explicit unavailable platform (variant: TargetPlatform.windows)
+02:14 +101 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073 partial backup directory picker cancellation creates no package and retains library (variant: TargetPlatform.windows)
+02:15 +102 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073/082 partial backup real SQLite metadata export omits image bytes and source paths (variant: TargetPlatform.windows)
+02:18 +103 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-073/082 partial corrupt full backup lists UUID and never silently switches to metadata (variant: TargetPlatform.windows)
+02:24 +104 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_screen_test.dart: UT-082 partial backup cancellation waits real work and publishes no package (variant: TargetPlatform.windows)
+02:25 +105 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart
+02:26 +105 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial postcommit route disposal still resets surviving gallery intent and old secrets (variant: TargetPlatform.windows)
+02:52 +106 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial orchestrator precommit fault preserves old library and releases maintenance (variant: TargetPlatform.windows)
+02:53 +107 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial committed replacement survives postcommit session callback failure (variant: TargetPlatform.windows)
+02:53 +108 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial desktop replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+02:54 +109 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial M1 replacement revision clears an existing UUID selection (variant: TargetPlatform.windows)
+02:56 +110 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080/AT-005 partial replacement requires independent risk consent and cancellation preserves real library (variant: TargetPlatform.windows)
+03:12 +111 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial full replacement commits real PNG, resets actor permission and survives reopen (variant: TargetPlatform.windows)
+03:33 +112 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial metadata replacement explicitly creates missing image and does not reuse old bytes (variant: TargetPlatform.windows)
+03:54 +113 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial replacement dispose resolves confirmation and drains actual preparation (variant: TargetPlatform.windows)
+04:10 +114 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_replacement_screen_test.dart: UT-080 partial replacement cancellation waits outstanding capacity IO before releasing holds (variant: TargetPlatform.windows)
+04:16 +115 -2: loading C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart
+04:16 +115 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-073/078/081 BAK-005 partial merge setting values and platform skip at 390.0 2x text persist after reopen (variant: TargetPlatform.windows)
+04:23 +116 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-073/078/081 BAK-005 partial replacement setting values and platform skip at 390.0 2x text persist after reopen (variant: TargetPlatform.windows)
+04:38 +117 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-073/078/081 BAK-005 partial merge setting values and platform skip at 1280.0 2x text persist after reopen (variant: TargetPlatform.windows)
+04:45 +118 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-073/078/081 BAK-005 partial replacement setting values and platform skip at 1280.0 2x text persist after reopen (variant: TargetPlatform.windows)
+05:01 +119 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-075/079/081 BAK-005 partial cancelling merge confirmation leaves settings durable and permission absent (variant: TargetPlatform.windows)
+05:06 +120 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-075/079/081 BAK-005 partial cancelling replacement risk confirmation leaves settings durable and permission absent (variant: TargetPlatform.windows)
+05:17 +121 -2: C:/Users/PAN/workspace/ImageHub/app/test/backup_settings_screen_test.dart: UT-072/078/081 BAK-005 partial legacy format 1 reports absent settings and preserves local values (variant: TargetPlatform.windows)
+05:22 +122 -2: Some tests failed.
+
+Failing tests:
+  C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order
+  C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 malformed file or photo success never reports saved

@@ -1,9 +1,9 @@
-import 'package:path/path.dart' as p;
 import 'package:uuid/uuid.dart';
 
 import '../core/platform_resource.dart';
 import '../features/processing/domain/export_models.dart';
 import 'generated/android_files.g.dart';
+import 'export_mime.dart';
 
 class AndroidExportGateway {
   AndroidExportGateway({AndroidExportHost? host})
@@ -162,16 +162,7 @@ class AndroidExportGateway {
     return List.unmodifiable(results);
   }
 
-  static String mime(String name) => switch (p.extension(name).toLowerCase()) {
-    '.jpg' || '.jpeg' => 'image/jpeg',
-    '.png' => 'image/png',
-    '.webp' => 'image/webp',
-    '.gif' => 'image/gif',
-    '.bmp' => 'image/bmp',
-    '.zip' => 'application/zip',
-    '.json' => 'application/json',
-    _ => 'application/octet-stream',
-  };
+  static String mime(String name) => exportMimeType(name);
 
   ExportItemResult _cancelled(ExportInput input) => ExportItemResult(
     id: input.id,

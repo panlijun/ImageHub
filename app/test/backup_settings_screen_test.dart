@@ -102,7 +102,7 @@ Future<void> _deleteOwnedTemporaryDirectory(
 }
 
 class _ImportPicker extends BackupImportGateway {
-  _ImportPicker(this.file);
+  _ImportPicker(this.file) : super(operatingSystem: 'windows');
   final File file;
   @override
   bool get supportsPlatform => true;

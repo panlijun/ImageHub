@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import '../core/platform_resource.dart';
 import '../features/backup/data/backup_temporary_workspace.dart';
 import 'android_resource_gateway.dart';
+import 'apple_resource_gateway.dart';
 import 'storage_capacity.dart';
 
 /// Owns only explicitly registered, closed, unchanged private transfer files.
@@ -40,8 +41,25 @@ class BackupSource {
 
 Future<BackupSource?> acquireAndroidBackup(
   CancellationToken? cancellation,
-) async {
-  final resources = await AndroidResourceGateway().pick(backup: true);
+) async => acquireManagedBackup(
+  await AndroidResourceGateway().pick(backup: true),
+  cancellation: cancellation,
+);
+
+Future<BackupSource?> acquireAppleBackup(
+  CancellationToken? cancellation,
+) async => acquireManagedBackup(
+  await AppleResourceGateway().pickBackup(cancellation: cancellation),
+  cancellation: cancellation,
+);
+
+/// Shares the existing transfer ownership rules across native source adapters.
+Future<BackupSource?> acquireManagedBackup(
+  List<PlatformResource> resources, {
+  CancellationToken? cancellation,
+  Future<MobileFileWorkspace> Function()? createWorkspace,
+  Future<int> Function(Directory directory)? availableBytes,
+}) async {
   MobileFileWorkspace? workspace;
   RandomAccessFile? writer;
   File? target;
@@ -56,7 +74,7 @@ Future<BackupSource?> acquireAndroidBackup(
     if (resources.length != 1 || resources.single.sourceType != 'backup') {
       throw const ResourceFailure(FailureKind.unavailable);
     }
-    workspace = await MobileFileWorkspace.create();
+    workspace = await (createWorkspace?.call() ?? MobileFileWorkspace.create());
     target = File(p.join(workspace.directory.path, 'selected.zip'));
     await target.create(exclusive: true);
     writer = await target.open(mode: FileMode.writeOnly);
@@ -66,9 +84,9 @@ Future<BackupSource?> acquireAndroidBackup(
     )) {
       cancellation?.throwIfCancelled();
       if (sinceCapacityCheck >= 2 * 1024 * 1024) {
-        final available = await const StorageCapacity().availableBytes(
-          workspace.directory,
-        );
+        final available =
+            await (availableBytes?.call(workspace.directory) ??
+                const StorageCapacity().availableBytes(workspace.directory));
         if (available < 32 * 1024 * 1024 + chunk.length) {
           throw const ResourceFailure(FailureKind.lowSpace);
         }

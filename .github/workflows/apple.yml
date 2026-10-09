@@ -69,6 +69,13 @@ jobs:
         run: |
           set -euo pipefail
           flutter test integration_test/apple_native_smoke_test.dart -d macos --reporter=expanded 2>&1 | tee build/ci-evidence/macos-native-tests.log
+      - name: Verify native file ownership and real IO with XCTest
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          flutter build macos --debug 2>&1 | tee build/ci-evidence/macos-debug-build.log
+          xcodebuild test -workspace macos/Runner.xcworkspace -scheme Runner -configuration Debug -destination 'platform=macOS,arch=arm64' -derivedDataPath build/apple-tests-macos -only-testing:RunnerTests -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/macos-file-tests.xcresult 2>&1 | tee build/ci-evidence/macos-file-tests.log
+          python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/macos-file-tests.xcresult --expected 23 --summary build/ci-evidence/macos-file-test-summary.json
       - name: Build the macOS Release application
         run: |
           set -euo pipefail
@@ -121,6 +128,14 @@ jobs:
           set -euo pipefail
           flutter build ios --simulator --debug --no-codesign 2>&1 | tee build/ci-evidence/ios-simulator-build.log
           ditto -c -k --sequesterRsrc --keepParent build/ios/iphonesimulator/Runner.app build/ci-evidence/imagehub-ios-simulator.zip
+      - name: Verify native file IO and a real Photos add-only save
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          xcrun simctl install "$IMAGEHOST_IOS_SIMULATOR" build/ios/iphonesimulator/Runner.app
+          xcrun simctl privacy "$IMAGEHOST_IOS_SIMULATOR" grant photos-add io.imagehost.imagehost
+          xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=$IMAGEHOST_IOS_SIMULATOR" -derivedDataPath build/apple-tests-ios -only-testing:RunnerTests -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/ios-file-tests.xcresult CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/ci-evidence/ios-file-tests.log
+          python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/ios-file-tests.xcresult --expected 20 --summary build/ci-evidence/ios-file-test-summary.json
       - name: Clean up only the confirmed owned simulator
         if: always()
         timeout-minutes: 5

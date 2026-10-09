@@ -4,6 +4,8 @@ ImageHub 是本地个人图片工具。Windows 与 Android 在用户确认范围
 
 正式名称统一为 ImageHub；Dart package `imagehost`、现有应用 ID、平台通道和存储命名空间保持稳定。Windows 版本资源的 CompanyName/ProductName 参与现有 Application Support 目录生成，因此保留技术身份，仅更新窗口/文件描述和可执行文件名。
 
+2026-10-09 新增 iOS 文件/照片/备份/诊断原生保存，以及 macOS/iOS 备份 ZIP 取得；本轮 Apple CI 验证进度见[里程碑 29](../docs/milestone-29-apple-files.md)，实际路径与边界见[Apple 原生文件说明](../docs/apple-native-files.md)。
+
 ## Windows 运行
 
 在本目录执行：

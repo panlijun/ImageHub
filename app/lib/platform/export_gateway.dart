@@ -7,22 +7,33 @@ import '../features/processing/domain/export_models.dart';
 import '../features/processing/application/file_exporter.dart';
 import '../core/platform_resource.dart';
 import 'android_export_gateway.dart';
+import 'apple_export_gateway.dart';
 
 /// Only adapts the system directory picker; it does not report a saved file.
 class ExportGateway {
-  const ExportGateway();
+  const ExportGateway({this.operatingSystem});
+  final String? operatingSystem;
+  String get _platform => operatingSystem ?? Platform.operatingSystem;
 
-  bool get supportsDirectoryExport => Platform.isWindows || Platform.isMacOS;
-  bool get supportsFileExport => supportsDirectoryExport || Platform.isAndroid;
-  bool get supportsPhotos => Platform.isAndroid;
+  bool get supportsDirectoryExport =>
+      _platform == 'windows' || _platform == 'macos';
+  bool get supportsFileExport => supportsDirectoryExport || supportsPhotos;
+  bool get supportsPhotos => _platform == 'android' || _platform == 'ios';
 
   Future<List<ExportItemResult>> exportFiles(
     List<ExportInput> inputs, {
     CancellationToken? cancellation,
     bool photos = false,
   }) async {
-    if (Platform.isAndroid) {
+    if (_platform == 'android') {
       return AndroidExportGateway().export(
+        inputs,
+        cancellation: cancellation,
+        photos: photos,
+      );
+    }
+    if (_platform == 'ios') {
+      return AppleExportGateway().export(
         inputs,
         cancellation: cancellation,
         photos: photos,

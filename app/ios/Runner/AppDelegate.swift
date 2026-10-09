@@ -7,6 +7,7 @@ import Network
 @objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
   private var storageChannel: FlutterMethodChannel?
   private var networkBridge: NetworkTypeBridge?
+  private var fileBridge: IOSFileBridge?
 
   override func application(
     _ application: UIApplication,
@@ -25,16 +26,23 @@ import Network
     storageChannel = channel
     networkBridge?.dispose()
     networkBridge = NetworkTypeBridge(messenger: engineBridge.applicationRegistrar.messenger())
+    fileBridge?.dispose()
+    let nextFileBridge = IOSFileBridge()
+    AppleFileHostSetup.setUp(binaryMessenger: engineBridge.applicationRegistrar.messenger(), api: nextFileBridge)
+    fileBridge = nextFileBridge
   }
 
   override func applicationWillTerminate(_ application: UIApplication) {
     networkBridge?.dispose()
     networkBridge = nil
+    fileBridge?.dispose()
+    fileBridge = nil
     super.applicationWillTerminate(application)
   }
 
   deinit {
     networkBridge?.dispose()
+    fileBridge?.dispose()
   }
 }
 

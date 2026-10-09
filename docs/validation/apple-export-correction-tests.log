@@ -1,0 +1,12 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart
+00:00 +0: UT-036 platform capabilities enable iOS native files and photos
+00:00 +1: UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order
+00:00 +2: UT-036 late confirmed save survives cancellation and stops remaining items
+00:00 +3: UT-036 actual scope retirement precedes releasing export ownership
+00:00 +4: UT-036 Photos confirmation and failed cleanup preserve saved evidence
+00:00 +5: UT-036 malformed file or photo success never reports saved
+00:00 +6: UT-036 cancellation during picker drains and never starts native writes
+00:00 +7: UT-036 scope cleanup failure cannot erase successful save
+00:00 +8: UT-036 per-item failures and permission denial remain fixed feedback
+00:00 +9: UT-036 duplicate input identities do not acquire a directory
+00:00 +10: All tests passed!

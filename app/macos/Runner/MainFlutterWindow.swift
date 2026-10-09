@@ -6,6 +6,7 @@ import Network
 class MainFlutterWindow: NSWindow {
   private var storageChannel: FlutterMethodChannel?
   private var networkBridge: NetworkTypeBridge?
+  private var fileBridge: MacFileBridge?
 
   override func awakeFromNib() {
     let flutterViewController = FlutterViewController()
@@ -22,17 +23,22 @@ class MainFlutterWindow: NSWindow {
     storageChannel = channel
     networkBridge?.dispose()
     networkBridge = NetworkTypeBridge(messenger: flutterViewController.engine.binaryMessenger)
+    fileBridge?.dispose()
+    fileBridge = MacFileBridge(messenger: flutterViewController.engine.binaryMessenger, window: self)
 
     super.awakeFromNib()
   }
 
   override func close() {
+    fileBridge?.dispose()
+    fileBridge = nil
     networkBridge?.dispose()
     networkBridge = nil
     super.close()
   }
 
   deinit {
+    fileBridge?.dispose()
     networkBridge?.dispose()
   }
 }
