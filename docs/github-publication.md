@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。当前应用源提交 `a6d0640` 的[第八轮 Apple CI](https://github.com/panlijun/ImageHub/actions/runs/37795607653)整体 **success**，macOS 与 iOS 作业均成功，应用验证产物已生成。历史失败与取消均保留，不改记通过；核心CI通过不等于Apple全部产品接入或正式发行完成。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。2026-10-09应用源`9715ce9`的[Apple文件能力CI](https://github.com/panlijun/ImageHub/actions/runs/37879708343)整体 **success**，macOS与iOS作业均成功；iOS原生文件/照片/备份/诊断保存及Apple备份取得的软件实现与本轮适用验证完成，见[里程碑29](milestone-29-apple-files.md)。历史失败与取消均保留，不改记通过；物理设备、最低系统、真实服务与正式发行仍单列。
 
 ## 已公开内容
 
@@ -17,7 +17,7 @@
 
 每个任务从项目声明读取 Flutter 3.47.6 基线，在[官方 macOS 发布元数据](https://storage.googleapis.com/flutter_infra_release/releases/releases_macos.json)中查找唯一 stable arm64 档案并验证 SHA-256。2026-10-08 只读核实的档案 SHA-256 为 `a1946d3b6b3de15ce247dc89649df9035ce29e6b4e7ebe91919a25890ea2e79a`，HEAD 返回 200、2,263,212,963 字节；本机没有下载此档案。SDK 只安装在该任务的临时目录；依赖按提交的锁文件解析。没有设置长期付费缓存。
 
-macOS 任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实 Apple engine 集成验证和 Release 构建。iOS 任务复用预装且可用的运行时与兼容 iPhone 类型，创建本轮自有模拟器，执行同一原生验证，再构建未签名模拟器应用；缺运行时明确失败，不自动大型下载。命令失败通过 `pipefail` 保留，不能因 `tee` 把失败记成功。
+macOS任务执行资源包完整性、分析/格式、完整软件测试、独立进程恢复/锁、真实Apple engine集成验证、文件IO/窗口所有权XCTest与Release构建。iOS任务固定预装iOS26.2/iPhone17并创建本轮自有模拟器，执行同一Flutter原生验证及正常入口未签名Simulator构建，再运行共享文件IO/选择器和真实Photos addOnly保存XCTest；缺运行时明确失败，不自动大型下载。xcresult摘要严格要求Mac23/iOS20项全部通过、零失败零跳过。命令失败通过pipefail保留，不能因tee把失败记成功。
 
 证据及压缩应用产物只保留 7 天；应用产物供开发验证，不声称已签名、公证、可在真实 iPhone 安装或正式发行。CI 任务之间不存在永久图库；重开测试使用测试自有暂存及合成图，在同一任务中完成。
 
@@ -123,9 +123,26 @@ macOS 任务执行资源包完整性、分析/格式、完整软件测试、独�
 - **iOS 三个真实原生用例全部通过，执行 16 秒**；首次原生 Xcode 编译另计 234.3 秒。正常应用入口的未签名 Simulator Debug `Runner.app` 构建成功，Xcode 编译 144.7 秒；[iOS 原始完整日志](validation/github-ios-a6d0640-job.log)保留实际 install/launch/VM 服务及用例输出。用例覆盖永久副本/SQLite/缩略图/SDK 预览/M1 图库/关闭重开/实际 IO 保护、独立 UUID 的 Keychain 写读删和被动网络；同进程 Keychain 新实例读取仍不是跨进程或物理设备验收。
 - [iOS 开发验证产物 11558902790](https://github.com/panlijun/ImageHub/actions/runs/37795607653/artifacts/11558902790) 为 70,326,995 字节，SHA-256 `dea253aea1e33b0340c847415f6f3742a50ffc9fee604f44d97542c23fb7ab5a`，包含正常应用 ZIP 及启动/原生/构建/清理日志，保留 7 天，2026-10-15 到期。它是 Simulator 包，不能当作真实 iPhone 的 IPA 或正式签名发行。
 
-## 交付与下一阶段
+## 2026-10-08 交付与后续工作（当时记录）
 
 - 正式名称、原生应用标签/窗口、新导出名称和当前设计原型已统一 ImageHub；本轮补齐预览服务器启动提示并通过 `node --check design/serve.mjs`。稳定包 ID、存储身份和资源包原件保留。
 - Windows Release `imagehub.exe` 的实际启动/正常退出、改名后的 ARM64/x86_64 APK 构建与系统标签已验证，见前述本机证据；本轮 Apple CI 修正未改变对应生产代码。Android 的正常应用闭环仍以 API36 模拟器记录为准。
 - 剩余软件工作：iOS 原生图片/文件/备份/诊断导出，以及 Mac 备份文件取得与相关沙盒授权接入。最低系统、物理设备 PT/性能/断电、四端人工闭环及正式签名/公证/发行未计通过。真实图床契约与账号联调仍未授权且单列，不因本轮 CI 成功开启未知服务能力派发。
 - 最后的记录提交仅更新记录、范围说明和预览服务器名称提示；交付前按 Git tree 核对 `app/`、`.github/workflows/apple.yml` 与资源包均与成功 CI 的源提交一致，再确认远端 `main` 和公共状态。
+
+## 2026-10-09 Apple原生文件能力完成
+
+本轮已按既有公开/推送/标准CI授权完成两个源码提交：`cd89fbd3429f9a735c80dd7a2cf0fe4825c5ab8d`实现原生文件能力，`9715ce96b201eefe4192f8ca1eeffc13482d952d`修正iOS备份收据及XCTest运行边界。资源包、依赖锁、稳定应用/存储身份和首次PC历史保持；没有正式签名或外部图床请求。
+
+首轮[run37877660868](https://github.com/panlijun/ImageHub/actions/runs/37877660868)源cd89fbd，两作业failure。Mac软件1420通过/4跳过和四Flutter原生通过，XCTest在取消回调throws转换处编译失败；iOS四Flutter原生及正常入口构建通过，XCTest目标匹配失败。原始[Mac日志](validation/apple-files-first-macos-job.log)、[iOS日志](validation/apple-files-first-ios-job.log)、[状态](validation/apple-files-first-ci-state.json)保留，首轮XCTest/Photos不计通过。
+
+修正后[run37879708343](https://github.com/panlijun/ImageHub/actions/runs/37879708343)源9715ce9，整体success。Mac job113656331164和iOS job113656331026均success；[终态/产物](validation/apple-files-second-ci-state.json)、[触发身份](validation/apple-files-second-ci-dispatch.json)固定实际源。
+
+- Mac真实host为macOS26.6.2 arm64/Xcode26.6；分析无问题39.3秒、273文件格式0改动，软件1424通过/4Windows分支跳过（6分47秒），六提交边界独立进程中断恢复、正常重开及跨进程锁通过。四Flutter原生通过，XCTest23通过/0失败/0跳过，正常入口Release `ImageHub.app`64.5MB成功；[完整原始job](validation/apple-files-second-macos-job.log)。
+- iOS固定26.2/iPhone17，自有UUID`6ed2271c-e5c3-4038-87e7-d55074702812`真实Booted/SpringBoard PID12423后才使用。四Flutter原生通过（12秒），正常入口未签名Simulator Debug构建通过；XCTest20通过/0失败/0跳过，其中真实Photos合成PNG事务用例实际通过（0.770秒）。XCTest目的地使用同一UUID的规范大写和arm64，未换设备。结束时确认本轮身份、关闭、读回Shutdown、删除与读回缺席全部通过；[完整原始job](validation/apple-files-second-ios-job.log)。
+- [Mac artifact11593999604](https://github.com/panlijun/ImageHub/actions/runs/37879708343/artifacts/11593999604)25,969,424字节，SHA-256`590e6df5271a59b15163c0c9c996f1aa62869982044d6eff976b0a455124943e`；[iOS artifact11594480677](https://github.com/panlijun/ImageHub/actions/runs/37879708343/artifacts/11594480677)70,958,594字节，SHA-256`7c34d06155ab7ffc30fa421496f5ff3433c832ae9243dd5117169d907e54b90f`。两产物含正常入口应用ZIP、xcresult/摘要和日志，保留7天、2026-10-16到期；iOS包仅用于Simulator。
+- 本机最终Windows软件1427通过/1分支跳过（6分18秒），处理/备份/诊断三个原生回归通过；Release53.8秒成功，自有runner正常WM_CLOSE退出0。Android ARM64 Release构建161.6秒成功，既有工具/缓存位置及本地debug签名保留。文件与摘要见[里程碑29](milestone-29-apple-files.md)。
+
+窗口所有权测试使用受控回调，不能证明真实Files/NSOpenPanel选择、系统权限拒绝/撤回或云提供者行为。Photos addOnly测试确认真实系统事务及来源/私有暂存保护，没有独立读回Photos外部副本，不代替全部格式或物理设备验收。最低系统、四端人工互读、PT/PERF/断电和正式签名/公证/发行保留；真实图床契约与账号联调未授权，unknown能力仍阻止派发。
+
+最后记录提交只更新说明/日志及应用README的旧禁用文案，使用`[skip ci]`避免相同运行代码重复执行标准CI；这是[GitHub官方支持的文档提交方式](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/skip-workflow-runs)。交付核对限定`app/`仅README文档不同，运行源码/平台配置/生成接口/锁文件/Apple工作流和资源包与成功源相同；成功CI明确关联9715ce9，不宣称文档提交另有运行结果。

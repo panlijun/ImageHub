@@ -31,7 +31,7 @@ PhotoKit 使用独立已校验暂存文件；实际系统事务结束后才收�
 
 Dart 受控协议测试验证 URI/身份边界、取消与迟到保存、授权收尾以及私有复制；不称原生 API 已通过。共享 Swift XCTest 使用真实临时文件验证有界读取、独占复制、同名保护、摘要/身份变化、链接拒绝、取消和关闭不确定保护。macOS panel 和 iOS picker 测试注入窗口回调，只证明所有权/收尾协议；不会记系统 UI 的人工选择和拒绝为通过。
 
-CI 在已确认自有 iOS26.2/iPhone17 Simulator 上仅给本应用 photos-add 授权，真实 PhotoKit 用例创建合成 PNG、执行系统事务并检查来源保留及暂存退休；不会读取已有用户照片。xcresult 摘要必须包含全部预期 XCTest、零失败、零跳过。真实 Pigeon 原生 smoke 单独验证宿主登记、类型通道与无授权 IO 拒绝。
+CI 在已确认自有 iOS26.2/iPhone17 Simulator 上仅给本应用 photos-add 授权，真实 PhotoKit 用例创建合成 PNG、执行系统事务并检查来源保留及暂存退休；不会读取已有用户照片。addOnly用例核对来源/私有暂存字节并取得Photos事务成功，不独立读取Photos中的外部副本，也不证明其他图片格式保存。xcresult 摘要必须包含全部预期 XCTest、零失败、零跳过。真实 Pigeon 原生 smoke 单独验证宿主登记、类型通道与无授权 IO 拒绝。
 
 最低 macOS12/iOS15、物理设备、真实 Files 云提供者、Photos 格式互操作、PT/PERF、四端人工闭环与正式签名发行不据自动化软件检查计通过。
 

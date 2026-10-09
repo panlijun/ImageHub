@@ -1,0 +1,20 @@
+[
+  {
+    "Path": "app/build/windows/x64/runner/Release/imagehub.exe",
+    "Bytes": 179712,
+    "Sha256": "76D3950AABC0182A73C1CE4CD68D0BFBAF6D33CC2BA47F511359EDAA3BF83B63",
+    "LastWriteUtc": "2026-10-08T11:55:17.3477943Z"
+  },
+  {
+    "Path": "app/build/windows/x64/runner/Release/data/app.so",
+    "Bytes": 14254984,
+    "Sha256": "56828A9C428D4D707014D85CB4F1A6A31280574BA416E2CC50AC6F37374D3C0E",
+    "LastWriteUtc": "2026-10-09T03:38:36.4159414Z"
+  },
+  {
+    "Path": "app/build/windows/x64/runner/Release/sqlite3.dll",
+    "Bytes": 1709056,
+    "Sha256": "98B4BE674137B85EC111A7A29223E87AA41C3E964D61F73602471DDD7B9C56CE",
+    "LastWriteUtc": "2026-10-04T02:02:57.3600078Z"
+  }
+]

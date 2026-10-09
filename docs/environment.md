@@ -1,6 +1,6 @@
 # 环境与构建条件
 
-初始检查：2026-10-04；最新 Android 工具及 Apple 云端构建检查：2026-10-08。本地主机：Windows 11 25H2 x64，10.0.26200.9457。下方历次记录保留各阶段形成时的结论，当前平台状态以四端现状和最新里程碑为准。
+初始检查：2026-10-04；最新 Apple 云端验证及 Windows/Android 回归：2026-10-09。本地主机：Windows 11 25H2 x64，10.0.26200.9457。下方历次记录保留各阶段形成时的结论，当前平台状态以四端现状和最新里程碑为准。
 
 ## SDK 安装
 
@@ -41,10 +41,10 @@
 
 | 平台目标 | 项目配置 | 当前构建及运行证据 | 缺失条件 |
 | --- | --- | --- | --- |
-| Windows 11 x64 | 原生 runner，1280×720 初始窗口 | Debug 原生引擎集成测试通过；Release 构建通过，启动后创建全新默认图库 | 系统文件选择窗口、普通窗口退出中的对话框与键盘/读屏仍需人工平台验收 |
-| macOS 12+ arm64 | 原生 runner，用户选择文件读写 entitlement；可用标准 `macos-26` arm64 CI | 当前源a6d0640的CI整体成功，Mac软件测试1396通过/4跳过、独立进程恢复/锁、三个真实原生用例及正常入口Release `ImageHub.app`构建通过；[运行记录](github-publication.md) | 最低macOS12、人工选择器/沙盒授权、备份取得等剩余接入与设备验收、正式签名/公证 |
+| Windows 11 x64 | 原生 runner，1280×720 初始窗口 | 最终软件1427通过/1分支跳过，处理/备份/诊断三个原生回归、Release及正常启动退出通过；[里程碑29](milestone-29-apple-files.md) | 系统文件选择窗口、普通窗口退出中的对话框与键盘/读屏仍需人工平台验收 |
+| macOS 12+ arm64 | 原生 runner，用户选择文件读写 entitlement；标准 `macos-26` arm64 CI；备份取得已接原生范围授权 | 源9715ce9的CI整体success，Mac软件1424通过/4Windows分支跳过、独立进程恢复/锁、四项Flutter原生、23项XCTest零失败零跳过和Release64.5MB通过；真实host macOS26.6.2/Xcode26.6；[里程碑29](milestone-29-apple-files.md) | 最低macOS12、人工选择器/真实沙盒授权及Files提供者PT、正式签名/公证 |
 | Android API29+ arm64 | minSdk29、M1；有界 SAF/MediaStore、Pigeon 与私有 NDK 独占发布 | Debug 与 ARM64/x86_64 Release APK 已构建；API36 x86_64 原生子流程及正常 Release 应用导入/重开/预览/处理/照片保存/ZIP合并恢复/诊断导出通过，见[Android完成记录](milestone-28-android-completion.md) | ARM64 实机、API29 最低系统、物理设备 PT/PERF 与正式发行未验收；APK沿用本地debug签名 |
-| iOS 15+ arm64 | 原生 runner，中文照片用途说明；明确选定云端预装iOS26.2/iPhone17并创建独立模拟器 | 当前源a6d0640的iOS作业成功：真实启动/Booted/SpringBoard确认，三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过；[运行记录](github-publication.md) | 原生保存/导出尚未接入；真实iPhone及最低iOS15、设备签名与其余PT验收 |
+| iOS 15+ arm64 | 原生runner；中文照片新增用途说明，Files目录独占保存/Photos addOnly和ZIP取得已接入；云端固定预装iOS26.2/iPhone17、自有模拟器 | 源9715ce9的iOS作业success：四项Flutter原生、20项XCTest零失败零跳过（真实Photos PNG事务）、正常入口未签名Simulator Debug和自有设备清理通过；[里程碑29](milestone-29-apple-files.md) | 真实iPhone及最低iOS15、Files/权限系统UI、其他照片格式及外部副本独立读回、正式设备签名与其余PT验收 |
 
 Android 安装和本地 APK 构建已获得授权；用户随后授权公开 GitHub 仓库并运行标准 Apple CI，已有真实 Mac 主机及 iOS Simulator 核心验证与应用构建证据。本机仍无 Mac/Xcode，Apple 工具只在 CI 临时 runner 使用，没有本机额外安装或正式签名/商店发布。模拟器应用不能作为真实 iPhone 安装包，核心原生用例不能代替四端全部功能验收。
 
@@ -119,3 +119,5 @@ Android 安装和本地 APK 构建已获得授权；用户随后授权公开 Git
 2026-10-07 来源取消与图床能力边界阶段：沿用既有Flutter/Dart和Windows工具，无安装、新依赖、系统配置、真实图床上传/删除或Git操作。最终1147项软件测试通过、1项非Windows来源分支跳过，123秒；来源/取得器/界面专项21项通过2秒，完整分析无问题79.1秒。WindowsIT-001/002原生子流程1项通过（Debug43.7秒/运行5秒）；Release72.8秒成功，AOT14,140,296字节于20:37:39生成，自有隐藏runner正常WM_CLOSE退出0。来源在等待数据时请求取消并等实际清理/写入收尾，关闭/根锁保护与持久恢复有证据；未知内核阻塞不承诺固定期限安全终止。格式独立限额与全局取小值已接入，生产两服务仍unknown；官方公开材料未补足API精确字节/格式和可靠删除确认。手动Catbox CT工具只prepare-only，五张合成图5903字节全部未发送，不读取图库或凭据，独立工具分析通过。其他三端缺环境/设备限制不变。文件与失败修正见[阶段记录](milestone-26-source-cancellation.md)，实机排除不等于真实服务CT/IT或完整Windows首版闭合。
 
 2026-10-08 Windows软件收尾：只读SDK缓存再次确认Flutter3.47.6/Dart3.13.5，沿用既有Windows SDK/VS/ATL，无新增依赖、安装、下载、系统配置、真实图床请求或Git操作。用户取消Catbox匿名功能，保留本项目普通历史身份；原资源包不变。schema10/28表、可携带Manifest2和DeviceSettings3不变，缩略图登记自有代次2严格读取1/2，仅复用2。最终255文件格式0改动（1.86秒）、整app分析无问题（4.9秒），1314项unit/widget/本机SQL/files/SDK全量通过、1项非Windows来源分支跳过（120秒）。Windows图库、处理导出、安全合成凭据、自动处理任务、备份合并/替换/回滚五个原生子流程各1项通过；六导入边界独立进程exit(73)、正常跨进程重开及排他锁通过。Release63.7秒成功，Dart AOT14,189,448字节于2026-10-08 10:08:17生成；原生host未改变，EXE保留原时间。自有隐藏runner实际窗口创建并正常WM_CLOSE退出0。仅当前Windows可运行；Android SDK与Apple Mac/Xcode环境仍缺，移动原生导出未接入且禁用。实机/真实硬件性能断电/真实账号与服务/完整人工AT/签名发行不记通过；生产服务unknown仍禁止派发。原生截图已查看，资源包31文件/56引用及90条规范原文检查通过；[完整文件、失败与实际验证记录](milestone-27-windows-completion.md)。
+
+2026-10-09 Apple文件阶段：本机继续复用Flutter3.47.6/Dart3.13.5及既有Windows/Android工具，不新增安装、依赖、系统配置或真实图床请求。Pigeon29.0.7真实生成Dart/Swift文件协议，iOS Files/Photos、备份/诊断保存及Mac/iOS ZIP取得接入。最终Windows软件1427通过/1平台分支跳过（6分18秒）、分析无问题66.7秒，处理/备份/诊断三个原生回归通过，Release53.8秒及正常启动退出0通过；Android ARM64 Release161.6秒构建成功，27,948,264字节，沿用本地debug签名。源9715ce9的标准Apple run37879708343整体success：真实macOS26.6.2 arm64/Xcode26.6，Mac软件1424通过/4Windows分支跳过、进程恢复/锁、四Flutter原生/23XCTest零失败零跳过及Release64.5MB通过；iOS26.2/iPhone17四Flutter原生/20XCTest零失败零跳过（实际Photos PNG事务）及正常入口未签名Simulator Debug通过，自有设备关闭/删除读回通过。记录与产物见[里程碑29](milestone-29-apple-files.md)。首次Mac回调编译与iOS目的地失败保留；最低系统、物理设备、Photos外部副本独立读回及其他格式、真实Files/权限UI、真实服务与正式签名发行均未计通过。本机仍无Mac/Xcode，所有Apple原生结果来自临时CI主机。

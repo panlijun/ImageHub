@@ -6,6 +6,8 @@
 
 - 2026-10-08标准 Apple CI 同源整体通过：源提交 `a6d0640`、run `37795607653` 的 macOS 与 iOS 作业均 success。Mac 1396软件测试通过/4平台分支跳过、六个独立进程恢复边界/重开/锁、三个原生用例及Release `ImageHub.app`构建通过；iOS26.2/iPhone17 Simulator三个原生用例、正常入口未签名Debug应用构建及自有设备清理通过。原生用例覆盖真实statfs/独占发布、SQLite/永久副本/图库/像素与IO保护、Keychain及被动网络，不等于Apple全部产品功能、最低系统兼容、签名发行或设备PT完成；早期失败/取消保留，详见 `docs/github-publication.md`。
 
+- 2026-10-09 Apple原生文件软件实现及适用验证完成：源`9715ce9`、run`37879708343`两作业success，Mac1424软件测试通过/4Windows分支跳过、独立进程恢复/锁、四项Flutter原生、23项XCTest零失败零跳过及Release64.5MB通过；iOS26.2/iPhone17四项Flutter原生、20项XCTest零失败零跳过（含真实Photos addOnly合成PNG事务）、正常入口Simulator Debug构建和自有设备清理通过。本机Windows1427通过/1平台分支跳过，处理/备份/诊断原生回归、Release及正常启动退出通过，Android ARM64 Release构建通过。窗口回调为受控协议，addOnly没有独立读回Photos外部副本，未证明全部格式、最低系统/物理设备/正式发行；详见docs/milestone-29-apple-files.md。最终文档提交含应用README修正，运行代码/配置/工作流与成功源一致，不把文档提交记作新CI通过。
+
 - 用户于2026-10-08要求持续推进 Android 软件开发至完成；复用现有 Flutter/Dart 工程与已选 M1，保留 Windows 完成基线。新增工具统一放 `D:\Workspace\DevelopmentTools`；C 盘已有工具保留并复用，不迁移、不重复安装。用户已明确同意下载和安装 JDK 21、官方 Android SDK/API36/Build Tools/NDK、模拟器/系统镜像及 Gradle 依赖，并接受相应标准许可；新增缓存和模拟器数据也放该 D 盘目录，先不改系统 PATH。实机/硬件和真实账号联调的既有排除范围继续保留，不以模拟器证明实机 PT 通过。
 
 - 2026-10-08 Android 软件实现与本轮适用验证完成，见 `docs/milestone-28-android-completion.md`：1399软件测试通过/1非Windows分支跳过，API36 x86_64原生闭环及SAF/MediaStore桥、五个外部保存字节独立核验、正常Release应用导入/重开/处理/照片保存/ZIP合并恢复/诊断导出通过。ARM64和x86_64 APK均实际构建，沿用本地debug签名；ARM64实机/API29/PT/PERF/正式签名及真实服务仍不计通过。受影响的四个Windows原生流程和Release启动退出回归通过；该完成阶段未新增Git提交，后续公开与Apple CI见上述最新记录。
@@ -31,7 +33,7 @@
 
 ## 技术与边界
 
-- 2026-10-09推进Apple文件能力：Pigeon29.0.7生成配套Dart/Swift接口，AppleFileEngine负责64KiB有界来源读取、范围授权、私有源校验及目录独占复制；iOS UIDocumentPicker选择目录后保存文件，PhotoKit addOnly从闭合私有暂存添加资源并shouldMoveFile=false，Mac NSOpenPanel/Apple备份来源接共同私有复制服务。真实IO结束和授权release后才交付；取消不提前释放，晚到保存与清理失败分别保留。关闭不确定保留句柄/授权登记，未知/变化/链接不得猜删。选型8.1/8.2差异和验证边界见docs/apple-native-files.md；当前结果见docs/milestone-29-apple-files.md。原生XCTest未运行不能记通过，系统选择器UI/Files提供者及物理设备PT仍排除。
+- 2026-10-09完成Apple文件能力：Pigeon29.0.7生成配套Dart/Swift接口，AppleFileEngine负责64KiB有界来源读取、范围授权、私有源校验及目录独占复制；iOS UIDocumentPicker选择目录后保存文件，PhotoKit addOnly从闭合私有暂存添加资源并shouldMoveFile=false，Mac NSOpenPanel/Apple备份来源接共同私有复制服务。真实IO结束和授权release后才交付；取消不提前释放，晚到保存与清理失败分别保留。关闭不确定保留句柄/授权登记，未知/变化/链接不得猜删。选型8.1/8.2差异和验证边界见docs/apple-native-files.md；当前真实XCTest与构建结果见docs/milestone-29-apple-files.md。系统选择器UI/Files提供者及物理设备PT仍排除。
 
 - 导入选择窗口与实际复制属于同一受跟踪操作；打开选择器前建立取消令牌，停止/退出等待选择器返回及实际来源/写入收尾。停止后晚到资源不得打开，新导入保持禁用到完整收尾；未知异常只给固定反馈。
 - PNG eXIf按完整PNG边界/CRC及有界TIFF严格读取方向1–8；缩略图、像素处理及原图SDK预览按同一方向转换且不改变永久字节。180度处理覆盖奇数高度中间行；SDK帧转换等待真实图像生成后释放源/画布资源，保留动画帧时长及循环。
@@ -71,7 +73,7 @@
 - 文件使用租约释放必须晚于实际 IO 结束，取消状态不等于工作线程结束；资料库关闭先排空租约取得，再等待租约释放，等待期间不占据写入协调门。重开拿到排他锁后可清除前进程临时租约，不能清除持久保护引用。
 - 租约释放的数据库清理失败时保留保护记录并反馈失败，但必须在 finally 排空已结束 IO 的进程内等待，避免退出死锁。不得提前释放仍在实际读写的保护。
 - ImageProcessor 是共享 isolate 像素引擎；ProcessingCoordinator 持有输入租约到实际线程退出。schema 3 保存 writing/prepared/ready/failed/cancelled/deleting 输出、独立文件、来源及参数快照。默认 24 小时，可选 1 小时/7 天；启动和可运行期间每分钟尝试仅清到期且无保护的结果，失败保留记录重试。
-- 永久保存复用原导入日志与事务，并在同一关联提交中保留 SavedOutputOrigins；其生命周期独立于临时结果。导出由共同流式复制/关闭/摘要校验服务完成，桌面选择目录，同名独占创建新名称，不覆盖旧文件。Android已接Pigeon SAF单文件/目录及MediaStore照片保存；iOS原生导出尚未接入，必须禁用，不以分享成功冒充保存。
+- 永久保存复用原导入日志与事务，并在同一关联提交中保留 SavedOutputOrigins；其生命周期独立于临时结果。导出由共同流式复制/关闭/摘要校验服务完成，桌面选择目录，同名独占创建新名称，不覆盖旧文件。Android已接Pigeon SAF单文件/目录及MediaStore照片保存；iOS已接Pigeon Files目录独占复制与Photos addOnly，必须取得实际保存确认，不以分享、授权或URI生成冒充保存。系统宿主缺失或结果不确定仍拒绝成功，原生验证边界见里程碑29。
 - 桌面与 M1 工具入口复用 ProcessingWorkbench；系统退出只有当前可见工作页监听，取消等待 actual IO 后才释放租约/关闭库。动画裁剪缩略图必须来自确认的同一帧，不能用第 0 帧冒充其他帧。
 - Catbox/ImgBB 适配器采用已选 Dio 5.11.1，固定 HTTPS 接口、禁重定向/日志、按需 multipart、新尝试新流、响应原始源流限 64 KiB。适配器不重试、不写历史、不把取消完成等同于网络刚返回；等待真实 fetch、输入及响应流收尾。有效远端确认与取消意图分开，后续队列须保留独立晚到证据。
 - 默认服务精确字节/格式限制未知时拒绝派发；测试注入限制不是服务契约证据。秘密管理链接只放运行时受保护包装，尚未接入持久结果时不得落到普通 SQL/UI/日志。畸形成功、发送后无确认及 5xx 保留 unknown，不猜测自动重传安全。

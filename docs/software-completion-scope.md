@@ -2,7 +2,7 @@
 
 本文件记录验收范围的最新决定；资源包与正式需求原文、旧里程碑结论保留。旧记录描述其形成时的范围，不据此覆盖后续用户决定。未执行的项不计通过，不以模拟替代。
 
-## 2026-10-08 最新范围
+## 2026-10-09 最新范围
 
 Windows 软件完成基线已记录；用户随后要求持续推进 Android 软件开发至完成，并同意在 D 盘安装 JDK、SDK、NDK、模拟器/系统镜像及 Gradle 依赖，复用 C 盘 Flutter，不改系统 PATH。当前 Android 软件实现与适用验证已完成，结果见 `milestone-28-android-completion.md`。真实账号图床联调、物理设备 PT、真实硬件性能及断电验收仍不作为本轮开发阻断，且均不计通过。排除联调或设备验收不会取消已授权的软件检查、代码审查和生产安全守卫。
 
@@ -12,7 +12,7 @@ Catbox 匿名上传已从产品范围移除，覆盖 ACC-001/ACC-002/ACC-004 中
 
 Windows 当前已接入的业务覆盖真实本地导入与持久图库、处理/永久保存/桌面导出、账号安全存储与健康观察、账号停用和移除影响确认、持久上传队列及处理依赖、网络类型派发策略、普通链接本地能力、明确主动检测、独立远端删除审计、备份合并与替换、诊断、设置及空间缓存管理。此清单描述当前软件范围，不是最终验收结论；本轮运行结果与未完成项另记于 `milestone-27-windows-completion.md`。
 
-M1 已选定为手机方向，不再比较 M2。Android 已接真实有界 SAF 图片/文件/ZIP 取得、文件/目录导出、MediaStore 相册保存及备份/诊断接线；API36 x86_64 模拟器已验证原生子流程和正常 Release 应用。ARM64 与 x86_64 APK 均实际构建，ARM64 物理手机和最低 API29 尚未验证。用户已授权公开 `panlijun/ImageHub` 并运行标准 Apple CI；当前源a6d0640的CI整体通过，真实Mac主机和iOS26.2/iPhone17 Simulator各三个核心原生用例及应用构建成功，Mac完整软件测试/独立进程恢复/锁亦通过，具体状态与产物见[GitHub记录](github-publication.md)。iOS 原生导出和Mac备份文件取得仍是软件缺口，不能归为设备验收排除。
+M1 已选定为手机方向，不再比较 M2。Android 已接真实有界 SAF 图片/文件/ZIP 取得、文件/目录导出、MediaStore 相册保存及备份/诊断接线；API36 x86_64 模拟器已验证原生子流程和正常 Release 应用。ARM64 与 x86_64 APK 均实际构建，ARM64 物理手机和最低 API29 尚未验证。用户已授权公开 `panlijun/ImageHub` 并运行标准 Apple CI。2026-10-09已完成iOS原生图片/文件/备份/诊断保存和Apple备份文件取得：源9715ce9的run37879708343整体success，Mac1424软件测试/4跳过、独立进程恢复/锁、四项Flutter原生、23项XCTest和Release通过；iOS26.2/iPhone17四项Flutter原生、20项XCTest（含真实Photos PNG事务）、正常入口Simulator Debug和自有设备清理通过。原始证据、软件与设备边界见[里程碑29](milestone-29-apple-files.md)和[GitHub记录](github-publication.md)，不以核心用例、构建或受控窗口协议代替全部设备验收。
 
 范围分为三类：物理设备 PT/真实硬件性能/断电排除且不计通过；真实账号服务联调未授权且不计通过；生产守卫、Windows 主机、已授权 Android 模拟器和 Apple CI 的软件验证仍执行。Windows/Android 完成记录及 GitHub/Apple 验证记录分别承载实际运行数字和状态，模拟器结果不升级为物理设备验收，Apple 核心检查通过不表示全部平台业务接入完成。
 
@@ -54,8 +54,8 @@ CT-001/002/003/005及IT-008的真实Catbox/ImgBB能力、响应、上传/删除�
 
 ## 保留的软件缺口与限制
 
-- Android 工作台、备份、诊断的原生导出已接入并取得实际模拟器及正常 UI 证据；iOS 原生导出仍未接入且禁用。iOS 缺口影响 OUT-003/PLT-005/BAK-006/OPS-003，不能只登记缺设备。
+- Android 工作台、备份、诊断的原生导出已接入并取得实际模拟器及正常 UI 证据；iOS 对应路径已接原生 Files/Photos，Mac/iOS 备份取得接入范围授权和共同私有复制。OUT-003/PLT-005/BAK-006/OPS-003 的新增软件验证记录在里程碑29；真实选择器、Files提供者与照片格式互操作仍需PT，不将受控协议或模拟器子场景计为全部平台验收。
 - Windows云占位来源的已知标记可预先拒绝；来源交付取消、实际清理等待和取得前令牌重验已接入，见`milestone-26-source-cancellation.md`。无法确认内核读取结束时继续等待，不能承诺所有未知阻塞来源有界停止；移动/Apple真实云取得器不能据此称全部完成。不加超时后提前释放保护的假取消。
 - 处理输出固定默认去除隐私元数据；IMG-005关闭隐私处理的明确选择由原样字节上传及逐次风险确认承接。技术选型6.3的MetadataPolicy只传递必要方向与色彩白名单，不要求任意复制隐私字段。本轮不据旧台账文案增加一个无执行路径的“保留元数据”开关；完整方向/格式契约证据仍单列。
 
-Windows 基线见 `milestone-27-windows-completion.md`，Android 本轮收尾及 Windows 回归见 `milestone-28-android-completion.md`；25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除。
+Windows 基线见 `milestone-27-windows-completion.md`，Android 收尾及 Windows 回归见 `milestone-28-android-completion.md`，Apple 文件能力和最终跨平台软件回归见 `milestone-29-apple-files.md`；25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除。

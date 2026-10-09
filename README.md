@@ -6,7 +6,7 @@ ImageHub 是用 Flutter 从零实现的本地个人图片工具。应用源码�
 
 Windows 和 Android 在用户确认范围内的软件开发及适用验证已完成，包括本地图库和永久副本、图片处理与结果保存、账号安全存储、持久上传队列、按网络类型控制派发、链接管理与主动检测、独立远端删除审计，以及备份恢复、诊断和设置。Android 采用 M1，已接入真实系统文件/照片取得、SAF 文件保存及 MediaStore 相册保存；API36 x86_64 模拟器上的正常 Release 应用闭环已验证。ARM64 APK 已构建，物理手机、最低 API29 和硬件验收仍未执行。
 
-Apple 云端验证使用标准 macOS arm64 runner，[前阶段 a6d0640 的 CI 已整体通过](https://github.com/panlijun/ImageHub/actions/runs/37795607653)。macOS 完整软件测试 1396 通过/4 跳过，独立进程恢复与锁、三个真实原生用例及正常应用入口 Release 构建通过；iOS26.2/iPhone17 Simulator 三个原生用例、正常应用入口未签名构建及自有设备清理通过。原生用例覆盖永久副本、SQLite、图库、像素解码、实际 IO 保护、Keychain 和被动网络桥接。具体源提交、产物与历史失败/取消见[GitHub 与 Apple 验证记录](docs/github-publication.md)。2026-10-09 新增 iOS 文件/照片/备份/诊断保存及 Apple 备份取得，当前源验证推进中，见[里程碑 29](docs/milestone-29-apple-files.md)。最低系统、物理设备与正式签名发行仍未验收；核心用例通过不等同四端产品完成。
+2026-10-09 已完成 iOS 文件/照片/备份/诊断原生保存与 macOS/iOS 备份取得，[源9715ce9的 Apple CI 两端成功](https://github.com/panlijun/ImageHub/actions/runs/37879708343)。macOS 完整软件测试1424通过/4平台分支跳过，独立进程恢复与锁、4项Flutter原生集成、23项XCTest及正常入口Release构建通过；iOS26.2/iPhone17 Simulator 4项Flutter原生、20项XCTest（含真实Photos合成PNG保存）、正常入口未签名构建与自有设备清理通过。Windows最终回归1427通过/1平台分支跳过，Release构建和正常启动退出通过，Android ARM64 Release也已构建。原生文件保护、实际范围和产物见[里程碑29](docs/milestone-29-apple-files.md)，历史失败/取消见[GitHub与Apple记录](docs/github-publication.md)。最低系统、物理设备、真实Files提供者/系统UI、四端人工互读及正式签名发行仍未验收。
 
 图床账号仅支持 Catbox userhash 和 ImgBB APIKey。Catbox 匿名上传已从产品中移除；本项目已有匿名身份只供读取普通历史和备份，不能创建、选择、入队或派发。真实图床上传、删除、探测没有获得联调授权；服务的精确大小与格式限制仍未知，因此生产能力守卫继续阻止未确认能力的派发。受控测试不代表真实服务可用。
 
