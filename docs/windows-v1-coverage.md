@@ -1,6 +1,6 @@
 # Windows 完整 V1 开发与动态验收基线
 
-审计日期：2026-10-04；最新收尾 2026-10-09。业务基线 IH-SRS-001 1.1；测试设计 IH-UTD-001 1.1；技术选型 IH-TS-001 1.0。本台账保留 Windows 软件基线；Android增量及Windows回归见E35，本轮Apple与当前Windows增量见E36，真实账号测试与物理设备/硬件验收继续排除且不计通过。**Windows结果见E34/E36，Android增量见E35，均不能代替四端正式发行或全部验证方案验收。**
+审计日期：2026-10-04；最新收尾 2026-10-09。业务基线 IH-SRS-001 1.1；测试设计 IH-UTD-001 1.1；技术选型 IH-TS-001 1.0。本台账保留 Windows 软件基线；Android增量及Windows回归见E35，本轮Apple与当前Windows增量见E36，正式本地打包和后续CI状态见E37，真实账号测试与物理设备/硬件验收继续排除且不计通过。**Windows结果见E34/E36，Android增量见E35，均不能代替四端正式发行或全部验证方案验收。**
 
 ## 范围与判定
 
@@ -103,6 +103,8 @@ E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-comp
 
 E36：2026-10-09 当前增量证据。Apple文件能力代码与模拟器证据仍以[里程碑29](milestone-29-apple-files.md)为准；源提交`95b94d3`的标准Apple CI run `37908256215`中，macOS作业success，1456项软件测试通过/4个Windows分支跳过、4项Flutter原生测试、23项XCTest零失败零跳过、独立进程恢复/锁及Release构建通过，实际日志与元信息在`app/build/validation/apple-first-37908256215/`。同源iOS作业已终止失败：第二次Flutter备份测试的Xcode构建耗时62.6秒，未进入CT-006测试步骤；该步骤运行15分钟后超时。停止后的`ios-backup-interop.log`记录`Error waiting for a debug connection: The log reader failed unexpectedly`和`Unable to start the app`；`ios-simulator-cleanup.log`记录自有模拟器Shutdown/delete清理成功。此结果不能推断备份业务测试失败，也不计为通过。Windows真实大包证据见[ZIP64运行日志](validation/release-large-backup-01.log)及[结果摘要](validation/release-large-backup-result.json)：172张真实BMP，ZIP64归档4,328,697,800字节，默认预检、合并提交、重开并核对全部永久字节通过；这是Windows软件流程，不是其他三端大包验证或硬件PERF。冷缩略图证据见[批次记录](validation/release-thumbnail-cold-batch.json)：62项真实读取全部结束、图库关闭且fileLeases为0；1904ms是本次观察值，不是参考设备性能验收。Android专用ARM64 Release预构建的元信息/签名证据见[验证摘要](validation/release-android-dedicated-verification.json)：versionCode 1、kernel/platform version 0.1.0+1、最低API 29、非debug V2签名；正式dist交付物尚未生成。版本单一源及内核/四端独立版本接线已专项核对，但不据此宣称正式发行。
 
+E37：2026-10-09 [版本化本地交付](milestone-30-versioned-delivery.md)。Windows完整Release ZIP 16,872,605字节、34个文件/目录条目及app-local MSVC CRT，逐项Zip/解包摘要、原生独立版本、正常启动及WM_CLOSE退出0通过；Android唯一ARM64 Release APK 27,400,002字节，io.imagehost.imagehost/API29、内核/平台0.1.0+1、精确build1、非debug及专用证书V2签名通过。两平台package_release.ps1实际退出0，独立核对artifact/SHA256SUMS/receipt；源base cfd55d0、dirty=true仅两张既有验证截图，源指纹留存，不称clean源构建。证据为[Windows receipt](validation/release-windows-formal.json)和[Android receipt](validation/release-android-formal.json)。源d5bb06d/run37913146736的Mac1456通过/4平台跳过、4Flutter原生、23XCTest、两外部来源互读、独立进程恢复/锁、Release及版本再次成功；iOS原生应用构建229.1秒、启动返回PID20450，但未取得VM服务，20分钟超时且用例未开始，后续备份/Photos未执行，自有模拟器清理确认通过，详见[第二轮CI记录](validation/release-apple-second-ci.json)。完整四源矩阵、Photos新增读回及其余三端大包仍未证明；后续控制台驱动的本机控制检查不能代替Apple实际通过。未公开发行二进制，ARM64物理设备/最低系统/PT/PERF/真实服务仍不计通过。
+
 ## 优先阻断与矛盾处理
 
 1. 当前源码核对按E34覆盖90条适用Windows软件行为；旧阶段的“未实现”不再作为当前状态。软件保护缺陷必须修正并记录实际失败/复验，不能仅通过取消设备测试关闭。
@@ -110,7 +112,7 @@ E36：2026-10-09 当前增量证据。Apple文件能力代码与模拟器证据�
 3. 真实账号/服务CT与IT-008没有执行，不计通过。检测/删除均须明确授权，删除发出后缺可靠确认保持unknown。设备PT、硬件压力/断电/PERF按本轮决定排除；完整人工AT亦未伪记通过。
 4. 备份导出、预检、实际合并/替换、快照回滚及旧epoch隔离已有当前调用链和测试。PNG重导入纠错只改已校验永久元信息；冻结审计保留历史描述，永久描述冲突仍严格拒绝。未知暂存/发布归属和不可信秘密视图阻止操作，不猜测删除或空库覆盖。
 5. Windows正式构建与原生子流程结果单独登记；系统选择窗口使用fixture的测试不是PT。主机原生秘密写/重开/删及低内存信号读取可以提供本机软件证据，不能代替真实账号有效性或硬件压力测量。
-6. Android工具已安装，API36 x86_64正常Release与原生文件导出已有证据，ARM64专用Release预构建已核对元信息及非debug V2签名，但物理设备/API29与正式dist产物仍未完成。Apple文件保存接线及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；最新macOS主机验证见E36，iOS同源CI作业启动/测试步骤超时并终止失败，原因尚未确认。真实系统选择器UI、Files提供者/照片格式互操作及设备PT仍待验收，不能将平台子流程扩大为完整平台验收。
+6. Android工具已安装，API36 x86_64正常Release与原生文件导出已有证据；Windows正式ZIP及Android专用签名ARM64 APK的实际本地交付见E37，物理设备/API29仍未验收。Apple文件保存接线及iOS模拟器子流程见[里程碑29](milestone-29-apple-files.md)；最新macOS主机验证见E37，iOS同源CI在启动/VM发现阶段超时并终止失败，底层原因尚未确认。真实系统选择器UI、Files提供者/照片格式互操作及设备PT仍待验收，不能将平台子流程扩大为完整平台验收。
 
 已解决边界：BAK-004标签并集超LIB-003的50上限仍拒绝，并展示双方对象/数量及整理重导出指引；PNG永久纠错与DAT-003/UPL-001冻结身份的关系按E34严格区分。原型样本ID不得替代生产UUID。若后续真实服务或平台实测与IMG-004等要求不符，仍须报告具体编号和影响，不能用现有实现反改需求或测试。
 

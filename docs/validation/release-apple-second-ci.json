@@ -1,0 +1,42 @@
+{
+  "verificationVersion": 1,
+  "sourceCommit": "d5bb06ddaa07f8b979aa049fbc659a9222dc9347",
+  "runId": 37913146736,
+  "runUrl": "https://github.com/panlijun/ImageHub/actions/runs/37913146736",
+  "overallConclusion": "failure",
+  "macos": {
+    "jobId": 113762856353,
+    "conclusion": "success",
+    "softwarePassed": 1456,
+    "platformBranchesSkipped": 4,
+    "flutterNativePassed": 4,
+    "xctestPassed": 23,
+    "xctestFailed": 0,
+    "xctestSkipped": 0,
+    "releaseBuilt": true,
+    "independentNativeVersionsVerified": true,
+    "backupExternalOrigins": ["windows", "android"],
+    "artifactId": 11609936667,
+    "artifactBytes": 26006988,
+    "artifactSha256": "6e0669b6bc1a2767346cef0480772df59b0d723711d4838b7c67a79a51b7f29b"
+  },
+  "ios": {
+    "jobId": 113762856764,
+    "conclusion": "failure",
+    "failedStep": "Run Apple native integration verification",
+    "nativeTestsStarted": false,
+    "xcodeBuildSeconds": 229.1,
+    "simctlLaunchReturnedApplicationPid": 20450,
+    "vmServiceObserved": false,
+    "stepTimedOutMinutes": 20,
+    "debugConnectionFailureReportedOnStop": true,
+    "ownedSimulatorShutdownAndDeleted": true,
+    "backupMatrixExecuted": false,
+    "newPhotosReadbackExecuted": false,
+    "newNormalEntryBuildExecuted": false,
+    "artifactId": 11608628475,
+    "artifactBytes": 121513,
+    "artifactSha256": "22714ba4bc284810e0466cbbaf0b9c6096d75cc63e9cd2bad2751e42e4e282ce"
+  },
+  "boundary": "Software host/simulator evidence only. A successful build and positive launch PID did not enter native tests. The underlying app/console/VM-discovery cause remains unproven. No physical PT, minimum OS, hardware PERF, real-service or Apple signing claim."
+}

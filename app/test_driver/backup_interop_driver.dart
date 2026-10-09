@@ -4,7 +4,7 @@ import 'package:integration_test/integration_test_driver.dart';
 
 import '../integration_test/support/backup_interop_harness.dart';
 
-/// Connects to a test application that was already installed with adb -r.
+/// Connects to a test application already installed by the owned platform tool.
 /// Run through flutter drive --use-existing-app; this driver never installs.
 Future<void> main() => integrationDriver(
   timeout: const Duration(minutes: 10),

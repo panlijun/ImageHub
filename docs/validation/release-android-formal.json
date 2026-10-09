@@ -1,0 +1,61 @@
+{
+  "formatVersion": 1,
+  "product": "ImageHub",
+  "platform": "android",
+  "architecture": "arm64",
+  "createdUtc": "2026-10-09T09:55:56.7757471Z",
+  "versions": {
+    "formatVersion": 1,
+    "kernel": {
+      "version": "0.1.0",
+      "revision": 1
+    },
+    "platforms": {
+      "windows": {
+        "version": "0.1.0",
+        "build": 1
+      },
+      "macos": {
+        "version": "0.1.0",
+        "build": 1
+      },
+      "android": {
+        "version": "0.1.0",
+        "build": 1
+      },
+      "ios": {
+        "version": "0.1.0",
+        "build": 1
+      }
+    }
+  },
+  "versionsManifestSha256": "fe7fa73220f4e55d5b95129520bd9c4acbc2b7af63301c422f4e4c19601d3b50",
+  "source": {
+    "commit": "cfd55d0518f6448f409f3b221b9b2d32fe652074",
+    "dirty": true,
+    "status": [
+      " M docs/validation/windows-backup-settings.png",
+      " M docs/validation/windows-settings.png"
+    ],
+    "statusSha256": "422329339d6df7822520aaba9f547f2bfbef7467e0b8cd931129271f8e3c7547",
+    "trackedDiffSha256": "c90fc148ee333fe7d42438d7f310d5d1ce312c394c53ee92d3ff878f79be98f4",
+    "sourceFileCount": 1291,
+    "sourceFilesSha256": "eb71d421593b8275bdc48bacef995dc016fa2ee327d008eb4766ffe4654a17ba",
+    "interpretation": "The commit identifies the base. A dirty worktree is not claimed to be that committed tree."
+  },
+  "artifact": {
+    "file": "ImageHub-android-arm64-0.1.0+1.apk",
+    "bytes": 27400002,
+    "sha256": "e23935ef68df5b9358be5f96a7addeeef95eb3e4b4328e0dbd0743f5bfd05562"
+  },
+  "verification": {
+    "applicationId": "io.imagehost.imagehost",
+    "minimumSdk": 29,
+    "abi": "arm64-v8a",
+    "platformVersion": "0.1.0+1",
+    "kernelVersion": "0.1.0+1",
+    "certificateSha256": "457656fcb19a9873cc8c8036d74bbd4a1a8658b823f2de4febdd6bb5aa37749e",
+    "verifiedV2Signature": true
+  },
+  "validationBoundary": "Local release packaging and listed host checks only; no real service, physical-device PT, store publication, or certification claim."
+}

@@ -1,6 +1,6 @@
 # ImageHub 应用
 
-ImageHub 是本地个人图片工具。Windows 与 Android 在用户确认范围内的软件开发及适用验证已完成，用户排除的实机/硬件与真实账号项目不计通过。Android 的实际运行证据来自 API36 x86_64 模拟器，ARM64 APK 已构建但未在物理手机验证。本轮 Windows 软件测试 1459 项通过、1 项非 Windows 分支跳过，`flutter analyze` 为 No issues；M1 快捷入口专项 20 项通过。Windows 最终 ZIP 与 Android 正式专用签名 APK 正在核验，尚未报告为已生成或完成。新库从空库开始；导入来源只读，永久副本、数据库、暂存文件和可再生缓存分别管理。完整范围和当前验收状态见[软件完成范围](../docs/software-completion-scope.md)、[Windows 完成记录](../docs/milestone-27-windows-completion.md)、[Android 完成记录](../docs/milestone-28-android-completion.md)、[本地发行说明](../docs/distribution.md)及[版本管理](../docs/versioning.md)。
+ImageHub 是本地个人图片工具。Windows 与 Android 在用户确认范围内的软件开发及适用验证已完成，用户排除的实机/硬件与真实账号项目不计通过。Android 的实际运行证据来自 API36 x86_64 模拟器，ARM64 APK 已构建但未在物理手机验证。本轮 Windows 软件测试 1459 项通过、1 项非 Windows 分支跳过，`flutter analyze` 为 No issues；M1 快捷入口专项 20 项通过。Windows 完整 ZIP 与 Android ARM64 正式专用签名 APK 已实际生成并核验，路径、摘要及实际构建源状态见[里程碑30](../docs/milestone-30-versioned-delivery.md)。新库从空库开始；导入来源只读，永久副本、数据库、暂存文件和可再生缓存分别管理。完整范围和当前验收状态见[软件完成范围](../docs/software-completion-scope.md)、[Windows 完成记录](../docs/milestone-27-windows-completion.md)、[Android 完成记录](../docs/milestone-28-android-completion.md)、[本地发行说明](../docs/distribution.md)及[版本管理](../docs/versioning.md)。
 
 正式名称统一为 ImageHub；Dart package `imagehost`、现有应用 ID、平台通道和存储命名空间保持稳定。Windows 版本资源的 CompanyName/ProductName 参与现有 Application Support 目录生成，因此保留技术身份，仅更新窗口/文件描述和可执行文件名。
 
@@ -17,7 +17,7 @@ flutter run -d windows
 
 当前 SDK 为 Flutter 3.47.6 / Dart 3.13.5，安装在 `C:\Users\PAN\development\flutter` 并已加入用户 PATH。已打开的终端需重新打开，也可调用 `C:\Users\PAN\development\flutter\bin\flutter.bat`。本机已配置 Visual Studio 2022 和 ATL。
 
-Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的可执行文件为 `imagehub.exe`，运行时须保留同目录 DLL、`data/` 与其他构建产物。此目录是本机构建输出；Windows 最终完整目录 ZIP 正按[本地发行说明](../docs/distribution.md)核验，完成前不视为正式交付。当前构建、启动和验证结果以平台完成记录及 GitHub 验证记录为准。
+Release 目录为 `app/build/windows/x64/runner/Release/`，本轮改名后的可执行文件为 `imagehub.exe`，运行时须保留同目录 DLL、`data/` 与其他构建产物。正式本地交付为 `../dist/windows/0.1.0+1/ImageHub-windows-x64-0.1.0+1.zip`；完整解压到普通目录后运行 `imagehub.exe`，保留全部文件。ZIP 包含 app-local MSVC CRT，已核对完整内容、原生版本与解包后正常启动退出，见[本地发行说明](../docs/distribution.md)。
 
 ## 功能入口
 
@@ -49,7 +49,7 @@ app/tool/package_release.ps1 -Platform android
 
 不要在未配置正式签名的环境直接运行 `flutter build apk --release` 作为正式发行流程。正式签名与历史 debug 签名测试包不同；若 debug 包已安装，签名冲突时不要自动卸载或清除资料库，先备份资料库，再由用户决定后续处理。模拟器后续安全测试先运行 `tool/android_test_install_guard.ps1` 只读预检，再使用 `adb install -r`；若安装失败即停止，并通过 `flutter drive --use-existing-app` 使用已安装应用。该预检不控制 Flutter 测试工具自身的安装行为，不能保证 Flutter 工具绝不卸载应用。
 
-`emulator-5558` 是本任务自有 API36 AVD；未启动时可用 `flutter emulators --launch ImageHost_API36`，实际设备 ID 以 `flutter devices` 为准。已有 ARM64 输出为 `build/app/outputs/flutter-apk/app-arm64-v8a-release.apk`，模拟器输出为 `app-x86_64-release.apk`。两者是 Release 优化的本地测试包，沿用模板 debug 签名，未制作正式发行签名或发布。
+`emulator-5558` 是本任务自有 API36 AVD；未启动时可用 `flutter emulators --launch ImageHost_API36`，实际设备 ID 以 `flutter devices` 为准。里程碑28的 ARM64 与 x86_64 Release 测试包沿用模板 debug 签名；本轮正式交付另存为 `../dist/android/0.1.0+1/ImageHub-android-arm64-0.1.0+1.apk`，已核验专用 release 证书、v2 签名、唯一 ARM64 ABI 及精确版本。当前模拟器既有 debug 应用没有被正式 APK 替换，正式 ARM64 包未进行物理设备安装验收，未对外发布。
 
 原生资源桥的生成及验证入口：
 
@@ -100,6 +100,6 @@ flutter build windows --release
 powershell -NoProfile -File tool/verify_release_smoke.ps1
 ```
 
-测试命令是开发入口，不表示本轮已执行或通过。受控图床传输不请求真实服务；设备 PT、真实硬件性能和断电验收排除在本轮之外，均不计通过。Android工具已具备并已实际构建及验证模拟器闭环；Apple工具由已授权的标准Mac/Xcode CI提供。本轮Windows软件回归为1459通过/1非Windows分支跳过，`flutter analyze`为No issues，M1快捷入口专项20项通过；Windows最终ZIP与Android正式签名APK仍在本地核验中。源95b94d3的run37908256215中macOS作业success（1456软件测试/4跳过、4Flutter原生、23XCTest及Release），iOS四项原生通过，但备份测试应用构建后未进入测试，步骤超时，Photos新增读回未执行。Windows/Android/Mac三来源已取得真实备份互读证据，完整四来源矩阵仍在补齐，详见[本轮CI记录](../docs/validation/release-apple-first-ci.json)。里程碑29及历史Apple CI的实际证据见对应[里程碑](../docs/milestone-29-apple-files.md)和[CI记录](../docs/github-publication.md)，不被本轮待验证项替代。
+测试命令是开发入口，不表示本轮已执行或通过。受控图床传输不请求真实服务；设备 PT、真实硬件性能和断电验收排除在本轮之外，均不计通过。Android工具已具备并已实际构建及验证模拟器闭环；Apple工具由已授权的标准Mac/Xcode CI提供。本轮Windows软件回归为1459通过/1非Windows分支跳过，`flutter analyze`为No issues，M1快捷入口专项20项通过；Windows正式ZIP与Android正式签名APK已完成本地打包和核验，见[里程碑30](../docs/milestone-30-versioned-delivery.md)。源95b94d3的run37908256215中macOS作业success（1456软件测试/4跳过、4Flutter原生、23XCTest及Release），iOS四项原生通过，但备份测试应用构建后未进入测试，步骤超时，Photos新增读回未执行。Windows/Android/Mac三来源已取得真实备份互读证据，完整四来源矩阵仍在补齐，详见[本轮CI记录](../docs/validation/release-apple-first-ci.json)。里程碑29及历史Apple CI的实际证据见对应[里程碑](../docs/milestone-29-apple-files.md)和[CI记录](../docs/github-publication.md)，不被本轮待验证项替代。
 
 历史实现与验证记录：图库和处理见[图库里程碑](../docs/milestone-03-gallery-processing.md)、[处理输出](../docs/milestone-04-processing-outputs.md)；账号和队列见[账号安全](../docs/milestone-05-accounts.md)、[持久队列](../docs/milestone-07-durable-upload-queue.md)、[单项暂停](../docs/milestone-20-item-pause.md)和[上传前处理](../docs/milestone-22-upload-processing.md)；备份恢复见[合并恢复](../docs/milestone-10-merge-restore.md)、[替换恢复](../docs/milestone-12-replacement-restore.md)和[备份设置](../docs/milestone-23-backup-settings.md)；链接、系统管理和网络见[主动检测](../docs/milestone-16-link-availability.md)、[远端删除审计](../docs/milestone-24-remote-deletion.md)、[网络类型](../docs/milestone-21-network-types.md)、[诊断](../docs/milestone-18-diagnostics.md)、[设置与调度](../docs/milestone-17-settings-scheduling.md)及[缓存与空间管理](../docs/milestone-19-storage.md)。这些旧记录保留当时证据，不代替本轮完成记录。

@@ -127,16 +127,16 @@ jobs:
           mkdir -p build/ci-evidence
           python3 tool/ci/boot_ios_simulator.py --runtime com.apple.CoreSimulator.SimRuntime.iOS-26-2 --device-type com.apple.CoreSimulator.SimDeviceType.iPhone-17 2>&1 | tee build/ci-evidence/ios-simulator-boot.log
       - name: Run Apple native integration verification
-        timeout-minutes: 20
+        timeout-minutes: 25
         run: |
           set -euo pipefail
           mkdir -p build/ci-evidence
-          flutter test integration_test/apple_native_smoke_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded --verbose 2>&1 | tee build/ci-evidence/ios-simulator-native-tests.log
+          python3 -B tool/ci/run_ios_integration.py --suite native 2>&1 | tee build/ci-evidence/ios-simulator-native-tests.log
       - name: Verify native iOS exports and cross-platform backup restores
-        timeout-minutes: 15
+        timeout-minutes: 25
         run: |
           set -euo pipefail
-          flutter test integration_test/generated_backup_interop_matrix_test.dart -d "$IMAGEHOST_IOS_SIMULATOR" --reporter=expanded --verbose 2>&1 | tee build/ci-evidence/ios-backup-interop.log
+          python3 -B tool/ci/run_ios_integration.py --suite backup 2>&1 | tee build/ci-evidence/ios-backup-interop.log
       - name: Build the iOS Simulator application
         timeout-minutes: 15
         run: |
