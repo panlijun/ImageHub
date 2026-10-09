@@ -39,6 +39,10 @@ Android receipt 确认 application ID `io.imagehost.imagehost`、最低 API 29�
 
 新增 XCTest 控制检查合并后共 68 项通过（2.448 秒），见[复验日志](validation/release-xctest-ci-controls-03.log)。原 67 项运行的 1 失败/2 错误保留于[首次日志](validation/release-xctest-ci-controls-02.log)：本机 Python 对同一重写文件的 `lstat` 创建时间与 `fstat` 变更时间存在实际差异，另有故障注入同时改变比较双方而未触发失败。根据[实际状态诊断](validation/release-xctest-stat-diagnostic.log)修正 Windows 控制分支与注入；Darwin 保留完整 dev/ino/mode/size/mtime/ctime 比对，未放宽 Apple 文件保护。首次尝试系统 Python 别名未产生 unittest 输出，此后使用已存在的 Codex Python 3.12 运行时，没有安装新工具。
 
+第四轮 `37923129828`（源 `ff84f1b`）的 iOS 作业已失败：正常测试入口构建和版本核验成功，随后 Xcode 以退出码 70 拒绝小写 UUID `51249190-a529-4f37-9fa5-f9114ee9e8d9` 的 destination；同一日志明确列出大写 UUID 的自有 iPhone17/arm64 设备。尚未编译 RunnerTests 或执行 Dart/XCTest 用例。真实 Xcode host/reader 已关闭；应用停止未确认，随后工作流只对本轮自有设备核对 Shutdown、删除及缺席成功。原始 iOS artifact 18,765 bytes / SHA-256 `1815df6ef863e6cb49e0341ba38feb419eb7c29f3c21ee55e09dcde3b7bbd082` 已核对，[Xcode 证据](validation/release-ci-fourth-ios-xcode.log)、[原生入口](validation/release-ci-fourth-ios-native.log)、[设备收尾](validation/release-ci-fourth-ios-simulator-cleanup.log)保留；此时同源 Mac 作业仍在运行。
+
+按当轮实际日志及既有 Photos 工作流的做法，仅将新入口的 Xcode destination UUID 规范为大写，原 owned marker 与 simctl 身份不变；非法 UUID 拒绝，无名称或 `booted` 后备。新增回归后共 69 项本机控制检查通过（2.361 秒），见[控制日志](validation/release-xctest-ci-controls-04.log)，尚须后续 Apple 源验证。Photos [源码及清理审查](validation/release-photos-test-cleanup-review.md)另确认 27 项、精确本次资源读回和格式边界；测试合成根不再递归删除，保留到自有模拟器真实 Shutdown 后整体退休，原断言和生产代码不变。该改动也尚未由此第四轮源验证。
+
 主线程审查驱动后，本机 CI 控制测试 40 项通过（新增 iOS 驱动 29 项及已有版本/权限守卫 11 项），见[复验日志](validation/release-console-ci-controls-02.log)。首次默认沙盒运行因目录权限发生 setup/cleanup 错误，失败日志保留于[原运行](validation/release-console-ci-controls.log)；复验使用已有 Python 和工作区自有临时目录，仅设置并恢复当前进程环境，没有系统配置改动。Dart 驱动格式 2 文件/0 修改、五组独立版本/5 输出检查、`flutter analyze` No issues（105.8 秒）通过；[分析日志](validation/release-console-driver-analyze.log)与[资源包校验](validation/release-final-kit.log)留存。资源包 31 文件/56 本地引用完整性通过，不计为软件测试。
 
 ## 保留边界与待完成事项

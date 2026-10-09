@@ -183,7 +183,9 @@ class RunnerTests: XCTestCase {
     // On a timeout, retain the owned root: cancellation is not proof that
     // Photos or engine IO stopped using its stage.
     guard ended else { bridge.dispose(); return }
-    defer { bridge.dispose(); try? FileManager.default.removeItem(at: root) }
+    // Keep this synthetic root until the owned simulator has actually stopped.
+    // A callback or failed assertion does not authorize deleting uncertain IO.
+    defer { bridge.dispose() }
     let reply = try XCTUnwrap(saved)
     XCTAssertEqual(reply.code, .ok)
     XCTAssertFalse(reply.cleanupPending)
@@ -239,10 +241,7 @@ class RunnerTests: XCTestCase {
     try bridge.cancelExport(operationId: request.operationId)
     var ended = false
     var cancelled = false
-    defer {
-      bridge.dispose()
-      if ended && cancelled { try? FileManager.default.removeItem(at: root) }
-    }
+    defer { bridge.dispose() }
     let done = expectation(description: "Precancelled Photos preparation has actually finished")
     bridge.savePhoto(request: request) { result in
       ended = true
@@ -268,11 +267,7 @@ class RunnerTests: XCTestCase {
     let source = root.appendingPathComponent("source.png")
     try bytes.write(to: source, options: .withoutOverwriting)
     let bridge = IOSFileBridge(engine: AppleFileEngine(privateRoots: [root]))
-    var cleanupSafe = false
-    defer {
-      bridge.dispose()
-      if cleanupSafe { try? FileManager.default.removeItem(at: root) }
-    }
+    defer { bridge.dispose() }
     let done = expectation(description: "Real Photos rejects invalid content and ends stage IO")
     var saved: Result<AppleExportReply, Error>?
     bridge.savePhoto(request: photoRequest(source: source, bytes: bytes, format: .png)) { result in
@@ -282,7 +277,6 @@ class RunnerTests: XCTestCase {
     wait(for: [done], timeout: 60)
     guard let result = saved else { return } // A deadline does not prove IO ended.
     let reply = try result.get()
-    cleanupSafe = !reply.cleanupPending
     XCTAssertEqual(reply.code, .unconfirmed)
     XCTAssertFalse(reply.cleanupPending)
     XCTAssertNil(reply.uri)
@@ -444,11 +438,9 @@ class RunnerTests: XCTestCase {
     let source = root.appendingPathComponent("source.\(format.ext)")
     try bytes.write(to: source, options: .withoutOverwriting)
     let bridge = IOSFileBridge(engine: AppleFileEngine(privateRoots: [root]))
-    var cleanupSafe = false
-    defer {
-      bridge.dispose()
-      if cleanupSafe { try? FileManager.default.removeItem(at: root) }
-    }
+    // The confirmed owned simulator retires all synthetic roots after shutdown.
+    // Preserve failures and unknown entries instead of recursive test cleanup.
+    defer { bridge.dispose() }
     let request = photoRequest(source: source, bytes: bytes, format: format)
     let done = expectation(description: "Real \(format.name) Photos save and stage retirement")
     var result: Result<AppleExportReply, Error>?
@@ -456,7 +448,6 @@ class RunnerTests: XCTestCase {
     wait(for: [done], timeout: 60)
     guard let saved = result else { return } // Retain root until actual IO ends.
     let reply = try saved.get()
-    cleanupSafe = !reply.cleanupPending
     XCTAssertFalse(reply.cleanupPending)
     try assertSourceAndRetiredStage(root: root, source: source, bytes: bytes)
     guard reply.code == .ok else {
@@ -501,11 +492,9 @@ class RunnerTests: XCTestCase {
         stream.complete(error: error)
         readDone.fulfill()
       })
-    cleanupSafe = false
     wait(for: [readDone], timeout: 60)
     let read = stream.snapshot()
     guard read.ended else { throw PhotoVerificationFailure.unfinishedRead }
-    cleanupSafe = !reply.cleanupPending
     XCTAssertTrue(read.succeeded, "Original Photos resource read must complete without error or excess bytes.")
     XCTAssertEqual(read.count, bytes.count)
     XCTAssertEqual(read.digest, request.sha256, "Converted bytes do not count as an original-byte save.")

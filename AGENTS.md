@@ -2,6 +2,8 @@
 
 ## 输入与范围
 
+- 2026-10-09第四轮源ff84f1b/run37923129828的iOS构建/版本成功，Xcode destination使用小写UUID而未匹配其已列出的大写同一自有设备，exit70、host/reader真实关闭，Dart/XCTest未开始；应用停止未确认，后续owned Shutdown/delete/缺席确认通过。原始iOS artifact18765 bytes/SHA已核验，三份日志见docs/validation/release-ci-fourth-ios-*.log。新XCTest入口只将严格UUID的Xcode destination大写化，marker/simctl身份不变，无名称/booted后备；69本机控制检查通过，实际Apple运行仍待补。Photos源码计数12+15=27和精确本次资源读回已审查；四处测试合成根的递归删除改为保留到自有模拟器实际关闭后整体退休，失败/不确定暂存不因断言或callback被抹掉，生产代码及原断言不变。见docs/validation/release-photos-test-cleanup-review.md和里程碑30，不将这些控制检查/源码审查记为原生通过。
+
 - 2026-10-09第三轮源17a7df2/run37918498083已结束：Mac1456软件测试/4平台跳过、四项Flutter原生、23XCTest及Release/独立版本再次成功；iOS正常构建和版本核验成功，直接控制台120秒内未取得VM，PID19538仅在自有应用停止后出现，Dart用例/hostdriver未开始。应用停止、真实console exit0及自有模拟器关闭删除确认，两artifact大小/SHA已核对；见docs/validation/release-apple-third-ci.json，不猜测底层原因或计作业务失败。后续仅测试target/CI采用run_ios_xctest_integration.py正常编译固定Dart入口和官方同进程IntegrationTestPlugin/FLTIntegrationTestRunner：明确单suite宏、仅CI -ObjC、不再静态链接另一份plugin；单调有界等待、精确四个Dart名称/成功/回调、一项XCTest零失败零跳过及真实host/app收尾全部确认才交付。备份仅测试编译flag允许写Library/Caches下新普通闭合白名单证据，owned容器双读/摘要/来源/全设置验证后复制，不覆盖或猜删。原控制台路径与失败记录保留。68本机控制测试通过，不代替Apple原生运行；Windows Python ctime诊断及原67项失败保留，Darwin仍比对完整六字段，见里程碑30。
 
 - 2026-10-09用户设定持续目标：完成现有环境可继续的软件任务，再完成Windows与Android正式本地打包，并建立一个内核版本及四端独立版本。此授权包含本地Android长期release签名与打包，不含对外发布、商店开通或付费证书。Windows沿用选型13.1/13.2的完整Release目录ZIP，不引入额外安装器；Android为arm64签名Release APK。版本单一源为app/versions.json，内核与四端各自维护，数据schema/备份格式不随产品版本重置；app/tool/versioning.dart生成并检查Dart与四端原生元信息。签名私钥与密码仅放忽略的本机.local/受保护资料，不进Git、诊断、CI或交付包；默认release禁止debug签名降级。真实图床和实机排除继续遵循既有范围。

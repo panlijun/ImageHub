@@ -1,0 +1,12 @@
+simctl list devices --json
+Confirmed owned simulator 51249190-a529-4f37-9fa5-f9114ee9e8d9 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl privacy 51249190-a529-4f37-9fa5-f9114ee9e8d9 revoke photos io.imagehost.imagehost
+simctl privacy 51249190-a529-4f37-9fa5-f9114ee9e8d9 revoke photos-add io.imagehost.imagehost
+simctl list devices --json
+Confirmed owned simulator 51249190-a529-4f37-9fa5-f9114ee9e8d9 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl shutdown 51249190-a529-4f37-9fa5-f9114ee9e8d9
+simctl list devices --json
+Confirmed owned simulator 51249190-a529-4f37-9fa5-f9114ee9e8d9 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+simctl delete 51249190-a529-4f37-9fa5-f9114ee9e8d9
+simctl list devices --json
+The confirmed owned simulator was deleted.

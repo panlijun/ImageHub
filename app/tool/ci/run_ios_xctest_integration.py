@@ -356,9 +356,15 @@ def build_arguments(target):
 
 def xcode_arguments(suite, target, record, result_bundle):
     require(suite in host.SUITES and target == host.SUITES[suite][0], "fixed-target-mismatch")
+    owned_uuid = record.get("udid")
+    require(type(owned_uuid) is str and re.fullmatch(UUID_PATTERN, owned_uuid) is not None,
+            "owned-destination-uuid-invalid")
+    # simctl accepts the lower-case marker; Xcode matches its upper-case ID.
+    # Keep the owned record unchanged and normalize only this destination.
+    destination_uuid = owned_uuid.upper()
     macro = "NATIVE" if suite == "native" else "BACKUP"
     return ["xcodebuild", "test", "-workspace", "ios/Runner.xcworkspace", "-scheme", "Runner",
-            "-configuration", "Debug", "-destination", f"platform=iOS Simulator,id={record['udid']},arch=arm64",
+            "-configuration", "Debug", "-destination", f"platform=iOS Simulator,id={destination_uuid},arch=arm64",
             "-derivedDataPath", f"build/apple-dart-{suite}",
             "-only-testing:RunnerTests/ImageHubFlutterIntegrationTests/testCompiledDartSuiteCompletes",
             "-parallel-testing-enabled", "NO", "-resultBundlePath", str(result_bundle),

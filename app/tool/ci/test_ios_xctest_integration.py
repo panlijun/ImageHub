@@ -130,9 +130,11 @@ class ProofTests(unittest.TestCase):
     def test_command_targets_owned_destination_and_compile_macros(self):
         for suite, (target, _) in runner.host.SUITES.items():
             with self.subTest(suite=suite):
-                command = runner.xcode_arguments(suite, target, {"udid": "owned-uuid"}, Path("result.xcresult"))
+                record = {"udid": "51249190-a529-4f37-9fa5-f9114ee9e8d9"}
+                command = runner.xcode_arguments(suite, target, record, Path("result.xcresult"))
                 self.assertEqual(command[command.index("-destination") + 1],
-                                 "platform=iOS Simulator,id=owned-uuid,arch=arm64")
+                                 "platform=iOS Simulator,id=51249190-A529-4F37-9FA5-F9114EE9E8D9,arch=arm64")
+                self.assertEqual(record["udid"], "51249190-a529-4f37-9fa5-f9114ee9e8d9")
                 self.assertIn(f"FLUTTER_TARGET={target}", command)
                 self.assertIn("OTHER_LDFLAGS=$(inherited) -ObjC", command)
                 self.assertIn("-only-testing:RunnerTests/ImageHubFlutterIntegrationTests/testCompiledDartSuiteCompletes", command)
@@ -142,6 +144,13 @@ class ProofTests(unittest.TestCase):
                 self.assertFalse(any(flag in command for flag in ("install", "launch", "uninstall", "erase")))
         with self.assertRaises(runner.Failure):
             runner.xcode_arguments("backup", runner.host.SUITES["native"][0], {"udid": "owned"}, Path("r"))
+
+    def test_destination_rejects_non_uuid_without_fallback(self):
+        target = runner.host.SUITES["native"][0]
+        for value in ("booted", "owned-uuid", "", None,
+                      "51249190-a529-4f37-9fa5-f9114ee9e8d9,OS=latest"):
+            with self.subTest(value=value), self.assertRaises(runner.Failure):
+                runner.xcode_arguments("native", target, {"udid": value}, Path("result.xcresult"))
 
     def test_signature_windows_only_ctime_difference_is_ignored(self):
         original = mock.Mock(st_dev=1, st_ino=2, st_mode=0o100644, st_size=9,
