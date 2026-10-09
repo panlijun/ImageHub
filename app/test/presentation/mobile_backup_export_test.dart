@@ -23,7 +23,7 @@ import 'package:uuid/uuid.dart';
 import 'mobile_recycle_test.dart' show MobileTestFixture, mobileNative;
 
 // Software/widget evidence with real SQLite/files/ZIP and controlled system
-// replies. No Android backend, service confirmation, device PT or network IO.
+// replies. No Android/Apple backend, service confirmation, device PT or network IO.
 void main() {
   for (final capabilities in [(false, true), (true, false), (true, true)]) {
     testWidgets(
@@ -132,6 +132,88 @@ void main() {
         await mobileNative(tester, fixture.workspaces.single.directory.exists),
         false,
       );
+      await fixture.assertLibrary(tester);
+      expect(tester.takeException(), isNull);
+      await fixture.finish(tester);
+    },
+    variant: TargetPlatformVariant.only(TargetPlatform.windows),
+  );
+
+  for (final late in [false, true]) {
+    testWidgets(
+      'UT-073/100 iOS full backup file receipt late $late preserves confirmed save and warning',
+      (tester) async {
+        final fixture = await _Fixture.create(tester, operatingSystem: 'ios');
+        await fixture.mount(tester);
+        await fixture.begin(tester);
+        final input = fixture.gateway.calls.single.inputs.single;
+        expect(await mobileNative(tester, input.source.exists), true);
+        expect(find.text('备份已保存'), findsNothing);
+        if (late) {
+          await tester.ensureVisible(find.text('取消备份'));
+          await tester.tap(find.text('取消备份'));
+          await tester.pump();
+          expect(fixture.gateway.calls.single.cancellation!.isCancelled, true);
+          expect(await mobileNative(tester, input.source.exists), true);
+        }
+        const name = 'iOS 已确认备份.zip';
+        final uri = Uri.file('/selected/$name', windows: false).toString();
+        const warning = '已确认保存；系统位置授权收尾未确认。';
+        fixture.gateway.complete(
+          ExportStatus.saved,
+          name: name,
+          uri: uri,
+          reason: warning,
+        );
+        await _idle(tester);
+        expect(find.text('备份已保存'), findsOneWidget);
+        expect(find.text(name), findsOneWidget);
+        expect(find.textContaining(warning), findsOneWidget);
+        expect(find.textContaining('2 个资产 · 2 个内容版本'), findsOneWidget);
+        expect(find.textContaining('file:///'), findsNothing);
+        expect(await mobileNative(tester, input.source.exists), false);
+        await fixture.assertLibrary(tester);
+        expect(tester.takeException(), isNull);
+        await fixture.finish(tester);
+      },
+      variant: TargetPlatformVariant.only(TargetPlatform.windows),
+    );
+  }
+
+  testWidgets(
+    'UT-074 iOS metadata backup reports confirmed file save without image entries',
+    (tester) async {
+      final fixture = await _Fixture.create(tester, operatingSystem: 'ios');
+      await fixture.mount(tester);
+      await tester.ensureVisible(find.text('导出元数据备份'));
+      await tester.tap(find.text('导出元数据备份'));
+      await tester.pump();
+      await _until(tester, () => fixture.gateway.calls.isNotEmpty);
+      final input = fixture.gateway.calls.single.inputs.single;
+      final validated = await mobileNative(
+        tester,
+        () => const BackupZipReader().preflight(
+          input.source,
+          fixture.preflight,
+          availableBytes: fixture.capacity.availableBytes,
+        ),
+      );
+      try {
+        expect(validated.manifest.mode, BackupMode.metadata);
+        expect(validated.imageFiles, isEmpty);
+      } finally {
+        await mobileNative(tester, validated.dispose);
+      }
+      const name = 'iOS-metadata.zip';
+      fixture.gateway.complete(
+        ExportStatus.saved,
+        name: name,
+        uri: 'file:///selected/$name',
+      );
+      await _idle(tester);
+      expect(find.text('备份已保存'), findsOneWidget);
+      expect(find.text(name), findsOneWidget);
+      expect(await mobileNative(tester, input.source.exists), false);
       await fixture.assertLibrary(tester);
       expect(tester.takeException(), isNull);
       await fixture.finish(tester);
@@ -297,7 +379,8 @@ void main() {
 Finder _fullButton() => find.widgetWithText(FilledButton, '导出完整备份');
 
 class _MobileGateway extends ExportGateway {
-  _MobileGateway({required this.files});
+  _MobileGateway({required this.files, required String operatingSystem})
+    : super(operatingSystem: operatingSystem);
   final bool files;
   final calls = <_Transfer>[];
   @override
@@ -379,6 +462,7 @@ class _Fixture {
     WidgetTester tester, {
     bool files = true,
     bool capacitySupported = true,
+    String operatingSystem = 'android',
   }) async {
     final base = await MobileTestFixture.create(
       tester,
@@ -460,9 +544,12 @@ class _Fixture {
     addTearDown(() => messenger.setMockMethodCallHandler(channel, null));
     final capacity = StorageCapacity(
       channel: channel,
-      operatingSystem: capacitySupported ? 'android' : 'linux',
+      operatingSystem: capacitySupported ? operatingSystem : 'linux',
     );
-    final gateway = _MobileGateway(files: files);
+    final gateway = _MobileGateway(
+      files: files,
+      operatingSystem: operatingSystem,
+    );
     final workspaces = <MobileFileWorkspace>[];
     final container = ProviderContainer(
       parent: base.container,
@@ -504,7 +591,11 @@ class _Fixture {
       UncontrolledProviderScope(
         container: container,
         child: MaterialApp(
-          theme: ThemeData(platform: TargetPlatform.android),
+          theme: ThemeData(
+            platform: gateway.operatingSystem == 'ios'
+                ? TargetPlatform.iOS
+                : TargetPlatform.android,
+          ),
           builder: (context, child) => MediaQuery(
             data: MediaQuery.of(context)
                 .copyWith(textScaler: TextScaler.linear(textScale)),

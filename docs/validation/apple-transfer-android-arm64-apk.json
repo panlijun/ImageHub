@@ -1,0 +1,8 @@
+{
+  "Path": "app/build/app/outputs/flutter-apk/app-release.apk",
+  "Bytes": 27948264,
+  "Sha256": "ED1813F4BE364F1A9CD041A7DCAFA1FAEACBF0E2D9093FDCD715B36016BC363D",
+  "Platform": "android-arm64",
+  "Mode": "release",
+  "Signing": "existing local debug signing"
+}

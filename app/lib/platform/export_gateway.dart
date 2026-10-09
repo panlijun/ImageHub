@@ -9,7 +9,7 @@ import '../core/platform_resource.dart';
 import 'android_export_gateway.dart';
 import 'apple_export_gateway.dart';
 
-/// Only adapts the system directory picker; it does not report a saved file.
+/// Adapts system destinations; saved results follow actual transfer completion.
 class ExportGateway {
   const ExportGateway({this.operatingSystem});
   final String? operatingSystem;
@@ -19,6 +19,32 @@ class ExportGateway {
       _platform == 'windows' || _platform == 'macos';
   bool get supportsFileExport => supportsDirectoryExport || supportsPhotos;
   bool get supportsPhotos => _platform == 'android' || _platform == 'ios';
+
+  /// The URI is a receipt shape; the native gateway must already confirm IO.
+  bool confirmsSystemFileSave(ExportItemResult result) {
+    final name = result.fileName;
+    if (result.status != ExportStatus.saved || name == null || name.isEmpty) {
+      return false;
+    }
+    final raw = result.destinationUri ?? '';
+    final uri = Uri.tryParse(raw);
+    if (uri == null) return false;
+    if (_platform == 'android') {
+      return uri.scheme == 'content' && uri.authority.isNotEmpty;
+    }
+    return _platform == 'ios' &&
+        uri.toString() == raw &&
+        uri.scheme == 'file' &&
+        (uri.host.isEmpty || uri.host == 'localhost') &&
+        uri.userInfo.isEmpty &&
+        !uri.hasPort &&
+        !uri.hasQuery &&
+        !uri.hasFragment &&
+        uri.path.startsWith('/') &&
+        uri.pathSegments.isNotEmpty &&
+        !uri.pathSegments.any((segment) => segment == '.' || segment == '..') &&
+        uri.pathSegments.last == name;
+  }
 
   Future<List<ExportItemResult>> exportFiles(
     List<ExportInput> inputs, {

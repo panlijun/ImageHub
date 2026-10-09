@@ -32,6 +32,55 @@ void main() {
     );
   });
 
+  test('UT-073 platform file receipts retain Android content and accept only valid iOS file saves', () {
+    ExportItemResult result(
+      String uri, {
+      String name = 'backup.zip',
+      ExportStatus status = ExportStatus.saved,
+    }) => ExportItemResult(
+      id: 'owned',
+      status: status,
+      fileName: name,
+      destinationUri: uri,
+    );
+    const android = ExportGateway(operatingSystem: 'android');
+    const ios = ExportGateway(operatingSystem: 'ios');
+    expect(
+      android.confirmsSystemFileSave(result('content://documents/backup')),
+      true,
+    );
+    expect(
+      android.confirmsSystemFileSave(result('file:///selected/backup.zip')),
+      false,
+    );
+    expect(
+      ios.confirmsSystemFileSave(result('file:///selected/backup.zip')),
+      true,
+    );
+    for (final uri in [
+      'content://documents/backup',
+      'file:backup.zip',
+      'file:///selected/../backup.zip',
+      'file:///selected/backup.zip?secret=value',
+      'file:///selected/other.zip',
+      'ph://asset/opaque',
+    ]) {
+      expect(ios.confirmsSystemFileSave(result(uri)), false, reason: uri);
+    }
+    expect(
+      ios.confirmsSystemFileSave(
+        result('file:///selected/backup.zip', status: ExportStatus.cancelled),
+      ),
+      false,
+    );
+    expect(
+      ios.confirmsSystemFileSave(
+        result('file:///selected/backup.zip', name: ''),
+      ),
+      false,
+    );
+  });
+
   test(
     'UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order',
     () async {

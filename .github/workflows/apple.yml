@@ -134,7 +134,8 @@ jobs:
           set -euo pipefail
           xcrun simctl install "$IMAGEHOST_IOS_SIMULATOR" build/ios/iphonesimulator/Runner.app
           xcrun simctl privacy "$IMAGEHOST_IOS_SIMULATOR" grant photos-add io.imagehost.imagehost
-          xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=$IMAGEHOST_IOS_SIMULATOR" -derivedDataPath build/apple-tests-ios -only-testing:RunnerTests -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/ios-file-tests.xcresult CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/ci-evidence/ios-file-tests.log
+          TEST_SIMULATOR=$(python3 -c 'import os, uuid; print(str(uuid.UUID(os.environ["IMAGEHOST_IOS_SIMULATOR"])).upper())')
+          xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=$TEST_SIMULATOR,arch=arm64" -derivedDataPath build/apple-tests-ios -only-testing:RunnerTests -parallel-testing-enabled NO -resultBundlePath build/ci-evidence/ios-file-tests.xcresult CODE_SIGNING_ALLOWED=NO 2>&1 | tee build/ci-evidence/ios-file-tests.log
           python3 tool/ci/verify_apple_file_tests.py build/ci-evidence/ios-file-tests.xcresult --expected 20 --summary build/ci-evidence/ios-file-test-summary.json
       - name: Clean up only the confirmed owned simulator
         if: always()

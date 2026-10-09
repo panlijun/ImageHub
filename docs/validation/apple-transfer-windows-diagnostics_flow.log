@@ -1,0 +1,6 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/integration_test/diagnostics_flow_test.dart
+Building Windows application...                                    19.9s
+√ Built build\windows\x64\runner\Debug\imagehub.exe
+00:00 +0: IT-006 partial Windows diagnostic SQL reopen export re-sanitizes and clear preserves permanent image
+00:03 +1: (tearDownAll)
+00:03 +1: All tests passed!

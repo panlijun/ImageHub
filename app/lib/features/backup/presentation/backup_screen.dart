@@ -487,13 +487,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
           ),
         ], cancellation: token);
         final result = results.single;
-        final uri = Uri.tryParse(result.destinationUri ?? '');
-        final saved =
-            result.status == ExportStatus.saved &&
-            uri?.scheme == 'content' &&
-            uri!.authority.isNotEmpty &&
-            result.fileName != null &&
-            result.fileName!.isNotEmpty;
+        final saved = gateway.confirmsSystemFileSave(result);
         // The private closed ZIP is preparation only. User-export completion
         // is recorded only after the real destination has been confirmed.
         try {

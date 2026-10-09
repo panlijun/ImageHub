@@ -74,7 +74,7 @@ final class RunnerTests: XCTestCase {
         selectionReplies += 1
         selection = try? $0.get()
       }
-      bridge.cancelSelection(selectionId: secondId) { XCTAssertNoThrow(try $0.get()) }
+      bridge.cancelSelection(selectionId: secondId) { self.assertSuccessfulCancellation($0) }
       XCTAssertEqual(panel.cancelCalls, 0)
       bridge.cancelSelection(selectionId: firstId) { _ in cancellationReplies += 1 }
       bridge.cancelSelection(selectionId: firstId) { _ in cancellationReplies += 1 }
@@ -107,7 +107,7 @@ final class RunnerTests: XCTestCase {
       panel.respond(.OK, url: selectedURL, index: 0)
       bridge.pickBackup(selectionId: secondId) { _ in secondReplies += 1 }
       panel.respond(.OK, url: selectedURL, index: 0)
-      bridge.cancelSelection(selectionId: firstId) { XCTAssertNoThrow(try $0.get()) }
+      bridge.cancelSelection(selectionId: firstId) { self.assertSuccessfulCancellation($0) }
       XCTAssertEqual(panel.cancelCalls, 0)
       XCTAssertEqual(firstReplies, 1)
       XCTAssertEqual(secondReplies, 0)
@@ -161,8 +161,8 @@ final class RunnerTests: XCTestCase {
 
       var newReplies = 0
       bridge.pickBackup(selectionId: secondId) { _ in newReplies += 1 }
-      bridge.cancelSelection(selectionId: retiredId) { XCTAssertNoThrow(try $0.get()) }
-      bridge.cancelSelection(selectionId: retiredId.uppercased()) { XCTAssertNoThrow(try $0.get()) }
+      bridge.cancelSelection(selectionId: retiredId) { self.assertSuccessfulCancellation($0) }
+      bridge.cancelSelection(selectionId: retiredId.uppercased()) { self.assertSuccessfulCancellation($0) }
       panel.respond(.cancel, index: 0)
       XCTAssertEqual(panel.cancelCalls, 0)
       XCTAssertEqual(newReplies, 0)
@@ -191,6 +191,12 @@ final class RunnerTests: XCTestCase {
 
   private func resourceSelection() -> AppleSelection {
     AppleSelection(cancelled: false, resources: [ApplePickedResource(handle: secondId, displayName: "backup.zip")])
+  }
+
+  private func assertSuccessfulCancellation(_ result: Result<Void, Error>, file: StaticString = #filePath, line: UInt = #line) {
+    if case .failure = result {
+      XCTFail("A valid unknown or retired cancellation must be harmless.", file: file, line: line)
+    }
   }
 
   private func assertFailure<T>(_ result: Result<T, Error>?, code: String, file: StaticString = #filePath, line: UInt = #line) {

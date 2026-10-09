@@ -1,0 +1,29 @@
+00:00 +0: loading C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart
+00:00 +0: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 platform capabilities enable iOS native files and photos
+00:00 +1: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-073 platform file receipts retain Android content and accept only valid iOS file saves
+00:00 +2: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Apple batch freezes IDs, forwards hashes and keeps selected order
+00:00 +3: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 late confirmed save survives cancellation and stops remaining items
+00:00 +4: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 actual scope retirement precedes releasing export ownership
+00:00 +5: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 Photos confirmation and failed cleanup preserve saved evidence
+00:00 +6: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 malformed file or photo success never reports saved
+00:00 +7: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 cancellation during picker drains and never starts native writes
+00:00 +8: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 scope cleanup failure cannot erase successful save
+00:00 +9: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 per-item failures and permission denial remain fixed feedback
+00:00 +10: C:/Users/PAN/workspace/ImageHub/app/test/platform/apple_export_gateway_test.dart: UT-036 duplicate input identities do not acquire a directory
+00:00 +11: loading C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart
+00:04 +11: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file false capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:05 +12: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file true capacity false gate independently of directories (variant: TargetPlatform.windows)
+00:06 +13: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup file true capacity true gate independently of directories (variant: TargetPlatform.windows)
+00:06 +14: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/074 partial mobile real full ZIP precedes user save and preserves active/recycled UUIDs and bytes (variant: TargetPlatform.windows)
+00:09 +15: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/100 iOS full backup file receipt late false preserves confirmed save and warning (variant: TargetPlatform.windows)
+00:12 +16: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-073/100 iOS full backup file receipt late true preserves confirmed save and warning (variant: TargetPlatform.windows)
+00:14 +17: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-074 iOS metadata backup reports confirmed file save without image entries (variant: TargetPlatform.windows)
+00:16 +18: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-100 partial mobile backup cancellation retains private ZIP until actual transfer and keeps late saved evidence (variant: TargetPlatform.windows)
+00:18 +19: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-100 partial disposing mobile backup requests cancellation without early private ZIP deletion (variant: TargetPlatform.windows)
+00:21 +20: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup controlled ExportStatus.failed result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:23 +21: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup controlled ExportStatus.cancelled result never reports the private ZIP as a saved backup (variant: TargetPlatform.windows)
+00:25 +22: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI missing name true (variant: TargetPlatform.windows)
+00:27 +23: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI file name true (variant: TargetPlatform.windows)
+00:28 +24: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: mobile backup rejects incomplete saved evidence URI content name false (variant: TargetPlatform.windows)
+00:30 +25: C:/Users/PAN/workspace/ImageHub/app/test/presentation/mobile_backup_export_test.dart: UT-074/100 partial changed closed mobile ZIP refuses cleanup while preserving confirmed user save (variant: TargetPlatform.windows)
+00:32 +26: All tests passed!
