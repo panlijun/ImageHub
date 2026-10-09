@@ -61,7 +61,17 @@ iOS 正常测试应用构建耗时 199.0 秒。真实平台与框架 semantics �
 
 停止阶段诊断已完成边界明确的本机控制测试：89 项三模块控制测试通过（2.600 秒），[日志](validation/release-xctest-stop-controls-01.log)SHA-256 为 `b560645c10e1606c079f4ad219da505c3f0912cb00eac23ba53d9bc5e1d0b5aa`。这只验证 XCTest 路径的控制逻辑，不代表 Apple 实际运行或第六轮停止问题已解决。诊断仅在 XCTest 启用，默认直接控制台路径不变；实际退出信息须等 `close_host` 真实返回后才发出，强制结束退出码仍仅用于诊断且保持失败；guard/command 的可知失败使用固定分类，未知异常不调用 `toString`。`run_command` 的 close 异常仍可能覆盖主失败语义，若发生仍严格失败。
 
-后续只补查停止阶段的具体分类、取得真实进程退出结果和有界输出；不放宽严格 `ESRCH`、owned 身份和停止成功条件，不用 XCTest 响应或 host/reader 退出代替应用停止确认。底层原因仍未知，下一次 Apple CI 尚待实际执行；未启动的新 run 不预报状态。
+第六轮之后只补查停止阶段的具体分类、取得真实进程退出结果和有界输出；不放宽严格 `ESRCH`、owned 身份和停止成功条件，不用 XCTest 响应或 host/reader 退出代替应用停止确认。第六轮的底层原因仍未知；第七轮及其后续未启动 CI 的状态见后续记录。
+
+## 第七轮 Apple CI
+
+源 `1cb16cfddcbd67cf8d744b5107a2797d3fdd2007` 的 [run37934102081](https://github.com/panlijun/ImageHub/actions/runs/37934102081) 已整体结束为 failure。Mac job success：1,456 项软件测试通过/4 个 Windows 分支跳过、八项独立进程恢复与锁、四项 Flutter 原生、Windows/Android 两来源完整/元数据恢复重开、23 项 XCTest 零失败零跳过、64.5 MB Release 与独立版本核验通过。
+
+iOS 构建耗时 211.0 秒。真实 semantics 基线 outstanding handles 为 1；四项命名 Dart 业务及四项 SDK callback 均通过，1 项 XCTest 零失败零跳过，ad-hoc 实际签名与 Keychain 写入/新实例读取/删除/清理流程通过，Xcode exit 0 且 host/reader 真实关闭。owned stop guard 确认通过后，simctl terminate 子进程及 reader 均关闭，实际返回 exit 3 和六行 `NSPOSIXErrorDomain` code 3 的“found nothing to terminate”文本。本轮旧解析器未接受这段输出，仍以 `owned-app-stop-unconfirmed` 拒绝成功；不能据此推断应用确实停止。自有模拟器 Shutdown/delete/缺席确认成功；backup、新 Photos 与正常业务入口未执行。
+
+[第七轮记录](validation/release-apple-seventh-ci.json)确认 Mac artifact 为 26,006,117 bytes / SHA-256 `f365a096c0a89e33adb0d3aaa7add02d3c70a25d767032f79ae27df244340e93`，iOS artifact 为 305,468 bytes / SHA-256 `89c185268f9c8812d49a9223dd69f761760f9bd6493f19419dceb52897ba7a1e`；九份原始白名单证据分别为 `release-ci-seventh-macos-*` 四份与 `release-ci-seventh-ios-*` 五份，详见[Mac进程恢复日志](validation/release-ci-seventh-macos-process-recovery.log)、[Mac版本摘要](validation/release-ci-seventh-macos-native-versions.json)、[Mac XCTest摘要](validation/release-ci-seventh-macos-file-test-summary.json)、[Mac Release日志](validation/release-ci-seventh-macos-release-build.log)、[iOS原生日志](validation/release-ci-seventh-ios-native.log)、[Xcode日志](validation/release-ci-seventh-ios-xcode.log)、[签名摘要](validation/release-ci-seventh-ios-signing.json)、[XCTest摘要](validation/release-ci-seventh-ios-xctest-summary.json)及[模拟器清理日志](validation/release-ci-seventh-ios-simulator-cleanup.log)。停止响应摘要SHA-256为`ace1207626879f54f60d69a634b8f11f6b3d8ed2efe799376de201fe74b260a4`，位于原生日志对应受限记录中。
+
+后续三文件修正只接受该次实际观测到的完整六行变体，要求exit 3、固定bundle ID、精确错误域/码、TAB转义和行序；原有分支未改，未知、混合或身份不符仍拒绝。第七轮原解析器拒绝它，之后的[94项控制测试](validation/release-xctest-esrch-controls-01.log)通过（2.637秒，SHA-256 `e0f597f5e14e66b44c7673fd77831052bd8860b2c4a8405bb93565b3a0d75393`），并使用本轮闭合原生日志进行离线匹配；这两项属于本机控制验证，不是 Apple 原生修正通过。Apple errno说明仅支持domain-specific `ESRCH=3` 表示 no process，不定义完整 simctl 文本格式，见[Apple错误域说明](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html)。第六轮底层原因仍未知；下一次 CI 尚待实际运行，不预报新的 run 或结果。
 
 ## 保留边界与待完成事项
 

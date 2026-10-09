@@ -319,7 +319,19 @@ def known_not_running(code, output):
                r"Application termination failed\.\s*"
                r"Underlying error \(domain=NSPOSIXErrorDomain, code=3\):\s*"
                r"No such process")
-    return code != 0 and re.fullmatch(pattern, output.strip()) is not None
+    if code != 0 and re.fullmatch(pattern, output.strip()) is not None:
+        return True
+    # Exact six-line response observed in CI run 37934102081 (source 1cb16cf).
+    # This is an observed simctl ESRCH variant, not an Apple-defined text grammar.
+    bundle = re.escape(BUNDLE_ID)
+    observed = (r"An error was encountered processing the command "
+                r"\(domain=NSPOSIXErrorDomain, code=3\):\n"
+                rf"Simulator device failed to terminate {bundle}\.\n"
+                r"found nothing to terminate\n"
+                r"Underlying error \(domain=NSPOSIXErrorDomain, code=3\):\n"
+                rf'\tThe request to terminate "{bundle}" failed\. found nothing to terminate\n'
+                r"\tfound nothing to terminate")
+    return code == 3 and re.fullmatch(observed, output.strip()) is not None
 
 
 def terminate_owned_app(record, console, *, diagnostic=False):

@@ -21,6 +21,14 @@ NOT_RUNNING = (
     "Underlying error (domain=NSPOSIXErrorDomain, code=3):\n"
     "    No such process\n"
 )
+FOUND_NOTHING = (
+    "An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):\n"
+    "Simulator device failed to terminate io.imagehost.imagehost.\n"
+    "found nothing to terminate\n"
+    "Underlying error (domain=NSPOSIXErrorDomain, code=3):\n"
+    '\tThe request to terminate "io.imagehost.imagehost" failed. found nothing to terminate\n'
+    "\tfound nothing to terminate\n"
+)
 
 
 class Pipe:
@@ -474,9 +482,47 @@ class ParsingTests(unittest.TestCase):
 
     def test_not_running_response_is_exact(self):
         self.assertTrue(runner.known_not_running(3, NOT_RUNNING))
+        self.assertTrue(runner.known_not_running(1, NOT_RUNNING))  # Preserve old behavior.
         self.assertFalse(runner.known_not_running(0, NOT_RUNNING))
         self.assertFalse(runner.known_not_running(3, "No such process"))
         self.assertFalse(runner.known_not_running(3, NOT_RUNNING + "Other failure"))
+
+    def test_observed_six_line_esrch_requires_exact_exit_and_response(self):
+        self.assertTrue(runner.known_not_running(3, FOUND_NOTHING))
+        for code in (0, 1, 2, 4, -3):
+            with self.subTest(code=code):
+                self.assertFalse(runner.known_not_running(code, FOUND_NOTHING))
+        self.assertFalse(runner.known_not_running(3, "found nothing to terminate"))
+
+    def test_observed_esrch_rejects_domain_code_bundle_and_tab_mismatches(self):
+        lines = FOUND_NOTHING.splitlines()
+        mutations = []
+        for index in (0, 3):
+            mutations.append((index, lines[index].replace("NSPOSIXErrorDomain", "NSCocoaErrorDomain")))
+            mutations.append((index, lines[index].replace("code=3", "code=1")))
+        for index in (1, 4):
+            mutations.append((index, lines[index].replace("io.imagehost.imagehost", "io.other.app")))
+            mutations.append((index, lines[index].replace("io.imagehost.imagehost", "ioXimagehostXimagehost")))
+        for index in (4, 5):
+            mutations.append((index, lines[index].replace("\t", "    ")))
+        for index, replacement in mutations:
+            altered = lines.copy()
+            altered[index] = replacement
+            with self.subTest(index=index, replacement=replacement):
+                self.assertFalse(runner.known_not_running(3, "\n".join(altered)))
+        self.assertFalse(runner.known_not_running(3, FOUND_NOTHING.replace("io.imagehost.imagehost", "io.other.app")))
+
+    def test_observed_esrch_rejects_missing_extra_reordered_and_mixed_lines(self):
+        lines = FOUND_NOTHING.splitlines()
+        mutations = ["\n".join(lines[:index] + lines[index + 1:]) for index in range(len(lines))]
+        mutations += ["\n".join(lines[:index] + ["Additional unknown error"] + lines[index:])
+                      for index in range(len(lines) + 1)]
+        mutations += ["\n".join(lines[:2] + [lines[3], lines[2]] + lines[4:]),
+                      NOT_RUNNING + FOUND_NOTHING, FOUND_NOTHING + NOT_RUNNING,
+                      FOUND_NOTHING.replace("found nothing to terminate", "No such process", 1)]
+        for index, response in enumerate(mutations):
+            with self.subTest(mutation=index):
+                self.assertFalse(runner.known_not_running(3, response))
 
     def test_unconfirmed_console_close_is_failure_without_force_killing(self):
         process = Process(b"", running=True)

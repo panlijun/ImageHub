@@ -1,0 +1,40 @@
+{
+  "bundle": "build/apple-dart-native/Build/Products/Debug-iphonesimulator/Runner.app",
+  "codesign": {
+    "authorityPresent": false,
+    "identifier": "io.imagehost.imagehost",
+    "signature": "adhoc",
+    "teamIdentifier": "not set"
+  },
+  "configuration": "Debug",
+  "failure": null,
+  "formatVersion": 1,
+  "generatedEntitlements": {
+    "Runner.app.xcent": {
+      "byteCount": 181,
+      "present": [],
+      "sha256": "97704a8960b4facceef54397a08fb5d0a456247c3627359215aa2a27df22656c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "Runner.app.xcent-simulated": null
+  },
+  "infoPlist": {
+    "bundleIdentifier": "io.imagehost.imagehost",
+    "byteCount": 2210,
+    "executable": "Runner",
+    "sha256": "4a3edaa2590e7b666e344a6c1f77c321e678e516d82779a15af006697731e09d"
+  },
+  "keychainPermissionConfirmed": false,
+  "platform": "iphonesimulator",
+  "signatureEntitlements": {
+    "byteCount": 183,
+    "present": [],
+    "sha256": "8acd8b6643d44a5f9486075f4f1f058407fe5981f66a4b7044ce8bee6041304c",
+    "unrecordedKeys": [],
+    "values": {}
+  },
+  "status": "verified-adhoc-host",
+  "strictVerificationPassed": true,
+  "suite": "native"
+}

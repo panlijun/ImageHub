@@ -14,7 +14,7 @@ import unittest
 from unittest import mock
 
 import run_ios_xctest_integration as runner
-from test_ios_integration import Process, Pipe, NOT_RUNNING
+from test_ios_integration import Process, Pipe, NOT_RUNNING, FOUND_NOTHING
 
 
 def encoded_payload(origin):
@@ -595,6 +595,33 @@ class ControllerTests(OwnedTemp):
         self.assertTrue(runner.run_suite("native")["ownedAppStopped"])
         self.assertIn("[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true", self.output.getvalue())
         self.assertIn("Underlying error (domain=NSPOSIXErrorDomain, code=3):", self.output.getvalue())
+
+    def test_observed_six_line_esrch_confirms_closed_stop_and_success_summary(self):
+        self.stop_code = 3
+        self.stop_output = FOUND_NOTHING.encode()
+        summary = runner.run_suite("native")
+        self.assertTrue(summary["ownedAppStopped"])
+        self.assertEqual(summary["xctestPassed"], 1)
+        self.assertEqual(len(self.stops()), 1)
+        self.assertEqual(self.stops()[0][-2:], [self.record["udid"], runner.host.BUNDLE_ID])
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+        self.assertEqual(json.loads(Path("build/ci-evidence/ios-dart-native-summary.json").read_text()), summary)
+        text = self.output.getvalue()
+        self.assertIn("[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true", text)
+        self.assertIn("[stage] ownedappstopped", text)
+        self.assertNotIn("[owned-app-stop-failure]", text)
+
+    def test_observed_esrch_with_additional_unknown_error_still_rejects_summary(self):
+        self.stop_code = 3
+        self.stop_output = (FOUND_NOTHING + "Additional unknown error\n").encode()
+        with self.assertRaisesRegex(runner.Failure, "owned-app-stop-unconfirmed"):
+            runner.run_suite("native")
+        self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
+        text = self.output.getvalue()
+        self.assertIn("[owned-app-stop] Additional unknown error", text)
+        self.assertIn("[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true", text)
+        self.assertIn("[owned-app-stop-failure] owned-app-stop-exit-nonzero", text)
+        self.assertNotIn("ownedappstopped", text)
 
     def test_stop_failure_preserves_earlier_xcode_failure(self):
         self.xcode_code = 65
