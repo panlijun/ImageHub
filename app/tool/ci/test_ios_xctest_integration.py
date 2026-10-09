@@ -7,6 +7,7 @@ import io
 import json
 import os
 from pathlib import Path
+import plistlib
 import tempfile
 import threading
 import unittest
@@ -48,6 +49,12 @@ def dart_proof(suite="native"):
 
 def proof_line(value):
     return runner.RESULT_PREFIX + json.dumps(value)
+
+
+SIGNING_DISPLAY = ("Identifier=io.imagehost.imagehost\nSignature=adhoc\n"
+                   "TeamIdentifier=not set\n")
+SIGNING_ENTITLEMENTS = {"application-identifier": "synthetic.io.imagehost.imagehost",
+                        "keychain-access-groups": [], "get-task-allow": True}
 
 
 class ProofTests(unittest.TestCase):
@@ -137,6 +144,12 @@ class ProofTests(unittest.TestCase):
                 self.assertEqual(record["udid"], "51249190-a529-4f37-9fa5-f9114ee9e8d9")
                 self.assertIn(f"FLUTTER_TARGET={target}", command)
                 self.assertIn("OTHER_LDFLAGS=$(inherited) -ObjC", command)
+                self.assertIn("CODE_SIGNING_ALLOWED=YES", command)
+                self.assertIn("CODE_SIGN_IDENTITY=-", command)
+                self.assertIn("CODE_SIGN_INJECT_BASE_ENTITLEMENTS=YES", command)
+                self.assertNotIn("CODE_SIGNING_ALLOWED=NO", command)
+                self.assertFalse(any("ENTITLEMENTS_REQUIRED" in flag or "DEVELOPMENT_TEAM" in flag or
+                                     "PROVISIONING_PROFILE" in flag for flag in command))
                 self.assertIn("-only-testing:RunnerTests/ImageHubFlutterIntegrationTests/testCompiledDartSuiteCompletes", command)
                 self.assertEqual(command[-1], "OTHER_CFLAGS=$(inherited) -DIMAGEHUB_FLUTTER_INTEGRATION_CI=1 "
                                  f"-DIMAGEHUB_FLUTTER_INTEGRATION_{suite.upper()}=1")
@@ -197,6 +210,146 @@ class OwnedTemp(unittest.TestCase):
         for name in runner.EVIDENCE_NAMES:
             (directory / name).write_bytes(b'{"synthetic":true}')
         return directory
+
+    def create_signing_host(self, suite="native"):
+        derived = Path(f"build/apple-dart-{suite}")
+        bundle = derived / "Build/Products/Debug-iphonesimulator/Runner.app"
+        bundle.mkdir(parents=True)
+        (bundle / "Runner").write_bytes(b"synthetic Mach-O placeholder; no Apple execution")
+        (bundle / "Info.plist").write_bytes(plistlib.dumps({"CFBundleIdentifier": runner.host.BUNDLE_ID,
+                                                         "CFBundleExecutable": "Runner"}))
+        generated = derived / "Build/Intermediates.noindex/Runner.build/Debug-iphonesimulator/Runner.build"
+        generated.mkdir(parents=True)
+        for name in ("Runner.app.xcent", "Runner.app.xcent-simulated"):
+            (generated / name).write_bytes(plistlib.dumps(SIGNING_ENTITLEMENTS))
+        return bundle, generated
+
+
+class SigningTests(OwnedTemp):
+    def setUp(self):
+        super().setUp()
+        self.bundle, self.generated = self.create_signing_host()
+        self.artifacts = Path("build/ci-evidence")
+        self.artifacts.mkdir()
+        self.display = SIGNING_DISPLAY
+        self.entitlements = "Executable=synthetic-owned-host\n" + plistlib.dumps(SIGNING_ENTITLEMENTS).decode()
+        self.verify_code = 0
+        self.processes = []
+        self.calls = []
+        self.stack.enter_context(mock.patch.object(runner.host.subprocess, "Popen", side_effect=self.popen))
+
+    def popen(self, arguments, **options):
+        self.calls.append(arguments)
+        self.assertIs(options["shell"], False)
+        self.assertEqual(arguments[-1], str(self.bundle.absolute()))
+        if arguments[1] == "--verify":
+            self.assertEqual(arguments[2:4], ["--strict", "--verbose=2"])
+            process = Process(code=self.verify_code)
+        elif arguments[2] == "--verbose=4":
+            process = Process(output=self.display.encode())
+        elif arguments[2:4] == ["--entitlements", ":-"]:
+            process = Process(output=self.entitlements.encode())
+        else:
+            raise AssertionError("Unexpected synthetic signing command.")
+        self.processes.append(process)
+        return process
+
+    def collect(self):
+        return runner.collect_signing_evidence("native", self.artifacts)
+
+    def test_actual_adhoc_fixed_host_and_closed_generated_plists(self):
+        result = self.collect()
+        self.assertEqual(result["status"], "verified-adhoc-host")
+        self.assertFalse(result["keychainPermissionConfirmed"])
+        self.assertEqual(result["codesign"]["identifier"], runner.host.BUNDLE_ID)
+        self.assertEqual(result["signatureEntitlements"]["values"], SIGNING_ENTITLEMENTS)
+        for name, evidence in result["generatedEntitlements"].items():
+            raw = (self.generated / name).read_bytes()
+            self.assertEqual(evidence["sha256"], hashlib.sha256(raw).hexdigest())
+            self.assertEqual(evidence["byteCount"], len(raw))
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+        self.assertEqual(json.loads((self.artifacts / "ios-dart-native-signing.json").read_text()), result)
+        with self.assertRaisesRegex(runner.Failure, "artifact-already-exists"):
+            self.collect()
+
+    def test_no_signature_xml_or_optional_generated_plists_is_recorded_not_fake_failure(self):
+        self.entitlements = "Executable=synthetic-owned-host\n"
+        for path in self.generated.iterdir():
+            path.unlink()
+        result = self.collect()
+        self.assertIsNone(result["signatureEntitlements"])
+        self.assertEqual(set(result["generatedEntitlements"].values()), {None})
+        self.assertFalse(result["keychainPermissionConfirmed"])
+
+    def test_invalid_signature_metadata_rejected(self):
+        for raw in (SIGNING_DISPLAY.replace(runner.host.BUNDLE_ID, "foreign.app"),
+                    SIGNING_DISPLAY.replace("adhoc", "developer"),
+                    SIGNING_DISPLAY + "Authority=Apple Development\n",
+                    SIGNING_DISPLAY.replace("not set", "SYNTHETIC1"),
+                    SIGNING_DISPLAY + "Signature=adhoc\n", "future-format-without-identity"):
+            with self.subTest(raw=raw), self.assertRaises(runner.Failure):
+                runner.signing_metadata(raw)
+
+    def test_failed_codesign_retains_unconfirmed_closed_json(self):
+        self.verify_code = 1
+        with self.assertRaisesRegex(runner.Failure, "signing-verify-exit-nonzero"):
+            self.collect()
+        result = json.loads((self.artifacts / "ios-dart-native-signing.json").read_text())
+        self.assertEqual(result["status"], "unconfirmed")
+        self.assertEqual(result["failure"], "signing-verify-exit-nonzero")
+        self.assertTrue(self.processes[0].stdout.closed and self.processes[0].waited)
+
+    def test_generated_duplicate_invalid_oversize_and_types_rejected(self):
+        duplicate = b'<?xml version="1.0"?><plist version="1.0"><dict><key>get-task-allow</key><true/><key>get-task-allow</key><false/></dict></plist>'
+        bad = [duplicate, b"not plist", b"a" * (runner.FILE_LIMIT + 1),
+               plistlib.dumps([]), plistlib.dumps({"get-task-allow": 1}),
+               plistlib.dumps({"application-identifier": "unsafe identifier"}),
+               plistlib.dumps({"keychain-access-groups": ["one", "one"]}),
+               plistlib.dumps({"keychain-access-groups": "one"})]
+        for raw in bad:
+            with self.subTest(raw=raw[:100]), self.assertRaises(runner.Failure):
+                runner.entitlement_evidence(raw)
+        (self.generated / "Runner.app.xcent").write_bytes(duplicate)
+        with self.assertRaisesRegex(runner.Failure, "signing-plist-duplicate-key"):
+            self.collect()
+        self.assertEqual(json.loads((self.artifacts / "ios-dart-native-signing.json").read_text())["status"], "unconfirmed")
+
+    def test_binary_and_future_keys_preserved_as_unknown_without_exporting_values(self):
+        value = dict(SIGNING_ENTITLEMENTS, **{"future.entitlement": "must-not-export-unknown-value"})
+        result = runner.entitlement_evidence(plistlib.dumps(value, fmt=plistlib.FMT_BINARY))
+        self.assertEqual(result["unrecordedKeys"], ["future.entitlement"])
+        self.assertNotIn("must-not-export-unknown-value", json.dumps(result))
+        self.assertEqual(result["values"], SIGNING_ENTITLEMENTS)
+
+    def test_truncated_or_repeated_signature_xml_refused(self):
+        raw = plistlib.dumps(SIGNING_ENTITLEMENTS).decode()
+        for value in (raw[:-10], raw + raw, "<plist future>garbage"):
+            with self.subTest(value=value[:40]), self.assertRaises(runner.Failure):
+                runner.displayed_entitlements(value)
+
+    def test_bundle_mismatch_or_issuance_profile_refused_before_codesign(self):
+        (self.bundle / "Info.plist").write_bytes(plistlib.dumps({"CFBundleIdentifier": "foreign.app",
+                                                               "CFBundleExecutable": "Runner"}))
+        with self.assertRaisesRegex(runner.Failure, "signing-bundle-identity-mismatch"):
+            self.collect()
+        self.assertEqual(self.calls, [])
+        (self.artifacts / "ios-dart-native-signing.json").unlink()
+        (self.bundle / "Info.plist").write_bytes(plistlib.dumps({"CFBundleIdentifier": runner.host.BUNDLE_ID,
+                                                               "CFBundleExecutable": "Runner"}))
+        (self.bundle / "embedded.mobileprovision").write_bytes(b"synthetic forbidden profile")
+        with self.assertRaisesRegex(runner.Failure, "signing-profile-present"):
+            self.collect()
+        self.assertEqual(self.calls, [])
+
+    def test_linked_generated_plist_is_not_read(self):
+        real = runner.ordinary_path
+        def inspect(path, *, directory):
+            if Path(path).name == "Runner.app.xcent":
+                raise runner.Failure("evidence-path-linked")
+            return real(path, directory=directory)
+        with mock.patch.object(runner, "ordinary_path", side_effect=inspect), \
+                self.assertRaisesRegex(runner.Failure, "evidence-path-linked"):
+            self.collect()
 
 
 class FileTests(OwnedTemp):
@@ -325,6 +478,8 @@ class ControllerTests(OwnedTemp):
         self.summary = {"totalTestCount": 1, "passedTests": 1, "failedTests": 0, "skippedTests": 0}
         self.stop_code = 0
         self.stop_output = b""
+        self.signing_code = 0
+        self.signing_display = SIGNING_DISPLAY
         self.stack.enter_context(mock.patch.object(runner.host.subprocess, "Popen", side_effect=self.popen))
         self.output = io.StringIO()
         self.stack.enter_context(contextlib.redirect_stdout(self.output))
@@ -336,7 +491,15 @@ class ControllerTests(OwnedTemp):
             process = Process(running=self.build_timeout)
         elif arguments[0] == "xcodebuild":
             Path(arguments[arguments.index("-resultBundlePath") + 1]).mkdir()
+            suite = "backup" if arguments[arguments.index("-derivedDataPath") + 1].endswith("backup") else "native"
+            self.create_signing_host(suite)
             process = Process(output=self.xcode_output, code=self.xcode_code, running=self.xcode_timeout)
+        elif arguments[:2] == ["codesign", "--verify"]:
+            process = Process(code=self.signing_code)
+        elif arguments[:3] == ["codesign", "--display", "--verbose=4"]:
+            process = Process(output=self.signing_display.encode())
+        elif arguments[:3] == ["codesign", "--display", "--entitlements"]:
+            process = Process(output=b"Executable=synthetic-owned-host\n")
         elif arguments[:3] == ["xcrun", "xcresulttool", "get"]:
             process = Process(output=json.dumps(self.summary).encode() + b"\n")
         elif arguments[:3] == ["xcrun", "simctl", "terminate"]:
@@ -357,6 +520,24 @@ class ControllerTests(OwnedTemp):
         self.assertEqual(self.stops()[0][-2:], [self.record["udid"], runner.host.BUNDLE_ID])
         self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
         self.assertTrue(Path("build/ci-evidence/ios-dart-native-summary.json").is_file())
+        self.assertEqual(summary["signingEvidence"]["status"], "verified-adhoc-host")
+        self.assertTrue(Path("build/ci-evidence/ios-dart-native-signing.json").is_file())
+
+    def test_signature_failure_never_accepts_printed_dart_success_and_stops_app(self):
+        self.signing_code = 1
+        with self.assertRaisesRegex(runner.Failure, "signing-verify-exit-nonzero"):
+            runner.run_suite("native")
+        self.assertEqual(len(self.stops()), 1)
+        self.assertFalse(Path("build/ci-evidence/ios-dart-native-summary.json").exists())
+        self.assertEqual(json.loads(Path("build/ci-evidence/ios-dart-native-signing.json").read_text())["status"],
+                         "unconfirmed")
+
+    def test_old_derived_data_is_rejected_without_reuse_or_delete(self):
+        Path("build/apple-dart-native").mkdir()
+        with self.assertRaisesRegex(runner.Failure, "signing-derived-data-not-fresh"):
+            runner.run_suite("native")
+        self.assertFalse(any(call[0] == "xcodebuild" for call in self.calls))
+        self.assertTrue(Path("build/apple-dart-native").is_dir())
 
     def test_build_timeout_does_not_start_xcode_or_stop_unlaunched_app(self):
         self.build_timeout = True
@@ -379,6 +560,7 @@ class ControllerTests(OwnedTemp):
         with self.assertRaisesRegex(runner.Failure, "xcode-dart-exit-nonzero"):
             runner.run_suite("native")
         self.assertEqual(len(self.stops()), 1)
+        self.assertTrue(Path("build/ci-evidence/ios-dart-native-signing.json").is_file())
 
     def test_unterminated_proof_cannot_supply_success(self):
         self.xcode_output = proof_line(dart_proof()).encode()

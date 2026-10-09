@@ -29,11 +29,14 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
+import 'support/apple_xctest_startup.dart';
+
 // Run on the real macOS engine or iOS Simulator engine, without platform
 // overrides, mock channels or a fake SecretStore. These are partial software
 // checks, not Apple hardware PT, performance, signing or real provider tests.
 void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  registerAppleXctestStartup(binding);
 
   testWidgets(
     'IT-004 UT-036/075 partial Apple real Pigeon file bridge ownership rejection',

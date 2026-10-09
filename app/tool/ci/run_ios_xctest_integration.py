@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import plistlib
 import re
 import stat
 import sys
@@ -368,7 +369,8 @@ def xcode_arguments(suite, target, record, result_bundle):
             "-derivedDataPath", f"build/apple-dart-{suite}",
             "-only-testing:RunnerTests/ImageHubFlutterIntegrationTests/testCompiledDartSuiteCompletes",
             "-parallel-testing-enabled", "NO", "-resultBundlePath", str(result_bundle),
-            "CODE_SIGNING_ALLOWED=NO", f"FLUTTER_TARGET={target}",
+            "CODE_SIGNING_ALLOWED=YES", "CODE_SIGN_IDENTITY=-",
+            "CODE_SIGN_INJECT_BASE_ENTITLEMENTS=YES", f"FLUTTER_TARGET={target}",
             "OTHER_LDFLAGS=$(inherited) -ObjC",
             f"OTHER_CFLAGS=$(inherited) -DIMAGEHUB_FLUTTER_INTEGRATION_CI=1 -DIMAGEHUB_FLUTTER_INTEGRATION_{macro}=1"]
 
@@ -464,12 +466,141 @@ def prepare_artifacts(suite):
     ordinary_path(root.absolute(), directory=True)
     result = root / f"ios-dart-{suite}.xcresult"
     for candidate in (result, root / f"ios-dart-{suite}-summary.json", root / f"ios-dart-{suite}-xcode.log",
-                      root / f"ios-dart-{suite}-xctest-summary.json"):
+                      root / f"ios-dart-{suite}-xctest-summary.json",
+                      root / f"ios-dart-{suite}-signing.json"):
         require(not candidate.exists() and not candidate.is_symlink(), "artifact-already-exists")
+    derived = Path(f"build/apple-dart-{suite}")
+    require(not derived.exists() and not derived.is_symlink(), "signing-derived-data-not-fresh")
     if suite == "backup":
         for candidate in (root / "ios-dart-backup-evidence", root / "ios-backup-export-capture.log"):
             require(not candidate.exists() and not candidate.is_symlink(), "artifact-already-exists")
     return root, result
+
+
+def strict_plist(raw):
+    class UniqueDictionary(dict):
+        def __setitem__(self, key, value):
+            require(type(key) is str and key not in self, "signing-plist-duplicate-key")
+            super().__setitem__(key, value)
+    require(type(raw) is bytes and 0 < len(raw) <= FILE_LIMIT, "signing-plist-size")
+    try:
+        value = plistlib.loads(raw, dict_type=UniqueDictionary)
+        require(isinstance(value, dict), "signing-plist-not-dictionary")
+        return value
+    except Failure:
+        raise
+    except Exception:
+        raise Failure("signing-plist-invalid") from None
+
+
+def entitlement_evidence(raw):
+    value = strict_plist(raw)
+    keys = {"application-identifier", "keychain-access-groups", "get-task-allow",
+            "com.apple.developer.team-identifier"}
+    identifiers = {"application-identifier", "com.apple.developer.team-identifier"}
+    def ordinary_identifier(item):
+        return type(item) is str and 0 < len(item) <= 256 and re.fullmatch(r"[A-Za-z0-9_.-]+", item) is not None
+    for key in identifiers & value.keys():
+        require(ordinary_identifier(value[key]), "signing-entitlement-identifier-invalid")
+    if "get-task-allow" in value:
+        require(type(value["get-task-allow"]) is bool, "signing-entitlement-boolean-invalid")
+    if "keychain-access-groups" in value:
+        groups = value["keychain-access-groups"]
+        require(type(groups) is list and len(groups) <= 16 and
+                all(ordinary_identifier(item) for item in groups) and len(set(groups)) == len(groups),
+                "signing-entitlement-groups-invalid")
+    # Unknown keys are evidence to review, never permission to use an access
+    # group. Do not export their values, which are outside the closed whitelist.
+    require(all(ordinary_identifier(key) for key in value), "signing-entitlement-key-invalid")
+    return {"byteCount": len(raw), "sha256": hashlib.sha256(raw).hexdigest(),
+            "present": sorted(keys & value.keys()),
+            "values": {key: value[key] for key in sorted(keys & value.keys())},
+            "unrecordedKeys": sorted(value.keys() - keys)}
+
+
+def signing_metadata(raw):
+    require(type(raw) is str and len(raw.encode()) <= FILE_LIMIT, "signing-display-size")
+    def one(name, *, optional=False):
+        rows = [line[len(name) + 1:] for line in raw.splitlines() if line.startswith(name + "=")]
+        require(len(rows) == 1 or optional and len(rows) == 0, "signing-display-field-count")
+        return rows[0] if rows else None
+    require(one("Identifier") == host.BUNDLE_ID, "signing-identifier-mismatch")
+    require(one("Signature") == "adhoc", "signing-not-adhoc")
+    require(not any(line.startswith("Authority=") for line in raw.splitlines()), "signing-authority-present")
+    team = one("TeamIdentifier", optional=True)
+    require(team is None or team == "not set", "signing-team-present")
+    return {"identifier": host.BUNDLE_ID, "signature": "adhoc", "teamIdentifier": team,
+            "authorityPresent": False}
+
+
+def displayed_entitlements(raw):
+    require(type(raw) is str and len(raw.encode()) <= FILE_LIMIT, "signing-entitlements-display-size")
+    # codesign's diagnostics share the bounded pipe with its XML on Apple.
+    # No XML is valid evidence for Simulator; it does not prove lack of runtime
+    # entitlements. Generated simulated entitlements are recorded separately.
+    start = raw.find("<?xml")
+    if start < 0:
+        require("<plist" not in raw, "signing-entitlements-display-invalid")
+        return None
+    end = raw.find("</plist>", start)
+    require(end >= 0 and raw.find("<?xml", start + 1) < 0 and raw.find("<plist", end + 8) < 0,
+            "signing-entitlements-display-invalid")
+    return entitlement_evidence(raw[start:end + 8].encode())
+
+
+def collect_signing_evidence(suite, root):
+    require(suite in host.SUITES, "suite-invalid")
+    derived = Path(f"build/apple-dart-{suite}").absolute()
+    bundle = derived / "Build" / "Products" / "Debug-iphonesimulator" / "Runner.app"
+    generated = derived / "Build" / "Intermediates.noindex" / "Runner.build" / "Debug-iphonesimulator" / "Runner.build"
+    document = {"formatVersion": 1, "suite": suite, "configuration": "Debug",
+                "platform": "iphonesimulator", "bundle": str(bundle.relative_to(Path.cwd())),
+                "status": "unconfirmed", "failure": None, "codesign": None,
+                "strictVerificationPassed": False, "infoPlist": None,
+                "signatureEntitlements": None, "generatedEntitlements": {},
+                "keychainPermissionConfirmed": False}
+    failure = None
+    try:
+        ordinary_path(bundle, directory=True)
+        executable = bundle / "Runner"
+        before = ordinary_path(executable, directory=False)
+        info_raw = read_closed_file(bundle / "Info.plist")
+        info = strict_plist(info_raw)
+        require(info.get("CFBundleIdentifier") == host.BUNDLE_ID and info.get("CFBundleExecutable") == "Runner",
+                "signing-bundle-identity-mismatch")
+        require(not (bundle / "embedded.mobileprovision").exists() and
+                not (bundle / "embedded.mobileprovision").is_symlink(), "signing-profile-present")
+        document["infoPlist"] = {"byteCount": len(info_raw), "sha256": hashlib.sha256(info_raw).hexdigest(),
+                                 "bundleIdentifier": host.BUNDLE_ID, "executable": "Runner"}
+        host.run_command(["codesign", "--verify", "--strict", "--verbose=2", str(bundle)],
+                         "signing-verify", 60, publish=False)
+        document["strictVerificationPassed"] = True
+        raw = host.run_command(["codesign", "--display", "--verbose=4", str(bundle)],
+                               "signing-display", 60, publish=False)
+        document["codesign"] = signing_metadata(raw)
+        raw = host.run_command(["codesign", "--display", "--entitlements", ":-", str(bundle)],
+                               "signing-entitlements", 60, publish=False)
+        document["signatureEntitlements"] = displayed_entitlements(raw)
+        ordinary_path(generated, directory=True)
+        for name in ("Runner.app.xcent", "Runner.app.xcent-simulated"):
+            path = generated / name
+            if path.exists() or path.is_symlink():
+                document["generatedEntitlements"][name] = entitlement_evidence(read_closed_file(path))
+            else:
+                document["generatedEntitlements"][name] = None
+        require(signature(ordinary_path(executable, directory=False)) == signature(before) and
+                read_closed_file(bundle / "Info.plist") == info_raw, "signing-bundle-changed")
+        document["status"] = "verified-adhoc-host"
+    except Failure as error:
+        failure = error
+    except (Exception, KeyboardInterrupt, SystemExit):
+        failure = Failure("signing-evidence-unexpected")
+    if failure:
+        document["failure"] = str(failure)
+    fresh_json(root / f"ios-dart-{suite}-signing.json", document)
+    if failure:
+        raise failure
+    return document
 
 
 def verify_xctest_result(record, result, root, suite):
@@ -494,6 +625,7 @@ def run_suite(suite):
     failure = None
     proof = None
     backup = None
+    signing = None
     artifacts = None
     attempted = False
     try:
@@ -505,9 +637,21 @@ def run_suite(suite):
         artifacts, result = prepare_artifacts(suite)
         host.guard_owned(record)
         attempted = True
-        output = run_xcode(xcode_arguments(suite, target, record, result),
-                           artifacts / f"ios-dart-{suite}-xcode.log")
+        try:
+            output = run_xcode(xcode_arguments(suite, target, record, result),
+                               artifacts / f"ios-dart-{suite}-xcode.log")
+        except Failure as error:
+            # A closed failing test run still needs its actual host evidence.
+            # Preserve its original failure; never inspect a still-running host.
+            if str(error) != "xcode-dart-close-unconfirmed":
+                try:
+                    collect_signing_evidence(suite, artifacts)
+                except Failure as signing_error:
+                    host.emit("signing-evidence-failure", str(signing_error))
+            raise
         host.emit("stage", "xcodeclosedexit0")
+        signing = collect_signing_evidence(suite, artifacts)
+        host.emit("stage", "actual-adhoc-host-signing-recorded")
         proof = verify_dart_results(output, suite)
         verify_xctest_result(record, result, artifacts, suite)
         host.emit("stage", "exactdart4-and-xctest1-confirmed")
@@ -534,7 +678,8 @@ def run_suite(suite):
         raise failure
     summary = {"suite": suite, "results": proof["results"], "callbacks": proof["callbacks"],
                "xcodeExitCode": 0, "xctestPassed": 1, "xctestFailed": 0, "xctestSkipped": 0,
-               "ownedAppStopped": True}
+               "ownedAppStopped": True,
+               "signingEvidence": {"file": f"ios-dart-{suite}-signing.json", "status": signing["status"]}}
     if backup is not None:
         summary["backupEvidence"] = backup
     fresh_json(artifacts / f"ios-dart-{suite}-summary.json", summary)

@@ -7,6 +7,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import 'support/apple_xctest_startup.dart';
 import 'support/backup_interop_harness.dart';
 
 void main() {
@@ -26,7 +27,7 @@ void runEmbeddedBackupInterop(String payload) {
     decoded.originPlatform != Platform.operatingSystem,
     'external-platform-required',
   );
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  _initializeBinding();
   _registerConsumer(decoded);
 }
 
@@ -41,7 +42,7 @@ void runBackupInteropMatrix(
     decoded.any((p) => p.originPlatform != Platform.operatingSystem),
     'matrix-external-origin-required',
   );
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  _initializeBinding();
   if (exportCurrent) {
     runBackupInteropExport();
   }
@@ -59,7 +60,7 @@ void runBackupInteropMatrix(
 }
 
 void runBackupInteropExport() {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  final binding = _initializeBinding();
   testWidgets(
     'CT-006 ${Platform.operatingSystem} actual closed full and metadata exports',
     (tester) async {
@@ -98,7 +99,7 @@ void runBackupInteropExport() {
 }
 
 void _registerConsumer(BackupInteropPayload payload) {
-  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  final binding = _initializeBinding();
   testWidgets(
     'CT-006/IT-005/BAK-005 ${payload.originPlatform} to ${Platform.operatingSystem} actual full metadata restore reopen',
     (tester) async {
@@ -145,6 +146,12 @@ void _registerConsumer(BackupInteropPayload payload) {
     },
     timeout: const Timeout(Duration(minutes: 5)),
   );
+}
+
+IntegrationTestWidgetsFlutterBinding _initializeBinding() {
+  final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  registerAppleXctestStartup(binding);
+  return binding;
 }
 
 /// Closed synthetic evidence for the dedicated native XCTest CI entry only.

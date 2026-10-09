@@ -1,0 +1,65 @@
+{
+  "verificationVersion": 1,
+  "sourceCommit": "1e5a5bdcc6781ba139e3c2fe571fe3775998f5c4",
+  "runId": 37925642129,
+  "runUrl": "https://github.com/panlijun/ImageHub/actions/runs/37925642129",
+  "overallConclusion": "failure",
+  "macos": {
+    "jobId": 113803796941,
+    "conclusion": "success",
+    "softwarePassed": 1456,
+    "platformBranchesSkipped": 4,
+    "flutterNativePassed": 4,
+    "xctestPassed": 23,
+    "xctestFailed": 0,
+    "xctestSkipped": 0,
+    "processRecoveryAndLockingBoundariesPassed": 8,
+    "releaseBuilt": true,
+    "independentNativeVersionsVerified": true,
+    "backupExternalOrigins": ["windows", "android"],
+    "backupConsumerModesPerOrigin": 2,
+    "backupSelfOriginSkipped": true,
+    "artifactId": 11614094359,
+    "artifactBytes": 26005265,
+    "artifactSha256": "482d19925c61bff4d357876acfdabbeba0e4ec9d66d6ee4d87b04d13a0526fd6"
+  },
+  "ios": {
+    "jobId": 113803796875,
+    "conclusion": "failure",
+    "failedStep": "Run Apple native integration verification",
+    "xcodeBuildSeconds": 151.8,
+    "buildClosedAndNativeVersionsVerified": true,
+    "ownedSimulatorDestinationMatched": true,
+    "xcodeExitCode": 65,
+    "xcodeHostAndReaderClosed": true,
+    "dartNamedCasesCompleted": 4,
+    "dartBusinessPassed": 2,
+    "dartBusinessFailed": 2,
+    "dartFailures": [
+      {
+        "case": "IT-004 UT-036/075 partial Apple real Pigeon file bridge ownership rejection",
+        "failure": "WidgetTester end-of-test SemanticsHandle invariant"
+      },
+      {
+        "case": "UT/IT partial Apple native Keychain isolated write new-instance read delete",
+        "failure": "Initial read and isolated cleanup/read-back OSStatus=-34018"
+      }
+    ],
+    "dartBusinessPassedCases": [
+      "IT-001/002 UT-004/012/102 partial Apple native storage SQLite pixels gallery and IO protection",
+      "UT/IT partial Apple passive native network read listen cancel"
+    ],
+    "xctestPassed": 0,
+    "xctestFailed": 1,
+    "officialSdkCallbacksExecuted": false,
+    "ownedApplicationStopConfirmed": false,
+    "ownedSimulatorShutdownAndDeleted": true,
+    "backupMatrixExecuted": false,
+    "newPhotosReadbackExecuted": false,
+    "newNormalEntryBuildExecuted": false,
+    "artifactId": 11614248001,
+    "artifactBytes": 56356798,
+    "artifactSha256": "3818665b14eca980a6912340c29a012987923f7dd0a2d05696f45726b1db5d68"
+  },
+  "boundary": "Actual CI host/simulator evidence. The XCTest transport compiled, completed the exact four Dart cases and correctly rejected two failed cases before invoking success callbacks. The tearDownAll pseudo-case is not a business pass. No failed assertion was suppressed. The app stop was not confirmed; separate owned-device Shutdown/delete/absence cleanup was confirmed. The next semantics startup and Simulator ad-hoc signing correction still requires actual CI. No physical PT, minimum OS, hardware PERF, real-service or Apple formal-signing claim."
+}
