@@ -315,8 +315,9 @@ class RunnerTests: XCTestCase {
     }
   }
 
-  /// No picker, all-library query, deletion, network fetch or permission prompt.
-  /// Only the helper-created CI simulator can receive temporary read access.
+  /// No picker, all-library query, deletion or network fetch. Readback may
+  /// request SDK authorization (and show a prompt) only on the owned CI host.
+  @MainActor
   private func requireOwnedPhotosSimulator(readBack: Bool) throws {
     #if targetEnvironment(simulator)
     let environment = ProcessInfo.processInfo.environment
@@ -327,15 +328,56 @@ class RunnerTests: XCTestCase {
           let identifier = UUID(uuidString: identifierText) else {
       throw XCTSkip("Photos resource verification runs only on a newly owned ImageHub CI simulator.")
     }
-    reportOwnedPhotosAuthorization(readBack: readBack, identifier: identifier)
+    reportOwnedPhotosAuthorization(readBack: readBack, identifier: identifier,
+      failureLatched: Self.photosReadBackAuthorization.failureLatched())
+    let main = Bundle.main
+    guard main.bundleIdentifier == "io.imagehost.imagehost",
+          Bundle(for: RunnerTests.self).bundleIdentifier == "io.imagehost.imagehost.RunnerTests",
+          (main.object(forInfoDictionaryKey: "NSPhotoLibraryUsageDescription") as? String)?.isEmpty == false,
+          (main.object(forInfoDictionaryKey: "NSPhotoLibraryAddUsageDescription") as? String)?.isEmpty == false else {
+      if readBack { Self.photosReadBackAuthorization.fail() }
+      XCTFail("Photos verification requires the expected owned host, test bundle and both usage descriptions.")
+      throw PhotoVerificationFailure.authorization
+    }
     XCTAssertEqual(PHPhotoLibrary.authorizationStatus(for: .addOnly), .authorized,
                    "CI must grant photos-add to its confirmed owned simulator application.")
+    guard PHPhotoLibrary.authorizationStatus(for: .addOnly) == .authorized else {
+      if readBack { Self.photosReadBackAuthorization.fail() }
+      throw PhotoVerificationFailure.authorization
+    }
     if readBack {
-      XCTAssertEqual(PHPhotoLibrary.authorizationStatus(for: .readWrite), .authorized,
-                     "CI must temporarily grant photos for exact synthetic-resource readback.")
+      let authorization = Self.photosReadBackAuthorization
+      switch authorization.prepare(status: PHPhotoLibrary.authorizationStatus(for: .readWrite)) {
+      case .confirmed: break
+      case .failed:
+        XCTFail("Exact Photos readback authorization is unavailable or failed earlier in this host.")
+        throw PhotoVerificationFailure.authorization
+      case .request:
+        let done = XCTestExpectation(description: "Owned Photos readWrite SDK authorization callback")
+        reportOwnedPhotosAuthorization(readBack: true, identifier: identifier, phase: "request-start")
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
+          guard let failureLatched = authorization.receive(status: status) else { return }
+          self.reportOwnedPhotosAuthorization(readBack: true, identifier: identifier,
+            phase: "request-callback", callbackStatus: status.rawValue, failureLatched: failureLatched)
+          done.fulfill()
+        }
+        // XCTest pumps the run loop; do not block the SDK callback with a semaphore.
+        let waited = XCTWaiter.wait(for: [done], timeout: 30)
+        let result = authorization.finish(waitCompleted: waited == .completed,
+          currentStatus: PHPhotoLibrary.authorizationStatus(for: .readWrite))
+        reportOwnedPhotosAuthorization(readBack: true, identifier: identifier,
+          phase: waited == .timedOut ? "request-timeout" :
+            (waited != .completed ? "request-wait-failed" :
+              (result.confirmed ? "request-confirmed" : "request-rejected")),
+          callbackStatus: result.callbackStatus, failureLatched: result.failureLatched)
+        XCTAssertTrue(result.confirmed,
+                      "Exact Photos readback requires an authorized real callback and authorized SDK reread within 30 seconds.")
+        guard result.confirmed else { throw PhotoVerificationFailure.authorization }
+      }
     }
     guard PHPhotoLibrary.authorizationStatus(for: .addOnly) == .authorized,
           !readBack || PHPhotoLibrary.authorizationStatus(for: .readWrite) == .authorized else {
+      if readBack { Self.photosReadBackAuthorization.fail() }
       throw PhotoVerificationFailure.authorization
     }
     #else
@@ -343,8 +385,68 @@ class RunnerTests: XCTestCase {
     #endif
   }
 
+  // Shared across XCTest instances: timeout/failure survives late callbacks and
+  // cannot trigger another SDK request or allow a subsequent fixture/save.
+  private static let photosReadBackAuthorization = PhotosReadBackAuthorization()
+  private final class PhotosReadBackAuthorization {
+    enum Decision { case confirmed, request, failed }
+    private let lock = NSLock()
+    private var attempted = false
+    private var closed = false
+    private var confirmed = false
+    private var callbackStatus: PHAuthorizationStatus?
+    private var failed = false
+
+    func fail() {
+      lock.lock(); defer { lock.unlock() }
+      failed = true
+      confirmed = false
+    }
+
+    func failureLatched() -> Bool {
+      lock.lock(); defer { lock.unlock() }
+      return failed
+    }
+
+    func prepare(status: PHAuthorizationStatus) -> Decision {
+      lock.lock(); defer { lock.unlock() }
+      guard !failed else { return .failed }
+      if attempted {
+        guard confirmed, closed, callbackStatus == .authorized, status == .authorized else {
+          failed = true
+          return .failed
+        }
+        return .confirmed
+      }
+      if status == .authorized { return .confirmed }
+      guard status == .notDetermined else { failed = true; return .failed }
+      attempted = true
+      return .request
+    }
+
+    func receive(status: PHAuthorizationStatus) -> Bool? {
+      lock.lock(); defer { lock.unlock() }
+      guard attempted, !closed else { return nil }
+      callbackStatus = status
+      closed = true
+      failed = failed || status != .authorized
+      return failed
+    }
+
+    func finish(waitCompleted: Bool, currentStatus: PHAuthorizationStatus)
+      -> (confirmed: Bool, callbackStatus: Int, failureLatched: Bool) {
+      lock.lock(); defer { lock.unlock() }
+      let confirmed = !failed && waitCompleted && closed &&
+        callbackStatus == .authorized && currentStatus == .authorized
+      failed = failed || !confirmed
+      self.confirmed = confirmed
+      return (confirmed, callbackStatus?.rawValue ?? -1, failed)
+    }
+  }
+
   /// Fixed CI diagnostics distinguish the running host from preparation commands.
-  private func reportOwnedPhotosAuthorization(readBack: Bool, identifier: UUID) {
+  private func reportOwnedPhotosAuthorization(readBack: Bool, identifier: UUID,
+    phase: String = "preflight", callbackStatus: Int = -1, failureLatched: Bool = false) {
     let expectedHost = "io.imagehost.imagehost"
     let expectedTest = expectedHost + ".RunnerTests"
     let main = Bundle.main
@@ -352,6 +454,9 @@ class RunnerTests: XCTestCase {
     let hostId = main.bundleIdentifier
     let testId = test.bundleIdentifier
     let record: [String: Any] = [
+      "phase": phase,
+      "callbackStatus": callbackStatus,
+      "failureLatched": failureLatched,
       "readBack": readBack,
       "mainBundleID": hostId == expectedHost ? expectedHost : "unexpected",
       "testBundleID": testId == expectedTest ? expectedTest : "unexpected",

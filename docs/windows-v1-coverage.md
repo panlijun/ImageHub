@@ -101,7 +101,7 @@ E34：2026-10-08 [Windows 软件收尾](milestone-27-windows-completion.md)，�
 
 E35：2026-10-08 [Android软件完成及Windows回归](milestone-28-android-completion.md)。Android M1接有界SAF照片/文件/ZIP来源、系统文件/目录及MediaStore保存、备份和诊断导出、回收和安全退出。1399软件测试通过/1非Windows分支跳过，API36 x86_64两项原生子流程、五个系统保存字节独立核对、正常Release入口闭环及ARM64/x86_64 APK构建有实际证据；四个受影响Windows原生流程和Release正常退出回归通过。来源/导出实现与选型8.1/8.3的具体关系见[原生边界说明](android-native-files.md)。本段不将模拟器证据记作整项PT、ARM64/API29或真实服务通过；以下Windows审查仍按其原范围读取。
 
-E36：2026-10-09 当前增量证据。Apple文件能力代码与模拟器证据仍以[里程碑29](milestone-29-apple-files.md)为准；源提交`95b94d3`的标准Apple CI run `37908256215`中，macOS作业success，1456项软件测试通过/4个Windows分支跳过、4项Flutter原生测试、23项XCTest零失败零跳过、独立进程恢复/锁及Release构建通过，实际日志与元信息在`app/build/validation/apple-first-37908256215/`。同源iOS作业已终止失败：第二次Flutter备份测试的Xcode构建耗时62.6秒，未进入CT-006测试步骤；该步骤运行15分钟后超时。停止后的`ios-backup-interop.log`记录`Error waiting for a debug connection: The log reader failed unexpectedly`和`Unable to start the app`；`ios-simulator-cleanup.log`记录自有模拟器Shutdown/delete清理成功。此结果不能推断备份业务测试失败，也不计为通过。Windows真实大包证据见[ZIP64运行日志](validation/release-large-backup-01.log)及[结果摘要](validation/release-large-backup-result.json)：172张真实BMP，ZIP64归档4,328,697,800字节，默认预检、合并提交、重开并核对全部永久字节通过；这是Windows软件流程，不是其他三端大包验证或硬件PERF。冷缩略图证据见[批次记录](validation/release-thumbnail-cold-batch.json)：62项真实读取全部结束、图库关闭且fileLeases为0；1904ms是本次观察值，不是参考设备性能验收。Android专用ARM64 Release预构建的元信息/签名证据见[验证摘要](validation/release-android-dedicated-verification.json)：versionCode 1、kernel/platform version 0.1.0+1、最低API 29、非debug V2签名；正式dist交付物尚未生成。版本单一源及内核/四端独立版本接线已专项核对，但不据此宣称正式发行。
+E36：2026-10-09 当时增量证据（E37之前的历史）。Apple文件能力代码与模拟器证据仍以[里程碑29](milestone-29-apple-files.md)为准；源提交`95b94d3`的标准Apple CI run `37908256215`中，macOS作业success，1456项软件测试通过/4个Windows分支跳过、4项Flutter原生测试、23项XCTest零失败零跳过、独立进程恢复/锁及Release构建通过，实际日志与元信息在`app/build/validation/apple-first-37908256215/`。同源iOS作业已终止失败：第二次Flutter备份测试的Xcode构建耗时62.6秒，未进入CT-006测试步骤；该步骤运行15分钟后超时。停止后的`ios-backup-interop.log`记录`Error waiting for a debug connection: The log reader failed unexpectedly`和`Unable to start the app`；`ios-simulator-cleanup.log`记录自有模拟器Shutdown/delete清理成功。此结果不能推断备份业务测试失败，也不计为通过。Windows真实大包证据见[ZIP64运行日志](validation/release-large-backup-01.log)及[结果摘要](validation/release-large-backup-result.json)：172张真实BMP，ZIP64归档4,328,697,800字节，默认预检、合并提交、重开并核对全部永久字节通过；这是Windows软件流程，不是其他三端大包验证或硬件PERF。冷缩略图证据见[批次记录](validation/release-thumbnail-cold-batch.json)：62项真实读取全部结束、图库关闭且fileLeases为0；1904ms是本次观察值，不是参考设备性能验收。Android专用ARM64 Release预构建的元信息/签名证据见[验证摘要](validation/release-android-dedicated-verification.json)：versionCode 1、kernel/platform version 0.1.0+1、最低API 29、非debug V2签名；E37之前正式dist交付物尚未生成，此为当时状态，后续实际本地交付见E37。版本单一源及内核/四端独立版本接线已专项核对，但不据此宣称正式发行。
 
 E37：2026-10-09 [版本化本地交付](milestone-30-versioned-delivery.md)。Windows完整Release ZIP 16,872,605字节、34个文件/目录条目及app-local MSVC CRT，逐项ZIP/解包摘要、原生独立版本、正常启动及WM_CLOSE退出0通过；Android唯一ARM64 Release APK 27,400,002字节，io.imagehost.imagehost/API29、内核/平台0.1.0+1、精确build1、非debug及专用证书V2签名通过。两平台package_release.ps1实际退出0，独立核对artifact/SHA256SUMS/receipt；源base cfd55d0、dirty=true仅两张既有验证截图，源指纹留存，不称clean源构建。证据为[Windows receipt](validation/release-windows-formal.json)和[Android receipt](validation/release-android-formal.json)。这两项是本地正式包，不代表公开二进制、商店发布、Apple正式签名发行或ARM64实机验收。
 
@@ -110,6 +110,8 @@ E37后续Apple验证（第九轮）：源`09b849de824c38a9dbe714ce1e4c390f1f871c
 四来源软件互读矩阵已由E37后续验证补齐：12方向/24模式、4个冻结来源、无缺项、关闭重开；每个consumer 6行、4 assets/5 versions、8项唯一设置。receipt SHA-256 `aa1c831e64dd46008ea06c945d038a5374543db8bc4b4b1e5e9d8cc0828bcda8`。新离线验证器和控制测试60项通过，日志SHA-256 `5f6f8d90790c895ab7a631989fc17c5d512e0ae0f103d64f766e37a94f23de6d`，只证明闭合证据字段，不替代原生harness或PT。第八轮partial 11/22记录保留历史。测试控制器逐项诊断、受限当前位置查询及三处异常收尾缺口已修正并独立复核；186项本机控制与六文件编译通过，见[最终控制记录](validation/release-photos-frozen-host-controls-02.json)。源码审查见[Photos host guard审查](validation/release-photos-host-guard-review.md)，下一轮Apple实际运行待补；四设备人工/物理PT、最低系统、真实服务与正式发行仍未通过。Windows ZIP及Android APK来源`cfd55d0`/`dirty=true`仍仅两张既有验证截图，不称clean源构建；本轮测试控制器/证据/文档更新不要求重建正式包。
 
 第八轮当时的增量记录（历史）：Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Windows原生及正常Release启动退出通过；真实4,328,697,800字节ZIP64默认预检、合并、重开全部字节核对通过。Apple第八轮[run37938849959](https://github.com/panlijun/ImageHub/actions/runs/37938849959)源ca7877a379cce83616b53e730b5c2a28487dd319整体failure：Mac成功（1456软件/4平台跳过、94项本机控制、四项Flutter原生、八项进程边界、23项XCTest、Release/版本；Windows/Android来源完整/元数据恢复重开）；iOS native/backup各四项Dart业务、四项SDK callback、一项XCTest及签名、owned stop通过，native另有真实Keychain流程通过，backup三外来源完整/元数据重开和八项设置通过，正常入口构建/版本及Photos addOnly一项通过。Full Photos 27唯一终态用例21通过/6失败，Xcode exit65；五格式read-write授权notDetermined(0)而预期3、无已保存资源独立读回，invalidImageSource非空导致断言失败。底层授权机制未知，闭合日志有27个唯一终态行而无full JSON摘要。新控制修正134项本机检查通过，不是新Apple原生通过；该轮记录时下一轮CI尚待实跑。产物大小/SHA见[第八轮记录](validation/release-apple-eighth-ci.json)及[Photos控制日志](validation/release-photos-controller-controls-01.log)。Windows/Android/Mac→iOS和新增iOS→Windows、iOS→Android已覆盖四来源矩阵11方向/22模式，完整与元数据恢复重开及8项设置通过；第八轮当时仅iOS→Mac一方向/两模式待补，汇总记录见[partial matrix receipt](validation/release-interop-four-origin-partial.json)，complete=false。Dart分析No issues found（123.2秒）、五套版本检查及同步输出均PASS、矩阵格式检查0 changed；Android自有模拟器关闭/子进程清理及AVD保留见[清理receipt](validation/release-android-owned-emulator-cleanup.json)。历史20项XCTest全绿属于旧验证路径。第四至第八轮相关Apple artifacts均按各轮记录核验大小/SHA。最低系统实测、物理设备PT/PERF/断电、真实图床服务与硬件压力仍未计通过；unknown服务能力继续拒绝派发。
+
+E38：2026-10-11 第十轮源`acdbb2bb3d788d7bb6711d0c9439b012ded7dba4`/run`38141681520`整体failure。Mac job成功：186控制、1456软件/4平台跳过、8进程边界、4Flutter原生、23XCTest零失败零跳过、Release/版本及三个外部来源双模式恢复重开通过。iOS native/backup各4Dart业务、4callback、1XCTest与签名/owned stop通过；正常入口、Photos prepare和addOnly一项及成功result通过。完整Photos真实摘要27项/22通过/5失败/0跳过，Xcode65且host/reader关闭；五格式均在保存前readWrite未决定(0)，未确认原始资源独立读回。invalid PNG像素解码失败断言及safe-unconfirmed、precancel通过。两个post观察所有记录冻结字段与prepared摘要不变，而当前owned安装位置改变；不证明权限根因或第九轮原因。自有设备关闭/删除/缺席确认通过。41份证据/摘录及两份完整archive大小/SHA见[第十轮记录](validation/release-apple-tenth-ci.json)。此前E37的“下一轮待补”为当时时态；本轮仅测试helper补齐一次真实SDK读写请求、30秒真实callback/SDK重读与失败锁存，生产仍addOnly；源码审查见[授权审查](validation/release-photos-sdk-authorization-review.md)，下一次实际Apple编译/运行仍待补。原27项及PNG/JPEG原字节门槛未减；E37完整矩阵和正式包不变，未重打包，不计PT、真实服务或Apple正式发行通过。
 
 ## 优先阻断与矛盾处理
 
@@ -1719,7 +1721,7 @@ E37后续Apple验证（第九轮）：源`09b849de824c38a9dbe714ce1e4c390f1f871c
 
 ## 全部其他验证方案登记（39）
 
-各方案完整操作、预期与不变量在权威测试设计第6章。已有E1/E2仅部分IT/AT/PT子证据；尚无整套方案通过记录。
+各方案完整操作、预期与不变量在权威测试设计第6章。本台账按E1–E37分别记录各自子范围证据；这些子证据不代表完整39项方案通过。原测试设计中的“设计未执行”为输入历史，本台账不据此更改。
 
 | 编号 | 原设计方案 | 阶段 | 正式需求关联 | 当前验证边界 |
 | --- | --- | --- | --- | --- |
@@ -1728,15 +1730,15 @@ E37后续Apple验证（第九轮）：源`09b849de824c38a9dbe714ce1e4c390f1f871c
 | CT-003 | 取消与远端删除契约 | V1 | UPL-007、QUE-004、ACC-005 | 依逐条缺口取得实际证据；本次未运行 |
 | CT-004 | 图片能力契约 | V1 | IMG-002、IMG-003、IMG-004、IMG-005、IMG-008 | 依逐条缺口取得实际证据；本次未运行 |
 | CT-005 | 链接与安全传输契约 | V1 | LNK-001、SEC-003 | 依逐条缺口取得实际证据；本次未运行 |
-| CT-006 | 新版备份与版本契约 | V1 | BAK-001、BAK-002、BAK-003、BAK-005、DAT-005 | 依逐条缺口取得实际证据；本次未运行 |
+| CT-006 | 新版备份与版本契约 | V1 | BAK-001、BAK-002、BAK-003、BAK-005、DAT-005 | E37验证四个冻结来源12方向/24模式的完整与元数据恢复、关闭重开及8项唯一设置；每个consumer含4 assets/5 versions。Windows真实>4GiB ZIP64默认预检、合并、重开及全部永久字节已验证（E36）。内核/四端五套独立版本见E37。非法/未知包的适用软件拒绝子证据见对应BAK/DAT逐条记录；这些证据不代表完整四端契约方案逐项通过，其余三端>4GiB仍未验证 |
 | CT-007 | 未来同步载荷契约 | V2 | SYN-002、SYN-008 | 后续阶段设计，排除V1通过数 |
 | IT-001 | 真实导入与副本 | V1 | IMP-002、IMP-003、IMP-004、IMP-005、IMP-006、LIB-008、DAT-003 | 依逐条缺口取得实际证据；本次未运行 |
 | IT-002 | 真实编解码与几何 | V1 | IMG-001、IMG-002、IMG-003、IMG-004、IMG-005、IMG-006、IMG-007、IMG-008 | 依逐条缺口取得实际证据；本次未运行 |
 | IT-003 | 输出生命周期 | V1 | IMG-009、OUT-001、OUT-002、OUT-003、OUT-004、OUT-005 | E11 Windows 原生引擎 1 项及 6 输出进程恢复子场景通过；系统取得边界替换，四端未闭合 |
 | IT-004 | 任务持久化与中断 | V1 | QUE-001、QUE-007、QUE-010、UPL-001、UPL-003、UPL-005、DAT-001、DAT-002、DAT-004、NFR-004 | E14/E29真实库/文件/像素、运行日志恢复、关闭/维护排空及Windows原生任务/处理输出身份重开子流程通过；硬件强退/真实服务和完整四端方案仍待 |
-| IT-005 | 真实备份恢复 | V1 | BAK-001、BAK-002、BAK-003、BAK-004、BAK-005、BAK-006 | E17–19/E29/E30有Windows真实两模式ZIP、合并/替换/失败回滚、永久字节/系统秘密及设置重开子流程；真实选择器、四端互读、完整人工与大包设计范围仍未全部运行 |
+| IT-005 | 真实备份恢复 | V1 | BAK-001、BAK-002、BAK-003、BAK-004、BAK-005、BAK-006 | E17–19/E29/E30保留Windows真实两模式ZIP、合并/替换/失败回滚、永久字节/系统秘密及设置重开子流程证据；Windows真实>4GiB ZIP64已运行（E36）。E37完成四个冻结来源12方向/24模式的完整与元数据恢复、关闭重开及8项唯一设置。真实选择器UI、完整人工和其他三端>4GiB仍未验收 |
 | IT-006 | 设置日志与版本恢复 | V1 | OPS-001、OPS-002、OPS-003、OPS-004、DAT-005、SEC-004 | E24设置及E25诊断Windows原生真实保存/重开/文件导出/清日志保留PNG子闭环通过；空间/完整版本恢复、系统选择器与全平台流程未验收 |
-| IT-007 | 秘密存储集成 | V1 | ACC-005、SEC-002、SEC-004 | E12 Windows 原生构建/系统写读/资料库重开/同名隔离/删除读回通过；删除管理秘密和其他平台/完整集成待补 |
+| IT-007 | 秘密存储集成 | V1 | ACC-005、SEC-002、SEC-004 | E12 Windows原生系统写读/资料库重开/同名隔离/删除读回通过。Android API36 SystemSecretStore写入/新实例读取/删除见E35及里程碑28；macOS、iOS实际系统秘密存储基础子流程见里程碑29及E36/E37，第九轮receipt记录iOS真实Keychain流程通过；Apple同进程新实例读取不等于跨进程重开。锁定/不可用、真实管理秘密和完整集成仍未验收 |
 | IT-008 | 受控网络联调 | V1 | UPL-002、UPL-004、UPL-005、UPL-006、UPL-007、QUE-004、QUE-005、QUE-006、LNK-004、SEC-003 | 依逐条缺口取得实际证据；本次未运行 |
 | IT-009 | 未来多设备同步集成 | V2 | SYN-001、SYN-002、SYN-003、SYN-004、SYN-005、SYN-006、SYN-007、SYN-008 | 后续阶段设计，排除V1通过数 |
 | IT-010 | 图库回收与引用清除 | V1 | LIB-001、LIB-007、LIB-008 | 依逐条缺口取得实际证据；本次未运行 |

@@ -11,3 +11,5 @@
 /docs/validation/release-interop-four-origin-complete.json -text
 /docs/validation/release-formal-artifacts-final-audit.json -text
 /docs/validation/release-photos-frozen-host-controls-02.json -text
+/docs/validation/release-ci-tenth-*.json -text
+/docs/validation/release-apple-tenth-ci.json -text

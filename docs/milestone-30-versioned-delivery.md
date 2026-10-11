@@ -1,6 +1,6 @@
 # 里程碑 30：版本化本地交付
 
-日期：2026-10-09，后续进展更新至2026-10-11。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源软件互读矩阵已完成12方向/24模式。第九轮完整read-write 27项未执行，新增修正后的独立资源读回仍待实际验证；物理设备互读/PT、最低系统与性能等验收继续待补。
+日期：2026-10-09，后续进展更新至2026-10-11。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源软件互读矩阵已完成12方向/24模式。第十轮完整Photos readWrite 27项实际为22通过/5失败/0跳过；五格式资源独立读回未确认，授权失败边界与候选测试修正待下一次Apple实际验证。物理设备互读/PT、最低系统与性能等验收继续待补。
 
 ## 版本与交付产物
 
@@ -93,11 +93,25 @@ iOS job failure。native与backup各4项Dart业务、4项SDK callback、1项XCTe
 
 四来源冻结互读矩阵现已完整：`complete=true`、12方向/24模式、4个冻结来源、无缺项；每个consumer 6行、4 assets/5 versions、8项唯一设置，关闭重开为true。摘要见[完整矩阵receipt](validation/release-interop-four-origin-complete.json)，SHA-256 `aa1c831e64dd46008ea06c945d038a5374543db8bc4b4b1e5e9d8cc0828bcda8`。新离线验证器和控制测试60项通过，控制日志SHA-256 `5f6f8d90790c895ab7a631989fc17c5d512e0ae0f103d64f766e37a94f23de6d`；它核验闭合证据字段，不替代原生harness、四台设备人工互读或物理PT。第八轮11/22 partial记录保留历史，原冻结四源fixture不替换。
 
-逐项诊断、受限当前位置查询及三处异常收尾缺口已修正并完成独立源码复核，最终186项本机控制（12.690秒、exit 0）和六文件编译通过，见[控制记录](validation/release-photos-frozen-host-controls-02.json)与[原始日志](validation/release-photos-frozen-host-controls-02.log)；日志SHA-256 `fccf3b1585355a7b281ea47ee7d9f32f8fe797ca077c6520ad7a2b9eecb855b5`。测试fixture使用受限本机临时目录适配，控制记录明确标注本机CRLF与Git归一化LF指纹。这些不是Apple原生通过，下一轮仍须实际运行。问题审查见[Photos host guard审查](validation/release-photos-host-guard-review.md)。第八轮Photos 21通过/6失败为当轮历史结果，不倒推为修正通过。Windows ZIP与专用签名Android ARM64 APK、五份版本0.1.0+1及两份receipt保持原结果；源base `cfd55d0`、`dirty=true`仅两张既有截图，不能称clean源构建，本轮文档/验证控制器变化不要求重建这两包。正式包最终核对见[最终artifact审查](validation/release-formal-artifacts-final-audit.json)，只核对既有包字节与相关源路径，不代表新构建或设备测试。
+逐项诊断、受限当前位置查询及三处异常收尾缺口已修正并完成独立源码复核，最终186项本机控制（12.690秒、exit 0）和六文件编译通过，见[控制记录](validation/release-photos-frozen-host-controls-02.json)与[原始日志](validation/release-photos-frozen-host-controls-02.log)；日志SHA-256 `fccf3b1585355a7b281ea47ee7d9f32f8fe797ca077c6520ad7a2b9eecb855b5`。测试fixture使用受限本机临时目录适配，控制记录明确标注本机CRLF与Git归一化LF指纹。这些不是Apple原生通过；第九轮收尾当时下一轮Apple实际运行待补，第十轮见本节最新记录。问题审查见[Photos host guard审查](validation/release-photos-host-guard-review.md)。第八轮Photos 21通过/6失败为当轮历史结果，不倒推为修正通过。Windows ZIP与专用签名Android ARM64 APK、五份版本0.1.0+1及两份receipt保持原结果；源base `cfd55d0`、`dirty=true`仅两张既有截图，不能称clean源构建，本轮文档/验证控制器变化不要求重建这两包。正式包最终核对见[最终artifact审查](validation/release-formal-artifacts-final-audit.json)，只核对既有包字节与相关源路径，不代表新构建或设备测试。
 
 ## 保留边界与待完成事项
 
-四来源软件互读矩阵已完整12方向/24模式；四台设备上的人工/物理互读PT仍未验收。新增Photos保存资源独立读回及完整read-write 27项未验证。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
+四来源软件互读矩阵已完整12方向/24模式；四台设备上的人工/物理互读PT仍未验收。第十轮Photos完整readWrite 27项有22项通过、5项失败、0项跳过；五种格式都在保存前观察到notDetermined(0)，而预期authorized(3)。实际grant photos命令exit 0，但没有确认BMP/GIF/JPEG/PNG/WebP外部资源独立读回。另有invalid PNG的像素解码失败断言（CGImageSourceCreateImageAtIndex返回nil）与safe-unconfirmed、precancel通过。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
+
+## 第十轮 Apple CI 与 Photos 读回
+
+第十轮源`acdbb2bb3d788d7bb6711d0c9439b012ded7dba4`的[run38141681520/attempt 1](https://github.com/panlijun/ImageHub/actions/runs/38141681520)于2026-10-11终态failure。Mac job `114476650793` success：186项本机控制（7.198秒）、1,456项软件/4个Windows平台分支跳过、8项独立进程边界、4项Flutter原生、23项XCTest零失败零跳过、64.5 MB Release及原生版本0.1.0+1通过。备份4项业务（本机导出1、外部来源3），自身来源skip 1不计业务；Windows、Android、iOS来源双模式恢复、关闭重开和8项设置通过。
+
+iOS job `114476650544`在“Verify native IO and exact synthetic Photos resource readback”失败。native与backup各4项Dart业务、4项callback、1项XCTest零失败零跳过，ad-hoc签名和owned stop通过，native真实Keychain新实例流程通过；backup三个外部来源full/meta/reopen及8项设置通过。正常入口Simulator构建/版本、Photos prepare真实闭合构建/安装且指纹一致、addOnly真实XCTest 1通过/0失败/0跳过及Xcode exit 0、host/reader关闭、owned stop和成功result均通过。
+
+完整Photos readWrite摘要为27项/22通过/5失败/0跳过，Xcode exit 65。BMP、GIF、JPEG、PNG、WebP都在保存前实际观察到授权状态notDetermined(0)，预期authorized(3)；真实grant photos命令exit 0仍未使这五项得到授权，五格式保存资源独立读回均未确认。invalid PNG的像素解码失败断言（CGImageSourceCreateImageAtIndex返回nil）与safe-unconfirmed、precancel通过。addOnly和readWrite两次post观察均观察到四组件；所有冻结字段、生成entitlements及prepared SHA保持不变，owned app当前位置却与初始位置不同。位置变化不等于权限根因，也不能反推第九轮`photos-prepared-host-changed`的具体原因。10条文本failure records不等于10个失败用例。自有应用停止和Simulator Shutdown/delete/absence通过。
+
+[第十轮记录](validation/release-apple-tenth-ci.json) SHA-256为`81f785016045e9117893967343be3b152c2a4954d9acef3802cd3e9f228fac3a`，列有41份`release-ci-tenth-*`证据/摘录；excerpt不等于完整原日志。首次不完整iOS下载已私有保留，不作证据。两份完整archive大小和摘要均核验：Mac 26,004,863 bytes/SHA-256 `b0e57af4b8b74a5f2190a2556376be220d76ae2913ca354f5415a55b7f3e8c26`，iOS 124,347,713 bytes/SHA-256 `589f0895a6acf1006a3ac251c409f2cab326f8258ee46ea89999bfe9712545b0`。
+
+当前候选修正仅涉及`RunnerTests.swift`的测试路径：在严格owned CI/host/test/Usage/addOnly以及readBack=true前置检查后，对notDetermined执行一次真实SDK `requestAuthorization(for: .readWrite)`；使用NSLock锁存跨实例状态及超时失败，等待上限30秒，通过真实callback和SDK重读均确认authorized后才继续。生产仍使用addOnly，不扩展readWrite权限；不查询TCC数据库、不做全库查询或UI自动点授权，也不降低PNG/JPEG原始字节读回断言。候选源码已完成主线程复核；Swift编译和实际授权仍待下一次Apple CI，不能称已修复权限根因或保证后续成功。
+
+四来源receipt仍固定原有iOS来源，没有被第十轮新producer替换；60项离线控制仅核验矩阵审计证据，不代替Apple原生harness或设备PT。Windows ZIP、Android专用签名ARM64 APK及五份独立版本0.1.0+1未重打包；`formal-final-audit`的09b源是历史核验，不能改称acdb新包或clean源构建。其他三端大于4GiB追加验证、离线可移植key备份、物理设备/PT、最低系统、硬件PERF、断电、真实服务和Apple正式签名发行继续独立保留；这些都不是本次称已完成的范围。当前软件收尾仍受Photos五格式独立读回未确认约束。
 
 本里程碑完成的是 Windows 与 Android 正式本地打包，不代表公开二进制发布、商店发布、Apple 正式签名发行或付费证书发行。Windows 完整 Release ZIP 不增加安装器。Android 签名私钥及口令继续只保存在 Git 忽略的本机 `.local`/受保护资料中；DPAPI CurrentUser 不能保证跨 Windows 用户或系统重装恢复，离线可移植密钥备份尚未实现。正式 Android 更新必须持续使用同一私钥。已安装的 debug 签名同 application ID APK 可能与正式签名冲突；由用户决定后续处理，脚本不自动卸载应用或清除数据。已有版本目录不覆盖。
 

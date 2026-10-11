@@ -1,0 +1,87 @@
+{"exitCode": 65, "failure": "photos-xcode-read-write-exit-nonzero", "formatVersion": 1, "hostAndReaderClosed": true, "phase": "read-write"}
+Test Suite 'All tests' started at 2026-10-11 13:24:51.463.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 13:24:51.465.
+Test Suite 'AppleFileEngineTests' started at 2026-10-11 13:24:51.465.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' passed (0.053 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.037 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' passed (0.017 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' passed (0.037 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' passed (0.020 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' passed (0.011 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' passed (0.032 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' passed (0.015 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' passed (0.012 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' passed (0.088 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' passed (0.035 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' passed (0.132 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' passed (0.059 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.008 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' passed (0.013 seconds).
+Test Suite 'AppleFileEngineTests' passed at 2026-10-11 13:24:52.091.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.570 (0.626) seconds
+Test Suite 'RunnerTests' started at 2026-10-11 13:24:52.091.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+/Users/runner/work/ImageHub/ImageHub/app/ios/RunnerTests/RunnerTests.swift:334: error: -[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure] : XCTAssertEqual failed: ("PHAuthorizationStatus(rawValue: 0)") is not equal to ("PHAuthorizationStatus(rawValue: 3)") - CI must temporarily grant photos for exact synthetic-resource readback.
+<unknown>:0: error: -[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure] : failed: caught error: "authorization"
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure]' failed (0.123 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+/Users/runner/work/ImageHub/ImageHub/app/ios/RunnerTests/RunnerTests.swift:334: error: -[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure] : XCTAssertEqual failed: ("PHAuthorizationStatus(rawValue: 0)") is not equal to ("PHAuthorizationStatus(rawValue: 3)") - CI must temporarily grant photos for exact synthetic-resource readback.
+<unknown>:0: error: -[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure] : failed: caught error: "authorization"
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure]' failed (0.037 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosInvalidContentWaitsForFailureAndRetiresStage]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":false,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_RESULT {"byteCount":48,"format":"invalid-PNG","result":"safe-unconfirmed","sha256":"b5059b5257ad935f85a4bb734e993ca3a7cb0b3cf5fe9b200ef1ce6e2532535e"}
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosInvalidContentWaitsForFailureAndRetiresStage]' passed (0.228 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosJPEGOriginalResourceMatchesSource]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+/Users/runner/work/ImageHub/ImageHub/app/ios/RunnerTests/RunnerTests.swift:334: error: -[RunnerTests.RunnerTests testITApplePhotosJPEGOriginalResourceMatchesSource] : XCTAssertEqual failed: ("PHAuthorizationStatus(rawValue: 0)") is not equal to ("PHAuthorizationStatus(rawValue: 3)") - CI must temporarily grant photos for exact synthetic-resource readback.
+<unknown>:0: error: -[RunnerTests.RunnerTests testITApplePhotosJPEGOriginalResourceMatchesSource] : failed: caught error: "authorization"
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosJPEGOriginalResourceMatchesSource]' failed (0.059 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosPNGOriginalResourceMatchesSource]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+/Users/runner/work/ImageHub/ImageHub/app/ios/RunnerTests/RunnerTests.swift:334: error: -[RunnerTests.RunnerTests testITApplePhotosPNGOriginalResourceMatchesSource] : XCTAssertEqual failed: ("PHAuthorizationStatus(rawValue: 0)") is not equal to ("PHAuthorizationStatus(rawValue: 3)") - CI must temporarily grant photos for exact synthetic-resource readback.
+<unknown>:0: error: -[RunnerTests.RunnerTests testITApplePhotosPNGOriginalResourceMatchesSource] : failed: caught error: "authorization"
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosPNGOriginalResourceMatchesSource]' failed (0.020 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosPrecancelledOperationPreservesSourceWithoutSave]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":false,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_RESULT {"byteCount":333,"format":"PNG","result":"cancelled-before-Photos","sha256":"35a22ddd6307750fa71270139d8748d16a76ecce6bccd7340c212091e6ff3719"}
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosPrecancelledOperationPreservesSourceWithoutSave]' passed (0.011 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' passed (0.100 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosWebPOriginalResourceOrSafeFailure]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"fb3351c4-6d4e-49ec-87d7-eff8e2aca123","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":59846,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+/Users/runner/work/ImageHub/ImageHub/app/ios/RunnerTests/RunnerTests.swift:334: error: -[RunnerTests.RunnerTests testITApplePhotosWebPOriginalResourceOrSafeFailure] : XCTAssertEqual failed: ("PHAuthorizationStatus(rawValue: 0)") is not equal to ("PHAuthorizationStatus(rawValue: 3)") - CI must temporarily grant photos for exact synthetic-resource readback.
+<unknown>:0: error: -[RunnerTests.RunnerTests testITApplePhotosWebPOriginalResourceOrSafeFailure] : failed: caught error: "authorization"
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosWebPOriginalResourceOrSafeFailure]' failed (0.015 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePickerCancelDuringPresentationWaitsForBothTransitions]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePickerCancelDuringPresentationWaitsForBothTransitions]' passed (0.007 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePickerCancellationOwnsOnlyItsWindowAndWaitsForDismissal]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePickerCancellationOwnsOnlyItsWindowAndWaitsForDismissal]' passed (0.005 seconds).
+Test Case '-[RunnerTests.RunnerTests testITApplePickerInvalidTokensAndUnavailablePresentationUseSafeErrors]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePickerInvalidTokensAndUnavailablePresentationUseSafeErrors]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testUTApplePhotoIdentifierIsBoundedASCIIOpaqueSegment]' started.
+Test Case '-[RunnerTests.RunnerTests testUTApplePhotoIdentifierIsBoundedASCIIOpaqueSegment]' passed (0.002 seconds).
+Test Suite 'RunnerTests' failed at 2026-10-11 13:24:52.722.
+	 Executed 12 tests, with 10 failures (5 unexpected) in 0.609 (0.631) seconds
+Test Suite 'RunnerTests.xctest' failed at 2026-10-11 13:24:52.722.
+	 Executed 27 tests, with 10 failures (5 unexpected) in 1.179 (1.258) seconds
+Test Suite 'All tests' failed at 2026-10-11 13:24:52.723.
+	 Executed 27 tests, with 10 failures (5 unexpected) in 1.179 (1.259) seconds
+** TEST EXECUTE FAILED **

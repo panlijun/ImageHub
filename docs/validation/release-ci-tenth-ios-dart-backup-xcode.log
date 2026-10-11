@@ -1,0 +1,14 @@
+{"acceptedOutputComplete": true, "exitCode": 0, "failure": null, "formatVersion": 1, "hostAndReaderClosed": true}
+Test Suite 'Selected tests' started at 2026-10-11 13:16:37.024.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 13:16:37.028.
+Test Suite 'ImageHubFlutterIntegrationTests' started at 2026-10-11 13:16:37.029.
+Test Case '-[ImageHubFlutterIntegrationTests testCompiledDartSuiteCompletes]' started.
+IMAGEHUB_DART_XCTEST_RESULTS:{"callbacks":4,"results":{"CT-006 ios actual closed full and metadata exports":"success","CT-006\/IT-005\/BAK-005 android to ios actual full metadata restore reopen":"success","CT-006\/IT-005\/BAK-005 macos to ios actual full metadata restore reopen":"success","CT-006\/IT-005\/BAK-005 windows to ios actual full metadata restore reopen":"success"},"suite":"backup"}
+Test Case '-[ImageHubFlutterIntegrationTests testCompiledDartSuiteCompletes]' passed (3.346 seconds).
+Test Suite 'ImageHubFlutterIntegrationTests' passed at 2026-10-11 13:16:40.377.
+	 Executed 1 test, with 0 failures (0 unexpected) in 3.346 (3.348) seconds
+Test Suite 'RunnerTests.xctest' passed at 2026-10-11 13:16:40.378.
+	 Executed 1 test, with 0 failures (0 unexpected) in 3.346 (3.350) seconds
+Test Suite 'Selected tests' passed at 2026-10-11 13:16:40.378.
+	 Executed 1 test, with 0 failures (0 unexpected) in 3.346 (3.354) seconds
+** TEST SUCCEEDED **

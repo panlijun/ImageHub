@@ -1,0 +1,19 @@
+{
+  "callbacks": 4,
+  "ownedAppStopped": true,
+  "results": {
+    "IT-001/002 UT-004/012/102 partial Apple native storage SQLite pixels gallery and IO protection": "success",
+    "IT-004 UT-036/075 partial Apple real Pigeon file bridge ownership rejection": "success",
+    "UT/IT partial Apple native Keychain isolated write new-instance read delete": "success",
+    "UT/IT partial Apple passive native network read listen cancel": "success"
+  },
+  "signingEvidence": {
+    "file": "ios-dart-native-signing.json",
+    "status": "verified-adhoc-host"
+  },
+  "suite": "native",
+  "xcodeExitCode": 0,
+  "xctestFailed": 0,
+  "xctestPassed": 1,
+  "xctestSkipped": 0
+}

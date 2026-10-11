@@ -1,0 +1,29 @@
+{
+  "configuration": "Debug",
+  "derivedData": "build/apple-photos-ci",
+  "formatVersion": 1,
+  "hostAndReaderClosed": true,
+  "hostObservationSha256": "b6cde82cebc68e6ca1ad6aa4dafe6d9ef702fcff1b4988010c572c7abdbfc2c3",
+  "ownedAppStopped": true,
+  "ownedRecord": {
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+    "formatVersion": 1,
+    "name": "ImageHub-CI-38141681520-1-1051f5f0",
+    "runAttempt": "1",
+    "runId": "38141681520",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "udid": "fb3351c4-6d4e-49ec-87d7-eff8e2aca123"
+  },
+  "ownedUuid": "fb3351c4-6d4e-49ec-87d7-eff8e2aca123",
+  "phase": "add-only",
+  "platform": "iphonesimulator",
+  "preparedSha256": "04cce7d28122885d5797f4e574a6fc1eccb0f99c35b2bf438f531e81a4b40cbf",
+  "runAttempt": "1",
+  "runId": "38141681520",
+  "target": "lib/main.dart",
+  "versionsSha256": "fe7fa73220f4e55d5b95129520bd9c4acbc2b7af63301c422f4e4c19601d3b50",
+  "xcodeExitCode": 0,
+  "xctestFailed": 0,
+  "xctestPassed": 1,
+  "xctestSkipped": 0
+}

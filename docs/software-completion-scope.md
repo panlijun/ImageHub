@@ -66,10 +66,12 @@ CT-001/002/003/005及IT-008的真实Catbox/ImgBB能力、响应、上传/删除�
 
 四来源矩阵已完整：`complete=true`、12方向/24模式、4个冻结来源、无缺项且关闭重开；每个consumer 6行、4 assets/5 versions、8项唯一设置。完整矩阵receipt SHA-256为`aa1c831e64dd46008ea06c945d038a5374543db8bc4b4b1e5e9d8cc0828bcda8`。离线验证器及控制测试60项通过，控制日志SHA-256为`5f6f8d90790c895ab7a631989fc17c5d512e0ae0f103d64f766e37a94f23de6d`；这只核验闭合证据字段，不替代原生harness或设备PT。第八轮partial 11/22和Photos 21通过/6失败均保留为历史，不倒推成修正通过。测试控制器逐项诊断、受限当前位置查询及三处异常收尾缺口已修正并独立复核；186项本机控制与六文件编译通过，见[最终控制记录](validation/release-photos-frozen-host-controls-02.json)。源码审查见[Photos host guard审查](validation/release-photos-host-guard-review.md)，下一轮Apple实际运行待补；物理设备、最低系统、硬件PERF、真实服务与Apple正式发行仍未通过。
 
+第十轮Apple实际结果补充见[闭合记录](validation/release-apple-tenth-ci.json)：Mac作业成功；iOS完整Photos 27项为22通过/5失败/0跳过，五格式在保存前读写授权未决定，原始资源读回尚未确认。此前“下一轮待补”为第九轮收尾时态。当前仅测试宿主增加一次真实SDK请求与回调/SDK重读确认，保留超时失败锁存、27项和PNG/JPEG原字节断言，生产仍addOnly；[源码审查](validation/release-photos-sdk-authorization-review.md)不能代替下一次Apple实际运行。该CI软件缺口仍在本轮收尾范围，不能归为已排除的实机验收。
+
 ## 保留的软件缺口与限制
 
 - Android 工作台、备份、诊断的原生导出已接入并取得实际模拟器及正常 UI 证据；iOS 对应路径已接原生 Files/Photos，Mac/iOS 备份取得接入范围授权和共同私有复制。OUT-003/PLT-005/BAK-006/OPS-003 的软件验证记录见里程碑29及E36；真实选择器、Files提供者与照片格式互操作仍需PT，不将受控协议或模拟器子场景计为全部平台验收。
 - Windows云占位来源的已知标记可预先拒绝；来源交付取消、实际清理等待和取得前令牌重验已接入，见`milestone-26-source-cancellation.md`。无法确认内核读取结束时继续等待，不能承诺所有未知阻塞来源有界停止；移动/Apple真实云取得器不能据此称全部完成。不加超时后提前释放保护的假取消。
 - 处理输出固定默认去除隐私元数据；IMG-005关闭隐私处理的明确选择由原样字节上传及逐次风险确认承接。技术选型6.3的MetadataPolicy只传递必要方向与色彩白名单，不要求任意复制隐私字段。本轮不据旧台账文案增加一个无执行路径的“保留元数据”开关；完整方向/格式契约证据仍单列。
 
-Windows 基线见 `milestone-27-windows-completion.md`，Android 收尾及 Windows 回归见 `milestone-28-android-completion.md`，Apple 文件能力和适用跨平台软件回归见 `milestone-29-apple-files.md`；截至2026-10-11的本轮进展和待补项见`windows-v1-coverage.md`的E36/E37。25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除；本文件所列待补项未完成前不宣称整体软件/四端验收目标完成。
+Windows 基线见 `milestone-27-windows-completion.md`，Android 收尾及 Windows 回归见 `milestone-28-android-completion.md`，Apple 文件能力和适用跨平台软件回归见 `milestone-29-apple-files.md`；截至2026-10-11的本轮进展和待补项见`windows-v1-coverage.md`的E36/E37。25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除。本轮完成声明仅覆盖已授权的软件收尾和Windows/Android本地正式交付；Photos仍须以实际Apple CI结果为准。PT、外部服务、物理设备/最低系统、硬件PERF及Apple正式发行等验证边界继续保留，不据此宣称四端全部验收。

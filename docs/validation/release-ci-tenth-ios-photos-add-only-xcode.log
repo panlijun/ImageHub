@@ -1,0 +1,13 @@
+{"exitCode": 0, "failure": null, "formatVersion": 1, "hostAndReaderClosed": true, "phase": "add-only"}
+Test Suite 'Selected tests' started at 2026-10-11 13:23:34.899.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 13:23:34.903.
+Test Suite 'RunnerTests' started at 2026-10-11 13:23:34.904.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' passed (0.689 seconds).
+Test Suite 'RunnerTests' passed at 2026-10-11 13:23:35.610.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.689 (0.706) seconds
+Test Suite 'RunnerTests.xctest' passed at 2026-10-11 13:23:35.610.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.689 (0.707) seconds
+Test Suite 'Selected tests' passed at 2026-10-11 13:23:35.610.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.689 (0.712) seconds
+** TEST EXECUTE SUCCEEDED **
