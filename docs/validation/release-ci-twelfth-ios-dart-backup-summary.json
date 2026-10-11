@@ -1,0 +1,40 @@
+{
+  "backupEvidence": {
+    "closedAndReopened": true,
+    "exportOrigin": "ios",
+    "exportPackages": {
+      "full": {
+        "byteCount": 8142,
+        "sha256": "65b1c43a70d20c2ef4e30198dbbb5607b371143a3965b0a0e6a009c4c693f27d"
+      },
+      "metadata": {
+        "byteCount": 4093,
+        "sha256": "a1442872098e5b806c66dc948dd181f9fd45c8dbbe1956c8f728350d2c0f807a"
+      }
+    },
+    "fixtureVersion": 1,
+    "foreignOrigins": [
+      "android",
+      "macos",
+      "windows"
+    ],
+    "modesPerOrigin": 2
+  },
+  "callbacks": 4,
+  "ownedAppStopped": true,
+  "results": {
+    "CT-006 ios actual closed full and metadata exports": "success",
+    "CT-006/IT-005/BAK-005 android to ios actual full metadata restore reopen": "success",
+    "CT-006/IT-005/BAK-005 macos to ios actual full metadata restore reopen": "success",
+    "CT-006/IT-005/BAK-005 windows to ios actual full metadata restore reopen": "success"
+  },
+  "signingEvidence": {
+    "file": "ios-dart-backup-signing.json",
+    "status": "verified-adhoc-host"
+  },
+  "suite": "backup",
+  "xcodeExitCode": 0,
+  "xctestFailed": 0,
+  "xctestPassed": 1,
+  "xctestSkipped": 0
+}

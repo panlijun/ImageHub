@@ -1,0 +1,19 @@
+2026-10-11T15:10:45.8748750Z No issues found! (ran in 53.1s)
+2026-10-11T15:10:50.0885740Z Formatted 292 files (0 changed) in 3.80 seconds.
+2026-10-11T15:11:05.1519860Z FAIL: test_grant_actual_nonzero_even_callback_and_confirm_never_success (test_ios_photos_live_authorization.PipeTests.test_grant_actual_nonzero_even_callback_and_confirm_never_success)
+2026-10-11T15:11:05.1522000Z The confirmed owned simulator was deleted.
+2026-10-11T15:11:05.1654340Z ----------------------------------------------------------------------
+2026-10-11T15:11:05.1656140Z Traceback (most recent call last):
+2026-10-11T15:11:05.1658160Z   File "/Users/runner/work/ImageHub/ImageHub/app/tool/ci/test_ios_photos_live_authorization.py", line 411, in test_grant_actual_nonzero_even_callback_and_confirm_never_success
+2026-10-11T15:11:05.1660630Z     live, process, grant, calls, log, _ = self.run_stream(grant_code=9)
+2026-10-11T15:11:05.1661750Z                                           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+2026-10-11T15:11:05.1663460Z   File "/Users/runner/work/ImageHub/ImageHub/app/tool/ci/test_ios_photos_live_authorization.py", line 389, in run_stream
+2026-10-11T15:11:05.1665640Z     self.assertTrue(result.exception.host_and_reader_closed)
+2026-10-11T15:11:05.1666870Z     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-11T15:11:05.1667720Z AssertionError: False is not true
+2026-10-11T15:11:05.1668280Z 
+2026-10-11T15:11:05.1668820Z ----------------------------------------------------------------------
+2026-10-11T15:11:05.1670720Z Ran 217 tests in 14.476s
+2026-10-11T15:11:05.1671030Z 
+2026-10-11T15:11:05.1671540Z FAILED (failures=1)
+2026-10-11T15:11:05.1893020Z ##[error]Process completed with exit code 1.

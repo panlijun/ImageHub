@@ -1,0 +1,121 @@
+{
+  "allFrozenFieldsVerified": true,
+  "builtHost": {
+    "codesign": {
+      "authorityPresent": false,
+      "identifier": "io.imagehost.imagehost",
+      "signature": "adhoc",
+      "teamIdentifier": "not set"
+    },
+    "executable": {
+      "byteCount": 58624,
+      "sha256": "1f680887a4d79fa680de75eb99d7d708af8dd435780b23323d1b6eb428569daa"
+    },
+    "infoPlist": {
+      "byteCount": 2210,
+      "sha256": "c3ed0121cdd63a8e31faf2ca391d2de8d2f362202fcbe172a49552e257b1f2b3"
+    },
+    "nativeVersion": {
+      "bundleIdentifier": "io.imagehost.imagehost",
+      "native": {
+        "CFBundleShortVersionString": "0.1.0",
+        "CFBundleVersion": "1",
+        "ImageHubKernelRevision": "1",
+        "ImageHubKernelVersion": "0.1.0"
+      },
+      "platform": "ios",
+      "verified": true
+    },
+    "signatureEntitlements": {
+      "byteCount": 183,
+      "present": [],
+      "sha256": "8acd8b6643d44a5f9486075f4f1f058407fe5981f66a4b7044ce8bee6041304c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "strictVerificationPassed": true
+  },
+  "builtMatchesInstalled": true,
+  "builtMatchesPrepared": true,
+  "configuration": "Debug",
+  "containerMatchesInitial": false,
+  "currentInstalledContainer": "/Users/runner/Library/Developer/CoreSimulator/Devices/2D4EF372-8BA1-484D-894A-9E23CE4A820F/data/Containers/Bundle/Application/F0346A2B-0001-4DC6-84DB-F90A68D3475A/Runner.app",
+  "derivedData": "build/apple-photos-ci",
+  "formatVersion": 1,
+  "generatedEntitlements": {
+    "Runner.app.xcent": {
+      "byteCount": 181,
+      "present": [],
+      "sha256": "97704a8960b4facceef54397a08fb5d0a456247c3627359215aa2a27df22656c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "Runner.app.xcent-simulated": null
+  },
+  "generatedEntitlementsMatchPrepared": true,
+  "initialInstalledContainer": "/Users/runner/Library/Developer/CoreSimulator/Devices/2D4EF372-8BA1-484D-894A-9E23CE4A820F/data/Containers/Bundle/Application/91867FE7-CB49-463D-888B-3F2A7C14FC55/Runner.app",
+  "installedHost": {
+    "codesign": {
+      "authorityPresent": false,
+      "identifier": "io.imagehost.imagehost",
+      "signature": "adhoc",
+      "teamIdentifier": "not set"
+    },
+    "executable": {
+      "byteCount": 58624,
+      "sha256": "1f680887a4d79fa680de75eb99d7d708af8dd435780b23323d1b6eb428569daa"
+    },
+    "infoPlist": {
+      "byteCount": 2210,
+      "sha256": "c3ed0121cdd63a8e31faf2ca391d2de8d2f362202fcbe172a49552e257b1f2b3"
+    },
+    "nativeVersion": {
+      "bundleIdentifier": "io.imagehost.imagehost",
+      "native": {
+        "CFBundleShortVersionString": "0.1.0",
+        "CFBundleVersion": "1",
+        "ImageHubKernelRevision": "1",
+        "ImageHubKernelVersion": "0.1.0"
+      },
+      "platform": "ios",
+      "verified": true
+    },
+    "signatureEntitlements": {
+      "byteCount": 183,
+      "present": [],
+      "sha256": "8acd8b6643d44a5f9486075f4f1f058407fe5981f66a4b7044ce8bee6041304c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "strictVerificationPassed": true
+  },
+  "installedMatchesPrepared": true,
+  "ownedRecord": {
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+    "formatVersion": 1,
+    "name": "ImageHub-CI-38149991827-1-49b761a6",
+    "runAttempt": "1",
+    "runId": "38149991827",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "udid": "2d4ef372-8ba1-484d-894a-9e23ce4a820f"
+  },
+  "ownedUuid": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+  "phase": "read-write",
+  "platform": "iphonesimulator",
+  "preparedFinalMatchesExpected": true,
+  "preparedFinalMatchesInitial": true,
+  "preparedFinalReadState": "observed",
+  "preparedFinalSha256": "fe2b0d779503e9dcbe677ec399aaa8b4b78c53c77f30762c423df60ea4e9ef44",
+  "preparedSha256": "fe2b0d779503e9dcbe677ec399aaa8b4b78c53c77f30762c423df60ea4e9ef44",
+  "preparedSha256MatchesExpected": true,
+  "readStates": {
+    "builtHost": "observed",
+    "generatedEntitlements": "observed",
+    "installedHost": "observed",
+    "prepared": "observed"
+  },
+  "runAttempt": "1",
+  "runId": "38149991827",
+  "target": "lib/main.dart",
+  "versionsSha256": "fe7fa73220f4e55d5b95129520bd9c4acbc2b7af63301c422f4e4c19601d3b50"
+}

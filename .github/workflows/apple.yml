@@ -154,6 +154,11 @@ jobs:
         run: |
           set -euo pipefail
           python3 -B tool/ci/run_ios_photos_tests.py --phase add-only 2>&1 | tee build/ci-evidence/ios-photos-add-only.log
+      - name: Obtain actual Photos SDK authorization through the expected system alert
+        timeout-minutes: 20
+        run: |
+          set -euo pipefail
+          python3 -B tool/ci/run_ios_photos_tests.py --phase authorize 2>&1 | tee build/ci-evidence/ios-photos-authorize.log
       - name: Verify native IO and exact synthetic Photos resource readback
         timeout-minutes: 20
         run: |

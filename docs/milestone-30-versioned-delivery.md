@@ -1,6 +1,6 @@
 # 里程碑 30：版本化本地交付
 
-日期：2026-10-09，后续进展更新至2026-10-11。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源软件互读矩阵已完成12方向/24模式。第十轮完整Photos readWrite 27项实际为22通过/5失败/0跳过；五格式资源独立读回未确认，授权失败边界与候选测试修正待下一次Apple实际验证。物理设备互读/PT、最低系统与性能等验收继续待补。
+日期：2026-10-09，后续进展更新至2026-10-12。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源软件互读矩阵已完成12方向/24模式。第十二轮Apple CI整体failure：iOS readWrite在PID变化后中断，未得到完整27项摘要或五格式资源读回；Mac在controller单测失败后跳过后续步骤。当前顺序UI授权stage仍是候选，尚未由Apple CI实际编译或运行。物理设备互读/PT、最低系统与性能等验收继续待补。
 
 ## 版本与交付产物
 
@@ -124,3 +124,12 @@ Windows完整Release ZIP、Android专用签名ARM64 APK及五份独立版本0.1.
 本里程碑完成的是 Windows 与 Android 正式本地打包，不代表公开二进制发布、商店发布、Apple 正式签名发行或付费证书发行。Windows 完整 Release ZIP 不增加安装器。Android 签名私钥及口令继续只保存在 Git 忽略的本机 `.local`/受保护资料中；DPAPI CurrentUser 不能保证跨 Windows 用户或系统重装恢复，离线可移植密钥备份尚未实现。正式 Android 更新必须持续使用同一私钥。已安装的 debug 签名同 application ID APK 可能与正式签名冲突；由用户决定后续处理，脚本不自动卸载应用或清除数据。已有版本目录不覆盖。
 
 发行流程和密钥保管细节见[本地发行与交付核验](distribution.md)。
+
+
+## 第十二轮 Apple CI 与 UI 授权候选
+
+2026-10-11第十二轮Apple CI源`13db3d47f5e5b45c0205953723c49dc9b5daaabd`/[run38149991827](https://github.com/panlijun/ImageHub/actions/runs/38149991827)/attempt 1整体failure。Mac分析No issues（53.1秒）、292文件格式检查0改动；217项本机controller检查14.476秒/1失败，`test_grant_actual_nonzero_even_callback_and_confirm_never_success`未能在测试的0.03秒预算内确认线程已关闭，因此Mac后续软件、原生、XCTest、Release步骤全部skip，没有Mac artifact，不能沿用第十一轮Mac成功。iOS native/backup各4项Dart业务、4项callback、1项XCTest零失败零跳过；ad-hoc签名、native Keychain、owned stop、三个外部来源full/meta/reopen与8项设置、正常Debug构建及版本0.1.0+1通过。Photos prepare和addOnly 1/0/0及success result通过。readWrite仅观察到17项starts、15个AppleFileEngine终态通过；BMP/GIF已启动但无终态，不能据0个已观察失败称整套零失败。6条SDK诊断均为readWrite 0、addOnly 3、callback -1；没有callback、confirmed、timeout、full suite summary、成功result或五格式原资源独立读回。PID 76200后Xcode重启到79786，严格控制器以`photos-live-host-pid-changed`失败；grant photos命令exit 0且command/reader关闭不证明SDK授权，也不证明它导致首次Runner退出。首次退出原因未知。host/reader关闭、owned app stop及自有Simulator Shutdown/delete/absence通过。唯一iOS artifact为71,415,364 bytes，SHA-256 `c8c78b8e4f5749aad60f456566278867bb2f0e78b652d6727bdccb18d77582bc`；[第十二轮receipt](validation/release-apple-twelfth-ci.json) SHA-256 `830eac5f51ca012b3a4fcb4c6da1facab1406027e35441db7f11b4c5342c0dd4`。冻结字段与container relocation仅为本轮观察，不证明TCC权限根因或历史原因。Windows/Android正式包与四来源12方向/24模式矩阵保持原证据，不重建；物理设备/PT、最低系统、硬件PERF、真实服务和Apple正式签名发行仍未通过。
+
+下一候选改为独立、顺序执行的UI授权stage：在固定owned Simulator及冻结的同一host上，由官方`XCUIApplication`触发真实Photos readWrite SDK请求，仅在系统明确显示expected FullAccess alert时点按一次；必须观察到真实callback=3且SDK重读=3。取得授权证据后关闭host/reader、确认owned app停止并再次核对冻结字段，再启动原有27项RunnerTests；full阶段不做privacy mutations，同一阶段PID变化仍失败。本候选尚未在Apple runner真实编译或运行；本机控制器证据不计原生通过。Windows/Android正式包与版本、四来源12方向/24模式保持既有证据，不重建。
+
+2026-10-12的新候选采用4个顺序阶段（prepare、add-only、authorize、read-write），使用独立`ImageHubPhotosCI` scheme；`authorize`通过官方UI测试读取真实SDK请求、预期系统Full Access按钮点按及一次callback=3/SDK重读=3证据。同run/attempt/owned UUID、冻结host、实际host/reader关闭、owned app停止及XCTest摘要均为后续门槛；完整read-write阶段不做任何privacy mutation，同阶段PID变化仍拒绝。CI探针仅由明确的Debug/Simulator编译条件和启动参数启用，生产默认入口及addOnly不变。全套本机Python控制240项通过（20.097秒/exit0），含45项严格协议与真实读取线程专项；10份相关来源字节在测试前后保持一致。见[UI控制receipt](validation/release-photos-ui-controls-01.json)（SHA-256 `5264549809ceac1086e285231e56c6e0e09a2c4c688d5cad89c13609fe95ce6e`）及[终态摘录](validation/release-photos-ui-controls-01.log)。这是本机合成控制证据，不是Swift编译、系统弹窗/Photos callback或资源读回通过。前一测试等待修正的218项为中间旧actor快照，保留[controls03](validation/release-photos-live-controls-03.json)；原27项XCTest、PNG/JPEG原资源字节断言及Windows/Android正式包不变，下一轮Apple必须实跑。

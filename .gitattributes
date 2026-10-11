@@ -17,3 +17,7 @@
 /docs/validation/release-apple-eleventh-ci.json -text
 /docs/validation/release-photos-live-controls-01.json -text
 /docs/validation/release-photos-live-controls-02.json -text
+/docs/validation/release-photos-live-controls-03.json -text
+/docs/validation/release-apple-twelfth-ci.json -text
+/docs/validation/release-ci-twelfth-*.json -text
+/docs/validation/release-photos-ui-controls-01.json -text

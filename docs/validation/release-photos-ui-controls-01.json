@@ -1,0 +1,97 @@
+{
+  "boundary": "Actual local synthetic control/IO-reader verification. Apple commands and processes are mocked in unit tests. This is not Swift compilation, system alert interaction, Photos callback/readback, or Apple CI success. Original 27 XCTest cases and production addOnly semantics are unchanged.",
+  "change": "Four sequential phases with a separate SDK-request UI authorization stage; read-write has no privacy mutation, requires closed same-run authorization/callback/summary/frozen-host proof, and rejects changed SDK PID. Protocol and actual slow-reader controls are read-only.",
+  "command": [
+    "bundled python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tool/ci",
+    "-p",
+    "test_*.py"
+  ],
+  "exitCode": 0,
+  "historicalControls": [
+    "release-photos-live-controls-03.json"
+  ],
+  "hostPlatform": "Windows",
+  "publicTerminalExcerpt": {
+    "bytes": 100,
+    "excerpt": true,
+    "file": "release-photos-ui-controls-01.log",
+    "normalizedLf": true,
+    "sha256": "1ecc0e61f534cf4910aae1907afed984cdbac3a02c273e32aff39aa6f765e997"
+  },
+  "reportedSeconds": 20.097,
+  "sourceCommandLog": {
+    "bytes": 957,
+    "fullCommandOutput": true,
+    "hostAndReaderClosed": true,
+    "path": ".local/photos-ui-controls-02/controller-tests.log",
+    "sha256": "84a1d1c5ad3815ea124501b5d52194d527e87587a61e12aa518c9be8bf217cd0"
+  },
+  "sources": {
+    ".github/workflows/apple.yml": {
+      "byteCount": 8470,
+      "gitNormalizedLfSha256": "a14b73f799e1af9c03d4a9b5946399b621c4a657103a7c8b159b442e3668b83d",
+      "sha256": "214eee6d80075da8273aec2c85d14659580f2e8072665a8c96be9fcc8837879d"
+    },
+    "app/ios/PhotosAuthorizationUITests/PhotosAuthorizationUITests.swift": {
+      "byteCount": 10831,
+      "gitNormalizedLfSha256": "a1327264e3c95632f05f2b71f40af8e017faeddac47b68a8dcfb52f56d943800",
+      "sha256": "a1327264e3c95632f05f2b71f40af8e017faeddac47b68a8dcfb52f56d943800"
+    },
+    "app/ios/Runner.xcodeproj/project.pbxproj": {
+      "byteCount": 35819,
+      "gitNormalizedLfSha256": "47202ab9fa6b0bc1caca8e02ed85f2785fbc8ed17e2dde59e629829794d0b606",
+      "sha256": "474d2e8dccb4a60b4566c231a77f311ed0eaaf3ea02bf8e3030634222a055158"
+    },
+    "app/ios/Runner.xcodeproj/xcshareddata/xcschemes/ImageHubPhotosCI.xcscheme": {
+      "byteCount": 6008,
+      "gitNormalizedLfSha256": "b0691db55b57fd0c77915b661223a03380ee703849c0f06976f2740ea1f1b578",
+      "sha256": "2ff2adb1ce556445f582c21255528305311e5b5c09d41874434f6c80fc734b58"
+    },
+    "app/ios/Runner/PhotosAuthorizationCI.swift": {
+      "byteCount": 7388,
+      "gitNormalizedLfSha256": "c92588b04eaf9e2b616f913aa9e1810c1be2e75e321d171fc66e7cf70e92d7ff",
+      "sha256": "c92588b04eaf9e2b616f913aa9e1810c1be2e75e321d171fc66e7cf70e92d7ff"
+    },
+    "app/ios/Runner/SceneDelegate.swift": {
+      "byteCount": 602,
+      "gitNormalizedLfSha256": "42f11ed88b4af043b40295f5ae5013ac425d3f6bd13ac2aef8f370e36fb33a5d",
+      "sha256": "a06738850cac3572c3aca0ced28db5b27b011d66bee4f9ea82d62440596a63c9"
+    },
+    "app/ios/RunnerTests/RunnerTests.swift": {
+      "byteCount": 33466,
+      "gitNormalizedLfSha256": "3b353e5048ca8391514a7399e6f5316f077311f25151bb2421420a34b3a7aa48",
+      "sha256": "774aad5f65a483428967fd1a77e9d8c10c0035d7bf846e37f5abcbd22e016e89"
+    },
+    "app/tool/ci/run_ios_photos_tests.py": {
+      "byteCount": 41542,
+      "gitNormalizedLfSha256": "3e6e3f569b58a27ef6bf17edc98a995d530128962c7f6f8df710246ec5392fbe",
+      "sha256": "27931e58daa69b631edfc84c080dbcbe101475bc4517ad7fd4a16677d75a7cc7"
+    },
+    "app/tool/ci/test_ios_photos_live_authorization.py": {
+      "byteCount": 30304,
+      "gitNormalizedLfSha256": "8d8929c47f1e39b236a72f7c7bd879acd6285f09d45204966d5bc0a9ceee335f",
+      "sha256": "7f42e1ca5b97f7d47523a150a4fda004823e820c0beb649333dd451d52debbd5"
+    },
+    "app/tool/ci/test_ios_photos_tests.py": {
+      "byteCount": 72355,
+      "gitNormalizedLfSha256": "e9f27906767de72105e38d53c01f62d33c9f3a4c28245d7f174bbd6a6487f108",
+      "sha256": "0c8cf40ce1734be0dc25616f97abd338a2788d5165ce44213511df5dd704f682"
+    }
+  },
+  "startedAtUtc": "2026-10-11T16:11:43.980598+00:00",
+  "testsPassed": 240,
+  "verification": {
+    "appleNativeAuthorizationVerified": false,
+    "changedPythonSourcesCompiledInMemory": true,
+    "sourceBytesStableDuringTests": true,
+    "swiftCompilationPerformedLocally": false
+  },
+  "verificationVersion": 1,
+  "workingDirectory": "app"
+}

@@ -1,0 +1,50 @@
+{"exitCode": -15, "failure": "photos-live-host-pid-changed", "formatVersion": 1, "hostAndReaderClosed": true, "liveAuthorizationControl": [{"elapsedMilliseconds": 43134, "phase": "signal-preflight", "result": "received"}, {"elapsedMilliseconds": 43135, "phase": "signal-request-start", "result": "received"}, {"elapsedMilliseconds": 43295, "phase": "signal-request-dispatched", "result": "received"}, {"elapsedMilliseconds": 43295, "phase": "frozen-validation", "result": "started"}, {"elapsedMilliseconds": 60450, "phase": "frozen-validation", "result": "confirmed"}, {"elapsedMilliseconds": 60450, "phase": "grant", "result": "started"}, {"elapsedMilliseconds": 61077, "phase": "grant-command-close", "result": "exitCode=0; hostAndReaderClosed=true"}, {"elapsedMilliseconds": 61077, "phase": "grant", "result": "command-and-reader-closed-exit-zero"}], "phase": "read-write"}
+Test Suite 'All tests' started at 2026-10-11 15:36:57.955.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 15:36:57.956.
+Test Suite 'AppleFileEngineTests' started at 2026-10-11 15:36:57.957.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' passed (0.075 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.064 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' passed (0.019 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' passed (0.044 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' passed (0.016 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' passed (0.029 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' passed (0.039 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' passed (0.026 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' passed (0.035 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' passed (0.013 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' passed (0.030 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' passed (0.024 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' passed (0.059 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.012 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' passed (0.014 seconds).
+Test Suite 'AppleFileEngineTests' passed at 2026-10-11 15:36:58.472.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 0.499 (0.515) seconds
+Test Suite 'RunnerTests' started at 2026-10-11 15:36:58.473.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"preflight","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":76200,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"request-start","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":76200,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"request-dispatched","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":76200,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+Restarting after unexpected exit, crash, or test timeout; summary will include totals from previous launches.
+Test Suite 'Selected tests' started at 2026-10-11 15:37:46.867.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 15:37:46.868.
+Test Suite 'RunnerTests' started at 2026-10-11 15:37:46.869.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure]' started.
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"preflight","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":79786,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"request-start","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":79786,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+IMAGEHUB_PHOTOS_AUTHORIZATION {"addOnlyStatus":3,"callbackStatus":-1,"failureLatched":false,"hostMatchesExpected":true,"mainBundleID":"io.imagehost.imagehost","ownedSimulatorID":"2d4ef372-8ba1-484d-894a-9e23ce4a820f","phase":"request-dispatched","photoAddUsageDescriptionPresent":true,"photoUsageDescriptionPresent":true,"processID":79786,"readBack":true,"readWriteStatus":0,"testBundleID":"io.imagehost.imagehost.RunnerTests","testBundleMatchesExpected":true}
+** BUILD INTERRUPTED **

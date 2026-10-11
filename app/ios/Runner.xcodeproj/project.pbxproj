@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D931BDE08765432100104001 /* PhotosAuthorizationCI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931BDE08765432100104002 /* PhotosAuthorizationCI.swift */; };
+		D931BDE08765432100104003 /* PhotosAuthorizationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931BDE08765432100104004 /* PhotosAuthorizationUITests.swift */; };
 		C931BDE08765432100103001 /* ImageHubFlutterIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C931BDE08765432100103002 /* ImageHubFlutterIntegrationTests.m */; };
 		B931BDE08765432100102001 /* IOSFileBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931BDE08765432100102002 /* IOSFileBridge.swift */; };
 		B931BDE08765432100102003 /* AppleFiles.g.swift in Sources */ = {isa = PBXBuildFile; fileRef = B931BDE08765432100102004 /* AppleFiles.g.swift */; };
@@ -25,6 +27,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D931BDE08765432100104006 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97C146ED1CF9000F007C117D;
+			remoteInfo = Runner;
+		};
 		331C8085294A63A400263BE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 97C146E61CF9000F007C117D /* Project object */;
@@ -48,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D931BDE08765432100104002 /* PhotosAuthorizationCI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAuthorizationCI.swift; sourceTree = "<group>"; };
+		D931BDE08765432100104004 /* PhotosAuthorizationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAuthorizationUITests.swift; sourceTree = "<group>"; };
+		D931BDE08765432100104005 /* PhotosAuthorizationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosAuthorizationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C931BDE08765432100103002 /* ImageHubFlutterIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHubFlutterIntegrationTests.m; sourceTree = "<group>"; };
 		B931BDE08765432100102002 /* IOSFileBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSFileBridge.swift; sourceTree = "<group>"; };
 		B931BDE08765432100102004 /* AppleFiles.g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleFiles.g.swift; path = ../apple/generated/AppleFiles.g.swift; sourceTree = SOURCE_ROOT; };
@@ -74,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D931BDE08765432100104007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97C146EB1CF9000F007C117D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D931BDE08765432100104008 /* PhotosAuthorizationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D931BDE08765432100104004 /* PhotosAuthorizationUITests.swift */,
+			);
+			path = PhotosAuthorizationUITests;
+			sourceTree = "<group>";
+		};
 		331C8082294A63A400263BE5 /* RunnerTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +141,7 @@
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
+				D931BDE08765432100104008 /* PhotosAuthorizationUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +150,7 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
+				D931BDE08765432100104005 /* PhotosAuthorizationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +170,7 @@
 				B931BDE08765432100102004 /* AppleFiles.g.swift */,
 				B931BDE08765432100102006 /* AppleFileEngine.swift */,
 				7884E8672EC3CC0400C636F2 /* SceneDelegate.swift */,
+				D931BDE08765432100104002 /* PhotosAuthorizationCI.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
 			);
 			path = Runner;
@@ -149,6 +179,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D931BDE08765432100104009 /* PhotosAuthorizationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D931BDE08765432100104010 /* Build configuration list for PBXNativeTarget "PhotosAuthorizationUITests" */;
+			buildPhases = (
+				D931BDE0876543210010400B /* Sources */,
+				D931BDE08765432100104007 /* Frameworks */,
+				D931BDE0876543210010400A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D931BDE0876543210010400C /* PBXTargetDependency */,
+			);
+			name = PhotosAuthorizationUITests;
+			productName = PhotosAuthorizationUITests;
+			productReference = D931BDE08765432100104005 /* PhotosAuthorizationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		331C8080294A63A400263BE5 /* RunnerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */;
@@ -199,6 +247,10 @@
 				LastUpgradeCheck = 1510;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
+					D931BDE08765432100104009 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 97C146ED1CF9000F007C117D;
+					};
 					331C8080294A63A400263BE5 = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 97C146ED1CF9000F007C117D;
@@ -227,11 +279,19 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 				331C8080294A63A400263BE5 /* RunnerTests */,
+				D931BDE08765432100104009 /* PhotosAuthorizationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D931BDE0876543210010400A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		331C807F294A63A400263BE5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,6 +348,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D931BDE0876543210010400B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D931BDE08765432100104003 /* PhotosAuthorizationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		331C807D294A63A400263BE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,12 +376,18 @@
 				B931BDE08765432100102005 /* AppleFileEngine.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				7884E8682EC3CC0700C636F2 /* SceneDelegate.swift in Sources */,
+				D931BDE08765432100104001 /* PhotosAuthorizationCI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D931BDE0876543210010400C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97C146ED1CF9000F007C117D /* Runner */;
+			targetProxy = D931BDE08765432100104006 /* PBXContainerItemProxy */;
+		};
 		331C8086294A63A400263BE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 97C146ED1CF9000F007C117D /* Runner */;
@@ -341,6 +415,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D931BDE0876543210010400D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.imagehost.imagehost.PhotosAuthorizationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Runner;
+			};
+			name = Debug;
+		};
+		D931BDE0876543210010400E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.imagehost.imagehost.PhotosAuthorizationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Runner;
+			};
+			name = Release;
+		};
+		D931BDE0876543210010400F /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.imagehost.imagehost.PhotosAuthorizationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphonesimulator;
+				SUPPORTED_PLATFORMS = iphonesimulator;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Runner;
+			};
+			name = Profile;
+		};
 		249021D3217E4FDB00AE95B9 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -624,6 +760,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D931BDE08765432100104010 /* Build configuration list for PBXNativeTarget "PhotosAuthorizationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D931BDE0876543210010400D /* Debug */,
+				D931BDE0876543210010400E /* Release */,
+				D931BDE0876543210010400F /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

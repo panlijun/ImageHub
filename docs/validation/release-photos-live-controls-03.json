@@ -1,0 +1,77 @@
+{
+  "additionalChecks": 32,
+  "boundary": "Actual local Python synthetic controls and bounded pipe readers; no Apple execution, Swift compilation, Photos callback/readback, or new CI pass is claimed. Native 27 cases and PNG/JPEG assertions unchanged. Twelfth iOS job was still running at this local check.",
+  "change": "Only test harness ordinary reader close wait is 2 seconds; the deliberately blocked reader retains 30ms. Added slow actual-reader drain regression; production 30-second close requirement is unchanged.",
+  "command": [
+    "bundled python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "app/tool/ci",
+    "-p",
+    "test_*.py"
+  ],
+  "existingChecks": 186,
+  "exitCode": 0,
+  "hostPlatform": "Windows",
+  "previousControls": [
+    "release-photos-live-controls-01.json",
+    "release-photos-live-controls-02.json"
+  ],
+  "publicTerminalExcerpt": {
+    "boundary": "Exact observed separator, count, blank and OK terminal lines; LF normalized.",
+    "bytes": 100,
+    "excerpt": true,
+    "file": "release-photos-live-controls-03.log",
+    "sha256": "05ff704c14554b20b3ce46b293723afa1431643a38b41a409d293b28ba0e94b1"
+  },
+  "reportedSeconds": 19.788,
+  "sourceToolOutput": {
+    "bytes": 821,
+    "fullCommandOutput": false,
+    "normalizedLf": true,
+    "path": ".local/photos-live-controls/final-controller-tests-04-tail.log",
+    "sha256": "ba1356007fb1065880cdf7c3a2b9a84bdce40b682ed4beae736dde40f2bbc229",
+    "toolChunk": "9a9fb5"
+  },
+  "sources": {
+    "app/ios/RunnerTests/RunnerTests.swift": {
+      "byteCount": 33466,
+      "gitNormalizedLfSha256": "3b353e5048ca8391514a7399e6f5316f077311f25151bb2421420a34b3a7aa48",
+      "sha256": "774aad5f65a483428967fd1a77e9d8c10c0035d7bf846e37f5abcbd22e016e89"
+    },
+    "app/tool/ci/run_ios_photos_tests.py": {
+      "byteCount": 41375,
+      "gitNormalizedLfSha256": "4f16d84060359a58c47a86358014bf6c4b6eab88357d3b92a544c1827c613e2c",
+      "sha256": "1297bfc514393ddfaad829c1f70baa42650217bb316ca6206b5ad1c243aa0533"
+    },
+    "app/tool/ci/test_ios_photos_live_authorization.py": {
+      "byteCount": 24121,
+      "gitNormalizedLfSha256": "dad29ca7d780dbfbc1b9cad539f5504c3804effba3d440859da1a38465a4cfd8",
+      "sha256": "dad29ca7d780dbfbc1b9cad539f5504c3804effba3d440859da1a38465a4cfd8"
+    },
+    "app/tool/ci/test_ios_photos_tests.py": {
+      "byteCount": 65028,
+      "gitNormalizedLfSha256": "3a2378e4aaf556902ad2c9c92a6c025e65b7753c179ca9effcf72e34937ab2db",
+      "sha256": "4dec01c6a2697a9de322f90f1a8418cdbe888eccde0602e0cb4718cc5ac6d0ee"
+    }
+  },
+  "testsPassed": 218,
+  "trigger": {
+    "failedTests": 1,
+    "jobId": 114501258423,
+    "observedFailure": "Synthetic Xcode host/reader close assertion false with a 30ms test-only close deadline.",
+    "runId": 38149991827,
+    "sourceCommit": "13db3d47f5e5b45c0205953723c49dc9b5daaabd",
+    "test": "test_grant_actual_nonzero_even_callback_and_confirm_never_success",
+    "testsRun": 217
+  },
+  "verification": {
+    "appleNativeAuthorizationVerified": false,
+    "swiftCompilationPerformedLocally": false,
+    "threeChangedPythonSourcesCompiledInMemory": true
+  },
+  "verificationVersion": 1
+}

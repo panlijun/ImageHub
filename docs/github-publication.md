@@ -1,6 +1,6 @@
 # GitHub 公共仓库与 Apple 验证
 
-当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。最近一次整体成功仍是应用源9715ce9的[Apple文件能力CI](https://github.com/panlijun/ImageHub/actions/runs/37879708343)；macOS与iOS作业均成功，iOS原生文件/照片/备份/诊断保存及Apple备份取得已接入，适用验证见[里程碑29](milestone-29-apple-files.md)。最新第十一轮Apple CI源`3588ed69b298cbdcfb5bc2c78041f3d587f1e8fc`/[run38145131826](https://github.com/panlijun/ImageHub/actions/runs/38145131826)/attempt 1整体failure：Mac成功；iOS native/backup、正常入口、Photos prepare与addOnly通过。完整Photos readWrite 27项为22通过/5失败/0跳过，新SDK helper已实际编译运行，但首个请求30秒无callback，五格式资源独立读回未确认，详见下文。四来源矩阵已完整12方向/24模式；这不替代四台物理设备人工互读/PT。第九轮`photos-prepared-host-changed`仍是当轮历史失败，未知原因不由后续推断；第八轮Photos 21通过/6失败也保留历史。Windows/Android本地正式包见[里程碑30](milestone-30-versioned-delivery.md)，物理设备、最低系统、真实服务与Apple正式发行仍单列。
+当前阶段：[公共仓库 panlijun/ImageHub](https://github.com/panlijun/ImageHub) 已创建并推送。最近一次整体成功仍是应用源9715ce9的[Apple文件能力CI](https://github.com/panlijun/ImageHub/actions/runs/37879708343)；macOS与iOS作业均成功，适用范围见[里程碑29](milestone-29-apple-files.md)。最新第十二轮Apple CI源`13db3d47f5e5b45c0205953723c49dc9b5daaabd`/[run38149991827](https://github.com/panlijun/ImageHub/actions/runs/38149991827)/attempt 1整体failure：Mac controller检查失败且后续步骤跳过；iOS Photos readWrite因PID变化中断，仅15个AppleFileEngine终态通过，无完整27项摘要或五格式独立资源读回。iOS基础套件、备份互读、Debug入口和addOnly通过。完整记录见下文。四来源矩阵为12方向/24模式；Windows/Android包保持原核验，物理设备/PT、最低系统、真实服务及Apple正式发行仍未通过。
 
 ## 已公开内容
 
@@ -38,6 +38,11 @@ iOS job `114476650544`在“Verify native IO and exact synthetic Photos resource
 ## 第十一轮 Apple CI
 
 第十一轮源`3588ed69b298cbdcfb5bc2c78041f3d587f1e8fc`/ [run38145131826](https://github.com/panlijun/ImageHub/actions/runs/38145131826)整体failure。Mac作业成功，iOS native/backup、正常入口、Photos prepare及addOnly通过；Photos readWrite 27项22通过/5失败/0跳过。SDK helper已实际编译运行，BMP请求30秒无callback，五格式独立读回未确认；详见[闭合摘要](validation/release-apple-eleventh-ci.json)、[里程碑30](milestone-30-versioned-delivery.md)和[授权审查](validation/release-photos-sdk-authorization-review.md)。Windows/Android包未重打包，四来源仍为12方向/24模式；其他设备与发行限制继续保留。
+
+## 第十二轮 Apple CI
+
+第十二轮源`13db3d47f5e5b45c0205953723c49dc9b5daaabd`/[run38149991827](https://github.com/panlijun/ImageHub/actions/runs/38149991827)整体failure：Mac 217项controller检查有1项失败，后续步骤skip且无Mac artifact；iOS native/backup、Debug构建与版本、addOnly 1项通过。readWrite 17项starts中有15个AppleFileEngine终态通过，BMP/GIF无终态；无完整suite摘要或五格式独立读回。6条SDK诊断为readWrite 0，两个PID下callback均为-1；严格控制器在PID变化时拒绝继续。首次host退出原因未知，CLI grant exit 0不证明SDK授权或造成退出；IO/owned stop/Simulator清理通过。见[第十二轮receipt](validation/release-apple-twelfth-ci.json)和[里程碑30](milestone-30-versioned-delivery.md)；UI授权候选尚未实际Apple编译或运行。
+
 
 ## 验证边界
 

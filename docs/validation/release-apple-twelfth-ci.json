@@ -1,0 +1,780 @@
+{
+  "artifactReadBoundary": "The single iOS archive was closed and fully streamed with matching metadata size/SHA. All 35 extracted bounded ordinary text/JSON whitelist entries were verified. No downloaded code or app bundle was executed. Export payload/Base64, archive binaries, XResult contents and verbose build logs were not published. Mac has no artifact; its evidence is separately labeled job logs API excerpts.",
+  "boundary": "Twelfth CI failed on both jobs. Mac stopped at a controller unit assertion, so prior Mac successes are not inherited. iOS read-write was interrupted by the strict PID-change control after a real dispatched signal and one closed exit-zero grant. Two real Runner PIDs each emitted pending read-write diagnostics without callback/confirmed/timeout or photo-result. Xcode reported an unexpected-exit/crash/timeout restart, without identifying its first exit cause. -15 is controller rejection cleanup, not that initial Runner exit. No full 27-case summary or five-format original-resource readback is proven, and prior invalid-PNG results are not inherited. Frozen fields and container relocation are this run's observations only, not TCC or historical root-cause evidence. No physical device, minimum OS, hardware performance, real service or signed Apple distribution acceptance is implied.",
+  "ios": {
+    "actualHostAdhocSignatureVerified": true,
+    "artifactBytes": 71415364,
+    "artifactId": 11705774934,
+    "artifactSha256": "c8c78b8e4f5749aad60f456566278867bb2f0e78b652d6727bdccb18d77582bc",
+    "backupAllEightSettingsPerModeConfirmed": true,
+    "backupCallbacks": 4,
+    "backupConsumerModesPerOrigin": 2,
+    "backupDartBusinessPassed": 4,
+    "backupExternalOrigins": [
+      "windows",
+      "android",
+      "macos"
+    ],
+    "backupOwnedApplicationStopConfirmed": true,
+    "backupXctestFailed": 0,
+    "backupXctestPassed": 1,
+    "backupXctestSkipped": 0,
+    "conclusion": "failure",
+    "failedStep": "Verify native IO and exact synthetic Photos resource readback",
+    "fullAndMetadataExportClosedAndReopened": true,
+    "jobId": 114501258190,
+    "nativeCallbacks": 4,
+    "nativeDartBusinessPassed": 4,
+    "nativeOwnedApplicationStopConfirmed": true,
+    "nativeXctestFailed": 0,
+    "nativeXctestPassed": 1,
+    "nativeXctestSkipped": 0,
+    "normalEntrySimulatorBuildAndNativeVersionsVerified": true,
+    "ownedSimulatorName": "ImageHub-CI-38149991827-1-49b761a6",
+    "ownedSimulatorShutdownAndDeleted": true,
+    "ownedSimulatorUuid": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+    "photosActualAddOnlyStatus": 3,
+    "photosActualReadWriteStatus": 0,
+    "photosActualSyntheticResultsInReadWritePhase": [],
+    "photosAddOnlyControllerSucceeded": true,
+    "photosAddOnlyHostAndReaderClosed": true,
+    "photosAddOnlyNativeFailed": 0,
+    "photosAddOnlyNativePassed": 1,
+    "photosAddOnlyNativeSkipped": 0,
+    "photosAddOnlySuccessResultPresent": true,
+    "photosAddOnlyXcodeExitCode": 0,
+    "photosAllRecordedFrozenFieldsVerifiedBothPhases": true,
+    "photosAuthorizationObservations": [
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "preflight",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 76200,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      },
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "request-start",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 76200,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      },
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "request-dispatched",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 76200,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      },
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "preflight",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 79786,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      },
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "request-start",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 79786,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      },
+      {
+        "addOnlyStatus": 3,
+        "callbackStatus": -1,
+        "failureLatched": false,
+        "hostMatchesExpected": true,
+        "mainBundleID": "io.imagehost.imagehost",
+        "ownedSimulatorID": "2d4ef372-8ba1-484d-894a-9e23ce4a820f",
+        "phase": "request-dispatched",
+        "photoAddUsageDescriptionPresent": true,
+        "photoUsageDescriptionPresent": true,
+        "processID": 79786,
+        "readBack": true,
+        "readWriteStatus": 0,
+        "testBundleID": "io.imagehost.imagehost.RunnerTests",
+        "testBundleMatchesExpected": true
+      }
+    ],
+    "photosContainerRelocationCausedPermissionFailureProven": false,
+    "photosContainerRelocationObservedBothPhases": true,
+    "photosFullSummaryJsonPresent": false,
+    "photosGeneratedEntitlementsPostTestConfirmedBothPhases": true,
+    "photosGrantCausedInitialRunnerExitProven": false,
+    "photosInitialRunnerExitCauseKnown": false,
+    "photosInvalidPixelDecodeAndSafeUnconfirmedExecutedInReadWritePhase": false,
+    "photosLiveAuthorizationControl": [
+      {
+        "elapsedMilliseconds": 43134,
+        "phase": "signal-preflight",
+        "result": "received"
+      },
+      {
+        "elapsedMilliseconds": 43135,
+        "phase": "signal-request-start",
+        "result": "received"
+      },
+      {
+        "elapsedMilliseconds": 43295,
+        "phase": "signal-request-dispatched",
+        "result": "received"
+      },
+      {
+        "elapsedMilliseconds": 43295,
+        "phase": "frozen-validation",
+        "result": "started"
+      },
+      {
+        "elapsedMilliseconds": 60450,
+        "phase": "frozen-validation",
+        "result": "confirmed"
+      },
+      {
+        "elapsedMilliseconds": 60450,
+        "phase": "grant",
+        "result": "started"
+      },
+      {
+        "elapsedMilliseconds": 61077,
+        "phase": "grant-command-close",
+        "result": "exitCode=0; hostAndReaderClosed=true"
+      },
+      {
+        "elapsedMilliseconds": 61077,
+        "phase": "grant",
+        "result": "command-and-reader-closed-exit-zero"
+      }
+    ],
+    "photosObservedCallbackStatus": -1,
+    "photosObservedFailureLatched": false,
+    "photosOriginalResourceReadbackVerifiedFormats": [],
+    "photosOwnedApplicationStopConfirmed": true,
+    "photosPermissionPromptObserved": false,
+    "photosPostObservationsPresent": [
+      "add-only",
+      "read-write"
+    ],
+    "photosPrepareBuildInstallAndMatchingRecordedFieldsPassed": true,
+    "photosPrepareFingerprintBoundary": "Recorded Runner executable and Info whole-file digests, native versions, strict ad-hoc codesign metadata and signature/generated entitlements; not a whole-bundle byte-tree proof.",
+    "photosPreparedRawShaPostTestConfirmedBothPhases": true,
+    "photosReadWriteControllerFailure": "photos-live-host-pid-changed",
+    "photosReadWriteHostAndReaderClosed": true,
+    "photosReadWriteObservedFailedTerminals": 0,
+    "photosReadWriteObservedPassedTerminals": 15,
+    "photosReadWriteObservedTestStarts": 17,
+    "photosReadWriteObservedUniqueTerminalCases": 15,
+    "photosReadWritePhaseComplete": false,
+    "photosReadWritePrivacyGrantExitCode": 0,
+    "photosReadWriteStarted": true,
+    "photosReadWriteSuccessResultPresent": false,
+    "photosReadWriteTerminalCountBoundary": "All 15 terminals are AppleFileEngineTests; BMP and GIF only started, without terminal outcomes. Zero observed failed terminals is not zero suite failures. No 27-case total/pass/fail/skip summary exists.",
+    "photosReadWriteUnfinishedStartedCases": [
+      "-[RunnerTests.RunnerTests testITApplePhotosBMPOriginalResourceOrSafeFailure]",
+      "-[RunnerTests.RunnerTests testITApplePhotosGIFOriginalResourceOrSafeFailure]"
+    ],
+    "photosReadWriteXcodeCleanupExitCode": -15,
+    "photosSdkAuthorizationCallbackObserved": false,
+    "photosSdkAuthorizationConfirmedObserved": false,
+    "photosSdkAuthorizationTimeoutObserved": false,
+    "photosSdkRequestDispatchedSignalPresent": true,
+    "photosSdkRequestObservedProcessIds": [
+      76200,
+      79786
+    ],
+    "photosSimctlHelpBoundary": "Actual simctl help says some permission changes will terminate the application if running; this does not prove the observed first Runner exit was caused by this grant.",
+    "photosUnderlyingPermissionMechanismKnown": false,
+    "photosXcodeRestartObserved": true,
+    "runtimeKeychainFlowPassed": true
+  },
+  "macos": {
+    "analysisPassed": true,
+    "analysisReportedSeconds": 53.1,
+    "artifactPresent": false,
+    "ciControllerChecksRun": 217,
+    "ciControllerExitCode": 1,
+    "ciControllerFailures": 1,
+    "ciControllerReportedSeconds": 14.476,
+    "conclusion": "failure",
+    "dartFormattingChanged": 0,
+    "dartFormattingFiles": 292,
+    "dartFormattingPassed": true,
+    "evidenceSource": "Closed GitHub job logs API excerpts; no Mac archive or new Mac software/native/Release success is claimed.",
+    "failedStep": "Analyze and verify formatting",
+    "failureWithinStep": "Python controller unit test assertion: host_and_reader_closed was false in test_grant_actual_nonzero_even_callback_and_confirm_never_success",
+    "jobId": 114501258423,
+    "skippedSteps": [
+      "Run all software tests on the Mac host",
+      "Verify independent process recovery and locking",
+      "Run Apple native integration verification",
+      "Verify native Mac exports and cross-platform backup restores",
+      "Verify native file ownership and real IO with XCTest",
+      "Build the macOS Release application"
+    ],
+    "subsequentSoftwareNativeBackupXctestReleaseSteps": "skipped"
+  },
+  "overallConclusion": "failure",
+  "retainedEvidence": [
+    {
+      "excerpt": false,
+      "publicBytes": 836,
+      "publicFile": "release-ci-twelfth-android-to-ios.json",
+      "publicSha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354",
+      "sourceBytes": 836,
+      "sourceEntry": "ios/ios-dart-backup-evidence/android.json",
+      "sourceSha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 1264,
+      "publicFile": "release-ci-twelfth-ios-backup-interop.log",
+      "publicSha256": "b63dca8133fdbbd635e51cda4435e399012bca1b80d70ef644f76ecc04a4fd5d",
+      "sourceBytes": 765122,
+      "sourceEntry": "ios/ios-backup-interop.log",
+      "sourceSha256": "c4cbca38d69f8cf8d66429ad63ecf83bd7b8effc37d062c96dc7dbfb7b4fb7ed"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 832,
+      "publicFile": "release-ci-twelfth-macos-to-ios.json",
+      "publicSha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1",
+      "sourceBytes": 832,
+      "sourceEntry": "ios/ios-dart-backup-evidence/macos.json",
+      "sourceSha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 836,
+      "publicFile": "release-ci-twelfth-windows-to-ios.json",
+      "publicSha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f",
+      "sourceBytes": 836,
+      "sourceEntry": "ios/ios-dart-backup-evidence/windows.json",
+      "sourceSha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1164,
+      "publicFile": "release-ci-twelfth-ios-dart-backup-signing.json",
+      "publicSha256": "9d715f8c07913a307cc9d801df30ed6b63c13c0e5ae04e736352982479df7c0b",
+      "sourceBytes": 1164,
+      "sourceEntry": "ios/ios-dart-backup-signing.json",
+      "sourceSha256": "9d715f8c07913a307cc9d801df30ed6b63c13c0e5ae04e736352982479df7c0b"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1143,
+      "publicFile": "release-ci-twelfth-ios-dart-backup-summary.json",
+      "publicSha256": "dc894b26a2f677254f44a17ca39e7382eedc5029f27401ffa647cee23ecdd6c0",
+      "sourceBytes": 1143,
+      "sourceEntry": "ios/ios-dart-backup-summary.json",
+      "sourceSha256": "dc894b26a2f677254f44a17ca39e7382eedc5029f27401ffa647cee23ecdd6c0"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 1368,
+      "publicFile": "release-ci-twelfth-ios-dart-backup-xcode.log",
+      "publicSha256": "61469fb60b8c28b6c09443c8c9ca8de56d858e5e7ffcc69915d2cae4ccba82be",
+      "sourceBytes": 819921,
+      "sourceEntry": "ios/ios-dart-backup-xcode.log",
+      "sourceSha256": "f13adbffec5421fa5bbc699c0e1c1a64aea641bd33fe52bdf0584b76691c9f9e"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 943,
+      "publicFile": "release-ci-twelfth-ios-dart-backup-xctest-summary.json",
+      "publicSha256": "9dbefc4d2002c33be6b122ec49456c7c921f201b79ae9f13e2af9dc863af7a67",
+      "sourceBytes": 943,
+      "sourceEntry": "ios/ios-dart-backup-xctest-summary.json",
+      "sourceSha256": "9dbefc4d2002c33be6b122ec49456c7c921f201b79ae9f13e2af9dc863af7a67"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1164,
+      "publicFile": "release-ci-twelfth-ios-dart-native-signing.json",
+      "publicSha256": "554042d5ba104a1807fad4c75e14c55aeabe57c2a5f06a1cf405f31a08d618ac",
+      "sourceBytes": 1164,
+      "sourceEntry": "ios/ios-dart-native-signing.json",
+      "sourceSha256": "554042d5ba104a1807fad4c75e14c55aeabe57c2a5f06a1cf405f31a08d618ac"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 663,
+      "publicFile": "release-ci-twelfth-ios-dart-native-summary.json",
+      "publicSha256": "258fcebc916329dc8047d793728797b627b039d4b0a917c41e0749cc85e14373",
+      "sourceBytes": 663,
+      "sourceEntry": "ios/ios-dart-native-summary.json",
+      "sourceSha256": "258fcebc916329dc8047d793728797b627b039d4b0a917c41e0749cc85e14373"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 1409,
+      "publicFile": "release-ci-twelfth-ios-dart-native-xcode.log",
+      "publicSha256": "61e6961d32dc7e4213b3b2c90e0e1cd6673ef6e85e308c6e20a4d5625ef170d3",
+      "sourceBytes": 816578,
+      "sourceEntry": "ios/ios-dart-native-xcode.log",
+      "sourceSha256": "229ac142bfa5b9ffa0b25cf5e8b207da099abc22a8ecb5fef3f2f6a9a9eb5421"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 944,
+      "publicFile": "release-ci-twelfth-ios-dart-native-xctest-summary.json",
+      "publicSha256": "c03c4e9bf829e2db8951dc525c75f75ff5ec3a487d8456486d3e48967a9adcba",
+      "sourceBytes": 944,
+      "sourceEntry": "ios/ios-dart-native-xctest-summary.json",
+      "sourceSha256": "c03c4e9bf829e2db8951dc525c75f75ff5ec3a487d8456486d3e48967a9adcba"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 2849,
+      "publicFile": "release-ci-twelfth-ios-file-tests.log",
+      "publicSha256": "9e194cf65b702a8cd7a0beeecef15ddb77186b7717d449689641e89e9211ebf0",
+      "sourceBytes": 2849,
+      "sourceEntry": "ios/ios-file-tests.log",
+      "sourceSha256": "9e194cf65b702a8cd7a0beeecef15ddb77186b7717d449689641e89e9211ebf0"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 4165,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only-host-observation.json",
+      "publicSha256": "57524ee665e91863f590b3433987bdd859d4a3a9fbaf57e11321e0c66c82ade3",
+      "sourceBytes": 4165,
+      "sourceEntry": "ios/ios-photos-add-only-host-observation.json",
+      "sourceSha256": "57524ee665e91863f590b3433987bdd859d4a3a9fbaf57e11321e0c66c82ade3"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 254,
+      "publicFile": "release-ci-twelfth-ios-native-versions.json",
+      "publicSha256": "64894c065335e7a2bde425b9ac446a501889b4c20ff649f7049ee72e4378c243",
+      "sourceBytes": 254,
+      "sourceEntry": "ios/ios-native-versions.json",
+      "sourceSha256": "64894c065335e7a2bde425b9ac446a501889b4c20ff649f7049ee72e4378c243"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 3541,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only-identity.json",
+      "publicSha256": "e22238721e9da6e233b22409f5b27be5b6a8e19e61bf559b564b9a8a9714cc80",
+      "sourceBytes": 3541,
+      "sourceEntry": "ios/ios-photos-add-only-identity.json",
+      "sourceSha256": "e22238721e9da6e233b22409f5b27be5b6a8e19e61bf559b564b9a8a9714cc80"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1028,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only-result.json",
+      "publicSha256": "9542e94a1e4ccb1d3ca47203890971f34b8ecd184325994578c7cbffb87747ef",
+      "sourceBytes": 1028,
+      "sourceEntry": "ios/ios-photos-add-only-result.json",
+      "sourceSha256": "9542e94a1e4ccb1d3ca47203890971f34b8ecd184325994578c7cbffb87747ef"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 944,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only-summary.json",
+      "publicSha256": "79d0c1813e42a4a9cc914028f51beb26037eabf6ffe3c955b6200398094d673f",
+      "sourceBytes": 944,
+      "sourceEntry": "ios/ios-photos-add-only-summary.json",
+      "sourceSha256": "79d0c1813e42a4a9cc914028f51beb26037eabf6ffe3c955b6200398094d673f"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 981,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only-xcode.log",
+      "publicSha256": "4255501ba88515ff516fd37e1cb906200a0813b703a94fb6f5aaf57f62a6809e",
+      "sourceBytes": 4123,
+      "sourceEntry": "ios/ios-photos-add-only-xcode.log",
+      "sourceSha256": "5ba2dc6e2010fcd5661a7dff4db9de6cc9824392c828dcdd3aea8ba3b5dc5b37"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 2853,
+      "publicFile": "release-ci-twelfth-ios-photos-add-only.log",
+      "publicSha256": "77eff67b621d2bcbe3a4e2fd2b0b3693cf6c7096d384511875eb7d5e0762fa61",
+      "sourceBytes": 2853,
+      "sourceEntry": "ios/ios-photos-add-only.log",
+      "sourceSha256": "77eff67b621d2bcbe3a4e2fd2b0b3693cf6c7096d384511875eb7d5e0762fa61"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 2021,
+      "publicFile": "release-ci-twelfth-ios-photos-prepare-built-host.json",
+      "publicSha256": "0832c4a3b6c3895b9ef45abb108b064ecc04a3875c2faac03490f8b798d79efc",
+      "sourceBytes": 2021,
+      "sourceEntry": "ios/ios-photos-prepare-built-host.json",
+      "sourceSha256": "0832c4a3b6c3895b9ef45abb108b064ecc04a3875c2faac03490f8b798d79efc"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 3005,
+      "publicFile": "release-ci-twelfth-ios-photos-prepare-installed-host.json",
+      "publicSha256": "ff61d136c571b3ce0062782b825f5ad4b83950f262e81981dc050041aa312139",
+      "sourceBytes": 3005,
+      "sourceEntry": "ios/ios-photos-prepare-installed-host.json",
+      "sourceSha256": "ff61d136c571b3ce0062782b825f5ad4b83950f262e81981dc050041aa312139"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 926,
+      "publicFile": "release-ci-twelfth-ios-photos-prepare.log",
+      "publicSha256": "5190f2496bdcfb33f58fc8e3ad1383178565ad80f53736d23a90039af74fb6d2",
+      "sourceBytes": 926,
+      "sourceEntry": "ios/ios-photos-prepare.log",
+      "sourceSha256": "5190f2496bdcfb33f58fc8e3ad1383178565ad80f53736d23a90039af74fb6d2"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 3289,
+      "publicFile": "release-ci-twelfth-ios-photos-prepared.json",
+      "publicSha256": "fe2b0d779503e9dcbe677ec399aaa8b4b78c53c77f30762c423df60ea4e9ef44",
+      "sourceBytes": 3289,
+      "sourceEntry": "ios/ios-photos-prepared.json",
+      "sourceSha256": "fe2b0d779503e9dcbe677ec399aaa8b4b78c53c77f30762c423df60ea4e9ef44"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1713,
+      "publicFile": "release-ci-twelfth-ios-photos-privacy-help.log",
+      "publicSha256": "d0396c682883990495b246407fb203586cc2a8d14a1475bef670f0675989ae76",
+      "sourceBytes": 1713,
+      "sourceEntry": "ios/ios-photos-privacy-help.log",
+      "sourceSha256": "d0396c682883990495b246407fb203586cc2a8d14a1475bef670f0675989ae76"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 4167,
+      "publicFile": "release-ci-twelfth-ios-photos-read-write-host-observation.json",
+      "publicSha256": "2643a29aee7484dece83dc0c294e11c19c9c8bcb9da897f4d35e31e0c08b2253",
+      "sourceBytes": 4167,
+      "sourceEntry": "ios/ios-photos-read-write-host-observation.json",
+      "sourceSha256": "2643a29aee7484dece83dc0c294e11c19c9c8bcb9da897f4d35e31e0c08b2253"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 8295,
+      "publicFile": "release-ci-twelfth-ios-photos-read-write-xcode.log",
+      "publicSha256": "9f2e0f460fc23a22683d9e01100c0eef2b2a95049291dcb684dc4d46d2eefa5e",
+      "sourceBytes": 11939,
+      "sourceEntry": "ios/ios-photos-read-write-xcode.log",
+      "sourceSha256": "470e2d4081d2cc24a30345ad586b2ee9e0e89284961648abf9a9ff511b63cf0e"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 1159,
+      "publicFile": "release-ci-twelfth-ios-simulator-build.log",
+      "publicSha256": "beeff47ee3b60796b43014ed2a68525d6bc1e6133e000e1838e4de58ab6adbda",
+      "sourceBytes": 1159,
+      "sourceEntry": "ios/ios-simulator-build.log",
+      "sourceSha256": "beeff47ee3b60796b43014ed2a68525d6bc1e6133e000e1838e4de58ab6adbda"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 3543,
+      "publicFile": "release-ci-twelfth-ios-photos-read-write-identity.json",
+      "publicSha256": "504e81ee1622ac6f7f03c37f1944dd50457bb8cfb732e64374486c85b27228dc",
+      "sourceBytes": 3543,
+      "sourceEntry": "ios/ios-photos-read-write-identity.json",
+      "sourceSha256": "504e81ee1622ac6f7f03c37f1944dd50457bb8cfb732e64374486c85b27228dc"
+    },
+    {
+      "excerpt": false,
+      "publicBytes": 796,
+      "publicFile": "release-ci-twelfth-ios-simulator-cleanup.log",
+      "publicSha256": "ae116ac6d2b1d8e5b33195380c6faa0930692031d10095d4cf5bbc327eb292c5",
+      "sourceBytes": 796,
+      "sourceEntry": "ios/ios-simulator-cleanup.log",
+      "sourceSha256": "ae116ac6d2b1d8e5b33195380c6faa0930692031d10095d4cf5bbc327eb292c5"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Actual closure header, named test starts/terminals, SDK authorization/result diagnostics, suite counts, restart/interruption or Dart proofs retained; verbose build and producer payload excluded.",
+      "publicBytes": 1246,
+      "publicFile": "release-ci-twelfth-ios-simulator-native-tests.log",
+      "publicSha256": "f65b28538943cf0ad3276df24b9f82ec5778031ecb526e997dbc705943ccdc04",
+      "sourceBytes": 762470,
+      "sourceEntry": "ios/ios-simulator-native-tests.log",
+      "sourceSha256": "6cfc4729e4cad57817341723372f2a59eb1fc995a014496848e9fa578a49051a"
+    },
+    {
+      "excerpt": true,
+      "excerptReason": "Two analysis/format terminal lines followed by seventeen actual Python failure/traceback/exit lines from closed job logs API; not an archive entry or complete job log.",
+      "publicBytes": 1726,
+      "publicFile": "release-ci-twelfth-macos-controller.log",
+      "publicSha256": "70da4d3d620a5aeb6e97da6069859619b925fe082eadcd5001693edca3d526e3",
+      "sourceBytes": 1726,
+      "sourceEntry": "GitHub job 114501258423 logs API exact excerpts; no Mac artifact exists",
+      "sourceParts": [
+        {
+          "sourceBytes": 139,
+          "sourceEntry": "macos-analysis-api-excerpt.log",
+          "sourceSha256": "a2f24c9de724a59b2e5db0756a263efd2ebd049f1b055ca5f55b0587bee89fdc"
+        },
+        {
+          "sourceBytes": 1587,
+          "sourceEntry": "macos-controller-api-excerpt.log",
+          "sourceSha256": "b4d254f5000a829efa38945c3fafa129c3348fcd27bb56f29f9495bd416cf094"
+        }
+      ],
+      "sourceSha256": "70da4d3d620a5aeb6e97da6069859619b925fe082eadcd5001693edca3d526e3"
+    }
+  ],
+  "runAttempt": 1,
+  "runId": 38149991827,
+  "runUrl": "https://github.com/panlijun/ImageHub/actions/runs/38149991827",
+  "sourceCommit": "13db3d47f5e5b45c0205953723c49dc9b5daaabd",
+  "sourceContext": [
+    {
+      "sourceBytes": 239,
+      "sourceEntry": "owner.json",
+      "sourceSha256": "08debaab69c9d31474471bb248d3dffffa2dab038fe109558ee24af890a12a5c"
+    },
+    {
+      "sourceBytes": 13323,
+      "sourceEntry": "terminal-run.json",
+      "sourceSha256": "0d3743aae92608bbae1cc4d9f0ecbd66a00d04a44a6c3c084b0aa929239b3b4a"
+    },
+    {
+      "sourceBytes": 11555,
+      "sourceEntry": "terminal-jobs.json",
+      "sourceSha256": "33fc2bd2f1e6cb1aed7e4aa05b0ac4ad33df9df6e7dfdb5652d593eff098b5fc"
+    },
+    {
+      "sourceBytes": 863,
+      "sourceEntry": "artifact-metadata.json",
+      "sourceSha256": "da14c39d0d2d31b49cffb96d7d034d071e1c854973fa22eec0c67b7117edfaa5"
+    },
+    {
+      "sourceBytes": 6082,
+      "sourceEntry": "ios/extraction-receipt.json",
+      "sourceSha256": "3a9e521b2c3c146baf5ec2f2d730eab7ddeed2adb8525044ea3ee06fd5aef5eb"
+    }
+  ],
+  "verificationVersion": 1,
+  "verifiedOrdinaryWhitelistEntries": [
+    {
+      "byteCount": 34374,
+      "entry": "ios-backup-export-capture.log",
+      "sha256": "1ba87595dffb837b95bc18634b5e81b13592e8f9fcd28ea0cbcffd8822195adc"
+    },
+    {
+      "byteCount": 836,
+      "entry": "ios-dart-backup-evidence/android.json",
+      "sha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354"
+    },
+    {
+      "byteCount": 765122,
+      "entry": "ios-backup-interop.log",
+      "sha256": "c4cbca38d69f8cf8d66429ad63ecf83bd7b8effc37d062c96dc7dbfb7b4fb7ed"
+    },
+    {
+      "byteCount": 34373,
+      "entry": "ios-dart-backup-evidence/export.json",
+      "sha256": "c9e62a1b6ae7e197f2c97e2006388de9a8d6cff101bc42a4ed44b5970ee22b03"
+    },
+    {
+      "byteCount": 832,
+      "entry": "ios-dart-backup-evidence/macos.json",
+      "sha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1"
+    },
+    {
+      "byteCount": 836,
+      "entry": "ios-dart-backup-evidence/windows.json",
+      "sha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f"
+    },
+    {
+      "byteCount": 1164,
+      "entry": "ios-dart-backup-signing.json",
+      "sha256": "9d715f8c07913a307cc9d801df30ed6b63c13c0e5ae04e736352982479df7c0b"
+    },
+    {
+      "byteCount": 1143,
+      "entry": "ios-dart-backup-summary.json",
+      "sha256": "dc894b26a2f677254f44a17ca39e7382eedc5029f27401ffa647cee23ecdd6c0"
+    },
+    {
+      "byteCount": 819921,
+      "entry": "ios-dart-backup-xcode.log",
+      "sha256": "f13adbffec5421fa5bbc699c0e1c1a64aea641bd33fe52bdf0584b76691c9f9e"
+    },
+    {
+      "byteCount": 943,
+      "entry": "ios-dart-backup-xctest-summary.json",
+      "sha256": "9dbefc4d2002c33be6b122ec49456c7c921f201b79ae9f13e2af9dc863af7a67"
+    },
+    {
+      "byteCount": 1164,
+      "entry": "ios-dart-native-signing.json",
+      "sha256": "554042d5ba104a1807fad4c75e14c55aeabe57c2a5f06a1cf405f31a08d618ac"
+    },
+    {
+      "byteCount": 663,
+      "entry": "ios-dart-native-summary.json",
+      "sha256": "258fcebc916329dc8047d793728797b627b039d4b0a917c41e0749cc85e14373"
+    },
+    {
+      "byteCount": 816578,
+      "entry": "ios-dart-native-xcode.log",
+      "sha256": "229ac142bfa5b9ffa0b25cf5e8b207da099abc22a8ecb5fef3f2f6a9a9eb5421"
+    },
+    {
+      "byteCount": 944,
+      "entry": "ios-dart-native-xctest-summary.json",
+      "sha256": "c03c4e9bf829e2db8951dc525c75f75ff5ec3a487d8456486d3e48967a9adcba"
+    },
+    {
+      "byteCount": 2849,
+      "entry": "ios-file-tests.log",
+      "sha256": "9e194cf65b702a8cd7a0beeecef15ddb77186b7717d449689641e89e9211ebf0"
+    },
+    {
+      "byteCount": 4165,
+      "entry": "ios-photos-add-only-host-observation.json",
+      "sha256": "57524ee665e91863f590b3433987bdd859d4a3a9fbaf57e11321e0c66c82ade3"
+    },
+    {
+      "byteCount": 254,
+      "entry": "ios-native-versions.json",
+      "sha256": "64894c065335e7a2bde425b9ac446a501889b4c20ff649f7049ee72e4378c243"
+    },
+    {
+      "byteCount": 3541,
+      "entry": "ios-photos-add-only-identity.json",
+      "sha256": "e22238721e9da6e233b22409f5b27be5b6a8e19e61bf559b564b9a8a9714cc80"
+    },
+    {
+      "byteCount": 1028,
+      "entry": "ios-photos-add-only-result.json",
+      "sha256": "9542e94a1e4ccb1d3ca47203890971f34b8ecd184325994578c7cbffb87747ef"
+    },
+    {
+      "byteCount": 944,
+      "entry": "ios-photos-add-only-summary.json",
+      "sha256": "79d0c1813e42a4a9cc914028f51beb26037eabf6ffe3c955b6200398094d673f"
+    },
+    {
+      "byteCount": 4123,
+      "entry": "ios-photos-add-only-xcode.log",
+      "sha256": "5ba2dc6e2010fcd5661a7dff4db9de6cc9824392c828dcdd3aea8ba3b5dc5b37"
+    },
+    {
+      "byteCount": 2853,
+      "entry": "ios-photos-add-only.log",
+      "sha256": "77eff67b621d2bcbe3a4e2fd2b0b3693cf6c7096d384511875eb7d5e0762fa61"
+    },
+    {
+      "byteCount": 2021,
+      "entry": "ios-photos-prepare-built-host.json",
+      "sha256": "0832c4a3b6c3895b9ef45abb108b064ecc04a3875c2faac03490f8b798d79efc"
+    },
+    {
+      "byteCount": 3005,
+      "entry": "ios-photos-prepare-installed-host.json",
+      "sha256": "ff61d136c571b3ce0062782b825f5ad4b83950f262e81981dc050041aa312139"
+    },
+    {
+      "byteCount": 805182,
+      "entry": "ios-photos-prepare-xcode.log",
+      "sha256": "63cb03d5ca4eb99e1106a79eb5e6108fc6a7b0a4d8c13e0c578c115d11476dff"
+    },
+    {
+      "byteCount": 926,
+      "entry": "ios-photos-prepare.log",
+      "sha256": "5190f2496bdcfb33f58fc8e3ad1383178565ad80f53736d23a90039af74fb6d2"
+    },
+    {
+      "byteCount": 3289,
+      "entry": "ios-photos-prepared.json",
+      "sha256": "fe2b0d779503e9dcbe677ec399aaa8b4b78c53c77f30762c423df60ea4e9ef44"
+    },
+    {
+      "byteCount": 1713,
+      "entry": "ios-photos-privacy-help.log",
+      "sha256": "d0396c682883990495b246407fb203586cc2a8d14a1475bef670f0675989ae76"
+    },
+    {
+      "byteCount": 4167,
+      "entry": "ios-photos-read-write-host-observation.json",
+      "sha256": "2643a29aee7484dece83dc0c294e11c19c9c8bcb9da897f4d35e31e0c08b2253"
+    },
+    {
+      "byteCount": 11939,
+      "entry": "ios-photos-read-write-xcode.log",
+      "sha256": "470e2d4081d2cc24a30345ad586b2ee9e0e89284961648abf9a9ff511b63cf0e"
+    },
+    {
+      "byteCount": 28657,
+      "entry": "ios-simulator-boot.log",
+      "sha256": "a8a096fe458c1a3f72f5f4f5d0677395a6917a752297ceb8f843668ecf3eb561"
+    },
+    {
+      "byteCount": 1159,
+      "entry": "ios-simulator-build.log",
+      "sha256": "beeff47ee3b60796b43014ed2a68525d6bc1e6133e000e1838e4de58ab6adbda"
+    },
+    {
+      "byteCount": 3543,
+      "entry": "ios-photos-read-write-identity.json",
+      "sha256": "504e81ee1622ac6f7f03c37f1944dd50457bb8cfb732e64374486c85b27228dc"
+    },
+    {
+      "byteCount": 796,
+      "entry": "ios-simulator-cleanup.log",
+      "sha256": "ae116ac6d2b1d8e5b33195380c6faa0930692031d10095d4cf5bbc327eb292c5"
+    },
+    {
+      "byteCount": 762470,
+      "entry": "ios-simulator-native-tests.log",
+      "sha256": "6cfc4729e4cad57817341723372f2a59eb1fc995a014496848e9fa578a49051a"
+    }
+  ]
+}

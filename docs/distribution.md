@@ -41,3 +41,7 @@ Android artifact 是 arm64 Release APK，固定 `io.imagehost.imagehost` applica
 ## 第十一轮 Apple CI
 
 第十一轮Apple CI源`3588ed69b298cbdcfb5bc2c78041f3d587f1e8fc`/ [run38145131826](https://github.com/panlijun/ImageHub/actions/runs/38145131826)整体failure。Mac作业成功，iOS失败于Photos完整读回；27项为22通过/5失败/0跳过。SDK helper已在Apple runner实际编译运行，但首个请求30秒未收到授权callback；grant photos命令exit0未证明授权，五格式独立读回未确认。完整证据、artifact指纹及当前pending候选见[里程碑30](milestone-30-versioned-delivery.md)和[授权审查](validation/release-photos-sdk-authorization-review.md)。四来源矩阵及Windows/Android本地包维持既有状态；设备PT、最低系统、硬件PERF、真实服务及Apple正式发行未通过。
+
+## 第十二轮 Apple CI
+
+第十二轮源`13db3d47f5e5b45c0205953723c49dc9b5daaabd`/[run38149991827](https://github.com/panlijun/ImageHub/actions/runs/38149991827)整体failure：Mac 217项controller检查有1项失败，后续步骤skip且无Mac artifact；iOS native/backup、Debug构建与版本、addOnly 1项通过。readWrite 17项starts中有15个AppleFileEngine终态通过，BMP/GIF无终态；无完整suite摘要或五格式独立读回。6条SDK诊断为readWrite 0，两个PID下callback均为-1；严格控制器在PID变化时拒绝继续。首次host退出原因未知，CLI grant exit 0不证明SDK授权或造成退出；IO/owned stop/Simulator清理通过。见[第十二轮receipt](validation/release-apple-twelfth-ci.json)和[里程碑30](milestone-30-versioned-delivery.md)；UI授权候选尚未实际Apple编译或运行。

@@ -82,7 +82,7 @@ class ControllerTests(OwnedTemp):
         self.signing_code = 0
         self.installed_mutation = None
         self.test_mutation = None
-        self.test_output = b"Synthetic test\n"
+        self.test_output = None
         self.output = io.StringIO()
         self.stack.enter_context(contextlib.redirect_stdout(self.output))
         self.stack.enter_context(mock.patch.object(runner.host.subprocess, "Popen", side_effect=self.popen))
@@ -108,7 +108,8 @@ class ControllerTests(OwnedTemp):
                 Path(args[args.index("-resultBundlePath") + 1]).mkdir()
                 if self.test_mutation:
                     self.test_mutation()
-                process = Process(self.test_output, code=self.test_code, running=self.test_timeout)
+                output = self.phase_output(args) if self.test_output is None else self.test_output
+                process = Process(output, code=self.test_code, running=self.test_timeout)
         elif args[0] == "codesign":
             if args[1] == "--verify":
                 process = Process(code=self.signing_code)
@@ -150,6 +151,29 @@ class ControllerTests(OwnedTemp):
         self.processes.append(process)
         return process
 
+    def phase_output(self, args):
+        selected = next(value for value in args if value.startswith("-only-testing:"))
+        if selected == "-only-testing:" + runner.UI_TEST:
+            ready = {"formatVersion": 1, "phase": "ready", "ownedSimulatorID": self.record["udid"],
+                "mainBundleID": runner.host.BUNDLE_ID, "mainProcessID": 123,
+                "photoUsageDescriptionPresent": True, "photoAddUsageDescriptionPresent": True,
+                "addOnlyStatus": 3, "readWriteStatus": 0, "requestCount": 0, "callbackCount": 0,
+                "callbackStatus": -1, "requestDispatched": False, "failureLatched": False,
+                "callbackWithinDeadline": False, "testBundleID": runner.UI_BUNDLE_ID,
+                "testProcessID": 124, "expectedAlertNeeded": True, "expectedAlertHandled": False}
+            confirmed = dict(ready, phase="confirmed", readWriteStatus=3, requestCount=1, callbackCount=1,
+                callbackStatus=3, requestDispatched=True, callbackWithinDeadline=True, expectedAlertHandled=True)
+            return ("\n".join(runner.UI_AUTHORIZATION_PREFIX + json.dumps(value)
+                              for value in (ready, confirmed)) + "\n").encode()
+        if selected == "-only-testing:RunnerTests":
+            value = {"phase": "preflight", "callbackStatus": -1, "failureLatched": False, "readBack": True,
+                "mainBundleID": runner.host.BUNDLE_ID, "testBundleID": runner.host.BUNDLE_ID + ".RunnerTests",
+                "hostMatchesExpected": True, "testBundleMatchesExpected": True, "processID": 125,
+                "ownedSimulatorID": self.record["udid"], "addOnlyStatus": 3, "readWriteStatus": 3,
+                "photoUsageDescriptionPresent": True, "photoAddUsageDescriptionPresent": True}
+            return ((runner.AUTHORIZATION_PREFIX + json.dumps(value) + "\n") * 5).encode()
+        return b"Synthetic test\n"
+
     def commands(self, action):
         return [args for args in self.calls if args[:3] == ["xcrun", "simctl", action]]
 
@@ -164,7 +188,7 @@ class ControllerTests(OwnedTemp):
         self.assertFalse(self.commands("privacy"))
         self.assertTrue((runner.ARTIFACTS / "ios-photos-prepared.json").is_file())
 
-    def test_live_frozen_guard_codesign_and_container_commands_preserve_companion_output(self):
+    def test_read_only_frozen_commands_preserve_companion_output(self):
         self.prepared()
         _, digest = runner.check_prepared(self.record)
         expected = runner.context(self.record)
@@ -173,8 +197,8 @@ class ControllerTests(OwnedTemp):
         with mock.patch.object(runner.host.subprocess, "Popen", return_value=process):
             command = runner.host.Running(["synthetic-xcode"], "synthetic-xcode", publish=False)
         collected = []
-        live = runner.LivePhotosAuthorization(self.record, digest, expected)
-        companion = runner.PhotosCompanion(command, collected, live)
+        observer = runner.FullPhotosAuthorization(self.record)
+        companion = runner.PhotosCompanion(command, collected, observer)
         try:
             _, observation, failure = runner.frozen_observation(self.record, "read-write", digest,
                 expected_context=expected, companion=companion)
@@ -205,30 +229,34 @@ class ControllerTests(OwnedTemp):
         self.shape_locations[str(self.installed)] = self.container.rstrip("\n")
         self.assertFalse(previous.exists())
 
-    def test_exact_three_phases_same_host_commands_results_and_closed_readers(self):
+    def test_exact_four_phases_same_host_commands_results_and_closed_readers(self):
         self.prepared()
         add = runner.run_phase("add-only")
+        authorization = runner.run_phase("authorize")
         read = runner.run_phase("read-write")
-        self.assertEqual((add["xctestPassed"], read["xctestPassed"]), (1, 27))
+        self.assertEqual((add["xctestPassed"], authorization["xctestPassed"], read["xctestPassed"]), (1, 1, 27))
         xcodes = [args for args in self.calls if args[0] == "xcodebuild"]
-        self.assertEqual([args[1] for args in xcodes], ["build-for-testing", "test-without-building", "test-without-building"])
+        self.assertEqual([args[1] for args in xcodes], ["build-for-testing"] + ["test-without-building"] * 3)
         for args in xcodes:
             self.assertIn("FLUTTER_TARGET=lib/main.dart", args)
             self.assertIn("CODE_SIGNING_ALLOWED=YES", args)
             self.assertIn("CODE_SIGN_IDENTITY=-", args)
             self.assertIn("CODE_SIGN_INJECT_BASE_ENTITLEMENTS=YES", args)
+            self.assertIn(runner.PHOTOS_SWIFT_CONDITIONS, args)
+            self.assertEqual(args[args.index("-scheme") + 1], "ImageHubPhotosCI")
             self.assertEqual(args[args.index("-derivedDataPath") + 1], str(runner.DERIVED))
             self.assertIn(self.record["udid"].upper(), args[args.index("-destination") + 1])
         self.assertIn("-only-testing:" + runner.ADD_TEST, xcodes[1])
-        self.assertIn("-only-testing:RunnerTests", xcodes[2])
+        self.assertIn("-only-testing:" + runner.UI_TEST, xcodes[2])
+        self.assertIn("-only-testing:RunnerTests", xcodes[3])
         self.assertEqual([args[-3:] for args in self.commands("privacy")],
                          [["reset", "photos", runner.host.BUNDLE_ID], ["grant", "photos-add", runner.host.BUNDLE_ID],
-                          ["grant", "photos", runner.host.BUNDLE_ID]])
+                          ["reset", "photos", runner.host.BUNDLE_ID], ["grant", "photos-add", runner.host.BUNDLE_ID]])
         self.assertTrue(all(p.stdout.closed and p.waited for p in self.processes))
         self.assertEqual(len(self.commands("install")), 1)
-        self.assertEqual(len(self.commands("terminate")), 2)
-        self.assertTrue(add["ownedAppStopped"] and read["ownedAppStopped"])
-        for phase, result in (("add-only", add), ("read-write", read)):
+        self.assertEqual(len(self.commands("terminate")), 3)
+        self.assertTrue(add["ownedAppStopped"] and authorization["ownedAppStopped"] and read["ownedAppStopped"])
+        for phase, result in (("add-only", add), ("authorize", authorization), ("read-write", read)):
             raw = (runner.ARTIFACTS / f"ios-photos-{phase}-host-observation.json").read_bytes()
             self.assertEqual(result["hostObservationSha256"], hashlib.sha256(raw).hexdigest())
             observation = self.observation(phase)
@@ -343,6 +371,90 @@ class ControllerTests(OwnedTemp):
         self.failure("read-write", "evidence-path-unavailable")
         self.assertFalse(self.commands("privacy"))
 
+    def test_authorize_requires_closed_add_only_proof(self):
+        self.prepared()
+        self.failure("authorize", "evidence-path-unavailable")
+        self.assertFalse(self.commands("privacy"))
+
+    def test_read_write_requires_closed_ui_authorization_proof(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        self.failure("read-write", "evidence-path-unavailable")
+        self.assertEqual(len(self.commands("privacy")), 2)
+        self.assertEqual(len([args for args in self.calls if args[0] == "xcodebuild"]), 2)
+
+    def test_authorize_closed_xcode_without_callback_never_success(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        self.test_output = self.phase_output(["-only-testing:" + runner.UI_TEST]).splitlines(keepends=True)[0]
+        self.failure("authorize", "photos-ui-sdk-request-unconfirmed")
+        self.assertEqual(len(self.commands("terminate")), 2)
+        self.assertTrue(self.observation("authorize")["allFrozenFieldsVerified"])
+
+    def test_authorize_real_callback_with_skipped_xctest_never_success(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        self.summary_changes = {"passedTests": 0, "skippedTests": 1}
+        self.failure("authorize", "photos-xctest-not-all-passed")
+        self.assertEqual(len(self.commands("terminate")), 2)
+
+    def test_authorization_proof_types_identity_callback_and_closure_block_full(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        runner.run_phase("authorize")
+        path = runner.ARTIFACTS / "ios-photos-authorize-result.json"
+        original = json.loads(path.read_text())
+        mutations = [lambda value: value.update(xcodeExitCode=False),
+            lambda value: value.update(ownedAppStopped=1), lambda value: value.update(hostAndReaderClosed=False),
+            lambda value: value.update(runAttempt="999"), lambda value: value.update(unexpected=True),
+            lambda value: value.update(xctestSummarySha256="0" * 64),
+            lambda value: value["authorizationObservations"][1].update(callbackCount=2),
+            lambda value: value["authorizationObservations"][1].update(mainProcessID=999),
+            lambda value: value["authorizationObservations"][1].update(testBundleID="other"),
+            lambda value: value["authorizationObservations"][1].update(callbackWithinDeadline=False),
+            lambda value: value["authorizationObservations"].pop()]
+        xcodes = len([args for args in self.calls if args[0] == "xcodebuild"])
+        for index, mutate in enumerate(mutations):
+            with self.subTest(index=index):
+                value = json.loads(json.dumps(original))
+                mutate(value)
+                path.write_text(json.dumps(value))
+                self.failure("read-write", "photos-authorize-(proof|sdk-proof)-required")
+                self.assertEqual(len(self.commands("privacy")), 4)
+                self.assertEqual(len([args for args in self.calls if args[0] == "xcodebuild"]), xcodes)
+
+    def test_authorization_summary_cannot_become_failed_even_with_updated_digest(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        runner.run_phase("authorize")
+        path = runner.ARTIFACTS / runner.SUMMARY_NAMES["authorize"]
+        path.write_text(json.dumps({"totalTestCount": 1, "passedTests": 0, "failedTests": 1, "skippedTests": 0}))
+        proof_path = runner.ARTIFACTS / "ios-photos-authorize-result.json"
+        prior = json.loads(proof_path.read_text())
+        prior["xctestSummarySha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+        proof_path.write_text(json.dumps(prior))
+        self.failure("read-write", "photos-authorize-summary-required")
+        self.assertEqual(len(self.commands("privacy")), 4)
+
+    def test_authorization_observation_changed_bytes_block_full_before_start(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        runner.run_phase("authorize")
+        path = runner.ARTIFACTS / "ios-photos-authorize-host-observation.json"
+        path.write_text(json.dumps(json.loads(path.read_text()), separators=(",", ":")))
+        self.failure("read-write", "photos-authorize-proof-required")
+        self.assertEqual(len(self.commands("privacy")), 4)
+
+    def test_full_sdk_permission_loss_fails_without_mutation_and_still_stops(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        runner.run_phase("authorize")
+        self.test_output = self.phase_output(["-only-testing:RunnerTests"]).replace(
+            b'"readWriteStatus": 3', b'"readWriteStatus": 0')
+        self.failure("read-write", "photos-full-preauthorized-sdk-required")
+        self.assertEqual(len(self.commands("privacy")), 4)
+        self.assertEqual(len(self.commands("terminate")), 3)
+
     def test_changed_prepared_context_or_host_type_refuses_before_permission(self):
         self.prepared()
         path = runner.ARTIFACTS / "ios-photos-prepared.json"
@@ -376,12 +488,12 @@ class ControllerTests(OwnedTemp):
         self.assertEqual(len(self.commands("privacy")), 2)
         self.assertEqual(len([args for args in self.calls if args[0] == "xcodebuild"]), 1)
 
-    def test_read_write_grant_failure_never_starts_full_suite(self):
+    def test_authorize_add_only_grant_failure_never_starts_ui_suite(self):
         self.prepared()
         runner.run_phase("add-only")
         self.privacy_code = 1
-        self.privacy_failure_operation = ("grant", "photos")
-        self.failure("read-write", "photos-privacy-grant-photos-exit-nonzero")
+        self.privacy_failure_operation = ("grant", "photos-add")
+        self.failure("authorize", "photos-privacy-grant-photos-add-exit-nonzero")
         self.assertEqual(len([args for args in self.calls if args[0] == "xcodebuild"]), 2)
 
     def test_prepared_raw_changes_during_permission_are_rejected(self):
@@ -436,6 +548,7 @@ class ControllerTests(OwnedTemp):
     def test_read_write_requires_exact_27(self):
         self.prepared()
         runner.run_phase("add-only")
+        runner.run_phase("authorize")
         self.summary_changes = {"totalTestCount": 26, "passedTests": 26}
         self.failure("read-write", "photos-xctest-not-all-passed")
 
@@ -474,6 +587,7 @@ class ControllerTests(OwnedTemp):
         self.assertEqual(identity["initialInstalledContainer"], initial_location)
         self.assertEqual(identity["currentInstalledContainer"], str(self.installed))
         self.test_mutation = None
+        runner.run_phase("authorize")
         self.assertEqual(runner.run_phase("read-write")["xctestPassed"], 27)
 
     def test_relocation_before_permission_is_accepted(self):
