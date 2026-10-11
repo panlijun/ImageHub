@@ -1,0 +1,2 @@
+{"evidenceVersion": 1, "kind": "bounded selected lines; complete original retained in CI artifact", "sourceArtifactEntry": "macos/macos-software-tests.log", "sourceBytes": 501246, "sourceSha256": "d21daee65ecccd62d4cc6fec7840f373565d85a4ee07f953f0faec2ee746cd62"}
+09:50 +1456 ~4: All tests passed!

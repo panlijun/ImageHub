@@ -262,7 +262,11 @@ class RunnerTests: XCTestCase {
   func testITApplePhotosInvalidContentWaitsForFailureAndRetiresStage() throws {
     try requireOwnedPhotosSimulator(readBack: false)
     let bytes = Data("ImageHub synthetic invalid image; not PNG bytes.".utf8)
-    XCTAssertNil(CGImageSourceCreateWithData(bytes as CFData, nil))
+    // ImageIO may create a lazy source even when no image can be decoded.
+    let invalidSource = CGImageSourceCreateWithData(bytes as CFData, nil)
+    let invalidImage = invalidSource.flatMap { CGImageSourceCreateImageAtIndex($0, 0, nil) }
+    XCTAssertNil(invalidImage)
+    guard invalidImage == nil else { throw PhotoVerificationFailure.resource }
     let root = try makePhotoRoot()
     let source = root.appendingPathComponent("source.png")
     try bytes.write(to: source, options: .withoutOverwriting)
@@ -319,9 +323,11 @@ class RunnerTests: XCTestCase {
     let name = environment["SIMULATOR_DEVICE_NAME"] ?? ""
     guard name.range(of: "^ImageHub-CI-[1-9][0-9]*-[1-9][0-9]*-[0-9a-f]{8}$",
                      options: .regularExpression) != nil,
-          let identifier = environment["SIMULATOR_UDID"], UUID(uuidString: identifier) != nil else {
+          let identifierText = environment["SIMULATOR_UDID"],
+          let identifier = UUID(uuidString: identifierText) else {
       throw XCTSkip("Photos resource verification runs only on a newly owned ImageHub CI simulator.")
     }
+    reportOwnedPhotosAuthorization(readBack: readBack, identifier: identifier)
     XCTAssertEqual(PHPhotoLibrary.authorizationStatus(for: .addOnly), .authorized,
                    "CI must grant photos-add to its confirmed owned simulator application.")
     if readBack {
@@ -335,6 +341,33 @@ class RunnerTests: XCTestCase {
     #else
     throw XCTSkip("These tests must never read a physical device's photo library.")
     #endif
+  }
+
+  /// Fixed CI diagnostics distinguish the running host from preparation commands.
+  private func reportOwnedPhotosAuthorization(readBack: Bool, identifier: UUID) {
+    let expectedHost = "io.imagehost.imagehost"
+    let expectedTest = expectedHost + ".RunnerTests"
+    let main = Bundle.main
+    let test = Bundle(for: RunnerTests.self)
+    let hostId = main.bundleIdentifier
+    let testId = test.bundleIdentifier
+    let record: [String: Any] = [
+      "readBack": readBack,
+      "mainBundleID": hostId == expectedHost ? expectedHost : "unexpected",
+      "testBundleID": testId == expectedTest ? expectedTest : "unexpected",
+      "hostMatchesExpected": hostId == expectedHost,
+      "testBundleMatchesExpected": testId == expectedTest,
+      "processID": Int(ProcessInfo.processInfo.processIdentifier),
+      "ownedSimulatorID": identifier.uuidString.lowercased(),
+      "addOnlyStatus": PHPhotoLibrary.authorizationStatus(for: .addOnly).rawValue,
+      "readWriteStatus": PHPhotoLibrary.authorizationStatus(for: .readWrite).rawValue,
+      "photoUsageDescriptionPresent": (main.object(forInfoDictionaryKey: "NSPhotoLibraryUsageDescription") as? String)?.isEmpty == false,
+      "photoAddUsageDescriptionPresent": (main.object(forInfoDictionaryKey: "NSPhotoLibraryAddUsageDescription") as? String)?.isEmpty == false,
+    ]
+    if let data = try? JSONSerialization.data(withJSONObject: record, options: [.sortedKeys]),
+       let text = String(data: data, encoding: .utf8) {
+      print("IMAGEHUB_PHOTOS_AUTHORIZATION \(text)")
+    }
   }
 
   private enum PhotoVerificationFailure: Error {

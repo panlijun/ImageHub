@@ -1,0 +1,280 @@
+{
+  "verificationVersion": 1,
+  "sourceCommit": "ca7877a379cce83616b53e730b5c2a28487dd319",
+  "runId": 37938849959,
+  "runUrl": "https://github.com/panlijun/ImageHub/actions/runs/37938849959",
+  "overallConclusion": "failure",
+  "macos": {
+    "jobId": 113847727268,
+    "conclusion": "success",
+    "ciControllerChecksPassed": 94,
+    "softwarePassed": 1456,
+    "platformBranchesSkipped": 4,
+    "flutterNativePassed": 4,
+    "xctestPassed": 23,
+    "xctestFailed": 0,
+    "xctestSkipped": 0,
+    "processRecoveryAndLockingBoundariesPassed": 8,
+    "releaseBuilt": true,
+    "independentNativeVersionsVerified": true,
+    "backupExternalOrigins": [
+      "windows",
+      "android"
+    ],
+    "backupConsumerModesPerOrigin": 2,
+    "backupSelfOriginSkipped": true,
+    "artifactId": 11621169497,
+    "artifactBytes": 26003387,
+    "artifactSha256": "db1450cff76df2381714b0a79689702d86ea57d0692dfa137f6b05155bf87cd6"
+  },
+  "ios": {
+    "jobId": 113847727599,
+    "conclusion": "failure",
+    "failedStep": "Verify native IO and exact synthetic Photos resource readback",
+    "nativeDartBusinessPassed": 4,
+    "nativeCallbacks": 4,
+    "nativeXctestPassed": 1,
+    "nativeOwnedApplicationStopConfirmed": true,
+    "actualHostAdhocSignatureVerified": true,
+    "runtimeKeychainFlowPassed": true,
+    "backupDartBusinessPassed": 4,
+    "backupCallbacks": 4,
+    "backupXctestPassed": 1,
+    "backupOwnedApplicationStopConfirmed": true,
+    "backupExternalOrigins": [
+      "windows",
+      "android",
+      "macos"
+    ],
+    "backupConsumerModesPerOrigin": 2,
+    "fullAndMetadataExportClosedAndReopened": true,
+    "normalEntrySimulatorBuildAndNativeVersionsVerified": true,
+    "photosAddOnlyPassed": 1,
+    "photosAddOnlyFailed": 0,
+    "photosAddOnlySkipped": 0,
+    "photosFullUniqueCases": 27,
+    "photosFullPassedCases": 21,
+    "photosFullFailedCases": 6,
+    "photosFullXcodeExitCode": 65,
+    "photosFullSummaryJsonPresent": false,
+    "photosFullCountsEvidence": "27 unique terminal XCTest case lines in closed ios-file-tests.log; not a JSON xcresult summary",
+    "photosFiveFormatReadWriteAuthorizationRawValue": 0,
+    "photosFiveFormatExpectedAuthorizationRawValue": 3,
+    "photosFiveFormatSavedResourceReadbackVerified": false,
+    "photosInvalidImageSourceObjectUnexpectedlyNonNull": true,
+    "photosInvalidPixelDecodeCorrectionNativeVerified": false,
+    "photosPermissionUnderlyingMechanismKnown": false,
+    "nextFrozenPhotosHostNativeVerified": false,
+    "ownedSimulatorShutdownAndDeleted": true,
+    "artifactId": 11621698756,
+    "artifactBytes": 126916344,
+    "artifactSha256": "e7fef86cc80b172a5d92f2fbb2cec554bbabcd17d04d6bf7e3cf4ee2134d048c"
+  },
+  "nextLocalControls": {
+    "testsPassed": 134,
+    "nativePhotosProof": false,
+    "file": "release-photos-controller-controls-01.log",
+    "sha256": "cf47cc65a7ec7620a40228e1446e0b2f342a680ea117117b9e932787b86b64a7"
+  },
+  "retainedEvidence": [
+    {
+      "sourceEntry": "macos/macos-software-tests.log",
+      "sourceBytes": 501246,
+      "sourceSha256": "d21daee65ecccd62d4cc6fec7840f373565d85a4ee07f953f0faec2ee746cd62",
+      "publicFile": "release-ci-eighth-macos-software.log",
+      "publicBytes": 298,
+      "publicSha256": "60f115ad53bc28f629294b97eeac8c5bc46f80e656cc1ec4a7a18bf544cfb483",
+      "excerpt": true
+    },
+    {
+      "sourceEntry": "macos/macos-native-tests.log",
+      "sourceBytes": 1876,
+      "sourceSha256": "89d658a0628bc935b4b18c5000a46cade138af6f9d65c83956c8a9cfc154ea9d",
+      "publicFile": "release-ci-eighth-macos-native.log",
+      "publicBytes": 1876,
+      "publicSha256": "89d658a0628bc935b4b18c5000a46cade138af6f9d65c83956c8a9cfc154ea9d",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "macos/macos-process-recovery.log",
+      "sourceBytes": 622,
+      "sourceSha256": "e32cf7dd1917c0c5223cda948d47d1a0561d674854f6eb17e1d8d67302428d3c",
+      "publicFile": "release-ci-eighth-macos-process-recovery.log",
+      "publicBytes": 622,
+      "publicSha256": "e32cf7dd1917c0c5223cda948d47d1a0561d674854f6eb17e1d8d67302428d3c",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "macos/macos-backup-interop.log",
+      "sourceBytes": 37532,
+      "sourceSha256": "2900b4c6155a8d349b39798e92a11478790700e13d5bd9731f02bdc254dc6b5f",
+      "publicFile": "release-ci-eighth-macos-backup-interop.log",
+      "publicBytes": 3154,
+      "publicSha256": "b9fb24a50bd0658235494d55bd117eb9308ca477503e6cef5e44401d059dfe65",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "macos/macos-file-test-summary.json",
+      "sourceBytes": 1122,
+      "sourceSha256": "40f5db33908936d6d91163697d43bd7609d0a21c5c1ecd2990acdb6e90d0e137",
+      "publicFile": "release-ci-eighth-macos-file-test-summary.json",
+      "publicBytes": 1122,
+      "publicSha256": "40f5db33908936d6d91163697d43bd7609d0a21c5c1ecd2990acdb6e90d0e137",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "macos/macos-native-versions.json",
+      "sourceBytes": 256,
+      "sourceSha256": "e80b8640d26cfd572e902880829a3264ecb3f549ac10bb855a929c6a5b6a75ee",
+      "publicFile": "release-ci-eighth-macos-native-versions.json",
+      "publicBytes": 256,
+      "publicSha256": "e80b8640d26cfd572e902880829a3264ecb3f549ac10bb855a929c6a5b6a75ee",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "macos/macos-release-build.log",
+      "sourceBytes": 990,
+      "sourceSha256": "04a6b521f581495538eacc24c4b2f535a4bb3466013fb8c769edc7c0151e0eef",
+      "publicFile": "release-ci-eighth-macos-release-build.log",
+      "publicBytes": 990,
+      "publicSha256": "04a6b521f581495538eacc24c4b2f535a4bb3466013fb8c769edc7c0151e0eef",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-simulator-native-tests.log",
+      "sourceBytes": 761309,
+      "sourceSha256": "ab1d98e56ed15db438f4ab901c5c4a7be12dce2ac4174f18d5a7ff73a5a47e50",
+      "publicFile": "release-ci-eighth-ios-native.log",
+      "publicBytes": 668,
+      "publicSha256": "8aafa6b91dc29184fd6752a6a9ec57ca3678e44002c4aef812b7c9002fcb5d57",
+      "excerpt": true
+    },
+    {
+      "sourceEntry": "ios/ios-dart-native-summary.json",
+      "sourceBytes": 663,
+      "sourceSha256": "258fcebc916329dc8047d793728797b627b039d4b0a917c41e0749cc85e14373",
+      "publicFile": "release-ci-eighth-ios-native-summary.json",
+      "publicBytes": 663,
+      "publicSha256": "258fcebc916329dc8047d793728797b627b039d4b0a917c41e0749cc85e14373",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-dart-native-signing.json",
+      "sourceBytes": 1164,
+      "sourceSha256": "d45fa83542d968c62f24890436ae1b21b55bdfc4882e2f42a93d6e67070d6c58",
+      "publicFile": "release-ci-eighth-ios-native-signing.json",
+      "publicBytes": 1164,
+      "publicSha256": "d45fa83542d968c62f24890436ae1b21b55bdfc4882e2f42a93d6e67070d6c58",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-dart-native-xctest-summary.json",
+      "sourceBytes": 944,
+      "sourceSha256": "73068f5dee8a477c1a43b3d9491624a4f0b4c7da718965881364d18bfff20f3c",
+      "publicFile": "release-ci-eighth-ios-native-xctest-summary.json",
+      "publicBytes": 944,
+      "publicSha256": "73068f5dee8a477c1a43b3d9491624a4f0b4c7da718965881364d18bfff20f3c",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-backup-interop.log",
+      "sourceBytes": 763745,
+      "sourceSha256": "3cd67664b3eb35aa0a67eb850a961cd7c852ffc6557410293068ee0ac5735018",
+      "publicFile": "release-ci-eighth-ios-backup.log",
+      "publicBytes": 719,
+      "publicSha256": "674ebc4d3e683de294682569c59f5f9176b09e78223729e3bb0e1efaaf90bafe",
+      "excerpt": true
+    },
+    {
+      "sourceEntry": "ios/ios-dart-backup-summary.json",
+      "sourceBytes": 1143,
+      "sourceSha256": "a25bd9ef3c568340125f054da6763e6492277a925d2f155fc0c5a29e171ce269",
+      "publicFile": "release-ci-eighth-ios-backup-summary.json",
+      "publicBytes": 1143,
+      "publicSha256": "a25bd9ef3c568340125f054da6763e6492277a925d2f155fc0c5a29e171ce269",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-dart-backup-evidence/windows.json",
+      "sourceBytes": 836,
+      "sourceSha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f",
+      "publicFile": "release-ci-eighth-windows-to-ios.json",
+      "publicBytes": 836,
+      "publicSha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-dart-backup-evidence/android.json",
+      "sourceBytes": 836,
+      "sourceSha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354",
+      "publicFile": "release-ci-eighth-android-to-ios.json",
+      "publicBytes": 836,
+      "publicSha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-dart-backup-evidence/macos.json",
+      "sourceBytes": 832,
+      "sourceSha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1",
+      "publicFile": "release-ci-eighth-macos-to-ios.json",
+      "publicBytes": 832,
+      "publicSha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-photos-add-only-summary.json",
+      "sourceBytes": 944,
+      "sourceSha256": "40e171fd38bfbfc972f8e5350bdb9a7aa1ee63333448bf1634f98bbcd503bb88",
+      "publicFile": "release-ci-eighth-ios-photos-add-only-summary.json",
+      "publicBytes": 944,
+      "publicSha256": "40e171fd38bfbfc972f8e5350bdb9a7aa1ee63333448bf1634f98bbcd503bb88",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-photos-add-only.log",
+      "sourceBytes": 791491,
+      "sourceSha256": "4ecaab2a70e553a62148de61e22b360743cc25a6c2deeef5493d407a2cdb309a",
+      "publicFile": "release-ci-eighth-ios-photos-add-only.log",
+      "publicBytes": 523,
+      "publicSha256": "e361306a9ac175abc2451786705a04aeb48817a1d945d96f238ffdd90910f901",
+      "excerpt": true
+    },
+    {
+      "sourceEntry": "ios/ios-file-tests.log",
+      "sourceBytes": 236956,
+      "sourceSha256": "b7e3a7e5ed2be1e34d1a16e75b1f5da34f67add09c9a41ac5e757c7054121e87",
+      "publicFile": "release-ci-eighth-ios-file-tests.log",
+      "publicBytes": 9102,
+      "publicSha256": "32ceb9039d45a7ea194cf7c3dd065626fd37a581b70988a67dd1649b41a722af",
+      "excerpt": true
+    },
+    {
+      "sourceEntry": "ios/ios-native-versions.json",
+      "sourceBytes": 254,
+      "sourceSha256": "64894c065335e7a2bde425b9ac446a501889b4c20ff649f7049ee72e4378c243",
+      "publicFile": "release-ci-eighth-ios-native-versions.json",
+      "publicBytes": 254,
+      "publicSha256": "64894c065335e7a2bde425b9ac446a501889b4c20ff649f7049ee72e4378c243",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-simulator-build.log",
+      "sourceBytes": 1092,
+      "sourceSha256": "1046e5bbb9803a3ae2429b4a2739056e722a19b656f6aa3066e85b438aa864d6",
+      "publicFile": "release-ci-eighth-ios-simulator-build.log",
+      "publicBytes": 1092,
+      "publicSha256": "1046e5bbb9803a3ae2429b4a2739056e722a19b656f6aa3066e85b438aa864d6",
+      "excerpt": false
+    },
+    {
+      "sourceEntry": "ios/ios-simulator-cleanup.log",
+      "sourceBytes": 796,
+      "sourceSha256": "f1cc268f9bddf1d1d7a3d7c215f01890046a993dfd8dcf80738aedead578c1f1",
+      "publicFile": "release-ci-eighth-ios-simulator-cleanup.log",
+      "publicBytes": 796,
+      "publicSha256": "f1cc268f9bddf1d1d7a3d7c215f01890046a993dfd8dcf80738aedead578c1f1",
+      "excerpt": false
+    }
+  ],
+  "boundary": "Actual run remains failure. The exact ESRCH response now passed native app closure; both native and backup suites completed with four named Dart cases, four SDK callbacks, one XCTest and actual owned-app stop. iOS native exports and all three foreign full/metadata restores, eight settings, graph/bytes and real library reopen passed. Normal-entry build and one add-only Photos XCTest passed. Full Photos suite has 27 unique terminal case lines: 21 passed and 6 failed; five formats stopped at read-write notDetermined despite the prior owned grant command, and invalid synthetic bytes produced a non-null ImageIO source object. No full Photos JSON summary was produced by the old set-e shell; 11 failure records are not 11 failed cases. Underlying authorization mechanism is not established. Prepared normal-entry ad-hoc host and pixel-decode assertion are next changes, locally controlled but not yet native verified. Both artifacts were downloaded, flushed/closed, length/SHA checked and exact whitelisted bounded files read. Physical PT/minimum OS/hardware PERF/real-service/formal Apple signing remain unpassed."
+}

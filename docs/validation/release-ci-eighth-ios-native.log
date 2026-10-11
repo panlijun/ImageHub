@@ -1,0 +1,10 @@
+{"evidenceVersion": 1, "kind": "bounded selected lines; complete original retained in CI artifact", "sourceArtifactEntry": "ios/ios-simulator-native-tests.log", "sourceBytes": 761309, "sourceSha256": "ab1d98e56ed15db438f4ab901c5c4a7be12dce2ac4174f18d5a7ff73a5a47e50"}
+[stage] buildclosed
+[stage] versionverified
+[xcode-dart] 2026-10-09 13:54:13.103068+0000 Runner[38594:108475] flutter: 00:06 +6: All tests passed!
+[xcode-dart] ** TEST SUCCEEDED **
+[stage] xcodeclosedexit0
+[stage] actual-adhoc-host-signing-recorded
+[stage] exactdart4-and-xctest1-confirmed
+[stage] ownedappstopped
+[result] native: exact Dart 4 and XCTest 1 passed; real host IO and owned app stopped

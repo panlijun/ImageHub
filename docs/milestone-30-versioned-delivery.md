@@ -1,6 +1,6 @@
 # 里程碑 30：版本化本地交付
 
-日期：2026-10-09。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；iOS 来源、完整四来源互读矩阵和新增 Photos 外部副本独立读回尚待验证。
+日期：2026-10-09。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源互读矩阵已有11方向/22模式，仅iOS→Mac和新增Photos外部副本独立读回尚待验证。
 
 ## 版本与交付产物
 
@@ -73,9 +73,21 @@ iOS 构建耗时 211.0 秒。真实 semantics 基线 outstanding handles 为 1�
 
 后续三文件修正只接受该次实际观测到的完整六行变体，要求exit 3、固定bundle ID、精确错误域/码、TAB转义和行序；原有分支未改，未知、混合或身份不符仍拒绝。第七轮原解析器拒绝它，之后的[94项控制测试](validation/release-xctest-esrch-controls-01.log)通过（2.637秒，SHA-256 `e0f597f5e14e66b44c7673fd77831052bd8860b2c4a8405bb93565b3a0d75393`），并使用本轮闭合原生日志进行离线匹配；这两项属于本机控制验证，不是 Apple 原生修正通过。Apple errno说明仅支持domain-specific `ESRCH=3` 表示 no process，不定义完整 simctl 文本格式，见[Apple错误域说明](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/ErrorObjectsDomains/ErrorObjectsDomains.html)。第六轮底层原因仍未知；下一次 CI 尚待实际运行，不预报新的 run 或结果。
 
+## 第八轮 Apple CI
+
+源 ca7877a379cce83616b53e730b5c2a28487dd319 的 [run37938849959](https://github.com/panlijun/ImageHub/actions/runs/37938849959) 整体结论为 failure。Mac job success：1,456 项软件测试通过/4 个 Windows 平台分支跳过、94 项本机控制、四项 Flutter 原生、八项独立进程恢复/锁边界、Windows与Android来源完整/元数据恢复重开、23项 XCTest 零失败零跳过、64.5 MB Release和独立版本核验通过。
+
+iOS native与backup各自四项命名Dart业务、四项SDK callback和一项XCTest通过；两suite实际ad-hoc宿主签名及owned app stop通过，native另有真实Keychain流程通过。backup实际导出闭合的iOS完整/元数据包，并从Windows、Android、macOS三个外部来源完成双模式恢复、关闭重开和八项设置核验。正常入口Simulator构建/版本核验及Photos addOnly一项通过。整体失败发生在full Photos读写/精确资源读回：27个唯一终态用例21通过、6失败，Xcode exit 65；五种格式的read-write授权实测为notDetermined原始值0，预期值为3，且没有已保存资源的独立读回；invalidImageSource对象非空导致另一断言失败。闭合 ios-file-tests.log 中可数出27条唯一终态用例行，但旧 set-e shell未生成full XCTest JSON摘要；11条failure records不是11个失败用例。底层授权机制未知，不能反推授权命令的实际效果。
+
+[第八轮记录](validation/release-apple-eighth-ci.json)确认Mac artifact为26,003,387 bytes / SHA-256 db1450cff76df2381714b0a79689702d86ea57d0692dfa137f6b05155bf87cd6，iOS artifact为126,916,344 bytes / SHA-256 e7fef86cc80b172a5d92f2fbb2cec554bbabcd17d04d6bf7e3cf4ee2134d048c；两者均已核验大小和SHA。iOS native与backup的Dart摘要、XCTest摘要、签名、版本、Photos addOnly和闭合完整Photos日志均保留在该记录所列白名单证据中。134项本机Photos controller控制检查见[日志](validation/release-photos-controller-controls-01.log)（SHA-256 cf47cc65a7ec7620a40228e1446e0b2f342a680ea117117b9e932787b86b64a7）；它不是Apple原生通过，也不能改变本轮失败结论。
+
+四来源冻结互读矩阵已包含iOS：原有Windows、Android方向保持已完成；新增iOS→Windows及iOS→Android各两种模式的完整/元数据恢复重开与八项设置通过，证据见[iOS到Windows](validation/release-interop-ios-to-windows.log)、[四来源到Android记录](validation/release-interop-four-origin-to-android.log)及[驱动摘要](validation/release-interop-four-origin-to-android-driver.json)。汇总记录[明确complete=false且仅剩iOS→Mac](validation/release-interop-four-origin-partial.json)。当前合计11方向/22模式，仅iOS→Mac一方向/两模式待补。
+
+本机Dart分析No issues found（123.2秒）、五套版本检查及其五份同步输出均PASS，互读矩阵格式检查0 changed。Android API36自有模拟器本轮以exit 0关闭，launcher PID 45388和子进程14160/22628均缺席、serial消失且AVD数据保留，见[清理receipt](validation/release-android-owned-emulator-cleanup.json)。后续prepare/test-without-building路径现固定正常入口构建、实际ad-hoc宿主Runner签名/Info/签名指纹及run/attempt/UUID，核验真实安装应用并在每阶段重验身份；Photos断言修正也已加入。Python控制器通过134项本机控制检查；Swift像素解码断言及权限诊断已审查，尚无下一轮Apple原生证据，下一次CI仍待实际运行。历史20项XCTest全绿仍属于旧验证路径，不代替当前27项Photos结果。物理设备/PT、最低系统、硬件PERF、真实图床服务和Apple正式签名发行仍未通过；正式Windows ZIP与Android专用签名ARM64 APK、版本及dirty截图来源边界见本里程碑前文。
+
 ## 保留边界与待完成事项
 
-尚待主线程验证 iOS 来源、完整四来源互读矩阵及新增 Photos 独立读回。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
+四来源矩阵当前11方向/22模式，仅iOS→Mac一方向/两模式待补；新增Photos保存资源独立读回仍待验证。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
 
 本里程碑完成的是 Windows 与 Android 正式本地打包，不代表公开二进制发布、商店发布、Apple 正式签名发行或付费证书发行。Windows 完整 Release ZIP 不增加安装器。Android 签名私钥及口令继续只保存在 Git 忽略的本机 `.local`/受保护资料中；DPAPI CurrentUser 不能保证跨 Windows 用户或系统重装恢复，离线可移植密钥备份尚未实现。正式 Android 更新必须持续使用同一私钥。已安装的 debug 签名同 application ID APK 可能与正式签名冲突；由用户决定后续处理，脚本不自动卸载应用或清除数据。已有版本目录不覆盖。
 

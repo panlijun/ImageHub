@@ -105,7 +105,7 @@ E36：2026-10-09 当前增量证据。Apple文件能力代码与模拟器证据�
 
 E37：2026-10-09 [版本化本地交付](milestone-30-versioned-delivery.md)。Windows完整Release ZIP 16,872,605字节、34个文件/目录条目及app-local MSVC CRT，逐项ZIP/解包摘要、原生独立版本、正常启动及WM_CLOSE退出0通过；Android唯一ARM64 Release APK 27,400,002字节，io.imagehost.imagehost/API29、内核/平台0.1.0+1、精确build1、非debug及专用证书V2签名通过。两平台package_release.ps1实际退出0，独立核对artifact/SHA256SUMS/receipt；源base cfd55d0、dirty=true仅两张既有验证截图，源指纹留存，不称clean源构建。证据为[Windows receipt](validation/release-windows-formal.json)和[Android receipt](validation/release-android-formal.json)。这两项是本地正式包，不代表公开二进制、商店发布、Apple正式签名发行或ARM64实机验收。
 
-Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Windows原生及正常Release启动退出通过；真实4,328,697,800字节ZIP64默认预检、合并、重开全部字节核对通过。Windows、Android、Mac三个来源的六个方向已完成完整及元数据恢复重开；iOS来源和完整12方向矩阵、Photos新增独立资源读回仍待验证。Apple生产原生文件能力已接入，未完成的是适用验证，不是功能未实现。第五轮历史结果见[第五轮记录](validation/release-apple-fifth-ci.json)；不改其failure细节。第六轮源`5326d527962daad1de23f3340dda40b55aec6e78`历史结果见[第六轮记录](validation/release-apple-sixth-ci.json)，其停止根因当时未暴露，不由第七轮反推。第七轮[run37934102081](https://github.com/panlijun/ImageHub/actions/runs/37934102081)源`1cb16cfddcbd67cf8d744b5107a2797d3fdd2007`已整体failure：Mac成功（1456软件通过/4平台跳过、八项进程边界、四项Flutter原生、Windows/Android来源完整/元数据/重开、23项XCTest、Release64.5MB及版本核验）；iOS构建211.0秒，semantics基线handle=1，四项命名Dart和SDK回调4项、1项XCTest零失败/跳过、ad-hoc签名与Keychain实际流程通过、Xcode exit0及host/reader关闭。owned guard成功后simctl terminate exit3，实际闭合响应为六行NSPOSIXErrorDomain code3“found nothing to terminate”；源解析器未匹配，故`owned-app-stop-unconfirmed`，不能判断应用已停止。自有Simulator Shutdown/delete/absence成功；backup、新Photos和正常入口未执行。第七轮闭合artifact大小/SHA已核验，见[第七轮记录](validation/release-apple-seventh-ci.json)和九份白名单证据。本机94项控制2.637秒通过并离线匹配闭合日志，不代表Apple原生修正通过。新解析器仅接纳完整实测六行、固定bundleID/domain/code/TAB/顺序与exit3，旧分支不变，其他输出继续严格失败；Apple errno说明不是完整simctl文案契约。下一轮CI仍待实际执行。两份正式包receipt及第四至第七轮artifact均已按大小/SHA核验。最低系统实测、物理设备PT/PERF/断电、真实图床服务与硬件压力仍未计通过；unknown服务能力继续拒绝派发。
+Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Windows原生及正常Release启动退出通过；真实4,328,697,800字节ZIP64默认预检、合并、重开全部字节核对通过。Apple第八轮[run37938849959](https://github.com/panlijun/ImageHub/actions/runs/37938849959)源ca7877a379cce83616b53e730b5c2a28487dd319整体failure：Mac成功（1456软件/4平台跳过、94项本机控制、四项Flutter原生、八项进程边界、23项XCTest、Release/版本；Windows/Android来源完整/元数据恢复重开）；iOS native/backup各四项Dart业务、四项SDK callback、一项XCTest及签名、owned stop通过，native另有真实Keychain流程通过，backup三外来源完整/元数据重开和八项设置通过，正常入口构建/版本及Photos addOnly一项通过。Full Photos 27唯一终态用例21通过/6失败，Xcode exit65；五格式read-write授权notDetermined(0)而预期3、无已保存资源独立读回，invalidImageSource非空导致断言失败。底层授权机制未知，闭合日志有27个唯一终态行而无full JSON摘要。新控制修正134项本机检查通过，不是新Apple原生通过；下一轮CI尚待实跑。产物大小/SHA见[第八轮记录](validation/release-apple-eighth-ci.json)及[Photos控制日志](validation/release-photos-controller-controls-01.log)。Windows/Android/Mac→iOS和新增iOS→Windows、iOS→Android已覆盖四来源矩阵11方向/22模式，完整与元数据恢复重开及8项设置通过；仅iOS→Mac一方向/两模式待补，汇总记录见[partial matrix receipt](validation/release-interop-four-origin-partial.json)，complete=false。Dart分析No issues found（123.2秒）、五套版本检查及同步输出均PASS、矩阵格式检查0 changed；Android自有模拟器关闭/子进程清理及AVD保留见[清理receipt](validation/release-android-owned-emulator-cleanup.json)。历史20项XCTest全绿属于旧验证路径。第四至第八轮相关Apple artifacts均按各轮记录核验大小/SHA。最低系统实测、物理设备PT/PERF/断电、真实图床服务与硬件压力仍未计通过；unknown服务能力继续拒绝派发。
 
 ## 优先阻断与矛盾处理
 
@@ -1428,7 +1428,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows 桌面 A 路由使用实际 LibrarySession、共同账号/任务/链接工作流和 Drift/文件/系统能力；M1 与桌面共用业务入口。此审查范围的软件链路具备。 测试入口：四端 UC 全流程 PT/AT 不由共同 domain 证明；其他端尚未接入能力不改记 Windows 软件缺口，不声称四端支持通过。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** —；AT-006、PT-004、PT-005。四端实际功能一致性需设备与端到端证据，领域模拟无法证明交付。
 
@@ -1444,7 +1444,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows `ImportGateway` 文件选择、只读资源、source readiness、取消后真实 IO 收尾；来源丢失不影响已保存永久副本。软件具备。 测试入口：云 provider 未明确待获取的潜在内核阻塞不保证全部覆盖；外部设备/相册授权 PT 排除。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** UT-004、UT-010、UT-094；PT-001。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1460,7 +1460,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：`SystemNetworkMonitor` 可见 inactive 与 hidden 区分、前台重读；会话 close/restore gates 与 `upload_exit.dart` 实际网络/处理/文件收尾，持久队列恢复。软件具备且说明限制。 测试入口：PT-002 真切网、系统后台/强退、硬件断电与计时精度排除；不承诺桌面隐藏或移动后台持续执行。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** UT-062、UT-100；PT-002。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1476,7 +1476,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：账号、任务、链接使用可聚焦 Material controls，按钮 tooltip/动作文字、状态与原因文字，不仅颜色；公共 widget 有 Windows 尺寸测试，核心操作软件入口具备。 测试入口：人工全键盘/读屏/触摸/去颜色 AT/PT 未由源码或 widget 自动证明；不将“尚未做完整人工验收”直接判为软件未实现。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** —；AT-006、PT-004。实际键盘/触摸/读屏、去颜色可辨识需设备验收。
 
@@ -1492,7 +1492,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：Windows 选择目录真实导出、严格 Clipboard 和系统分享映射；拒绝/取消/缺能力分别反馈，本机路径不写可携带输入身份。软件具备。 测试入口：设备系统分享接收方保存、其他端原生导出 PT 单列；已禁用的移动导出不是 Windows 缺口。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** UT-036、UT-071、UT-081；PT-003。UT验证业务判断；真实依赖和流程由其他方案补证。
 
@@ -1508,7 +1508,7 @@ Windows软件1459项通过/1平台分支跳过，M1快捷入口20项、五项Win
 
 **当前证据：** E34 [逐编号源码审查](validation/windows-network-software-audit.md)：`AGENTS.md` 与当前环境/平台文档分别记系统目标、Windows 构建证据及未实测平台；账号资料维护入口不宣称真实远端通过。 测试入口：正式发行安装方式/签名/完整四端支持矩阵和设备证据仍为发布/设备验收，不由本报告宣告正式四端交付。
 
-**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS来源和完整四来源互读、物理设备/API29、设备PT及正式四端支持声明仍待完成。
+**缺失项/未验证：** Windows完整Release ZIP和Android专用签名ARM64 APK已本地生成并核验，见E37；这不是公开二进制或商店发布。Apple文件保存已接入，适用CI/模拟器验证与未完成项见E37及[里程碑29](milestone-29-apple-files.md)。真实系统选择器UI/Files提供者/照片格式互操作、iOS→Mac最后一个互读方向、物理设备/API29、设备PT及正式四端支持声明仍待完成。
 
 **必要验证：** —；PT-005、REV-001。支持系统版本/安装方式和实际设备证据由兼容性声明审查。
 

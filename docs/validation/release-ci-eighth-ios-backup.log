@@ -1,0 +1,11 @@
+{"evidenceVersion": 1, "kind": "bounded selected lines; complete original retained in CI artifact", "sourceArtifactEntry": "ios/ios-backup-interop.log", "sourceBytes": 763745, "sourceSha256": "3cd67664b3eb35aa0a67eb850a961cd7c852ffc6557410293068ee0ac5735018"}
+[stage] buildclosed
+[stage] versionverified
+[xcode-dart] 2026-10-09 13:57:49.449943+0000 Runner[51296:140863] flutter: 00:04 +6: All tests passed!
+[xcode-dart] ** TEST SUCCEEDED **
+[stage] xcodeclosedexit0
+[stage] actual-adhoc-host-signing-recorded
+[stage] exactdart4-and-xctest1-confirmed
+[stage] backup-closed-evidence-copied-and-digests-verified
+[stage] ownedappstopped
+[result] backup: exact Dart 4 and XCTest 1 passed; real host IO and owned app stopped

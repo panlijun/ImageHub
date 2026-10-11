@@ -1,0 +1,4 @@
+{"evidenceVersion": 1, "kind": "bounded selected lines; complete original retained in CI artifact", "sourceArtifactEntry": "ios/ios-photos-add-only.log", "sourceBytes": 791491, "sourceSha256": "4ecaab2a70e553a62148de61e22b360743cc25a6c2deeef5493d407a2cdb309a"}
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' passed (0.564 seconds).
+** TEST SUCCEEDED **
