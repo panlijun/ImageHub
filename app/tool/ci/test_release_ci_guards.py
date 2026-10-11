@@ -43,6 +43,17 @@ class PhotosOwnershipTests(unittest.TestCase):
             mock.call("list", "devices", "--json"),
             mock.call("privacy", self.record["udid"], "grant", "photos-add", "io.imagehost.imagehost")])
 
+    def test_optional_owned_report_avoids_stdout_and_retains_identity_validation(self):
+        reports = []
+        with mock.patch("builtins.print", side_effect=BrokenPipeError()):
+            device = boot.owned_device(self.record, json.loads(self.listing()), report=reports.append)
+        self.assertEqual(device["state"], "Booted")
+        self.assertEqual(reports, [f"Confirmed owned simulator {self.record['udid']} on {self.record['runtime']}: Booted."])
+        reports.clear()
+        with mock.patch("builtins.print", side_effect=BrokenPipeError()), self.assertRaises(SystemExit):
+            boot.owned_device(self.record, json.loads(self.listing(name="Foreign device")), report=reports.append)
+        self.assertEqual(reports, [])
+
     def test_read_permission_is_scoped_to_owned_app(self):
         with mock.patch.object(boot, "simctl", return_value=self.listing()) as command:
             boot.authorize_photos("read-write")

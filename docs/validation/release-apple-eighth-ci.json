@@ -111,7 +111,8 @@
       "publicFile": "release-ci-eighth-macos-backup-interop.log",
       "publicBytes": 3154,
       "publicSha256": "b9fb24a50bd0658235494d55bd117eb9308ca477503e6cef5e44401d059dfe65",
-      "excerpt": false
+      "excerpt": true,
+      "excerptReason": "Producer Base64 fixture line excluded; consumer rows and terminal test results retained."
     },
     {
       "sourceEntry": "macos/macos-file-test-summary.json",

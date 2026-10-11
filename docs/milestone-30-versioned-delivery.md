@@ -1,6 +1,6 @@
 # 里程碑 30：版本化本地交付
 
-日期：2026-10-09。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源互读矩阵已有11方向/22模式，仅iOS→Mac和新增Photos外部副本独立读回尚待验证。
+日期：2026-10-09，后续进展更新至2026-10-11。Windows x64 与 Android arm64 的版本化本地正式 release 包已生成并完成 receipt 核验。整个软件收尾目标仍在进行；四来源软件互读矩阵已完成12方向/24模式。第九轮完整read-write 27项未执行，新增修正后的独立资源读回仍待实际验证；物理设备互读/PT、最低系统与性能等验收继续待补。
 
 ## 版本与交付产物
 
@@ -81,13 +81,23 @@ iOS native与backup各自四项命名Dart业务、四项SDK callback和一项XCT
 
 [第八轮记录](validation/release-apple-eighth-ci.json)确认Mac artifact为26,003,387 bytes / SHA-256 db1450cff76df2381714b0a79689702d86ea57d0692dfa137f6b05155bf87cd6，iOS artifact为126,916,344 bytes / SHA-256 e7fef86cc80b172a5d92f2fbb2cec554bbabcd17d04d6bf7e3cf4ee2134d048c；两者均已核验大小和SHA。iOS native与backup的Dart摘要、XCTest摘要、签名、版本、Photos addOnly和闭合完整Photos日志均保留在该记录所列白名单证据中。134项本机Photos controller控制检查见[日志](validation/release-photos-controller-controls-01.log)（SHA-256 cf47cc65a7ec7620a40228e1446e0b2f342a680ea117117b9e932787b86b64a7）；它不是Apple原生通过，也不能改变本轮失败结论。
 
-四来源冻结互读矩阵已包含iOS：原有Windows、Android方向保持已完成；新增iOS→Windows及iOS→Android各两种模式的完整/元数据恢复重开与八项设置通过，证据见[iOS到Windows](validation/release-interop-ios-to-windows.log)、[四来源到Android记录](validation/release-interop-four-origin-to-android.log)及[驱动摘要](validation/release-interop-four-origin-to-android-driver.json)。汇总记录[明确complete=false且仅剩iOS→Mac](validation/release-interop-four-origin-partial.json)。当前合计11方向/22模式，仅iOS→Mac一方向/两模式待补。
+四来源冻结互读矩阵已包含iOS：原有Windows、Android方向保持已完成；新增iOS→Windows及iOS→Android各两种模式的完整/元数据恢复重开与八项设置通过，证据见[iOS到Windows](validation/release-interop-ios-to-windows.log)、[四来源到Android记录](validation/release-interop-four-origin-to-android.log)及[驱动摘要](validation/release-interop-four-origin-to-android-driver.json)。汇总记录[明确complete=false且仅剩iOS→Mac](validation/release-interop-four-origin-partial.json)。第八轮时合计11方向/22模式，仅iOS→Mac一方向/两模式待补。
 
-本机Dart分析No issues found（123.2秒）、五套版本检查及其五份同步输出均PASS，互读矩阵格式检查0 changed。Android API36自有模拟器本轮以exit 0关闭，launcher PID 45388和子进程14160/22628均缺席、serial消失且AVD数据保留，见[清理receipt](validation/release-android-owned-emulator-cleanup.json)。后续prepare/test-without-building路径现固定正常入口构建、实际ad-hoc宿主Runner签名/Info/签名指纹及run/attempt/UUID，核验真实安装应用并在每阶段重验身份；Photos断言修正也已加入。Python控制器通过134项本机控制检查；Swift像素解码断言及权限诊断已审查，尚无下一轮Apple原生证据，下一次CI仍待实际运行。历史20项XCTest全绿仍属于旧验证路径，不代替当前27项Photos结果。物理设备/PT、最低系统、硬件PERF、真实图床服务和Apple正式签名发行仍未通过；正式Windows ZIP与Android专用签名ARM64 APK、版本及dirty截图来源边界见本里程碑前文。
+本机Dart分析No issues found（123.2秒）、五套版本检查及其五份同步输出均PASS，互读矩阵格式检查0 changed。Android API36自有模拟器本轮以exit 0关闭，launcher PID 45388和子进程14160/22628均缺席、serial消失且AVD数据保留，见[清理receipt](validation/release-android-owned-emulator-cleanup.json)。后续prepare/test-without-building路径现固定正常入口构建、实际ad-hoc宿主Runner签名/Info/签名指纹及run/attempt/UUID，核验真实安装应用并在每阶段重验身份；Photos断言修正也已加入。Python控制器通过134项本机控制检查；Swift像素解码断言及权限诊断已审查，第八轮时尚无下一轮Apple原生证据，下一次CI当时仍待实际运行。历史20项XCTest全绿仍属于旧验证路径，不代替第八轮27项Photos结果。物理设备/PT、最低系统、硬件PERF、真实图床服务和Apple正式签名发行仍未通过；正式Windows ZIP与Android专用签名ARM64 APK、版本及dirty截图来源边界见本里程碑前文。
+
+## 第九轮 Apple CI 与完整四来源矩阵
+
+第九轮源`09b849de824c38a9dbe714ce1e4c390f1f871c65`的[run38137413108/attempt 1](https://github.com/panlijun/ImageHub/actions/runs/38137413108)整体failure。Mac job success：134项本机控制、1,456项软件/4个Windows平台分支跳过、4项Flutter原生、8项进程边界、23项XCTest零失败零跳过、64.5 MB Release及独立版本核验通过；备份4个命名业务用例（本机导出与三个外部来源），自身来源跳过1项不计业务。iOS→macOS完整及元数据备份恢复、关闭重开和8项设置通过。
+
+iOS job failure。native与backup各4项Dart业务、4项SDK callback、1项XCTest通过；ad-hoc签名、owned app stop及native真实Keychain流程通过。iOS备份从Windows、Android、macOS三个外部来源完成双模式恢复、重开和8项设置核验；正常入口Simulator构建/版本通过。Photos prepare真实闭合构建与安装且所记录built/installed指纹相同；addOnly真实XCTest 1通过/0失败/0跳过，Xcode exit 0，host/reader关闭。之后后验控制器以`photos-prepared-host-changed`失败，具体差异未知；不能认定发生路径迁移，也不能认定原生保存测试失败。无成功addOnly result/identity，完整read-write 27项未执行且无摘要。自有应用停止及Simulator Shutdown/delete/absence通过。32份闭合白名单证据和两artifact大小/SHA已核验，详见[第九轮记录](validation/release-apple-ninth-ci.json)及`release-ci-ninth-*`证据。
+
+四来源冻结互读矩阵现已完整：`complete=true`、12方向/24模式、4个冻结来源、无缺项；每个consumer 6行、4 assets/5 versions、8项唯一设置，关闭重开为true。摘要见[完整矩阵receipt](validation/release-interop-four-origin-complete.json)，SHA-256 `aa1c831e64dd46008ea06c945d038a5374543db8bc4b4b1e5e9d8cc0828bcda8`。新离线验证器和控制测试60项通过，控制日志SHA-256 `5f6f8d90790c895ab7a631989fc17c5d512e0ae0f103d64f766e37a94f23de6d`；它核验闭合证据字段，不替代原生harness、四台设备人工互读或物理PT。第八轮11/22 partial记录保留历史，原冻结四源fixture不替换。
+
+逐项诊断、受限当前位置查询及三处异常收尾缺口已修正并完成独立源码复核，最终186项本机控制（12.690秒、exit 0）和六文件编译通过，见[控制记录](validation/release-photos-frozen-host-controls-02.json)与[原始日志](validation/release-photos-frozen-host-controls-02.log)；日志SHA-256 `fccf3b1585355a7b281ea47ee7d9f32f8fe797ca077c6520ad7a2b9eecb855b5`。测试fixture使用受限本机临时目录适配，控制记录明确标注本机CRLF与Git归一化LF指纹。这些不是Apple原生通过，下一轮仍须实际运行。问题审查见[Photos host guard审查](validation/release-photos-host-guard-review.md)。第八轮Photos 21通过/6失败为当轮历史结果，不倒推为修正通过。Windows ZIP与专用签名Android ARM64 APK、五份版本0.1.0+1及两份receipt保持原结果；源base `cfd55d0`、`dirty=true`仅两张既有截图，不能称clean源构建，本轮文档/验证控制器变化不要求重建这两包。正式包最终核对见[最终artifact审查](validation/release-formal-artifacts-final-audit.json)，只核对既有包字节与相关源路径，不代表新构建或设备测试。
 
 ## 保留边界与待完成事项
 
-四来源矩阵当前11方向/22模式，仅iOS→Mac一方向/两模式待补；新增Photos保存资源独立读回仍待验证。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
+四来源软件互读矩阵已完整12方向/24模式；四台设备上的人工/物理互读PT仍未验收。新增Photos保存资源独立读回及完整read-write 27项未验证。真实图床服务能力仍为 unknown，继续拒绝派发；物理设备 PT、最低系统实测和硬件 PERF 未计通过。
 
 本里程碑完成的是 Windows 与 Android 正式本地打包，不代表公开二进制发布、商店发布、Apple 正式签名发行或付费证书发行。Windows 完整 Release ZIP 不增加安装器。Android 签名私钥及口令继续只保存在 Git 忽略的本机 `.local`/受保护资料中；DPAPI CurrentUser 不能保证跨 Windows 用户或系统重装恢复，离线可移植密钥备份尚未实现。正式 Android 更新必须持续使用同一私钥。已安装的 debug 签名同 application ID APK 可能与正式签名冲突；由用户决定后续处理，脚本不自动卸载应用或清除数据。已有版本目录不覆盖。
 

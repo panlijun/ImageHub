@@ -1,0 +1,579 @@
+{
+  "boundary": "Offline evidence-field verification only; actual image/settings values, native IO, host/reader/app closure and hardware acceptance require independent real harness/CLI/CI evidence.",
+  "complete": true,
+  "consumerRows": {
+    "android": [
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "full",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b29f789b44ec5d01ec518c8187db1d157000d275e97c16e91fdda6d8cf83be0a",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "metadata",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a8c31670a881f1323e2bd47fd2bfcc4f145fe67aca05a78064c53b230dbbf257",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "full",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "be36d20c46ff6f500dbe98776ad320caa5d34059a02b14c1a4e6627fdb91bee2",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "metadata",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b035a786de9ac58f264de29b13b05958d953dceb5bff258f12957a99ae2d8116",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "full",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "12f25be351693c02d8d730f228aef99ebf6b9871a58852b43ed79843c30d2ccb",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "android",
+        "mode": "metadata",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a4ed192112e260e675c3bad6848dd5ff0539f0f58bd5d19f0ef9d562a3b29670",
+        "skippedSettings": [],
+        "versions": 5
+      }
+    ],
+    "ios": [
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "full",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "1d20dbc225ef95514be68a2cc6e183010f06ec1d44fc28dfcb21ab9825c527db",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "metadata",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "65f084564bc4cad738c1540b040664f0fc2e85e41abc03de702ea7983496c255",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "full",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "be36d20c46ff6f500dbe98776ad320caa5d34059a02b14c1a4e6627fdb91bee2",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "metadata",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b035a786de9ac58f264de29b13b05958d953dceb5bff258f12957a99ae2d8116",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "full",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "12f25be351693c02d8d730f228aef99ebf6b9871a58852b43ed79843c30d2ccb",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "ios",
+        "mode": "metadata",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a4ed192112e260e675c3bad6848dd5ff0539f0f58bd5d19f0ef9d562a3b29670",
+        "skippedSettings": [],
+        "versions": 5
+      }
+    ],
+    "macos": [
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "full",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "1d20dbc225ef95514be68a2cc6e183010f06ec1d44fc28dfcb21ab9825c527db",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "metadata",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "65f084564bc4cad738c1540b040664f0fc2e85e41abc03de702ea7983496c255",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "full",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b29f789b44ec5d01ec518c8187db1d157000d275e97c16e91fdda6d8cf83be0a",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "metadata",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a8c31670a881f1323e2bd47fd2bfcc4f145fe67aca05a78064c53b230dbbf257",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "full",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "12f25be351693c02d8d730f228aef99ebf6b9871a58852b43ed79843c30d2ccb",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "macos",
+        "mode": "metadata",
+        "originPlatform": "windows",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a4ed192112e260e675c3bad6848dd5ff0539f0f58bd5d19f0ef9d562a3b29670",
+        "skippedSettings": [],
+        "versions": 5
+      }
+    ],
+    "windows": [
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "full",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "1d20dbc225ef95514be68a2cc6e183010f06ec1d44fc28dfcb21ab9825c527db",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "metadata",
+        "originPlatform": "android",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "65f084564bc4cad738c1540b040664f0fc2e85e41abc03de702ea7983496c255",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "full",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b29f789b44ec5d01ec518c8187db1d157000d275e97c16e91fdda6d8cf83be0a",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "metadata",
+        "originPlatform": "ios",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "a8c31670a881f1323e2bd47fd2bfcc4f145fe67aca05a78064c53b230dbbf257",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 8142,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "full",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "be36d20c46ff6f500dbe98776ad320caa5d34059a02b14c1a4e6627fdb91bee2",
+        "skippedSettings": [],
+        "versions": 5
+      },
+      {
+        "assets": 4,
+        "byteCount": 4093,
+        "closedAndReopened": true,
+        "consumerPlatform": "windows",
+        "mode": "metadata",
+        "originPlatform": "macos",
+        "restoredSettings": [
+          "uploadConcurrency",
+          "processingConcurrency",
+          "quality",
+          "longestSide",
+          "processingMode",
+          "cacheLimitMiB",
+          "defaultOutputRetention",
+          "networkUploadPolicy"
+        ],
+        "sha256": "b035a786de9ac58f264de29b13b05958d953dceb5bff258f12957a99ae2d8116",
+        "skippedSettings": [],
+        "versions": 5
+      }
+    ]
+  },
+  "directions": 12,
+  "evidenceFingerprints": [
+    {
+      "byteCount": 873,
+      "consumerPlatform": "windows",
+      "path": "docs/validation/release-interop-android-to-windows.log",
+      "sha256": "ecb42e1c20d5c2c7c0aa50bf35931d3664196ed375ee8f58fb689210865e9764"
+    },
+    {
+      "byteCount": 869,
+      "consumerPlatform": "windows",
+      "path": "docs/validation/release-interop-macos-to-windows.log",
+      "sha256": "6343710fcc4b533dac4a9cb1c9c03c54d56163eb1138be83253c79074dfb3e56"
+    },
+    {
+      "byteCount": 863,
+      "consumerPlatform": "windows",
+      "path": "docs/validation/release-interop-ios-to-windows.log",
+      "sha256": "645b12198b5044a5df8cc2fe223c16999ca6241d000a4d81127d0ce2a4893965"
+    },
+    {
+      "byteCount": 4589,
+      "consumerPlatform": "android",
+      "path": "docs/validation/release-interop-four-origin-to-android.log",
+      "sha256": "d0eb3476f91dcc1fae55026b75ff8283031d5ba7b8f942c454c64199e0743fb3"
+    },
+    {
+      "byteCount": 4133,
+      "consumerPlatform": "macos",
+      "path": "docs/validation/release-ci-ninth-macos-backup-interop.log",
+      "sha256": "dce2ed301a307a3bf27ec3537fee1a10af5eb76d6765f06caf1f956ad8940ee6"
+    },
+    {
+      "byteCount": 836,
+      "consumerPlatform": "ios",
+      "path": "docs/validation/release-ci-ninth-windows-to-ios.json",
+      "sha256": "13122e6a664bd10b678375059f547b7618707803c588c9a1a2bf4bdf0559fc1f"
+    },
+    {
+      "byteCount": 836,
+      "consumerPlatform": "ios",
+      "path": "docs/validation/release-ci-ninth-android-to-ios.json",
+      "sha256": "f3c35422b9e2c6deed2a6e568bd4a8722056ca0b970272b574305bc083a99354"
+    },
+    {
+      "byteCount": 832,
+      "consumerPlatform": "ios",
+      "path": "docs/validation/release-ci-ninth-macos-to-ios.json",
+      "sha256": "18af5ce54ef7d61a39a3014afcf1c5971df34092482fc1fa599b42707f591fb1"
+    }
+  ],
+  "frozenOrigins": 4,
+  "matrixFingerprint": {
+    "byteCount": 137156,
+    "path": "app/integration_test/generated_backup_interop_matrix_test.dart",
+    "sha256": "354b65e5a066ff1abec134439e2ec71a8cbaf049382e554d45eff09a5b2eb50e"
+  },
+  "missingDirections": [],
+  "missingModes": [],
+  "modes": 24,
+  "verificationVersion": 1
+}

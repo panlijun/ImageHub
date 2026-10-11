@@ -76,7 +76,7 @@ def validate_record(record):
     return record
 
 
-def owned_device(record, listing):
+def owned_device(record, listing, *, report=None):
     validate_record(record)
     matches = [
         (runtime, device)
@@ -91,7 +91,11 @@ def owned_device(record, listing):
         raise SystemExit("The simulator ownership fields have changed.")
     state = device.get("state")
     displayed_state = state if state in ("Booted", "Shutdown", "Booting", "Shutting Down", "Creating") else "unknown"
-    print(f"Confirmed owned simulator {record['udid']} on {runtime}: {displayed_state}.", flush=True)
+    message = f"Confirmed owned simulator {record['udid']} on {runtime}: {displayed_state}."
+    if report is None:
+        print(message, flush=True)
+    else:
+        report(message)
     return device
 
 

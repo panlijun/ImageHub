@@ -1,0 +1,60 @@
+Command line invocation:
+Test Suite 'All tests' started at 2026-10-11 12:16:57.838.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 12:16:57.839.
+Test Suite 'AppleFileEngineTests' started at 2026-10-11 12:16:57.839.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036CancellationClosesAcceptedWorkAndDoesNotCreateAFile]' passed (0.231 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DestinationUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.428 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DigestAndChangedSourceRejectBeforeCreatingDestination]' passed (0.214 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryExportPreservesExistingBytesAndUsesOneOperationOnce]' passed (0.233 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036DirectoryHandleRejectsOtherIdentityAndUnregisteredOperation]' passed (0.323 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosPrecommitCancellationCleansClosedStageOnly]' passed (0.114 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageKeepsSourceAndLateCancellationPreservesCommit]' passed (0.131 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036PhotosStageTamperingRetainsBytesAndSuccessEvidence]' passed (0.119 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036ReadQueuedBeforeCloseCompletesBeforeScopeRetirement]' passed (0.115 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RegistrationDefersMissingSourceIOUntilFirstRead]' passed (0.213 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036RejectsSymlinkSourcesAncestorsAndDestination]' passed (0.420 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceIdentityChangeInvalidatesRemainingRead]' passed (0.222 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceReadIsBoundedSequentialAndClosedAfterActualReads]' passed (0.340 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036SourceUnknownCloseRetainsHandleAndScopeAfterDispose]' passed (0.423 seconds).
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' started.
+Test Case '-[RunnerTests.AppleFileEngineTests testUT036StrictUUIDsAndPrivateSourceBoundary]' passed (0.313 seconds).
+Test Suite 'AppleFileEngineTests' passed at 2026-10-11 12:17:01.684.
+	 Executed 15 tests, with 0 failures (0 unexpected) in 3.837 (3.845) seconds
+Test Suite 'RunnerTests' started at 2026-10-11 12:17:01.684.
+Test Case '-[RunnerTests.RunnerTests testCancelWaitsForOwnPanelAndNeverRegistersLateURL]' started.
+Test Case '-[RunnerTests.RunnerTests testCancelWaitsForOwnPanelAndNeverRegistersLateURL]' passed (0.003 seconds).
+Test Case '-[RunnerTests.RunnerTests testDisposeCancelsOwnedPanelAndPreservesItsActualCompletion]' started.
+Test Case '-[RunnerTests.RunnerTests testDisposeCancelsOwnedPanelAndPreservesItsActualCompletion]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testInvalidSelectionIdsNeverPresentPanel]' started.
+Test Case '-[RunnerTests.RunnerTests testInvalidSelectionIdsNeverPresentPanel]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testNativeBackupPanelConfiguration]' started.
+Test Case '-[RunnerTests.RunnerTests testNativeBackupPanelConfiguration]' passed (1.244 seconds).
+Test Case '-[RunnerTests.RunnerTests testOldCallbackAndOldCancelDoNotFinishNewSelection]' started.
+Test Case '-[RunnerTests.RunnerTests testOldCallbackAndOldCancelDoNotFinishNewSelection]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testReentryCannotReplaceOwnedSelection]' started.
+Test Case '-[RunnerTests.RunnerTests testReentryCannotReplaceOwnedSelection]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testRetiredSelectionIdCannotBeReusedOrCancelNewSelection]' started.
+Test Case '-[RunnerTests.RunnerTests testRetiredSelectionIdCannotBeReusedOrCancelNewSelection]' passed (0.001 seconds).
+Test Case '-[RunnerTests.RunnerTests testUnknownRegistrationErrorNeverExposesItsDescription]' started.
+Test Case '-[RunnerTests.RunnerTests testUnknownRegistrationErrorNeverExposesItsDescription]' passed (0.001 seconds).
+Test Suite 'RunnerTests' passed at 2026-10-11 12:17:02.939.
+	 Executed 8 tests, with 0 failures (0 unexpected) in 1.253 (1.256) seconds
+Test Suite 'RunnerTests.xctest' passed at 2026-10-11 12:17:02.941.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 5.091 (5.102) seconds
+Test Suite 'All tests' passed at 2026-10-11 12:17:02.941.
+	 Executed 23 tests, with 0 failures (0 unexpected) in 5.091 (5.103) seconds
+** TEST SUCCEEDED **

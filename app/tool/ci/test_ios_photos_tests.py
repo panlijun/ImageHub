@@ -1,6 +1,7 @@
 """Owned synthetic Photos controller checks; no real Apple/Photos operations."""
 
 import contextlib
+import hashlib
 import io
 import json
 import os
@@ -44,6 +45,14 @@ class ControllerTests(OwnedTemp):
         self.installed = self.root / "synthetic-installed/Runner.app"
         self.container = (f"/Users/runner/Library/Developer/CoreSimulator/Devices/{self.record['udid']}"
                           "/data/Containers/Bundle/Application/12345678-1234-4234-8234-123456789012/Runner.app\n")
+        self.shape_locations = {str(self.installed): self.container.rstrip("\n")}
+        real_shape = runner.installed_container_shape
+        def container_shape(raw, identifier):
+            # Saved fixture locations use owned local IO paths. Validate their
+            # corresponding native canonical grammar, without historical IO.
+            real_shape(self.shape_locations.get(raw, raw) if type(raw) is str else raw, identifier)
+            return Path(raw)
+        self.stack.enter_context(mock.patch.object(runner, "installed_container_shape", side_effect=container_shape))
         real_path = runner.installed_path
         def installed_path(raw, identifier):
             # Keep the real strict response parser; map only its ordinary-dir IO
@@ -154,6 +163,18 @@ class ControllerTests(OwnedTemp):
         self.assertFalse(self.commands("privacy"))
         self.assertTrue((runner.ARTIFACTS / "ios-photos-prepared.json").is_file())
 
+    def observation(self, phase="add-only"):
+        return json.loads((runner.ARTIFACTS / f"ios-photos-{phase}-host-observation.json").read_text())
+
+    def relocate(self):
+        previous = self.installed
+        self.installed = self.root / "synthetic-relocated/Runner.app"
+        self.installed.parent.mkdir()
+        previous.rename(self.installed)
+        self.container = self.container.replace("12345678-1234-4234-8234-123456789012", "23456789-1234-4234-8234-123456789012")
+        self.shape_locations[str(self.installed)] = self.container.rstrip("\n")
+        self.assertFalse(previous.exists())
+
     def test_exact_three_phases_same_host_commands_results_and_closed_readers(self):
         self.prepared()
         add = runner.run_phase("add-only")
@@ -177,6 +198,12 @@ class ControllerTests(OwnedTemp):
         self.assertEqual(len(self.commands("install")), 1)
         self.assertEqual(len(self.commands("terminate")), 2)
         self.assertTrue(add["ownedAppStopped"] and read["ownedAppStopped"])
+        for phase, result in (("add-only", add), ("read-write", read)):
+            raw = (runner.ARTIFACTS / f"ios-photos-{phase}-host-observation.json").read_bytes()
+            self.assertEqual(result["hostObservationSha256"], hashlib.sha256(raw).hexdigest())
+            observation = self.observation(phase)
+            self.assertIs(observation["allFrozenFieldsVerified"], True)
+            self.assertEqual(set(observation["readStates"].values()), {"observed"})
 
     def test_illegal_phase_and_missing_normal_entry_never_spawn(self):
         self.failure("arbitrary", "photos-phase-invalid")
@@ -393,6 +420,635 @@ class ControllerTests(OwnedTemp):
         self.test_mutation = lambda: (self.installed / "Runner").write_bytes(b"changed during test")
         self.failure("add-only", "photos-prepared-host-changed")
         self.assertEqual(len(self.commands("terminate")), 1)
+        observation = self.observation()
+        self.assertIs(observation["installedMatchesPrepared"], False)
+        self.assertIs(observation["builtMatchesInstalled"], False)
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertEqual(set(observation["readStates"].values()), {"observed"})
+
+    def test_same_owned_container_relocation_keeps_original_prepared_bytes(self):
+        self.prepared()
+        path = runner.ARTIFACTS / "ios-photos-prepared.json"
+        initial = path.read_bytes()
+        initial_location = json.loads(initial)["installedContainer"]
+        self.test_mutation = self.relocate
+        result = runner.run_phase("add-only")
+        self.assertEqual(path.read_bytes(), initial)
+        self.assertEqual(result["preparedSha256"], hashlib.sha256(initial).hexdigest())
+        observation = self.observation()
+        self.assertIs(observation["containerMatchesInitial"], False)
+        self.assertIs(observation["allFrozenFieldsVerified"], True)
+        self.assertEqual(observation["initialInstalledContainer"], initial_location)
+        self.assertEqual(observation["currentInstalledContainer"], str(self.installed))
+        identity = json.loads((runner.ARTIFACTS / "ios-photos-add-only-identity.json").read_text())
+        self.assertEqual(identity["initialInstalledContainer"], initial_location)
+        self.assertEqual(identity["currentInstalledContainer"], str(self.installed))
+        self.test_mutation = None
+        self.assertEqual(runner.run_phase("read-write")["xctestPassed"], 27)
+
+    def test_relocation_before_permission_is_accepted(self):
+        self.prepared()
+        self.relocate()
+        runner.run_phase("add-only")
+        self.assertEqual(len(self.commands("privacy")), 2)
+        self.assertIs(self.observation()["containerMatchesInitial"], False)
+
+    def test_corrupt_historical_container_is_refused_without_permission(self):
+        self.prepared()
+        path = runner.ARTIFACTS / "ios-photos-prepared.json"
+        original = json.loads(path.read_text())
+        native = self.container.rstrip("\n")
+        for invalid in (None, 1, {}, native + "\n", native.replace("/Bundle/", "/Data/"),
+                        native.replace(self.record["udid"], "12345678-1234-4234-8234-123456789012"),
+                        native.replace("/data/", "/../data/"), native + "/extra"):
+            with self.subTest(invalid=invalid):
+                path.write_text(json.dumps(dict(original, installedContainer=invalid)))
+                self.failure("add-only", "photos-container-")
+                self.assertFalse(self.commands("privacy"))
+
+    def test_relocated_changed_info_is_observed_but_refused(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            info = dict(self.info, SyntheticDifferentValue=True)
+            (self.installed / "Info.plist").write_bytes(plistlib.dumps(info))
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-prepared-host-changed")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["installedHost"], "observed")
+        self.assertIs(observation["containerMatchesInitial"], False)
+        self.assertIs(observation["installedMatchesPrepared"], False)
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+
+    def test_relocated_executable_change_is_observed_and_refused(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            (self.installed / "Runner").write_bytes(b"changed embedded signature or executable bytes")
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-prepared-host-changed")
+        observation = self.observation()
+        self.assertIs(observation["containerMatchesInitial"], False)
+        self.assertIs(observation["installedMatchesPrepared"], False)
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+
+    def test_relocated_strict_codesign_failure_is_refused_and_stopped(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            self.signing_code = 1
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-signing-verify-exit-nonzero")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["builtHost"], "readFailed")
+        self.assertEqual(observation["readStates"]["installedHost"], "readFailed")
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_relocated_version_change_is_read_failed_and_entitlements_still_observed(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            (self.installed / "Info.plist").write_bytes(plistlib.dumps(dict(self.info, CFBundleVersion="99")))
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-version-mismatch")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["installedHost"], "readFailed")
+        self.assertIsNone(observation["installedMatchesPrepared"])
+        self.assertIsNone(observation["installedHost"])
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertIs(observation["allFrozenFieldsVerified"], False)
+
+    def test_relocated_signature_metadata_change_is_read_failed(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            self.installed_display = SIGNING_DISPLAY.replace("adhoc", "sha256")
+        self.test_mutation = mutate
+        self.failure("add-only", "signing-not-adhoc")
+        self.assertEqual(self.observation()["readStates"]["installedHost"], "readFailed")
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_relocated_entitlements_change_is_observed_and_refused(self):
+        self.prepared()
+        self.test_mutation = self.relocate
+        real = runner.evidence.displayed_entitlements
+        # Change only after Xcode starts; all pre-permission reads stay real.
+        def changed(raw):
+            actual = real(raw)
+            if any(args[0] == "xcodebuild" and args[1] == "test-without-building" for args in self.calls):
+                return runner.evidence.entitlement_evidence(plistlib.dumps(dict(SIGNING_ENTITLEMENTS, **{"get-task-allow": False})))
+            return actual
+        with mock.patch.object(runner.evidence, "displayed_entitlements", side_effect=changed):
+            self.failure("add-only", "photos-prepared-host-changed")
+        observation = self.observation()
+        self.assertIs(observation["builtMatchesPrepared"], False)
+        self.assertIs(observation["installedMatchesPrepared"], False)
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+
+    def test_relocated_generated_entitlements_existence_change_is_refused(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            root = runner.DERIVED / "Build/Intermediates.noindex/Runner.build/Debug-iphonesimulator/Runner.build"
+            (root / "Runner.app.xcent-simulated").unlink()
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-prepared-host-changed")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["generatedEntitlements"], "observed")
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], False)
+        self.assertIsNone(observation["generatedEntitlements"]["Runner.app.xcent-simulated"])
+
+    def test_relocated_generated_entitlements_bytes_change_is_refused(self):
+        self.prepared()
+        def mutate():
+            self.relocate()
+            root = runner.DERIVED / "Build/Intermediates.noindex/Runner.build/Debug-iphonesimulator/Runner.build"
+            (root / "Runner.app.xcent").write_bytes(plistlib.dumps(dict(SIGNING_ENTITLEMENTS, **{"get-task-allow": False})))
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-prepared-host-changed")
+        self.assertIs(self.observation()["generatedEntitlementsMatchPrepared"], False)
+
+    def test_prepared_raw_changes_during_test_are_observed_and_refused(self):
+        self.prepared()
+        path = runner.ARTIFACTS / "ios-photos-prepared.json"
+        self.test_mutation = lambda: path.write_text(json.dumps(json.loads(path.read_text()), separators=(",", ":")))
+        self.failure("add-only", "photos-prepared-proof-changed")
+        observation = self.observation()
+        self.assertIs(observation["preparedSha256MatchesExpected"], False)
+        self.assertIs(observation["builtMatchesPrepared"], True)
+        self.assertIs(observation["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_prepared_change_during_actual_fingerprint_read_is_detected_by_final_read(self):
+        self.prepared()
+        path = runner.ARTIFACTS / "ios-photos-prepared.json"
+        initial = path.read_bytes()
+        real = runner.fingerprint
+        def read(bundle):
+            value = real(bundle)
+            if bundle == runner.built_bundle() and any(args[0] == "xcodebuild" and args[1] == "test-without-building" for args in self.calls):
+                path.write_bytes(initial + b"\n")
+            return value
+        with mock.patch.object(runner, "fingerprint", side_effect=read):
+            self.failure("add-only", "photos-prepared-proof-changed")
+        observation = self.observation()
+        self.assertIs(observation["preparedSha256MatchesExpected"], True)
+        self.assertIs(observation["preparedFinalMatchesInitial"], False)
+        self.assertIs(observation["preparedFinalMatchesExpected"], False)
+        self.assertEqual(observation["preparedFinalReadState"], "observed")
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertIs(observation["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_prepared_final_read_failure_cannot_verify_frozen_fields(self):
+        self.prepared()
+        real = runner.generated_entitlements
+        def read():
+            value = real()
+            if any(args[0] == "xcodebuild" and args[1] == "test-without-building" for args in self.calls):
+                (runner.ARTIFACTS / "ios-photos-prepared.json").unlink()
+            return value
+        with mock.patch.object(runner, "generated_entitlements", side_effect=read):
+            self.failure("add-only", "evidence-path-unavailable")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["prepared"], "observed")
+        self.assertEqual(observation["preparedFinalReadState"], "readFailed")
+        self.assertIsNone(observation["preparedFinalMatchesInitial"])
+        self.assertIsNone(observation["preparedFinalSha256"])
+        self.assertIs(observation["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_prepared_read_failure_keeps_unknown_comparisons_and_stops(self):
+        self.prepared()
+        self.test_mutation = lambda: (runner.ARTIFACTS / "ios-photos-prepared.json").unlink()
+        self.failure("add-only", "evidence-path-unavailable")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["prepared"], "readFailed")
+        self.assertIsNone(observation["preparedSha256"])
+        self.assertIsNone(observation["preparedSha256MatchesExpected"])
+        self.assertIsNone(observation["builtMatchesPrepared"])
+        self.assertIsNone(observation["generatedEntitlementsMatchPrepared"])
+        self.assertIs(observation["builtMatchesInstalled"], True)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def assert_versions_failure_observation(self, initial):
+        observation = self.observation()
+        for key in runner.CONTEXT_FIELDS:
+            self.assertEqual(observation[key], initial[key])
+        for component in ("prepared", "builtHost", "installedHost"):
+            self.assertEqual(observation["readStates"][component], "readFailed")
+        self.assertEqual(observation["readStates"]["generatedEntitlements"], "observed")
+        self.assertEqual(observation["preparedFinalReadState"], "observed")
+        self.assertIsNone(observation["builtHost"])
+        self.assertIsNone(observation["installedHost"])
+        self.assertIsNone(observation["generatedEntitlementsMatchPrepared"])
+        self.assertIs(observation["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_versions_missing_after_test_keeps_bound_partial_observation_and_stops(self):
+        self.prepared()
+        initial = json.loads((runner.ARTIFACTS / "ios-photos-prepared.json").read_text())
+        self.test_mutation = lambda: Path("versions.json").unlink()
+        self.failure("add-only", "evidence-path-unavailable")
+        self.assert_versions_failure_observation(initial)
+
+    def test_versions_linked_after_test_keeps_bound_partial_observation_and_stops(self):
+        self.prepared()
+        initial = json.loads((runner.ARTIFACTS / "ios-photos-prepared.json").read_text())
+        changed = [False]
+        self.test_mutation = lambda: changed.__setitem__(0, True)
+        real = runner.evidence.ordinary_path
+        def ordinary(path, *arguments, **options):
+            if changed[0] and path.name == "versions.json":
+                raise runner.Failure("evidence-path-linked")
+            return real(path, *arguments, **options)
+        with mock.patch.object(runner.evidence, "ordinary_path", side_effect=ordinary):
+            self.failure("add-only", "evidence-path-linked")
+        self.assert_versions_failure_observation(initial)
+
+    def test_versions_closed_read_failure_after_test_keeps_bound_partial_observation_and_stops(self):
+        self.prepared()
+        initial = json.loads((runner.ARTIFACTS / "ios-photos-prepared.json").read_text())
+        changed = [False]
+        self.test_mutation = lambda: changed.__setitem__(0, True)
+        real = runner.evidence.read_closed_file
+        def read(path, *arguments, **options):
+            if changed[0] and path.name == "versions.json":
+                raise runner.Failure("synthetic-versions-closed-read-failed")
+            return real(path, *arguments, **options)
+        with mock.patch.object(runner.evidence, "read_closed_file", side_effect=read):
+            self.failure("add-only", "synthetic-versions-closed-read-failed")
+        self.assert_versions_failure_observation(initial)
+
+    def test_built_read_failure_does_not_short_circuit_other_components(self):
+        self.prepared()
+        self.test_mutation = lambda: (runner.built_bundle() / "Runner").unlink()
+        self.failure("add-only", "evidence-path-unavailable")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["builtHost"], "readFailed")
+        self.assertEqual(observation["readStates"]["installedHost"], "observed")
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+
+    def test_foreign_current_container_post_test_is_refused_and_stop_still_runs(self):
+        self.prepared()
+        def mutate():
+            self.container = self.container.replace(self.record["udid"], "12345678-1234-4234-8234-123456789012")
+        self.test_mutation = mutate
+        self.failure("add-only", "photos-container-outside-owned-device")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["installedHost"], "readFailed")
+        self.assertIsNone(observation["currentInstalledContainer"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_observation_write_failure_preserves_main_failure_and_stops(self):
+        self.prepared()
+        self.test_code = 65
+        real = runner.evidence.fresh_json
+        def write(path, value):
+            if path.name.endswith("host-observation.json"):
+                raise runner.Failure("synthetic-observation-write-failed")
+            return real(path, value)
+        with mock.patch.object(runner.evidence, "fresh_json", side_effect=write):
+            self.failure("add-only", "photos-xcode-add-only-exit-nonzero")
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_unknown_xcode_constructor_failure_does_not_claim_closed_or_observe(self):
+        self.prepared()
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Must not stringify unknown constructor failure.")
+        real = runner.host.Running
+        def start(args, *arguments, **options):
+            if args[0] == "xcodebuild":
+                raise Unsafe()
+            return real(args, *arguments, **options)
+        before = len(self.commands("get_app_container"))
+        with mock.patch.object(runner.host, "Running", side_effect=start):
+            self.failure("add-only", "photos-xcode-add-only-unexpected")
+        # Initial and three pre-test checks query, but there is no post-test observation.
+        self.assertEqual(len(self.commands("get_app_container")), before + 4)
+        self.assertFalse(self.commands("terminate"))
+        self.assertFalse((runner.ARTIFACTS / "ios-photos-add-only-host-observation.json").exists())
+
+    def test_xcode_return_without_closed_confirmation_never_queries_post_test(self):
+        self.prepared()
+        before = len(self.commands("get_app_container"))
+        with mock.patch.object(runner, "execute_xcode", return_value=False):
+            self.failure("add-only", "photos-xcode-add-only-close-unconfirmed")
+        self.assertEqual(len(self.commands("get_app_container")), before + 4)
+        self.assertFalse(self.commands("terminate"))
+        self.assertFalse((runner.ARTIFACTS / "ios-photos-add-only-host-observation.json").exists())
+
+    def test_xcode_close_wait_exception_does_not_publish_or_query_post_test(self):
+        self.prepared()
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Do not stringify unconfirmed close exception.")
+        real = runner.host.Running
+        def start(args, *arguments, **options):
+            command = real(args, *arguments, **options)
+            if args[0] == "xcodebuild":
+                def wait(*unused, **kwargs):
+                    raise Unsafe()
+                command.process.wait = wait
+            return command
+        before = len(self.commands("get_app_container"))
+        with mock.patch.object(runner.host, "Running", side_effect=start):
+            self.failure("add-only", "photos-xcode-add-only-close-unconfirmed")
+        self.assertEqual(len(self.commands("get_app_container")), before + 4)
+        self.assertFalse(self.commands("terminate"))
+        self.assertFalse((runner.ARTIFACTS / "ios-photos-add-only-host-observation.json").exists())
+        header = json.loads((runner.ARTIFACTS / "ios-photos-add-only-xcode.log").read_text().splitlines()[0])
+        self.assertIs(header["hostAndReaderClosed"], False)
+
+    def test_closed_xcode_unknown_log_failure_preserves_main_failure_and_stops(self):
+        self.prepared()
+        self.test_code = 65
+        self.stop_output = b"unknown stop response\n"
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Must not stringify unknown log failure.")
+        real = runner.evidence.fresh_file
+        def write(path, *arguments, **options):
+            if path.name == "ios-photos-add-only-xcode.log":
+                raise Unsafe()
+            return real(path, *arguments, **options)
+        with mock.patch.object(runner.evidence, "fresh_file", side_effect=write):
+            self.failure("add-only", "photos-xcode-add-only-exit-nonzero")
+        self.assertTrue(self.observation()["allFrozenFieldsVerified"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def log_generation_failure(self, kind, test_code=0):
+        self.prepared()
+        self.test_code = test_code
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Must not stringify unknown log generation failure.")
+        class EncodedFailure(str):
+            def __add__(self, other):
+                return EncodedFailure(super().__add__(other))
+            def encode(self, *arguments, **options):
+                raise Unsafe()
+        dumps = runner.json.dumps
+        redact = runner.host.redact
+        def serialize(value, *arguments, **options):
+            if type(value) is dict and value.get("phase") == "add-only" and "exitCode" in value:
+                if kind == "header":
+                    raise Unsafe()
+                if kind == "encode":
+                    return EncodedFailure(dumps(value, *arguments, **options))
+            return dumps(value, *arguments, **options)
+        def hide(value):
+            if kind == "redact" and value == "Synthetic test":
+                raise Unsafe()
+            return redact(value)
+        with mock.patch.object(runner.json, "dumps", side_effect=serialize), \
+                mock.patch.object(runner.host, "redact", side_effect=hide):
+            self.failure("add-only", "photos-xcode-add-only-exit-nonzero" if test_code else "photos-xcode-add-only-log-unexpected")
+        self.assertTrue(self.observation()["allFrozenFieldsVerified"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+
+    def test_closed_xcode_header_generation_failure_retains_actual_closed_and_stops(self):
+        self.log_generation_failure("header")
+
+    def test_closed_xcode_redact_generation_failure_retains_actual_closed_and_stops(self):
+        self.log_generation_failure("redact")
+
+    def test_closed_xcode_encode_generation_failure_retains_actual_closed_and_stops(self):
+        self.log_generation_failure("encode")
+
+    def test_nonzero_xcode_and_header_generation_failure_keep_nonzero(self):
+        self.log_generation_failure("header", 65)
+
+    def test_nonzero_xcode_and_redact_generation_failure_keep_nonzero(self):
+        self.log_generation_failure("redact", 65)
+
+    def test_nonzero_xcode_and_encode_generation_failure_keep_nonzero(self):
+        self.log_generation_failure("encode", 65)
+
+    def test_persistent_post_stdout_write_failure_still_executes_owned_stop(self):
+        self.prepared()
+        original = runner.sys.stdout
+        class BrokenOutput:
+            def write(self, value):
+                raise BrokenPipeError()
+            def flush(self):
+                raise BrokenPipeError()
+        self.test_mutation = lambda: setattr(runner.sys, "stdout", BrokenOutput())
+        try:
+            self.failure("add-only", "photos-xcode-add-only-log-unexpected")
+        finally:
+            runner.sys.stdout = original
+        self.assertEqual(len(self.commands("terminate")), 1)
+        self.assertEqual(self.commands("terminate")[0], ["xcrun", "simctl", "terminate", self.record["udid"], runner.host.BUNDLE_ID])
+        self.assertIs(self.observation()["allFrozenFieldsVerified"], False)
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+
+    def test_persistent_post_stdout_flush_failure_still_executes_owned_stop(self):
+        self.prepared()
+        original = runner.sys.stdout
+        class BrokenOutput:
+            def write(self, value):
+                return len(value)
+            def flush(self):
+                raise BrokenPipeError()
+        self.test_mutation = lambda: setattr(runner.sys, "stdout", BrokenOutput())
+        try:
+            self.failure("add-only", "photos-xcode-add-only-log-unexpected")
+        finally:
+            runner.sys.stdout = original
+        self.assertEqual(len(self.commands("terminate")), 1)
+        self.assertIs(self.observation()["allFrozenFieldsVerified"], False)
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+
+    def test_persistent_post_emit_failure_still_executes_owned_guard_and_stop(self):
+        self.prepared()
+        changed = [False]
+        self.test_mutation = lambda: changed.__setitem__(0, True)
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Must not stringify persistent emit failure.")
+        real = runner.host.emit
+        def emit(event, value):
+            if changed[0]:
+                raise Unsafe()
+            return real(event, value)
+        with mock.patch.object(runner.host, "emit", side_effect=emit):
+            self.failure("add-only", "photos-xcode-add-only-log-unexpected")
+        self.assertTrue(self.observation()["allFrozenFieldsVerified"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+        self.assertTrue(all(process.stdout.closed and process.waited for process in self.processes))
+
+    def test_persistent_post_emit_failure_cannot_bypass_changed_owned_identity(self):
+        self.prepared()
+        changed = [False]
+        def mutate():
+            changed[0] = True
+            self.marker.write_text(json.dumps(dict(self.record, runAttempt="999")))
+        self.test_mutation = mutate
+        real = runner.host.emit
+        def emit(event, value):
+            if changed[0]:
+                raise BrokenPipeError()
+            return real(event, value)
+        with mock.patch.object(runner.host, "emit", side_effect=emit):
+            self.failure("add-only", "photos-xcode-add-only-log-unexpected")
+        self.assertFalse(self.commands("terminate"))
+        self.assertIs(self.observation()["allFrozenFieldsVerified"], False)
+
+    def test_guard_failure_after_test_still_keeps_available_component_observations(self):
+        self.prepared()
+        self.test_mutation = lambda: self.marker.write_text(json.dumps(dict(self.record, runAttempt="999")))
+        self.failure("add-only", "ownership-invalid")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["installedHost"], "readFailed")
+        self.assertIsNone(observation["installedMatchesPrepared"])
+        self.assertIs(observation["builtMatchesPrepared"], True)
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertFalse(self.commands("terminate"))
+
+    def test_stop_failure_does_not_replace_preexisting_identity_failure(self):
+        self.prepared()
+        self.test_mutation = lambda: (self.installed / "Runner").write_bytes(b"changed host")
+        self.stop_output = b"unknown stop response\n"
+        self.failure("add-only", "photos-prepared-host-changed")
+        self.assertIs(self.observation()["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_observation_write_failure_alone_refuses_success_and_stops(self):
+        self.prepared()
+        real = runner.evidence.fresh_json
+        def write(path, value):
+            if path.name.endswith("host-observation.json"):
+                raise runner.Failure("synthetic-observation-write-failed")
+            return real(path, value)
+        with mock.patch.object(runner.evidence, "fresh_json", side_effect=write):
+            self.failure("add-only", "synthetic-observation-write-failed")
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_observation_readback_failure_keeps_closed_observation_but_refuses_success(self):
+        self.prepared()
+        real = runner.evidence.read_closed_file
+        def read(path, *arguments, **options):
+            if path.name.endswith("host-observation.json"):
+                raise runner.Failure("synthetic-observation-readback-failed")
+            return real(path, *arguments, **options)
+        with mock.patch.object(runner.evidence, "read_closed_file", side_effect=read):
+            self.failure("add-only", "synthetic-observation-readback-failed")
+        self.assertTrue(self.observation()["allFrozenFieldsVerified"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_observation_changed_after_write_is_not_bound_to_success(self):
+        self.prepared()
+        real = runner.evidence.fresh_json
+        def write(path, value):
+            real(path, value)
+            if path.name.endswith("host-observation.json"):
+                path.write_text(json.dumps(dict(value, allFrozenFieldsVerified=False)))
+        with mock.patch.object(runner.evidence, "fresh_json", side_effect=write):
+            self.failure("add-only", "photos-host-observation-changed")
+        self.assertFalse(self.observation()["allFrozenFieldsVerified"])
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_unknown_observation_write_exception_is_not_stringified_and_stops(self):
+        self.prepared()
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Do not stringify unknown observation write exception.")
+        real = runner.evidence.fresh_json
+        def write(path, value):
+            if path.name.endswith("host-observation.json"):
+                raise Unsafe()
+            return real(path, value)
+        with mock.patch.object(runner.evidence, "fresh_json", side_effect=write):
+            self.failure("add-only", "photos-identity-unexpected")
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_identity_diagnostic_emit_failure_keeps_main_failure_and_stops(self):
+        self.prepared()
+        self.test_mutation = lambda: (self.installed / "Runner").write_bytes(b"changed host")
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Do not stringify diagnostic emit failure.")
+        real = runner.host.emit
+        def emit(event, message):
+            if event == "photos-identity-failure":
+                raise Unsafe()
+            return real(event, message)
+        with mock.patch.object(runner.host, "emit", side_effect=emit):
+            self.failure("add-only", "photos-prepared-host-changed")
+        self.assertIs(self.observation()["allFrozenFieldsVerified"], False)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_observation_write_and_identity_failure_keep_identity_failure(self):
+        self.prepared()
+        self.test_mutation = lambda: (self.installed / "Runner").write_bytes(b"changed host")
+        real = runner.evidence.fresh_json
+        def write(path, value):
+            if path.name.endswith("host-observation.json"):
+                raise runner.Failure("synthetic-observation-write-failed")
+            return real(path, value)
+        with mock.patch.object(runner.evidence, "fresh_json", side_effect=write):
+            self.failure("add-only", "photos-prepared-host-changed")
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_unknown_read_exception_is_not_stringified_and_remaining_reads_complete(self):
+        self.prepared()
+        class Unsafe(Exception):
+            def __str__(self):
+                raise AssertionError("Do not stringify unknown read exception.")
+        real = runner.fingerprint
+        def read(bundle):
+            if bundle == runner.built_bundle() and any(args[0] == "xcodebuild" and args[1] == "test-without-building" for args in self.calls):
+                raise Unsafe()
+            return real(bundle)
+        with mock.patch.object(runner, "fingerprint", side_effect=read):
+            self.failure("add-only", "photos-builtHost-read-unexpected")
+        observation = self.observation()
+        self.assertEqual(observation["readStates"]["builtHost"], "readFailed")
+        self.assertEqual(observation["readStates"]["installedHost"], "observed")
+        self.assertIs(observation["generatedEntitlementsMatchPrepared"], True)
+        self.assertEqual(len(self.commands("terminate")), 1)
+
+    def test_prior_observation_digest_change_refuses_read_write_before_permission(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        path = runner.ARTIFACTS / "ios-photos-add-only-host-observation.json"
+        path.write_text(json.dumps(json.loads(path.read_text()), separators=(",", ":")))
+        count = len(self.commands("privacy"))
+        self.failure("read-write", "photos-add-only-proof-required")
+        self.assertEqual(len(self.commands("privacy")), count)
+
+    def test_prior_observation_semantics_reject_even_with_matching_digest(self):
+        self.prepared()
+        runner.run_phase("add-only")
+        path = runner.ARTIFACTS / "ios-photos-add-only-host-observation.json"
+        result_path = runner.ARTIFACTS / "ios-photos-add-only-result.json"
+        original = json.loads(path.read_text())
+        native = self.container.rstrip("\n")
+        mutations = [{**original, "allFrozenFieldsVerified": 1}, {**original, "phase": "read-write"},
+                     {**original, "builtMatchesPrepared": False}, {**original, "unexpected": True},
+                     {**original, "runId": "999"},
+                     {**original, "readStates": dict(original["readStates"], installedHost="unobserved")},
+                     {**original, "currentInstalledContainer": native.replace(self.record["udid"], "12345678-1234-4234-8234-123456789012")}]
+        for mutation in mutations:
+            with self.subTest(fields=mutation):
+                path.write_text(json.dumps(mutation))
+                result = json.loads(result_path.read_text())
+                result["hostObservationSha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+                result_path.write_text(json.dumps(result))
+                self.failure("read-write", "photos-add-only-observation-required|photos-container-")
+                self.assertEqual(len(self.commands("privacy")), 2)
+
+    def test_existing_observation_is_never_overwritten_or_permission_sent(self):
+        self.prepared()
+        path = runner.ARTIFACTS / "ios-photos-add-only-host-observation.json"
+        path.write_bytes(b"existing closed evidence")
+        self.failure("add-only", "photos-artifact-not-fresh")
+        self.assertEqual(path.read_bytes(), b"existing closed evidence")
+        self.assertFalse(self.commands("privacy"))
 
     def test_stop_unknown_response_never_success(self):
         self.prepared()
@@ -418,9 +1074,29 @@ class ControllerTests(OwnedTemp):
             self.failure(phase, "photos-xcode-add-only-close-unconfirmed")
         self.assertFalse(self.commands("terminate"))
         self.assertFalse(any(args[:3] == ["xcrun", "xcresulttool", "get"] for args in self.calls))
+        self.assertFalse((runner.ARTIFACTS / "ios-photos-add-only-host-observation.json").exists())
 
 
 class ParsingTests(unittest.TestCase):
+    def test_historical_container_shape_has_no_filesystem_access(self):
+        identifier = "7a6b4f55-32e9-4c4e-96ef-2ac114643671"
+        raw = (f"/Users/runner/Library/Developer/CoreSimulator/Devices/{identifier}"
+               "/data/Containers/Bundle/Application/12345678-1234-4234-8234-123456789012/Runner.app")
+        with mock.patch.object(runner.evidence, "ordinary_path", side_effect=AssertionError("Historical path is retired.")):
+            self.assertEqual(runner.installed_container_shape(raw, identifier).as_posix(), raw)
+        for invalid in (None, 1, {}, raw + "\n", raw.replace("/Users/runner/", "/Users/runner\t/"), raw.replace("/Users/", "/Users\\/")):
+            with self.subTest(invalid=invalid), self.assertRaises(runner.Failure):
+                runner.installed_container_shape(invalid, identifier)
+
+    def test_current_container_requires_actual_ordinary_path(self):
+        identifier = "7a6b4f55-32e9-4c4e-96ef-2ac114643671"
+        raw = (f"/Users/runner/Library/Developer/CoreSimulator/Devices/{identifier}"
+               "/data/Containers/Bundle/Application/12345678-1234-4234-8234-123456789012/Runner.app")
+        for failure in ("evidence-path-linked", "evidence-path-not-ordinary", "evidence-path-unavailable"):
+            with self.subTest(failure=failure), mock.patch.object(runner.evidence, "ordinary_path", side_effect=runner.Failure(failure)):
+                with self.assertRaisesRegex(runner.Failure, failure):
+                    runner.installed_path(raw + "\n", identifier)
+
     def test_exact_container_grammar_rejects_foreign_traversal_data_and_extra(self):
         identifier = "7a6b4f55-32e9-4c4e-96ef-2ac114643671"
         raw = (f"/Users/runner/Library/Developer/CoreSimulator/Devices/{identifier}"

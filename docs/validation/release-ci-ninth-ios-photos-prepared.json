@@ -1,0 +1,103 @@
+{
+  "buildHostAndReaderClosed": true,
+  "builtHost": {
+    "codesign": {
+      "authorityPresent": false,
+      "identifier": "io.imagehost.imagehost",
+      "signature": "adhoc",
+      "teamIdentifier": "not set"
+    },
+    "executable": {
+      "byteCount": 58624,
+      "sha256": "fc6f130e401aed8e5ac20e722636c67f6246a5832f380ec125f92b3bf951d895"
+    },
+    "infoPlist": {
+      "byteCount": 2210,
+      "sha256": "463ea5e5bba4f81e2403e733e140840570d79306e3f36b81045d9da38deae801"
+    },
+    "nativeVersion": {
+      "bundleIdentifier": "io.imagehost.imagehost",
+      "native": {
+        "CFBundleShortVersionString": "0.1.0",
+        "CFBundleVersion": "1",
+        "ImageHubKernelRevision": "1",
+        "ImageHubKernelVersion": "0.1.0"
+      },
+      "platform": "ios",
+      "verified": true
+    },
+    "signatureEntitlements": {
+      "byteCount": 183,
+      "present": [],
+      "sha256": "8acd8b6643d44a5f9486075f4f1f058407fe5981f66a4b7044ce8bee6041304c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "strictVerificationPassed": true
+  },
+  "configuration": "Debug",
+  "derivedData": "build/apple-photos-ci",
+  "formatVersion": 1,
+  "generatedEntitlements": {
+    "Runner.app.xcent": {
+      "byteCount": 181,
+      "present": [],
+      "sha256": "97704a8960b4facceef54397a08fb5d0a456247c3627359215aa2a27df22656c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "Runner.app.xcent-simulated": null
+  },
+  "installHostAndReaderClosed": true,
+  "installedContainer": "/Users/runner/Library/Developer/CoreSimulator/Devices/CD94FCFC-AA74-448B-99EC-A4FE6DCF9FA1/data/Containers/Bundle/Application/F91EEB6B-E9AC-41A2-B32D-1EF5069C7747/Runner.app",
+  "installedHost": {
+    "codesign": {
+      "authorityPresent": false,
+      "identifier": "io.imagehost.imagehost",
+      "signature": "adhoc",
+      "teamIdentifier": "not set"
+    },
+    "executable": {
+      "byteCount": 58624,
+      "sha256": "fc6f130e401aed8e5ac20e722636c67f6246a5832f380ec125f92b3bf951d895"
+    },
+    "infoPlist": {
+      "byteCount": 2210,
+      "sha256": "463ea5e5bba4f81e2403e733e140840570d79306e3f36b81045d9da38deae801"
+    },
+    "nativeVersion": {
+      "bundleIdentifier": "io.imagehost.imagehost",
+      "native": {
+        "CFBundleShortVersionString": "0.1.0",
+        "CFBundleVersion": "1",
+        "ImageHubKernelRevision": "1",
+        "ImageHubKernelVersion": "0.1.0"
+      },
+      "platform": "ios",
+      "verified": true
+    },
+    "signatureEntitlements": {
+      "byteCount": 183,
+      "present": [],
+      "sha256": "8acd8b6643d44a5f9486075f4f1f058407fe5981f66a4b7044ce8bee6041304c",
+      "unrecordedKeys": [],
+      "values": {}
+    },
+    "strictVerificationPassed": true
+  },
+  "ownedRecord": {
+    "deviceType": "com.apple.CoreSimulator.SimDeviceType.iPhone-17",
+    "formatVersion": 1,
+    "name": "ImageHub-CI-38137413108-1-b536c9f7",
+    "runAttempt": "1",
+    "runId": "38137413108",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-2",
+    "udid": "cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1"
+  },
+  "ownedUuid": "cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1",
+  "platform": "iphonesimulator",
+  "runAttempt": "1",
+  "runId": "38137413108",
+  "target": "lib/main.dart",
+  "versionsSha256": "fe7fa73220f4e55d5b95129520bd9c4acbc2b7af63301c422f4e4c19601d3b50"
+}

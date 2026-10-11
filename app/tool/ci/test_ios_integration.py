@@ -457,6 +457,34 @@ class Harness(unittest.TestCase):
 
 
 class ParsingTests(unittest.TestCase):
+    def test_running_default_diagnostic_still_uses_current_global_emit(self):
+        process = Process(b"fixed synthetic output\n")
+        with mock.patch.object(runner.subprocess, "Popen", return_value=process), \
+                mock.patch.object(runner, "emit") as initial:
+            command = runner.Running(["synthetic"], "synthetic")
+            with mock.patch.object(runner, "emit") as current:
+                runner.close_host(command)
+            initial.assert_not_called()
+            current.assert_called_once_with("synthetic", "fixed synthetic output")
+        self.assertTrue(process.stdout.closed and process.waited)
+
+    def test_optional_command_diagnostic_callback_keeps_real_close_and_stop_grammar(self):
+        process = Process(FOUND_NOTHING.encode(), code=3)
+        messages = []
+        def report(stage, value):
+            if stage.endswith("-exit"):
+                self.assertTrue(process.stdout.closed and process.waited)
+            messages.append((stage, value))
+        with mock.patch.object(runner.subprocess, "Popen", return_value=process), \
+                mock.patch.object(runner, "emit", side_effect=AssertionError("Use explicit callback.")):
+            output = runner.run_command(["synthetic"], "synthetic-stop", 1, publish=True,
+                                        accept_nonzero=runner.known_not_running, report_exit=True,
+                                        emit_callback=report)
+        self.assertEqual(output, FOUND_NOTHING.strip())
+        self.assertEqual(messages[-1], ("synthetic-stop-exit", "exitCode=3; hostAndReaderClosed=true"))
+        self.assertEqual(len(messages), 7)
+        self.assertTrue(process.stdout.closed and process.waited)
+
     def test_strict_loopback_auth_uri(self):
         valid = (URI, "http://localhost:1/a_/", "http://127.0.0.1:65535/auth-/")
         for uri in valid:

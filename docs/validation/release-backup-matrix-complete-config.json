@@ -1,0 +1,22 @@
+{
+  "formatVersion": 1,
+  "matrix": "app/integration_test/generated_backup_interop_matrix_test.dart",
+  "consumers": {
+    "windows": [
+      "docs/validation/release-interop-android-to-windows.log",
+      "docs/validation/release-interop-macos-to-windows.log",
+      "docs/validation/release-interop-ios-to-windows.log"
+    ],
+    "android": [
+      "docs/validation/release-interop-four-origin-to-android.log"
+    ],
+    "macos": [
+      "docs/validation/release-ci-ninth-macos-backup-interop.log"
+    ],
+    "ios": [
+      "docs/validation/release-ci-ninth-windows-to-ios.json",
+      "docs/validation/release-ci-ninth-android-to-ios.json",
+      "docs/validation/release-ci-ninth-macos-to-ios.json"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{"exitCode": 0, "failure": null, "formatVersion": 1, "hostAndReaderClosed": true, "phase": "add-only"}
+Command line invocation:
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild test-without-building -workspace ios/Runner.xcworkspace -scheme Runner -configuration Debug -destination "platform=iOS Simulator,id=CD94FCFC-AA74-448B-99EC-A4FE6DCF9FA1,arch=arm64" -derivedDataPath build/apple-photos-ci -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- CODE_SIGN_INJECT_BASE_ENTITLEMENTS=YES FLUTTER_TARGET=lib/main.dart "-only-testing:RunnerTests/RunnerTests/testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage" -resultBundlePath build/ci-evidence/ios-photos-add-only.xcresult
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = -
+    CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES
+    CODE_SIGNING_ALLOWED = YES
+    FLUTTER_TARGET = lib/main.dart
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  file_selector_ios: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/file_selector_ios-0.5.3+6 @ local
+  flutter_secure_storage_darwin: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/flutter_secure_storage_darwin-0.4.3 @ local
+  image_picker_ios: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/image_picker_ios-0.8.13+9 @ local
+  share_plus: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/share_plus-13.3.1 @ local
+  integration_test: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/integration_test @ local
+  FlutterFramework: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/.packages/FlutterFramework @ local
+  FlutterGeneratedPluginSwiftPackage: /Users/runner/work/ImageHub/ImageHub/app/ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage
+
+Writing result bundle at path:
+	/Users/runner/work/ImageHub/ImageHub/app/build/ci-evidence/ios-photos-add-only.xcresult
+
+2026-10-11 12:18:20.678996+0000 Runner[55818:156479] [UIFocus] FlutterView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-10-11 12:18:20.689153+0000 Runner[55818:156479] [IMPORTANT:flutter/shell/platform/darwin/graphics/FlutterDarwinContextMetalImpeller.mm(45)] Using the Impeller rendering backend (Metal).
+2026-10-11 12:18:20.792567+0000 Runner[55818:157408] flutter: The Dart VM service is listening on <loopback-vm-uri>
+2026-10-11 12:18:23.885184+0000 Runner[55818:156479] [UIFocus] FlutterSemanticsScrollView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+Test Suite 'Selected tests' started at 2026-10-11 12:18:24.044.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 12:18:24.045.
+Test Suite 'RunnerTests' started at 2026-10-11 12:18:24.045.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' started.
+Test Case '-[RunnerTests.RunnerTests testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage]' passed (0.372 seconds).
+Test Suite 'RunnerTests' passed at 2026-10-11 12:18:24.419.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.372 (0.374) seconds
+Test Suite 'RunnerTests.xctest' passed at 2026-10-11 12:18:24.419.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.372 (0.374) seconds
+Test Suite 'Selected tests' passed at 2026-10-11 12:18:24.420.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.372 (0.376) seconds
+2026-10-11 12:18:25.261 xcodebuild[54980:154200] [MT] IDETestOperationsObserverDebug: 16.084 elapsed -- Testing started completed.
+2026-10-11 12:18:25.261 xcodebuild[54980:154200] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
+2026-10-11 12:18:25.261 xcodebuild[54980:154200] [MT] IDETestOperationsObserverDebug: 16.084 sec, +16.084 sec -- end
+
+Test session results, code coverage, and logs:
+	/Users/runner/work/ImageHub/ImageHub/app/build/ci-evidence/ios-photos-add-only.xcresult
+
+** TEST EXECUTE SUCCEEDED **
+
+Testing started

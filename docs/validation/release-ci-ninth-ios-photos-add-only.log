@@ -1,0 +1,32 @@
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-privacy-reset-photos-exit] exitCode=0; hostAndReaderClosed=true
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-privacy-grant-photos-add-exit] exitCode=0; hostAndReaderClosed=true
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-xcode-exit] add-only: exitCode=0; hostAndReaderClosed=true
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-identity-failure] photos-prepared-host-changed
+[owned-app-stop-phase] guard-started
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[owned-app-stop-phase] guard-confirmed
+[owned-app-stop-phase] terminate-started
+[owned-app-stop] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] Simulator device failed to terminate io.imagehost.imagehost.
+[owned-app-stop] found nothing to terminate
+[owned-app-stop] Underlying error (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] 	The request to terminate "io.imagehost.imagehost" failed. found nothing to terminate
+[owned-app-stop] 	found nothing to terminate
+[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true
+[stage] ownedappstopped
+[failure] photos-prepared-host-changed

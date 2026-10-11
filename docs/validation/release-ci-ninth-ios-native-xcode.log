@@ -1,0 +1,14 @@
+{"acceptedOutputComplete": true, "exitCode": 0, "failure": null, "formatVersion": 1, "hostAndReaderClosed": true}
+Test Suite 'Selected tests' started at 2026-10-11 12:09:02.005.
+Test Suite 'RunnerTests.xctest' started at 2026-10-11 12:09:02.006.
+Test Suite 'ImageHubFlutterIntegrationTests' started at 2026-10-11 12:09:02.006.
+Test Case '-[ImageHubFlutterIntegrationTests testCompiledDartSuiteCompletes]' started.
+IMAGEHUB_DART_XCTEST_RESULTS:{"callbacks":4,"results":{"IT-001\/002 UT-004\/012\/102 partial Apple native storage SQLite pixels gallery and IO protection":"success","IT-004 UT-036\/075 partial Apple real Pigeon file bridge ownership rejection":"success","UT\/IT partial Apple native Keychain isolated write new-instance read delete":"success","UT\/IT partial Apple passive native network read listen cancel":"success"},"suite":"native"}
+Test Case '-[ImageHubFlutterIntegrationTests testCompiledDartSuiteCompletes]' passed (12.100 seconds).
+Test Suite 'ImageHubFlutterIntegrationTests' passed at 2026-10-11 12:09:14.108.
+	 Executed 1 test, with 0 failures (0 unexpected) in 12.100 (12.102) seconds
+Test Suite 'RunnerTests.xctest' passed at 2026-10-11 12:09:14.109.
+	 Executed 1 test, with 0 failures (0 unexpected) in 12.100 (12.103) seconds
+Test Suite 'Selected tests' passed at 2026-10-11 12:09:14.198.
+	 Executed 1 test, with 0 failures (0 unexpected) in 12.100 (12.193) seconds
+** TEST SUCCEEDED **

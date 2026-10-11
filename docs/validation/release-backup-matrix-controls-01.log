@@ -1,0 +1,66 @@
+control-owner: C:\Users\PAN\workspace\ImageHub\app\build\validation\backup-matrix-controls-5fe246e1237844ac800ac844d47e9dc4
+test_actual_complete_required_refused (__main__.BackupMatrixControls.test_actual_complete_required_refused) ... ok
+test_actual_partial_is_11_directions_22_modes (__main__.BackupMatrixControls.test_actual_partial_is_11_directions_22_modes) ... ok
+test_aggregate_duplicate_group_refused (__main__.BackupMatrixControls.test_aggregate_duplicate_group_refused) ... ok
+test_aggregate_non_android_refused (__main__.BackupMatrixControls.test_aggregate_non_android_refused) ... ok
+test_bad_json_or_trailing_text_refused (__main__.BackupMatrixControls.test_bad_json_or_trailing_text_refused) ... ok
+test_boolean_config_version_refused (__main__.BackupMatrixControls.test_boolean_config_version_refused) ... ok
+test_boolean_integer_fields_refused (__main__.BackupMatrixControls.test_boolean_integer_fields_refused) ... ok
+test_changed_byte_count_refused (__main__.BackupMatrixControls.test_changed_byte_count_refused) ... ok
+test_changed_counts_refused (__main__.BackupMatrixControls.test_changed_counts_refused) ... ok
+test_changed_file_detected_by_closed_reader (__main__.BackupMatrixControls.test_changed_file_detected_by_closed_reader) ... ok
+test_changed_sha_refused (__main__.BackupMatrixControls.test_changed_sha_refused) ... ok
+test_cli_actual_partial_and_strict_no_output (__main__.BackupMatrixControls.test_cli_actual_partial_and_strict_no_output) ... ok
+test_cross_container_conflict_refused (__main__.BackupMatrixControls.test_cross_container_conflict_refused) ... ok
+test_cross_container_same_value_deduplicated (__main__.BackupMatrixControls.test_cross_container_same_value_deduplicated) ... ok
+test_duplicate_config_json_key_refused (__main__.BackupMatrixControls.test_duplicate_config_json_key_refused) ... ok
+test_duplicate_consumer_json_key_refused (__main__.BackupMatrixControls.test_duplicate_consumer_json_key_refused) ... ok
+test_duplicate_evidence_path_refused (__main__.BackupMatrixControls.test_duplicate_evidence_path_refused) ... ok
+test_duplicate_setting_refused (__main__.BackupMatrixControls.test_duplicate_setting_refused) ... ok
+test_empty_consumer_paths_refused (__main__.BackupMatrixControls.test_empty_consumer_paths_refused) ... ok
+test_export_fixture_does_not_count (__main__.BackupMatrixControls.test_export_fixture_does_not_count) ... ok
+test_extra_mode_refused (__main__.BackupMatrixControls.test_extra_mode_refused) ... ok
+test_false_close_refused (__main__.BackupMatrixControls.test_false_close_refused) ... ok
+test_flutter_prefix_and_progress_accepted (__main__.BackupMatrixControls.test_flutter_prefix_and_progress_accepted) ... ok
+test_four_aggregate_groups_refused (__main__.BackupMatrixControls.test_four_aggregate_groups_refused) ... ok
+test_future_config_refused (__main__.BackupMatrixControls.test_future_config_refused) ... ok
+test_future_ios_container_refused (__main__.BackupMatrixControls.test_future_ios_container_refused) ... ok
+test_inputs_rechecked_before_publish (__main__.BackupMatrixControls.test_inputs_rechecked_before_publish) ... ok
+test_integer_close_refused (__main__.BackupMatrixControls.test_integer_close_refused) ... ok
+test_linked_ancestor_refused (__main__.BackupMatrixControls.test_linked_ancestor_refused) ... ok
+test_missing_consumer_config_refused (__main__.BackupMatrixControls.test_missing_consumer_config_refused) ... ok
+test_missing_direction_stays_partial (__main__.BackupMatrixControls.test_missing_direction_stays_partial) ... ok
+test_missing_mode_refused (__main__.BackupMatrixControls.test_missing_mode_refused) ... ok
+test_missing_path_and_directory_input_refused (__main__.BackupMatrixControls.test_missing_path_and_directory_input_refused) ... ok
+test_missing_setting_refused (__main__.BackupMatrixControls.test_missing_setting_refused) ... ok
+test_mixed_aggregate_layers_refused (__main__.BackupMatrixControls.test_mixed_aggregate_layers_refused) ... ok
+test_mixed_origin_group_refused (__main__.BackupMatrixControls.test_mixed_origin_group_refused) ... ok
+test_nonfinite_json_refused (__main__.BackupMatrixControls.test_nonfinite_json_refused) ... ok
+test_occupied_output_cli_preserved (__main__.BackupMatrixControls.test_occupied_output_cli_preserved) ... ok
+test_occupied_output_preserved (__main__.BackupMatrixControls.test_occupied_output_preserved) ... ok
+test_oversize_input_refused (__main__.BackupMatrixControls.test_oversize_input_refused) ... ok
+test_path_escape_unc_device_ads_alias_refused (__main__.BackupMatrixControls.test_path_escape_unc_device_ads_alias_refused) ... ok
+test_pretty_ios_json_accepted (__main__.BackupMatrixControls.test_pretty_ios_json_accepted) ... ok
+test_reparse_attribute_refused (__main__.BackupMatrixControls.test_reparse_attribute_refused) ... ok
+test_row_extra_or_missing_field_refused (__main__.BackupMatrixControls.test_row_extra_or_missing_field_refused) ... ok
+test_same_group_duplicate_mode_refused (__main__.BackupMatrixControls.test_same_group_duplicate_mode_refused) ... ok
+test_self_origin_refused (__main__.BackupMatrixControls.test_self_origin_refused) ... ok
+test_setting_type_refused (__main__.BackupMatrixControls.test_setting_type_refused) ... ok
+test_skipped_setting_refused (__main__.BackupMatrixControls.test_skipped_setting_refused) ... ok
+test_synthetic_complete_24_modes (__main__.BackupMatrixControls.test_synthetic_complete_24_modes) ... ok
+test_third_mode_row_refused (__main__.BackupMatrixControls.test_third_mode_row_refused) ... ok
+test_three_frozen_origins_refused_even_partial (__main__.BackupMatrixControls.test_three_frozen_origins_refused_even_partial) ... ok
+test_unknown_config_field_refused (__main__.BackupMatrixControls.test_unknown_config_field_refused) ... ok
+test_unknown_consumer_marker_refused (__main__.BackupMatrixControls.test_unknown_consumer_marker_refused) ... ok
+test_unknown_container_field_refused (__main__.BackupMatrixControls.test_unknown_container_field_refused) ... ok
+test_unknown_container_refused (__main__.BackupMatrixControls.test_unknown_container_refused) ... ok
+test_unknown_exception_never_stringified (__main__.BackupMatrixControls.test_unknown_exception_never_stringified) ... ok
+test_unknown_platform_refused (__main__.BackupMatrixControls.test_unknown_platform_refused) ... ok
+test_unknown_prefix_refused (__main__.BackupMatrixControls.test_unknown_prefix_refused) ... ok
+test_utf8_invalid_refused (__main__.BackupMatrixControls.test_utf8_invalid_refused) ... ok
+test_wrong_consumer_refused (__main__.BackupMatrixControls.test_wrong_consumer_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 60 tests in 1.172s
+
+OK

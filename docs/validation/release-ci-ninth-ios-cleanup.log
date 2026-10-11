@@ -1,0 +1,12 @@
+simctl list devices --json
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl privacy cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 revoke photos io.imagehost.imagehost
+simctl privacy cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 revoke photos-add io.imagehost.imagehost
+simctl list devices --json
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl shutdown cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1
+simctl list devices --json
+Confirmed owned simulator cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1 on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+simctl delete cd94fcfc-aa74-448b-99ec-a4fe6dcf9fa1
+simctl list devices --json
+The confirmed owned simulator was deleted.

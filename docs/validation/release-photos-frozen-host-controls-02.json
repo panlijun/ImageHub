@@ -1,0 +1,82 @@
+{
+  "appleNativeVerifiedByTheseControls": false,
+  "commandArguments": [
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tool/ci",
+    "-p",
+    "test_*.py"
+  ],
+  "date": "2026-10-11",
+  "elapsedSeconds": 12.69,
+  "errors": 0,
+  "exitCode": 0,
+  "failures": 0,
+  "fixtureAdapter": {
+    "boundary": "sitecustomize contains only synthetic tempfile roots and the two existing fixture __file__ conventions after discovery import checks; test and controller source unchanged.",
+    "sha256": "13dc3c30eddf7bd540fc393d83ac71470842335defb4c92a3b13e09e14d3b19f",
+    "used": true
+  },
+  "formatVersion": 1,
+  "independentSourceReviewCompleted": true,
+  "intermediateFailureBoundary": "Earlier sandbox fixture failures and the deeper wrapper FileNotFound/spawn-failed remain preserved; path-length cause is inference, not proven WinError 206.",
+  "intermediateFailuresRetainedPrivately": true,
+  "log": "release-photos-frozen-host-controls-02.log",
+  "logByteCount": 903,
+  "logSha256": "fccf3b1585355a7b281ea47ee7d9f32f8fe797ca077c6520ad7a2b9eecb855b5",
+  "nextAppleRunRequired": true,
+  "ninthChangedField": "unknown",
+  "pyCompilePassed": true,
+  "scope": "Local synthetic Python controller controls and six-file compile; not Apple native execution.",
+  "sourceBaseCommit": "09b849de824c38a9dbe714ce1e4c390f1f871c65",
+  "sourceFingerprintBoundary": "Working-tree hashes include local CRLF; separate Git-normalized LF hashes record the checkout boundary.",
+  "sources": [
+    {
+      "gitNormalizedLfSha256": "d87bfef30fe6e6b212e4513a57623ec41518f986d3d90dd1ec61ad625f33d343",
+      "path": "app/tool/ci/run_ios_photos_tests.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 31405,
+      "workingTreeSha256": "1d27ada1c35cfe6d7d1db44624e3dbe1a4befeede51be1fe4405724991c4e503"
+    },
+    {
+      "gitNormalizedLfSha256": "45d4461de91bdec5319fd28c1c29ca8296a8522aaea90f167f5643738afa732a",
+      "path": "app/tool/ci/test_ios_photos_tests.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 63441,
+      "workingTreeSha256": "fa0f72fe53ef71f1d71ad9c0bfce317946614316b7882b18655ce48e88cc5111"
+    },
+    {
+      "gitNormalizedLfSha256": "0ca3aeec8075df140978cfad08b56bd048384e0349ee4ac24a49c371c47ffe79",
+      "path": "app/tool/ci/run_ios_integration.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 18778,
+      "workingTreeSha256": "0c79bad83bfe6ba7a909b17b1eab4312155d6a01c72d02ce35b76925650f2b1d"
+    },
+    {
+      "gitNormalizedLfSha256": "b3b3b138e1293f9430a685263c440cfc7b5d39537fd4c24d7e1f17c8a7910efd",
+      "path": "app/tool/ci/boot_ios_simulator.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 12858,
+      "workingTreeSha256": "b3b3b138e1293f9430a685263c440cfc7b5d39537fd4c24d7e1f17c8a7910efd"
+    },
+    {
+      "gitNormalizedLfSha256": "1bba5e58e4c2d8b9066beff9ed5040dbdfa5d595af3f0b7fd4abd25842a8a040",
+      "path": "app/tool/ci/test_ios_integration.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 32560,
+      "workingTreeSha256": "c2834c5a6502d55f8c041cfdc5d1679e7f57b86d82a2de933c14df68eaeb2f29"
+    },
+    {
+      "gitNormalizedLfSha256": "4f00c76bf3ee5fb7b5c9f6d6cb9ab8e52f42b781e20d466cd79e5c3caba71314",
+      "path": "app/tool/ci/test_release_ci_guards.py",
+      "pyCompilePassed": true,
+      "workingTreeByteCount": 7750,
+      "workingTreeSha256": "4f00c76bf3ee5fb7b5c9f6d6cb9ab8e52f42b781e20d466cd79e5c3caba71314"
+    }
+  ],
+  "testsRun": 186,
+  "workingDirectory": "app"
+}

@@ -109,9 +109,10 @@ class OutputReader:
 
 
 class Running:
-    def __init__(self, arguments, stage, *, publish=True):
+    def __init__(self, arguments, stage, *, publish=True, emit_callback=None):
         self.stage = stage
         self.publish = publish
+        self.emit_callback = emit_callback
         self.eof = False
         self.failure = None
         try:
@@ -135,7 +136,7 @@ class Running:
                 self.eof = True
             else:
                 if self.publish:
-                    emit(self.stage, value)
+                    (emit if self.emit_callback is None else self.emit_callback)(self.stage, value)
                 if collect is not None:
                     collect.append(value)
                 if callback is not None and complete:
@@ -174,8 +175,8 @@ def close_host(command, companion=None):
 
 
 def run_command(arguments, stage, timeout, *, publish=True, companion=None,
-                accept_nonzero=None, companion_errors=True, report_exit=False):
-    command = Running(arguments, stage, publish=publish)
+                accept_nonzero=None, companion_errors=True, report_exit=False, emit_callback=None):
+    command = Running(arguments, stage, publish=publish, **({"emit_callback": emit_callback} if emit_callback is not None else {}))
     collected = [] if not publish or accept_nonzero is not None else None
     deadline = time.monotonic() + timeout
     try:
@@ -205,7 +206,7 @@ def run_command(arguments, stage, timeout, *, publish=True, companion=None,
         if report_exit:
             # close_host returning confirms the actual child AND its reader.
             # A reported nonzero/forced exit is diagnostic, never app-stop proof.
-            emit(stage + "-exit", f"exitCode={command.process.poll()}; hostAndReaderClosed=true")
+            (emit if emit_callback is None else emit_callback)(stage + "-exit", f"exitCode={command.process.poll()}; hostAndReaderClosed=true")
 
 
 def read_owned_record():
@@ -224,7 +225,7 @@ def read_owned_record():
         raise Failure("ownership-invalid") from None
 
 
-def guard_owned(expected, companion=None):
+def guard_owned(expected, companion=None, *, report_owned=None):
     record = read_owned_record()  # Before even the read-only native query.
     if record != expected:
         raise Failure("ownership-changed")
@@ -232,7 +233,7 @@ def guard_owned(expected, companion=None):
                       "ownership-query", 60, publish=False, companion=companion,
                       companion_errors=False)
     try:
-        device = boot.owned_device(record, json.loads(raw))
+        device = boot.owned_device(record, json.loads(raw), **({"report": report_owned} if report_owned is not None else {}))
         if device.get("state") != "Booted" or device.get("isAvailable") is not True:
             raise Failure("ownership-device-not-booted")
     except Failure:
@@ -334,17 +335,21 @@ def known_not_running(code, output):
     return code == 3 and re.fullmatch(observed, output.strip()) is not None
 
 
-def terminate_owned_app(record, console, *, diagnostic=False):
+def terminate_owned_app(record, console, *, diagnostic=False, emit_callback=None):
+    def report(stage, message):
+        (emit if emit_callback is None else emit_callback)(stage, message)
     if diagnostic:
-        emit("owned-app-stop-phase", "guard-started")
-    guard_owned(record, companion=console)
+        report("owned-app-stop-phase", "guard-started")
+    guard_owned(record, companion=console, **({"report_owned": lambda message: emit_callback("ownership", message)}
+                                             if emit_callback is not None else {}))
     if diagnostic:
-        emit("owned-app-stop-phase", "guard-confirmed")
-        emit("owned-app-stop-phase", "terminate-started")
+        report("owned-app-stop-phase", "guard-confirmed")
+        report("owned-app-stop-phase", "terminate-started")
     return run_command(["xcrun", "simctl", "terminate", record["udid"], BUNDLE_ID],
                        "owned-app-stop", 60, publish=diagnostic,
                        accept_nonzero=known_not_running, companion=console,
-                       companion_errors=False, report_exit=diagnostic)
+                       companion_errors=False, report_exit=diagnostic,
+                       **({"emit_callback": emit_callback} if emit_callback is not None else {}))
 
 
 def end_console(console):

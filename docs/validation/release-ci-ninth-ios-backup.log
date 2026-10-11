@@ -1,0 +1,18 @@
+[stage] buildclosed
+[stage] versionverified
+[xcode-dart] IMAGEHUB_DART_XCTEST_RESULTS:{"callbacks":4,"results":{"CT-006 ios actual closed full and metadata exports":"success","CT-006\/IT-005\/BAK-005 android to ios actual full metadata restore reopen":"success","CT-006\/IT-005\/BAK-005 macos to ios actual full metadata restore reopen":"success","CT-006\/IT-005\/BAK-005 windows to ios actual full metadata restore reopen":"success"},"suite":"backup"}
+[stage] xcodeclosedexit0
+[stage] actual-adhoc-host-signing-recorded
+[stage] exactdart4-and-xctest1-confirmed
+[stage] backup-closed-evidence-copied-and-digests-verified
+[owned-app-stop-phase] guard-started
+[owned-app-stop-phase] guard-confirmed
+[owned-app-stop-phase] terminate-started
+[owned-app-stop] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] Simulator device failed to terminate io.imagehost.imagehost.
+[owned-app-stop] found nothing to terminate
+[owned-app-stop] Underlying error (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] 	The request to terminate "io.imagehost.imagehost" failed. found nothing to terminate
+[owned-app-stop] 	found nothing to terminate
+[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true
+[stage] ownedappstopped

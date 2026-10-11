@@ -29,6 +29,14 @@ SUMMARY_NAMES = {"add-only": "ios-photos-add-only-summary.json", "read-write": "
 TIMEOUT = 900
 HASH_LIMIT = 256 * 1024 * 1024
 ADD_TEST = "RunnerTests/RunnerTests/testITApplePhotosRealAddOnlyCommitPreservesSourceAndRetiresStage"
+CONTEXT_FIELDS = frozenset({"formatVersion", "runId", "runAttempt", "ownedUuid", "ownedRecord", "target",
+                            "configuration", "platform", "derivedData", "versionsSha256"})
+
+
+class XcodeFailure(Failure):
+    def __init__(self, classification, host_and_reader_closed):
+        super().__init__(classification)
+        self.host_and_reader_closed = host_and_reader_closed
 
 
 def validate_environment(phase):
@@ -139,16 +147,25 @@ def generated_entitlements():
             for name in ("Runner.app.xcent", "Runner.app.xcent-simulated")}
 
 
-def installed_path(raw, owned_uuid):
+def installed_container_shape(raw, owned_uuid):
+    """Validate a recorded location without accessing a possibly retired path."""
     require(type(raw) is str and len(raw) <= 4096 and len(raw.splitlines()) == 1, "photos-container-output-invalid")
     value = raw.strip()
-    require(value == raw.rstrip("\r\n") and value.startswith("/"), "photos-container-output-invalid")
+    require(value == raw and value.startswith("/"), "photos-container-output-invalid")
+    require(not any(ord(character) < 32 or ord(character) == 127 for character in value) and "\\" not in value,
+            "photos-container-output-invalid")
     match = re.fullmatch(r"(.*/Library/Developer/CoreSimulator/Devices/)(" + evidence.UUID_PATTERN +
                          r")/data/Containers/Bundle/Application/(" + evidence.UUID_PATTERN + r")/Runner\.app", value)
     require(match is not None and str(uuid.UUID(match.group(2))) == str(uuid.UUID(owned_uuid)),
             "photos-container-outside-owned-device")
     path = Path(value)
     require(path.as_posix() == value and ".." not in path.parts, "photos-container-output-invalid")
+    return path
+
+
+def installed_path(raw, owned_uuid):
+    require(type(raw) is str and len(raw) <= 4096 and len(raw.splitlines()) == 1, "photos-container-output-invalid")
+    path = installed_container_shape(raw.rstrip("\r\n"), owned_uuid)
     evidence.ordinary_path(path, directory=True)
     return path
 
@@ -212,44 +229,174 @@ def execute_xcode(args, phase):
                 else:
                     failure = Failure(stage + "-close-unconfirmed")
             except (Exception, KeyboardInterrupt, SystemExit):
+                closed = False
                 failure = Failure(stage + "-close-unconfirmed")
-        header = {"formatVersion": 1, "phase": phase, "hostAndReaderClosed": closed,
-                  "exitCode": code, "failure": str(failure) if failure else None}
-        raw = (json.dumps(header, sort_keys=True) + "\n" +
-               "\n".join(host.redact(line) for line in lines) + "\n").encode()
         try:
+            header = {"formatVersion": 1, "phase": phase, "hostAndReaderClosed": closed,
+                      "exitCode": code, "failure": str(failure) if failure else None}
+            raw = (json.dumps(header, sort_keys=True) + "\n" +
+                   "\n".join(host.redact(line) for line in lines) + "\n").encode()
             evidence.fresh_file(ARTIFACTS / f"ios-photos-{phase}-xcode.log", raw, host.OUTPUT_LIMIT * 3 + 4096)
         except Failure as error:
             failure = failure or error
+        except (Exception, KeyboardInterrupt, SystemExit):
+            failure = failure or Failure(stage + "-log-unexpected")
     if failure:
-        raise failure
+        raise XcodeFailure(str(failure), closed)
     require(closed and code == 0, stage + "-close-unconfirmed")
-    host.emit("photos-xcode-exit", f"{phase}: exitCode=0; hostAndReaderClosed=true")
+    try:
+        host.emit("photos-xcode-exit", f"{phase}: exitCode=0; hostAndReaderClosed=true")
+    except (Exception, KeyboardInterrupt, SystemExit):
+        raise XcodeFailure(stage + "-log-unexpected", closed) from None
+    return True
 
 
-def check_prepared(record):
+def read_prepared(record, observation=None, expected_digest=None):
     raw = evidence.read_closed_file(ARTIFACTS / "ios-photos-prepared.json")
-    proof = evidence.exact_fields(evidence.strict_json(raw), set(context(record)) |
+    digest = hashlib.sha256(raw).hexdigest()
+    if observation is not None:
+        observation["preparedSha256"] = digest
+        observation["preparedSha256MatchesExpected"] = digest == expected_digest if expected_digest is not None else None
+    proof = evidence.exact_fields(evidence.strict_json(raw), CONTEXT_FIELDS |
                                   {"builtHost", "installedHost", "installedContainer", "generatedEntitlements",
                                    "buildHostAndReaderClosed", "installHostAndReaderClosed"}, "photos-prepared-fields")
     for key, value in context(record).items():
         require(same_json(proof[key], value), "photos-prepared-context-changed")
     require(proof["buildHostAndReaderClosed"] is True and proof["installHostAndReaderClosed"] is True,
             "photos-prepared-not-closed")
-    built = fingerprint(built_bundle())
-    installed = installed_bundle(record)
-    actual = fingerprint(installed)
-    require(same_json(proof["builtHost"], built) and same_json(proof["installedHost"], actual) and same_json(built, actual) and
-            proof["installedContainer"] == str(installed) and
-            same_json(proof["generatedEntitlements"], generated_entitlements()),
-            "photos-prepared-host-changed")
-    return proof, hashlib.sha256(raw).hexdigest()
+    installed_container_shape(proof["installedContainer"], record["udid"])
+    return proof, digest
+
+
+def frozen_observation(record, phase, expected_digest=None, *, expected_context=None):
+    """Read every component independently, retaining only curated closed evidence.
+
+    Location equality is diagnostic. Content, signing, generated entitlements,
+    context and the original prepared bytes remain strict frozen requirements.
+    The caller publishes this only after actual Xcode host/reader closure.
+    """
+    if expected_context is not None:
+        require(type(expected_context) is dict and set(expected_context) == CONTEXT_FIELDS, "photos-observation-context-invalid")
+    bound_context = context(record) if expected_context is None else expected_context
+    observation = {**bound_context, "phase": phase, "preparedSha256": None,
+                   "preparedSha256MatchesExpected": None,
+                   "preparedFinalSha256": None, "preparedFinalReadState": "unobserved",
+                   "preparedFinalMatchesInitial": None, "preparedFinalMatchesExpected": None,
+                   "initialInstalledContainer": None, "currentInstalledContainer": None,
+                   "readStates": {name: "unobserved" for name in
+                                  ("prepared", "builtHost", "installedHost", "generatedEntitlements")},
+                   "builtMatchesPrepared": None, "installedMatchesPrepared": None,
+                   "builtMatchesInstalled": None, "containerMatchesInitial": None,
+                   "generatedEntitlementsMatchPrepared": None,
+                   "builtHost": None, "installedHost": None, "generatedEntitlements": None,
+                   "allFrozenFieldsVerified": False}
+    failure = None
+    proof = None
+    def read(name, operation):
+        nonlocal failure
+        try:
+            value = operation()
+            observation["readStates"][name] = "observed"
+            return value
+        except Failure as error:
+            failure = failure or error
+        except (Exception, KeyboardInterrupt, SystemExit):
+            failure = failure or Failure("photos-" + name + "-read-unexpected")
+        observation["readStates"][name] = "readFailed"
+        return None
+    prepared = read("prepared", lambda: read_prepared(record, observation, expected_digest))
+    if prepared is not None:
+        proof, digest = prepared
+        observation["preparedSha256"] = digest
+        observation["preparedSha256MatchesExpected"] = digest == expected_digest if expected_digest is not None else None
+        observation["initialInstalledContainer"] = proof["installedContainer"]
+    observation["builtHost"] = read("builtHost", lambda: fingerprint(built_bundle()))
+    def installed_host():
+        installed = installed_bundle(record)
+        observation["currentInstalledContainer"] = str(installed)
+        return fingerprint(installed)
+    observation["installedHost"] = read("installedHost", installed_host)
+    observation["generatedEntitlements"] = read("generatedEntitlements", generated_entitlements)
+    # Confirm the original proof did not change while the other components
+    # were read. This is closed-file stability, not an atomic bundle snapshot.
+    try:
+        raw = evidence.read_closed_file(ARTIFACTS / "ios-photos-prepared.json")
+        final_digest = hashlib.sha256(raw).hexdigest()
+        observation["preparedFinalSha256"] = final_digest
+        observation["preparedFinalReadState"] = "observed"
+        if observation["preparedSha256"] is not None:
+            observation["preparedFinalMatchesInitial"] = final_digest == observation["preparedSha256"]
+        if expected_digest is not None:
+            observation["preparedFinalMatchesExpected"] = final_digest == expected_digest
+        if observation["preparedFinalMatchesInitial"] is False or observation["preparedFinalMatchesExpected"] is False:
+            failure = failure or Failure("photos-prepared-proof-changed")
+    except Failure as error:
+        observation["preparedFinalReadState"] = "readFailed"
+        failure = failure or error
+    except (Exception, KeyboardInterrupt, SystemExit):
+        observation["preparedFinalReadState"] = "readFailed"
+        failure = failure or Failure("photos-prepared-final-read-unexpected")
+    built, actual, generated = (observation[name] for name in ("builtHost", "installedHost", "generatedEntitlements"))
+    if proof is not None:
+        if built is not None:
+            observation["builtMatchesPrepared"] = same_json(proof["builtHost"], built)
+        if actual is not None:
+            observation["installedMatchesPrepared"] = same_json(proof["installedHost"], actual)
+        if observation["currentInstalledContainer"] is not None:
+            observation["containerMatchesInitial"] = proof["installedContainer"] == observation["currentInstalledContainer"]
+        if generated is not None:
+            observation["generatedEntitlementsMatchPrepared"] = same_json(proof["generatedEntitlements"], generated)
+    if built is not None and actual is not None:
+        observation["builtMatchesInstalled"] = same_json(built, actual)
+    content_matches = all(observation[name] is True for name in
+                          ("builtMatchesPrepared", "installedMatchesPrepared", "builtMatchesInstalled",
+                           "generatedEntitlementsMatchPrepared"))
+    if expected_digest is not None and proof is not None and observation["preparedSha256MatchesExpected"] is not True:
+        failure = failure or Failure("photos-prepared-proof-changed")
+    if not content_matches:
+        failure = failure or Failure("photos-prepared-host-changed")
+    observation["allFrozenFieldsVerified"] = failure is None and content_matches and observation["preparedFinalMatchesInitial"] is True
+    return proof, observation, failure
+
+
+def check_prepared(record):
+    proof, observation, failure = frozen_observation(record, None)
+    if failure:
+        raise failure
+    return proof, observation["preparedSha256"]
 
 
 def check_frozen(record, digest):
-    proof, current = check_prepared(record)
-    require(current == digest, "photos-prepared-proof-changed")
+    proof, observation, failure = frozen_observation(record, None, digest)
+    if failure:
+        raise failure
     return proof
+
+
+def check_add_only(record, proof, digest):
+    raw = evidence.read_closed_file(ARTIFACTS / "ios-photos-add-only-host-observation.json")
+    prior = evidence.strict_json(evidence.read_closed_file(ARTIFACTS / "ios-photos-add-only-result.json"))
+    require(same_json(prior, {**context(record), "phase": "add-only", "preparedSha256": digest,
+                      "hostObservationSha256": hashlib.sha256(raw).hexdigest(),
+                      "xcodeExitCode": 0, "hostAndReaderClosed": True, "ownedAppStopped": True,
+                      "xctestPassed": 1, "xctestFailed": 0, "xctestSkipped": 0}), "photos-add-only-proof-required")
+    actual = evidence.strict_json(raw)
+    require(type(actual) is dict, "photos-add-only-observation-required")
+    current = actual.get("currentInstalledContainer")
+    installed_container_shape(current, record["udid"])
+    expected = {**context(record), "phase": "add-only", "preparedSha256": digest,
+                "preparedSha256MatchesExpected": True,
+                "preparedFinalSha256": digest, "preparedFinalReadState": "observed",
+                "preparedFinalMatchesInitial": True, "preparedFinalMatchesExpected": True,
+                "initialInstalledContainer": proof["installedContainer"], "currentInstalledContainer": current,
+                "readStates": {name: "observed" for name in
+                               ("prepared", "builtHost", "installedHost", "generatedEntitlements")},
+                "builtMatchesPrepared": True, "installedMatchesPrepared": True,
+                "builtMatchesInstalled": True, "containerMatchesInitial": current == proof["installedContainer"],
+                "generatedEntitlementsMatchPrepared": True, "builtHost": proof["builtHost"],
+                "installedHost": proof["installedHost"], "generatedEntitlements": proof["generatedEntitlements"],
+                "allFrozenFieldsVerified": True}
+    require(same_json(actual, expected), "photos-add-only-observation-required")
 
 
 def collect_summary(record, phase, result):
@@ -310,17 +457,24 @@ def prepare(record):
 
 def test_phase(record, phase):
     proof, digest = check_prepared(record)
+    expected_context = {key: proof[key] for key in CONTEXT_FIELDS}
     if phase == "read-write":
-        prior = evidence.strict_json(evidence.read_closed_file(ARTIFACTS / "ios-photos-add-only-result.json"))
-        require(same_json(prior, {**context(record), "phase": "add-only", "preparedSha256": digest,
-                          "xcodeExitCode": 0, "hostAndReaderClosed": True, "ownedAppStopped": True,
-                          "xctestPassed": 1, "xctestFailed": 0, "xctestSkipped": 0}), "photos-add-only-proof-required")
+        check_add_only(record, proof, digest)
     result = ARTIFACTS / RESULT_NAMES[phase]
     require_fresh_outputs([RESULT_NAMES[phase], SUMMARY_NAMES[phase], f"ios-photos-{phase}-xcode.log",
-                           f"ios-photos-{phase}-identity.json", f"ios-photos-{phase}-result.json"])
+                           f"ios-photos-{phase}-identity.json", f"ios-photos-{phase}-host-observation.json",
+                           f"ios-photos-{phase}-result.json"])
     failure = None
     attempted = False
     summary_attempted = False
+    observation_digest = None
+    test_host_closed = False
+    def report(event, message):
+        nonlocal failure
+        try:
+            host.emit(event, message)
+        except (Exception, KeyboardInterrupt, SystemExit):
+            failure = failure or Failure("photos-diagnostic-emit-unexpected")
     try:
         # Revalidate the frozen actual host before every permission mutation.
         operations = [("reset", "photos"), ("grant", "photos-add")] if phase == "add-only" else [("grant", "photos")]
@@ -332,7 +486,12 @@ def test_phase(record, phase):
         check_frozen(record, digest)
         host.guard_owned(record)
         attempted = True
-        execute_xcode(arguments(phase, record, result), phase)
+        try:
+            test_host_closed = execute_xcode(arguments(phase, record, result), phase) is True
+        except XcodeFailure as error:
+            test_host_closed = error.host_and_reader_closed is True
+            raise
+        require(test_host_closed, "photos-xcode-" + phase + "-close-unconfirmed")
         summary_attempted = True
         collect_summary(record, phase, result)
     except Failure as error:
@@ -340,39 +499,54 @@ def test_phase(record, phase):
     except (Exception, KeyboardInterrupt, SystemExit):
         failure = Failure("photos-controller-unexpected")
     finally:
-        if attempted and not (failure and str(failure) == "photos-xcode-" + phase + "-close-unconfirmed"):
+        if attempted and test_host_closed:
             if not summary_attempted:
                 try:
                     collect_summary(record, phase, result)
                 except Failure as error:
-                    host.emit("photos-summary-failure", str(error))
                     failure = failure or error
+                    report("photos-summary-failure", str(error))
                 except (Exception, KeyboardInterrupt, SystemExit):
-                    host.emit("photos-summary-failure", "photos-summary-unexpected")
                     failure = failure or Failure("photos-summary-unexpected")
+                    report("photos-summary-failure", "photos-summary-unexpected")
             try:
-                actual = check_frozen(record, digest)
+                actual, observation, identity_failure = frozen_observation(record, phase, digest, expected_context=expected_context)
+                # A failed observation is still closed evidence; write it before
+                # propagating its failure, and always continue owned-app stop.
+                failure = failure or identity_failure
+                observation_path = ARTIFACTS / f"ios-photos-{phase}-host-observation.json"
+                evidence.fresh_json(observation_path, observation)
+                observation_raw = evidence.read_closed_file(observation_path)
+                require(same_json(evidence.strict_json(observation_raw), observation), "photos-host-observation-changed")
+                observation_digest = hashlib.sha256(observation_raw).hexdigest()
+                if identity_failure:
+                    raise identity_failure
                 evidence.fresh_json(ARTIFACTS / f"ios-photos-{phase}-identity.json",
                                     {**context(record), "phase": phase, "preparedSha256": digest,
-                                     "builtHost": actual["builtHost"], "installedHost": actual["installedHost"]})
+                                     "initialInstalledContainer": actual["installedContainer"],
+                                     "currentInstalledContainer": observation["currentInstalledContainer"],
+                                     "builtHost": observation["builtHost"], "installedHost": observation["installedHost"],
+                                     "generatedEntitlements": observation["generatedEntitlements"]})
             except Failure as error:
-                host.emit("photos-identity-failure", str(error))
                 failure = failure or error
+                report("photos-identity-failure", str(error))
             except (Exception, KeyboardInterrupt, SystemExit):
-                host.emit("photos-identity-failure", "photos-identity-unexpected")
                 failure = failure or Failure("photos-identity-unexpected")
+                report("photos-identity-failure", "photos-identity-unexpected")
             try:
-                host.terminate_owned_app(record, None, diagnostic=True)
-                host.emit("stage", "ownedappstopped")
+                host.terminate_owned_app(record, None, diagnostic=True, emit_callback=report)
+                report("stage", "ownedappstopped")
             except Failure as error:
-                host.emit("photos-stop-failure", str(error))
                 failure = failure or Failure("owned-app-stop-unconfirmed")
+                report("photos-stop-failure", str(error))
             except (Exception, KeyboardInterrupt, SystemExit):
-                host.emit("photos-stop-failure", "photos-stop-unexpected")
                 failure = failure or Failure("owned-app-stop-unconfirmed")
+                report("photos-stop-failure", "photos-stop-unexpected")
     if failure:
         raise failure
+    require(type(observation_digest) is str, "photos-host-observation-required")
     summary = {**context(record), "phase": phase, "preparedSha256": digest,
+               "hostObservationSha256": observation_digest,
                "xcodeExitCode": 0, "hostAndReaderClosed": True, "ownedAppStopped": True,
                "xctestPassed": EXPECTED[phase], "xctestFailed": 0, "xctestSkipped": 0}
     evidence.fresh_json(ARTIFACTS / f"ios-photos-{phase}-result.json", summary)

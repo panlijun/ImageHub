@@ -3,3 +3,11 @@
 
 # Keep captured validation output unchanged.
 /docs/validation/*.log -text -whitespace
+
+# Preserve the new fingerprinted evidence JSON on Windows and Apple checkouts.
+/docs/validation/release-ci-ninth-*.json -text
+/docs/validation/release-apple-ninth-ci.json -text
+/docs/validation/release-backup-matrix-complete-config.json -text
+/docs/validation/release-interop-four-origin-complete.json -text
+/docs/validation/release-formal-artifacts-final-audit.json -text
+/docs/validation/release-photos-frozen-host-controls-02.json -text

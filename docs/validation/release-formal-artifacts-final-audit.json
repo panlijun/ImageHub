@@ -1,0 +1,44 @@
+{
+  "verificationVersion": 1,
+  "checkedAtUtc": "2026-10-11T12:20:03.4296008Z",
+  "currentSourceCommit": "09b849de824c38a9dbe714ce1e4c390f1f871c65",
+  "formalReceiptBase": "cfd55d0518f6448f409f3b221b9b2d32fe652074",
+  "formalSourceDirtyOnlyPriorScreenshots": true,
+  "currentWindowsAndroidRuntimeVersionAndBuildInputsUnchanged": true,
+  "runtimeComparedPaths": [
+    "app/lib",
+    "app/assets",
+    "app/pubspec.yaml",
+    "app/pubspec.lock",
+    "app/versions.json",
+    "app/windows",
+    "app/android",
+    "app/tool/package_release.ps1",
+    "app/tool/versioning.dart"
+  ],
+  "windows": {
+    "path": "dist/windows/0.1.0+1/ImageHub-windows-x64-0.1.0+1.zip",
+    "byteCount": 16872605,
+    "sha256": "55f7780f11a9941397f95e857d555acb8cce63f4db6778c75ee0fcdbfdff3204",
+    "receipt": "docs/validation/release-windows-formal.json",
+    "normalStartupAndWmCloseExitZeroPreviouslyVerified": true
+  },
+  "android": {
+    "path": "dist/android/0.1.0+1/ImageHub-android-arm64-0.1.0+1.apk",
+    "byteCount": 27400002,
+    "sha256": "e23935ef68df5b9358be5f96a7addeeef95eb3e4b4328e0dbd0743f5bfd05562",
+    "receipt": "docs/validation/release-android-formal.json",
+    "dedicatedReleaseV2SignaturePreviouslyVerified": true,
+    "formalApkInstalled": false
+  },
+  "versions": {
+    "path": "app/versions.json",
+    "sha256": "fe7fa73220f4e55d5b95129520bd9c4acbc2b7af63301c422f4e4c19601d3b50",
+    "kernel": "0.1.0+1",
+    "windows": "0.1.0+1",
+    "macos": "0.1.0+1",
+    "android": "0.1.0+1",
+    "ios": "0.1.0+1"
+  },
+  "boundary": "Artifact fingerprints and source scope audit; not a new build, signature verification, native test run, hardware acceptance or public binary publication."
+}
