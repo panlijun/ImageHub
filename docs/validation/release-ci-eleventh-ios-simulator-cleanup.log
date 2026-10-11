@@ -1,0 +1,12 @@
+simctl list devices --json
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl privacy 830253a1-d141-414c-887c-5209cac1f34d revoke photos io.imagehost.imagehost
+simctl privacy 830253a1-d141-414c-887c-5209cac1f34d revoke photos-add io.imagehost.imagehost
+simctl list devices --json
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+simctl shutdown 830253a1-d141-414c-887c-5209cac1f34d
+simctl list devices --json
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Shutdown.
+simctl delete 830253a1-d141-414c-887c-5209cac1f34d
+simctl list devices --json
+The confirmed owned simulator was deleted.

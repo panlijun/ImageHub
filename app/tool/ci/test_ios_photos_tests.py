@@ -9,6 +9,7 @@ from pathlib import Path
 import plistlib
 import shutil
 import threading
+import time
 import unittest
 from unittest import mock
 
@@ -162,6 +163,35 @@ class ControllerTests(OwnedTemp):
         self.assertFalse(self.commands("terminate"))
         self.assertFalse(self.commands("privacy"))
         self.assertTrue((runner.ARTIFACTS / "ios-photos-prepared.json").is_file())
+
+    def test_live_frozen_guard_codesign_and_container_commands_preserve_companion_output(self):
+        self.prepared()
+        _, digest = runner.check_prepared(self.record)
+        expected = runner.context(self.record)
+        output = ["synthetic-nested-output-" + str(i) for i in range(120)]
+        process = Process(("\n".join(output) + "\n").encode(), running=True)
+        with mock.patch.object(runner.host.subprocess, "Popen", return_value=process):
+            command = runner.host.Running(["synthetic-xcode"], "synthetic-xcode", publish=False)
+        collected = []
+        live = runner.LivePhotosAuthorization(self.record, digest, expected)
+        companion = runner.PhotosCompanion(command, collected, live)
+        try:
+            _, observation, failure = runner.frozen_observation(self.record, "read-write", digest,
+                expected_context=expected, companion=companion)
+            self.assertIsNone(failure)
+            self.assertTrue(observation["allFrozenFieldsVerified"])
+            self.assertEqual(collected, output)
+            self.assertFalse(self.commands("privacy"))
+        finally:
+            process.finish()
+            deadline = time.monotonic() + 2
+            while not command.closed() and time.monotonic() < deadline:
+                companion.drain()
+                command.reader.thread.join(timeout=0.01)
+            companion.drain()
+            self.assertTrue(command.closed())
+            process.wait(timeout=0)
+        self.assertTrue(process.stdout.closed and process.waited)
 
     def observation(self, phase="add-only"):
         return json.loads((runner.ARTIFACTS / f"ios-photos-{phase}-host-observation.json").read_text())

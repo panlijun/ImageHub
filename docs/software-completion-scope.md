@@ -14,7 +14,7 @@ Windows 当前已接入的业务覆盖真实本地导入与持久图库、处理
 
 M1 已选定为手机方向，不再比较 M2。Android 已接真实有界 SAF 图片/文件/ZIP 取得、文件/目录导出、MediaStore 相册保存及备份/诊断接线；API36 x86_64 模拟器已验证原生子流程和正常 Release 应用。ARM64 与 x86_64 APK 均实际构建，ARM64 物理手机和最低 API29 尚未验证。用户已授权公开 `panlijun/ImageHub` 并运行标准 Apple CI。2026-10-09已完成iOS原生图片/文件/备份/诊断保存和Apple备份文件取得：源9715ce9的run37879708343整体success，Mac1424软件测试/4跳过、独立进程恢复/锁、四项Flutter原生、23项XCTest和Release通过；iOS26.2/iPhone17四项Flutter原生、20项XCTest（含真实Photos PNG事务）、正常入口Simulator Debug和自有设备清理通过。原始证据、软件与设备边界见[里程碑29](milestone-29-apple-files.md)和[GitHub记录](github-publication.md)，不以核心用例、构建或受控窗口协议代替全部设备验收。
 
-2026-10-09本地正式包已完成：Windows完整34条目x64 Release ZIP与Android专用非debug/V2签名ARM64 APK实际生成并核验，内核/四端平台版本均为0.1.0+1；receipt记录源base `cfd55d0`且`dirty=true`，当时仅两张既有验证截图未提交。见[里程碑30](milestone-30-versioned-delivery.md)及两份formal receipt。它们不是公开二进制、商店发布、Apple正式签名发行或ARM64实机通过。Windows软件1459项通过/1平台分支跳过、M1快捷入口20项、五项Windows原生、正常Release启动退出及真实4,328,697,800字节ZIP64预检/合并/重开通过。Windows、Android、Mac互读方向及随后补齐的四来源软件矩阵现有12方向/24模式的完整/元数据恢复重开证据；四台设备人工互读/PT仍未验收。Photos新增资源独立读回仍待验证。Apple生产原生文件保存与备份取得已接入。
+2026-10-09本地正式包已完成：Windows完整34条目x64 Release ZIP与Android专用非debug/V2签名ARM64 APK实际生成并核验，内核/四端平台版本均为0.1.0+1；receipt记录源base `cfd55d0`且`dirty=true`，当时仅两张既有验证截图未提交。见[里程碑30](milestone-30-versioned-delivery.md)及两份formal receipt。它们不是公开二进制、商店发布、Apple正式签名发行或ARM64实机通过。Windows软件1459项通过/1平台分支跳过、M1快捷入口20项、五项Windows原生、正常Release启动退出及真实4,328,697,800字节ZIP64预检/合并/重开通过。Windows、Android、Mac互读方向及随后补齐的四来源软件矩阵现有12方向/24模式的完整/元数据恢复重开证据；四台设备人工互读/PT仍未验收。Photos完整读写授权与五格式资源独立读回仍是软件CI缺口；第十一轮已在Apple runner实际编译并运行SDK helper，但真实请求等待30秒无callback。Apple生产原生文件保存与备份取得已接入。
 
 第六轮[Apple CI](validation/release-apple-sixth-ci.json)源`5326d527962daad1de23f3340dda40b55aec6e78`/run`37929517038`为历史结果：当时整体failure且停止阶段原因未暴露；不能由第七轮反推其根因。详见[第六轮记录](validation/release-apple-sixth-ci.json)。
 
@@ -68,10 +68,14 @@ CT-001/002/003/005及IT-008的真实Catbox/ImgBB能力、响应、上传/删除�
 
 第十轮Apple实际结果补充见[闭合记录](validation/release-apple-tenth-ci.json)：Mac作业成功；iOS完整Photos 27项为22通过/5失败/0跳过，五格式在保存前读写授权未决定，原始资源读回尚未确认。此前“下一轮待补”为第九轮收尾时态。当前仅测试宿主增加一次真实SDK请求与回调/SDK重读确认，保留超时失败锁存、27项和PNG/JPEG原字节断言，生产仍addOnly；[源码审查](validation/release-photos-sdk-authorization-review.md)不能代替下一次Apple实际运行。该CI软件缺口仍在本轮收尾范围，不能归为已排除的实机验收。
 
+## 第十一轮 Apple CI
+
+第十一轮run38145131826整体failure：Mac成功；iOS完整Photos 27项22通过/5失败/0跳过。新helper已真实编译运行，但首个SDK请求30秒无callback，五格式保存资源未独立读回。该项仍是授权范围内可继续的软件CI缺口，不属于物理设备/PT排除；完整证据和pending候选见[里程碑30](milestone-30-versioned-delivery.md)及[授权审查](validation/release-photos-sdk-authorization-review.md)。Windows/Android包不变，四来源矩阵仍为12方向/24模式。
+
 ## 保留的软件缺口与限制
 
 - Android 工作台、备份、诊断的原生导出已接入并取得实际模拟器及正常 UI 证据；iOS 对应路径已接原生 Files/Photos，Mac/iOS 备份取得接入范围授权和共同私有复制。OUT-003/PLT-005/BAK-006/OPS-003 的软件验证记录见里程碑29及E36；真实选择器、Files提供者与照片格式互操作仍需PT，不将受控协议或模拟器子场景计为全部平台验收。
 - Windows云占位来源的已知标记可预先拒绝；来源交付取消、实际清理等待和取得前令牌重验已接入，见`milestone-26-source-cancellation.md`。无法确认内核读取结束时继续等待，不能承诺所有未知阻塞来源有界停止；移动/Apple真实云取得器不能据此称全部完成。不加超时后提前释放保护的假取消。
 - 处理输出固定默认去除隐私元数据；IMG-005关闭隐私处理的明确选择由原样字节上传及逐次风险确认承接。技术选型6.3的MetadataPolicy只传递必要方向与色彩白名单，不要求任意复制隐私字段。本轮不据旧台账文案增加一个无执行路径的“保留元数据”开关；完整方向/格式契约证据仍单列。
 
-Windows 基线见 `milestone-27-windows-completion.md`，Android 收尾及 Windows 回归见 `milestone-28-android-completion.md`，Apple 文件能力和适用跨平台软件回归见 `milestone-29-apple-files.md`；截至2026-10-11的本轮进展和待补项见`windows-v1-coverage.md`的E36/E37。25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除。本轮完成声明仅覆盖已授权的软件收尾和Windows/Android本地正式交付；Photos仍须以实际Apple CI结果为准。PT、外部服务、物理设备/最低系统、硬件PERF及Apple正式发行等验证边界继续保留，不据此宣称四端全部验收。
+Windows 基线见 `milestone-27-windows-completion.md`，Android 收尾及 Windows 回归见 `milestone-28-android-completion.md`，Apple 文件能力和适用跨平台软件回归见 `milestone-29-apple-files.md`；截至2026-10-11的进展和待补项见`windows-v1-coverage.md`的E36–E39。25、26 等阶段保留历史证据。旧台账中的“未实现”按当前实现更新，历史证据不删除。本轮完成声明仅覆盖已授权的软件收尾和Windows/Android本地正式交付；Photos仍须以实际Apple CI结果为准。PT、外部服务、物理设备/最低系统、硬件PERF及Apple正式发行等验证边界继续保留，不据此宣称四端全部验收。

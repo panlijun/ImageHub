@@ -1,0 +1,72 @@
+{
+  "additionalChecks": 31,
+  "boundary": "Actual local Python tests exercise synthetic commands/signals and real bounded pipe readers. They do not execute simctl, compile Swift, prove a real Photos callback/resource readback or substitute for the next Apple CI. Production, 27 native cases and the PNG/JPEG original-resource assertions are unchanged.",
+  "command": [
+    "bundled python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "app/tool/ci",
+    "-p",
+    "test_*.py"
+  ],
+  "existingChecks": 186,
+  "exitCode": 0,
+  "hostPlatform": "Windows",
+  "initialRestrictedAttempt": {
+    "boundary": "Agent tool transcript reports temporary-directory permission errors; no full copied log is claimed, and this attempt is not passed.",
+    "reportedEnvironmentErrors": 174,
+    "status": "failed",
+    "toolChunk": "b99f8d"
+  },
+  "intermediateRun": {
+    "boundary": "Reviewed source before handling the authorized-dispatch/callback-pending race; its controls-01 evidence is retained unchanged.",
+    "path": ".local/photos-live-controls/final-controller-tests-02.log",
+    "reportedSeconds": 18.983,
+    "testsPassed": 215
+  },
+  "publicTerminalExcerpt": {
+    "boundary": "Only the exact separator, count, blank and OK terminal lines are retained.",
+    "bytes": 104,
+    "excerpt": true,
+    "file": "release-photos-live-controls-02.log",
+    "sha256": "b1b4a491441a6c856f5be2f121fa2184bb9b0ae2b6652a343b54ade0fd79d15d"
+  },
+  "reportedSeconds": 19.158,
+  "sourceLog": {
+    "bytes": 934,
+    "path": ".local/photos-live-controls/final-controller-tests-03.log",
+    "sha256": "fb3380d4b6bee45ba9f6a5ac8abdb1efe6b25392f8d24abf4be4fc8b3d080d47"
+  },
+  "sources": {
+    "app/ios/RunnerTests/RunnerTests.swift": {
+      "byteCount": 33466,
+      "gitNormalizedLfSha256": "3b353e5048ca8391514a7399e6f5316f077311f25151bb2421420a34b3a7aa48",
+      "sha256": "774aad5f65a483428967fd1a77e9d8c10c0035d7bf846e37f5abcbd22e016e89"
+    },
+    "app/tool/ci/run_ios_photos_tests.py": {
+      "byteCount": 41375,
+      "gitNormalizedLfSha256": "4f16d84060359a58c47a86358014bf6c4b6eab88357d3b92a544c1827c613e2c",
+      "sha256": "1297bfc514393ddfaad829c1f70baa42650217bb316ca6206b5ad1c243aa0533"
+    },
+    "app/tool/ci/test_ios_photos_live_authorization.py": {
+      "byteCount": 22875,
+      "gitNormalizedLfSha256": "29d0f21088a5f0a80676daac23507c612daf75aebd512978891223ef773dbef9",
+      "sha256": "29d0f21088a5f0a80676daac23507c612daf75aebd512978891223ef773dbef9"
+    },
+    "app/tool/ci/test_ios_photos_tests.py": {
+      "byteCount": 65028,
+      "gitNormalizedLfSha256": "3a2378e4aaf556902ad2c9c92a6c025e65b7753c179ca9effcf72e34937ab2db",
+      "sha256": "4dec01c6a2697a9de322f90f1a8418cdbe888eccde0602e0cb4718cc5ac6d0ee"
+    }
+  },
+  "testsPassed": 217,
+  "verification": {
+    "appleNativeAuthorizationVerified": false,
+    "swiftCompilationPerformedLocally": false,
+    "threeChangedPythonSourcesCompiledInMemory": true
+  },
+  "verificationVersion": 1
+}

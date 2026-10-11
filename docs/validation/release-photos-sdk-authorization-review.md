@@ -1,4 +1,4 @@
-# 第十轮 Photos 权限证据与测试宿主 SDK 请求审查
+# Photos 权限证据与测试宿主 SDK 请求审查（第十轮历史审查及第十一轮结果）
 
 日期：2026-10-11。第十轮源 `acdbb2bb3d788d7bb6711d0c9439b012ded7dba4`、run `38141681520`、attempt 1 整体失败。[闭合记录](release-apple-tenth-ci.json)与41份白名单日志、JSON或摘录保留实际边界。该记录不是后续修正的原生通过证据。
 
@@ -23,8 +23,18 @@ add-only与read-write的后验观察均实际读取四个组件，记录的宿�
 
 生产 `IOSFileBridge.swift` 继续只请求addOnly。原12项RunnerTests与15项AppleFileEngineTests、总27项及零跳过门槛不变；PNG/JPEG仍必须成功保存，并按本次返回的精确asset与原始resource核对长度和SHA-256，真实读取完成后才收尾。
 
-## 审查与验证边界
+## 第十轮审查与验证边界（当时记录）
 
 Sol实现者、Sol只读审查及主线程均阅读实际diff。三处授权拒绝的失败锁存已补齐；未发现其余可操作的线程、actor或生命周期问题。源中测试名称、精确asset查询和CRLF核对通过，diff whitespace检查通过。这些属于源码审查，不计为新测试通过数量。
 
-Windows没有Xcode，本次尚未编译Swift或运行新授权路径。六个Python控制器与其186项检查未被本次Swift修改，原本机及第十轮Mac控制证据保留。下一次Apple CI必须实际编译并执行原27项、取得真实SDK状态/回调、PNG/JPEG资源读回、冻结身份、host/reader结束及自有应用/设备收尾；提示、超时或非授权结果继续失败。没有提前记为修复或原生通过，也不涉及物理设备、最低系统、硬件性能、真实图床或Apple正式发行验收。
+第十轮记录时Windows没有Xcode，当时尚未编译Swift或运行新授权路径。六个Python控制器与其186项检查未被当轮Swift修改，原本机及第十轮Mac控制证据保留。当时计划下一次Apple CI实际编译并执行原27项、取得真实SDK状态/回调、PNG/JPEG资源读回、冻结身份、host/reader结束及自有应用/设备收尾；提示、超时或非授权结果继续失败。没有提前记为修复或原生通过，也不涉及物理设备、最低系统、硬件性能、真实图床或Apple正式发行验收。
+
+## 第十一轮结果与下一候选
+
+源`3588ed69b298cbdcfb5bc2c78041f3d587f1e8fc`、[run38145131826/attempt 1](https://github.com/panlijun/ImageHub/actions/runs/38145131826)整体failure。Mac job `114486776264`成功，iOS job `114486776379`失败于完整Photos读回步骤。SDK helper已真实编译运行：BMP前记录preflight，API调用前记录request-start；同一PID `76835`的readWrite为0、addOnly为3，30秒未观察到SDK授权callback，timeout失败锁存；后四格式在保存前停止。9条授权诊断由7项preflight、1项request-start、1项timeout组成。request-start先于API调用，不能证明dispatch交接或系统提示出现；实际grant photos命令exit0仍未获授权或资源读回，授权机制仍未知。完整套件27项/22通过/5失败/0跳过，Xcode65；invalid PNG像素解码nil、safe-unconfirmed与precancel通过，五格式没有独立资源读回。宿主冻结字段和生成entitlements/prepared SHA两阶段核对一致，owned app位置变化仅为该轮观察，不推断TCC或第九轮原因。完整摘要及41份白名单证据见[第十一轮记录](release-apple-eleventh-ci.json)。
+
+候选实现和源码审查已完成：真实SDK调用返回后记录request-dispatched；控制器只在正常主循环观察精确信号、firstPID/owned UUID/冻结字段一致且授权仍pending时调用一次 `simctl privacy grant photos`。SDK 30秒超时不延长，grant exit0不代表授权；callback=3、SDK重读=3、27项及PNG/JPEG原字节读回、IO close、owned stop仍为门槛。215项本机控制检查通过（18.983秒/exit0），三处Python脚本内存编译及diffcheck通过，见[控制receipt](release-photos-live-controls-01.json)（SHA-256 `27aa095eac04455aa7afdd602570cf018537cbadda1a2b584ffa0f2cdbfb37c7`）及[terminal摘录](release-photos-live-controls-01.log)（SHA-256 `1dccd5620ae6c9a5f1736064588a0019244ceacfb421aa12d898ee3d57542dea`）。这是本机控制/源码证据，不是新Apple原生通过；下一次Apple CI尚未启动。新PID、第二请求、超时或未知状态继续失败锁存。生产仍为addOnly，无UI自动点击或TCC数据库操作。
+
+下一次Apple CI必须实跑原27项，并取得真实callback与SDK重读授权、PNG/JPEG原字节读回、IO关闭及owned app/Simulator收尾；grant exit0不作授权成功证据。
+
+官方资料：[Apple Photos授权请求](https://developer.apple.com/documentation/photos/phphotolibrary/requestauthorization%28for%3Ahandler%3A%29)、[Apple Photos保存指导](https://developer.apple.com/documentation/avfoundation/saving-captured-photos)、[Xcode 11.4关于simctl privacy的说明](https://developer.apple.com/documentation/xcode-release-notes/xcode-11_4-release-notes)；本轮实际`simctl help privacy`输出见[原始帮助摘录](release-ci-eleventh-ios-photos-privacy-help.log)，说明grant可绕过提示但不能替代用途说明与SDK API调用。

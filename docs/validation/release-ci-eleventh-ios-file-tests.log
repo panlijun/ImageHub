@@ -1,0 +1,27 @@
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-privacy-grant-photos-exit] exitCode=0; hostAndReaderClosed=true
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[photos-summary-failure] photos-xctest-not-all-passed
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[owned-app-stop-phase] guard-started
+[ownership] Confirmed owned simulator 830253a1-d141-414c-887c-5209cac1f34d on com.apple.CoreSimulator.SimRuntime.iOS-26-2: Booted.
+[owned-app-stop-phase] guard-confirmed
+[owned-app-stop-phase] terminate-started
+[owned-app-stop] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] Simulator device failed to terminate io.imagehost.imagehost.
+[owned-app-stop] found nothing to terminate
+[owned-app-stop] Underlying error (domain=NSPOSIXErrorDomain, code=3):
+[owned-app-stop] 	The request to terminate "io.imagehost.imagehost" failed. found nothing to terminate
+[owned-app-stop] 	found nothing to terminate
+[owned-app-stop-exit] exitCode=3; hostAndReaderClosed=true
+[stage] ownedappstopped
+[failure] photos-xcode-read-write-exit-nonzero

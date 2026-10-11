@@ -77,7 +77,7 @@ def arguments(phase, record, result=None):
     return args
 
 
-def executable_digest(path):
+def executable_digest(path, companion=None):
     """Hash twice with bounded streaming; no executable bytes enter diagnostics."""
     before = evidence.ordinary_path(path.absolute(), directory=False)
     require(0 < before.st_size <= HASH_LIMIT, "photos-executable-size")
@@ -92,6 +92,8 @@ def executable_digest(path):
             count = 0
             deadline = time.monotonic() + 60
             while True:
+                if companion is not None:
+                    companion.drain()
                 block = stream.read(64 * 1024)
                 if not block:
                     break
@@ -107,7 +109,7 @@ def executable_digest(path):
     return {"byteCount": before.st_size, "sha256": values[0]}
 
 
-def fingerprint(bundle):
+def fingerprint(bundle, companion=None):
     evidence.ordinary_path(bundle.absolute(), directory=True)
     require(not (bundle / "embedded.mobileprovision").exists() and
             not (bundle / "embedded.mobileprovision").is_symlink(), "photos-profile-present")
@@ -120,16 +122,17 @@ def fingerprint(bundle):
         version = host.verify("ios", bundle, versions)
     except Exception:
         raise Failure("photos-version-mismatch") from None
-    executable = executable_digest(bundle / "Runner")
+    options = {"companion": companion} if companion is not None else {}
+    executable = executable_digest(bundle / "Runner", **options)
     host.run_command(["codesign", "--verify", "--strict", "--verbose=2", str(bundle.absolute())],
-                     "photos-signing-verify", 60, publish=False)
+                     "photos-signing-verify", 60, publish=False, **options)
     metadata = evidence.signing_metadata(host.run_command(
-        ["codesign", "--display", "--verbose=4", str(bundle.absolute())], "photos-signing-display", 60, publish=False))
+        ["codesign", "--display", "--verbose=4", str(bundle.absolute())], "photos-signing-display", 60, publish=False, **options))
     entitlements = evidence.displayed_entitlements(host.run_command(
         ["codesign", "--display", "--entitlements", ":-", str(bundle.absolute())],
-        "photos-signing-entitlements", 60, publish=False))
+        "photos-signing-entitlements", 60, publish=False, **options))
     require(evidence.read_closed_file(bundle / "Info.plist") == raw and
-            executable_digest(bundle / "Runner") == executable, "photos-host-changed")
+            executable_digest(bundle / "Runner", **options) == executable, "photos-host-changed")
     return {"executable": executable, "infoPlist": {"byteCount": len(raw), "sha256": hashlib.sha256(raw).hexdigest()},
             "nativeVersion": version, "strictVerificationPassed": True,
             "codesign": metadata, "signatureEntitlements": entitlements}
@@ -170,15 +173,174 @@ def installed_path(raw, owned_uuid):
     return path
 
 
-def installed_bundle(record):
-    host.guard_owned(record)
+def installed_bundle(record, companion=None):
+    options = {"companion": companion} if companion is not None else {}
+    host.guard_owned(record, **options)
     raw = host.run_command(["xcrun", "simctl", "get_app_container", record["udid"], host.BUNDLE_ID, "app"],
-                           "photos-app-container", 60, publish=False)
-    host.guard_owned(record)
+                           "photos-app-container", 60, publish=False, **options)
+    host.guard_owned(record, **options)
     return installed_path(raw, record["udid"])
 
 
-def execute_xcode(args, phase):
+AUTHORIZATION_PREFIX = "IMAGEHUB_PHOTOS_AUTHORIZATION "
+AUTHORIZATION_TYPES = {"phase": str, "callbackStatus": int, "failureLatched": bool,
+    "readBack": bool, "mainBundleID": str, "testBundleID": str,
+    "hostMatchesExpected": bool, "testBundleMatchesExpected": bool, "processID": int,
+    "ownedSimulatorID": str, "addOnlyStatus": int, "readWriteStatus": int,
+    "photoUsageDescriptionPresent": bool, "photoAddUsageDescriptionPresent": bool}
+AUTHORIZATION_PHASES = {"preflight", "request-start", "request-dispatched", "request-callback",
+    "request-timeout", "request-wait-failed", "request-rejected", "request-confirmed"}
+
+
+class PhotosCompanion:
+    """Every nested command drains to the same evidence and observer, never acts."""
+    def __init__(self, command, lines, observer):
+        self.command, self.lines, self.observer = command, lines, observer
+
+    @property
+    def failure(self):
+        return self.command.failure or self.observer.failure
+
+    def drain(self):
+        self.command.drain(callback=self.observer.observe, collect=self.lines)
+
+
+class LivePhotosAuthorization:
+    """One live control action, only after the owned SDK request was dispatched.
+
+    Observation never raises or mutates the simulator, including nested command
+    closure and Xcode's final drain. Any protocol failure stays latched.
+    """
+    def __init__(self, record, digest, expected_context):
+        self.record, self.digest, self.expected_context = record, digest, expected_context
+        self.origin = time.monotonic()
+        self.events = []
+        self.failure = None
+        self.pid = None
+        self.started = None
+        self.dispatched_at = None
+        self.dispatched_read_write_status = None
+        self.dispatched = False
+        self.callback = False
+        self.confirmed = False
+        self.ended = False
+        self.attempted = False
+
+    def event(self, phase, result):
+        self.events.append({"phase": phase, "result": result,
+                            "elapsedMilliseconds": int((time.monotonic() - self.origin) * 1000)})
+
+    def fail(self, classification):
+        self.failure = self.failure or classification
+
+    def observe(self, line):
+        if not line.startswith("IMAGEHUB_PHOTOS_AUTHORIZATION"):
+            return
+        try:
+            require(line.startswith(AUTHORIZATION_PREFIX), "photos-live-signal-invalid")
+            value = evidence.strict_json(line[len(AUTHORIZATION_PREFIX):])
+            require(type(value) is dict and set(value) == set(AUTHORIZATION_TYPES) and
+                    all(type(value[key]) is expected for key, expected in AUTHORIZATION_TYPES.items()),
+                    "photos-live-signal-invalid")
+            phase = value["phase"]
+            require(phase in AUTHORIZATION_PHASES, "photos-live-phase-invalid")
+            require(value["ownedSimulatorID"] == self.record["udid"] and value["processID"] > 0 and
+                    value["mainBundleID"] == host.BUNDLE_ID and
+                    value["testBundleID"] == host.BUNDLE_ID + ".RunnerTests" and
+                    all(value[key] is True for key in ("hostMatchesExpected", "testBundleMatchesExpected",
+                        "photoUsageDescriptionPresent", "photoAddUsageDescriptionPresent")),
+                    "photos-live-identity-invalid")
+            require(value["addOnlyStatus"] in range(5) and value["readWriteStatus"] in range(5) and
+                    value["callbackStatus"] in (-1, 0, 1, 2, 3, 4), "photos-live-status-invalid")
+            if self.pid is None:
+                self.pid = value["processID"]
+            require(self.pid == value["processID"], "photos-live-host-pid-changed")
+            self.event("signal-" + phase, "received")
+            if self.dispatched_at is not None and not self.ended and time.monotonic() - self.dispatched_at >= 30:
+                self.fail("photos-live-request-deadline")
+            require(value["failureLatched"] is False, "photos-live-sdk-failure-latched")
+            require(value["addOnlyStatus"] == 3, "photos-live-add-only-unavailable")
+            if phase == "preflight":
+                require(value["callbackStatus"] == -1, "photos-live-signal-invalid")
+                return
+            require(value["readBack"] is True, "photos-live-signal-invalid")
+            if phase == "request-start":
+                require(self.started is None and not self.ended and value["callbackStatus"] == -1 and
+                        value["readWriteStatus"] == 0, "photos-live-second-or-invalid-request")
+                self.started = time.monotonic()
+            elif phase == "request-dispatched":
+                require(self.started is not None and not self.dispatched and value["callbackStatus"] == -1,
+                        "photos-live-second-or-invalid-request")
+                require(value["readWriteStatus"] in (0, 3) and
+                        (not self.callback or value["readWriteStatus"] == 3), "photos-live-signal-invalid")
+                self.dispatched = True
+                self.dispatched_at = time.monotonic()
+                self.dispatched_read_write_status = value["readWriteStatus"]
+            elif phase == "request-callback":
+                require(self.started is not None and not self.callback and not self.ended and
+                        value["callbackStatus"] == 3 and value["readWriteStatus"] == 3,
+                        "photos-live-callback-invalid")
+                self.callback = True
+                self.ended = True
+            elif phase == "request-confirmed":
+                require(self.callback and not self.confirmed and value["callbackStatus"] == 3 and
+                        value["readWriteStatus"] == 3, "photos-live-confirmation-invalid")
+                self.confirmed = True
+            else:
+                self.ended = True
+                self.fail("photos-live-sdk-" + phase)
+        except Failure as error:
+            self.fail(str(error))
+        except (Exception, KeyboardInterrupt, SystemExit):
+            self.fail("photos-live-observer-unexpected")
+
+    def pending(self):
+        if self.dispatched_at is not None and not self.ended and time.monotonic() - self.dispatched_at >= 30:
+            self.fail("photos-live-request-deadline")
+        return self.failure is None and self.started is not None and self.dispatched and not self.ended
+
+    def act(self, companion):
+        if self.attempted or not self.pending() or self.dispatched_read_write_status != 0:
+            return
+        # Mark before any blocking read. A nested companion only observes, and
+        # later iterations cannot reenter after a failed or expired check.
+        self.attempted = True
+        self.event("frozen-validation", "started")
+        try:
+            host.guard_owned(self.record, companion=companion)
+            _, observation, failure = frozen_observation(self.record, "read-write", self.digest,
+                expected_context=self.expected_context, companion=companion)
+            if failure:
+                raise failure
+            require(observation["allFrozenFieldsVerified"] is True, "photos-live-frozen-unconfirmed")
+            host.guard_owned(self.record, companion=companion)
+            companion.drain()
+            self.event("frozen-validation", "confirmed")
+            if not self.pending():
+                self.event("grant", "suppressed-request-closed-or-failed")
+                return
+            require(companion.command.process.poll() is None and not companion.command.failure,
+                    "photos-live-xcode-ended-before-grant")
+            self.event("grant", "started")
+            host.run_command(["xcrun", "simctl", "privacy", self.record["udid"], "grant", "photos", host.BUNDLE_ID],
+                "photos-live-privacy-grant", 60, publish=False, companion=companion, report_exit=True,
+                emit_callback=lambda _stage, result: self.event("grant-command-close", result))
+            self.event("grant", "command-and-reader-closed-exit-zero")
+            companion.drain()
+            self.pending()
+        except Failure as error:
+            self.fail(str(error))
+            self.event("live-control", "failed")
+        except (Exception, KeyboardInterrupt, SystemExit):
+            self.fail("photos-live-control-unexpected")
+            self.event("live-control", "unexpected")
+
+    def finish(self):
+        if self.started is not None and not self.confirmed:
+            self.fail("photos-live-sdk-request-unconfirmed")
+
+
+def execute_xcode(args, phase, *, live=None):
     command = None
     lines = []
     failure = None
@@ -186,16 +348,25 @@ def execute_xcode(args, phase):
     code = None
     stage = "photos-xcode-" + phase
     def drain():
-        command.drain(collect=lines)
+        if live is None:
+            command.drain(collect=lines)
+        else:
+            companion.drain()
     try:
         command = host.Running(args, stage, publish=False)
+        companion = PhotosCompanion(command, lines, live) if live is not None else None
         deadline = time.monotonic() + TIMEOUT
         while True:
             drain()
+            if live is not None:
+                require(live.failure is None, live.failure)
             if command.failure:
                 raise Failure(command.failure)
             if command.closed():
                 break
+            if live is not None:
+                live.act(companion)
+                require(live.failure is None, live.failure)
             require(time.monotonic() < deadline, stage + "-timeout")
             time.sleep(0.01)
         code = command.process.wait(timeout=0)
@@ -220,6 +391,10 @@ def execute_xcode(args, phase):
                     if command.closed():
                         break
                 drain()
+                if live is not None:
+                    live.finish()
+                if live is not None and live.failure is not None:
+                    failure = failure or Failure(live.failure)
                 command.reader.thread.join(timeout=0)
                 closed = command.closed()
                 if closed:
@@ -234,6 +409,8 @@ def execute_xcode(args, phase):
         try:
             header = {"formatVersion": 1, "phase": phase, "hostAndReaderClosed": closed,
                       "exitCode": code, "failure": str(failure) if failure else None}
+            if live is not None:
+                header["liveAuthorizationControl"] = live.events
             raw = (json.dumps(header, sort_keys=True) + "\n" +
                    "\n".join(host.redact(line) for line in lines) + "\n").encode()
             evidence.fresh_file(ARTIFACTS / f"ios-photos-{phase}-xcode.log", raw, host.OUTPUT_LIMIT * 3 + 4096)
@@ -268,7 +445,7 @@ def read_prepared(record, observation=None, expected_digest=None):
     return proof, digest
 
 
-def frozen_observation(record, phase, expected_digest=None, *, expected_context=None):
+def frozen_observation(record, phase, expected_digest=None, *, expected_context=None, companion=None):
     """Read every component independently, retaining only curated closed evidence.
 
     Location equality is diagnostic. Content, signing, generated entitlements,
@@ -292,6 +469,7 @@ def frozen_observation(record, phase, expected_digest=None, *, expected_context=
                    "allFrozenFieldsVerified": False}
     failure = None
     proof = None
+    options = {"companion": companion} if companion is not None else {}
     def read(name, operation):
         nonlocal failure
         try:
@@ -310,11 +488,11 @@ def frozen_observation(record, phase, expected_digest=None, *, expected_context=
         observation["preparedSha256"] = digest
         observation["preparedSha256MatchesExpected"] = digest == expected_digest if expected_digest is not None else None
         observation["initialInstalledContainer"] = proof["installedContainer"]
-    observation["builtHost"] = read("builtHost", lambda: fingerprint(built_bundle()))
+    observation["builtHost"] = read("builtHost", lambda: fingerprint(built_bundle(), **options))
     def installed_host():
-        installed = installed_bundle(record)
+        installed = installed_bundle(record, **options)
         observation["currentInstalledContainer"] = str(installed)
-        return fingerprint(installed)
+        return fingerprint(installed, **options)
     observation["installedHost"] = read("installedHost", installed_host)
     observation["generatedEntitlements"] = read("generatedEntitlements", generated_entitlements)
     # Confirm the original proof did not change while the other components
@@ -487,7 +665,8 @@ def test_phase(record, phase):
         host.guard_owned(record)
         attempted = True
         try:
-            test_host_closed = execute_xcode(arguments(phase, record, result), phase) is True
+            options = {"live": LivePhotosAuthorization(record, digest, expected_context)} if phase == "read-write" else {}
+            test_host_closed = execute_xcode(arguments(phase, record, result), phase, **options) is True
         except XcodeFailure as error:
             test_host_closed = error.host_and_reader_closed is True
             raise

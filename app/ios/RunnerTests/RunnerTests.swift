@@ -1,4 +1,5 @@
 import CryptoKit
+import Darwin
 import ImageIO
 import Photos
 import UIKit
@@ -361,6 +362,8 @@ class RunnerTests: XCTestCase {
             phase: "request-callback", callbackStatus: status.rawValue, failureLatched: failureLatched)
           done.fulfill()
         }
+        reportOwnedPhotosAuthorization(readBack: true, identifier: identifier,
+          phase: "request-dispatched", failureLatched: authorization.failureLatched())
         // XCTest pumps the run loop; do not block the SDK callback with a semaphore.
         let waited = XCTWaiter.wait(for: [done], timeout: 30)
         let result = authorization.finish(waitCompleted: waited == .completed,
@@ -472,6 +475,8 @@ class RunnerTests: XCTestCase {
     if let data = try? JSONSerialization.data(withJSONObject: record, options: [.sortedKeys]),
        let text = String(data: data, encoding: .utf8) {
       print("IMAGEHUB_PHOTOS_AUTHORIZATION \(text)")
+      // Flush only this host's stdout; Xcode may still buffer its forwarding.
+      fflush(stdout)
     }
   }
 

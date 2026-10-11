@@ -13,3 +13,7 @@
 /docs/validation/release-photos-frozen-host-controls-02.json -text
 /docs/validation/release-ci-tenth-*.json -text
 /docs/validation/release-apple-tenth-ci.json -text
+/docs/validation/release-ci-eleventh-*.json -text
+/docs/validation/release-apple-eleventh-ci.json -text
+/docs/validation/release-photos-live-controls-01.json -text
+/docs/validation/release-photos-live-controls-02.json -text
